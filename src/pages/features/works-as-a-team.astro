@@ -1,0 +1,11 @@
+---
+// /features/works-as-a-team/: district V, Works as a team. Its live demos are the landing's own: a mission with a lead,
+// a team on four engines and an honest verdict (Together), then the Console that assembles as you scroll (Console). The
+// words are in data/deep/team.js; the figures beside each feature are drawn by scripts/figs/team.js.
+import District from '../../components/District.astro';
+import Together from '../../components/sections/Together.astro';
+import Console from '../../components/sections/Console.astro';
+import deep from '../../data/deep/team.js';
+import '../../styles/pages/figs-team.css';
+---
+<District d={4} deep={deep} script="works-as-a-team"><Together /><Console /></District>

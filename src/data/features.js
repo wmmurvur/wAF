@@ -28,7 +28,7 @@ export const Word = n => word(n)[0].toUpperCase() + word(n).slice(1);
 export const LAST = districts[districts.length - 1].r;
 
 /* the districts whose own page is built (plan v0.8 §6); the others' links go to their chapter on the landing until theirs is */
-const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'measure', 'privacy']);
+const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'team', 'measure', 'privacy']);
 export const hasPage = D => PAGES.has(D.id);
 
 export const features = [
@@ -76,7 +76,7 @@ export const features = [
   { id: 'missions', d: 4, n: 'Missions', s: 'A lead that cannot write plans round by round and hands the work to a team on different engines, one writer per folder, until the goal is met or one of five caps is reached.', sig: 'lead + 3', at: 's-together', src: 'missions.start; screenshot 043' },
   { id: 'shared', d: 4, n: 'Shared sessions', s: 'Any agent can open any session by its id, whichever engine wrote it, see what was and wasn\'t done, and carry on.', sig: 'by id', src: 'sessions.find, sessions.read' },
   { id: 'notes', d: 4, n: 'Agent notes', s: 'Agents leave each other notes and hand tasks over, with a guard against loops.', sig: 'a2a', src: 'a2a notes and tasks' },
-  { id: 'steer', d: 4, n: 'Steer and veto', s: 'Your steer, veto or new constraint changes a running team\'s course at once.', sig: 'mid-run', src: 'workflows.steer; mission supervisor' },
+  { id: 'steer', d: 4, n: 'Steer and veto', s: 'Your steer, veto or constraint outranks everything an agent was told, and reaches a running task with its next heartbeat.', sig: 'mid-run', src: 'workflows.steer; mission supervisor' },
   { id: 'console', d: 4, n: 'Console', s: 'Every session in one column: who is working, whose turn it is, which leg of which chain.', sig: '2 waiting', at: 's-console', src: 'Console (screenshots 004, M11)' },
   { id: 'question', d: 4, n: 'Countdown questions', s: 'An agent\'s question picks the suggested answer when time runs out. A permission request always waits for you, with every stuck session, in Needs You.', sig: '0:42', at: 's-console', src: 'question card auto-answer' },
   { id: 'notices', d: 4, n: 'Notices and the queue', s: 'Agents report, remind and ask on one board, by level, and your answer becomes work in the queue. Your side of it: leave a job for an agent, now or when its group fills.', sig: '4 levels', src: 'notices.ts, workqueue.ts, noticeToQueue.ts; Technical DNA §5' },
