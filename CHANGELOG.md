@@ -2,6 +2,15 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.12.0 · 2026-10-12
+
+Two more district pages: agents that work as a team, and a farm that forgets nothing.
+
+- Works as a team, the district page (`/features/works-as-a-team/`): all nine of district V's features beside their figures, with the landing's mission and Console as its live demos. Things to try: a mission's rounds, its writers taking turns, a cap spent and the finish-only round, Approve and Reject; one agent finding and reading another's session, written by another engine, in the same five words; a note, a task held for its role, a lease kept alive by heartbeats and a third handoff refused; a steer, a veto or a constraint on a running task; the Console's colours, a message steered into the turn or held for later, a setting the CLI refuses; a question's countdown, Stop timer, half-made picks and the words that never run on a clock; a question in Notices answered into the queue, and your own capture moving through it; the Live Timeline's marks, its alert boxes and a stall; four prompts in four worktrees, then Merge, Open or Discard.
+- Never forgets, the district page (`/features/never-forgets/`): all nine of district VI's features beside their figures, with the landing's Never forgets chapter as its live demo. Things to try: every engine in one Sessions table, yours or the farm's, a session found by its id and the right-click; a session folded to its turns, the Show filter, Replay and Export MD's question; marking a turn for the wiki, a compile run and the page it writes; a file dropped into `_RAW_` and filed as done; the vault's facts and the agents' methods, a rule applied to both, a write refused; the search grammar, a hit opened at its message, search by meaning and its boundary; an agent's memory files, recalled or orphaned, a contradiction, a distilled draft and the graph; a laptop's sessions with their ⇄ badge; the fleet report, cache efficiency and the reports landing in the vault.
+- New tile in district VI, Memory that gets used: which of an agent's memory files are really recalled, which the index lost, which contradict each other, and how they link up. Search everything now speaks only of transcripts. 84 things in all.
+- Notes added where the pages were missing something: the Console takes files and screenshots dropped or pasted and saved prompt snippets; an agent that asks in Notices can sleep until you answer; a session opens with the files it changed and its own edits; a live feed opens a session at the event you click.
+
 ## 0.11.0 · 2026-10-12
 
 Two more district pages: work that starts by itself, and an agent that sets the farm up for you.

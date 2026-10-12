@@ -1,7 +1,7 @@
 // District VI, Never forgets: the words of its page (/features/never-forgets/). Names, sentences and tile figures are
 // in data/features.js; this file holds what the page says beyond them. Every rule, default and setting key was read in
 // the extension's own guide (the Blueprint, cited by section heading: "Dashboard" (the Sessions table and the session
-// right-click), "Session Viewer", "Turns Page", "Session Replay", "Subagent Tree", "Coverage and honest boundaries",
+// right-click), "Live Feed", "Session Viewer", "What the agent did to the code", "Turns Page", "Session Replay", "Subagent Tree", "Coverage and honest boundaries",
 // "LLM Wiki — Candidate Pool and Compilation", "The Wiki Cockpit", "Wiki Phase 2", "Transcript Search", "Memory
 // Management", "Memory Graph", "Memory on the bridge", "Memory Synchronization", "Memory Distillation", "Semantic
 // Memory Query", "Health: Context Load", "Multiple Machines", "Fleet Report", "Automatic Report (to the Vault)",
@@ -37,8 +37,8 @@ export default {
         ['agentFarm.includeUnmatchedProjects', 'false', 'Also list sessions outside your agents\' folders, under Other projects.'],
         ['agentFarm.activeThresholdSeconds', '150', 'A session whose log changed within this many seconds counts as active.'],
       ],
-      // Blueprint, Subagent Tree; Dashboard (pinned sessions exempt from the row limit)
-      note: 'A session\'s subagents are gathered under it, with what they cost together on the parent\'s row, and a pinned session is always listed, whatever the row limit.',
+      // Blueprint, Subagent Tree; Live Feed; the owner's list §11 (Anlık durum: canlı akış)
+      note: 'A session\'s subagents are gathered under it, with what they cost together on the parent\'s row. A live feed shows the farm\'s newest prompts, tool calls and errors as they happen, and a click opens the session at that message.',
       see: { href: '#me-panel', l: 'The Sessions page, live' },
     },
 
@@ -62,8 +62,8 @@ export default {
         // Blueprint, settings table
         ['agentFarm.maxTranscriptMessages', '1500', 'The newest messages shown for a very long session.'],
       ],
-      // Blueprint, Session Viewer (Context now card, model-aware; 70% yellow, 90% red)
-      note: 'A Context now card shows how full the model\'s window was after the last reply, measured against that model\'s own window. It turns yellow at 70% and red at 90%.',
+      // Blueprint, What the agent did to the code (Files changed; vs HEAD; failed — not applied; sessions.files); the owner's list §11 (Oturum görüntüleyici)
+      note: 'A session also opens with the files it changed: each one\'s writes, lines added and removed and the turns that touched it, unfolding to that session\'s own edits. vs HEAD beside it shows what is still uncommitted in the file now, and an edit that failed is marked as never applied.',
       see: { href: '#me-panel', l: 'A session, live' },
     },
 

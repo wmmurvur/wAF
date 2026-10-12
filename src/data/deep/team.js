@@ -114,8 +114,8 @@ export default {
         // Blueprint, Console (⎋ Interrupt); the owner's list §3 (Akıllı yeniden açılış); Technical DNA §4.3 (closingSetup)
         '⎋ Interrupt ends the turn and keeps the session and its context. A session reopens with the model, effort and permissions it closed with.',
       ],
-      // Blueprint, Console ("Your install, your subscription")
-      note: 'Your install, your subscription: the Console runs the CLI you already have, and the transcript lands where it always does, so every other page keeps reading it.',
+      // Blueprint, Console ("Your install, your subscription"); the owner's list §3 (Girdi kolaylıkları); Blueprint, Console composer (⎘ paste), Saved Prompt Snippets (3.190.0)
+      note: 'Your install, your subscription: the Console runs the CLI you already have, and the transcript lands where it always does, so every other page keeps reading it. Files and screenshots drop or paste straight into the box, and saved prompt snippets are a right-click away.',
       see: { href: '#s-console', l: 'The Console, live' },
     },
 
@@ -164,8 +164,8 @@ export default {
         // Blueprint, The Living Page (Notice ageing)
         ['agentFarm.noticeStaleHours', '24', 'When an unread important notice or an unanswered question turns the bell into a warning.'],
       ],
-      // Blueprint, Approval Queue ("THE ADMISSION TEST")
-      note: 'Needs You only holds what stays stuck if you never touch it. News, a blown budget or a proposal, goes to Notices, which is made to be read later.',
+      // Blueprint, Approval Queue ("THE ADMISSION TEST"); the owner's list §4 (Sıfır token bekleme)
+      note: 'Needs You only holds what stays stuck if you never touch it. News, a blown budget or a proposal, goes to Notices, which is made to be read later. An agent that asks there can sleep until you answer, spending no tokens while it waits.',
     },
 
     timeline: {
