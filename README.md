@@ -22,7 +22,7 @@ assets/         stiller (site.css), scriptler, fontlar, sesler
 
 **Elle yükleme:** hPanel'de Dosya Yöneticisi'ni (File Manager) aç, `public_html` klasörüne gir ve `README.md` dışındaki her şeyi, klasörleriyle birlikte yükle: şu an `index.html`, `favicon.svg`, `robots.txt`, `assets` ve `features`. Yeni sayfalar geldikçe yeni klasörler de eklenir; hepsi yüklenmeli.
 
-**Git ile:** hPanel'deki Git bölümünde depo adresi olarak `https://github.com/katehuyen/web_AgentFarm.git`, dal olarak `main` gir ve kurulum klasörü (directory) alanını boş bırak; dosyalar doğrudan `public_html`'e gelir. Bunun için `public_html`'in boş olması gerekir. Sonraki güncellemeler Deploy düğmesiyle tek tıkla gelir.
+**Git ile:** hPanel'deki Git bölümünde depo adresi olarak `https://github.com/wmmurvur/wAF.git`, dal olarak `main` gir ve kurulum klasörü (directory) alanını boş bırak; dosyalar doğrudan `public_html`'e gelir. Bunun için `public_html`'in boş olması gerekir. Sonraki güncellemeler Deploy düğmesiyle tek tıkla gelir.
 
 ## Değişiklik
 
