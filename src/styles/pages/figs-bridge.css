@@ -1,0 +1,299 @@
+/* District VIII, Just ask: its figures (scripts/figs/bridge.js), beside its features. Every rule is scoped by its figure;
+   the shared parts (.hd, .msg, .bar, .lb) are figs.css's. The district's colour, --c, is the page's own ink, so a figure
+   marks with it sparingly and lets green, yellow and pink carry the verdicts. */
+.fv:is([data-fig="bridge"],[data-fig="ops"],[data-fig="mcp"],[data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="telegram"],[data-fig="sound"],[data-fig="voice"],[data-fig="move"]){--ok:var(--lime);--warn:var(--yellow);--bad:var(--pink)}
+.fv:is([data-fig="bridge"],[data-fig="ops"],[data-fig="mcp"],[data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="telegram"],[data-fig="sound"],[data-fig="voice"],[data-fig="move"]) .lb{margin:0 0 4px}
+/* shared by this district's figures */
+.fv:is([data-fig="bridge"],[data-fig="ops"],[data-fig="mcp"],[data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="telegram"],[data-fig="sound"],[data-fig="voice"]) .seg{display:inline-flex;flex-wrap:wrap;gap:4px;justify-self:start}
+.fv:is([data-fig="bridge"],[data-fig="ops"],[data-fig="mcp"],[data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="telegram"],[data-fig="sound"],[data-fig="voice"]) .seg button{font-family:var(--ui);font-size:12px;color:#a3a495;background:#26271f;border:1px solid #3a3b33;padding:4px 10px;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.fv:is([data-fig="bridge"],[data-fig="ops"],[data-fig="mcp"],[data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="telegram"],[data-fig="sound"],[data-fig="voice"]) .seg button:hover{color:#f1f1e7}
+.fv:is([data-fig="bridge"],[data-fig="ops"],[data-fig="mcp"],[data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="telegram"],[data-fig="sound"],[data-fig="voice"]) .seg button.on{color:#f1f1e7;border-color:var(--c);background:#3a3b33}
+.fv:is([data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="voice"]) .ghost2{font-family:var(--ui);font-size:12px;color:#f1f1e7;background:#2b2c26;border:1px solid #8f8f84;padding:2px 10px;cursor:pointer}
+.fv:is([data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="voice"]) .ghost2:hover{border-color:var(--c)}
+.fv:is([data-fig="agents"],[data-fig="matrix"],[data-fig="phone"],[data-fig="voice"]) .ghost2:disabled{opacity:.45;cursor:default}
+.fv:is([data-fig="bridge"],[data-fig="ops"],[data-fig="mcp"],[data-fig="agents"],[data-fig="phone"],[data-fig="telegram"],[data-fig="voice"]) pre{margin:0;font-family:var(--mono);font-size:11px;line-height:1.55;color:#cfd0c4;background:#11120d;border:1px solid #2e2f28;padding:6px 10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.fv:is([data-fig="ops"],[data-fig="mcp"]) pre .ok,.fv[data-fig="mcp"] .ln .ok{color:var(--lime)}
+
+/* VIII·1 a chat: your sentence, the look-up, the calls, the notifications, the start card */
+.fv[data-fig="bridge"] .you{justify-self:end;max-width:85%;font-size:13px;color:#11120d;background:#e8e8dc;padding:6px 10px;border-radius:10px 10px 2px 10px}
+.fv[data-fig="bridge"] .tc{display:grid;gap:2px;font-family:var(--mono);font-size:11px;background:#11120d;border:1px solid #2e2f28;padding:6px 10px;min-width:0}
+.fv[data-fig="bridge"] .tc .cl{color:#f1f1e7;overflow-wrap:anywhere}
+.fv[data-fig="bridge"] .tc .rs{color:#a3a495;padding-left:12px;overflow-wrap:anywhere}
+.fv[data-fig="bridge"] .tc .rs b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="bridge"] .tc .rs.ok{color:var(--lime)}
+.fv[data-fig="bridge"] .tc .rs i{font-style:normal;color:var(--yellow)}
+.fv[data-fig="bridge"] .tc .lc{font-family:var(--ui);font-size:11.5px;color:#8f8f84;margin-top:2px}
+.fv[data-fig="bridge"] .nt{display:grid;gap:3px;justify-self:end}
+.fv[data-fig="bridge"] .nt p{font-size:12px;color:#d9d9ce;background:#26271f;border:1px solid #3a3b33;border-left:3px solid #3794ff;padding:4px 10px}
+.fv[data-fig="bridge"] .nt b{font-weight:600;color:#f1f1e7}
+.fv[data-fig="bridge"] .ag{font-size:13px;color:#e8e8dc;max-width:90%}
+.fv[data-fig="bridge"] .ag b{color:#f1f1e7}
+.fv[data-fig="bridge"] .sc{display:grid;gap:6px;border-top:1px solid #2e2f28;padding-top:8px}
+.fv[data-fig="bridge"] .sc pre{color:#e8e8dc;min-height:6.4em}
+.fv[data-fig="bridge"] .sc .how{font-size:12px;color:#a3a495}
+
+/* VIII·2 the catalog: buttons and their ops, the areas, the build's check, what is exempt, a look-up, effects */
+.fv[data-fig="ops"] .map{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.fv[data-fig="ops"] .map li{display:grid;grid-template-columns:auto minmax(0,1fr) 14px auto;gap:8px;align-items:center;font-size:12px}
+.fv[data-fig="ops"] .map .btn{font-size:11.5px;color:#f1f1e7;background:#2b2c26;border:1px solid #45463e;padding:2px 8px;white-space:nowrap}
+.fv[data-fig="ops"] .map em{font-style:normal;font-size:11px;color:#8f8f84}
+.fv[data-fig="ops"] .map i{font-style:normal;color:#8f8f84;text-align:center}
+.fv[data-fig="ops"] .areas{display:grid;gap:2px}
+.fv[data-fig="ops"] .areas p{display:grid;grid-template-columns:76px minmax(0,1fr) 24px;gap:8px;align-items:center;font-family:var(--mono);font-size:10.5px;color:#a3a495}
+.fv[data-fig="ops"] .areas i{height:6px;background:#8f8f84}
+.fv[data-fig="ops"] .areas b{font-weight:500;color:#e8e8dc;text-align:right}
+.fv[data-fig="ops"] .areas small{font-size:10.5px;color:#8f8f84}
+.fv[data-fig="ops"] .pt .bad{color:var(--pink)}
+.fv[data-fig="ops"] .ex .ch{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:5px}
+.fv[data-fig="ops"] .ex .ch span{font-family:var(--mono);font-size:10.5px;color:#d9d9ce;border:1px solid #45463e;padding:0 7px}
+.fv[data-fig="ops"] .ex ul{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="ops"] .ex li::before{font-family:var(--mono);margin-right:6px}
+.fv[data-fig="ops"] .ex li.y::before{content:"✓";color:var(--lime)}
+.fv[data-fig="ops"] .ex li.n::before{content:"✗";color:var(--pink)}
+.fv[data-fig="ops"] .fd{display:grid;gap:5px}
+.fv[data-fig="ops"] .fd .seg button{font-family:var(--mono);font-size:11px}
+.fv[data-fig="ops"] .fo{min-height:5.2em}
+.fv[data-fig="ops"] .fo.err{color:#f1c4d4}
+.fv[data-fig="ops"] .ef{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="ops"] .ef li{display:grid;grid-template-columns:118px 84px minmax(0,1fr);gap:8px;align-items:baseline;font-size:12px;background:#181914;padding:2px 8px}
+.fv[data-fig="ops"] .ef .e{font-family:var(--mono);font-size:10.5px;justify-self:start;padding:0 6px;border:1px solid}
+.fv[data-fig="ops"] .ef .read{color:#a3a495}.fv[data-fig="ops"] .ef .write{color:var(--cyan)}.fv[data-fig="ops"] .ef .run{color:var(--yellow)}.fv[data-fig="ops"] .ef .destructive{color:var(--pink)}
+.fv[data-fig="ops"] .ef em{font-style:normal;font-size:11.5px;color:#8f8f84}
+
+/* VIII·3 af.js: the line, the launcher, three files, arguments, the MCP server */
+.fv[data-fig="mcp"] .ln{color:#f1f1e7}
+.fv[data-fig="mcp"] .ln .p{color:#8f8f84}
+.fv[data-fig="mcp"] .lp{display:grid;gap:2px;font-size:12px}
+.fv[data-fig="mcp"] .lp p{display:grid;gap:1px}
+.fv[data-fig="mcp"] .lp code{overflow-wrap:anywhere}
+.fv[data-fig="mcp"] .lp span{font-size:11.5px;color:#8f8f84}
+.fv[data-fig="mcp"] .lp .ar2{font-family:var(--mono);font-size:10.5px;color:#8f8f84;padding-left:10px}
+.fv[data-fig="mcp"] .fl{list-style:none;margin:0 0 5px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.fv[data-fig="mcp"] .fl li{font-family:var(--mono);font-size:10.5px;text-align:center;color:#8f8f84;background:#181914;border:1px solid #2e2f28;border-top:2px solid #45463e;padding:6px 4px;overflow-wrap:anywhere;transition:color .3s,border-color .3s,opacity .3s}
+.fv[data-fig="mcp"] .fl li.on{color:#f1f1e7;border-top-color:var(--lime)}
+.fv[data-fig="mcp"] .fl li.gone{opacity:.4;text-decoration:line-through}
+.fv[data-fig="mcp"] .wd{display:flex;flex-wrap:wrap;gap:4px 12px;font-family:var(--mono);font-size:10.5px;color:#8f8f84;margin-bottom:4px}
+.fv[data-fig="mcp"] .wd .r{color:#e8e8dc}
+.fv[data-fig="mcp"] .wd .r::before{content:"● ";color:var(--lime)}
+.fv[data-fig="mcp"] .to{font-size:12px;color:#a3a495}
+.fv[data-fig="mcp"] .to b{color:#f1f1e7}
+.fv[data-fig="mcp"] .ag .c{color:#8f8f84}
+.fv[data-fig="mcp"] .kp pre{margin-bottom:5px}
+.fv[data-fig="mcp"] .kp .tl{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;font-size:12px;color:#8f8f84}
+
+/* VIII·4 an agent: the tree, DUTIES.md, a trigger from a duty, the Toolbox, a probe */
+.fv[data-fig="agents"] .tree{list-style:none;margin:0;padding:0 0 0 10px;border-left:1px solid #45463e;display:grid;gap:2px}
+.fv[data-fig="agents"] .tree li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;font-size:12.5px}
+.fv[data-fig="agents"] .tree b{font-weight:500;color:#e8e8dc}
+.fv[data-fig="agents"] .tree span{font-family:var(--mono);font-size:11px;color:#a3a495}
+.fv[data-fig="agents"] .tree .w{font-weight:500;color:#e8a33d}
+.fv[data-fig="agents"] .du .h{color:#f1f1e7}
+.fv[data-fig="agents"] .tr{font-size:12px;color:#cfd0c4;background:#181914;border:1px solid #2e2f28;border-left:3px solid var(--violet);padding:5px 10px}
+.fv[data-fig="agents"] .tr b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="agents"] .tb{display:grid;gap:5px}
+.fv[data-fig="agents"] .tt{list-style:none;margin:0;padding:0;display:grid;gap:2px;min-height:5.6em}
+.fv[data-fig="agents"] .tt li{display:grid;grid-template-columns:120px 80px minmax(0,1fr);gap:8px;align-items:baseline;font-size:12px;background:#181914;padding:2px 8px}
+.fv[data-fig="agents"] .tt li.ct{display:block;background:none;padding:0;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="agents"] .tt b{font-family:var(--mono);font-size:11px;font-weight:500;color:#f1f1e7}
+.fv[data-fig="agents"] .tt .s{font-family:var(--mono);font-size:10px;color:#8f8f84}
+.fv[data-fig="agents"] .tt em{font-style:normal;color:#a3a495;min-width:0}
+.fv[data-fig="agents"] .pb{background:#181914;border:1px solid #2e2f28;padding:6px 10px}
+.fv[data-fig="agents"] .ph{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-bottom:4px}
+.fv[data-fig="agents"] .ph b{font-family:var(--mono);font-size:12px;color:#f1f1e7}
+.fv[data-fig="agents"] .ph span{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="agents"] .ph button{margin-left:auto}
+.fv[data-fig="agents"] .pb .pt{list-style:none;margin:0;padding:0;display:grid;gap:1px;font-size:11.5px;color:#a3a495}
+.fv[data-fig="agents"] .pb .pt li{display:flex;gap:6px;flex-wrap:wrap}
+.fv[data-fig="agents"] .pb .pt .dim{color:#8f8f84;font-size:11px}
+
+/* VIII·5 the matrix */
+.fv[data-fig="matrix"] .sm{font-size:12px;color:#a3a495;min-height:2.9em}
+.fv[data-fig="matrix"] .sm b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="matrix"] .gw{overflow-x:auto}
+.fv[data-fig="matrix"] .g{border-collapse:collapse;width:100%;font-size:11.5px}
+.fv[data-fig="matrix"] .g th{font-family:var(--mono);font-size:10px;font-weight:400;color:#8f8f84;padding:3px 4px;text-align:center;white-space:nowrap}
+.fv[data-fig="matrix"] .g tbody th{text-align:left;color:#e8e8dc;font-size:10.5px}
+.fv[data-fig="matrix"] .g td{text-align:center;padding:3px 2px;border:1px solid #2e2f28;font-family:var(--mono);font-size:10.5px;height:24px}
+.fv[data-fig="matrix"] .g td.u{color:#11120d;background:color-mix(in srgb,var(--lime) calc(var(--a) * 100%),#1f201b);font-weight:600}
+.fv[data-fig="matrix"] .g td.r{outline:2px solid #e8a33d;outline-offset:-3px}
+.fv[data-fig="matrix"] .g td.i{color:#5f6056}
+.fv[data-fig="matrix"] .g td.x{color:#8f8f84}
+.fv[data-fig="matrix"] .g td.cad{color:#cfd0c4}
+.fv[data-fig="matrix"] .g td.t.ok{color:#11120d;background:var(--lime)}
+.fv[data-fig="matrix"] .g td.t.bad{color:#fff;background:var(--pink)}
+.fv[data-fig="matrix"] .g td.t.mix{color:#e8e8dc;outline:2px solid #e8a33d;outline-offset:-3px}
+.fv[data-fig="matrix"] .g .pl{font-size:12px;line-height:1;color:#8f8f84;background:none;border:0;cursor:pointer;padding:2px 6px}
+.fv[data-fig="matrix"] .g .pl:hover{color:#f1f1e7}
+.fv[data-fig="matrix"] .yd{color:var(--yellow);font-weight:400}
+.fv[data-fig="matrix"] .rg{color:#e8a33d}
+.fv[data-fig="matrix"] .pk{display:grid;gap:3px;font-size:12px;color:#cfd0c4;background:#26271f;border:1px solid #3a3b33;border-left:3px solid var(--c);padding:6px 10px}
+.fv[data-fig="matrix"] .pk[hidden]{display:none}
+.fv[data-fig="matrix"] .pk b{color:#f1f1e7}
+.fv[data-fig="matrix"] .pk label{display:flex;gap:6px;align-items:baseline}
+.fv[data-fig="matrix"] .lg{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:11px;color:#8f8f84}
+.fv[data-fig="matrix"] .lg .u{color:#11120d;background:var(--lime);padding:0 4px}
+
+/* VIII·6 the phone and the desk beside it */
+.fv[data-fig="phone"] .two{display:grid;grid-template-columns:200px minmax(0,1fr);gap:14px;align-items:start}
+.fv[data-fig="phone"] .ph{border:2px solid #45463e;border-radius:22px;padding:14px 8px;background:#0d0e0a}
+.fv[data-fig="phone"] .scr{display:grid;gap:6px;align-content:start;height:300px;overflow:hidden;background:#181914;border-radius:12px;padding:10px;font-size:11.5px;color:#cfd0c4}
+.fv[data-fig="phone"] .scr .st{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="phone"] .scr .big{font-size:14px;font-weight:600;color:#f1f1e7}
+.fv[data-fig="phone"] .scr .sm{font-size:11px;color:#a3a495}
+.fv[data-fig="phone"] .scr .cam{height:120px;border:2px dashed #5f6056;border-radius:8px}
+.fv[data-fig="phone"] .scr .bx{display:grid;gap:1px;background:#26271f;border-radius:6px;padding:6px 8px}
+.fv[data-fig="phone"] .scr .bx b{font-size:11.5px;color:#f1f1e7}
+.fv[data-fig="phone"] .scr .bx span{font-size:11px;color:#a3a495}
+.fv[data-fig="phone"] .scr .dimmed{opacity:.4}
+.fv[data-fig="phone"] .scr .dr{display:grid;gap:5px;margin-top:auto;background:#2b2c26;border-radius:10px 10px 0 0;padding:10px;animation:vb-up .4s both}
+.fv[data-fig="phone"] .scr .dr .q{font-size:12px;color:#f1f1e7}
+.fv[data-fig="phone"] .scr button{font-family:var(--ui);font-size:11.5px;color:#f1f1e7;background:#3a3b33;border:1px solid #5f6056;border-radius:6px;padding:5px 8px;cursor:pointer;text-align:left}
+.fv[data-fig="phone"] .scr button:first-of-type{border-color:var(--lime)}
+.fv[data-fig="phone"] .scr .wide{text-align:center;margin-top:auto}
+.fv[data-fig="phone"] .scr .aw{font-size:11px;color:#a3a495}
+.fv[data-fig="phone"] .scr .aw b{color:var(--lime)}
+@keyframes vb-up{from{transform:translateY(30px);opacity:0}}
+.fv[data-fig="phone"] .desk{display:grid;gap:10px;min-width:0}
+.fv[data-fig="phone"] .pr{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center}
+.fv[data-fig="phone"] .qr svg{display:block;width:100%;height:auto}
+.fv[data-fig="phone"] .qr.s{width:72px}
+.fv[data-fig="phone"] .pr p,.fv[data-fig="phone"] .wo p{display:grid;gap:1px;font-size:11.5px;color:#a3a495}
+.fv[data-fig="phone"] .pr p b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="phone"] .dv{list-style:none;margin:0;padding:0}
+.fv[data-fig="phone"] .dv li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-size:12px;background:#181914;padding:4px 8px;transition:opacity .3s}
+.fv[data-fig="phone"] .dv li b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="phone"] .dv li span{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="phone"] .dv li button{margin-left:auto}
+.fv[data-fig="phone"] .dv li.gone{opacity:.45}
+.fv[data-fig="phone"] .wb{display:grid;gap:6px}
+.fv[data-fig="phone"] .wo{display:flex;gap:10px;align-items:center;min-height:72px}
+.fv[data-fig="phone"] .wo code{overflow-wrap:anywhere}
+.fv[data-fig="phone"] .amb{font-size:12px;color:#f1e2b8;background:#3a3214;border:1px solid var(--claude);padding:6px 10px}
+
+/* VIII·7 Telegram: connect, cards with buttons, the gates, /new */
+.fv[data-fig="telegram"] .cn{font-size:12px;color:#a3a495}
+.fv[data-fig="telegram"] .cn b{color:var(--lime);font-weight:500}
+.fv[data-fig="telegram"] .cdc{display:grid;gap:4px;max-width:92%;background:#1c2733;border:1px solid #2b3a4a;border-radius:10px 10px 10px 2px;padding:8px 10px;font-size:12.5px;color:#e6edf3}
+.fv[data-fig="telegram"] .cdc .ch{font-family:var(--mono);font-size:10.5px;color:#8fb1d0}
+.fv[data-fig="telegram"] .cdc .wt{font-size:11.5px;color:#8fb1d0}
+.fv[data-fig="telegram"] .kb{display:flex;flex-wrap:wrap;gap:4px}
+.fv[data-fig="telegram"] .kb button,.fv[data-fig="telegram"] .tb button{font-family:var(--ui);font-size:12px;color:#e6edf3;background:#2b3a4a;border:0;border-radius:6px;padding:4px 10px;cursor:pointer}
+.fv[data-fig="telegram"] .kb button:hover,.fv[data-fig="telegram"] .tb button:hover{background:#3a4d61}
+.fv[data-fig="telegram"] .df{background:#0f171f;border-color:#2b3a4a;color:#cfe3f5}
+.fv[data-fig="telegram"] .df[hidden]{display:none}
+.fv[data-fig="telegram"] .an{font-size:11.5px;color:#8fb1d0;min-height:1.3em}
+.fv[data-fig="telegram"] .an b{color:var(--lime)}
+.fv[data-fig="telegram"] .gt{display:grid;gap:6px}
+.fv[data-fig="telegram"] .gs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.fv[data-fig="telegram"] .gs li{font-size:11px;text-align:center;color:#cfd0c4;background:#181914;border:1px solid #2e2f28;border-top:2px solid #45463e;padding:4px}
+.fv[data-fig="telegram"] .gs li.y{border-top-color:var(--lime)}
+.fv[data-fig="telegram"] .gs li.n{border-top-color:var(--pink);color:#f1c4d4}
+.fv[data-fig="telegram"] .go{font-size:12.5px;color:#cfd0c4;min-height:2.9em}
+.fv[data-fig="telegram"] .go b{color:#f1f1e7}
+.fv[data-fig="telegram"] .tb{display:inline-flex;gap:4px;margin-left:6px}
+.fv[data-fig="telegram"] .nw{display:grid;gap:4px}
+.fv[data-fig="telegram"] .nw .me{justify-self:end;font-family:var(--mono);font-size:11.5px;color:#11120d;background:#b9e3a0;border-radius:10px 10px 2px 10px;padding:5px 10px;overflow-wrap:anywhere}
+.fv[data-fig="telegram"] .nw .bt{max-width:92%;font-size:12px;color:#e6edf3;background:#1c2733;border-radius:10px 10px 10px 2px;padding:6px 10px}
+.fv[data-fig="telegram"] .nw .bt b{color:#fff}
+
+/* VIII·8 sound: events and tones, the chain, the queue, quiet, the second ring */
+.fv[data-fig="sound"] .ev{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="sound"] .ev li{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:12.5px;background:#181914;padding:3px 8px;border-left:2px solid transparent}
+.fv[data-fig="sound"] .ev .e{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="sound"] .ev b{font-weight:500;color:#e8e8dc}
+.fv[data-fig="sound"] .ev button{font-size:10px;color:#f1f1e7;background:#2b2c26;border:1px solid #45463e;padding:2px 7px;cursor:pointer}
+.fv[data-fig="sound"] .ev li.hit{animation:vb-hit 1s}
+@keyframes vb-hit{20%{border-left-color:var(--lime);background:#22300f}}
+.fv[data-fig="sound"] .ch{display:grid;gap:5px}
+.fv[data-fig="sound"] .ch ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.fv[data-fig="sound"] .ch li{display:grid;gap:1px;background:#181914;border:1px solid #2e2f28;padding:4px 7px;font-size:11px;color:#8f8f84;transition:border-color .3s}
+.fv[data-fig="sound"] .ch li b{font-size:12px;font-weight:500;color:#cfd0c4}
+.fv[data-fig="sound"] .ch li.win{border-color:var(--lime)}
+.fv[data-fig="sound"] .ch li.win b{color:var(--lime)}
+.fv[data-fig="sound"] .fn{font-size:12px;color:#a3a495}
+.fv[data-fig="sound"] .fn b{color:#e8e8dc;font-weight:500}
+.fv[data-fig="sound"] .qu{list-style:none;margin:0 0 4px;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+.fv[data-fig="sound"] .qu li{display:grid;gap:1px;background:#181914;border:1px solid #2e2f28;border-top:2px solid #45463e;padding:4px 5px;font-size:10.5px;color:#8f8f84;opacity:.45;transition:opacity .3s,border-color .3s}
+.fv[data-fig="sound"] .qu li b{font-family:var(--mono);font-size:10px;font-weight:500;color:#e8e8dc}
+.fv[data-fig="sound"] .qu li.on{opacity:1;border-top-color:var(--lime)}
+.fv[data-fig="sound"] .qn{font-size:12px;color:#a3a495}
+.fv[data-fig="sound"] .qn b{color:var(--pink);font-weight:500}
+.fv[data-fig="sound"] .qt{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 8px;font-size:12px;color:#8f8f84}
+.fv[data-fig="sound"] .qt b{font-weight:500;color:#e8e8dc}
+.fv[data-fig="sound"] .qt .mute{font-size:13px;background:#007acc;border:0;color:#fff;padding:1px 8px;cursor:pointer}
+.fv[data-fig="sound"] .ng{font-size:12.5px;color:#cfd0c4;background:#181914;border:1px solid #2e2f28;padding:5px 10px}
+.fv[data-fig="sound"] .ng b{font-family:var(--mono);font-size:11.5px;color:#f1f1e7;border:1px solid #45463e;padding:0 5px}
+.fv[data-fig="sound"] .ng em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--yellow);margin-left:4px}
+
+/* VIII·9 read aloud */
+.fv[data-fig="voice"] .an{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13px}
+.fv[data-fig="voice"] .an .tn{font-family:var(--mono);font-size:11px;color:#f1f1e7;border:1px solid #45463e;padding:1px 7px}
+.fv[data-fig="voice"] .an .ar3{font-size:11px;color:#8f8f84}
+.fv[data-fig="voice"] .an q{color:#e8e8dc;font-style:italic}
+.fv[data-fig="voice"] .off{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="voice"] .rs{display:grid;gap:3px;background:#181914;border:1px solid #2e2f28;padding:6px 10px}
+.fv[data-fig="voice"] .mn{font-size:11.5px;color:#8f8f84}
+.fv[data-fig="voice"] .mn b{color:#e8e8dc;font-weight:500}
+.fv[data-fig="voice"] .rd{font-size:12.5px;color:#cfd0c4}
+.fv[data-fig="voice"] .rd .w1{background:color-mix(in srgb,var(--lime) 18%,transparent)}
+.fv[data-fig="voice"] .rd .cut{color:#5f6056;text-decoration:line-through}
+.fv[data-fig="voice"] .nw{font-size:11.5px;color:#a3a495}
+.fv[data-fig="voice"] .lg{display:grid;gap:6px}
+.fv[data-fig="voice"] .lg .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.fv[data-fig="voice"] .rd2{display:grid;gap:4px;align-content:start;font-size:12.5px;color:#e8e8dc;background:#181914;border:1px solid #2e2f28;padding:6px 10px}
+.fv[data-fig="voice"] .rd2 b{font-family:var(--mono);font-size:10.5px;font-weight:400;color:#8f8f84}
+.fv[data-fig="voice"] .rd2 button{justify-self:start}
+.fv[data-fig="voice"] .vo{font-size:12px;color:#a3a495}
+.fv[data-fig="voice"] .vo b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="voice"] .sel{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:12.5px;color:#a3a495}
+.fv[data-fig="voice"] .sel mark{color:#f1f1e7;background:#264f78;padding:0 2px}
+.fv[data-fig="voice"] .br{display:grid;gap:2px;font-size:12px;color:#a3a495}
+.fv[data-fig="voice"] .br b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="voice"] .br .o{color:#e8e8dc}
+.fv[data-fig="voice"] .br code{overflow-wrap:anywhere}
+
+/* VIII·10 a pack: in, out, the import, a gallery, the other engines */
+.fv[data-fig="move"] .kit{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 12px;font-size:12px;color:#e8e8dc}
+.fv[data-fig="move"] .kit li::before{content:"✓ ";color:var(--lime);font-family:var(--mono)}
+.fv[data-fig="move"] .out{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="move"] .out li{background:#1d1418;border-left:2px solid var(--pink);padding:3px 8px}
+.fv[data-fig="move"] .out li.kp{background:#181914;border-left-color:var(--lime)}
+.fv[data-fig="move"] .out b{font-family:var(--mono);font-size:11px;font-weight:500;color:#f1f1e7;margin-right:6px}
+.fv[data-fig="move"] .im ul{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:12px;color:#e8e8dc}
+.fv[data-fig="move"] .im li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;background:#181914;padding:3px 8px}
+.fv[data-fig="move"] .im em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="move"] .im .sw span::before{content:"⚡ "}
+.fv[data-fig="move"] .im .tg{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:#a3a495;background:#26271f;border:1px solid #45463e;padding:1px 9px;cursor:pointer}
+.fv[data-fig="move"] .im .tg[aria-pressed="true"]{color:#11120d;background:var(--lime);border-color:var(--lime)}
+.fv[data-fig="move"] .im .sm{font-size:11.5px;color:#a3a495;margin-top:4px}
+.fv[data-fig="move"] .gl .src{display:flex;flex-wrap:wrap;gap:3px 12px;margin-bottom:4px}
+.fv[data-fig="move"] .gl .src code{overflow-wrap:anywhere}
+.fv[data-fig="move"] .gl ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
+.fv[data-fig="move"] .gl li{display:grid;font-size:12px;background:#181914;border:1px solid #2e2f28;padding:4px 10px}
+.fv[data-fig="move"] .gl li b{font-family:var(--mono);font-size:11px;font-weight:500;color:#f1f1e7}
+.fv[data-fig="move"] .gl li span{font-size:11px;color:#8f8f84}
+.fv[data-fig="move"] .en{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:12px}
+.fv[data-fig="move"] .en i{font-style:normal;font-size:11.5px;color:#a3a495}
+.fv[data-fig="move"] .en span{flex-basis:100%;font-size:11.5px;color:#8f8f84}
+
+@media (max-width:620px){
+  .fv[data-fig="ops"] .map li{grid-template-columns:auto 14px minmax(0,1fr)}
+  .fv[data-fig="ops"] .map em{display:none}
+  .fv[data-fig="ops"] .ef li{grid-template-columns:minmax(0,1fr) auto}
+  .fv[data-fig="ops"] .ef em{grid-column:1/-1}
+  .fv[data-fig="mcp"] .fl{grid-template-columns:1fr}
+  .fv[data-fig="agents"] .tt li{grid-template-columns:minmax(0,1fr) auto}
+  .fv[data-fig="agents"] .tt em{grid-column:1/-1}
+  .fv[data-fig="phone"] .two{grid-template-columns:1fr}
+  .fv[data-fig="phone"] .ph{max-width:220px;justify-self:center;width:100%}
+  .fv[data-fig="telegram"] .gs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fv[data-fig="sound"] .ch ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fv[data-fig="sound"] .qu{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fv[data-fig="voice"] .lg .two{grid-template-columns:1fr}
+  .fv[data-fig="move"] .kit{grid-template-columns:1fr}
+  .fv[data-fig="matrix"] .g thead th{writing-mode:vertical-rl;transform:rotate(180deg);height:64px;padding:2px 0;vertical-align:bottom}
+  .fv[data-fig="matrix"] .g thead th:first-child{writing-mode:horizontal-tb;transform:none}
+  .fv[data-fig="matrix"] .g tbody th{white-space:normal;max-width:96px;font-size:10px}
+  .fv[data-fig="matrix"] .g td{font-size:9.5px;padding:2px 1px}
+}
+@media (prefers-reduced-motion:reduce){.fv[data-fig="phone"] .scr .dr,.fv[data-fig="sound"] .ev li.hit{animation:none}}

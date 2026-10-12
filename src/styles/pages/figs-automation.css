@@ -1,0 +1,297 @@
+/* District IV, Recipes and triggers: its figures (scripts/figs/automation.js), beside its features. Every rule is scoped by
+   its figure; the shared parts (.hd, .msg, .bar, .sl, .slo, .lb) are figs.css's. The district's colour is --c, a violet
+   too dark for small text, so text takes --cl, the same violet lifted. */
+.fv:is([data-fig="flows"],[data-fig="schedules"],[data-fig="triggers"],[data-fig="gatekeeper"],[data-fig="words"],[data-fig="queue"],[data-fig="record"],[data-fig="retries"],[data-fig="mainswitch"],[data-fig="forecast"]){--cl:color-mix(in srgb,var(--c) 55%,#f1f1e7);--ok:var(--lime);--warn:var(--yellow);--bad:var(--pink)}
+/* shared by this district's figures */
+.fv:is([data-fig="schedules"],[data-fig="triggers"],[data-fig="gatekeeper"],[data-fig="words"],[data-fig="queue"],[data-fig="retries"]) .seg{display:inline-flex;flex-wrap:wrap;gap:4px;justify-self:start}
+.fv:is([data-fig="schedules"],[data-fig="triggers"],[data-fig="gatekeeper"],[data-fig="words"],[data-fig="queue"],[data-fig="retries"]) .seg button{font-family:var(--ui);font-size:12px;color:#a3a495;background:#26271f;border:1px solid #3a3b33;padding:4px 10px;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.fv:is([data-fig="schedules"],[data-fig="triggers"],[data-fig="gatekeeper"],[data-fig="words"],[data-fig="queue"],[data-fig="retries"]) .seg button:hover{color:#f1f1e7}
+.fv:is([data-fig="schedules"],[data-fig="triggers"],[data-fig="gatekeeper"],[data-fig="words"],[data-fig="queue"],[data-fig="retries"]) .seg button.on{color:#f1f1e7;border-color:var(--cl);background:color-mix(in srgb,var(--c) 22%,#26271f)}
+.fv:is([data-fig="triggers"],[data-fig="words"],[data-fig="mainswitch"]) .ghost2{font-family:var(--ui);font-size:12px;color:#f1f1e7;background:#2b2c26;border:1px solid var(--cl);padding:3px 10px;cursor:pointer}
+.fv:is([data-fig="triggers"],[data-fig="words"],[data-fig="mainswitch"]) .ghost2:disabled{opacity:.4;cursor:default;border-color:#45463e}
+.fv:is([data-fig="flows"],[data-fig="schedules"],[data-fig="triggers"],[data-fig="words"],[data-fig="mainswitch"]) pre{margin:0;font-family:var(--mono);font-size:11px;line-height:1.55;color:#cfd0c4;background:#11120d;border:1px solid #2e2f28;padding:6px 10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.fv:is([data-fig="flows"],[data-fig="schedules"],[data-fig="triggers"],[data-fig="gatekeeper"],[data-fig="words"],[data-fig="queue"],[data-fig="record"],[data-fig="retries"],[data-fig="mainswitch"],[data-fig="forecast"]) .lb{margin:0 0 4px}
+
+/* IV·1 a workflow: the chain, the handoff, a branch and a judge, the approval, a step for each shot */
+.fv[data-fig="flows"] .ch{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="flows"] .ch li{display:grid;grid-template-columns:18px minmax(0,1fr) 72px minmax(0,1.1fr);gap:8px;align-items:baseline;font-size:12.5px;padding:3px 8px;border-left:2px solid #3a3b33;background:#181914;transition:background .3s,border-color .3s}
+.fv[data-fig="flows"] .ch .n{font-family:var(--mono);font-size:10.5px;color:#8f8f84;text-align:right}
+.fv[data-fig="flows"] .ch b{font-weight:500;color:#e8e8dc;min-width:0}
+.fv[data-fig="flows"] .ch .k{font-size:10.5px;justify-self:start;padding:0 6px;border:1px solid #45463e}
+.fv[data-fig="flows"] .ch .k.agent{color:var(--cl);border-color:color-mix(in srgb,var(--c) 60%,#2e2f28)}
+.fv[data-fig="flows"] .ch .k.media{color:var(--agy)}.fv[data-fig="flows"] .ch .k.tool{color:var(--teal)}.fv[data-fig="flows"] .ch .k.approval{color:var(--yellow)}
+.fv[data-fig="flows"] .ch em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:#8f8f84;min-width:0;overflow-wrap:anywhere}
+.fv[data-fig="flows"] .ch li.hi{border-left-color:var(--cl);background:color-mix(in srgb,var(--c) 14%,#181914)}
+.fv[data-fig="flows"] .ho pre{color:#e8e8dc;margin-bottom:5px}
+.fv[data-fig="flows"] .ho dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;margin:0;font-size:12px}
+.fv[data-fig="flows"] .ho dt{font-family:var(--mono);font-size:11px;color:var(--cl)}
+.fv[data-fig="flows"] .ho dd{margin:0;color:#cfd0c4;min-width:0}
+.fv[data-fig="flows"] .br{display:grid;gap:3px;font-size:12px;color:#cfd0c4;background:#181914;border:1px solid #2e2f28;padding:7px 10px}
+.fv[data-fig="flows"] .br code{color:var(--cl)}
+.fv[data-fig="flows"] .br .cap{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="flows"] .br .cap b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="flows"] .ap{display:grid;gap:5px;background:#26271f;border:1px solid #3a3b33;border-left:3px solid var(--yellow);padding:7px 10px;font-size:12.5px}
+.fv[data-fig="flows"] .ah{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.fv[data-fig="flows"] .ah b{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--yellow)}
+.fv[data-fig="flows"] .ah span{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="flows"] .yn{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.fv[data-fig="flows"] .yn button{font-family:var(--ui);font-size:12px;color:#f1f1e7;background:#2b2c26;border:1px solid #45463e;padding:3px 12px;cursor:pointer}
+.fv[data-fig="flows"] .yn button:first-child{border-color:var(--lime)}
+.fv[data-fig="flows"] .yn button:hover{background:#3a3b33}
+.fv[data-fig="flows"] .yn span{flex-basis:100%;font-size:12px;color:#cfd0c4;min-height:1.4em}
+.fv[data-fig="flows"] .shots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+.fv[data-fig="flows"] .shots span{font-family:var(--mono);font-size:10.5px;text-align:center;color:#8f8f84;background:#181914;border:1px solid #2e2f28;border-top:2px solid #45463e;padding:5px 2px;transition:border-color .3s,color .3s}
+.fv[data-fig="flows"] .shots span.run{border-top-color:var(--claude);color:#f1e2b8;animation:au-pulse 1s ease-in-out infinite}
+.fv[data-fig="flows"] .shots span.ok{border-top-color:var(--lime);color:#e3f7c2}
+.fv[data-fig="flows"] .fm{margin-top:5px;font-family:var(--mono);font-size:10.5px;color:#8f8f84;transition:color .3s}
+.fv[data-fig="flows"] .fm.ok{color:var(--lime)}
+@keyframes au-pulse{50%{opacity:.5}}
+
+/* IV·2 schedules: the rows, a missed run, the service's night, quiet hours, other ways in */
+.fv[data-fig="schedules"] .sr{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="schedules"] .sr li{display:grid;grid-template-columns:minmax(0,1.2fr) 78px minmax(0,1fr);gap:1px 10px;align-items:baseline;font-size:12.5px;background:#181914;padding:4px 8px}
+.fv[data-fig="schedules"] .sr b{font-weight:500;color:#e8e8dc}
+.fv[data-fig="schedules"] .sr .a{font-family:var(--mono);font-size:10.5px;color:var(--cl)}
+.fv[data-fig="schedules"] .sr .w{font-family:var(--mono);font-size:10.5px;color:#cfd0c4}
+.fv[data-fig="schedules"] .sr em{grid-column:1/-1;font-style:normal;font-family:var(--mono);font-size:10px;color:#8f8f84}
+.fv[data-fig="schedules"] .sr .df{grid-column:1/-1;justify-self:start;font-style:normal;font-family:var(--mono);font-size:10px;color:#1f201b;background:var(--yellow);padding:0 6px}
+.fv[data-fig="schedules"] .ms{display:grid;gap:6px}
+.fv[data-fig="schedules"] .mo{font-size:12.5px;color:#cfd0c4;min-height:2.9em}
+.fv[data-fig="schedules"] .mo b{color:#f1f1e7}
+.fv[data-fig="schedules"] .toast{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:#e8e8dc;background:#26271f;border:1px solid #3a3b33;border-left:3px solid var(--cl);padding:5px 8px;margin-bottom:4px}
+.fv[data-fig="schedules"] .toast button{font-family:var(--ui);font-size:11.5px;color:#f1f1e7;background:#2b2c26;border:1px solid #45463e;padding:1px 8px;cursor:default}
+.fv[data-fig="schedules"] .hl ol{list-style:none;margin:0 0 5px;padding:0 0 0 10px;border-left:1px solid #45463e;display:grid;gap:3px}
+.fv[data-fig="schedules"] .hl li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:8px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="schedules"] .hl li span{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="schedules"] .hl b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="schedules"] .ow{display:grid;gap:4px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="schedules"] .ow .who{font-family:var(--mono);font-size:10.5px;color:var(--cl)}
+.fv[data-fig="schedules"] .ow em{font-style:normal;color:#8f8f84}
+
+/* IV·3 triggers: three cards, what a firing does, the guards, the scorecard */
+.fv[data-fig="triggers"] .tc{display:grid;gap:5px;background:#181914;border:1px solid #2e2f28;padding:7px 10px}
+.fv[data-fig="triggers"] .th{display:flex;flex-wrap:wrap;gap:3px 8px;align-items:baseline;font-size:12.5px}
+.fv[data-fig="triggers"] .th b{font-weight:500;color:#e8e8dc}
+.fv[data-fig="triggers"] .th code{font-size:10.5px;color:var(--cl);border:1px solid color-mix(in srgb,var(--c) 60%,#2e2f28);padding:0 6px}
+.fv[data-fig="triggers"] .th span{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="triggers"] .drp{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:12px;color:#a3a495}
+.fv[data-fig="triggers"] .drp b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="triggers"] .hk{display:flex;flex-wrap:wrap;gap:4px}
+.fv[data-fig="triggers"] .hk span{font-family:var(--mono);font-size:10.5px;color:#8f8f84;border:1px solid #3a3b33;padding:1px 7px}
+.fv[data-fig="triggers"] .hk span.on{color:#f1f1e7;border-color:var(--cl);background:color-mix(in srgb,var(--c) 22%,transparent)}
+.fv[data-fig="triggers"] .pl{font-size:12px;color:#a3a495}
+.fv[data-fig="triggers"] .pl b{color:var(--pink);font-family:var(--mono);font-weight:500}
+.fv[data-fig="triggers"] .ac{display:grid;gap:6px}
+.fv[data-fig="triggers"] .ao{font-size:12.5px;color:#cfd0c4;min-height:2.9em}
+.fv[data-fig="triggers"] .ao b{color:#f1f1e7}
+.fv[data-fig="triggers"] .gd{display:grid;gap:6px}
+.fv[data-fig="triggers"] .gl{display:flex;flex-wrap:wrap;gap:4px}
+.fv[data-fig="triggers"] .gl span{font-family:var(--mono);font-size:10.5px;color:#e8e8dc;background:#26271f;border:1px solid #45463e;padding:1px 7px}
+.fv[data-fig="triggers"] .sc code{color:var(--lime)}
+.fv[data-fig="triggers"] .gd .sl{margin-top:2px}
+
+/* IV·4 Gatekeeper: a firing, two stages, a verdict, the modes, the four places, how it steps aside */
+.fv[data-fig="gatekeeper"] .fire button{font-family:var(--mono);font-size:11px}
+.fv[data-fig="gatekeeper"] .fe{font-size:12px;color:#a3a495}
+.fv[data-fig="gatekeeper"] .pp{display:grid;gap:4px;padding-left:10px;border-left:2px solid #45463e}
+.fv[data-fig="gatekeeper"] .stg{background:#181914;border:1px solid #2e2f28;padding:6px 10px}
+.fv[data-fig="gatekeeper"] .sn{font-size:12.5px;font-weight:500;color:#e8e8dc;margin-bottom:3px}
+.fv[data-fig="gatekeeper"] .sn em{font-style:normal;font-weight:400;font-family:var(--mono);font-size:10.5px;color:#8f8f84;margin-left:6px}
+.fv[data-fig="gatekeeper"] .hc{display:flex;flex-wrap:wrap;gap:3px 14px}
+.fv[data-fig="gatekeeper"] :is(.hc,.jv){font-family:var(--mono);font-size:11px;color:#cfd0c4}
+.fv[data-fig="gatekeeper"] .y{color:var(--lime)}.fv[data-fig="gatekeeper"] .n{color:var(--pink)}
+.fv[data-fig="gatekeeper"] .jv .dim{color:#8f8f84}
+.fv[data-fig="gatekeeper"] .jv b{font-weight:600}
+.fv[data-fig="gatekeeper"] .vd{font-size:12.5px;color:#cfd0c4;padding:4px 0 0}
+.fv[data-fig="gatekeeper"] .vd.go b{color:var(--lime)}.fv[data-fig="gatekeeper"] .vd.stop b{color:var(--pink)}
+.fv[data-fig="gatekeeper"] .md{display:grid;gap:6px}
+.fv[data-fig="gatekeeper"] .mo{font-size:12.5px;color:#cfd0c4;min-height:2.9em}
+.fv[data-fig="gatekeeper"] .mo b{color:#f1f1e7}
+.fv[data-fig="gatekeeper"] .cs{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="gatekeeper"] .cs li{display:grid;grid-template-columns:128px minmax(0,1fr) auto;gap:8px;align-items:baseline;font-size:12px;color:#cfd0c4;background:#181914;padding:3px 8px}
+.fv[data-fig="gatekeeper"] .cs code{color:var(--cl)}
+.fv[data-fig="gatekeeper"] .cs em{font-style:normal;font-family:var(--mono);font-size:10px;color:#8f8f84;border:1px solid #45463e;padding:0 6px}
+.fv[data-fig="gatekeeper"] .fb{margin:0;padding-left:16px;display:grid;gap:3px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="gatekeeper"] .fb b{color:#f1f1e7}
+
+/* IV·5 the command bar: a sentence, the plan, the checks, plain words, the Dispatcher */
+.fv[data-fig="words"] .cb{display:flex;gap:8px;align-items:baseline;font-size:13px;color:#f1f1e7;background:#11120d;border:1px solid var(--cl);padding:6px 10px}
+.fv[data-fig="words"] .cb q{quotes:none;min-width:0;overflow-wrap:anywhere}
+.fv[data-fig="words"] .po pre{color:#e8a0a0}
+.fv[data-fig="words"] .kd{font-family:var(--mono);font-size:11px;color:var(--cl);margin-bottom:3px}
+.fv[data-fig="words"] .po dl{display:grid;grid-template-columns:70px minmax(0,1fr);gap:2px 10px;margin:0;font-size:12.5px;background:#181914;border:1px solid #2e2f28;padding:6px 10px}
+.fv[data-fig="words"] .po dt{font-family:var(--mono);font-size:10.5px;color:#8f8f84;padding-top:2px}
+.fv[data-fig="words"] .po dd{margin:0;color:#e8e8dc;min-width:0}
+.fv[data-fig="words"] .ck{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="words"] .ck li::before{margin-right:6px;font-family:var(--mono)}
+.fv[data-fig="words"] .ck li.y::before{content:"✓";color:var(--lime)}
+.fv[data-fig="words"] .ck li.n{color:#f1d0dc}
+.fv[data-fig="words"] .ck li.n::before{content:"✗";color:var(--pink)}
+.fv[data-fig="words"] .pv{display:grid;gap:6px;background:#26271f;border:1px solid #3a3b33;border-left:3px solid var(--cl);padding:7px 10px}
+.fv[data-fig="words"] .ps{font-size:12.5px;color:#f1f1e7}
+.fv[data-fig="words"] .yn{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.fv[data-fig="words"] .yn span{flex-basis:100%;font-size:12px;color:#a3a495;min-height:1.4em}
+.fv[data-fig="words"] .dsp{display:grid;gap:3px}
+.fv[data-fig="words"] .dsp p:not(.lb){display:grid;gap:1px;font-size:12px;color:#cfd0c4;background:#181914;padding:4px 8px}
+.fv[data-fig="words"] .dsp q{color:#e8e8dc}
+.fv[data-fig="words"] .dsp b{color:var(--cl)}
+
+/* IV·6 the queue: the slots, the waiting runs, priority, one agent's list, the checks before a start */
+.fv[data-fig="queue"] .slots{display:flex;flex-wrap:wrap;align-items:center;gap:5px;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="queue"] .slots span:not(:first-child){margin-left:10px}
+.fv[data-fig="queue"] .slots i{width:16px;height:12px;border:1px solid #5f6056;transition:background .3s}
+.fv[data-fig="queue"] .slots i.f{background:var(--cl);border-color:var(--cl)}
+.fv[data-fig="queue"] .slots em{font-style:normal;color:#e8e8dc}
+.fv[data-fig="queue"] .slots small{margin-left:auto;color:#cfd0c4}
+.fv[data-fig="queue"] .ql{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="queue"] .ql li{display:grid;grid-template-columns:24px 70px minmax(0,1fr) auto;gap:2px 8px;align-items:baseline;font-size:12.5px;background:#181914;padding:4px 8px;border-left:2px solid transparent;transition:border-color .3s,background .3s}
+.fv[data-fig="queue"] .ql .pr{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="queue"] .ql b{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--cl)}
+.fv[data-fig="queue"] .ql .t{color:#e8e8dc;min-width:0}
+.fv[data-fig="queue"] .ql .nx2{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--yellow)}
+.fv[data-fig="queue"] .ql .st{grid-column:2/4;font-style:normal;font-family:var(--mono);font-size:10px;color:#8f8f84}
+.fv[data-fig="queue"] .ql li.run .st{color:var(--lime)}
+.fv[data-fig="queue"] .ql button{grid-column:4;grid-row:1/3;align-self:center;font-family:var(--ui);font-size:11px;color:#f1f1e7;background:#2b2c26;border:1px solid #45463e;padding:2px 8px;cursor:pointer}
+.fv[data-fig="queue"] .ql button:hover{border-color:var(--cl)}
+.fv[data-fig="queue"] .ql.dfs li.df{border-left-color:var(--yellow);background:#22221a}
+.fv[data-fig="queue"] .ql.dfs li.df .st{color:var(--yellow)}
+.fv[data-fig="queue"] .ag{font-size:12px;color:#a3a495}
+.fv[data-fig="queue"] .ag b{color:#e8e8dc;font-weight:500}
+.fv[data-fig="queue"] .aq{display:grid;gap:5px}
+.fv[data-fig="queue"] .aq ol{margin:0;padding-left:20px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="queue"] .avo{font-size:12px;color:#cfd0c4}
+.fv[data-fig="queue"] .avo b{color:#f1f1e7}
+.fv[data-fig="queue"] .cg{display:grid;gap:4px}
+
+/* IV·7 a record of every run: the runs, the output file, a bad exit, the price, templates, the monthly history */
+.fv[data-fig="record"] .two2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:10px;align-items:start}
+.fv[data-fig="record"] .rl{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="record"] .rl li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 8px;font-size:12.5px;background:#181914;padding:5px 8px;border-left:2px solid #3a3b33;cursor:pointer;transition:background .25s,border-color .25s}
+.fv[data-fig="record"] .rl li:hover,.fv[data-fig="record"] .rl li:focus-visible{background:#20211a;outline:none}
+.fv[data-fig="record"] .rl li.sel{background:#24251d;border-left-color:var(--cl)}
+.fv[data-fig="record"] .rl b{font-weight:500;color:#e8e8dc;min-width:0}
+.fv[data-fig="record"] .rl span{font-family:var(--mono);font-size:10.5px;color:var(--cl)}
+.fv[data-fig="record"] .rl em{grid-column:1/-1;font-style:normal;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="record"] .rl li.run em{color:var(--lime)}
+.fv[data-fig="record"] .rl li.fail em{color:var(--pink)}
+.fv[data-fig="record"] .rl li.q em{color:var(--yellow)}
+.fv[data-fig="record"] .rl.px li.done em{color:#f1f1e7}
+.fv[data-fig="record"] .op{margin:0;min-height:150px;font-family:var(--mono);font-size:11px;line-height:1.55;color:#cfd0c4;background:#11120d;border:1px solid #2e2f28;padding:7px 10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.fv[data-fig="record"] .op b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="record"] .op i{font-style:normal;color:#8f8f84}
+.fv[data-fig="record"] .op i.ok{color:var(--lime)}.fv[data-fig="record"] .op i.bd{color:var(--pink)}
+.fv[data-fig="record"] .op i.cur{color:var(--yellow);animation:recBlink 1.1s steps(2) infinite}
+@keyframes recBlink{50%{opacity:.35}}
+.fv[data-fig="record"] .tpl{display:grid;gap:2px}
+.fv[data-fig="record"] .tr{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto 28px;gap:8px;align-items:center;font-size:12.5px;background:#181914;padding:3px 4px 3px 8px}
+.fv[data-fig="record"] .tr b{font-weight:500;color:#e8e8dc}
+.fv[data-fig="record"] .tr span{font-family:var(--mono);font-size:10.5px;color:var(--cl)}
+.fv[data-fig="record"] .tr button,.fv[data-fig="record"] .ask button,.fv[data-fig="record"] .ghost3{font-family:var(--ui);font-size:11.5px;color:#f1f1e7;background:#2b2c26;border:1px solid #45463e;padding:2px 8px;cursor:pointer}
+.fv[data-fig="record"] .tr button:hover,.fv[data-fig="record"] .ask button:hover,.fv[data-fig="record"] .ghost3:hover{border-color:var(--cl)}
+.fv[data-fig="record"] .ask{margin:2px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:5px;font-size:12px;color:#e8e8dc}
+.fv[data-fig="record"] .ask[hidden]{display:none}
+.fv[data-fig="record"] .hi{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.fv[data-fig="record"] .hf{font-family:var(--mono);font-size:10.5px;color:#a3a495}
+.fv[data-fig="record"] .hf b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="record"] .gg{margin:0;flex-basis:100%;display:grid;grid-template-columns:auto minmax(60px,140px) minmax(0,1fr);gap:8px;align-items:center;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="record"] .gg .bar{height:6px;--ac:var(--cl)}
+
+/* IV·8 retries: the night, its marks, three ways, rounds */
+.fv[data-fig="retries"] .rn{font-size:12.5px;color:#cfd0c4}
+.fv[data-fig="retries"] .nt{position:relative;height:72px;margin:4px 8px 0;border-top:1px solid #45463e}
+.fv[data-fig="retries"] .ax span{position:absolute;top:4px;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:#8f8f84}
+.fv[data-fig="retries"] .nt>u{position:absolute;top:-6px;bottom:0;width:2px;text-decoration:none}
+.fv[data-fig="retries"] .nt>u em{position:absolute;bottom:2px;left:5px;font-style:normal;font-family:var(--mono);font-size:10px;white-space:nowrap}
+.fv[data-fig="retries"] .wl{background:var(--pink)}.fv[data-fig="retries"] .wl em{color:var(--pink)}
+.fv[data-fig="retries"] .rs{background:var(--lime)}.fv[data-fig="retries"] .rs em{color:var(--lime)}
+.fv[data-fig="retries"] .mk i{position:absolute;top:22px;transform:translateX(-50%);font-style:normal;font-family:var(--mono);font-size:12px;line-height:1;animation:au-in .4s both}
+.fv[data-fig="retries"] .mk i.n{color:var(--pink)}.fv[data-fig="retries"] .mk i.y{color:var(--lime)}
+.fv[data-fig="retries"] .mk small{position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:9.5px;color:var(--lime)}
+.fv[data-fig="retries"] .mk i:nth-child(2){animation-delay:.1s}.fv[data-fig="retries"] .mk i:nth-child(3){animation-delay:.2s}.fv[data-fig="retries"] .mk i:nth-child(4){animation-delay:.3s}.fv[data-fig="retries"] .mk i:nth-child(5){animation-delay:.4s}.fv[data-fig="retries"] .mk i:nth-child(6){animation-delay:.5s}.fv[data-fig="retries"] .mk i:nth-child(7){animation-delay:.6s}
+@keyframes au-in{from{opacity:0;transform:translate(-50%,-4px)}}
+.fv[data-fig="retries"] .w3{display:grid;gap:6px}
+.fv[data-fig="retries"] .wo{font-size:12.5px;color:#cfd0c4;min-height:2.9em}
+.fv[data-fig="retries"] .wo b{color:#f1f1e7}
+.fv[data-fig="retries"] .rr{list-style:none;margin:0 0 5px;padding:0;display:flex;flex-wrap:wrap;gap:4px;align-items:stretch}
+.fv[data-fig="retries"] .rr li{flex:1 1 90px;display:grid;gap:1px;background:#181914;border:1px solid #2e2f28;border-top:2px solid #45463e;padding:4px 7px;font-size:11.5px;color:#cfd0c4}
+.fv[data-fig="retries"] .rr li b{font-family:var(--mono);font-size:11px;color:#f1f1e7}
+.fv[data-fig="retries"] .rr li.d{border-top-color:var(--lime)}
+.fv[data-fig="retries"] .rr li.on{border-top-color:var(--cl);background:color-mix(in srgb,var(--c) 12%,#181914)}
+.fv[data-fig="retries"] .rr li.wt{flex:0 0 auto;place-items:center;border:0;background:none;font-family:var(--mono);font-size:10px;color:#8f8f84}
+.fv[data-fig="retries"] .rr li.wt i{font-style:normal}
+.fv[data-fig="retries"] .rb{font-size:12px;color:#a3a495}
+.fv[data-fig="retries"] .rb .bd{color:#1f201b;background:var(--cl);padding:0 5px}
+
+/* IV·9 the main switch: the strip, a night with quiet hours, a button you press, who obeys */
+.fv[data-fig="mainswitch"] .strip{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;background:#181914;border:1px solid #2e2f28;padding:6px 8px}
+.fv[data-fig="mainswitch"] .st{font-family:var(--mono);font-size:11.5px;color:var(--lime);min-width:84px}
+.fv[data-fig="mainswitch"] .st.off{color:var(--yellow)}
+.fv[data-fig="mainswitch"] .tp{display:inline-flex;gap:4px}
+.fv[data-fig="mainswitch"] .qh{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--cl)}
+.fv[data-fig="mainswitch"] .why{font-size:12.5px;color:#cfd0c4;min-height:2.9em}
+.fv[data-fig="mainswitch"] .why b{color:#f1f1e7}
+.fv[data-fig="mainswitch"] .tl{position:relative;height:96px;margin:2px 4px 0;border-top:1px solid #45463e}
+.fv[data-fig="mainswitch"] .qb{position:absolute;top:0;bottom:22px;background:color-mix(in srgb,var(--c) 22%,transparent);border-left:1px dashed var(--cl);border-right:1px dashed var(--cl)}
+.fv[data-fig="mainswitch"] .ax span{position:absolute;bottom:4px;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:#8f8f84}
+.fv[data-fig="mainswitch"] .ax span:first-child{transform:none}.fv[data-fig="mainswitch"] .ax span:last-child{transform:translateX(-100%)}
+.fv[data-fig="mainswitch"] .ev{position:absolute;font-style:normal;font-family:var(--mono);font-size:10px;white-space:nowrap;padding:1px 5px}
+.fv[data-fig="mainswitch"] .ev.hold{top:6px;transform:translateX(-50%);color:#cfd0c4;background:#26271f;border:1px solid #45463e}
+.fv[data-fig="mainswitch"] .ev.was{top:34px;transform:translateX(-50%);color:#8f8f84;text-decoration:line-through}
+.fv[data-fig="mainswitch"] .ev.df{top:52px;transform:translateX(-100%);color:#1f201b;background:var(--yellow)}
+.fv[data-fig="mainswitch"] .rnw{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="mainswitch"] .rnw li{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:2px 8px;align-items:baseline;font-size:12px;color:#cfd0c4;background:#181914;padding:4px 8px}
+.fv[data-fig="mainswitch"] .rnw b{font-weight:500;color:#e8e8dc}
+.fv[data-fig="mainswitch"] .rnw em{font-style:normal;font-family:var(--mono);font-size:10.5px}
+.fv[data-fig="mainswitch"] .rnw em.y{color:var(--lime)}.fv[data-fig="mainswitch"] .rnw em.n{color:var(--pink)}
+.fv[data-fig="mainswitch"] .rnw span{grid-column:1/-1;font-size:11.5px;color:#8f8f84}
+.fv[data-fig="mainswitch"] .ob .who{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:5px}
+.fv[data-fig="mainswitch"] .ob .who span{font-size:12px;color:#e8e8dc;background:#26271f;border:1px solid #45463e;padding:1px 8px}
+
+/* IV·10 the forecast: the week as a grid, the totals, what runs and waits, a health card, two warnings */
+.fv[data-fig="forecast"] .tot{font-size:12px;color:#a3a495}
+.fv[data-fig="forecast"] .tot b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="forecast"] .gr{display:grid;gap:3px 3px;align-items:center}
+.fv[data-fig="forecast"] .gr .dy{font-family:var(--mono);font-size:9.5px;line-height:1.15;color:#8f8f84;text-align:center}
+.fv[data-fig="forecast"] .gr .jn{display:grid;min-width:0;padding-right:6px}
+.fv[data-fig="forecast"] .gr .jn b{font-size:12px;font-weight:500;color:#e8e8dc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fv[data-fig="forecast"] .gr .jn small{font-family:var(--mono);font-size:10px;color:#8f8f84;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fv[data-fig="forecast"] .gr .jn small.ms{color:var(--cl)}
+.fv[data-fig="forecast"] .gr>i{height:14px;background:#26271f;border:1px solid #2e2f28}
+.fv[data-fig="forecast"] .gr>i.r{background:color-mix(in srgb,var(--c) 75%,#f1f1e7);border-color:transparent}
+.fv[data-fig="forecast"] .wt{display:grid;gap:2px}
+.fv[data-fig="forecast"] .wt p{display:flex;flex-wrap:wrap;gap:2px 8px;font-size:12px;color:#cfd0c4;background:#181914;padding:3px 8px}
+.fv[data-fig="forecast"] .wt b{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--lime);min-width:80px}
+.fv[data-fig="forecast"] .wt p+p b{color:var(--yellow)}
+.fv[data-fig="forecast"] .hc{background:#181914;border:1px solid #2e2f28;padding:7px 10px;--ac:var(--lime)}
+.fv[data-fig="forecast"] .hb{display:flex;flex-wrap:wrap;gap:2px 12px;align-items:baseline;font-size:12px;color:#cfd0c4;margin-bottom:6px}
+.fv[data-fig="forecast"] .hb b{font-family:var(--mono);font-size:18px;font-weight:600;color:var(--lime)}
+.fv[data-fig="forecast"] .hc .bar{height:6px}
+.fv[data-fig="forecast"] .ins{display:grid;gap:4px}
+.fv[data-fig="forecast"] .fam{font-size:11.5px;color:#8f8f84}
+
+@media (max-width:620px){
+  .fv[data-fig="flows"] .ch li{grid-template-columns:18px minmax(0,1fr) auto}
+  .fv[data-fig="flows"] .ch em{grid-column:2/-1}
+  .fv[data-fig="flows"] .shots{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fv[data-fig="schedules"] .sr li{grid-template-columns:minmax(0,1fr) auto}
+  .fv[data-fig="schedules"] .sr .w{grid-column:1/-1}
+  .fv[data-fig="triggers"] .th span{margin-left:0;flex-basis:100%}
+  .fv[data-fig="gatekeeper"] .cs li{grid-template-columns:minmax(0,1fr) auto}
+  .fv[data-fig="gatekeeper"] .cs span{grid-column:1/-1;grid-row:2}
+  .fv[data-fig="queue"] .ql li{grid-template-columns:24px minmax(0,1fr) auto}
+  .fv[data-fig="queue"] .ql b{grid-column:2}
+  .fv[data-fig="queue"] .ql .t{grid-column:2/-1}
+  .fv[data-fig="queue"] .ql .st{grid-column:2/-1}
+  .fv[data-fig="queue"] .ql button{grid-column:3;grid-row:1}
+  .fv[data-fig="record"] .two2{grid-template-columns:minmax(0,1fr)}
+  .fv[data-fig="record"] .op{min-height:0}
+  .fv[data-fig="record"] .gg{grid-template-columns:auto minmax(60px,1fr)}
+  .fv[data-fig="record"] .gg span:last-child{grid-column:1/-1}
+  .fv[data-fig="mainswitch"] .qh{margin-left:0}
+  .fv[data-fig="mainswitch"] .tl{height:122px}
+  .fv[data-fig="mainswitch"] .ev.hold{white-space:normal;width:120px;text-align:center}
+  .fv[data-fig="mainswitch"] .ev.was{top:56px}
+  .fv[data-fig="mainswitch"] .ev.df{top:76px}
+  .fv[data-fig="forecast"] .gr .jn small{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){.fv[data-fig="flows"] .shots span.run{animation:none}.fv[data-fig="retries"] .mk i{animation:none}.fv[data-fig="record"] .op i.cur{animation:none}}

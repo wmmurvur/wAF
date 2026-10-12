@@ -28,7 +28,7 @@ export const Word = n => word(n)[0].toUpperCase() + word(n).slice(1);
 export const LAST = districts[districts.length - 1].r;
 
 /* the districts whose own page is built (plan v0.8 §6); the others' links go to their chapter on the landing until theirs is */
-const PAGES = new Set(['relay', 'projects', 'measure', 'privacy']);
+const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'measure', 'privacy']);
 export const hasPage = D => PAGES.has(D.id);
 
 export const features = [
@@ -61,15 +61,16 @@ export const features = [
   { id: 'briefing', d: 2, n: 'Spoken briefing', s: 'The daily digest read aloud: by this computer for free, or by a voice model you choose.', sig: 'daily', at: 's-studio', src: 'briefing.ts; digestTtsModel' },
 
   // IV · Recipes and triggers
-  { id: 'flows', d: 3, n: 'Workflows', s: 'A chain where each step gets the last one\'s output. A step can be an agent, an API call, a render, a browser, or a stop to ask you.', sig: '8 saved', src: 'Tasks → Edit workflow (M7-8-c)' },
-  { id: 'schedules', d: 3, n: 'Schedules', s: 'Daily, weekly or once at a date and hour. A missed run can run late, be skipped, or ask you. With VS Code closed, a small service on Windows still runs them.', sig: '13 on', src: 'schedules.add (missed: skip | run | ask)' },
-  { id: 'triggers', d: 3, n: 'Watch triggers', s: 'A file lands in a folder and an agent wakes up. Hooks and webhooks work the same way.', sig: '2 watching', src: 'triggers.add (watch | hook | webhook)' },
-  { id: 'gatekeeper', d: 3, n: 'Gatekeeper', s: 'Before anyone wakes, Jev, a model that never chats and only decides, says whether there is real work. Off, watching in the shadow, or on.', sig: 'shadow', src: 'Settings → Gatekeeper (M15); src/core/kapici/providers/jev.ts; owner (12:18); agentFarm.kapici.*' },
-  { id: 'words', d: 3, n: 'Say it in words', s: 'Type "run the filing batch on manager now". A cheap model turns it into a task, a schedule or a workflow and shows it to you before anything runs.', sig: 'Runs tab', src: 'Tasks → Runs (M7-8-d); commandbar.ts' },
-  { id: 'queue', d: 3, n: 'Queue and limits', s: 'Runs wait their turn under concurrency ceilings, and the next one starts as one finishes.', sig: '1/5 running', src: 'agentFarm.maxConcurrentTasks; Automation strip' },
-  { id: 'retries', d: 3, n: 'Retries and rounds', s: 'A run stopped by a session limit tries again by itself, every 40 minutes or on a growing pause. A big job runs in rounds inside one conversation.', sig: '6 × 40 min', src: 'retry.ts defaults; taskRounds.ts' },
-  { id: 'mainswitch', d: 3, n: 'One switch', s: 'Stop every automation at once, pause it until an hour you name, or keep quiet hours in which nothing wakes unattended.', sig: 'quiet hours', src: 'automation.ts (master switch, pause-until, quiet hours); Technical DNA §5' },
-  { id: 'forecast', d: 3, n: 'Forecast', s: 'How long the next run should take and how likely it is to pass, from the last 30 days.', sig: '30 days', src: 'schedules.forecast' },
+  { id: 'flows', d: 3, n: 'Workflows', s: 'A chain where each step hands its output to the next. A step can be an agent, an HTTP call, an image or video job, a browser run, or a stop that waits for your yes.', sig: '8 saved', src: 'Tasks → Edit workflow (M7-8-c)' },
+  { id: 'schedules', d: 3, n: 'Schedules', s: 'Daily, weekly or once at a date and hour. A missed run is skipped, caught up, or put to you. With VS Code closed, a small service on Windows still runs them.', sig: '13 on', src: 'schedules.add (missed: skip | run | ask)' },
+  { id: 'triggers', d: 3, n: 'Watch triggers', s: 'A file lands in a folder and an agent wakes up. A live hook, or a post to a private address on your machine, works the same way.', sig: '2 watching', src: 'triggers.add (watch | hook | webhook)' },
+  { id: 'gatekeeper', d: 3, n: 'Gatekeeper', s: 'Before a trigger wakes an agent, free local checks and then Jev, a model that never chats and only decides, say whether there is real work. Off, watching in the shadow, or on.', sig: 'shadow', src: 'Settings → Gatekeeper (M15); src/core/kapici/providers/jev.ts; owner (12:18); agentFarm.kapici.*' },
+  { id: 'words', d: 3, n: 'Say it in words', s: 'Type "run the filing batch on manager now". A cheap model turns it into a task, a schedule or a workflow, and nothing is set up until you press Create.', sig: 'Runs tab', src: 'Tasks → Runs (M7-8-d); commandbar.ts' },
+  { id: 'queue', d: 3, n: 'Queue and limits', s: 'Runs wait their turn under ceilings, two at once and one per agent by default. A held run starts by itself as a slot frees.', sig: '1/2 running', src: 'agentFarm.maxConcurrentTasks; Automation strip' },
+  { id: 'record', d: 3, n: 'A record of every run', s: 'Every run writes what it said to a file, is marked failed when it crashed, and carries its price. A job you set up often becomes a template, and finished rows move to a monthly history.', sig: '$0.12', src: 'Blueprint: Task Output Archive, Task Templates, Task Cost (2.40.0), Task History' },
+  { id: 'retries', d: 3, n: 'Retries and rounds', s: 'A run that fails or hits a usage limit tries again by itself, after 40 minutes or at the plan\'s reset, even on another account. A big job runs in rounds inside one conversation.', sig: '40 min', src: 'retry.ts defaults; taskRounds.ts' },
+  { id: 'mainswitch', d: 3, n: 'One switch', s: 'Stop every automation at once, pause it for 1, 8 or 24 hours, or keep quiet hours in which nothing wakes unattended.', sig: 'quiet hours', src: 'automation.ts (master switch, pause-until, quiet hours); Technical DNA §5' },
+  { id: 'forecast', d: 3, n: 'Forecast', s: 'What your schedules will run over the next 7 days, each with its usual time and success rate from the last 30 days.', sig: '30 days', src: 'schedules.forecast' },
 
   // V · Works as a team
   { id: 'missions', d: 4, n: 'Missions', s: 'A lead that cannot write plans round by round and hands the work to a team on different engines, one writer per folder, until the goal is met or one of five caps is reached.', sig: 'lead + 3', at: 's-together', src: 'missions.start; screenshot 043' },
@@ -103,11 +104,11 @@ export const features = [
 
   // VIII · Just ask
   { id: 'bridge', d: 7, n: 'Just ask', s: 'Say "make me a weekly video recipe" in a chat. The agent sets it up through the bridge; you never open a form.', sig: 'in chat', at: 's-bridge', src: '_REF/bridge.md' },
-  { id: 'ops', d: 7, n: `${facts.bridgeOps} operations`, s: 'What you can do with a click, an agent can do with a call: a button with no operation fails the build. Only the secret vault stays off it, on purpose. New abilities show up in farm.ops by themselves.', sig: 'farm.ops', at: 's-bridge', src: 'owner 2026-10-12: 579 ops (Technical DNA 3.923.0: ~560 in ~75 namespaces)' },
+  { id: 'ops', d: 7, n: `${facts.bridgeOps} operations`, s: 'What you can do with a click, an agent can do with a call: a button with no operation fails the build. A few things stay yours on purpose: granting a tool permission, stopping a question\'s countdown, and a secret\'s value. New abilities show up in farm.ops by themselves.', sig: 'farm.ops', at: 's-bridge', src: 'owner 2026-10-12: 579 ops (Technical DNA 3.923.0: ~560 in ~75 namespaces)' },
   { id: 'mcp', d: 7, n: 'One command line', s: 'The bridge is a single shell command, so any agent that can run a command can use the farm. Gatekeeper also comes as an MCP server.', sig: 'af.js', src: 'src/service/af.ts; src/mcp/kapici' },
-  { id: 'agents', d: 7, n: 'Agents with a home', s: 'Each agent keeps its own identity, duties that run every turn or session, and tools. The Toolbox edits skills, MCP servers, hooks and plugins for all of them in one form.', sig: 'duties', src: 'Agents tree, duties, Toolbox (Blueprint §Agents Tree; FULL list 14)' },
+  { id: 'agents', d: 7, n: 'Agents with a home', s: 'Each agent keeps its own identity, duties that run every turn or session, and tools. The Toolbox shows every skill, subagent, command, MCP server, hook and plugin on the machine, adds new ones and tests what an MCP server really offers.', sig: 'duties', src: 'Agents tree, duties, Toolbox (Blueprint §Agents Tree; FULL list 14)' },
   { id: 'matrix', d: 7, n: 'Capability Matrix', s: 'Which agent has which skill, MCP server and memory file, and which of them were actually used in 30 days.', sig: '30 days', src: 'Toolbox → Capability Matrix (Mz1)' },
-  { id: 'phone', d: 7, n: 'Phone app', s: 'Start a session, approve with a button and watch the fleet from your pocket, in the Agent Farm phone app, or on a read-only web page on any device you allow.', sig: 'anywhere', at: 's-waits', src: 'Mobile page; Now page (021, 023); Android' },
+  { id: 'phone', d: 7, n: 'Phone app', s: 'Answer, approve with a button and watch the fleet from your pocket in the Agent Farm phone app, paired by a QR code; it can even wake a closed VS Code. Or a read-only web page on any device you allow.', sig: 'anywhere', at: 's-waits', src: 'Mobile page; Now page (021, 023); Android' },
   { id: 'telegram', d: 7, n: 'Telegram', s: 'A Telegram chat talks to your agents. A card arrives when a turn ends or asks, and one tap answers it. Only the chats you allow, within a daily budget.', sig: 'one tap', at: 's-waits', src: 'Settings → Remote Access (Mz5); agentFarm.telegram.*; telegramDigest.ts' },
   { id: 'sound', d: 7, n: 'Sound', s: 'A tone for every event, for one agent or for one session: ten made for it and room for ten of your own, with quiet hours and a reminder for an unanswered question.', sig: '10 tones', at: 's-waits', src: 'Sound page (060, Mz4); agentFarm.alerts.*; alertVoices.ts (CUSTOM_LIMIT 10)' },
   { id: 'voice', d: 7, n: 'Read aloud', s: 'An answer, a selection or the daily briefing read aloud, each in its own language, and whoever is asking named after the tone.', sig: 'aloud', at: 's-waits', src: 'Sound page › Voice (Mz4); reader.ts, readSelection.ts, speech.ts, readingPrefs.ts' },

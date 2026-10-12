@@ -1,0 +1,10 @@
+---
+// /features/recipes-and-triggers/: district IV, Recipes and triggers. Its live demo is the landing's chapter IV as it is:
+// the Tasks page beside one watch trigger, its Gatekeeper check and the recipe it runs (Auto). The words are in
+// data/deep/automation.js; the figures beside each feature are drawn by scripts/figs/automation.js.
+import District from '../../components/District.astro';
+import Auto from '../../components/sections/Auto.astro';
+import deep from '../../data/deep/automation.js';
+import '../../styles/pages/figs-automation.css';
+---
+<District d={3} deep={deep} script="recipes-and-triggers"><Auto /></District>

@@ -2,6 +2,16 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.11.0 · 2026-10-12
+
+Two more district pages: work that starts by itself, and an agent that sets the farm up for you.
+
+- Recipes and triggers, the district page (`/features/recipes-and-triggers/`): all ten of district IV's features beside their figures, with the landing's Recipes and triggers chapter as its live demo. Things to try: a six-step workflow fanning out a step per shot; a missed schedule skipped, caught up or put to you; drop a file on a watch trigger and send a burst of them against the storm guards; Gatekeeper letting a real video through and stopping a temp file and a note, off, in the shadow and on; a sentence turned into a job, a schedule, a chain, or caught as a slip; the queue's ceilings, Run Next and a waiting task gaining priority; a run's output, its price and its templates, and Clear Finished Tasks; a night walled at 03:00 retried every 40 minutes, at the reset, or on another account; Pause all, 1h, 8h, 24h and quiet hours; a week's forecast.
+- Just ask, the district page (`/features/just-ask/`): all ten of district VIII's features beside their figures, with the landing's Just ask and Never waits chapters as its live demos. Things to try: an agent setting up a weekly video in one sentence, call by call; what stays human on purpose; asking `farm.ops` for an index, a contract and a misspelt name; the same command line from Claude Code, Codex, Gemini and a script; the Toolbox and a live MCP probe; the capability matrix, copying a skill to another agent; pairing the phone app with a QR code and answering from it; a Telegram card with its buttons and the four gates; each event's tone, played for real; a turn read aloud in English or Turkish; packing an agent and what stays behind.
+- New tile in district IV, A record of every run: each run's output in a file, failed when the exit code says so, its price from its own transcript, templates, and a monthly history. 83 things in all.
+- The landing's Recipes and triggers chapter now says what the extension does by default: two runs at once and one per agent (it said five), and its forecast counts agent time from each job's usual run. Its tiles (Workflows, Schedules, Watch triggers, Gatekeeper, Say it in words, Queue and limits, Retries and rounds, One switch, Forecast) and three in Just ask (the operations, Agents with a home, Phone app) say what they do more exactly.
+- A district page's own parts no longer restyle the landing demos shown on it: the district numeral, its step list and its next-district card had class names the demos also use, which blew up the bridge's "farm, meanwhile" list on the Just ask page.
+
 ## 0.10.0 · 2026-10-12
 
 Two more district pages: what everything cost and whether the work was good, and a project of any kind.

@@ -45,8 +45,8 @@ const cardHtml = {
     <div class="kv"><span>How often</span><b>daily · <u>weekly</u> · once</b><span>Time of day</span><b>07:00 · Monday</b><span>If the time is missed</span><b><u>skip it</u> — that occurrence is lost · run it at the first opportunity · ask me, with Run / Skip</b></div></div>`,
   forecast: () => `<div class="ac"><div class="ach"><b>Forecast · next 7 days</b><span>from the same tasks over the last 30 days</span><button type="button" class="x" data-act="close" aria-label="Close">✕</button></div>
     <div class="fc">${[['every day 04:30', 'Free model radar', '3m', '93%'], ['every day 05:00', 'Back up the agent repo', '1m', '100%'], ['Mon 07:00', 'Weekly channel rhythm', '9m', '100%']].map(([w, t, m, p]) => `<span>${w}</span><b>${t}</b><span>median ${m}</span><span class="ok">${p} success</span>`).join('')}</div>
-    <p class="dim">15 scheduled runs · about 1h 10m busy</p></div>`,
-  queue: () => `<div class="ac"><div class="ach"><b>Queue and limits</b><span>five launch slots by default</span><button type="button" class="x" data-act="close" aria-label="Close">✕</button></div>
+    <p class="dim">15 scheduled runs · about 37 min of agent time</p></div>`,
+  queue: () => `<div class="ac"><div class="ach"><b>Queue and limits</b><span>two at once, one per agent, by default</span><button type="button" class="x" data-act="close" aria-label="Close">✕</button></div>
     <p class="dim">A run that finds every slot taken waits its turn, and gains a point of priority for every 30 minutes it waits. Pause all, or pause for 1, 8 or 24 hours; quiet hours defer a run, they never drop it.</p></div>`,
 };
 
@@ -171,7 +171,9 @@ on('feature', id => {
     gatekeeper: () => { setMode('on'); drop(1); },
     words: () => { card = ''; setTab('runs'); type(SAY).then(() => preview(false)); },
     queue: () => { card = 'queue'; setTab('plan'); $('strip').classList.add('hl'); setTimeout(() => $('strip').classList.remove('hl'), 2400); },
+    record: () => { card = ''; setTab('runs'); },
     retries: () => { card = 'retries'; setTab('runs'); const r = view.querySelector('.rr.hl'); if (r) view.scrollTop += r.getBoundingClientRect().top - view.getBoundingClientRect().top - 120; },
+    mainswitch: () => { $('strip').classList.add('hl'); setTimeout(() => $('strip').classList.remove('hl'), 2400); },
     forecast: () => { card = 'forecast'; setTab('plan'); },
   }[id];
   if (f) { user = true; f(); }

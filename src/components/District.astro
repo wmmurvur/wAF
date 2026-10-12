@@ -28,7 +28,7 @@ const nextHref = hasPage(next) ? `../${next.slug}/` : `../../#ch-${next.id}`;
     <div class="wrap">
       <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>{D.r} {D.n}</span></nav>
       <header class="dh">
-        <span class="dr" aria-hidden="true">{D.r}</span>
+        <span class="drm" aria-hidden="true">{D.r}</span>
         <div>
           <p class="dk"><span>District {D.r} of {LAST}</span><span>{Word(F.length)} things</span></p>
           <h1>{D.n}</h1>
@@ -58,7 +58,7 @@ const nextHref = hasPage(next) ? `../${next.slug}/` : `../../#ch-${next.id}`;
             <p>{x.why}</p>
             <h3>How it works{x.fig && <span class="hint"> · pick a step</span>}</h3>
             {x.fig
-              ? <ol class="steps">{x.how.map((st, i) => <li><button type="button" data-i={i}><span class="k">{x.fig[i]}</span><span class="t" set:html={st} /></button></li>)}</ol>
+              ? <ol class="fsteps">{x.how.map((st, i) => <li><button type="button" data-i={i}><span class="k">{x.fig[i]}</span><span class="t" set:html={st} /></button></li>)}</ol>
               : <ol>{x.how.map(st => <li set:html={st} />)}</ol>}
             {x.note && <p class="note" set:html={x.note} />}
             {x.set && x.set.length > 0 && (
@@ -84,8 +84,8 @@ const nextHref = hasPage(next) ? `../${next.slug}/` : `../../#ch-${next.id}`;
         {deep.faq.map(([q, a]) => <details><summary>{q}</summary><p set:html={a} /></details>)}
       </section>
       <nav class="dnext" aria-label="More features">
-        <a class="nx" href={nextHref} style={`--c:${next.c}`}><span class="k">Next district</span><span class="r">{next.r}</span><span class="n">{next.n}</span><span class="p">{next.k}</span></a>
-        <a class="all" href="../">All {features.length} features <i></i></a>
+        <a class="dnx" href={nextHref} style={`--c:${next.c}`}><span class="k">Next district</span><span class="r">{next.r}</span><span class="n">{next.n}</span><span class="p">{next.k}</span></a>
+        <a class="dall" href="../">All {features.length} features <i></i></a>
       </nav>
     </div>
   </main>

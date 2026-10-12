@@ -1,0 +1,11 @@
+---
+// /features/just-ask/: district VIII, Just ask. Its live demos are the landing's chapter VIII as it is: an agent setting
+// the farm up over the bridge (Bridge), then question cards, the phone, Telegram and the Sound page (NeverWaits). The words
+// are in data/deep/bridge.js; the figures beside each feature are drawn by scripts/figs/bridge.js.
+import District from '../../components/District.astro';
+import Bridge from '../../components/sections/Bridge.astro';
+import NeverWaits from '../../components/sections/NeverWaits.astro';
+import deep from '../../data/deep/bridge.js';
+import '../../styles/pages/figs-bridge.css';
+---
+<District d={7} deep={deep} script="just-ask"><Bridge /><NeverWaits /></District>

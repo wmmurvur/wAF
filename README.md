@@ -4,7 +4,7 @@
 
 The website of **Agent Farm**, mission control for AI agents in VS Code (publisher MuVuSOFT, extension id `muvusoft.agent-farm`).
 
-A long landing page and, behind it, the feature pages (plan v0.8): `/features/` with all 82 things, and one page per district of the board as each is written. Then the sales pages: `/pricing/` with the plans and the early-access form, and the terms, privacy and refund pages. Built as a static site with [Astro](https://astro.build). Every screen on it is rebuilt from real screenshots of the extension and runs on demo data. Every number it states comes from the extension's source or a real screen, and `src/data/facts.js` says where.
+A long landing page and, behind it, the feature pages (plan v0.8): `/features/` with all 83 things, and one page per district of the board as each is written. Then the sales pages: `/pricing/` with the plans and the early-access form, and the terms, privacy and refund pages. Built as a static site with [Astro](https://astro.build). Every screen on it is rebuilt from real screenshots of the extension and runs on demo data. Every number it states comes from the extension's source or a real screen, and `src/data/facts.js` says where.
 
 ## Commands
 
@@ -60,11 +60,13 @@ The order lives in `src/data/page.js` (plan v0.7 §5); section numbers and the s
 
 | Address | Page | Made from |
 |---|---|---|
-| `/features/` | All 82 things as cards in their ten districts; search and district buttons, kept in the address (`?q=…&d=…`) | `src/pages/features/index.astro`, `src/data/features.js` |
+| `/features/` | All 83 things as cards in their ten districts; search and district buttons, kept in the address (`?q=…&d=…`) | `src/pages/features/index.astro`, `src/data/features.js` |
 | `/features/never-stops/` | District I: the landing's Days and Rules demos, then each feature beside its figure: what it solves, its steps (a step clicked shows itself in the figure; some figures have a setting to slide), the settings folded, where to see it; questions; the next district | `src/pages/features/never-stops.astro`, `src/components/District.astro`, `src/data/deep/relay.js` |
 | `/features/any-project/` | District II: the landing's Backlog chapter, then its seven features beside their figures (four kinds of project, the backlog file and its queue, the track, the brief every session starts with, the handover letter, the portfolio, cost and analysis); questions | `src/pages/features/any-project.astro`, `src/data/deep/projects.js`, `src/scripts/figs/projects.js` |
 | `/features/measured-not-claimed/` | District IX: the landing's Measured chapter, then its nine features beside their figures (plan usage, where the money went, budgets, the downgrade, cost alarms, honest numbers, the judge's ladder, evals, Insights); questions | `src/pages/features/measured-not-claimed.astro`, `src/data/deep/measure.js`, `src/scripts/figs/measure.js` |
 | `/features/safe-and-yours-alone/` | District X, the same way: the landing's Local chapter, then its eight features beside their figures (the machine, the licence check, the guards, Superpowers); questions | `src/pages/features/safe-and-yours-alone.astro`, `src/data/deep/privacy.js`, `src/scripts/figs/privacy.js` |
+| `/features/recipes-and-triggers/` | District IV: the landing's Recipes and triggers chapter, then its ten features beside their figures (workflows, schedules, watch triggers, Gatekeeper, a sentence turned into a task, the queue and its limits, a record of every run, retries and rounds, the one switch, the forecast); questions | `src/pages/features/recipes-and-triggers.astro`, `src/data/deep/automation.js`, `src/scripts/figs/automation.js` |
+| `/features/just-ask/` | District VIII: the landing's Just ask and Never waits chapters, then its ten features beside their figures (the bridge, its operations, the one command line, agents with a home, the capability matrix, the phone app, Telegram, sound, reading aloud, agent packs); a few figures play real tones or speak with the browser's own voice; questions | `src/pages/features/just-ask.astro`, `src/data/deep/bridge.js`, `src/scripts/figs/bridge.js` |
 
 ## The sales pages
 
@@ -104,7 +106,7 @@ src/
   data/facts.js                every stated figure, with its source
   data/page.js                 the page order and which chapter each section belongs to
   data/backlog.js              the demo backlog: project, the family the chain works, the queue, captures; the other projects and their tracks
-  data/features.js             every capability (82), its district, where the page shows it, and the story steps: the board, the chapter openers, later /features and /pricing
+  data/features.js             every capability (83), its district, where the page shows it, and the story steps: the board, the chapter openers, later /features and /pricing
   data/photos.js               the photographs (Unsplash ids or the owner's picks, crops) and the human bands' words
   data/emblems.js              the small moving emblem of each district on /features/
   data/site.js                 links, the call to action, the site version, who sells (legal), rootOf (the way back to the top folder from a page)

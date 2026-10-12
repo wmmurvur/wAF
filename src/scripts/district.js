@@ -12,7 +12,7 @@ export function figures(FIGS) {
   for (const ft of document.querySelectorAll('.ft.hasfig')) {
     const make = FIGS[ft.dataset.f], fig = ft.querySelector('.fig');
     if (!make || !fig) continue;
-    const fv = fig.querySelector('.fv'), steps = [...ft.querySelectorAll('.steps li')];
+    const fv = fig.querySelector('.fv'), steps = [...ft.querySelectorAll('.fsteps li')];
     const fk = fig.querySelector('.fk'), fn = fig.querySelector('.fn'), fp = fig.querySelector('.fp'), fx = fig.querySelector('.fx');
     fv.dataset.fig = ft.dataset.f;
     const F = make(fv) || {};
