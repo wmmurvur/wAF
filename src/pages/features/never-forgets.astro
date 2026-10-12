@@ -1,0 +1,10 @@
+---
+// /features/never-forgets/: district VI, Never forgets. Its live demo is the landing's chapter VI as it is: Sessions, one
+// session, Search, the Wiki and the Memory Graph beside the vault in Obsidian (Memory). The words are in
+// data/deep/memory.js; the figures beside each feature are drawn by scripts/figs/memory.js.
+import District from '../../components/District.astro';
+import Memory from '../../components/sections/Memory.astro';
+import deep from '../../data/deep/memory.js';
+import '../../styles/pages/figs-memory.css';
+---
+<District d={5} deep={deep} script="never-forgets"><Memory /></District>

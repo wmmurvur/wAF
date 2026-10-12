@@ -28,7 +28,7 @@ export const Word = n => word(n)[0].toUpperCase() + word(n).slice(1);
 export const LAST = districts[districts.length - 1].r;
 
 /* the districts whose own page is built (plan v0.8 §6); the others' links go to their chapter on the landing until theirs is */
-const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'team', 'measure', 'privacy']);
+const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'team', 'memory', 'measure', 'privacy']);
 export const hasPage = D => PAGES.has(D.id);
 
 export const features = [
@@ -89,7 +89,8 @@ export const features = [
   { id: 'wiki', d: 5, n: 'Wiki from sessions', s: 'Mark a whole session or only the answers that matter. An agent compiles them into wiki pages, one concept per page.', sig: 'compile', src: 'wiki.candidates.*, wiki.compile; _REF/wiki.md' },
   { id: 'dropbox', d: 5, n: 'Drop box', s: 'Save a chat from any browser into the drop folder and it becomes wiki material by itself.', sig: '_RAW_', src: '_REF/wiki.md (drop box)' },
   { id: 'obsidian', d: 5, n: 'Obsidian, the second brain', s: 'Obsidian is the IDE, the model is the programmer, the wiki is the codebase. You curate, agents write.', sig: 'vault', src: 'vault rules (M5)' },
-  { id: 'search', d: 5, n: 'Search everything', s: 'Search every transcript of every engine, by its words or by what it meant. A memory graph shows how each agent\'s notes link up, and which it actually recalled.', sig: 'all engines', src: 'search.transcripts; memgraph.ts' },
+  { id: 'search', d: 5, n: 'Search everything', s: 'Search every transcript of every engine, by its words or by what it meant, and land on the exact message.', sig: 'all engines', src: 'search.transcripts; Blueprint: Transcript Search' },
+  { id: 'recall', d: 5, n: 'Memory that gets used', s: 'Each agent\'s memory files say which were really recalled in 30 days, which the index lost and which contradict each other, and a graph shows how they link up.', sig: 'recalled ×5', src: 'memgraph.ts; Blueprint: Memory Management, Memory Graph, Memory Distillation' },
   { id: 'machines', d: 5, n: 'Other machines', s: 'Sessions synced from your other computers show up in the same lists, with a machine badge on each.', sig: '⇄ badge', src: 'agentFarm.extraClaudeDirs; Blueprint (multiple machines)' },
   { id: 'reports', d: 5, n: 'Reports and digests', s: 'Daily and weekly digests and fleet reports, written into your vault.', sig: 'weekly', src: 'settings → Reports' },
 

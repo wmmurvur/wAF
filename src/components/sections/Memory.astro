@@ -18,7 +18,7 @@ const TABS = [['sessions', 'Agent Farm — Sessions'], ['session', 'Session #7c4
       <p class="lead">Every conversation on this machine is kept, from every engine, with what it cost. Mark the turn that mattered; nothing is written yet. Later one run reads the marked turns and writes wiki pages into your Obsidian vault, one concept to a page, each with its sources.</p>
     </div>
     <div class="mgrid">
-      <div class="mpanel" id="me-panel" data-shows="sessions turns wiki dropbox search" aria-label="Agent Farm's Sessions, Search, Wiki and Memory Graph pages, rebuilt with demo data">
+      <div class="mpanel" id="me-panel" data-shows="sessions turns wiki dropbox search recall" aria-label="Agent Farm's Sessions, Search, Wiki and Memory Graph pages, rebuilt with demo data">
         <div class="mtabs" id="me-tabs" role="tablist" aria-label="Pages">
           {TABS.map(([id, label], i) => <button type="button" role="tab" data-tab={id} aria-selected={i === 0 ? 'true' : 'false'} class={i === 0 ? 'on' : ''}>{label}</button>)}
         </div>

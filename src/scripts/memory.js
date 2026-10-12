@@ -329,6 +329,7 @@ on('feature', id => {
     wiki: () => { hlRow = ''; setTab('wiki'); },
     dropbox: () => { hlRow = 'm3'; setTab('wiki'); opened._RAW_ = 1; drawVault(); },
     search: () => setTab('search'),
+    recall: () => setTab('graph'),
     obsidian: () => { vmode = 'page'; openPage(compiled || 'Film/Retake_With_Critique'); },
     reports: () => openPage(REPORT),
   }[id];
