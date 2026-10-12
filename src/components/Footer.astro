@@ -13,6 +13,7 @@ const root = rootOf(Astro.url);
       <a href={`${root}terms/`}>Terms</a>
       <a href={`${root}privacy/`}>Privacy</a>
       <a href={`${root}refunds/`}>Refunds</a>
+      {site.legal.email && <a href={`mailto:${site.legal.email}`}>Contact</a>}
       <span>Photos: Unsplash, Pexels</span>
       <span>Crafted by <a href={site.maker.href}>{site.maker.name}</a></span>
     </nav>

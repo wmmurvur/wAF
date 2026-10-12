@@ -3,14 +3,14 @@
 // (publisher muvusoft, name agent-farm in the extension's package.json). The changelog gets its own page with the /features pages.
 
 export const site = {
-  version: '0.9.0',                                        // this website, see CHANGELOG.md
+  version: '0.9.1',                                        // this website, see CHANGELOG.md
   url: 'https://agentfarm.space',
   get: { label: 'Get Agent Farm', href: 'https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm' },
   maker: { name: 'MuVuSOFT', href: 'https://muvusoft.uk/' },
-  // Who sells Agent Farm and how to reach them, for the terms, privacy and refund pages. The owner trades as an
-  // individual under the MuVuSOFT name. An empty field shows as a marked gap on those pages; while `draft` is true they
+  // Who sells Agent Farm and how to reach them, for the terms, privacy and refund pages and the footer (owner,
+  // 2026-10-12). The owner trades as an individual under the MuVuSOFT name. An empty field shows as a marked gap on those pages; while `draft` is true they
   // carry a draft notice and ask search engines not to index them.
-  legal: { name: '', country: '', email: '', draft: true, updated: '2026-10-12' },
+  legal: { name: 'Murat Vural', country: 'Vietnam', email: 'agentfarm@muvusoft.uk', draft: true, updated: '2026-10-12' },
 };
 
 /** the way back to the site's top folder from a page: '' on the landing, '../' on /features/, '../../' below it */

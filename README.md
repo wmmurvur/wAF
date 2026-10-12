@@ -134,6 +134,6 @@ docs/DESIGN.md                 palette, type, motion and demo-data rules
 - The extension's repository is closing (plan v0.7 §8), so nothing links to it. The call to action goes to the Marketplace listing (`src/data/site.js`); check that the listing is live on the day the extension is published. The changelog gets its own page with the /features pages.
 - The header's "Join early access" goes to the early-access form on `/pricing/#early`.
 - Prices, plans and limits are a first proposal (owner, 2026-10-12: $0, $19, $34, $49 a month, a year is ten months, no trial, Lemon Squeezy); change them in `src/data/plans.js`.
-- The legal pages are drafts until the owner's name, country and contact address are in `legal` (`src/data/site.js`) and a reviewer has read them; set `draft: false` then. `NOTIFY_TO` in `public/early-access.php` is empty until the owner gives an address.
+- The legal pages carry the owner's name, country (Vietnam) and contact address from `legal` (`src/data/site.js`) and stay drafts until a reviewer has read them; set `draft: false` then. Early-access notes go to `NOTIFY_TO` in `public/early-access.php`.
 - Licence: the free version never contacts us; a paid licence checks its key once a day and keeps working 30 days offline (owner, 2026-10-12; `licence` in `src/data/facts.js`). Change the figures there when the extension ships its own.
 - An Open Graph image and the extra product pages (plan §6).

@@ -2,6 +2,15 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.9.1 · 2026-10-12
+
+The seller is named on the legal pages.
+
+- Terms, Privacy and Refunds name the seller (Murat Vural, trading as MuVuSOFT, in Vietnam) and the contact address, agentfarm@muvusoft.uk; the terms are governed by the law of Vietnam, consumers keeping their own country's protection. They stay drafts, with `noindex`, until a legal review.
+- Privacy also follows Vietnam's Personal Data Protection Law (Law No. 91/2025/QH15): requests are confirmed within two working days and carried out within 30 days, and Vietnam's authority (A05, Ministry of Public Security) is named beside the UK's and the EU's.
+- Early-access sign-ups send a note to apply_farm@muvusoft.uk; answering it answers the person.
+- The footer has a Contact link.
+
 ## 0.9.0 · 2026-10-12
 
 The sales pages: prices, early access, and the terms, privacy and refund pages. People in the photographs, at every kind of work.

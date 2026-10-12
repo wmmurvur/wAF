@@ -10,7 +10,7 @@ import { site } from '../data/site.js';
 
 interface Props { title: string; description: string; h1: string; lead: string; toc: [string, string][]; }
 const { title, description, h1, lead, toc } = Astro.props;
-const L = site.legal;
+const L = site.legal, gaps = !L.name || !L.country || !L.email;
 const others = [['terms', 'Terms'], ['privacy', 'Privacy'], ['refunds', 'Refunds']];
 const here = Astro.url.pathname.split('/').filter(Boolean)[0];
 ---
@@ -19,7 +19,7 @@ const here = Astro.url.pathname.split('/').filter(Boolean)[0];
   <main class="legalp">
     <div class="wrap">
       <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>{h1}</span></nav>
-      {L.draft && <p class="draft"><b>Draft</b><span>This page is waiting for a legal review, and a few details are still to come; they are <mark>marked like this</mark>. Until then it is not final.</span></p>}
+      {L.draft && <p class="draft"><b>Draft</b><span>This page is waiting for a legal review{gaps ? <>, and a few details are still to come; they are <mark>marked like this</mark></> : ''}. Until then it is not final.</span></p>}
       <div class="lgrid">
         <aside class="ltoc" aria-label="On this page">
           <p class="pre">On this page</p>
