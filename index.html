@@ -14,7 +14,7 @@
     <meta property="og:description" content="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.9.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.10.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.9.1"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.10.0"></head>
   <body>
     
   <div class="wrap">
@@ -377,7 +377,7 @@
         <p class="ct">Any project</p>
         <p class="cp">One backlog per project, and the project can be anything.</p>
       </div>
-      
+      <a class="cmore" href="features/any-project/">Everything about it <i></i></a>
     </div>
     <ul class="ctl">
       <li><button type="button" class="ctile" data-f="kinds" data-code="II·1"><span class="n">Any kind of project</span><span class="sg" data-sig="kinds">any kind</span></button></li><li><button type="button" class="ctile" data-f="backlog" data-code="II·2"><span class="n">Backlog</span><span class="sg" data-sig="backlog">38 open</span></button></li><li><button type="button" class="ctile" data-f="track" data-code="II·3"><span class="n">Track</span><span class="sg" data-sig="track">214 closed</span></button></li><li><button type="button" class="ctile" data-f="context" data-code="II·4"><span class="n">Project context</span><span class="sg" data-sig="context">6 documents</span></button></li><li><button type="button" class="ctile" data-f="letter" data-code="II·5"><span class="n">Handover letter</span><span class="sg" data-sig="letter">cold start</span></button></li><li><button type="button" class="ctile" data-f="portfolio" data-code="II·6"><span class="n">Portfolio</span><span class="sg" data-sig="portfolio">4 active</span></button></li><li><button type="button" class="ctile" data-f="cost" data-code="II·7"><span class="n">Cost and analysis</span><span class="sg" data-sig="cost">per item</span></button></li>
@@ -996,7 +996,7 @@
         <p class="ct">Measured, not claimed</p>
         <p class="cp">What every step cost, how much plan is left, and whether the work was good, in numbers.</p>
       </div>
-      
+      <a class="cmore" href="features/measured-not-claimed/">Everything about it <i></i></a>
     </div>
     <ul class="ctl">
       <li><button type="button" class="ctile" data-f="planuse" data-code="IX·1"><span class="n">Live plan usage</span><span class="sg" data-sig="planuse">5h · week</span></button></li><li><button type="button" class="ctile" data-f="steps" data-code="IX·2"><span class="n">Where it went</span><span class="sg" data-sig="steps">9 kinds</span></button></li><li><button type="button" class="ctile" data-f="budgets" data-code="IX·3"><span class="n">Budgets</span><span class="sg" data-sig="budgets">80% warn</span></button></li><li><button type="button" class="ctile" data-f="downgrade" data-code="IX·4"><span class="n">Cheaper, not stopped</span><span class="sg" data-sig="downgrade">→ haiku</span></button></li><li><button type="button" class="ctile" data-f="anomaly" data-code="IX·5"><span class="n">Cost alarms</span><span class="sg" data-sig="anomaly">median</span></button></li><li><button type="button" class="ctile" data-f="honest" data-code="IX·6"><span class="n">Honest numbers</span><span class="sg" data-sig="honest">real zeros</span></button></li><li><button type="button" class="ctile" data-f="ladder" data-code="IX·7"><span class="n">Judge ladder</span><span class="sg" data-sig="ladder">cheap first</span></button></li><li><button type="button" class="ctile" data-f="evals" data-code="IX·8"><span class="n">Evals</span><span class="sg" data-sig="evals">scorecard</span></button></li><li><button type="button" class="ctile" data-f="insights" data-code="IX·9"><span class="n">Insights</span><span class="sg" data-sig="insights">findings</span></button></li>
@@ -1031,9 +1031,9 @@
         <p class="ksel" id="m-ksel">◈ thinking: billed as output, the dearest token there is.</p>
         <div class="bud" id="m-bud"></div>
         <ul class="flags">
-          <li class="an" id="m-an"><b>⚑</b> <span>weekly-video ran <em>$4.10</em>; its median is $0.92</span></li>
+          <li class="an" id="m-an"><b>⚑</b> <span>editor is at <em>4.5×</em> its normal today: $4.10 against a $0.92 median</span></li>
           <li><b>$0.00</b> <span>OpenCode on a free model: a real zero</span></li>
-          <li><b>—</b> <span>a model with no price rule: no figure and a warning, never a made-up $0</span></li>
+          <li><b>tok</b> <span>Codex on a ChatGPT plan: tokens, and why there is no price; never one made up</span></li>
         </ul>
       </div>
       <div class="mp" id="m-judge" data-shows="ladder evals insights">
@@ -1175,7 +1175,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.9.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.10.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
       <a href="pricing/">Pricing</a>

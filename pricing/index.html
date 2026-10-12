@@ -14,7 +14,7 @@
     <meta property="og:description" content="Agent Farm plans: Free, and Pro at $19, Fleet at $34, Farm at $49 a month. Every plan has every feature; a plan changes how far each one goes. Your engines run on your own plans and keys.">
     <meta property="og:url" content="https://agentfarm.space/pricing/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../assets/pricing.js?v=0.9.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../assets/pricing.js?v=0.10.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../assets/site.css?v=0.9.1"></head>
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.10.0"></head>
   <body>
     
   <div class="wrap">
@@ -228,25 +228,25 @@
             <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
             <tbody>
               <tr>
-                  <th scope="row"><a href="../#ch-projects">Any kind of project</a><small>Software, a documentary series, a thesis, homework, an ad campaign. Same backlog, different work.</small></th>
+                  <th scope="row"><a href="../features/any-project/#kinds">Any kind of project</a><small>Software, a documentary series, a thesis, homework, an ad campaign. Same backlog, different work.</small></th>
                   <td><span class="lv">3</span></td><td><span class="lv">15</span></td><td class="pick"><span class="lv">50</span></td><td><span class="lv">Unlimited</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-projects">Backlog</a><small>Write a thought down in one line. The fleet works the list off in the order you set.</small></th>
+                  <th scope="row"><a href="../features/any-project/#backlog">Backlog</a><small>Write a thought down in one line. The fleet works the list off in the order you set.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-projects">Track</a><small>How every closed item was closed: which session, which turn, what was tried first. The log can be rebuilt from the sessions.</small></th>
+                  <th scope="row"><a href="../features/any-project/#track">Track</a><small>How every closed item was closed: which session, which turn, what was tried first. The log can be rebuilt from the sessions.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-projects">Project context</a><small>Every session starts with the project&#39;s charter, plan, backlog and worklog, so no agent starts cold.</small></th>
+                  <th scope="row"><a href="../features/any-project/#context">Project context</a><small>Every session starts with a brief built from the project&#39;s charter, plan, backlog and worklog, so no agent starts cold.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-projects">Handover letter</a><small>Passing a project on? An automatic brief says what is still open and why.</small></th>
+                  <th scope="row"><a href="../features/any-project/#letter">Handover letter</a><small>Passing a project on? One letter says where everything is, what is open, and what was already tried.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-projects">Portfolio</a><small>Every project&#39;s phase and backlog on one screen.</small></th>
+                  <th scope="row"><a href="../features/any-project/#portfolio">Portfolio</a><small>Every project&#39;s phase and backlog on one screen.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-projects">Cost and analysis</a><small>Weeks, rhythm, how long an item takes from open to closed, and where the money went.</small></th>
+                  <th scope="row"><a href="../features/any-project/#cost">Cost and analysis</a><small>Weeks, rhythm, how long an item takes from open to closed, and where the money went.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr>
             </tbody>
@@ -465,31 +465,31 @@
             <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
             <tbody>
               <tr>
-                  <th scope="row"><a href="../#ch-measure">Live plan usage</a><small>How full each account&#39;s five-hour window and week are, and when they reset, in the status bar and on the Dashboard. Every engine&#39;s limit apart.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#planuse">Live plan usage</a><small>How full each account&#39;s five-hour window and week are, and when they reset, in the status bar and on the Dashboard. Every engine&#39;s limit apart.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Where it went</a><small>Every turn split into nine kinds of step, from the model&#39;s thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. Every figure is shown raw and weighted.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#steps">Where it went</a><small>Every turn split into nine kinds of step, from the model&#39;s thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. Every figure is shown raw and weighted.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Budgets</a><small>A daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. A warning at 80%, an error past 100%.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#budgets">Budgets</a><small>A daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. A warning at 80%, an error past 100%.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Cheaper, not stopped</a><small>As a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. Sessions you opened by hand are left alone.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#downgrade">Cheaper, not stopped</a><small>As a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. Sessions you opened by hand are left alone.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Cost alarms</a><small>A run that costs far more than its usual, or a week that jumps, raises a flag. The usual is a median of real runs, not a guess.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#anomaly">Cost alarms</a><small>A day that costs far more than an agent&#39;s usual, or a week that jumps, raises a flag. The usual is the median of its real days, not a guess.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Honest numbers</a><small>Costs come from your own transcripts. A free model&#39;s zero is a real zero; a missing figure is shown as missing.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#honest">Honest numbers</a><small>Costs come from your own transcripts. A free model&#39;s zero is a real zero; a missing figure is shown as missing.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Judge ladder</a><small>A check is judged by a cheap model first. Only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#ladder">Judge ladder</a><small>A check is judged by a cheap model first. Only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Evals</a><small>Saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#evals">Evals</a><small>Saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr><tr>
-                  <th scope="row"><a href="../#ch-measure">Insights</a><small>Repeated corrections turn into suggested rules. A finding is fixed, handed to its agent or dismissed, and whether the fix held is tracked.</small></th>
+                  <th scope="row"><a href="../features/measured-not-claimed/#insights">Insights</a><small>Repeated corrections turn into suggested rules. A finding is fixed, handed to its agent or dismissed, and whether the fix held is tracked.</small></th>
                   <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
                 </tr>
             </tbody>
@@ -568,7 +568,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.9.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.10.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../features/">Features</a>
       <a href="../pricing/">Pricing</a>

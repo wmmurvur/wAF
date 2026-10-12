@@ -14,7 +14,7 @@
     <meta property="og:description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
     <meta property="og:url" content="https://agentfarm.space/features/never-stops/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/never-stops.js?v=0.9.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/never-stops.js?v=0.10.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.9.1"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.10.0"></head>
   <body>
     
   <div class="wrap">
@@ -276,14 +276,14 @@
         <details><summary>Does the next session remember anything?</summary><p>It starts fresh, on purpose: a session already at the handover line would walk straight back into the wall. What carries over is what the last leg wrote, its handover note and the words it passed, plus your standing rule.</p></details><details><summary>I have one account. Is this for me?</summary><p>Yes. The relay still hands over at the context line. When that account's window fills, the chain parks until its reset and carries on by itself.</p></details><details><summary>Does it work on engines other than Claude Code?</summary><p>The next leg opens on the same engine as the leg before it. The converge and handover lines reach a running session through Claude Code's hooks; on the others the crossing is recorded on the session card as undelivered, so you can see it was not said.</p></details><details><summary>Can a chain run for ever?</summary><p>Only if you let it: set the leg ceiling to 0. The barren-chain brake still stops a chain whose legs stop committing, and you can stop it at any time.</p></details><details><summary>What happens at night when every account is full?</summary><p>The next leg parks until the first reset, plus 3 minutes, and starts by itself. Notices tells you when; in the morning the chain has carried on.</p></details>
       </section>
       <nav class="dnext" aria-label="More features">
-        <a class="nx" href="../../#ch-projects" style="--c:var(--teal)"><span class="k">Next district</span><span class="r">II</span><span class="n">Any project</span><span class="p">One backlog per project, and the project can be anything.</span></a>
+        <a class="nx" href="../any-project/" style="--c:var(--teal)"><span class="k">Next district</span><span class="r">II</span><span class="n">Any project</span><span class="p">One backlog per project, and the project can be anything.</span></a>
         <a class="all" href="../">All 82 features <i></i></a>
       </nav>
     </div>
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.9.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.10.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>

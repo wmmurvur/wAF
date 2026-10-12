@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Measured, not claimed · Agent Farm features</title>
+    <meta name="description" content="How full each account's plan window is and when it resets, what every step of a turn cost in money and in plan, budgets that brake, cheaper models instead of a stop, cost alarms from a median, and work judged against its criteria by the cheapest model that can tell.">
+    <link rel="canonical" href="https://agentfarm.space/features/measured-not-claimed/">
+    
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Measured, not claimed · Agent Farm features">
+    <meta property="og:description" content="How full each account's plan window is and when it resets, what every step of a turn cost in money and in plan, budgets that brake, cheaper models instead of a stop, cost alarms from a median, and work judged against its criteria by the cheapest model that can tell.">
+    <meta property="og:url" content="https://agentfarm.space/features/measured-not-claimed/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/measured-not-claimed.js?v=0.10.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.10.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a class="ch" href="../../#ch-relay">Relay</a><a class="ch" href="../../#ch-projects">Projects</a><a class="ch" href="../../#ch-studio">Studio</a><a class="ch" href="../../#ch-memory">Memory</a><a class="ch" href="../../#ch-bridge">Just ask</a><a class="ch" href="../../#ch-privacy">Local</a><a href="../../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:#de8cf0">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>IX Measured, not claimed</span></nav>
+      <header class="dh">
+        <span class="dr" aria-hidden="true">IX</span>
+        <div>
+          <p class="dk"><span>District IX of X</span><span>Nine things</span></p>
+          <h1>Measured, not claimed</h1>
+          <p class="dp">What every step cost, how much plan is left, and whether the work was good, in numbers.</p>
+        </div>
+      </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-measure-l.jpg" srcset="../../assets/photos/d-measure-s.jpg 900w, ../../assets/photos/d-measure-l.jpg 1800w" sizes="100vw" alt="A hand holding a calculator over a folder of bills" loading="lazy" decoding="async" style="object-position:50% 55%"></div>
+  
+</figure>
+    <div class="wrap">
+      <p class="dpromise">An agent always sounds sure, and a dashboard can always look exact. Agent Farm counts instead: what each step cost, read from the transcripts on your machine; how much of every plan is left, as the provider reports it; whether the work passed its check, judged by a cheap model first. Where a figure cannot be known it says so, and it never fills the gap with a guess.</p>
+      <ul class="dtl">
+        <li><a href="#planuse"><span class="c">IX·1</span><span class="n">Live plan usage</span><span class="sg">5h · week</span></a></li><li><a href="#steps"><span class="c">IX·2</span><span class="n">Where it went</span><span class="sg">9 kinds</span></a></li><li><a href="#budgets"><span class="c">IX·3</span><span class="n">Budgets</span><span class="sg">80% warn</span></a></li><li><a href="#downgrade"><span class="c">IX·4</span><span class="n">Cheaper, not stopped</span><span class="sg">→ haiku</span></a></li><li><a href="#anomaly"><span class="c">IX·5</span><span class="n">Cost alarms</span><span class="sg">median</span></a></li><li><a href="#honest"><span class="c">IX·6</span><span class="n">Honest numbers</span><span class="sg">real zeros</span></a></li><li><a href="#ladder"><span class="c">IX·7</span><span class="n">Judge ladder</span><span class="sg">cheap first</span></a></li><li><a href="#evals"><span class="c">IX·8</span><span class="n">Evals</span><span class="sg">scorecard</span></a></li><li><a href="#insights"><span class="c">IX·9</span><span class="n">Insights</span><span class="sg">findings</span></a></li>
+      </ul>
+    </div>
+    <section id="s-meter" class="gap" aria-label="Measured, not claimed: cost, quota and quality in numbers">
+  <div class="wrap">
+    <p class="sx"><b>15</b> Measured</p>
+    <div class="sh">
+      <div><p class="pre">Cost · plan · quality</p><h2>Every cent counted. <em>Every check scored.</em></h2></div>
+      <p class="lead">Agents always sound sure. The farm does not take their word for it: it reads what each step cost from the transcripts, keeps every account's window in view, and has the work judged against its criteria by the cheapest model that can tell.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mp" id="m-plan" data-shows="planuse downgrade">
+        <p class="mh"><b>Plan</b><span>every account · live</span></p>
+        <div class="acc" id="m-acc"></div>
+        <p class="dg" id="m-dg"></p>
+        <p class="sbar" id="m-sbar" aria-label="The status bar"></p>
+      </div>
+      <div class="mp" id="m-spend" data-shows="steps budgets anomaly honest">
+        <p class="mh"><b>Where it went</b><span>the live leg · from its transcript</span></p>
+        <div class="tot"><b id="m-usd">$1.86</b><span id="m-tok">4.21M raw · ⚖ 0.62M</span><span id="m-api">26api·99steps</span></div>
+        <div class="strip" id="m-strip" aria-hidden="true"></div>
+        <ul class="kinds">
+          <li data-k="0" title="billed as output, the dearest token there is"><i>◈</i><span>thinking</span><b>0</b></li><li data-k="1" title="the model writing: output"><i>▸</i><span>reply</span><b>0</b></li><li data-k="2" title="runs on this machine, free to run"><i>⌘</i><span>local tool</span><b>0</b></li><li data-k="3" title="free to make, and what makes the next call bigger"><i>↩</i><span>tool result</span><b>0</b></li><li data-k="4" title="a request to an MCP server, no model tokens"><i>⇄</i><span>MCP tool</span><b>0</b></li><li data-k="5" title="out to the internet; the page comes back into context"><i>⌗</i><span>web</span><b>0</b></li><li data-k="6" title="its own conversation, on this session's budget"><i>⑂</i><span>sub-agent</span><b>0</b></li><li data-k="7" title="inside the CLI: no model, no network"><i>⚙</i><span>harness</span><b>0</b></li><li data-k="8" title="never reached a model"><i>·</i><span>local only</span><b>0</b></li>
+        </ul>
+        <p class="ksel" id="m-ksel">◈ thinking: billed as output, the dearest token there is.</p>
+        <div class="bud" id="m-bud"></div>
+        <ul class="flags">
+          <li class="an" id="m-an"><b>⚑</b> <span>editor is at <em>4.5×</em> its normal today: $4.10 against a $0.92 median</span></li>
+          <li><b>$0.00</b> <span>OpenCode on a free model: a real zero</span></li>
+          <li><b>tok</b> <span>Codex on a ChatGPT plan: tokens, and why there is no price; never one made up</span></li>
+        </ul>
+      </div>
+      <div class="mp" id="m-judge" data-shows="ladder evals insights">
+        <p class="mh"><b>Judge ladder</b><span>a step's check · cheap first</span></p>
+        <div class="chk"><span class="lb">Check</span><b id="m-what">shot-3.png</b><span class="cr" id="m-crit">“the beam is visible through the rain”</span></div>
+        <ol class="rungs" id="m-rungs"></ol>
+        <p class="vd" id="m-vd" aria-live="polite"></p>
+        <button type="button" class="ghost" id="m-again"><i></i>Judge another</button>
+        <div class="ev">
+          <p class="lb">Evals · after a model change</p>
+          <div class="evr"><span>cases passed</span><b>47 / 50</b><em class="dn">−1</em></div>
+          <div class="evr"><span>tests passed</span><b>100%</b><em>=</em></div>
+          <div class="evr"><span>Insights</span><b>2 findings</b><em class="up">1 rule suggested</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="planuse" data-f="planuse">
+          <div class="fth">
+            <span class="c">IX·1</span>
+            <h2>Live plan usage</h2>
+            <p class="s">How full each account&#39;s five-hour window and week are, and when they reset, in the status bar and on the Dashboard. Every engine&#39;s limit apart.</p>
+            <a class="see" href="#s-meter">Every account&#39;s plan, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>The limit of a subscription plan arrives in the middle of a turn, without warning. Typing /usage in Claude Code tells you where you stand, if you remember to, and usually after the long turn rather than before it.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">The status bar</span><span class="t">The status bar of every window shows the time left in the five-hour window, how full it is, and the week: <code>3h 49m - 86% / wk 41%</code>. It turns yellow at 80% and red at 95%, driven by the worst limit on your plan, even one there is no room to print.</span></button></li><li><button type="button" data-i="1"><span class="k">The card</span><span class="t">On the Dashboard, the plan usage card holds the same figures Anthropic reports to <code>/usage</code>: the current session (5h), the current week (all models) and the per-model weekly bars when your plan has them, each with its reset as a clock time and a countdown: "Resets 21:40 · in 2h 20m".</span></button></li><li><button type="button" data-i="2"><span class="k">Its beat</span><span class="t">The figures move only while a turn runs, so the beat follows the fleet: every 60 seconds while an agent works, every 5 minutes while the farm is idle. A turn that ends pulls the next read forward. The bar, the card and any agent asking share one reading: one request per beat.</span></button></li><li><button type="button" data-i="3"><span class="k">Every account</span><span class="t">Every account shows its own five-hour and weekly bars. A Claude account is read with its own sign-in, a Codex account from its session file, and Antigravity's quota by <code>agy -p /usage</code> on a beat of its own, only while Antigravity works.</span></button></li><li><button type="button" data-i="4"><span class="k">When it cannot know</span><span class="t">When it cannot know, it says so. With no subscription sign-in there is no indicator at all. An expired sign-in reads <code>usage ?</code> and asks you to start a Claude Code session, because Agent Farm never writes to the CLI's sign-in. A busy endpoint is left alone for 3, 6, 12, then 15 minutes, and the tooltip says when the next read is.</span></button></li></ol>
+            <p class="note">Beside it, a lap counter of your own: <em>Reset Token Lap</em> counts the whole fleet's tokens, cost and messages from that moment, as <code>⏱ 84.2K</code> in the status bar, like a car's trip meter. How the percentage, the time left and the reset are drawn is yours to change (<code>quotaStyle.*</code>).</p>
+            <details class="setd">
+                <summary>Settings · 5</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.planUsageWarnPercent</code></td><td class="v">80%</td><td>The status bar turns yellow.</td></tr><tr><td><code>agentFarm.planUsageDangerPercent</code></td><td class="v">95%</td><td>The status bar turns red.</td></tr><tr><td><code>agentFarm.planUsageActiveRefreshSeconds</code></td><td class="v">60 s</td><td>How often the plan is read while an agent works. Never under 30 s.</td></tr><tr><td><code>agentFarm.planUsageRefreshMinutes</code></td><td class="v">5 min</td><td>How often an idle farm reads it. 0 = only when you press ⟳.</td></tr><tr><td><code>agentFarm.planUsageStatusBar</code></td><td class="v">on</td><td>The status bar indicator. The card stays either way.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="planuse" aria-label="Live plan usage, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·1</b><span class="fk">The status bar</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="steps" data-f="steps">
+          <div class="fth">
+            <span class="c">IX·2</span>
+            <h2>Where it went</h2>
+            <p class="s">Every turn split into nine kinds of step, from the model&#39;s thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. Every figure is shown raw and weighted.</p>
+            <a class="see" href="#m-spend">A live leg, counted by kind <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>&quot;Where did my limit go?&quot; had no answer. Reading a file and nine seconds of the model&#39;s reasoning drew the same row, though one runs here for free and the other is billed at the output rate. And a raw token total is mostly cache reads, the cheapest thing in it, so it does not describe the wall it seems to.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Nine kinds</span><span class="t">Every step of a turn is one of nine kinds, each with its glyph: ◈ thinking, ▸ reply, ⌘ local tool, ↩ tool result, ⇄ MCP tool, ⌗ web, ⑂ sub-agent, ⚙ harness, · local only. The kinds were counted in 60 real transcripts before they were named.</span></button></li><li><button type="button" data-i="1"><span class="k">Every step counted</span><span class="t">A step is anything an agent does: it reasoned, it wrote, or it called a tool. Thinking was the invisible one: 1,737 thinking blocks against 878 replies in the measurement, every token billed as output. A turn is written <code>26api·99steps</code>: the round trips, then the steps they carried.</span></button></li><li><button type="button" data-i="2"><span class="k">What each call cost</span><span class="t">Each step carries what its API call spent, raw and weighted, written once, on the call's first step. A step with no figure did not cost nothing: it rode on the call above it, and its tooltip says so.</span></button></li><li><button type="button" data-i="3"><span class="k">Raw and ⚖</span><span class="t">Every token figure carries two numbers: raw, then ⚖ weighted, which counts tokens the way the plan's limit does, against one Sonnet input token. A cache read weighs about a tenth, an output token five, an Opus token five Sonnets. Measured over 32 days, raw ÷ weighted for a busy window ran from 0.80× to 3.86×.</span></button></li><li><button type="button" data-i="4"><span class="k">Cache by its life</span><span class="t">Cache writes are priced by how long they live: a one-hour write at twice an input token, a five-minute one at 1.25. The split is read from each line, and a line that does not give it is charged at the one-hour rate, because understating a turn is the mistake being fixed.</span></button></li></ol>
+            <p class="note">The rates are the provider's, so they are settings, never a release. Changing the weights re-reads every transcript at once, and a table that cannot be used falls back to the shipped one rather than quietly zeroing the gauge.</p>
+            <details class="setd">
+                <summary>Settings · 4</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.quotaWeightMode</code></td><td class="v">model-aware</td><td>model-aware: Opus 5, Sonnet 1, Haiku ⅓. model-flat: weigh only the kinds of token. raw: ⚖ is the raw total.</td></tr><tr><td><code>agentFarm.quotaWeights</code></td><td class="v">the table</td><td>The weights per model, against one Sonnet input token. Apart from the prices, so a billing fix never moves the gauge.</td></tr><tr><td><code>agentFarm.windowWeightedTokenLimit</code></td><td class="v">0 (off)</td><td>Your five-hour ceiling in weighted tokens, for a percentage.</td></tr><tr><td><code>agentFarm.pricing</code></td><td class="v">the rate card</td><td>USD per million tokens per model pattern; the first match wins.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="steps" aria-label="Where it went, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·2</b><span class="fk">Nine kinds</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="budgets" data-f="budgets">
+          <div class="fth">
+            <span class="c">IX·3</span>
+            <h2>Budgets</h2>
+            <p class="s">A daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. A warning at 80%, an error past 100%.</p>
+            <a class="see" href="#m-spend">Budgets filling, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent left to run overnight can spend what was meant for a week, and a warning in the morning is too late. A ceiling you can walk through is not a ceiling.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Per agent, per fleet</span><span class="t">A daily budget in dollars per agent, and <code>"*"</code> for the whole fleet: <code>{"builder": 25, "*": 50}</code>. A figure of 0 lifts that one name's cap and leaves the others in force.</span></button></li><li><button type="button" data-i="1"><span class="k">A warning, then a brake</span><span class="t">At 80% the agent gets a ⚠ in Insights. Past its budget it is a ⛔, a notification comes once a day, and the next launch is blocked: the task is parked with the reason.</span></button></li><li><button type="button" data-i="2"><span class="k">A run&#39;s cap</span><span class="t">A workflow run has a hard cap of its own. Once the run has spent it, counting every step, the media and the checks, no further step starts. The run stops saying what it spent, the cap, and where the cap came from. Nothing is asked, so nothing can talk past it.</span></button></li><li><button type="button" data-i="3"><span class="k">A mission&#39;s two</span><span class="t">A mission carries a dollar ceiling and a token ceiling, 2,000,000 by default, and stops at whichever runs out first, because a team on a plan never moves the dollars. Its lead is told both. 0 means no ceiling, on every axis.</span></button></li><li><button type="button" data-i="4"><span class="k">Media, and all off</span><span class="t">Media has a monthly budget: a warning once a month when the last 30 days' estimated media cost passes it. Sessions opened from Telegram have a daily cap. And one switch lifts every daily budget at once, keeping your figures for when you turn it back.</span></button></li></ol>
+            <p class="note">On a subscription the dollars are the API-equivalent value of the work, not a bill: "builder should not use more than $25 of value today". Seven places read the budgets, and all seven read them through one door, so the switch that lifts them is obeyed everywhere or nowhere.</p>
+            <details class="setd">
+                <summary>Settings · 4</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.budgets</code></td><td class="v">{}</td><td>Daily USD per agent; &quot;*&quot; = the fleet.</td></tr><tr><td><code>agentFarm.budgetsUnlimited</code></td><td class="v">off</td><td>Suspends every daily budget without losing the figures.</td></tr><tr><td><code>agentFarm.workflowSpendCap</code></td><td class="v">0 (none)</td><td>A run&#39;s hard cap; a workflow or a single run can set its own.</td></tr><tr><td><code>agentFarm.mediaBudgetMonthUSD</code></td><td class="v">0 (off)</td><td>A warning when the last 30 days&#39; media cost passes it.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="budgets" aria-label="Budgets, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·3</b><span class="fk">Per agent, per fleet</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="downgrade" data-f="downgrade">
+          <div class="fth">
+            <span class="c">IX·4</span>
+            <h2>Cheaper, not stopped</h2>
+            <p class="s">As a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. Sessions you opened by hand are left alone.</p>
+            <a class="see" href="#m-plan">Windows past the line, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An overnight factory eats the morning&#39;s quota, and a job that hits the wall halfway through is a job done for nothing. Cancelling it is not the only answer.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Wait</span><span class="t">The quota guard: once the five-hour window reaches the line you set, automatic jobs wait, marked deferred. When the window loosens they start by themselves, in order.</span></button></li><li><button type="button" data-i="1"><span class="k">The handover line</span><span class="t">A job that names an account is also held while that account's own window is at or past the handover line, 90% by default, because a run started there would be told to hand over on its first reading. The board says so: <code>quota handover line (93% of kate's 5h window, at or past 90%)</code>.</span></button></li><li><button type="button" data-i="2"><span class="k">Cheaper</span><span class="t">Below that, the downgrade: past the line you set, every job the farm started itself runs on a cheaper model, haiku unless you name another. Sessions you opened by hand are left alone.</span></button></li><li><button type="button" data-i="3"><span class="k">Said in the output</span><span class="t">What ran cheap, and why, is written at the top of its output: <code>Model policy: quota window 82% ≥ 70% — downgraded…</code></span></button></li><li><button type="button" data-i="4"><span class="k">By where it came from</span><span class="t">Model rules by where a job came from: <code>{"source": "trigger", "model": "haiku"}</code> puts every routine job a trigger starts on a cheap model. A model named on the schedule or the trigger itself beats the rule.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 5</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.quotaGuardPercent</code></td><td class="v">0 (off)</td><td>Automatic jobs wait at this fullness of the five-hour window.</td></tr><tr><td><code>agentFarm.quotaDowngradePercent</code></td><td class="v">0 (off)</td><td>Past this fullness, the farm&#39;s own jobs run on the cheaper model.</td></tr><tr><td><code>agentFarm.quotaDowngradeModel</code></td><td class="v">haiku</td><td>The cheaper model.</td></tr><tr><td><code>agentFarm.quotaHandoverPct</code></td><td class="v">90%</td><td>The handover line; 0 turns the hold off.</td></tr><tr><td><code>agentFarm.quotaBrakeBasis</code></td><td class="v">whichever</td><td>Which figure the guard and the downgrade read: raw, weighted, or whichever is further along.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="downgrade" aria-label="Cheaper, not stopped, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·4</b><span class="fk">Wait</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="anomaly" data-f="anomaly">
+          <div class="fth">
+            <span class="c">IX·5</span>
+            <h2>Cost alarms</h2>
+            <p class="s">A day that costs far more than an agent&#39;s usual, or a week that jumps, raises a flag. The usual is the median of its real days, not a guess.</p>
+            <a class="see" href="#m-an">A cost alarm, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A budget has a blind spot: a day that costs ten times the usual but stays under the cap passes in silence. And cost creeps, a little more every week, with no single day worth a warning.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Fourteen days</span><span class="t">For every agent, and for the fleet, the median of its last 14 days and how far its days usually stray from it, measured with the median too, so one wild day does not move the usual.</span></button></li><li><button type="button" data-i="1"><span class="k">Flagged</span><span class="t">Today is flagged when it is well beyond that, more than 3.5 times the usual spread, and at least twice the median: "researcher is at 4.2× its normal today". No model is asked.</span></button></li><li><button type="button" data-i="2"><span class="k">The noise floor</span><span class="t">Days under a dollar are noise and never flagged. The floor is yours to set, and 0 turns the alarm off. It works apart from the budgets.</span></button></li><li><button type="button" data-i="3"><span class="k">The week</span><span class="t">The week: when an agent's last seven days cost twice the seven before, Insights says so: "Weekly cost trend: $24 this week vs $6 last week (4.0x)". Under $0.50 last week and $1 this week it says nothing.</span></button></li><li><button type="button" data-i="4"><span class="k">Heavy hitters</span><span class="t">The Cost Anomaly Report lays today, the median and the multiple side by side, with the heavy hitters: the sessions that ate half the tokens of the last seven days.</span></button></li></ol>
+            <p class="note">A click on the flag opens that agent's own cost view, where the evidence is. Dismiss it for a day, a week or for good, and tomorrow's "3.9×" stays the same dismissed finding as today's "4.2×".</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.costAnomalyMinUsd</code></td><td class="v">$1</td><td>Days under this are not judged. 0 = off.</td></tr><tr><td><code>agentFarm.trendAlertFactor</code></td><td class="v">2×</td><td>This week against last. 0 = off.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="anomaly" aria-label="Cost alarms, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·5</b><span class="fk">Fourteen days</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="honest" data-f="honest">
+          <div class="fth">
+            <span class="c">IX·6</span>
+            <h2>Honest numbers</h2>
+            <p class="s">Costs come from your own transcripts. A free model&#39;s zero is a real zero; a missing figure is shown as missing.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A figure that looks exact and is not is worse than none: $0.00 beside work that was billed, a session that &quot;ran 36 hours&quot; because it was picked up again the next morning, an hourly cost divided by a night&#39;s sleep.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">From your transcripts</span><span class="t">Cost is read from the transcripts on your machine and priced with your rate card, USD per million tokens, the first matching model pattern winning. On a subscription it is the API-equivalent value of the work, not a bill.</span></button></li><li><button type="button" data-i="1"><span class="k">Dated rates</span><span class="t">Rates are dated. Edit one and it applies from then on: each message is priced at the rate in force when it ran, so a price change never rewrites what the past cost.</span></button></li><li><button type="button" data-i="2"><span class="k">Zero, or unknown</span><span class="t">A zero is only a zero when it is one. OpenCode states its own cost, so a free model's $0.00 is real. Codex on a ChatGPT plan states none: its figures are tokens, with the reason beside them, never a price made up from someone else's rate card. A model with no rate is named in a warning on the Dashboard. A total that mixes providers is marked as mixed.</span></button></li><li><button type="button" data-i="3"><span class="k">Matched, or blank</span><span class="t">A task's cost comes from the transcript its own run wrote. When two sessions could be it, no number is chosen: the task stays without one. While the transcript is still being read, it waits rather than lock a zero in.</span></button></li><li><button type="button" data-i="4"><span class="k">Time worked</span><span class="t">Time is the time worked. A pause between turns longer than half an hour is taken out and shown beside it, <code>50m ⋯25.8 h</code>, so cost per hour and minutes per turn are divided by work, not by sleep.</span></button></li></ol>
+            <p class="note">An interrupted or cancelled turn can leave lines that report zero usage. They are not read as an empty context: the real figure stays.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.sessionBreakMin</code></td><td class="v">30 min</td><td>A pause longer than this between turns is not counted as work. 0 = count everything.</td></tr><tr><td><code>agentFarm.agentRowCostUnit</code></td><td class="v">tokens</td><td>What each agent row in the Agents view shows for today: tokens or cost.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="honest" aria-label="Honest numbers, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·6</b><span class="fk">From your transcripts</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="ladder" data-f="ladder">
+          <div class="fth">
+            <span class="c">IX·7</span>
+            <h2>Judge ladder</h2>
+            <p class="s">A check is judged by a cheap model first. Only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing.</p>
+            <a class="see" href="#m-judge">The ladder, judging <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Checking every step with a strong model costs more than many of the steps. Checking with a cheap one alone fails good work, and every wrong FAIL buys a retry nobody needed.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Cheap first</span><span class="t">A step's check, on text or on an image, is judged against its criteria by a model of its own: haiku unless you name another. With a ladder set, cheapest first, such as <code>haiku,sonnet</code>, every check starts on the bottom rung.</span></button></li><li><button type="button" data-i="1"><span class="k">A FAIL climbs</span><span class="t">A FAIL is judged once more on the next rung before the step is paid for again. A PASS there overturns it and no retry is made; a FAIL there goes to the retry as before. The output says which: <code>Escalated: haiku said FAIL (…) → sonnet says PASS — overturned, no retry paid</code>.</span></button></li><li><button type="button" data-i="2"><span class="k">Stop paying</span><span class="t">A retry is bought only while it can still help. When the judge says the approach itself is wrong, or a FAIL names the same defect as the attempt before, the retries left are held back and the run's supervisor is woken to change the plan.</span></button></li><li><button type="button" data-i="3"><span class="k">Before and after</span><span class="t">An edit is judged against what it started from: the check sees the image or video before and after, and is asked whether only what was asked changed. A check that comes back with no verdict is never counted as a pass.</span></button></li><li><button type="button" data-i="4"><span class="k">What the checks saved</span><span class="t">The checks are counted too: their cost is part of the step, the run's total and its cap. A lean check on haiku was measured at $0.0021 against $0.0245 before. Each run adds up what its checks did: climbs, overturns, stops, replans and about how much was saved.</span></button></li></ol>
+            <p class="note">Three cost presets set a run's ladder and cap together: <em>Economy</em> judges on haiku with a $5 run cap, <em>Balanced</em> is the shipped behaviour, <em>Quality</em> climbs from sonnet to opus with no cap.</p>
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.judgeArgs</code></td><td class="v">haiku</td><td>The judge&#39;s model. Keep it cheap.</td></tr><tr><td><code>agentFarm.judgeLadder</code></td><td class="v">empty</td><td>Models cheapest first, such as haiku,sonnet. Empty: one judge, no climb.</td></tr><tr><td><code>agentFarm.judgeCompare</code></td><td class="v">auto</td><td>Shows the judge what an edit started from. never: the result alone.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="ladder" aria-label="Judge ladder, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·7</b><span class="fk">Cheap first</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="evals" data-f="evals">
+          <div class="fth">
+            <span class="c">IX·8</span>
+            <h2>Evals</h2>
+            <p class="s">Saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds.</p>
+            <a class="see" href="#m-judge">An evals scorecard, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>After a change of model or of an agent&#39;s instructions, the only evidence left is how sure the agent sounds. A change that breaks yesterday&#39;s good answers goes unnoticed until someone trips over it.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">A case</span><span class="t">A case is an input and an expectation: the prompt the agent is asked again, and what must be true of the answer, handed to the judge word for word. Most cases are born from a bad trace: a session scored ⭐ 2 or less, a task whose check failed.</span></button></li><li><button type="button" data-i="1"><span class="k">A run</span><span class="t">A run asks first, because it spends: one call to the agent per case, on haiku unless you clear that to test the real model, and one cheap judge call.</span></button></li><li><button type="button" data-i="2"><span class="k">What changed</span><span class="t">The page compares the latest run with the one before it, case by case: ⛔ regressed, ✅ fixed, 🆕 new. "12/14 passed, 2 regressed" names the two.</span></button></li><li><button type="button" data-i="3"><span class="k">A against B</span><span class="t">A against B: the agent's instructions as they are, and the same with one rule more. Each prompt runs in two sandboxes that leave the real agent untouched, and the judge sees the two answers in random order. If B wins, one click applies it, with a backup.</span></button></li><li><button type="button" data-i="4"><span class="k">Between runs</span><span class="t">Between runs, a cheap judge scores recent sessions from 1 to 5 against what was asked, and a pulse check asks each agent who it is and checks the answer against its instructions. Every version of an agent's instructions keeps its sessions, its average quality and its daily cost.</span></button></li></ol>
+            <p class="note">A quality average that drops by 0.8 in a week, or sits under 3 for two, raises a warning. Cheap and bad is a loss, so cost and quality sit side by side.</p>
+            <details class="setd">
+                <summary>Settings · 4</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.evalRunArgs</code></td><td class="v">--model haiku</td><td>The model eval cases are replayed on. Empty: the agent&#39;s own.</td></tr><tr><td><code>agentFarm.qualitySample</code></td><td class="v">off</td><td>Score recent sessions: daily or weekly.</td></tr><tr><td><code>agentFarm.qualitySamplesPerAgent</code></td><td class="v">2</td><td>Sessions scored per agent each time.</td></tr><tr><td><code>agentFarm.pulse</code></td><td class="v">off</td><td>The pulse check: nightly or weekly.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="evals" aria-label="Evals, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·8</b><span class="fk">A case</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="insights" data-f="insights">
+          <div class="fth">
+            <span class="c">IX·9</span>
+            <h2>Insights</h2>
+            <p class="s">Repeated corrections turn into suggested rules. A finding is fixed, handed to its agent or dismissed, and whether the fix held is tracked.</p>
+            <a class="see" href="#m-judge">Findings and a suggested rule, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A finding that is only a snapshot gets fixed, comes back, and nobody knows whether the fix held. And the same correction typed to an agent every day never becomes the rule it should be.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">One list</span><span class="t">Every finding of the fleet in one list, ⛔ error, ⚠ warning, ℹ info: budgets and cost alarms, a quality drop, a failed pulse, a permission rule too broad, a trigger that always fails or never fires. A click opens the file or the evidence.</span></button></li><li><button type="button" data-i="1"><span class="k">Fix, hand over, dismiss</span><span class="t">Each finding has a way to close. 🛠 Fix starts the mechanical fix where there is one. 🚀 Delegate hands it to an agent as a task: find the root cause, fix what is safe, report what is not. ✕ Dismiss hides it for a day, a week or for good, and the hidden ones are counted.</span></button></li><li><button type="button" data-i="2"><span class="k">Did it hold?</span><span class="t">A ledger remembers each one: ↻4 when it has come back four times, ⚠back when it came back after your fix. Insight History lists the worst first, and how many fixes are holding.</span></button></li><li><button type="button" data-i="3"><span class="k">A rule from corrections</span><span class="t">A cheap model reads the last 14 days of follow-up messages, where the corrections are, and suggests a rule for the agent's instructions, such as "write titles in Turkish". Nothing is written until you press Apply.</span></button></li><li><button type="button" data-i="4"><span class="k">Alive today?</span><span class="t">The Living page asks one question: is the system alive today? It checks loops, not parts: unread notices by age, unanswered questions, the queue, silent automations, duties with nothing behind them, spend, and checks of your own. A dead loop counts zero.</span></button></li></ol>
+            <p class="note">The Living page exists because of a measured failure: a daily cycle stopped for 16 days while its reminder ran correctly every morning and nobody read it. No error, nothing red, and the system was dead.</p>
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.insightAutoDelegate</code></td><td class="v">[]</td><td>Categories handed to their agent as soon as they appear; at most one task per problem a day.</td></tr><tr><td><code>agentFarm.suggestScan</code></td><td class="v">off</td><td>Scan for rule suggestions every week.</td></tr><tr><td><code>agentFarm.livingChecks</code></td><td class="v">[]</td><td>Your own checks on the Living page: a diary file, a folder that should be empty.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="insights" aria-label="Insights, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IX·9</b><span class="fk">One list</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Is the cost a bill?</summary><p>On a subscription, no: it is what the same work would cost at the provider's API rates, the value you got from the plan. On an API key it is close to the bill, at your own rate card. The plan figures, how full a window is, are the provider's own.</p></details><details><summary>Where do the plan percentages come from?</summary><p>From the provider: for Claude, the figures <code>/usage</code> prints, read with the sign-in Claude Code already keeps; for Codex, its session file; for Antigravity, <code>agy -p /usage</code>. Everything else on this page is counted from the transcripts on your machine.</p></details><details><summary>Will Agent Farm stop or cheapen my work by itself?</summary><p>Only where you said so. The guard, the downgrade and the run cap start off, and budgets start empty. Sessions you open by hand are never moved to a cheaper model.</p></details><details><summary>Do the checks cost money?</summary><p>A little, and they are counted. The judge is a cheap model, a lean check on haiku was measured at about a fifth of a cent, and its cost is added to the step it checked. An eval run or an A/B test asks before it spends.</p></details><details><summary>What happens when a provider changes its prices?</summary><p>You change the rate in settings or in the Model pricing editor; no update is needed. The new rate applies from then on, and what was spent before keeps the price it had.</p></details><details><summary>Why is there no price beside Codex?</summary><p>Codex on a ChatGPT plan reports tokens, not a price. Agent Farm shows the tokens and says why there is no money beside them, rather than estimate one from Anthropic's rates.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="nx" href="../safe-and-yours-alone/" style="--c:var(--dim)"><span class="k">Next district</span><span class="r">X</span><span class="n">Safe and yours alone</span><span class="p">Guards stop what an agent should not do, and nothing about your work comes to us.</span></a>
+        <a class="all" href="../">All 82 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.10.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="../../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../../terms/">Terms</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../refunds/">Refunds</a>
+      <a href="mailto:agentfarm@muvusoft.uk">Contact</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>
