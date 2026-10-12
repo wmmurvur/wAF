@@ -13,7 +13,7 @@
     <meta property="og:description" content="Everything Agent Farm does: 82 things in ten districts, from relay chains that never stop to agents that make films, each one checked against the extension's source.">
     <meta property="og:url" content="https://agentfarm.space/features/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../assets/features.js?v=0.7.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../assets/features.js?v=0.8.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -21,7 +21,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../assets/site.css?v=0.7.0"></head>
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.8.0"></head>
   <body>
     
   <div class="wrap">
@@ -40,9 +40,38 @@
   <main class="fhub">
     <div class="wrap">
       <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>Features</span></nav>
-      <div class="sh">
-        <h1>Everything<br><em>the farm does.</em></h1>
-        <p class="lead">82 things in ten districts. Each one is something Agent Farm does today, checked against its source. Search them, or pick a district.</p>
+      <div class="fhero">
+        <div class="fht">
+          <h1>Everything<br><em>the farm does.</em></h1>
+          <p class="lead">82 things in ten districts. Each one is something Agent Farm does today, checked against its source. Search them, or pick a district.</p>
+        </div>
+        <figure class="fbd" id="fh-board" aria-label="One event travelling across the districts, demo">
+          <div class="cols">
+            <div class="col" style="--c:var(--yellow)"><b>I</b>
+                <a class="cell" href="#c-relay" data-f="relay" title="Baton relay" aria-label="Baton relay"></a><a class="cell" href="#c-quota" data-f="quota" title="Quota handover" aria-label="Quota handover"></a><a class="cell" href="#c-policies" data-f="policies" title="Account policies" aria-label="Account policies"></a><a class="cell" href="#c-park" data-f="park" title="Park and wake" aria-label="Park and wake"></a><a class="cell" href="#c-ouroboros" data-f="ouroboros" title="Ouroboros" aria-label="Ouroboros"></a><a class="cell" href="#c-sentry" data-f="sentry" title="Sentry" aria-label="Sentry"></a><a class="cell" href="#c-brakes" data-f="brakes" title="Brakes" aria-label="Brakes"></a>
+              </div><div class="col" style="--c:var(--teal)"><b>II</b>
+                <a class="cell" href="#c-kinds" data-f="kinds" title="Any kind of project" aria-label="Any kind of project"></a><a class="cell" href="#c-backlog" data-f="backlog" title="Backlog" aria-label="Backlog"></a><a class="cell" href="#c-track" data-f="track" title="Track" aria-label="Track"></a><a class="cell" href="#c-context" data-f="context" title="Project context" aria-label="Project context"></a><a class="cell" href="#c-letter" data-f="letter" title="Handover letter" aria-label="Handover letter"></a><a class="cell" href="#c-portfolio" data-f="portfolio" title="Portfolio" aria-label="Portfolio"></a><a class="cell" href="#c-cost" data-f="cost" title="Cost and analysis" aria-label="Cost and analysis"></a>
+              </div><div class="col" style="--c:var(--claude)"><b>III</b>
+                <a class="cell" href="#c-studio" data-f="studio" title="Studio" aria-label="Studio"></a><a class="cell" href="#c-crecipes" data-f="crecipes" title="Content recipes" aria-label="Content recipes"></a><a class="cell" href="#c-judge" data-f="judge" title="Judge and triage" aria-label="Judge and triage"></a><a class="cell" href="#c-premiere" data-f="premiere" title="Straight to Premiere" aria-label="Straight to Premiere"></a><a class="cell" href="#c-inbox" data-f="inbox" title="Media inbox" aria-label="Media inbox"></a><a class="cell" href="#c-calendar" data-f="calendar" title="Content calendar" aria-label="Content calendar"></a><a class="cell" href="#c-media" data-f="media" title="Any media model" aria-label="Any media model"></a><a class="cell" href="#c-briefing" data-f="briefing" title="Spoken briefing" aria-label="Spoken briefing"></a>
+              </div><div class="col" style="--c:var(--violet)"><b>IV</b>
+                <a class="cell" href="#c-flows" data-f="flows" title="Workflows" aria-label="Workflows"></a><a class="cell" href="#c-schedules" data-f="schedules" title="Schedules" aria-label="Schedules"></a><a class="cell" href="#c-triggers" data-f="triggers" title="Watch triggers" aria-label="Watch triggers"></a><a class="cell" href="#c-gatekeeper" data-f="gatekeeper" title="Gatekeeper" aria-label="Gatekeeper"></a><a class="cell" href="#c-words" data-f="words" title="Say it in words" aria-label="Say it in words"></a><a class="cell" href="#c-queue" data-f="queue" title="Queue and limits" aria-label="Queue and limits"></a><a class="cell" href="#c-retries" data-f="retries" title="Retries and rounds" aria-label="Retries and rounds"></a><a class="cell" href="#c-mainswitch" data-f="mainswitch" title="One switch" aria-label="One switch"></a><a class="cell" href="#c-forecast" data-f="forecast" title="Forecast" aria-label="Forecast"></a>
+              </div><div class="col" style="--c:var(--cyan)"><b>V</b>
+                <a class="cell" href="#c-missions" data-f="missions" title="Missions" aria-label="Missions"></a><a class="cell" href="#c-shared" data-f="shared" title="Shared sessions" aria-label="Shared sessions"></a><a class="cell" href="#c-notes" data-f="notes" title="Agent notes" aria-label="Agent notes"></a><a class="cell" href="#c-steer" data-f="steer" title="Steer and veto" aria-label="Steer and veto"></a><a class="cell" href="#c-console" data-f="console" title="Console" aria-label="Console"></a><a class="cell" href="#c-question" data-f="question" title="Countdown questions" aria-label="Countdown questions"></a><a class="cell" href="#c-notices" data-f="notices" title="Notices and the queue" aria-label="Notices and the queue"></a><a class="cell" href="#c-timeline" data-f="timeline" title="Live Timeline" aria-label="Live Timeline"></a><a class="cell" href="#c-worktrees" data-f="worktrees" title="Worktrees" aria-label="Worktrees"></a>
+              </div><div class="col" style="--c:var(--agy)"><b>VI</b>
+                <a class="cell" href="#c-sessions" data-f="sessions" title="Every session kept" aria-label="Every session kept"></a><a class="cell" href="#c-turns" data-f="turns" title="Any turn, replayed" aria-label="Any turn, replayed"></a><a class="cell" href="#c-wiki" data-f="wiki" title="Wiki from sessions" aria-label="Wiki from sessions"></a><a class="cell" href="#c-dropbox" data-f="dropbox" title="Drop box" aria-label="Drop box"></a><a class="cell" href="#c-obsidian" data-f="obsidian" title="Obsidian, the second brain" aria-label="Obsidian, the second brain"></a><a class="cell" href="#c-search" data-f="search" title="Search everything" aria-label="Search everything"></a><a class="cell" href="#c-machines" data-f="machines" title="Other machines" aria-label="Other machines"></a><a class="cell" href="#c-reports" data-f="reports" title="Reports and digests" aria-label="Reports and digests"></a>
+              </div><div class="col" style="--c:#7fa0f8"><b>VII</b>
+                <a class="cell" href="#c-engines" data-f="engines" title="Five engines" aria-label="Five engines"></a><a class="cell" href="#c-routes" data-f="routes" title="Plug-in brains" aria-label="Plug-in brains"></a><a class="cell" href="#c-radar" data-f="radar" title="Free-model radar" aria-label="Free-model radar"></a><a class="cell" href="#c-health" data-f="health" title="Route health" aria-label="Route health"></a><a class="cell" href="#c-vault" data-f="vault" title="Secret vault" aria-label="Secret vault"></a><a class="cell" href="#c-accounts" data-f="accounts" title="Many sign-ins" aria-label="Many sign-ins"></a><a class="cell" href="#c-switch" data-f="switch" title="Switch the model" aria-label="Switch the model"></a>
+              </div><div class="col" style="--c:var(--ink)"><b>VIII</b>
+                <a class="cell" href="#c-bridge" data-f="bridge" title="Just ask" aria-label="Just ask"></a><a class="cell" href="#c-ops" data-f="ops" title="579 operations" aria-label="579 operations"></a><a class="cell" href="#c-mcp" data-f="mcp" title="One command line" aria-label="One command line"></a><a class="cell" href="#c-agents" data-f="agents" title="Agents with a home" aria-label="Agents with a home"></a><a class="cell" href="#c-matrix" data-f="matrix" title="Capability Matrix" aria-label="Capability Matrix"></a><a class="cell" href="#c-phone" data-f="phone" title="Phone app" aria-label="Phone app"></a><a class="cell" href="#c-telegram" data-f="telegram" title="Telegram" aria-label="Telegram"></a><a class="cell" href="#c-sound" data-f="sound" title="Sound" aria-label="Sound"></a><a class="cell" href="#c-voice" data-f="voice" title="Read aloud" aria-label="Read aloud"></a><a class="cell" href="#c-move" data-f="move" title="Take it with you" aria-label="Take it with you"></a>
+              </div><div class="col" style="--c:#de8cf0"><b>IX</b>
+                <a class="cell" href="#c-planuse" data-f="planuse" title="Live plan usage" aria-label="Live plan usage"></a><a class="cell" href="#c-steps" data-f="steps" title="Where it went" aria-label="Where it went"></a><a class="cell" href="#c-budgets" data-f="budgets" title="Budgets" aria-label="Budgets"></a><a class="cell" href="#c-downgrade" data-f="downgrade" title="Cheaper, not stopped" aria-label="Cheaper, not stopped"></a><a class="cell" href="#c-anomaly" data-f="anomaly" title="Cost alarms" aria-label="Cost alarms"></a><a class="cell" href="#c-honest" data-f="honest" title="Honest numbers" aria-label="Honest numbers"></a><a class="cell" href="#c-ladder" data-f="ladder" title="Judge ladder" aria-label="Judge ladder"></a><a class="cell" href="#c-evals" data-f="evals" title="Evals" aria-label="Evals"></a><a class="cell" href="#c-insights" data-f="insights" title="Insights" aria-label="Insights"></a>
+              </div><div class="col" style="--c:var(--dim)"><b>X</b>
+                <a class="cell" href="#c-local" data-f="local" title="On your machine" aria-label="On your machine"></a><a class="cell" href="#c-telemetry" data-f="telemetry" title="No telemetry" aria-label="No telemetry"></a><a class="cell" href="#c-shellguard" data-f="shellguard" title="ShellGuard" aria-label="ShellGuard"></a><a class="cell" href="#c-bridgeguard" data-f="bridgeguard" title="BridgeGuard" aria-label="BridgeGuard"></a><a class="cell" href="#c-permissions" data-f="permissions" title="Permissions as shown" aria-label="Permissions as shown"></a><a class="cell" href="#c-masking" data-f="masking" title="Keys kept out" aria-label="Keys kept out"></a><a class="cell" href="#c-browser" data-f="browser" title="Browser on a leash" aria-label="Browser on a leash"></a><a class="cell" href="#c-superpowers" data-f="superpowers" title="Superpowers" aria-label="Superpowers"></a>
+              </div>
+          </div>
+          <svg class="path" id="fh-path" aria-hidden="true"></svg>
+          <figcaption class="cap" aria-live="polite"><span class="sn"><span id="fh-sn">03:12 · A long video lands</span><span class="dots" id="fh-dots"><button type="button" data-s="0" aria-label="03:12 · A long video lands"></button><button type="button" data-s="1" aria-label="Fri 18:00 · You leave"></button><button type="button" data-s="2" aria-label="A thesis chapter"></button><button type="button" data-s="3" aria-label="Continue from 7c41d2e9"></button><button type="button" data-s="4" aria-label="Just ask"></button></span></span><b id="fh-t">03:12</b><span id="fh-x">interview-take-4.mp4 lands in the watched folder. The trigger fires.</span></figcaption>
+        </figure>
       </div>
       <div class="fbar">
         <label class="fq"><span>Search</span><input type="search" id="fh-q" placeholder="relay, Telegram, Premiere, quota…" autocomplete="off" spellcheck="false"><span class="fn" id="fh-n" aria-live="polite">82 shown</span></label>
@@ -55,22 +84,23 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">I</span>
             <div><h2 id="fd-relay">Never stops</h2><p>Work keeps going through full contexts, full accounts and its own updates.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><circle cx="10" cy="22" r="6"/><circle cx="36" cy="22" r="6"/><circle cx="62" cy="22" r="6"/><circle class="e-run" cx="10" cy="22" r="2.6" fill="currentColor" stroke="none"/></svg>
             <a class="fgo" href="never-stops/">Read the district <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="baton relay at the context level you set (40% by default), a session commits, writes a handover note and a fresh session carries on. no context rot. ⑂ 92 never stops">
+            <li class="fc" id="c-relay" data-q="baton relay at the context level you set (40% by default), a session commits, writes a handover note and a fresh session carries on. no context rot. ⑂ 92 never stops">
                 <a href="never-stops/#relay"><span class="n">Baton relay</span><span class="sg">⑂ 92</span><span class="s">At the context level you set (40% by default), a session commits, writes a handover note and a fresh session carries on. No context rot.</span></a>
-              </li><li class="fc" data-q="quota handover before the 5-hour window fills, the next leg opens on the account with the most room. acct-c 71% never stops">
+              </li><li class="fc" id="c-quota" data-q="quota handover before the 5-hour window fills, the next leg opens on the account with the most room. acct-c 71% never stops">
                 <a href="never-stops/#quota"><span class="n">Quota handover</span><span class="sg">acct-c 71%</span><span class="s">Before the 5-hour window fills, the next leg opens on the account with the most room.</span></a>
-              </li><li class="fc" data-q="account policies four built-in rules (@emptiest, @pool, @standing, @round-robin) or your own. a rule that can pick no account refuses the launch and says why. 4 built in never stops">
+              </li><li class="fc" id="c-policies" data-q="account policies four built-in rules (@emptiest, @pool, @standing, @round-robin) or your own. a rule that can pick no account refuses the launch and says why. 4 built in never stops">
                 <a href="never-stops/#policies"><span class="n">Account policies</span><span class="sg">4 built in</span><span class="s">Four built-in rules (@emptiest, @pool, @standing, @round-robin) or your own. A rule that can pick no account refuses the launch and says why.</span></a>
-              </li><li class="fc" data-q="park and wake one account or ten, when all of them are full the chain waits for the first reset and carries on by itself. 2 parks never stops">
+              </li><li class="fc" id="c-park" data-q="park and wake one account or ten, when all of them are full the chain waits for the first reset and carries on by itself. 2 parks never stops">
                 <a href="never-stops/#park"><span class="n">Park and wake</span><span class="sg">2 parks</span><span class="s">One account or ten, when all of them are full the chain waits for the first reset and carries on by itself.</span></a>
-              </li><li class="fc" data-q="ouroboros an agent builds a new agent farm, restarts it inside vs code and carries on in the same session. nobody has to restart anything. 3.931.0 never stops">
+              </li><li class="fc" id="c-ouroboros" data-q="ouroboros an agent builds a new agent farm, restarts it inside vs code and carries on in the same session. nobody has to restart anything. 3.931.0 never stops">
                 <a href="never-stops/#ouroboros"><span class="n">Ouroboros</span><span class="sg">3.931.0</span><span class="s">An agent builds a new Agent Farm, restarts it inside VS Code and carries on in the same session. Nobody has to restart anything.</span></a>
-              </li><li class="fc" data-q="sentry an agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next. on watch never stops">
+              </li><li class="fc" id="c-sentry" data-q="sentry an agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next. on watch never stops">
                 <a href="never-stops/#sentry"><span class="n">Sentry</span><span class="sg">on watch</span><span class="s">An agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next.</span></a>
-              </li><li class="fc" data-q="brakes a leg ceiling per chain, spend caps per workflow and one stop for a whole chain. recorded, never deleted. baton.stop never stops">
+              </li><li class="fc" id="c-brakes" data-q="brakes a leg ceiling per chain, spend caps per workflow and one stop for a whole chain. recorded, never deleted. baton.stop never stops">
                 <a href="never-stops/#brakes"><span class="n">Brakes</span><span class="sg">baton.stop</span><span class="s">A leg ceiling per chain, spend caps per workflow and one stop for a whole chain. Recorded, never deleted.</span></a>
               </li>
           </ul>
@@ -78,22 +108,23 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">II</span>
             <div><h2 id="fd-projects">Any project</h2><p>One backlog per project, and the project can be anything.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><rect x="6" y="6" width="60" height="32" rx="1"/><path class="e-t1" d="M13 15l3 3 5-6"/><path class="e-t2" d="M13 25l3 3 5-6"/><line x1="27" y1="15" x2="58" y2="15"/><line x1="27" y1="26" x2="52" y2="26"/><line x1="27" y1="34" x2="46" y2="34" opacity=".4"/></svg>
             <a class="fgo" href="../#ch-projects">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="any kind of project software, a documentary series, a thesis, homework, an ad campaign. same backlog, different work. any kind any project">
+            <li class="fc" id="c-kinds" data-q="any kind of project software, a documentary series, a thesis, homework, an ad campaign. same backlog, different work. any kind any project">
                 <a href="../#ch-projects"><span class="n">Any kind of project</span><span class="sg">any kind</span><span class="s">Software, a documentary series, a thesis, homework, an ad campaign. Same backlog, different work.</span></a>
-              </li><li class="fc" data-q="backlog write a thought down in one line. the fleet works the list off in the order you set. 38 open any project">
+              </li><li class="fc" id="c-backlog" data-q="backlog write a thought down in one line. the fleet works the list off in the order you set. 38 open any project">
                 <a href="../#ch-projects"><span class="n">Backlog</span><span class="sg">38 open</span><span class="s">Write a thought down in one line. The fleet works the list off in the order you set.</span></a>
-              </li><li class="fc" data-q="track how every closed item was closed: which session, which turn, what was tried first. the log can be rebuilt from the sessions. 214 closed any project">
+              </li><li class="fc" id="c-track" data-q="track how every closed item was closed: which session, which turn, what was tried first. the log can be rebuilt from the sessions. 214 closed any project">
                 <a href="../#ch-projects"><span class="n">Track</span><span class="sg">214 closed</span><span class="s">How every closed item was closed: which session, which turn, what was tried first. The log can be rebuilt from the sessions.</span></a>
-              </li><li class="fc" data-q="project context every session starts with the project's charter, plan, backlog and worklog, so no agent starts cold. 6 documents any project">
+              </li><li class="fc" id="c-context" data-q="project context every session starts with the project's charter, plan, backlog and worklog, so no agent starts cold. 6 documents any project">
                 <a href="../#ch-projects"><span class="n">Project context</span><span class="sg">6 documents</span><span class="s">Every session starts with the project&#39;s charter, plan, backlog and worklog, so no agent starts cold.</span></a>
-              </li><li class="fc" data-q="handover letter passing a project on? an automatic brief says what is still open and why. cold start any project">
+              </li><li class="fc" id="c-letter" data-q="handover letter passing a project on? an automatic brief says what is still open and why. cold start any project">
                 <a href="../#ch-projects"><span class="n">Handover letter</span><span class="sg">cold start</span><span class="s">Passing a project on? An automatic brief says what is still open and why.</span></a>
-              </li><li class="fc" data-q="portfolio every project's phase and backlog on one screen. 4 active any project">
+              </li><li class="fc" id="c-portfolio" data-q="portfolio every project's phase and backlog on one screen. 4 active any project">
                 <a href="../#ch-projects"><span class="n">Portfolio</span><span class="sg">4 active</span><span class="s">Every project&#39;s phase and backlog on one screen.</span></a>
-              </li><li class="fc" data-q="cost and analysis weeks, rhythm, how long an item takes from open to closed, and where the money went. per item any project">
+              </li><li class="fc" id="c-cost" data-q="cost and analysis weeks, rhythm, how long an item takes from open to closed, and where the money went. per item any project">
                 <a href="../#ch-projects"><span class="n">Cost and analysis</span><span class="sg">per item</span><span class="s">Weeks, rhythm, how long an item takes from open to closed, and where the money went.</span></a>
               </li>
           </ul>
@@ -101,24 +132,25 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">III</span>
             <div><h2 id="fd-studio">Beyond code</h2><p>Agents work as a production team and hand you finished media.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><rect x="2" y="8" width="68" height="28"/><g class="e-film"><rect x="6" y="13" width="14" height="18"/><rect x="24" y="13" width="14" height="18"/><rect x="42" y="13" width="14" height="18"/><rect x="60" y="13" width="14" height="18"/><rect x="78" y="13" width="14" height="18"/></g></svg>
             <a class="fgo" href="../#ch-studio">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="studio agents work as a production team: idea, research, script, shots, edit, judgement. you get assets, not chat. 6 scenes beyond code">
+            <li class="fc" id="c-studio" data-q="studio agents work as a production team: idea, research, script, shots, edit, judgement. you get assets, not chat. 6 scenes beyond code">
                 <a href="../#ch-studio"><span class="n">Studio</span><span class="sg">6 scenes</span><span class="s">Agents work as a production team: idea, research, script, shots, edit, judgement. You get assets, not chat.</span></a>
-              </li><li class="fc" data-q="content recipes long video to shorts, a weekly channel rhythm, a video edited in parts: install one and run it. 3 ready-made beyond code">
+              </li><li class="fc" id="c-crecipes" data-q="content recipes long video to shorts, a weekly channel rhythm, a video edited in parts: install one and run it. 3 ready-made beyond code">
                 <a href="../#ch-studio"><span class="n">Content recipes</span><span class="sg">3 ready-made</span><span class="s">Long video to shorts, a weekly channel rhythm, a video edited in parts: install one and run it.</span></a>
-              </li><li class="fc" data-q="judge and triage give a step its criteria and a vision model checks every shot; a fail is made again with the critique. you keep or drop the rest in triage. 2 to triage beyond code">
+              </li><li class="fc" id="c-judge" data-q="judge and triage give a step its criteria and a vision model checks every shot; a fail is made again with the critique. you keep or drop the rest in triage. 2 to triage beyond code">
                 <a href="../#ch-studio"><span class="n">Judge and triage</span><span class="sg">2 to triage</span><span class="s">Give a step its criteria and a vision model checks every shot; a FAIL is made again with the critique. You keep or drop the rest in Triage.</span></a>
-              </li><li class="fc" data-q="straight to premiere the scenes become a sequence. export it as xml and edl, import it into adobe premiere and finish by hand. xml + edl beyond code">
+              </li><li class="fc" id="c-premiere" data-q="straight to premiere the scenes become a sequence. export it as xml and edl, import it into adobe premiere and finish by hand. xml + edl beyond code">
                 <a href="../#ch-studio"><span class="n">Straight to Premiere</span><span class="sg">XML + EDL</span><span class="s">The scenes become a sequence. Export it as XML and EDL, import it into Adobe Premiere and finish by hand.</span></a>
-              </li><li class="fc" data-q="media inbox drop files in a folder. agents look at each one, file it by stage and fill in its card; anything unsure is asked, not guessed. all_in beyond code">
+              </li><li class="fc" id="c-inbox" data-q="media inbox drop files in a folder. agents look at each one, file it by stage and fill in its card; anything unsure is asked, not guessed. all_in beyond code">
                 <a href="../#ch-studio"><span class="n">Media inbox</span><span class="sg">all_in</span><span class="s">Drop files in a folder. Agents look at each one, file it by stage and fill in its card; anything unsure is asked, not guessed.</span></a>
-              </li><li class="fc" data-q="content calendar what gets made lands on a calendar in your vault. once you approve, the publish step hands it to your own upload flow. mon 07:00 beyond code">
+              </li><li class="fc" id="c-calendar" data-q="content calendar what gets made lands on a calendar in your vault. once you approve, the publish step hands it to your own upload flow. mon 07:00 beyond code">
                 <a href="../#ch-studio"><span class="n">Content calendar</span><span class="sg">Mon 07:00</span><span class="s">What gets made lands on a calendar in your vault. Once you approve, the publish step hands it to your own upload flow.</span></a>
-              </li><li class="fc" data-q="any media model images, video and voice from fal.ai and replicate models, priced per model under a monthly media budget; nine ffmpeg recipes cut, join, subtitle and convert on your machine. 9 ffmpeg beyond code">
+              </li><li class="fc" id="c-media" data-q="any media model images, video and voice from fal.ai and replicate models, priced per model under a monthly media budget; nine ffmpeg recipes cut, join, subtitle and convert on your machine. 9 ffmpeg beyond code">
                 <a href="../#ch-studio"><span class="n">Any media model</span><span class="sg">9 FFmpeg</span><span class="s">Images, video and voice from fal.ai and Replicate models, priced per model under a monthly media budget; nine FFmpeg recipes cut, join, subtitle and convert on your machine.</span></a>
-              </li><li class="fc" data-q="spoken briefing the daily digest read aloud: by this computer for free, or by a voice model you choose. daily beyond code">
+              </li><li class="fc" id="c-briefing" data-q="spoken briefing the daily digest read aloud: by this computer for free, or by a voice model you choose. daily beyond code">
                 <a href="../#ch-studio"><span class="n">Spoken briefing</span><span class="sg">daily</span><span class="s">The daily digest read aloud: by this computer for free, or by a voice model you choose.</span></a>
               </li>
           </ul>
@@ -126,26 +158,27 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">IV</span>
             <div><h2 id="fd-automation">Recipes and triggers</h2><p>Work that starts on time, on an event, or from one sentence.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><circle cx="22" cy="22" r="16"/><line class="e-hand" x1="22" y1="22" x2="22" y2="10"/><circle cx="22" cy="22" r="1.6" fill="currentColor"/><path d="M44 22h10l-3-3m3 3l-3 3"/><rect class="e-blink" x="58" y="15" width="12" height="14"/></svg>
             <a class="fgo" href="../#ch-automation">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="workflows a chain where each step gets the last one's output. a step can be an agent, an api call, a render, a browser, or a stop to ask you. 8 saved recipes and triggers">
+            <li class="fc" id="c-flows" data-q="workflows a chain where each step gets the last one's output. a step can be an agent, an api call, a render, a browser, or a stop to ask you. 8 saved recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Workflows</span><span class="sg">8 saved</span><span class="s">A chain where each step gets the last one&#39;s output. A step can be an agent, an API call, a render, a browser, or a stop to ask you.</span></a>
-              </li><li class="fc" data-q="schedules daily, weekly or once at a date and hour. a missed run can run late, be skipped, or ask you. with vs code closed, a small service on windows still runs them. 13 on recipes and triggers">
+              </li><li class="fc" id="c-schedules" data-q="schedules daily, weekly or once at a date and hour. a missed run can run late, be skipped, or ask you. with vs code closed, a small service on windows still runs them. 13 on recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Schedules</span><span class="sg">13 on</span><span class="s">Daily, weekly or once at a date and hour. A missed run can run late, be skipped, or ask you. With VS Code closed, a small service on Windows still runs them.</span></a>
-              </li><li class="fc" data-q="watch triggers a file lands in a folder and an agent wakes up. hooks and webhooks work the same way. 2 watching recipes and triggers">
+              </li><li class="fc" id="c-triggers" data-q="watch triggers a file lands in a folder and an agent wakes up. hooks and webhooks work the same way. 2 watching recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Watch triggers</span><span class="sg">2 watching</span><span class="s">A file lands in a folder and an agent wakes up. Hooks and webhooks work the same way.</span></a>
-              </li><li class="fc" data-q="gatekeeper before anyone wakes, jev, a model that never chats and only decides, says whether there is real work. off, watching in the shadow, or on. shadow recipes and triggers">
+              </li><li class="fc" id="c-gatekeeper" data-q="gatekeeper before anyone wakes, jev, a model that never chats and only decides, says whether there is real work. off, watching in the shadow, or on. shadow recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Gatekeeper</span><span class="sg">shadow</span><span class="s">Before anyone wakes, Jev, a model that never chats and only decides, says whether there is real work. Off, watching in the shadow, or on.</span></a>
-              </li><li class="fc" data-q="say it in words type &quot;run the filing batch on manager now&quot;. a cheap model turns it into a task, a schedule or a workflow and shows it to you before anything runs. runs tab recipes and triggers">
+              </li><li class="fc" id="c-words" data-q="say it in words type &quot;run the filing batch on manager now&quot;. a cheap model turns it into a task, a schedule or a workflow and shows it to you before anything runs. runs tab recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Say it in words</span><span class="sg">Runs tab</span><span class="s">Type &quot;run the filing batch on manager now&quot;. A cheap model turns it into a task, a schedule or a workflow and shows it to you before anything runs.</span></a>
-              </li><li class="fc" data-q="queue and limits runs wait their turn under concurrency ceilings, and the next one starts as one finishes. 1/5 running recipes and triggers">
+              </li><li class="fc" id="c-queue" data-q="queue and limits runs wait their turn under concurrency ceilings, and the next one starts as one finishes. 1/5 running recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Queue and limits</span><span class="sg">1/5 running</span><span class="s">Runs wait their turn under concurrency ceilings, and the next one starts as one finishes.</span></a>
-              </li><li class="fc" data-q="retries and rounds a run stopped by a session limit tries again by itself, every 40 minutes or on a growing pause. a big job runs in rounds inside one conversation. 6 × 40 min recipes and triggers">
+              </li><li class="fc" id="c-retries" data-q="retries and rounds a run stopped by a session limit tries again by itself, every 40 minutes or on a growing pause. a big job runs in rounds inside one conversation. 6 × 40 min recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Retries and rounds</span><span class="sg">6 × 40 min</span><span class="s">A run stopped by a session limit tries again by itself, every 40 minutes or on a growing pause. A big job runs in rounds inside one conversation.</span></a>
-              </li><li class="fc" data-q="one switch stop every automation at once, pause it until an hour you name, or keep quiet hours in which nothing wakes unattended. quiet hours recipes and triggers">
+              </li><li class="fc" id="c-mainswitch" data-q="one switch stop every automation at once, pause it until an hour you name, or keep quiet hours in which nothing wakes unattended. quiet hours recipes and triggers">
                 <a href="../#ch-automation"><span class="n">One switch</span><span class="sg">quiet hours</span><span class="s">Stop every automation at once, pause it until an hour you name, or keep quiet hours in which nothing wakes unattended.</span></a>
-              </li><li class="fc" data-q="forecast how long the next run should take and how likely it is to pass, from the last 30 days. 30 days recipes and triggers">
+              </li><li class="fc" id="c-forecast" data-q="forecast how long the next run should take and how likely it is to pass, from the last 30 days. 30 days recipes and triggers">
                 <a href="../#ch-automation"><span class="n">Forecast</span><span class="sg">30 days</span><span class="s">How long the next run should take and how likely it is to pass, from the last 30 days.</span></a>
               </li>
           </ul>
@@ -153,26 +186,27 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">V</span>
             <div><h2 id="fd-team">Works as a team</h2><p>Agents on different engines plan, split and check each other.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><circle cx="36" cy="9" r="5"/><circle cx="12" cy="35" r="5"/><circle cx="60" cy="35" r="5"/><path d="M33 13L15 31M39 13l18 18M17 35h38" opacity=".5"/><circle class="e-pulse" r="2.4" fill="currentColor" stroke="none"/></svg>
             <a class="fgo" href="../#ch-team">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="missions a lead that cannot write plans round by round and hands the work to a team on different engines, one writer per folder, until the goal is met or one of five caps is reached. lead + 3 works as a team">
+            <li class="fc" id="c-missions" data-q="missions a lead that cannot write plans round by round and hands the work to a team on different engines, one writer per folder, until the goal is met or one of five caps is reached. lead + 3 works as a team">
                 <a href="../#ch-team"><span class="n">Missions</span><span class="sg">lead + 3</span><span class="s">A lead that cannot write plans round by round and hands the work to a team on different engines, one writer per folder, until the goal is met or one of five caps is reached.</span></a>
-              </li><li class="fc" data-q="shared sessions any agent can open any session by its id, whichever engine wrote it, see what was and wasn't done, and carry on. by id works as a team">
+              </li><li class="fc" id="c-shared" data-q="shared sessions any agent can open any session by its id, whichever engine wrote it, see what was and wasn't done, and carry on. by id works as a team">
                 <a href="../#ch-team"><span class="n">Shared sessions</span><span class="sg">by id</span><span class="s">Any agent can open any session by its id, whichever engine wrote it, see what was and wasn&#39;t done, and carry on.</span></a>
-              </li><li class="fc" data-q="agent notes agents leave each other notes and hand tasks over, with a guard against loops. a2a works as a team">
+              </li><li class="fc" id="c-notes" data-q="agent notes agents leave each other notes and hand tasks over, with a guard against loops. a2a works as a team">
                 <a href="../#ch-team"><span class="n">Agent notes</span><span class="sg">a2a</span><span class="s">Agents leave each other notes and hand tasks over, with a guard against loops.</span></a>
-              </li><li class="fc" data-q="steer and veto your steer, veto or new constraint changes a running team's course at once. mid-run works as a team">
+              </li><li class="fc" id="c-steer" data-q="steer and veto your steer, veto or new constraint changes a running team's course at once. mid-run works as a team">
                 <a href="../#ch-team"><span class="n">Steer and veto</span><span class="sg">mid-run</span><span class="s">Your steer, veto or new constraint changes a running team&#39;s course at once.</span></a>
-              </li><li class="fc" data-q="console every session in one column: who is working, whose turn it is, which leg of which chain. 2 waiting works as a team">
+              </li><li class="fc" id="c-console" data-q="console every session in one column: who is working, whose turn it is, which leg of which chain. 2 waiting works as a team">
                 <a href="../#ch-team"><span class="n">Console</span><span class="sg">2 waiting</span><span class="s">Every session in one column: who is working, whose turn it is, which leg of which chain.</span></a>
-              </li><li class="fc" data-q="countdown questions an agent's question picks the suggested answer when time runs out. a permission request always waits for you, with every stuck session, in needs you. 0:42 works as a team">
+              </li><li class="fc" id="c-question" data-q="countdown questions an agent's question picks the suggested answer when time runs out. a permission request always waits for you, with every stuck session, in needs you. 0:42 works as a team">
                 <a href="../#ch-team"><span class="n">Countdown questions</span><span class="sg">0:42</span><span class="s">An agent&#39;s question picks the suggested answer when time runs out. A permission request always waits for you, with every stuck session, in Needs You.</span></a>
-              </li><li class="fc" data-q="notices and the queue agents report, remind and ask on one board, by level, and your answer becomes work in the queue. your side of it: leave a job for an agent, now or when its group fills. 4 levels works as a team">
+              </li><li class="fc" id="c-notices" data-q="notices and the queue agents report, remind and ask on one board, by level, and your answer becomes work in the queue. your side of it: leave a job for an agent, now or when its group fills. 4 levels works as a team">
                 <a href="../#ch-team"><span class="n">Notices and the queue</span><span class="sg">4 levels</span><span class="s">Agents report, remind and ask on one board, by level, and your answer becomes work in the queue. Your side of it: leave a job for an agent, now or when its group fills.</span></a>
-              </li><li class="fc" data-q="live timeline every running session on one axis. jump to one tool call among thousands; a stall raises a flag. live works as a team">
+              </li><li class="fc" id="c-timeline" data-q="live timeline every running session on one axis. jump to one tool call among thousands; a stall raises a flag. live works as a team">
                 <a href="../#ch-team"><span class="n">Live Timeline</span><span class="sg">live</span><span class="s">Every running session on one axis. Jump to one tool call among thousands; a stall raises a flag.</span></a>
-              </li><li class="fc" data-q="worktrees parallel jobs work in separate git worktrees, so they never step on each other. git works as a team">
+              </li><li class="fc" id="c-worktrees" data-q="worktrees parallel jobs work in separate git worktrees, so they never step on each other. git works as a team">
                 <a href="../#ch-team"><span class="n">Worktrees</span><span class="sg">git</span><span class="s">Parallel jobs work in separate git worktrees, so they never step on each other.</span></a>
               </li>
           </ul>
@@ -180,24 +214,25 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">VI</span>
             <div><h2 id="fd-memory">Never forgets</h2><p>Every session is kept, and what matters becomes a wiki.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><rect x="14" y="14" width="40" height="26"/><rect x="18" y="9" width="40" height="26" opacity=".6"/><rect class="e-page" x="22" y="4" width="40" height="26"/></svg>
             <a class="fgo" href="../#ch-memory">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="every session kept yours and the farm's own runs, from every engine, with cost, tokens, context and the chain leg. 1,499 never forgets">
+            <li class="fc" id="c-sessions" data-q="every session kept yours and the farm's own runs, from every engine, with cost, tokens, context and the chain leg. 1,499 never forgets">
                 <a href="../#ch-memory"><span class="n">Every session kept</span><span class="sg">1,499</span><span class="s">Yours and the farm&#39;s own runs, from every engine, with cost, tokens, context and the chain leg.</span></a>
-              </li><li class="fc" data-q="any turn, replayed open a session, filter its turns, replay it or export it as markdown. replay never forgets">
+              </li><li class="fc" id="c-turns" data-q="any turn, replayed open a session, filter its turns, replay it or export it as markdown. replay never forgets">
                 <a href="../#ch-memory"><span class="n">Any turn, replayed</span><span class="sg">replay</span><span class="s">Open a session, filter its turns, replay it or export it as Markdown.</span></a>
-              </li><li class="fc" data-q="wiki from sessions mark a whole session or only the answers that matter. an agent compiles them into wiki pages, one concept per page. compile never forgets">
+              </li><li class="fc" id="c-wiki" data-q="wiki from sessions mark a whole session or only the answers that matter. an agent compiles them into wiki pages, one concept per page. compile never forgets">
                 <a href="../#ch-memory"><span class="n">Wiki from sessions</span><span class="sg">compile</span><span class="s">Mark a whole session or only the answers that matter. An agent compiles them into wiki pages, one concept per page.</span></a>
-              </li><li class="fc" data-q="drop box save a chat from any browser into the drop folder and it becomes wiki material by itself. _raw_ never forgets">
+              </li><li class="fc" id="c-dropbox" data-q="drop box save a chat from any browser into the drop folder and it becomes wiki material by itself. _raw_ never forgets">
                 <a href="../#ch-memory"><span class="n">Drop box</span><span class="sg">_RAW_</span><span class="s">Save a chat from any browser into the drop folder and it becomes wiki material by itself.</span></a>
-              </li><li class="fc" data-q="obsidian, the second brain obsidian is the ide, the model is the programmer, the wiki is the codebase. you curate, agents write. vault never forgets">
+              </li><li class="fc" id="c-obsidian" data-q="obsidian, the second brain obsidian is the ide, the model is the programmer, the wiki is the codebase. you curate, agents write. vault never forgets">
                 <a href="../#ch-memory"><span class="n">Obsidian, the second brain</span><span class="sg">vault</span><span class="s">Obsidian is the IDE, the model is the programmer, the wiki is the codebase. You curate, agents write.</span></a>
-              </li><li class="fc" data-q="search everything search every transcript of every engine, by its words or by what it meant. a memory graph shows how each agent's notes link up, and which it actually recalled. all engines never forgets">
+              </li><li class="fc" id="c-search" data-q="search everything search every transcript of every engine, by its words or by what it meant. a memory graph shows how each agent's notes link up, and which it actually recalled. all engines never forgets">
                 <a href="../#ch-memory"><span class="n">Search everything</span><span class="sg">all engines</span><span class="s">Search every transcript of every engine, by its words or by what it meant. A memory graph shows how each agent&#39;s notes link up, and which it actually recalled.</span></a>
-              </li><li class="fc" data-q="other machines sessions synced from your other computers show up in the same lists, with a machine badge on each. ⇄ badge never forgets">
+              </li><li class="fc" id="c-machines" data-q="other machines sessions synced from your other computers show up in the same lists, with a machine badge on each. ⇄ badge never forgets">
                 <a href="../#ch-memory"><span class="n">Other machines</span><span class="sg">⇄ badge</span><span class="s">Sessions synced from your other computers show up in the same lists, with a machine badge on each.</span></a>
-              </li><li class="fc" data-q="reports and digests daily and weekly digests and fleet reports, written into your vault. weekly never forgets">
+              </li><li class="fc" id="c-reports" data-q="reports and digests daily and weekly digests and fleet reports, written into your vault. weekly never forgets">
                 <a href="../#ch-memory"><span class="n">Reports and digests</span><span class="sg">weekly</span><span class="s">Daily and weekly digests and fleet reports, written into your vault.</span></a>
               </li>
           </ul>
@@ -205,22 +240,23 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">VII</span>
             <div><h2 id="fd-engines">Any brain</h2><p>Five engines, and through routes, almost any model.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="8" cy="22" r="3"/><circle cx="8" cy="36" r="3"/><path class="e-route" d="M11 8C36 8 36 22 62 22M11 22h51M11 36C36 36 36 22 62 22"/><circle cx="64" cy="22" r="5"/></svg>
             <a class="fgo" href="../#ch-engines">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="five engines claude code, codex, gemini, antigravity and opencode. what is read off disk says so; only one real test call proves an engine works. 5 any brain">
+            <li class="fc" id="c-engines" data-q="five engines claude code, codex, gemini, antigravity and opencode. what is read off disk says so; only one real test call proves an engine works. 5 any brain">
                 <a href="../#ch-engines"><span class="n">Five engines</span><span class="sg">5</span><span class="s">Claude Code, Codex, Gemini, Antigravity and OpenCode. What is read off disk says so; only one real test call proves an engine works.</span></a>
-              </li><li class="fc" data-q="plug-in brains claude code and opencode can run other models through a route: free or paid, from a provider or an address on your own machine. five engines, any number of brains. 3 routes any brain">
+              </li><li class="fc" id="c-routes" data-q="plug-in brains claude code and opencode can run other models through a route: free or paid, from a provider or an address on your own machine. five engines, any number of brains. 3 routes any brain">
                 <a href="../#ch-engines"><span class="n">Plug-in brains</span><span class="sg">3 routes</span><span class="s">Claude Code and OpenCode can run other models through a route: free or paid, from a provider or an address on your own machine. Five engines, any number of brains.</span></a>
-              </li><li class="fc" data-q="free-model radar set it up once as a schedule: every morning an agent checks which models are free today and adds new ones as routes, over the bridge. 04:30 daily any brain">
+              </li><li class="fc" id="c-radar" data-q="free-model radar set it up once as a schedule: every morning an agent checks which models are free today and adds new ones as routes, over the bridge. 04:30 daily any brain">
                 <a href="../#ch-engines"><span class="n">Free-model radar</span><span class="sg">04:30 daily</span><span class="s">Set it up once as a schedule: every morning an agent checks which models are free today and adds new ones as routes, over the bridge.</span></a>
-              </li><li class="fc" data-q="route health what each route offers is checked for free. a real, paid turn is only spent when you press for it. free check any brain">
+              </li><li class="fc" id="c-health" data-q="route health what each route offers is checked for free. a real, paid turn is only spent when you press for it. free check any brain">
                 <a href="../#ch-engines"><span class="n">Route health</span><span class="sg">free check</span><span class="s">What each route offers is checked for free. A real, paid turn is only spent when you press for it.</span></a>
-              </li><li class="fc" data-q="secret vault keys live in your os keychain, open only to the agents you choose. a key's value never crosses the bridge. keychain any brain">
+              </li><li class="fc" id="c-vault" data-q="secret vault keys live in your os keychain, open only to the agents you choose. a key's value never crosses the bridge. keychain any brain">
                 <a href="../#ch-engines"><span class="n">Secret vault</span><span class="sg">keychain</span><span class="s">Keys live in your OS keychain, open only to the agents you choose. A key&#39;s value never crosses the bridge.</span></a>
-              </li><li class="fc" data-q="many sign-ins several sign-ins of claude code or codex side by side, without signing out. an account is a config folder, not a copied credential. 4 accounts any brain">
+              </li><li class="fc" id="c-accounts" data-q="many sign-ins several sign-ins of claude code or codex side by side, without signing out. an account is a config folder, not a copied credential. 4 accounts any brain">
                 <a href="../#ch-engines"><span class="n">Many sign-ins</span><span class="sg">4 accounts</span><span class="s">Several sign-ins of Claude Code or Codex side by side, without signing out. An account is a config folder, not a copied credential.</span></a>
-              </li><li class="fc" data-q="switch the model change the model, effort or account of a session from the console, between turns. mid-session any brain">
+              </li><li class="fc" id="c-switch" data-q="switch the model change the model, effort or account of a session from the console, between turns. mid-session any brain">
                 <a href="../#ch-engines"><span class="n">Switch the model</span><span class="sg">mid-session</span><span class="s">Change the model, effort or account of a session from the Console, between turns.</span></a>
               </li>
           </ul>
@@ -228,28 +264,29 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">VIII</span>
             <div><h2 id="fd-bridge">Just ask</h2><p>You never have to learn the farm. Tell an agent, it sets it up.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><path d="M6 8h52v22H24l-10 8v-8H6z"/><circle class="e-d1" cx="22" cy="19" r="2.2" fill="currentColor"/><circle class="e-d2" cx="32" cy="19" r="2.2" fill="currentColor"/><circle class="e-d3" cx="42" cy="19" r="2.2" fill="currentColor"/></svg>
             <a class="fgo" href="../#ch-bridge">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="just ask say &quot;make me a weekly video recipe&quot; in a chat. the agent sets it up through the bridge; you never open a form. in chat just ask">
+            <li class="fc" id="c-bridge" data-q="just ask say &quot;make me a weekly video recipe&quot; in a chat. the agent sets it up through the bridge; you never open a form. in chat just ask">
                 <a href="../#ch-bridge"><span class="n">Just ask</span><span class="sg">in chat</span><span class="s">Say &quot;make me a weekly video recipe&quot; in a chat. The agent sets it up through the bridge; you never open a form.</span></a>
-              </li><li class="fc" data-q="579 operations what you can do with a click, an agent can do with a call: a button with no operation fails the build. only the secret vault stays off it, on purpose. new abilities show up in farm.ops by themselves. farm.ops just ask">
+              </li><li class="fc" id="c-ops" data-q="579 operations what you can do with a click, an agent can do with a call: a button with no operation fails the build. only the secret vault stays off it, on purpose. new abilities show up in farm.ops by themselves. farm.ops just ask">
                 <a href="../#ch-bridge"><span class="n">579 operations</span><span class="sg">farm.ops</span><span class="s">What you can do with a click, an agent can do with a call: a button with no operation fails the build. Only the secret vault stays off it, on purpose. New abilities show up in farm.ops by themselves.</span></a>
-              </li><li class="fc" data-q="one command line the bridge is a single shell command, so any agent that can run a command can use the farm. gatekeeper also comes as an mcp server. af.js just ask">
+              </li><li class="fc" id="c-mcp" data-q="one command line the bridge is a single shell command, so any agent that can run a command can use the farm. gatekeeper also comes as an mcp server. af.js just ask">
                 <a href="../#ch-bridge"><span class="n">One command line</span><span class="sg">af.js</span><span class="s">The bridge is a single shell command, so any agent that can run a command can use the farm. Gatekeeper also comes as an MCP server.</span></a>
-              </li><li class="fc" data-q="agents with a home each agent keeps its own identity, duties that run every turn or session, and tools. the toolbox edits skills, mcp servers, hooks and plugins for all of them in one form. duties just ask">
+              </li><li class="fc" id="c-agents" data-q="agents with a home each agent keeps its own identity, duties that run every turn or session, and tools. the toolbox edits skills, mcp servers, hooks and plugins for all of them in one form. duties just ask">
                 <a href="../#ch-bridge"><span class="n">Agents with a home</span><span class="sg">duties</span><span class="s">Each agent keeps its own identity, duties that run every turn or session, and tools. The Toolbox edits skills, MCP servers, hooks and plugins for all of them in one form.</span></a>
-              </li><li class="fc" data-q="capability matrix which agent has which skill, mcp server and memory file, and which of them were actually used in 30 days. 30 days just ask">
+              </li><li class="fc" id="c-matrix" data-q="capability matrix which agent has which skill, mcp server and memory file, and which of them were actually used in 30 days. 30 days just ask">
                 <a href="../#ch-bridge"><span class="n">Capability Matrix</span><span class="sg">30 days</span><span class="s">Which agent has which skill, MCP server and memory file, and which of them were actually used in 30 days.</span></a>
-              </li><li class="fc" data-q="phone app start a session, approve with a button and watch the fleet from your pocket, in the agent farm phone app, or on a read-only web page on any device you allow. anywhere just ask">
+              </li><li class="fc" id="c-phone" data-q="phone app start a session, approve with a button and watch the fleet from your pocket, in the agent farm phone app, or on a read-only web page on any device you allow. anywhere just ask">
                 <a href="../#ch-bridge"><span class="n">Phone app</span><span class="sg">anywhere</span><span class="s">Start a session, approve with a button and watch the fleet from your pocket, in the Agent Farm phone app, or on a read-only web page on any device you allow.</span></a>
-              </li><li class="fc" data-q="telegram a telegram chat talks to your agents. a card arrives when a turn ends or asks, and one tap answers it. only the chats you allow, within a daily budget. one tap just ask">
+              </li><li class="fc" id="c-telegram" data-q="telegram a telegram chat talks to your agents. a card arrives when a turn ends or asks, and one tap answers it. only the chats you allow, within a daily budget. one tap just ask">
                 <a href="../#ch-bridge"><span class="n">Telegram</span><span class="sg">one tap</span><span class="s">A Telegram chat talks to your agents. A card arrives when a turn ends or asks, and one tap answers it. Only the chats you allow, within a daily budget.</span></a>
-              </li><li class="fc" data-q="sound a tone for every event, for one agent or for one session: ten made for it and room for ten of your own, with quiet hours and a reminder for an unanswered question. 10 tones just ask">
+              </li><li class="fc" id="c-sound" data-q="sound a tone for every event, for one agent or for one session: ten made for it and room for ten of your own, with quiet hours and a reminder for an unanswered question. 10 tones just ask">
                 <a href="../#ch-bridge"><span class="n">Sound</span><span class="sg">10 tones</span><span class="s">A tone for every event, for one agent or for one session: ten made for it and room for ten of your own, with quiet hours and a reminder for an unanswered question.</span></a>
-              </li><li class="fc" data-q="read aloud an answer, a selection or the daily briefing read aloud, each in its own language, and whoever is asking named after the tone. aloud just ask">
+              </li><li class="fc" id="c-voice" data-q="read aloud an answer, a selection or the daily briefing read aloud, each in its own language, and whoever is asking named after the tone. aloud just ask">
                 <a href="../#ch-bridge"><span class="n">Read aloud</span><span class="sg">aloud</span><span class="s">An answer, a selection or the daily briefing read aloud, each in its own language, and whoever is asking named after the tone.</span></a>
-              </li><li class="fc" data-q="take it with you pack an agent as an .agentpack: its rules, tools, workflows and schedules, never its memory or secrets. unpack it on another machine. .agentpack just ask">
+              </li><li class="fc" id="c-move" data-q="take it with you pack an agent as an .agentpack: its rules, tools, workflows and schedules, never its memory or secrets. unpack it on another machine. .agentpack just ask">
                 <a href="../#ch-bridge"><span class="n">Take it with you</span><span class="sg">.agentpack</span><span class="s">Pack an agent as an .agentpack: its rules, tools, workflows and schedules, never its memory or secrets. Unpack it on another machine.</span></a>
               </li>
           </ul>
@@ -257,26 +294,27 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">IX</span>
             <div><h2 id="fd-measure">Measured, not claimed</h2><p>What every step cost, how much plan is left, and whether the work was good, in numbers.</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><path d="M10 38a26 26 0 0 1 52 0"/><line class="e-needle" x1="36" y1="38" x2="36" y2="18"/><rect class="e-b1" x="6" y="30" width="5" height="8" fill="currentColor"/><rect class="e-b2" x="61" y="26" width="5" height="12" fill="currentColor"/></svg>
             <a class="fgo" href="../#ch-measure">See it on the home page <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="live plan usage how full each account's five-hour window and week are, and when they reset, in the status bar and on the dashboard. every engine's limit apart. 5h · week measured, not claimed">
+            <li class="fc" id="c-planuse" data-q="live plan usage how full each account's five-hour window and week are, and when they reset, in the status bar and on the dashboard. every engine's limit apart. 5h · week measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Live plan usage</span><span class="sg">5h · week</span><span class="s">How full each account&#39;s five-hour window and week are, and when they reset, in the status bar and on the Dashboard. Every engine&#39;s limit apart.</span></a>
-              </li><li class="fc" data-q="where it went every turn split into nine kinds of step, from the model's thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. every figure is shown raw and weighted. 9 kinds measured, not claimed">
+              </li><li class="fc" id="c-steps" data-q="where it went every turn split into nine kinds of step, from the model's thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. every figure is shown raw and weighted. 9 kinds measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Where it went</span><span class="sg">9 kinds</span><span class="s">Every turn split into nine kinds of step, from the model&#39;s thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. Every figure is shown raw and weighted.</span></a>
-              </li><li class="fc" data-q="budgets a daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. a warning at 80%, an error past 100%. 80% warn measured, not claimed">
+              </li><li class="fc" id="c-budgets" data-q="budgets a daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. a warning at 80%, an error past 100%. 80% warn measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Budgets</span><span class="sg">80% warn</span><span class="s">A daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. A warning at 80%, an error past 100%.</span></a>
-              </li><li class="fc" data-q="cheaper, not stopped as a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. sessions you opened by hand are left alone. → haiku measured, not claimed">
+              </li><li class="fc" id="c-downgrade" data-q="cheaper, not stopped as a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. sessions you opened by hand are left alone. → haiku measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Cheaper, not stopped</span><span class="sg">→ haiku</span><span class="s">As a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. Sessions you opened by hand are left alone.</span></a>
-              </li><li class="fc" data-q="cost alarms a run that costs far more than its usual, or a week that jumps, raises a flag. the usual is a median of real runs, not a guess. median measured, not claimed">
+              </li><li class="fc" id="c-anomaly" data-q="cost alarms a run that costs far more than its usual, or a week that jumps, raises a flag. the usual is a median of real runs, not a guess. median measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Cost alarms</span><span class="sg">median</span><span class="s">A run that costs far more than its usual, or a week that jumps, raises a flag. The usual is a median of real runs, not a guess.</span></a>
-              </li><li class="fc" data-q="honest numbers costs come from your own transcripts. a free model's zero is a real zero; a missing figure is shown as missing. real zeros measured, not claimed">
+              </li><li class="fc" id="c-honest" data-q="honest numbers costs come from your own transcripts. a free model's zero is a real zero; a missing figure is shown as missing. real zeros measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Honest numbers</span><span class="sg">real zeros</span><span class="s">Costs come from your own transcripts. A free model&#39;s zero is a real zero; a missing figure is shown as missing.</span></a>
-              </li><li class="fc" data-q="judge ladder a check is judged by a cheap model first. only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing. cheap first measured, not claimed">
+              </li><li class="fc" id="c-ladder" data-q="judge ladder a check is judged by a cheap model first. only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing. cheap first measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Judge ladder</span><span class="sg">cheap first</span><span class="s">A check is judged by a cheap model first. Only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing.</span></a>
-              </li><li class="fc" data-q="evals saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds. scorecard measured, not claimed">
+              </li><li class="fc" id="c-evals" data-q="evals saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds. scorecard measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Evals</span><span class="sg">scorecard</span><span class="s">Saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds.</span></a>
-              </li><li class="fc" data-q="insights repeated corrections turn into suggested rules. a finding is fixed, handed to its agent or dismissed, and whether the fix held is tracked. findings measured, not claimed">
+              </li><li class="fc" id="c-insights" data-q="insights repeated corrections turn into suggested rules. a finding is fixed, handed to its agent or dismissed, and whether the fix held is tracked. findings measured, not claimed">
                 <a href="../#ch-measure"><span class="n">Insights</span><span class="sg">findings</span><span class="s">Repeated corrections turn into suggested rules. A finding is fixed, handed to its agent or dismissed, and whether the fix held is tracked.</span></a>
               </li>
           </ul>
@@ -284,25 +322,26 @@
           <header class="fdh">
             <span class="fr" aria-hidden="true">X</span>
             <div><h2 id="fd-privacy">Safe and yours alone</h2><p>Guards stop what an agent should not do, and nothing about your work comes to us.</p></div>
-            <a class="fgo" href="../#ch-privacy">See it on the home page <i></i></a>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true"><path d="M36 4l22 8v11c0 10-9 16-22 19C23 39 14 33 14 23V12z"/><path class="e-check" d="M27 22l6 6 12-12"/></svg>
+            <a class="fgo" href="safe-and-yours-alone/">Read the district <i></i></a>
           </header>
           <ul class="fcs">
-            <li class="fc" data-q="on your machine it runs inside vs code and your work stays on your disk. the live hooks listen on 127.0.0.1 only. 127.0.0.1 safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">On your machine</span><span class="sg">127.0.0.1</span><span class="s">It runs inside VS Code and your work stays on your disk. The live hooks listen on 127.0.0.1 only.</span></a>
-              </li><li class="fc" data-q="no telemetry no analytics, no usage statistics: we don't know which features you use, how often or on what. free never contacts us; a paid licence only checks its key. 0 bytes safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">No telemetry</span><span class="sg">0 bytes</span><span class="s">No analytics, no usage statistics: we don&#39;t know which features you use, how often or on what. Free never contacts us; a paid licence only checks its key.</span></a>
-              </li><li class="fc" data-q="shellguard before a shell command runs, the shapes that garble or hide it are refused: non-ascii, backticks, long heredocs, long quoted text. the agent is told the safe way: write the text to a file. 4 rules safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">ShellGuard</span><span class="sg">4 rules</span><span class="s">Before a shell command runs, the shapes that garble or hide it are refused: non-ASCII, backticks, long heredocs, long quoted text. The agent is told the safe way: write the text to a file.</span></a>
-              </li><li class="fc" data-q="bridgeguard an agent that goes searching the disk for a session by its id is stopped and sent to the bridge, which reads it properly. to the bridge safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">BridgeGuard</span><span class="sg">to the bridge</span><span class="s">An agent that goes searching the disk for a session by its id is stopped and sent to the bridge, which reads it properly.</span></a>
-              </li><li class="fc" data-q="permissions as shown the permission a card shows is the one in force; if a policy forbids it, the session is refused, never quietly downgraded. a lint finds blanket allows and dangerous patterns. enforced safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">Permissions as shown</span><span class="sg">enforced</span><span class="s">The permission a card shows is the one in force; if a policy forbids it, the session is refused, never quietly downgraded. A lint finds blanket allows and dangerous patterns.</span></a>
-              </li><li class="fc" data-q="keys kept out route keys are scrubbed from whatever a run prints, and gatekeeper's log keeps only a hash and a length of what it read. scrubbed safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">Keys kept out</span><span class="sg">scrubbed</span><span class="s">Route keys are scrubbed from whatever a run prints, and Gatekeeper&#39;s log keeps only a hash and a length of what it read.</span></a>
-              </li><li class="fc" data-q="browser on a leash a browser step opens only the sites on its allow list, or fails without running, and asks you before each run unless you chose otherwise. allow list safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">Browser on a leash</span><span class="sg">allow list</span><span class="s">A browser step opens only the sites on its allow list, or fails without running, and asks you before each run unless you chose otherwise.</span></a>
-              </li><li class="fc" data-q="superpowers engineering disciplines on disk, such as tests first and systematic debugging, with quality gates. tdd safe and yours alone">
-                <a href="../#ch-privacy"><span class="n">Superpowers</span><span class="sg">TDD</span><span class="s">Engineering disciplines on disk, such as tests first and systematic debugging, with quality gates.</span></a>
+            <li class="fc" id="c-local" data-q="on your machine it runs inside vs code and your work stays on your disk. the live hooks listen on 127.0.0.1 only. 127.0.0.1 safe and yours alone">
+                <a href="safe-and-yours-alone/#local"><span class="n">On your machine</span><span class="sg">127.0.0.1</span><span class="s">It runs inside VS Code and your work stays on your disk. The live hooks listen on 127.0.0.1 only.</span></a>
+              </li><li class="fc" id="c-telemetry" data-q="no telemetry no analytics, no usage statistics: we don't know which features you use, how often or on what. free never contacts us; a paid licence only checks its key. 0 bytes safe and yours alone">
+                <a href="safe-and-yours-alone/#telemetry"><span class="n">No telemetry</span><span class="sg">0 bytes</span><span class="s">No analytics, no usage statistics: we don&#39;t know which features you use, how often or on what. Free never contacts us; a paid licence only checks its key.</span></a>
+              </li><li class="fc" id="c-shellguard" data-q="shellguard before a shell command runs, the shapes that garble or hide it are refused: non-ascii, backticks, long heredocs, long quoted text. the agent is told the safe way: write the text to a file. 4 rules safe and yours alone">
+                <a href="safe-and-yours-alone/#shellguard"><span class="n">ShellGuard</span><span class="sg">4 rules</span><span class="s">Before a shell command runs, the shapes that garble or hide it are refused: non-ASCII, backticks, long heredocs, long quoted text. The agent is told the safe way: write the text to a file.</span></a>
+              </li><li class="fc" id="c-bridgeguard" data-q="bridgeguard an agent that goes searching the disk for a session by its id is stopped and sent to the bridge, which reads it properly. to the bridge safe and yours alone">
+                <a href="safe-and-yours-alone/#bridgeguard"><span class="n">BridgeGuard</span><span class="sg">to the bridge</span><span class="s">An agent that goes searching the disk for a session by its id is stopped and sent to the bridge, which reads it properly.</span></a>
+              </li><li class="fc" id="c-permissions" data-q="permissions as shown the permission a card shows is the one in force; if a policy forbids it, the session is refused, never quietly downgraded. a lint finds blanket allows and dangerous patterns. enforced safe and yours alone">
+                <a href="safe-and-yours-alone/#permissions"><span class="n">Permissions as shown</span><span class="sg">enforced</span><span class="s">The permission a card shows is the one in force; if a policy forbids it, the session is refused, never quietly downgraded. A lint finds blanket allows and dangerous patterns.</span></a>
+              </li><li class="fc" id="c-masking" data-q="keys kept out route keys are scrubbed from whatever a run prints, and gatekeeper's log keeps only a hash and a length of what it read. scrubbed safe and yours alone">
+                <a href="safe-and-yours-alone/#masking"><span class="n">Keys kept out</span><span class="sg">scrubbed</span><span class="s">Route keys are scrubbed from whatever a run prints, and Gatekeeper&#39;s log keeps only a hash and a length of what it read.</span></a>
+              </li><li class="fc" id="c-browser" data-q="browser on a leash a browser step opens only the sites on its allow list, or fails without running, and asks you before each run unless you chose otherwise. allow list safe and yours alone">
+                <a href="safe-and-yours-alone/#browser"><span class="n">Browser on a leash</span><span class="sg">allow list</span><span class="s">A browser step opens only the sites on its allow list, or fails without running, and asks you before each run unless you chose otherwise.</span></a>
+              </li><li class="fc" id="c-superpowers" data-q="superpowers engineering disciplines on disk, such as tests first and systematic debugging, with quality gates. tdd safe and yours alone">
+                <a href="safe-and-yours-alone/#superpowers"><span class="n">Superpowers</span><span class="sg">TDD</span><span class="s">Engineering disciplines on disk, such as tests first and systematic debugging, with quality gates.</span></a>
               </li>
           </ul>
         </section>
@@ -311,10 +350,11 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.7.0 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.8.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../features/">Features</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <span>Photos from Unsplash</span>
       <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
     </nav>
   </footer>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Safe and yours alone · Agent Farm features</title>
+    <meta name="description" content="Agent Farm runs on your machine and nothing about your work comes to us: the free version never contacts us, and a paid licence checks its key once a day. Guards stop the shell commands, disk searches, permissions and browser visits an agent should not make, and keys stay out of what a run prints.">
+    <link rel="canonical" href="https://agentfarm.space/features/safe-and-yours-alone/">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Safe and yours alone · Agent Farm features">
+    <meta property="og:description" content="Agent Farm runs on your machine and nothing about your work comes to us: the free version never contacts us, and a paid licence checks its key once a day. Guards stop the shell commands, disk searches, permissions and browser visits an agent should not make, and keys stay out of what a run prints.">
+    <meta property="og:url" content="https://agentfarm.space/features/safe-and-yours-alone/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/safe-and-yours-alone.js?v=0.8.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.8.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a href="../../#ch-relay">Relay</a><a href="../../#ch-projects">Projects</a><a href="../../#ch-studio">Studio</a><a href="../../#ch-memory">Memory</a><a href="../../#ch-bridge">Just ask</a><a href="../../#ch-privacy">Local</a>
+    </nav>
+    <a class="cta" href="../../#s-close">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:var(--dim)">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>X Safe and yours alone</span></nav>
+      <header class="dh">
+        <span class="dr" aria-hidden="true">X</span>
+        <div>
+          <p class="dk"><span>District X of X</span><span>Eight things</span></p>
+          <h1>Safe and yours alone</h1>
+          <p class="dp">Guards stop what an agent should not do, and nothing about your work comes to us.</p>
+        </div>
+      </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-privacy-l.jpg" srcset="../../assets/photos/d-privacy-s.jpg 900w, ../../assets/photos/d-privacy-l.jpg 1800w" sizes="100vw" alt="A wooden house on a still mountain lake" loading="lazy" decoding="async" style="object-position:50% 60%"></div>
+  
+</figure>
+    <div class="wrap">
+      <p class="dpromise">Your work stays on your machine. The free version never contacts us; a paid licence checks its key once a day, and that is the whole message. Your engines talk to their own providers, and anything else Agent Farm reaches is a service you switch on. On the machine, guards stop an agent before a command runs, not after: one for the shell, one for disk searches, one for permissions, one for keys and one for the browser.</p>
+      <ul class="dtl">
+        <li><a href="#local"><span class="c">X·1</span><span class="n">On your machine</span><span class="sg">127.0.0.1</span></a></li><li><a href="#telemetry"><span class="c">X·2</span><span class="n">No telemetry</span><span class="sg">0 bytes</span></a></li><li><a href="#shellguard"><span class="c">X·3</span><span class="n">ShellGuard</span><span class="sg">4 rules</span></a></li><li><a href="#bridgeguard"><span class="c">X·4</span><span class="n">BridgeGuard</span><span class="sg">to the bridge</span></a></li><li><a href="#permissions"><span class="c">X·5</span><span class="n">Permissions as shown</span><span class="sg">enforced</span></a></li><li><a href="#masking"><span class="c">X·6</span><span class="n">Keys kept out</span><span class="sg">scrubbed</span></a></li><li><a href="#browser"><span class="c">X·7</span><span class="n">Browser on a leash</span><span class="sg">allow list</span></a></li><li><a href="#superpowers"><span class="c">X·8</span><span class="n">Superpowers</span><span class="sg">TDD</span></a></li>
+      </ul>
+    </div>
+    <section id="s-local" class="gap" aria-label="Local: nothing about your work reaches us, and the proof">
+  <div class="wrap">
+    <p class="sx"><b>16</b> Local</p>
+    <div class="lgrid">
+      <div class="stmt">
+        <p class="zero"><b>0</b> bytes</p>
+        <p class="to">of your work to us. <em>Ever.</em></p>
+        <ul class="pts">
+          <li><b>Free: nothing to us at all.</b> No account with us, no request to a server of ours. It runs inside VS Code and reads each CLI's own files on disk.</li>
+          <li><b>A paid licence: one check, once a day.</b> The whole message is beside this. If it cannot reach us, it keeps working for 30 days.</li>
+          <li><b>No telemetry, no analytics.</b> We don't know which features you use, how often, or on what.</li>
+          <li><b>Secrets stay in the OS keychain.</b> An account is a config folder, not a copied credential.</li>
+          <li><b>Live hooks listen on 127.0.0.1 only.</b> The phone page is yours to switch on, on your own network.</li>
+        </ul>
+      </div>
+      <figure class="mach" id="l-mach" aria-label="Your engines talk to their own providers. Your work never goes to us; a paid licence sends one small check.">
+        <svg viewBox="0 0 560 420" aria-hidden="true">
+          <g class="us">
+            <rect x="380" y="18" width="160" height="56" rx="28"></rect>
+            <text x="460" y="42" text-anchor="middle" class="ut">MuVuSOFT</text>
+            <text x="460" y="60" text-anchor="middle" class="us2">licence check only</text>
+          </g>
+          <path class="cut" d="M290,160 L392,50"></path>
+          <text x="300" y="112" class="wl" transform="rotate(-47 300 112)">your work</text>
+          <g class="x"><line x1="335" y1="96" x2="351" y2="112"></line><line x1="351" y1="96" x2="335" y2="112"></line></g>
+          <path class="lic" id="l-lic" d="M304,182 L452,74"></path>
+          <circle class="pkt" r="4"></circle>
+          <text x="398" y="150" class="ll">licence · once a day</text>
+          <rect class="box" x="20" y="120" width="300" height="280"></rect>
+          <text x="36" y="146" class="bt">YOUR MACHINE</text>
+          <rect class="af" x="36" y="160" width="268" height="44"></rect>
+          <text x="52" y="187" class="aft">VS Code · Agent Farm</text>
+          <g class="eng">
+              <rect x="36" y="220" width="128" height="26" style="stroke:var(--claude)"></rect>
+              <text x="48" y="238" style="fill:var(--claude)">Claude Code</text>
+              <path class="wire" d="M164,233 L400,233" style="stroke:var(--claude)"></path>
+              <text x="410" y="237" class="pv">Anthropic</text>
+            </g><g class="eng">
+              <rect x="36" y="254" width="128" height="26" style="stroke:#9ad"></rect>
+              <text x="48" y="272" style="fill:#9ad">Codex</text>
+              <path class="wire" d="M164,267 L400,267" style="stroke:#9ad"></path>
+              <text x="410" y="271" class="pv">OpenAI</text>
+            </g><g class="eng">
+              <rect x="36" y="288" width="128" height="26" style="stroke:#84a9f0"></rect>
+              <text x="48" y="306" style="fill:#84a9f0">Gemini</text>
+              <path class="wire" d="M164,301 L400,301" style="stroke:#84a9f0"></path>
+              <text x="410" y="305" class="pv">Google</text>
+            </g><g class="eng">
+              <rect x="36" y="322" width="128" height="26" style="stroke:var(--agy)"></rect>
+              <text x="48" y="340" style="fill:var(--agy)">Antigravity</text>
+              <path class="wire" d="M164,335 L400,335" style="stroke:var(--agy)"></path>
+              <text x="410" y="339" class="pv">Google</text>
+            </g><g class="eng">
+              <rect x="36" y="356" width="128" height="26" style="stroke:var(--teal)"></rect>
+              <text x="48" y="374" style="fill:var(--teal)">OpenCode</text>
+              <path class="wire" d="M164,369 L400,369" style="stroke:var(--teal)"></path>
+              <text x="410" y="373" class="pv">its providers</text>
+            </g>
+        </svg>
+        <div class="msg" aria-label="Everything a paid licence sends to us">
+          <p class="mh"><span>The licence check, whole</span><span>paid licence · once a day</span></p>
+          <pre><span class="ar">→</span> { &quot;key&quot;: &quot;AF-7Q2K-…-M4XD&quot;, &quot;device&quot;: &quot;a91f…e07b&quot;, &quot;version&quot;: &quot;3.931.0&quot; }
+<span class="ar">←</span> { &quot;valid&quot;: true, &quot;until&quot;: &quot;2026-11-12&quot; }</pre>
+          <p class="nv"><b>Never in it:</b> your code · prompts and answers · transcripts · file, folder and project names · account names · costs and tokens · which features you use, or how often.</p>
+        </div>
+        <figcaption>Your engines talk to their own providers, as they always do. Anything else Agent Farm reaches is a service you switch on yourself: a voice for the briefing, a media model in Studio, Jev for Gatekeeper, Telegram.</figcaption>
+      </figure>
+    </div>
+
+    <section class="proof" aria-label="The proof">
+      <div><h2>Built like <span>infrastructure.</span></h2><p class="src">Every number stated on this page comes from a real screen of the app or from its source. The moving parts are demos, with demo data.</p></div>
+      <div class="facts">
+        <div class="fact"><b>35,600+</b><span>tests behind 1,053 releases</span><small>Technical DNA · CHANGELOG.md</small></div>
+        <div class="fact"><b class="c-l">0</b><span>runtime dependencies, 0 telemetry</span><small>package.json · README</small></div>
+        <div class="fact"><b class="c-y">⑂ 92</b><span>legs in one real relay chain</span><small>Console · session strip</small></div>
+        <div class="fact"><b>5</b><span>engines, each measured against a real binary</span><small>Engines page</small></div>
+        <div class="fact"><b>40%</b><span>the context line where a leg hands over</span><small>contextHandoverPct</small></div>
+        <div class="fact"><b>602</b><span>commands and 243 settings, in one extension</span><small>package.json</small></div>
+      </div>
+    </section>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="local" data-f="local">
+          <div class="fth">
+            <span class="c">X·1</span>
+            <h2>On your machine</h2>
+            <p class="s">It runs inside VS Code and your work stays on your disk. The live hooks listen on 127.0.0.1 only.</p>
+            <a class="see" href="#s-local">The machine, drawn <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Whatever watches your agents sees all of your work: the code, the prompts, the answers and what they cost. None of that has to leave your machine for the watching to work.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Inside VS Code</span><span class="t">Agent Farm runs inside VS Code and runs no model of its own. It starts the CLIs you already have, on your own plans and keys, and reads their transcripts where each CLI writes them. Its own records, the tasks, chains and projects, are files in VS Code's storage folder on your disk.</span></button></li><li><button type="button" data-i="1"><span class="k">Their providers</span><span class="t">Each engine talks to its own provider, as it does without Agent Farm. To show how much of a Claude plan is left, Agent Farm reads that account's usage from Anthropic with the sign-in Claude Code already keeps.</span></button></li><li><button type="button" data-i="2"><span class="k">127.0.0.1</span><span class="t">The live hooks post each session's events to a listener on <code>127.0.0.1:8377</code>, which only this machine can reach. The hook always exits cleanly, so a listener that is not there never holds an agent up.</span></button></li><li><button type="button" data-i="3"><span class="k">The keychain</span><span class="t">Keys go into the OS keychain, never into a file, and their values never cross the bridge to an agent. An account is the CLI's own config folder, not a copied credential.</span></button></li><li><button type="button" data-i="4"><span class="k">Your network</span><span class="t">The read-only phone page needs a token and will not start without one. It listens on this machine until you choose your network, and only then draws its QR code, with Agent Farm's own encoder. Telegram opens no port: Agent Farm fetches its messages.</span></button></li></ol>
+            <p class="note">The hooks go into Claude Code's <code>settings.json</code> beside your own entries. The first write keeps an <code>.agentfarm-bak</code> backup, and <em>Remove Live Hooks</em> takes out only Agent Farm's entries.</p>
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.liveMonitor</code></td><td class="v">on</td><td>Runs the live event listener.</td></tr><tr><td><code>agentFarm.livePort</code></td><td class="v">8377</td><td>The listener&#39;s port on 127.0.0.1. Installed hooks follow a change without a reload.</td></tr><tr><td><code>agentFarm.planUsageRefreshMinutes</code></td><td class="v">5 min</td><td>How often an idle farm reads your plan&#39;s usage. 0 = only when you ask.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="local" aria-label="On your machine, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·1</b><span class="fk">Inside VS Code</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="telemetry" data-f="telemetry">
+          <div class="fth">
+            <span class="c">X·2</span>
+            <h2>No telemetry</h2>
+            <p class="s">No analytics, no usage statistics: we don&#39;t know which features you use, how often or on what. Free never contacts us; a paid licence only checks its key.</p>
+            <a class="see" href="#s-local">The licence check, whole <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Most tools count how they are used and send the count home. You are left to trust what is in it.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Free</span><span class="t">The free version never contacts us. There is no account with us and no request to a server of ours.</span></button></li><li><button type="button" data-i="1"><span class="k">Paid: one check</span><span class="t">A paid licence checks its key once a day. The whole message is the key, a hash of the machine and the version. The answer is whether the key is valid, and until when.</span></button></li><li><button type="button" data-i="2"><span class="k">Never in it</span><span class="t">Never in it: your code, prompts and answers, transcripts, file, folder and project names, account names, costs and tokens, which features you use, or how often. There is no telemetry and no analytics in the extension, so nothing counts what you use.</span></button></li><li><button type="button" data-i="3"><span class="k">Offline</span><span class="t">If the check cannot reach us, the licence keeps working for 30 days.</span></button></li><li><button type="button" data-i="4"><span class="k">Yours to switch on</span><span class="t">Anything else Agent Farm reaches is a service you switch on, with your own key: a voice for the briefing, media models in Studio, Jev for Gatekeeper, Telegram, a webhook you name.</span></button></li></ol>
+            <p class="note"><em>Export Traces (OpenTelemetry JSON)</em> writes your sessions to a file on your disk. Where that file goes is your call; Agent Farm sends it nowhere.</p>
+            <details class="setd">
+                <summary>Settings · 4</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.digestTtsModel</code></td><td class="v">empty</td><td>The fal.ai voice model the briefing is read with.</td></tr><tr><td><code>agentFarm.embeddingsProvider</code></td><td class="v">off</td><td>Semantic search through gemini or openai, Ollama included.</td></tr><tr><td><code>agentFarm.notifyWebhookUrl</code></td><td class="v">empty</td><td>A webhook to forward notifications to.</td></tr><tr><td><code>agentFarm.kapici.dispatch</code></td><td class="v">off</td><td>Asks Gatekeeper which agent takes a request. Each use of Gatekeeper has its own switch, and all start off.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="telemetry" aria-label="No telemetry, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·2</b><span class="fk">Free</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="shellguard" data-f="shellguard">
+          <div class="fth">
+            <span class="c">X·3</span>
+            <h2>ShellGuard</h2>
+            <p class="s">Before a shell command runs, the shapes that garble or hide it are refused: non-ASCII, backticks, long heredocs, long quoted text. The agent is told the safe way: write the text to a file.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Agents write long shell commands. Some arrive garbled, a character re-encoded on the way, and some run more than they show, a second command inside a backtick. Neither is visible until it has run.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Before it runs</span><span class="t">Every shell command an agent sends passes through ShellGuard in the hook that runs before a tool, <code>PreToolUse</code>, before any shell sees it.</span></button></li><li><button type="button" data-i="1"><span class="k">Four shapes</span><span class="t">Four shapes are refused: a character outside ASCII; a backtick; a heredoc that carries <code>\</code> or <code>${</code> or runs past 20 lines; a quoted text longer than 600 characters.</span></button></li><li><button type="button" data-i="2"><span class="k">The safe way</span><span class="t">The refusal goes back to the agent with its reason and the safe way: write the text to a file, and give the command only the file's name.</span></button></li><li><button type="button" data-i="3"><span class="k">Your way through</span><span class="t">When a command really needs one of those shapes, <code>af:allow-shell</code> in it lets that one command through. It is in the command, so the transcript shows it.</span></button></li></ol>
+            <p class="note">The backtick rule applies where the shell is bash: Claude Code, Git Bash. Codex's shell on Windows is PowerShell, where a backtick is the escape character, so there it is not refused.</p>
+            
+          </div>
+          <figure class="fig" data-fig="shellguard" aria-label="ShellGuard, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·3</b><span class="fk">Before it runs</span><span class="fn">1 / 4</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="bridgeguard" data-f="bridgeguard">
+          <div class="fth">
+            <span class="c">X·4</span>
+            <h2>BridgeGuard</h2>
+            <p class="s">An agent that goes searching the disk for a session by its id is stopped and sent to the bridge, which reads it properly.</p>
+            <a class="see" href="../../#bg-chat">Session 7c41e2a0, picked up by its id <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent asked about an old session goes looking for it on disk: a recursive search through every CLI&#39;s folders for its id. It burns context and quota, and those folders and their formats change with each CLI release.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">The hunt</span><span class="t">An agent searches for a session id with Grep, Glob or a search command: <code>grep</code>, <code>find</code>, <code>rg</code>, <code>ls</code>, <code>dir</code>, <code>Select-String</code>.</span></button></li><li><button type="button" data-i="1"><span class="k">Stopped</span><span class="t">BridgeGuard stops it in the hook before the tool runs, when the pattern holds a full session id, 36 characters, or the 8-character start of one Agent Farm knows. Git hashes are left alone.</span></button></li><li><button type="button" data-i="2"><span class="k">To the bridge</span><span class="t">The agent is told in one line what the id is and what to run instead: <code>af.js sessions.find q=&lt;id&gt;</code> for the file, engine, agent and folder, and <code>af.js sessions.read id=&lt;id&gt;</code> for the conversation itself.</span></button></li><li><button type="button" data-i="3"><span class="k">Read properly</span><span class="t"><code>sessions.read</code> gives the session's messages in one vocabulary for every engine (user, assistant, tool, tool result, system) through the viewer's own reader, filtered and paged. The agent never opens a transcript file.</span></button></li><li><button type="button" data-i="4"><span class="k">Escape and coverage</span><span class="t"><code>af:allow-id</code> anywhere in a command lets that one search through, and calls to <code>af.js</code> are never stopped. Each engine is reported as covered by a hook or not, so an engine without one is never assumed to be guarded.</span></button></li></ol>
+            <p class="note">Each stop is logged and leaves a mark on that session's Console card.</p>
+            
+          </div>
+          <figure class="fig" data-fig="bridgeguard" aria-label="BridgeGuard, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·4</b><span class="fk">The hunt</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="permissions" data-f="permissions">
+          <div class="fth">
+            <span class="c">X·5</span>
+            <h2>Permissions as shown</h2>
+            <p class="s">The permission a card shows is the one in force; if a policy forbids it, the session is refused, never quietly downgraded. A lint finds blanket allows and dangerous patterns.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>When a card says one permission and the process runs under another, a session you set to bypass can sit for an hour on a question nobody sees, and one you thought would ask goes ahead.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">One label</span><span class="t">The permission on a session's card is the one its process runs with. The Console, a terminal and a headless run build their flags in one place, so bypass on the card is bypass in the process.</span></button></li><li><button type="button" data-i="1"><span class="k">Default, resolved</span><span class="t">Default is worked out before the command line is built, from the CLI's own settings layers: managed, local, project, user. The launcher's preview shows the flags the launch will really carry.</span></button></li><li><button type="button" data-i="2"><span class="k">Refused</span><span class="t">If a managed policy forbids the mode, the session refuses to start and says why. It is never opened under a label it cannot keep.</span></button></li><li><button type="button" data-i="3"><span class="k">Live, answered</span><span class="t">Change a running session's mode and the CLI's answer is shown: the mode it accepted, or its refusal in its own words, as a line in the conversation. A retry nudge goes out only after a yes.</span></button></li><li><button type="button" data-i="4"><span class="k">The lint</span><span class="t">The permission lint reads each agent's permission rules and files what it finds in Insights: bypass mode, dangerous patterns such as <code>rm -rf</code> or <code>curl … | sh</code>, blanket allows such as <code>Bash(*)</code>, wildcard rules unused for 30 days, duplicates and broken JSON. A click opens the file.</span></button></li></ol>
+            <p class="note">An agent can answer a session's question over the bridge, but it can never grant a tool permission. That stays your call, in the panel.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.permissionLint</code></td><td class="v">on</td><td>Audits the permission rules in each agent&#39;s .claude/settings(.local).json; findings go to Insights.</td></tr><tr><td><code>agentFarm.launchDefaults</code></td><td class="v">{}</td><td>The model, effort and permission mode every interactive session carries. An empty field adds no flag.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="permissions" aria-label="Permissions as shown, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·5</b><span class="fk">One label</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="masking" data-f="masking">
+          <div class="fth">
+            <span class="c">X·6</span>
+            <h2>Keys kept out</h2>
+            <p class="s">Route keys are scrubbed from whatever a run prints, and Gatekeeper&#39;s log keeps only a hash and a length of what it read.</p>
+            <a class="see" href="../../#br-panel">Secrets on the home page <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A key handed to a run ends up in what the run prints: a request line, an error, a config dump. Archived, that output is your key in plain text in a file.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">The keychain</span><span class="t">A route key such as <code>OPENROUTER_FREE</code> is kept in the OS keychain, bound to the endpoint it was given for. Lists show its name, never its value, and no bridge op reads it.</span></button></li><li><button type="button" data-i="1"><span class="k">Into the run</span><span class="t">At launch the key goes into the run's environment, after the inherited <code>ANTHROPIC_*</code> variables, and the <code>CLAUDE_*</code> ones that carry a route, are cleared.</span></button></li><li><button type="button" data-i="2"><span class="k">Scrubbed</span><span class="t">Whatever the run prints, the route key is scrubbed out before the output is archived, and out of test verdicts too.</span></button></li><li><button type="button" data-i="3"><span class="k">Masked</span><span class="t">Before Gatekeeper sends anything to Jev, key and token patterns and every value in your vault are masked, and the input is trimmed.</span></button></li><li><button type="button" data-i="4"><span class="k">Hash and length</span><span class="t">Gatekeeper's audit log keeps a hash and a length of what it read, never the input and never a key.</span></button></li></ol>
+            <p class="note">A secret can be marked <em>farm only</em>: Agent Farm still uses it, but no agent's task receives it. The Gatekeeper key starts that way. And a key found in plain text in a config file is reported, so you can move it to the vault.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.mediaAuthSecret</code></td><td class="v">FAL_KEY</td><td>The name of the secret that holds the media key. The setting holds the key&#39;s name, not the key.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="masking" aria-label="Keys kept out, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·6</b><span class="fk">The keychain</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="browser" data-f="browser">
+          <div class="fth">
+            <span class="c">X·7</span>
+            <h2>Browser on a leash</h2>
+            <p class="s">A browser step opens only the sites on its allow list, or fails without running, and asks you before each run unless you chose otherwise.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent with a browser can follow a link anywhere. A step that runs at night has nobody watching where it goes.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">The step</span><span class="t">A browser step has an agent, a URL, an objective and the hosts it may open. What it finds goes to the next step.</span></button></li><li><button type="button" data-i="1"><span class="k">The allow list</span><span class="t">The URL is checked against the step's own hosts and <code>agentFarm.browserAllowHosts</code>. Subdomains are included.</span></button></li><li><button type="button" data-i="2"><span class="k">Outside: no run</span><span class="t">A URL neither list covers fails the step without running it at all, and the workflow's on-fail rules take over.</span></button></li><li><button type="button" data-i="3"><span class="k">Ask first</span><span class="t">Before each run you are asked, with the URL and the objective in front of you. <code>auto</code> skips the question, and only by your choice.</span></button></li><li><button type="button" data-i="4"><span class="k">Held by the browser</span><span class="t">On a recipe step, which runs Agent Farm's own browser, the list is held by the browser too: a page on a host outside it is replaced by <code>about:blank#BLOCKED BY AGENT FARM</code>, naming the host. Frames, such as a sign-in box, are left alone.</span></button></li></ol>
+            <p class="note">The agent's prompt carries hard rules as well: open no link off the list, never make up a sign-in, and report <code>NO BROWSER MCP</code> when there is no browser. A login wall on a recipe step is reported as <code>LOGIN NEEDED</code>, never typed into.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.browserAllowHosts</code></td><td class="v">[]</td><td>Hosts every browser step may open, beside the step&#39;s own list.</td></tr><tr><td><code>agentFarm.browserApproval</code></td><td class="v">ask</td><td>ask: approve each run, with the URL and objective shown. auto: no question.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="browser" aria-label="Browser on a leash, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·7</b><span class="fk">The step</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="superpowers" data-f="superpowers">
+          <div class="fth">
+            <span class="c">X·8</span>
+            <h2>Superpowers</h2>
+            <p class="s">Engineering disciplines on disk, such as tests first and systematic debugging, with quality gates.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent left to itself patches the symptom and says it is done. Loading a whole engineering method into every session to stop that costs tokens on every turn, even when the work is a lint sweep.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Asleep on disk</span><span class="t">Fourteen engineering disciplines from the Obra Superpowers library sit in a folder on disk: test-driven development, systematic debugging, planning, brainstorming, verification, code review and more. On disk they cost no tokens.</span></button></li><li><button type="button" data-i="1"><span class="k">A small index</span><span class="t">A session with Superpowers on gets one small root hook, about 2.5 KB, and a list of where each discipline's file is, added to its system prompt.</span></button></li><li><button type="button" data-i="2"><span class="k">Read when needed</span><span class="t">When the work calls for one, debugging or writing code, the agent reads that discipline's <code>SKILL.md</code> with its own file tools, and only that one.</span></button></li><li><button type="button" data-i="3"><span class="k">Strict rules</span><span class="t">The rules are strict: no fix before the root cause is found, by four steps of systematic debugging, and no "done" without evidence.</span></button></li><li><button type="button" data-i="4"><span class="k">Per agent, per job</span><span class="t">It is a switch per agent, on for <code>developer</code> by default, and the ⚡ chip in the Console shows the exact hook. A task, a schedule, a trigger or a workflow step can say Agent default, On or Off for that job alone.</span></button></li></ol>
+            <p class="note"><em>Agent default</em> is not off: it hands the choice back to the agent's own setting, which is what every task written before the switch existed still says.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.superpowersPath</code></td><td class="v">empty</td><td>The disciplines&#39; folder. Empty: _SKILLS/superpowers beside your agent folders.</td></tr><tr><td><code>agentFarm.superpowersDefaults</code></td><td class="v">developer: on</td><td>On or off per agent, by exact name. An agent not named starts without it.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="superpowers" aria-label="Superpowers, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>X·8</b><span class="fk">Asleep on disk</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Does anything about my work come to you?</summary><p>No. The free version never contacts us. A paid licence checks its key once a day, and that message holds the key, a hash of the machine and the version, nothing else. Your code, prompts, transcripts, names, costs and the features you use never come to us.</p></details><details><summary>What does a paid licence do without a connection?</summary><p>It keeps working for 30 days without reaching us. The check only asks whether the key is valid; nothing runs on our side.</p></details><details><summary>Who sees my prompts, then?</summary><p>The provider of the engine you run, as without Agent Farm: Anthropic for Claude Code, OpenAI for Codex, Google for Gemini and Antigravity, and the providers you give OpenCode. A route sends a run to the provider you picked for it.</p></details><details><summary>Does Agent Farm sandbox my agents?</summary><p>No. It maps its permission choices onto each engine's own: Claude Code's permission modes, Codex's sandbox, Gemini's approval mode, Antigravity's mode, OpenCode's plan agent. Parallel runs work in separate git worktrees. The guards on this page stop the commands that should not run.</p></details><details><summary>Do the guards work on every engine?</summary><p>They act in the hook an engine runs before a tool: Claude Code's, and Codex's. BridgeGuard reports for each engine whether a hook covers it, so an engine without one is never assumed to be guarded.</p></details><details><summary>Can I let one command through?</summary><p>Yes, on purpose and one command at a time: <code>af:allow-shell</code> for ShellGuard, <code>af:allow-id</code> for BridgeGuard. It is written into the command, so the session's transcript shows every time it was used.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="nx" href="../never-stops/" style="--c:var(--yellow)"><span class="k">Next district</span><span class="r">I</span><span class="n">Never stops</span><span class="p">Work keeps going through full contexts, full accounts and its own updates.</span></a>
+        <a class="all" href="../">All 82 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.8.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <span>Photos from Unsplash</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>

@@ -13,7 +13,7 @@
     <meta property="og:description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
     <meta property="og:url" content="https://agentfarm.space/features/never-stops/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/never-stops.js?v=0.7.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/never-stops.js?v=0.8.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -21,7 +21,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.7.0"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.8.0"></head>
   <body>
     
   <div class="wrap">
@@ -48,6 +48,12 @@
           <p class="dp">Work keeps going through full contexts, full accounts and its own updates.</p>
         </div>
       </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-relay-l.jpg" srcset="../../assets/photos/d-relay-s.jpg 900w, ../../assets/photos/d-relay-l.jpg 1800w" sizes="100vw" alt="Snowy mountains under a night sky full of stars" loading="lazy" decoding="async" style="object-position:50% 60%"></div>
+  
+</figure>
+    <div class="wrap">
       <p class="dpromise">A long job outlives any one session. When a context fills, a fresh session takes over from a handover note. When an account&#39;s window fills, the next leg opens on another account. When every account is full, the chain waits for the reset and carries on. You set the lines and the brakes once.</p>
       <ul class="dtl">
         <li><a href="#relay"><span class="c">I·1</span><span class="n">Baton relay</span><span class="sg">⑂ 92</span></a></li><li><a href="#quota"><span class="c">I·2</span><span class="n">Quota handover</span><span class="sg">acct-c 71%</span></a></li><li><a href="#policies"><span class="c">I·3</span><span class="n">Account policies</span><span class="sg">4 built in</span></a></li><li><a href="#park"><span class="c">I·4</span><span class="n">Park and wake</span><span class="sg">2 parks</span></a></li><li><a href="#ouroboros"><span class="c">I·5</span><span class="n">Ouroboros</span><span class="sg">3.931.0</span></a></li><li><a href="#sentry"><span class="c">I·6</span><span class="n">Sentry</span><span class="sg">on watch</span></a></li><li><a href="#brakes"><span class="c">I·7</span><span class="n">Brakes</span><span class="sg">baton.stop</span></a></li>
@@ -55,7 +61,7 @@
     </div>
     <section id="s-days" class="gap" aria-label="One relay chain across three days and four nights, working through a backlog">
   <div class="wrap">
-    <p class="sx"><b>04</b> Day and night</p>
+    <p class="sx"><b>05</b> Day and night</p>
     <div class="sh">
       <div><p class="pre">chn_7f3a · demo data shaped like the real chain</p><h2 id="d-title">Ninety-two legs. <em>Three days, four nights.</em> Straight off the backlog.</h2></div>
       <p class="lead">Every block is one fresh session, coloured by the account it ran on. The band above it is the backlog item it was given: when an item closes, the next session opens on the next one in your queue. Night or day makes no difference to it. A hatched gap is the chain waiting for a quota reset, then waking by itself. Hover a block to read it.</p>
@@ -83,7 +89,7 @@
   </div>
 </section><section id="s-rules" class="gap" aria-label="The rules of the relay">
   <div class="wrap">
-    <p class="sx"><b>05</b> The rules of the relay</p>
+    <p class="sx"><b>06</b> The rules of the relay</p>
     <div class="sh">
       <div><p class="pre">Real defaults · every one is a setting</p><h2>Runs <em>without you.</em> Braked so it never runs away.</h2></div>
       <p class="lead">Every number below is a setting you can change. These are the defaults the extension ships with.</p>
@@ -276,10 +282,11 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.7.0 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.8.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <span>Photos from Unsplash</span>
       <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
     </nav>
   </footer>
