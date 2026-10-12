@@ -20,7 +20,7 @@ To look at a build, open `dist/index.html` straight from disk; no server is need
 ## Branches
 
 - **`source`**: this code. Every change happens here.
-- **`main`**: only the finished site (`index.html`, the page folders such as `features/`, `favicon.svg`, `robots.txt`, `assets/`), written by `npm run deploy`. It is what Hostinger serves, by upload to `public_html` or through Hostinger's Git deployment. Never edit it by hand: the next deploy replaces it.
+- **`main`**: only the finished site (`index.html`, the page folders such as `features/`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `assets/`), written by `npm run deploy`. It is what Hostinger serves, by upload to `public_html` or through Hostinger's Git deployment. Never edit it by hand: the next deploy replaces it.
 
 ## The finished site
 
@@ -30,6 +30,7 @@ To look at a build, open `dist/index.html` straight from disk; no server is need
 - each page has one plain script (module scripts do not run from disk): the landing's is bundled from `src/scripts/main.js` into `assets/site.js`, another page's from `src/scripts/pages/<name>.js` into `assets/<name>.js`, named by the page's `script`;
 - all pages share one stylesheet, `assets/site.css`; fonts are in `assets/fonts/`, sounds in `assets/sounds/`;
 - the pages stay readable, and their links to the stylesheet and script carry `?v=<site version>` so browsers fetch the new files after a deploy.
+- `sitemap.xml` lists every page a search engine may index (a page with `noindex`, like a legal draft, is left out); `robots.txt` points at it.
 
 ## The page, in order
 
@@ -61,6 +62,8 @@ The order lives in `src/data/page.js` (plan v0.7 §5); section numbers and the s
 |---|---|---|
 | `/features/` | All 82 things as cards in their ten districts; search and district buttons, kept in the address (`?q=…&d=…`) | `src/pages/features/index.astro`, `src/data/features.js` |
 | `/features/never-stops/` | District I: the landing's Days and Rules demos, then each feature beside its figure: what it solves, its steps (a step clicked shows itself in the figure; some figures have a setting to slide), the settings folded, where to see it; questions; the next district | `src/pages/features/never-stops.astro`, `src/components/District.astro`, `src/data/deep/relay.js` |
+| `/features/any-project/` | District II: the landing's Backlog chapter, then its seven features beside their figures (four kinds of project, the backlog file and its queue, the track, the brief every session starts with, the handover letter, the portfolio, cost and analysis); questions | `src/pages/features/any-project.astro`, `src/data/deep/projects.js`, `src/scripts/figs/projects.js` |
+| `/features/measured-not-claimed/` | District IX: the landing's Measured chapter, then its nine features beside their figures (plan usage, where the money went, budgets, the downgrade, cost alarms, honest numbers, the judge's ladder, evals, Insights); questions | `src/pages/features/measured-not-claimed.astro`, `src/data/deep/measure.js`, `src/scripts/figs/measure.js` |
 | `/features/safe-and-yours-alone/` | District X, the same way: the landing's Local chapter, then its eight features beside their figures (the machine, the licence check, the guards, Superpowers); questions | `src/pages/features/safe-and-yours-alone.astro`, `src/data/deep/privacy.js`, `src/scripts/figs/privacy.js` |
 
 ## The sales pages

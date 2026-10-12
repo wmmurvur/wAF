@@ -1,0 +1,10 @@
+---
+// /features/measured-not-claimed/: district IX, Measured, not claimed. Its live demo is the landing's chapter IX as it
+// is: every account's plan, where the live leg's cost went, and the judge's ladder (Meter). The words are in
+// data/deep/measure.js; the figures beside each feature are drawn by scripts/figs/measure.js.
+import District from '../../components/District.astro';
+import Meter from '../../components/sections/Meter.astro';
+import deep from '../../data/deep/measure.js';
+import '../../styles/pages/figs-measure.css';
+---
+<District d={8} deep={deep} script="measured-not-claimed"><Meter /></District>

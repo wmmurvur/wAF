@@ -2,6 +2,15 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.10.0 · 2026-10-12
+
+Two more district pages: what everything cost and whether the work was good, and a project of any kind.
+
+- Measured, not claimed, the district page (`/features/measured-not-claimed/`): all nine of district IX's features beside their figures, with the landing's chapter IX as its live demo. Things to try: drag the five-hour window and watch the status bar and the card turn yellow at 80% and red at 95%; filter a session's steps by kind and switch raw against ⚖ weighted; push an agent's day past its budget; move the window past the downgrade line and see which jobs drop to haiku and which never do; drag a day's cost against its usual and the alarm line; change a rate and see old turns keep theirs; the judge's ladder overturning a cheap fail, upholding one, or passing on the first rung; an evals run with regressed, fixed and new cases; Insights with Fix, Delegate and Dismiss.
+- Any project, the district page (`/features/any-project/`): all seven of district II's features beside their figures, with the landing's Backlog chapter as its live demo. Things to try: the four kinds of project and what each one's settings hold; a thought added from the capture box, and the queue reordered by ▲▼ with the file's 🎯 block following; the track's four views; the brief as Claude Code and as Codex receive it; the handover letter rewritten with your block kept; the portfolio's parts, health and weekly digest; cost by model, the rhythm, and a new project with too few turns to draw one.
+- The landing's Measured chapter no longer says a model with no known price gets no figure: it is counted as $0 with a warning, as the district page explains. In its place, Codex on a ChatGPT plan shows tokens and why there is no price. Its cost alarm reads per agent and day, the way the extension counts it. Three tiles (Cost alarms, Project context, Handover letter) say what they do more exactly.
+- `sitemap.xml` lists the indexable pages, and `robots.txt` points at it.
+
 ## 0.9.1 · 2026-10-12
 
 The seller is named on the legal pages.

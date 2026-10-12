@@ -28,7 +28,7 @@ export const Word = n => word(n)[0].toUpperCase() + word(n).slice(1);
 export const LAST = districts[districts.length - 1].r;
 
 /* the districts whose own page is built (plan v0.8 §6); the others' links go to their chapter on the landing until theirs is */
-const PAGES = new Set(['relay', 'privacy']);
+const PAGES = new Set(['relay', 'projects', 'measure', 'privacy']);
 export const hasPage = D => PAGES.has(D.id);
 
 export const features = [
@@ -45,8 +45,8 @@ export const features = [
   { id: 'kinds', d: 1, n: 'Any kind of project', s: 'Software, a documentary series, a thesis, homework, an ad campaign. Same backlog, different work.', sig: 'any kind', src: 'Projects page; owner (11:46)' },
   { id: 'backlog', d: 1, n: 'Backlog', s: 'Write a thought down in one line. The fleet works the list off in the order you set.', sig: '38 open', at: 's-backlog', src: 'projects.backlog.*; Ctrl+Alt+B' },
   { id: 'track', d: 1, n: 'Track', s: 'How every closed item was closed: which session, which turn, what was tried first. The log can be rebuilt from the sessions.', sig: '214 closed', src: 'Projects → Track (M14); projects.track.rebuild' },
-  { id: 'context', d: 1, n: 'Project context', s: 'Every session starts with the project\'s charter, plan, backlog and worklog, so no agent starts cold.', sig: '6 documents', src: 'project context injection (6 role documents)' },
-  { id: 'letter', d: 1, n: 'Handover letter', s: 'Passing a project on? An automatic brief says what is still open and why.', sig: 'cold start', src: 'projects.handover' },
+  { id: 'context', d: 1, n: 'Project context', s: 'Every session starts with a brief built from the project\'s charter, plan, backlog and worklog, so no agent starts cold.', sig: '6 documents', src: 'project context injection (6 role documents)' },
+  { id: 'letter', d: 1, n: 'Handover letter', s: 'Passing a project on? One letter says where everything is, what is open, and what was already tried.', sig: 'cold start', src: 'projects.handover' },
   { id: 'portfolio', d: 1, n: 'Portfolio', s: 'Every project\'s phase and backlog on one screen.', sig: '4 active', src: 'portfolio view' },
   { id: 'cost', d: 1, n: 'Cost and analysis', s: 'Weeks, rhythm, how long an item takes from open to closed, and where the money went.', sig: 'per item', src: 'Projects → Cost, Analysis tabs' },
 
@@ -118,7 +118,7 @@ export const features = [
   { id: 'steps', d: 8, n: 'Where it went', s: 'Every turn split into nine kinds of step, from the model\'s thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. Every figure is shown raw and weighted.', sig: '9 kinds', src: 'stepkind.ts, pricing.ts; Blueprint (What Work Costs, nine kinds of step)' },
   { id: 'budgets', d: 8, n: 'Budgets', s: 'A daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. A warning at 80%, an error past 100%.', sig: '80% warn', src: 'agentFarm.budgets; runSpendCap.ts; mediaBudgetMonthUSD; Blueprint (budget alerts)' },
   { id: 'downgrade', d: 8, n: 'Cheaper, not stopped', s: 'As a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. Sessions you opened by hand are left alone.', sig: '→ haiku', src: 'quotaGuardPercent, quotaDowngradePercent, quotaDowngradeModel (Blueprint)' },
-  { id: 'anomaly', d: 8, n: 'Cost alarms', s: 'A run that costs far more than its usual, or a week that jumps, raises a flag. The usual is a median of real runs, not a guess.', sig: 'median', src: 'anomaly.ts (median + MAD), costAnomalyMinUsd, trendAlertFactor' },
+  { id: 'anomaly', d: 8, n: 'Cost alarms', s: 'A day that costs far more than an agent\'s usual, or a week that jumps, raises a flag. The usual is the median of its real days, not a guess.', sig: 'median', src: 'anomaly.ts (median + MAD), costAnomalyMinUsd, trendAlertFactor' },
   { id: 'honest', d: 8, n: 'Honest numbers', s: 'Costs come from your own transcripts. A free model\'s zero is a real zero; a missing figure is shown as missing.', sig: 'real zeros', src: 'cost code comments (extension.ts)' },
   { id: 'ladder', d: 8, n: 'Judge ladder', s: 'A check is judged by a cheap model first. Only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing.', sig: 'cheap first', src: 'agentFarm.judgeLadder (A-27, 3.710.0; Blueprint)' },
   { id: 'evals', d: 8, n: 'Evals', s: 'Saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds.', sig: 'scorecard', src: 'evals; Blueprint (Evals); FULL list 15' },

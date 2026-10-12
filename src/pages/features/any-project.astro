@@ -1,0 +1,10 @@
+---
+// /features/any-project/: district II, Any project. Its live demo is the landing's chapter II as it is: the Projects
+// page's Backlog tab being worked, four kinds of project, and the Track tab (Backlog). The words are in
+// data/deep/projects.js; the figures beside each feature are drawn by scripts/figs/projects.js.
+import District from '../../components/District.astro';
+import Backlog from '../../components/sections/Backlog.astro';
+import deep from '../../data/deep/projects.js';
+import '../../styles/pages/figs-projects.css';
+---
+<District d={1} deep={deep} script="any-project"><Backlog /></District>

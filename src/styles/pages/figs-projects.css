@@ -1,0 +1,204 @@
+/* District II, Any project: its figures (scripts/figs/projects.js), beside its features. Every rule is scoped by its
+   figure; the shared parts (.hd, .msg, .bar, .lb) are figs.css's. The district's colour is --c. */
+.fv:is([data-fig="kinds"],[data-fig="backlog"],[data-fig="track"],[data-fig="context"],[data-fig="letter"],[data-fig="portfolio"],[data-fig="cost"]){--ok:var(--lime);--warn:var(--yellow);--bad:var(--pink)}
+/* shared by this district's figures */
+.fv:is([data-fig="kinds"],[data-fig="track"],[data-fig="context"],[data-fig="cost"]) .seg{display:inline-flex;flex-wrap:wrap;gap:4px;justify-self:start}
+.fv:is([data-fig="kinds"],[data-fig="track"],[data-fig="context"],[data-fig="cost"]) .seg button{font-family:var(--ui);font-size:12px;color:#a3a495;background:#26271f;border:1px solid #3a3b33;padding:4px 10px;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.fv:is([data-fig="kinds"],[data-fig="track"],[data-fig="context"],[data-fig="cost"]) .seg button:hover{color:#f1f1e7}
+.fv:is([data-fig="kinds"],[data-fig="track"],[data-fig="context"],[data-fig="cost"]) .seg button.on{color:#f1f1e7;border-color:#cfd0c4;background:#3a3b33}
+.fv:is([data-fig="letter"],[data-fig="cost"]) .ghost2{font-family:var(--ui);font-size:12px;color:#f1f1e7;background:#2b2c26;border:1px solid var(--c);padding:3px 10px;cursor:pointer}
+.fv:is([data-fig="letter"],[data-fig="cost"]) .ghost2:disabled{opacity:.55;cursor:default;border-color:#45463e}
+.fv:is([data-fig="backlog"],[data-fig="track"],[data-fig="context"],[data-fig="kinds"]) pre{margin:0;font-family:var(--mono);font-size:11px;line-height:1.55;color:#cfd0c4;background:#11120d;border:1px solid #2e2f28;padding:7px 10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.fv:is([data-fig="backlog"],[data-fig="track"],[data-fig="context"]) pre .h{color:var(--c)}
+
+/* II·1 a project of any kind: the card, its folder, the role line, its tags, parts and a template */
+.fv[data-fig="kinds"]{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.fv[data-fig="kinds"]>*{grid-column:1/-1}
+.fv[data-fig="kinds"]>:is(.tree,.fm){grid-column:auto}
+.fv[data-fig="kinds"] .pf{display:grid;grid-template-columns:86px minmax(0,1fr);gap:3px 10px;margin:0;background:#181914;border:1px solid #2e2f28;padding:8px 10px;font-size:12.5px}
+.fv[data-fig="kinds"] .pf dt{font-family:var(--mono);font-size:10.5px;color:#8f8f84;padding-top:2px}
+.fv[data-fig="kinds"] .pf dd{margin:0;color:#e8e8dc;min-width:0;overflow-wrap:anywhere}
+.fv[data-fig="kinds"] .pf i{color:#8f8f84}
+.fv[data-fig="kinds"] .tree ul{list-style:none;margin:0;padding:0;columns:2;column-gap:12px;font-family:var(--mono);font-size:11px;color:#cfd0c4}
+.fv[data-fig="kinds"] .tree li{padding:1px 0;break-inside:avoid}
+.fv[data-fig="kinds"] .tree li::before{content:"📄 ";font-size:10px}
+.fv[data-fig="kinds"] .tree li.d{color:var(--c)}
+.fv[data-fig="kinds"] .tree li.d::before{content:"📁 "}
+.fv[data-fig="kinds"] .tree li.x{column-span:all;color:#8f8f84;font-size:10.5px;margin-top:3px}
+.fv[data-fig="kinds"] .tree li.x::before{content:""}
+.fv[data-fig="kinds"] .fm{display:grid;gap:5px;align-content:start}
+.fv[data-fig="kinds"] .fm pre{color:#e3f7c2}
+.fv[data-fig="kinds"] .fm>p:last-child{font-size:12px;color:#a3a495}
+.fv[data-fig="kinds"] .tg{display:flex;flex-wrap:wrap;gap:5px}
+.fv[data-fig="kinds"] .tg code{color:#f1f1e7;background:#2b2c26;border:1px solid #45463e;padding:1px 7px}
+.fv[data-fig="kinds"] .parts{list-style:none;margin:0 0 6px;padding:0;display:grid;gap:2px;font-size:12.5px}
+.fv[data-fig="kinds"] .parts li{display:flex;justify-content:space-between;gap:10px;color:#e8e8dc}
+.fv[data-fig="kinds"] .parts li.sub{padding-left:14px;color:#cfd0c4}
+.fv[data-fig="kinds"] .parts em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="kinds"] .tpl{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:#8f8f84}
+.fv[data-fig="kinds"] .tpl .y{color:#e8e8dc}
+.fv[data-fig="kinds"] .tpl .no{flex-basis:100%;font-family:var(--mono);font-size:10.5px;color:var(--pink)}
+
+/* II·2 the backlog: the capture box, the file, the queue, the top five, a family */
+.fv[data-fig="backlog"] .cap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.fv[data-fig="backlog"] .cap .box{flex:1;min-width:0;min-height:26px;font-size:12.5px;color:#e8e8dc;background:#11120d;border:1px solid var(--c);padding:3px 8px}
+.fv[data-fig="backlog"] .cap .add{font-family:var(--ui);font-size:12px;color:#111;background:var(--c);border:0;padding:5px 12px;cursor:pointer}
+.fv[data-fig="backlog"] .cap .add:disabled{opacity:.45;cursor:default}
+.fv[data-fig="backlog"] .cap small{flex-basis:100%;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="backlog"] .inbox{list-style:none;margin:0;padding:0}
+.fv[data-fig="backlog"] .inbox:empty{display:none}
+.fv[data-fig="backlog"] .inbox li{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;font-size:12.5px;color:#e8e8dc;animation:pj-in .5s}
+.fv[data-fig="backlog"] .inbox em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--c)}
+.fv[data-fig="backlog"] .file .ql{color:#f1f1e7}
+.fv[data-fig="backlog"] .q{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fv[data-fig="backlog"] .q li{display:grid;grid-template-columns:16px 40px minmax(0,1fr) auto auto;gap:8px;align-items:center;font-size:12.5px;padding:2px 6px;border-left:2px solid transparent;transition:background .3s,border-color .3s,opacity .3s}
+.fv[data-fig="backlog"] .q .n{font-family:var(--mono);font-size:10.5px;color:#8f8f84;text-align:right}
+.fv[data-fig="backlog"] .q .t{color:#d9d9ce;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fv[data-fig="backlog"] .q em{font-style:normal;font-family:var(--mono);font-size:10.5px}
+.fv[data-fig="backlog"] .q em.by{color:var(--cyan)}
+.fv[data-fig="backlog"] .q em.wt{color:var(--pink)}
+.fv[data-fig="backlog"] .q .mv{grid-column:5;display:flex;gap:2px}
+.fv[data-fig="backlog"] .q .mv button{font-size:9px;line-height:1;color:#a3a495;background:#26271f;border:1px solid #3a3b33;padding:3px 5px;cursor:pointer}
+.fv[data-fig="backlog"] .q .mv button:hover:not(:disabled){color:#f1f1e7;border-color:#8f8f84}
+.fv[data-fig="backlog"] .q .mv button:disabled{opacity:.3;cursor:default}
+.fv[data-fig="backlog"] .q li.top{background:color-mix(in srgb,var(--c) 10%,transparent);border-left-color:var(--c)}
+.fv[data-fig="backlog"] .q li.held{opacity:.55}
+.fv[data-fig="backlog"] .t5{font-size:12px;color:#a3a495}
+.fv[data-fig="backlog"] .t5 b{font-family:var(--mono);font-size:11px;color:var(--pink);font-weight:500}
+.fv[data-fig="backlog"] .fam{display:grid;gap:4px;background:#181914;border:1px solid #2e2f28;padding:8px 10px;font-size:12.5px}
+.fv[data-fig="backlog"] .fam em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:#8f8f84;margin-left:6px}
+.fv[data-fig="backlog"] .fam .pp{display:flex;flex-wrap:wrap;gap:3px 12px;font-family:var(--mono);font-size:10.5px;color:#8f8f84;padding-left:12px}
+.fv[data-fig="backlog"] .fam .who{font-size:12px;color:#a3a495}
+.fv[data-fig="backlog"] .fam .who code{color:var(--cyan)}
+
+/* II·3 the track: the stats, two items with their events, doubt codes, the log file, the four views */
+.fv[data-fig="track"] .st{display:flex;flex-wrap:wrap;gap:4px 14px;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="track"] .st b{color:#f1f1e7;font-weight:500}
+.fv[data-fig="track"] .it{display:grid;gap:5px;background:#181914;border:1px solid #2e2f28;padding:8px 10px}
+.fv[data-fig="track"] .ih{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;font-size:12.5px;color:#e8e8dc}
+.fv[data-fig="track"] .ih em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:#8f8f84;margin-left:auto}
+.fv[data-fig="track"] .ev{list-style:none;margin:0;padding:0 0 0 10px;border-left:1px solid #45463e;display:grid;gap:5px}
+.fv[data-fig="track"] .ev li{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline;font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="track"] .ev code{font-size:10.5px}
+.fv[data-fig="track"] .ev .tn{color:#d9d9ce}
+.fv[data-fig="track"] .ev em{font-style:normal;color:#f1f1e7;border:1px solid #45463e;padding:0 5px}
+.fv[data-fig="track"] .ev em.done{border-color:var(--lime);color:var(--lime)}
+.fv[data-fig="track"] .ev em.opened{border-color:var(--cyan);color:var(--cyan)}
+.fv[data-fig="track"] .ev q{flex-basis:100%;font-family:var(--ui);font-size:12.5px;color:#cfd0c4;quotes:"“" "”";padding:2px 6px;border-left:2px solid transparent;transition:background .4s,border-color .4s,color .4s}
+.fv[data-fig="track"] .ev q.hi{color:#f1f1e7;background:color-mix(in srgb,var(--c) 12%,transparent);border-left-color:var(--c)}
+.fv[data-fig="track"] .nxt{font-size:12px;color:var(--c)}
+.fv[data-fig="track"] .dbt{font-size:12px;color:#a3a495}
+.fv[data-fig="track"] .dbt b{font-family:var(--mono);font-size:10.5px;font-weight:500;color:#111;background:var(--yellow);padding:0 6px;margin-right:6px}
+.fv[data-fig="track"] .lg{display:grid;gap:4px}
+.fv[data-fig="track"] .md b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="track"] .md .mine{color:#e3f7c2}
+.fv[data-fig="track"] .cpt{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 6px;font-size:11.5px;color:#8f8f84}
+.fv[data-fig="track"] .cpt span{font-family:var(--mono);font-size:10px;padding:0 5px;color:#111}
+.fv[data-fig="track"] .cpt .mc{background:#cfd0c4}
+.fv[data-fig="track"] .cpt .yc{background:#c5e89a;margin-left:8px}
+.fv[data-fig="track"] .vw{display:grid;gap:6px}
+.fv[data-fig="track"] .vo{font-size:12.5px;color:#cfd0c4;min-height:2.9em}
+.fv[data-fig="track"] .vo b{color:#f1f1e7;font-family:var(--mono);font-size:11.5px;font-weight:500}
+
+/* II·4 the brief: its text, its channel by engine, the chip, the write side */
+.fv[data-fig="context"] .chip{justify-self:start;font-family:var(--mono);font-size:11px;color:#f1f1e7;background:#26271f;border:1px solid var(--c);padding:2px 8px}
+.fv[data-fig="context"] .br{color:#cfd0c4}
+.fv[data-fig="context"] .how{display:grid;gap:6px}
+.fv[data-fig="context"] .cmd{color:#e3f7c2}
+.fv[data-fig="context"] .tk{font-size:12px;color:#a3a495}
+.fv[data-fig="context"] .tk b{color:#f1f1e7;font-family:var(--mono);font-weight:500}
+.fv[data-fig="context"] .wb{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.fv[data-fig="context"] .wb li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;align-items:baseline;font-size:12px;color:#cfd0c4}
+.fv[data-fig="context"] .wb code{color:var(--c)}
+
+/* II·5 the letter, and the block a rewrite keeps */
+.fv[data-fig="letter"] .doc{display:grid;gap:8px;background:#f1efe6;color:#25261f;padding:12px 14px;font-family:var(--sans);font-size:12.5px;line-height:1.45}
+.fv[data-fig="letter"] .doc section{display:grid;gap:3px}
+.fv[data-fig="letter"] .doc h4{margin:4px 0 0;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6a6b5d}
+.fv[data-fig="letter"] .doc section>h4:first-child{margin-top:0}
+.fv[data-fig="letter"] .doc code{color:#8a4b12;font-size:11px}
+.fv[data-fig="letter"] .doc mark{white-space:nowrap;font-family:var(--mono);font-size:10.5px;color:#fff;background:#c4314b;padding:0 5px}
+.fv[data-fig="letter"] .doc b{font-weight:700}
+.fv[data-fig="letter"] .doc ol{margin:0;padding-left:20px}
+.fv[data-fig="letter"] .doc .mine{border:2px dashed #7d9a3a;background:#eef3df;padding:6px 9px;outline:3px solid transparent;outline-offset:2px}
+.fv[data-fig="letter"] .doc .mine.flash{animation:pj-flash 1.4s}
+.fv[data-fig="letter"] .rw{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:12px;color:#a3a495}
+.fv[data-fig="letter"] .rw b{color:var(--lime);font-weight:600}
+
+/* II·6 the portfolio: the table, the parts, health, the digest, the Work tab */
+.fv[data-fig="portfolio"] .pt{width:100%;border-collapse:collapse;font-size:12.5px}
+.fv[data-fig="portfolio"] .pt th{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#8f8f84;text-align:left;padding:3px 6px;border-bottom:1px solid #2e2f28}
+.fv[data-fig="portfolio"] .pt td{padding:5px 6px;border-bottom:1px solid #26271f;vertical-align:middle;color:#cfd0c4}
+.fv[data-fig="portfolio"] .pt td:first-child{width:46%}
+.fv[data-fig="portfolio"] .pt td:nth-child(3){font-family:var(--mono);font-size:11.5px;text-align:right}
+.fv[data-fig="portfolio"] .pt td b{display:block;color:#f1f1e7;font-weight:600}
+.fv[data-fig="portfolio"] .pt td small{font-family:var(--mono);font-size:10.5px;color:#8f8f84}
+.fv[data-fig="portfolio"] .pt .pts{color:var(--c)}
+.fv[data-fig="portfolio"] .pt .bar{height:6px}
+.fv[data-fig="portfolio"] .pt td:nth-child(2) small{display:block;margin-top:2px}
+.fv[data-fig="portfolio"] .pt tr.part td{font-family:var(--mono);font-size:11px;color:#a3a495;padding-left:18px}
+.fv[data-fig="portfolio"] .pt tr.stale td:last-child{color:var(--yellow)}
+.fv[data-fig="portfolio"] .pt .ov{color:var(--pink)}
+.fv[data-fig="portfolio"] .hl{list-style:none;margin:0;padding:0;display:grid;gap:3px;font-size:12px;color:#cfd0c4}
+.fv[data-fig="portfolio"] .hl li{border-left:2px solid #5f6056;padding:2px 8px}
+.fv[data-fig="portfolio"] .hl .w{border-left-color:var(--yellow)}
+.fv[data-fig="portfolio"] .hl .x{border-left-color:var(--pink)}
+.fv[data-fig="portfolio"] .hl .d{border-left-color:var(--c);font-family:var(--mono);font-size:11px;color:#a3a495}
+.fv[data-fig="portfolio"] .hl b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="portfolio"] .wk{display:grid;gap:3px;background:#181914;border:1px solid #2e2f28;padding:8px 10px}
+.fv[data-fig="portfolio"] .wk p:not(.lb){display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;font-size:12.5px}
+.fv[data-fig="portfolio"] .wk p b{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--c)}
+.fv[data-fig="portfolio"] .wk p span{color:#d9d9ce}
+
+/* II·7 cost: the membership order, the bill, by model, the rhythm, code two ways */
+.fv[data-fig="cost"] .mb{display:flex;flex-wrap:wrap;gap:4px;margin:0;padding:0;list-style:none;counter-reset:mb}
+.fv[data-fig="cost"] .mb li{counter-increment:mb;font-size:11.5px;color:#a3a495;border:1px solid #3a3b33;padding:2px 8px}
+.fv[data-fig="cost"] .mb li::before{content:counter(mb) " ";font-family:var(--mono);font-size:10px;color:#8f8f84}
+.fv[data-fig="cost"] .mb li.hit{color:#f1f1e7;border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,transparent)}
+.fv[data-fig="cost"] .sg{font-size:12px;color:#a3a495;line-height:1.6}
+.fv[data-fig="cost"] .sg b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="cost"] .kp{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.fv[data-fig="cost"] .kp p{display:grid;gap:1px;background:#181914;border:1px solid #2e2f28;padding:5px 7px}
+.fv[data-fig="cost"] .kp b{font-family:var(--mono);font-size:13px;font-weight:500;color:#f1f1e7;white-space:nowrap}
+.fv[data-fig="cost"] .kp span{font-size:10.5px;color:#8f8f84}
+.fv[data-fig="cost"] .days{display:flex;align-items:flex-end;gap:2px;height:46px;border-bottom:1px solid #45463e}
+.fv[data-fig="cost"] .days i{flex:1;background:var(--c);opacity:.75}
+.fv[data-fig="cost"] .days i:last-child{opacity:1;background:#f1f1e7}
+.fv[data-fig="cost"] .bm{display:grid;gap:5px}
+.fv[data-fig="cost"] .stk{display:flex;height:12px;background:#2b2c26}
+.fv[data-fig="cost"] .stk i{display:block;height:100%}
+.fv[data-fig="cost"] .lg2{display:flex;flex-wrap:wrap;gap:3px 12px;font-family:var(--mono);font-size:10.5px;color:#cfd0c4}
+.fv[data-fig="cost"] .lg2 i{display:inline-block;width:8px;height:8px;margin-right:5px}
+.fv[data-fig="cost"] .bm small{font-size:11.5px;color:#8f8f84}
+.fv[data-fig="cost"] .an{display:grid;gap:6px}
+.fv[data-fig="cost"] .rh{display:grid;grid-template-columns:12px repeat(24,minmax(0,1fr));gap:2px;align-items:center}
+.fv[data-fig="cost"] .rh.none{display:none}
+.fv[data-fig="cost"] .rh span{font-family:var(--mono);font-size:9px;color:#8f8f84}
+.fv[data-fig="cost"] .rh i{height:8px;background:var(--c)}
+.fv[data-fig="cost"] .rh .v0{opacity:.06}.fv[data-fig="cost"] .rh .v1{opacity:.22}.fv[data-fig="cost"] .rh .v2{opacity:.45}.fv[data-fig="cost"] .rh .v3{opacity:.7}.fv[data-fig="cost"] .rh .v4{opacity:1}
+.fv[data-fig="cost"] .ao{font-size:12px;color:#a3a495}
+.fv[data-fig="cost"] .ao b{color:#f1f1e7;font-weight:600}
+.fv[data-fig="cost"] .cd{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.fv[data-fig="cost"] .cd p{display:grid;gap:1px;background:#181914;border:1px solid #2e2f28;padding:6px 8px;font-size:12px;color:#d9d9ce}
+.fv[data-fig="cost"] .cd b{font-family:var(--mono);font-size:15px;font-weight:500;color:#f1f1e7}
+.fv[data-fig="cost"] .cd p span{font-size:11px;color:#8f8f84}
+.fv[data-fig="cost"] .cd small{grid-column:1/-1;font-size:11.5px;color:#a3a495}
+
+@keyframes pj-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes pj-flash{0%,60%{outline-color:var(--c)}100%{outline-color:transparent}}
+
+@media (max-width:620px){
+  .fv[data-fig="kinds"]{grid-template-columns:minmax(0,1fr)}
+  .fv[data-fig="kinds"] .pf{grid-template-columns:72px minmax(0,1fr)}
+  .fv[data-fig="backlog"] .q li{grid-template-columns:14px 38px minmax(0,1fr) auto}
+  .fv[data-fig="backlog"] .q em{display:none}
+  .fv[data-fig="backlog"] .q .mv{grid-column:4}
+  .fv[data-fig="context"] .wb li{grid-template-columns:minmax(0,1fr)}
+  .fv[data-fig="portfolio"] .pt th:nth-child(3),.fv[data-fig="portfolio"] .pt td:nth-child(3){display:none}
+  .fv[data-fig="portfolio"] .pt td:first-child{width:52%}
+  .fv[data-fig="cost"] .kp{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fv[data-fig="cost"] .cd{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  .fv[data-fig="backlog"] .inbox li,.fv[data-fig="letter"] .doc .mine.flash{animation:none}
+}

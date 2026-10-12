@@ -1,6 +1,6 @@
 {
   "name": "agentfarm-web",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "private": true,
   "description": "agentfarm.space: the website of Agent Farm, mission control for AI coding agents in VS Code.",
   "type": "module",

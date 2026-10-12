@@ -7,6 +7,7 @@
 //   dist/assets/fonts/       the three font families
 //   dist/assets/sounds/      the extension's tones
 //   dist/assets/photos/      the photographs (data/photos.js)
+//   dist/sitemap.xml         the pages a search engine may index (robots.txt points at it)
 import { build } from 'esbuild';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -51,9 +52,14 @@ for (const htmlPath of pages(DIST)) {
   fs.writeFileSync(htmlPath, html);
 }
 
-/* 5. nothing else may be left in assets/ */
+/* 5. sitemap.xml: every page a search engine may index (a noindex page, like a legal draft, is left out), by its folder */
+const urls = pages(DIST).filter(f => !/<meta name="robots" content="noindex"/.test(fs.readFileSync(f, 'utf8')))
+  .map(f => `${site.url}/${path.relative(DIST, path.dirname(f)).split(path.sep).filter(Boolean).map(s => s + '/').join('')}`).sort();
+fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`);
+
+/* 6. nothing else may be left in assets/ */
 const extra = fs.readdirSync(A).filter(f => !['site.css', 'fonts', 'sounds', 'photos', ...Object.keys(ENTRIES).map(n => `${n}.js`)].includes(f));
 if (extra.length) throw new Error(`unexpected files in ${A}: ${extra.join(', ')}`);
 
 const size = d => fs.readdirSync(d, { withFileTypes: true }).reduce((n, e) => n + (e.isDirectory() ? size(path.join(d, e.name)) : fs.statSync(path.join(d, e.name)).size), 0);
-console.log(`finish: dist/ is a plain site, ${pages(DIST).length} page(s), ${(size(DIST) / 1024).toFixed(0)} KB (site ${site.version})`);
+console.log(`finish: dist/ is a plain site, ${pages(DIST).length} page(s), ${urls.length} in the sitemap, ${(size(DIST) / 1024).toFixed(0)} KB (site ${site.version})`);
