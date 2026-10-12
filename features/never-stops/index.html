@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Never stops · Agent Farm features</title>
+    <meta name="description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
+    <link rel="canonical" href="https://agentfarm.space/features/never-stops/">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Never stops · Agent Farm features">
+    <meta property="og:description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
+    <meta property="og:url" content="https://agentfarm.space/features/never-stops/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/never-stops.js?v=0.7.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.7.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a href="../../#ch-relay">Relay</a><a href="../../#ch-projects">Projects</a><a href="../../#ch-studio">Studio</a><a href="../../#ch-memory">Memory</a><a href="../../#ch-bridge">Just ask</a><a href="../../#ch-privacy">Local</a>
+    </nav>
+    <a class="cta" href="../../#s-close">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:var(--yellow)">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>I Never stops</span></nav>
+      <header class="dh">
+        <span class="dr" aria-hidden="true">I</span>
+        <div>
+          <p class="dk"><span>District I of X</span><span>Seven things</span></p>
+          <h1>Never stops</h1>
+          <p class="dp">Work keeps going through full contexts, full accounts and its own updates.</p>
+        </div>
+      </header>
+      <p class="dpromise">A long job outlives any one session. When a context fills, a fresh session takes over from a handover note. When an account&#39;s window fills, the next leg opens on another account. When every account is full, the chain waits for the reset and carries on. You set the lines and the brakes once.</p>
+      <ul class="dtl">
+        <li><a href="#relay"><span class="c">I·1</span><span class="n">Baton relay</span><span class="sg">⑂ 92</span></a></li><li><a href="#quota"><span class="c">I·2</span><span class="n">Quota handover</span><span class="sg">acct-c 71%</span></a></li><li><a href="#policies"><span class="c">I·3</span><span class="n">Account policies</span><span class="sg">4 built in</span></a></li><li><a href="#park"><span class="c">I·4</span><span class="n">Park and wake</span><span class="sg">2 parks</span></a></li><li><a href="#ouroboros"><span class="c">I·5</span><span class="n">Ouroboros</span><span class="sg">3.931.0</span></a></li><li><a href="#sentry"><span class="c">I·6</span><span class="n">Sentry</span><span class="sg">on watch</span></a></li><li><a href="#brakes"><span class="c">I·7</span><span class="n">Brakes</span><span class="sg">baton.stop</span></a></li>
+      </ul>
+    </div>
+    <section id="s-days" class="gap" aria-label="One relay chain across three days and four nights, working through a backlog">
+  <div class="wrap">
+    <p class="sx"><b>04</b> Day and night</p>
+    <div class="sh">
+      <div><p class="pre">chn_7f3a · demo data shaped like the real chain</p><h2 id="d-title">Ninety-two legs. <em>Three days, four nights.</em> Straight off the backlog.</h2></div>
+      <p class="lead">Every block is one fresh session, coloured by the account it ran on. The band above it is the backlog item it was given: when an item closes, the next session opens on the next one in your queue. Night or day makes no difference to it. A hatched gap is the chain waiting for a quota reset, then waking by itself. Hover a block to read it.</p>
+    </div>
+    <div class="dgrid">
+      <div class="strip" id="d-strip"><canvas id="d-canvas" aria-label="Timeline of 92 relay legs across three days and four nights"></canvas><div class="tip" id="d-tip"></div></div>
+      <aside class="dbl" aria-label="The backlog items this chain worked through">
+        <div class="dbh"><span>Backlog.md</span><b id="d-done">0 / 12 closed</b></div>
+        <p class="fam"><code>X-40</code>Timeline export, end to end<span class="sz">XL</span></p>
+        <ol id="d-items">
+          <li data-c="X-41"><i class="cb"></i><code>X-41</code><span class="t">index the transcripts</span><span class="sz">S</span></li><li data-c="X-42"><i class="cb"></i><code>X-42</code><span class="t">stream rows into the exporter</span><span class="sz">M</span></li><li data-c="X-43"><i class="cb"></i><code>X-43</code><span class="t">write the CSV schema test</span><span class="sz">S</span></li><li data-c="X-44"><i class="cb"></i><code>X-44</code><span class="t">handle a 1M-row transcript</span><span class="sz">L</span></li><li data-c="X-45"><i class="cb"></i><code>X-45</code><span class="t">JSON lines on the same stream</span><span class="sz">M</span></li><li data-c="X-46"><i class="cb"></i><code>X-46</code><span class="t">resume a broken export from the last row</span><span class="sz">L</span></li><li data-c="X-47"><i class="cb"></i><code>X-47</code><span class="t">wire the export button</span><span class="sz">S</span></li><li data-c="X-48"><i class="cb"></i><code>X-48</code><span class="t">add the progress notice</span><span class="sz">S</span></li><li data-c="X-49"><i class="cb"></i><code>X-49</code><span class="t">Windows paths past 260 characters</span><span class="sz">M</span></li><li data-c="X-50"><i class="cb"></i><code>X-50</code><span class="t">tests at 10k, 1M and 10M rows</span><span class="sz">L</span></li><li data-c="X-51"><i class="cb"></i><code>X-51</code><span class="t">document the export path</span><span class="sz">S</span></li><li data-c="X-52"><i class="cb"></i><code>X-52</code><span class="t">clean up the old writer</span><span class="sz">M</span></li>
+        </ol>
+        <p class="nx">next in the queue: <code>U-12</code> export drops rows past 10k</p>
+      </aside>
+    </div>
+    <div class="stats">
+      <div><b id="d-legs">0</b><span>legs</span></div>
+      <div><b id="d-hours">0h</b><span>wall clock</span></div>
+      <div><b id="d-items-n">0</b><span>items closed</span></div>
+      <div><b id="d-parks">0</b><span>parks till reset</span></div>
+      <div><b id="d-quota">0</b><span>quota handovers</span></div>
+      <div><b id="d-updates">0</b><span>self-updates</span></div>
+    </div>
+    <div class="legend" id="d-legend"></div>
+  </div>
+</section><section id="s-rules" class="gap" aria-label="The rules of the relay">
+  <div class="wrap">
+    <p class="sx"><b>05</b> The rules of the relay</p>
+    <div class="sh">
+      <div><p class="pre">Real defaults · every one is a setting</p><h2>Runs <em>without you.</em> Braked so it never runs away.</h2></div>
+      <p class="lead">Every number below is a setting you can change. These are the defaults the extension ships with.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rule" style="--c:var(--yellow)"><span class="n">35%</span><h3>Converge</h3><p>The session is told once to start nothing new and finish the step in flight.</p><code>contextConvergePct</code></div><div class="rule" style="--c:var(--lime)"><span class="n">40%</span><h3>Hand over</h3><p>It stops, commits, writes its handover note and ends the run. The next leg opens with that note.</p><code>contextHandoverPct</code></div><div class="rule" style="--c:var(--pink)"><span class="n">90%</span><h3>Quota handover</h3><p>When its account&#39;s five-hour window is this full, the leg hands over and the next one opens on another account.</p><code>quotaHandoverPct</code></div><div class="rule" style="--c:var(--cyan)"><span class="n">98%</span><h3>Weekly line</h3><p>The same handover for the weekly window, so a chain never runs an account into the wall.</p><code>quotaWeeklyHandoverPct</code></div><div class="rule" style="--c:var(--teal)"><span class="n">PARK</span><h3>Wait for the reset</h3><p>Every account past the wall? The next leg parks until the first reset, then wakes and carries on.</p><code>parked until 02:15</code></div><div class="rule" style="--c:var(--violet)"><span class="n">BRAKE</span><h3>Barren-chain brake</h3><p>Two legs in a row that end on the same commit stop the chain, instead of burning quota on nothing.</p><code>batonMaxHops</code></div><div class="rule" style="--c:var(--claude)"><span class="n">FAILSAFE</span><h3>Emergency leg</h3><p>A leg cut off by an error or left with uncommitted work gets a successor that is told what it left.</p><code>batonEmergencyTemplate</code></div><div class="rule" style="--c:var(--lime)"><span class="n">0</span><h3>No ceiling</h3><p>Chains are capped at 6 legs by default. Set it to 0 and the relay runs until the work is done.</p><code>batonMaxHops: 0</code></div>
+    </div>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="relay" data-f="relay">
+          <div class="fth">
+            <span class="c">I·1</span>
+            <h2>Baton relay</h2>
+            <p class="s">At the context level you set (40% by default), a session commits, writes a handover note and a fresh session carries on. No context rot.</p>
+            <a class="see" href="#s-days">Watch a chain run for three days <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A long session gets worse as its context fills: it loses the start, repeats itself and begins to guess. Starting over by hand means explaining everything again.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Watching</span><span class="t">Agent Farm watches every running session's context. At 35% the session is told once to start nothing new and finish the step in flight.</span></button></li><li><button type="button" data-i="1"><span class="k">The two lines</span><span class="t">At 40% it is told to stop, commit its work, write a handover note and end its run. Each line is said once, and again only after the reading drops back.</span></button></li><li><button type="button" data-i="2"><span class="k">The baton</span><span class="t">In a relay chain the agent passes the baton with the words its successor needs. An empty baton is refused: the baton <em>is</em> the words the successor is handed.</span></button></li><li><button type="button" data-i="3"><span class="k">A fresh leg</span><span class="t">Once the old session has really ended, a fresh session opens. It is given the chain and the leg it is on, the relay's rules, your standing rule if you set one, and its predecessor's words. It never resumes the old conversation, which would walk straight back into a full window.</span></button></li><li><button type="button" data-i="4"><span class="k">Failsafe</span><span class="t">A leg that ends without passing is not lost. If it left a handover note in the last two minutes or new commits, an emergency leg starts with that evidence. A leg that dies within 30 seconds is recorded as failed instead of looping.</span></button></li></ol>
+            <p class="note">The two lines reach a running session through Claude Code's hooks. On the other engines the crossing is recorded on the session card as <em>undelivered</em>, so it is never assumed to have been said.</p>
+            <details class="setd">
+                <summary>Settings · 4</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.contextConvergePct</code></td><td class="v">35%</td><td>Told once to start nothing new and finish the step in flight. 0 = off.</td></tr><tr><td><code>agentFarm.contextHandoverPct</code></td><td class="v">40%</td><td>Told once to stop, commit, write its handover note and end the run. 0 = off.</td></tr><tr><td><code>agentFarm.batonInjectedDirective</code></td><td class="v">empty</td><td>A standing rule said to every leg, above its predecessor&#39;s words.</td></tr><tr><td><code>agentFarm.batonHandoverTemplate</code></td><td class="v">empty</td><td>Write the successor&#39;s message yourself, with {leg}, {chain}, {agentPrompt} and the rest filled in.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="relay" aria-label="Baton relay, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>I·1</b><span class="fk">Watching</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="quota" data-f="quota">
+          <div class="fth">
+            <span class="c">I·2</span>
+            <h2>Quota handover</h2>
+            <p class="s">Before the 5-hour window fills, the next leg opens on the account with the most room.</p>
+            <a class="see" href="#s-rules">The lines side by side <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A plan&#39;s five-hour window runs out in the middle of the work. When it does, the session stops dead and whatever was half done stays half done.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Its account</span><span class="t">The session's own account is read: how much of its five-hour window and of its week is used.</span></button></li><li><button type="button" data-i="1"><span class="k">The quota line</span><span class="t">At 90% of the five-hour window the session is told once to stop, commit, write its note and end the run. At 98% of the week the same happens, and the next leg never stays on that account.</span></button></li><li><button type="button" data-i="2"><span class="k">Staying put</span><span class="t">When a run hands over for any reason but the quota and its account is under 70% of its window, the next leg stays on that account, so one window is used up before another is opened.</span></button></li><li><button type="button" data-i="3"><span class="k">The next account</span><span class="t">Otherwise the next leg goes to the account you chose for the chain, else to the chain's pool or account policy. A relay's default is <code>@emptiest</code>: the account with the most of its window left.</span></button></li><li><button type="button" data-i="4"><span class="k">The ceiling</span><span class="t">An account at or past the ceiling, 70% of its window or 95% of its week, is passed over by every start that runs without you. No ceiling can sit above the handover line.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 6</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.quotaHandoverPct</code></td><td class="v">90%</td><td>The five-hour window&#39;s line. 0 = off.</td></tr><tr><td><code>agentFarm.quotaWeeklyHandoverPct</code></td><td class="v">98%</td><td>The week&#39;s line; the next leg leaves that account. 0 = off.</td></tr><tr><td><code>agentFarm.quotaConvergePct</code></td><td class="v">off</td><td>Below the handover line a run works at full capacity, unless you set this.</td></tr><tr><td><code>agentFarm.contextHandoverStayAccountPct</code></td><td class="v">70%</td><td>Under this, a handover that was not about the quota keeps the next leg on the same account.</td></tr><tr><td><code>agentFarm.defaultAccountCeiling</code></td><td class="v">70%</td><td>An account this full is passed over by every start that runs without you.</td></tr><tr><td><code>agentFarm.defaultAccountWeeklyCeiling</code></td><td class="v">95%</td><td>The same wall for the week.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="quota" aria-label="Quota handover, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>I·2</b><span class="fk">Its account</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="policies" data-f="policies">
+          <div class="fth">
+            <span class="c">I·3</span>
+            <h2>Account policies</h2>
+            <p class="s">Four built-in rules (@emptiest, @pool, @standing, @round-robin) or your own. A rule that can pick no account refuses the launch and says why.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Which account a session runs on is a decision. Making it by hand at every launch is how the wrong plan gets drained.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Four built in</span><span class="t">Every account picker offers four built-in rules beside your accounts. <code>@emptiest</code>: the sign-in with the most of its five-hour window left when the session starts. <code>@pool</code>: the next account with room in the running sentry campaign's pool. <code>@standing</code>: this agent's own sign-in, else the machine's "use this next", else the main one. <code>@round-robin</code>: the usable sign-ins in turn, so no single plan carries every session.</span></button></li><li><button type="button" data-i="1"><span class="k">Your own rule</span><span class="t">Your own rules have a name, steps and, if you like, an engine and a ceiling. A step is an account or another rule, with its own ceiling. A rule tries its steps in order, or takes the emptiest of them.</span></button></li><li><button type="button" data-i="2"><span class="k">Rules in rules</span><span class="t">Rules can point at rules, four deep at most. Deeper is refused as a loop.</span></button></li><li><button type="button" data-i="3"><span class="k">Decided at launch</span><span class="t">The rule is decided at every launch. A rule that can choose nothing refuses the launch and says why, with the time the first account comes back when that is known.</span></button></li></ol>
+            <p class="note">The setting's own example: <code>{"name": "Night", "chain": [{"account": "spare"}, {"policy": "@emptiest", "ceiling": 80}]}</code> is <code>@Night</code>. It tries the spare account first, then the emptiest one under 80%.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.accountPolicies</code></td><td class="v">none</td><td>Your named rules, offered in every account picker as @Name.</td></tr><tr><td><code>agentFarm.defaultAccountCeiling</code></td><td class="v">70%</td><td>The wall a rule obeys unless it names its own.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="policies" aria-label="Account policies, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>I·3</b><span class="fk">Four built in</span><span class="fn">1 / 4</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="park" data-f="park">
+          <div class="fth">
+            <span class="c">I·4</span>
+            <h2>Park and wake</h2>
+            <p class="s">One account or ten, when all of them are full the chain waits for the first reset and carries on by itself.</p>
+            <a class="see" href="#s-days">See the parks in the three days <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>With every account full, a chain left alone would either fail or keep knocking on a closed door.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Parked</span><span class="t">When the next leg finds no account with room, it is parked, not dropped. Its start time is the first reset plus a 3-minute buffer: the window reopening and the CLI agreeing that it has are not the same instant.</span></button></li><li><button type="button" data-i="1"><span class="k">Told</span><span class="t">Notices says so, with the chain, the leg and the time it starts. The status bar shows the wake time beside the leg.</span></button></li><li><button type="button" data-i="2"><span class="k">Woken</span><span class="t">The queue is checked every 30 seconds, and the leg starts when its time comes. The chain carries on from the same handover.</span></button></li><li><button type="button" data-i="3"><span class="k">Your call</span><span class="t">Made room sooner? Start it now. Changed your mind? Stop the chain, and the waiting leg is dropped.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.taskRetry.safetyBufferMin</code></td><td class="v">3 min</td><td>Added to the stated reset time before the parked leg starts (0 to 240).</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="park" aria-label="Park and wake, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>I·4</b><span class="fk">Parked</span><span class="fn">1 / 4</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="ouroboros" data-f="ouroboros">
+          <div class="fth">
+            <span class="c">I·5</span>
+            <h2>Ouroboros</h2>
+            <p class="s">An agent builds a new Agent Farm, restarts it inside VS Code and carries on in the same session. Nobody has to restart anything.</p>
+            <a class="see" href="../../#top">Watch it on the home page <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent that improves Agent Farm itself needs the new build running. Restarting VS Code&#39;s extensions would normally cut off every session, its own included.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Asked</span><span class="t">The agent asks, over the bridge, for the extension host to restart and for its session to resume. The request is refused if this window restarted less than 20 seconds ago.</span></button></li><li><button type="button" data-i="1"><span class="k">Armed</span><span class="t">If other sessions are starting or working, the restart is armed, not fired, and goes the moment the last of them is done. The asking session does not hold it up.</span></button></li><li><button type="button" data-i="2"><span class="k">The new build</span><span class="t">If a newer build is on disk, the restart becomes a window reload, so the new build is the one that runs.</span></button></li><li><button type="button" data-i="3"><span class="k">Taken up</span><span class="t">After the restart every console session is taken up again, same conversation, same id, and nudged after a 30-second grace. Its card says: "Agent Farm restarted on 3.931.0 and took this session up where it left off."</span></button></li><li><button type="button" data-i="4"><span class="k">Runs resumed</span><span class="t">Runs in the background that the restart cut off are picked up again, never more than 3 times, so a restart loop cannot keep spawning them.</span></button></li></ol>
+            <p class="note">There is no button and no setting for this. It is something an agent does over the bridge (<code>farm.restartExtensionHost</code>, with resume), behind fixed guards.</p>
+            
+          </div>
+          <figure class="fig" data-fig="ouroboros" aria-label="Ouroboros, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>I·5</b><span class="fk">Asked</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="sentry" data-f="sentry">
+          <div class="fth">
+            <span class="c">I·6</span>
+            <h2>Sentry</h2>
+            <p class="s">An agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next.</p>
+            <a class="see" href="../../#t-sentry">See it on the home page <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A fixed rule keeps a chain going but cannot tell a round that went nowhere from one that worked. Paying a large model to watch every round is a waste.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Rounds</span><span class="t">A sentry campaign works a project's backlog in rounds. Each round is a clean session, Sentry R1, R2 and on, on an account from the campaign's pool. An empty backlog is a wait, not a stop.</span></button></li><li><button type="button" data-i="1"><span class="k">Its mode</span><span class="t">Between rounds a leader may decide what comes next. Mechanical: the next prompt is always built from a template, at zero tokens. Intelligent: the leader wakes every round. Hybrid: a routine round stays free, and the leader wakes only when something is off: no handover note, uncommitted work, a failed round, two empty rounds in a row, facts it cannot check.</span></button></li><li><button type="button" data-i="2"><span class="k">The leader</span><span class="t">The leader is a small model, Claude Code's haiku unless you pick another. It reads a brief and answers with the next prompt, the account, or a hold. An answer it cannot read sends the round on the mechanical path.</span></button></li><li><button type="button" data-i="3"><span class="k">The leash</span><span class="t">It is kept on a leash: $2 a day, $0.25 and 120 seconds a turn, 3 failed turns in a row. Past any of them the campaign does not stop. It carries on mechanically, and Notices says so once.</span></button></li><li><button type="button" data-i="4"><span class="k">When it stops</span><span class="t">The campaign stops when you stop it, when you cancel its running round by hand, or after 3 rounds in a row that produce nothing. A round silent for 45 minutes ends as failed.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 6</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.sentryLeaderModel</code></td><td class="v">haiku</td><td>The leader&#39;s model. Its engine is Claude Code unless agentFarm.sentryLeaderEngine says otherwise.</td></tr><tr><td><code>agentFarm.sentryLeaderBudgetUsd</code></td><td class="v">$2 a day</td><td>Once spent, the campaign carries on mechanically. 0 = no daily budget.</td></tr><tr><td><code>agentFarm.sentryLeaderMaxUsd</code></td><td class="v">$0.25</td><td>The most one leader turn may cost.</td></tr><tr><td><code>agentFarm.sentryLeaderMaxSeconds</code></td><td class="v">120 s</td><td>The longest one leader turn may take.</td></tr><tr><td><code>agentFarm.sentryFailureLimit</code></td><td class="v">3</td><td>Empty rounds in a row that switch the campaign off. 0 = off.</td></tr><tr><td><code>agentFarm.sentryStallMin</code></td><td class="v">45 min</td><td>A round silent this long ends as failed and is not retried. 0 = off.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="sentry" aria-label="Sentry, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>I·6</b><span class="fk">Rounds</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="brakes" data-f="brakes">
+          <div class="fth">
+            <span class="c">I·7</span>
+            <h2>Brakes</h2>
+            <p class="s">A leg ceiling per chain, spend caps per workflow and one stop for a whole chain. Recorded, never deleted.</p>
+            <a class="see" href="#s-rules">The brakes among the rules <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Anything that runs without you has to know when to stop, or it spends your quota on nothing.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="steps"><li><button type="button" data-i="0"><span class="k">Leg ceiling</span><span class="t">A leg ceiling: a chain runs 6 legs by default, counting the run that started it. A pass from the last leg opens nothing; the agent writes a handover note instead, and Notices says so once.</span></button></li><li><button type="button" data-i="1"><span class="k">Barren chain</span><span class="t">The barren-chain brake: two legs in a row that end on the same commit stop the chain, instead of burning quota on nothing. A leg that was starved or paused does not count.</span></button></li><li><button type="button" data-i="2"><span class="k">Your brakes</span><span class="t">Your own brakes: mark the running leg as the last (⊣), or stop the whole chain, a successor waiting to start included.</span></button></li><li><button type="button" data-i="3"><span class="k">Spend cap</span><span class="t">Workflows have a spend cap. Once a run has spent it, no further step or branch starts and the run stops, saying so. Set it for every workflow, for one, or for a single run. A run never goes past 25 steps.</span></button></li><li><button type="button" data-i="4"><span class="k">Kept</span><span class="t">Every stop is kept with its reason. The baton is recorded as stopped, never deleted.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.batonMaxHops</code></td><td class="v">6</td><td>The most legs one chain may run; the run that started it is leg 1. 0 = no ceiling.</td></tr><tr><td><code>agentFarm.workflowSpendCap</code></td><td class="v">none</td><td>The most one workflow run may spend, in dollars. A workflow can set its own, and one run can override both.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="brakes" aria-label="Brakes, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>I·7</b><span class="fk">Leg ceiling</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Does the next session remember anything?</summary><p>It starts fresh, on purpose: a session already at the handover line would walk straight back into the wall. What carries over is what the last leg wrote, its handover note and the words it passed, plus your standing rule.</p></details><details><summary>I have one account. Is this for me?</summary><p>Yes. The relay still hands over at the context line. When that account's window fills, the chain parks until its reset and carries on by itself.</p></details><details><summary>Does it work on engines other than Claude Code?</summary><p>The next leg opens on the same engine as the leg before it. The converge and handover lines reach a running session through Claude Code's hooks; on the others the crossing is recorded on the session card as undelivered, so you can see it was not said.</p></details><details><summary>Can a chain run for ever?</summary><p>Only if you let it: set the leg ceiling to 0. The barren-chain brake still stops a chain whose legs stop committing, and you can stop it at any time.</p></details><details><summary>What happens at night when every account is full?</summary><p>The next leg parks until the first reset, plus 3 minutes, and starts by itself. Notices tells you when; in the morning the chain has carried on.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="nx" href="../../#ch-projects" style="--c:var(--teal)"><span class="k">Next district</span><span class="r">II</span><span class="n">Any project</span><span class="p">One backlog per project, and the project can be anything.</span></a>
+        <a class="all" href="../">All 82 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.7.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>
