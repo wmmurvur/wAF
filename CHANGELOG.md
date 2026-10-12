@@ -2,12 +2,16 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
-## Unreleased (0.8.0)
+## 0.8.0 · 2026-10-12
 
+The second district page, photographs between the chapters, and a Features page that moves.
+
+- Safe and yours alone, the district page (`/features/safe-and-yours-alone/`), is drawn: all eight of district X's features beside their figures, with the landing's chapter X as its live demo. Things to try: where the phone page listens (this machine or your network) and how often an idle farm reads its plan (planUsageRefreshMinutes); free or paid licence and what each sends; commands, searches and browser visits thrown at ShellGuard, BridgeGuard and the browser leash, which pass or are stopped; the browser's approval (ask or auto); Superpowers per agent and per job. The licence questions answer from data/facts.js.
 - Photographs: six human bands on the landing between chapters (Fri 18:00 you leave the desk, Sat 03:12 the farm is still at it, a line in a notebook, a projector's beam, a team at a laptop, Mon 08:00 a phone in hand), and a photo strip at the head of every district page. Real photographs from Unsplash, self-hosted; they fade in and drift slowly while on screen.
 - The console ("This is the screen you work in. Take it apart.") is third again, right after the fleet wall.
 - Features moves: a board of every district's cells in the hero on which the whole-farm stories travel, cards that come in with their district, and a small moving emblem for each district.
 - Sounds load from the site's top folder, so any page can play them.
+- The Features page's district buttons wrap at every width; on a wide screen the tenth ran off the page.
 
 ## 0.7.0 · 2026-10-12
 

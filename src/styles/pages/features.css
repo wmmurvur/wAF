@@ -71,7 +71,7 @@
 .fhub .fq:focus-within{border-color:var(--lime)}
 .fhub .fq span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
 .fhub .fq input{flex:1;min-width:0;background:none;border:0;color:var(--ink);font:inherit;font-size:14.5px;padding:10px 0;outline:none}
-.fhub .fds{display:flex;gap:5px}
+.fhub .fds{display:flex;flex-wrap:wrap;gap:5px}
 .fhub .fds button{font:inherit;font-size:12.5px;color:#b9baa9;background:#151610;border:1px solid #2a2b23;padding:5px 9px;cursor:pointer;white-space:nowrap;transition:border-color .2s,background .2s,color .2s}
 .fhub .fds button b{font-family:var(--display);font-weight:800;color:var(--c,var(--lime));margin-right:2px}
 .fhub .fds button:hover{border-color:var(--c,var(--lime));color:var(--ink)}

@@ -61,6 +61,7 @@ The order lives in `src/data/page.js` (plan v0.7 §5); section numbers and the s
 |---|---|---|
 | `/features/` | All 82 things as cards in their ten districts; search and district buttons, kept in the address (`?q=…&d=…`) | `src/pages/features/index.astro`, `src/data/features.js` |
 | `/features/never-stops/` | District I: the landing's Days and Rules demos, then each feature beside its figure: what it solves, its steps (a step clicked shows itself in the figure; some figures have a setting to slide), the settings folded, where to see it; questions; the next district | `src/pages/features/never-stops.astro`, `src/components/District.astro`, `src/data/deep/relay.js` |
+| `/features/safe-and-yours-alone/` | District X, the same way: the landing's Local chapter, then its eight features beside their figures (the machine, the licence check, the guards, Superpowers); questions | `src/pages/features/safe-and-yours-alone.astro`, `src/data/deep/privacy.js`, `src/scripts/figs/privacy.js` |
 
 A district gets its page by a page file, a `data/deep/<district id>.js` with its words (and `fig`, a label per step, for a feature drawn beside its text), a `scripts/figs/<district id>.js` that draws its figures, a `scripts/pages/<slug>.js` with its demos' scripts that calls `figures()` from `scripts/district.js`, and its id in `PAGES` (`src/data/features.js`). Until then its links go to its chapter on the landing. The words on a district page were checked in the extension's source; the citations are comments in its `data/deep` file.
 
