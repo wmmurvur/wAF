@@ -7,9 +7,10 @@
 // Columns: time (UTC), email, plan, use, consent (the wording's date), so a removal request or a consent question can
 // be answered from the file. Nothing else is kept: no IP address, no browser, no cookie.
 //
-// NOTIFY_TO: where the note about a new sign-up goes. Empty sends nothing; the list fills all the same.
+// NOTIFY_TO: where the note about a new sign-up goes (owner, 2026-10-12); answering the note answers the person.
+// Empty sends nothing; the list fills all the same.
 
-const NOTIFY_TO = '';
+const NOTIFY_TO = 'apply_farm@muvusoft.uk';
 const NOTIFY_FROM = 'noreply@agentfarm.space';
 const CONSENT = 'privacy policy 2026-10-12';
 const PLANS = ['pro', 'fleet', 'farm', 'unsure'];
@@ -83,7 +84,7 @@ fclose($fh);
 
 if (!$again && NOTIFY_TO !== '') {
   @mail(NOTIFY_TO, "Agent Farm early access: $plan", "A new early-access sign-up.\n\nEmail: $email\nPlan: $plan\nMostly for: " . ($use ?: '-') . "\n",
-    'From: Agent Farm <' . NOTIFY_FROM . ">\r\nContent-Type: text/plain; charset=utf-8");
+    'From: Agent Farm <' . NOTIFY_FROM . ">\r\nReply-To: $email\r\nContent-Type: text/plain; charset=utf-8");
 }
 
 answer(200, ['ok' => true, 'again' => $again]);
