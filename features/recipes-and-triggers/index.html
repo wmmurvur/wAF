@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Recipes and triggers · Agent Farm features</title>
+    <meta name="description" content="Work that starts by itself: workflows that hand each step's output to the next, schedules that survive a closed laptop, triggers on a file, a hook or a private address, Gatekeeper deciding whether there is real work, one sentence instead of a form, a queue with ceilings, a record of every run with its output and price, retries and rounds, one switch for all of it, and a forecast of the week.">
+    <link rel="canonical" href="https://agentfarm.space/features/recipes-and-triggers/">
+    
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Recipes and triggers · Agent Farm features">
+    <meta property="og:description" content="Work that starts by itself: workflows that hand each step's output to the next, schedules that survive a closed laptop, triggers on a file, a hook or a private address, Gatekeeper deciding whether there is real work, one sentence instead of a form, a queue with ceilings, a record of every run with its output and price, retries and rounds, one switch for all of it, and a forecast of the week.">
+    <meta property="og:url" content="https://agentfarm.space/features/recipes-and-triggers/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/recipes-and-triggers.js?v=0.11.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.11.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a class="ch" href="../../#ch-relay">Relay</a><a class="ch" href="../../#ch-projects">Projects</a><a class="ch" href="../../#ch-studio">Studio</a><a class="ch" href="../../#ch-memory">Memory</a><a class="ch" href="../../#ch-bridge">Just ask</a><a class="ch" href="../../#ch-privacy">Local</a><a href="../../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:var(--violet)">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>IV Recipes and triggers</span></nav>
+      <header class="dh">
+        <span class="drm" aria-hidden="true">IV</span>
+        <div>
+          <p class="dk"><span>District IV of X</span><span>Ten things</span></p>
+          <h1>Recipes and triggers</h1>
+          <p class="dp">Work that starts on time, on an event, or from one sentence.</p>
+        </div>
+      </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-automation-l.jpg" srcset="../../assets/photos/d-automation-s.jpg 900w, ../../assets/photos/d-automation-l.jpg 1800w" sizes="100vw" alt="A cup of coffee on a monthly planner with the month's goals" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
+  
+</figure>
+    <div class="wrap">
+      <p class="dpromise">Some work should not wait for you to press a button: the Monday video, the folder of new footage, the report at nine. Here it starts on a clock, on an event or from one sentence, runs in turn under the limits you set, tries again when a plan runs out, and stops everywhere at once when you say so.</p>
+      <ul class="dtl">
+        <li><a href="#flows"><span class="c">IV·1</span><span class="n">Workflows</span><span class="sg">8 saved</span></a></li><li><a href="#schedules"><span class="c">IV·2</span><span class="n">Schedules</span><span class="sg">13 on</span></a></li><li><a href="#triggers"><span class="c">IV·3</span><span class="n">Watch triggers</span><span class="sg">2 watching</span></a></li><li><a href="#gatekeeper"><span class="c">IV·4</span><span class="n">Gatekeeper</span><span class="sg">shadow</span></a></li><li><a href="#words"><span class="c">IV·5</span><span class="n">Say it in words</span><span class="sg">Runs tab</span></a></li><li><a href="#queue"><span class="c">IV·6</span><span class="n">Queue and limits</span><span class="sg">1/2 running</span></a></li><li><a href="#record"><span class="c">IV·7</span><span class="n">A record of every run</span><span class="sg">$0.12</span></a></li><li><a href="#retries"><span class="c">IV·8</span><span class="n">Retries and rounds</span><span class="sg">40 min</span></a></li><li><a href="#mainswitch"><span class="c">IV·9</span><span class="n">One switch</span><span class="sg">quiet hours</span></a></li><li><a href="#forecast"><span class="c">IV·10</span><span class="n">Forecast</span><span class="sg">30 days</span></a></li>
+      </ul>
+    </div>
+    <section id="s-auto" class="gap" aria-label="Recipes and triggers: work that starts by itself">
+  <div class="wrap">
+    <p class="sx"><b>09</b> Recipes and triggers</p>
+    <div class="sh">
+      <div><p class="pre">Tasks · schedules · triggers · workflows</p><h2>Work that starts <em>by itself.</em></h2></div>
+      <p class="lead">On a clock, when a file lands, or from one sentence in plain words. Switch Gatekeeper on and, before any model is woken, Jev, a model that never chats and only decides, says whether there is real work. Noise wakes nobody.</p>
+    </div>
+    <div class="agrid">
+      <div class="apanel" id="au-panel" data-shows="flows schedules words queue record retries forecast" aria-label="The Tasks page, rebuilt with demo data">
+        <div class="mtabs" aria-hidden="true"><span>Studio</span><span>Agent Farm — Sessions</span><span class="on">Agent Farm — Tasks</span></div>
+        <div class="abody">
+          <div class="ahead"><h3>Tasks</h3><span>plan what runs · see what ran — updated <b id="au-upd">03:12</b></span></div>
+          <div class="strip" id="au-strip" data-shows="mainswitch">
+            <div class="sh1"><b>Automation</b><span class="run">running</span><span class="sp"></span><span class="ctl">⏸ Pause all</span><span class="ctl">1h</span><span class="ctl">8h</span><span class="ctl">24h</span><span class="ctl">🌙 Quiet off</span></div>
+            <div class="stats">
+              <span data-k="run" title="runs going, of the 2 allowed at once">⚙️ <b id="au-run">0</b>/2 running</span>
+              <span data-k="on" title="switchable definitions are on">📅 <b>4</b>/15 switched on</span>
+              <span data-k="today" title="since midnight: finished, failed">🏁 today <b id="au-ok">19</b>✓ <b>0</b>✗</span>
+              <span data-k="cost">💵 <b id="au-cost">$2.31</b>/7d</span>
+              <span data-k="saved" title="wake-ups a guard suppressed">🛡 <b id="au-saved">2</b> saved</span>
+              <span data-k="att" title="definitions with something wrong">⚠️ <b>0</b> need attention</span>
+            </div>
+          </div>
+          <div class="ttabs" id="au-tabs" role="tablist" aria-label="Tasks tabs">
+            <button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">📅 Plan <span>9</span></button>
+            <button type="button" role="tab" data-tab="runs" aria-selected="false">▶ Runs <span id="au-nruns">61</span></button>
+            <span class="tbtn">＋ New task</span><span class="tbtn">📊 Analytics</span>
+          </div>
+          <div class="aview" id="au-view" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="flow" id="au-flow" data-shows="triggers gatekeeper" aria-label="One watch trigger, its Gatekeeper check and the recipe it runs">
+        <div class="fhd">
+          <span>⚡ Watch trigger · <b>New footage</b></span>
+          <span class="mode" id="au-mode" role="radiogroup" aria-label="Gatekeeper trigger check"><i>Trigger check</i><button type="button" role="radio" data-m="off" aria-checked="false">Off</button><button type="button" role="radio" data-m="shadow" aria-checked="false">Shadow</button><button type="button" role="radio" data-m="on" class="on" aria-checked="true">On</button></span>
+        </div>
+        <div class="node folder"><div class="nh"><b>📁 Studio\inbox</b><span>watched · debounce 5 s · cooldown 60 s</span></div><div class="files" id="au-files"></div></div>
+        <i class="wire" id="au-w1"></i>
+        <div class="node gate" id="au-gate"><div class="nh"><b>🛡 Gatekeeper</b><span>trigger.has-work · asks Jev · waits 3 s at most</span></div><p class="vd" id="au-vd">Waiting for a firing.</p></div>
+        <i class="wire" id="au-w2"></i>
+        <div class="node wf" id="au-wf"><div class="nh"><b>🔗 Long to shorts</b><span>a ready-made recipe · {file} → its video input</span></div>
+          <ol class="steps" id="au-steps"><li><span class="n">1</span><b>Extract the sound</b><em>tool · ffmpeg</em></li><li><span class="n">2</span><b>Transcript</b><em>media · whisper</em></li><li><span class="n">3</span><b>Pick the moments</b><em>agent · editor</em></li><li><span class="n">4</span><b>Cut the shorts</b><em>tool · ffmpeg, one per moment</em></li><li><span class="n">5</span><b>Final check</b><em>checkpoint</em></li></ol>
+        </div>
+        <div class="drops"><span>Drop a file in the folder</span><button type="button" data-file="0"><b>interview-take-4.mp4</b><em>48 min of video</em></button><button type="button" data-file="1"><b>~$interview.tmp</b><em>a lock file</em></button><button type="button" data-file="2"><b>notes.md</b><em>only spaces changed</em></button></div>
+        <p class="log" id="au-log" aria-live="polite">Gatekeeper is off by default. Here it is on, so you can watch it say no.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="flows" data-f="flows">
+          <div class="fth">
+            <span class="c">IV·1</span>
+            <h2>Workflows</h2>
+            <p class="s">A chain where each step hands its output to the next. A step can be an agent, an HTTP call, an image or video job, a browser run, or a stop that waits for your yes.</p>
+            <a class="see" href="#au-panel">The Plan tab and a recipe, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Work that needs several agents or tools in a row means copying one result into the next by hand, and waiting at the desk to do it.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The chain</span><span class="t">A workflow is a list of steps, built on the Tasks page with <code>+ Workflow</code>. A step can be an agent, an HTTP call with no agent, an image or video job, a browser run, a local tool such as ffmpeg that spends no tokens, or a stop that waits for you.</span></button></li><li><button type="button" data-i="1"><span class="k">Handing on</span><span class="t">Each step gets what the last one made: <code>{prev_output}</code> is its file, <code>{prev_text}</code> its text, cut at 1,500 characters, and <code>{prev_json.title}</code> one field of it. Any later step can also read any earlier one by name.</span></button></li><li><button type="button" data-i="2"><span class="k">Branches</span><span class="t">A step can run only when the last output matches a pattern, and say what happens when it fails: stop, carry on, or jump to another step. A cheap judge can check a step and send it back once with its reason. A run is capped at 25 step executions, so a loop cannot run away.</span></button></li><li><button type="button" data-i="3"><span class="k">Your yes</span><span class="t">An approval step stops the chain without calling any model. The request shows as a notification and in Needs You; approve and the last output goes on unchanged, reject and the step's failure rule applies.</span></button></li><li><button type="button" data-i="4"><span class="k">Side by side</span><span class="t">Steps marked parallel run side by side and their outputs merge back into one handoff. A for-each step runs once per item of a list, four at a time by default, up to sixteen.</span></button></li></ol>
+            <p class="note">Workflows run in VS Code. If it closes in the middle of a parallel group, Resume runs the whole group again, and an approval waits until a window is open.</p>
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>workflowPrevTextChars</code></td><td class="v">1,500</td><td>How much of the last step&#39;s text the next step is handed as {prev_text}.</td></tr><tr><td><code>agentFarm.workflowSpendCap</code></td><td class="v">0 (none)</td><td>Once a run has spent this much, no further step starts.</td></tr><tr><td><code>agentFarm.browserApproval</code></td><td class="v">ask</td><td>Whether a browser step asks before it acts.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="flows" aria-label="Workflows, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·1</b><span class="fk">The chain</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="schedules" data-f="schedules">
+          <div class="fth">
+            <span class="c">IV·2</span>
+            <h2>Schedules</h2>
+            <p class="s">Daily, weekly or once at a date and hour. A missed run is skipped, caught up, or put to you. With VS Code closed, a small service on Windows still runs them.</p>
+            <a class="see" href="#au-panel">Schedules on the Plan tab <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A morning plan or a weekly report should start without anyone pressing a button, and a night the laptop was shut should not leave you guessing what ran.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Three kinds</span><span class="t">A schedule is daily, weekly on a day and an hour, or once on a date. A one-time schedule switches itself off after it runs. Each has its agent, its prompt and, if you like, its own model.</span></button></li><li><button type="button" data-i="1"><span class="k">A missed run</span><span class="t">For a run that was missed, each schedule has a rule: skip it, which is the default, catch up at the first chance, or ask you with Run now and Skip this one. Picking a rule settles the past; only runs missed after it count.</span></button></li><li><button type="button" data-i="2"><span class="k">VS Code closed</span><span class="t">On Windows, a small service can take over while VS Code is closed. It sleeps as long as VS Code writes its heartbeat every 30 seconds, takes over about 90 seconds after the last one, and runs schedules and watch triggers with <code>claude -p</code>, keeping a log of each run.</span></button></li><li><button type="button" data-i="3"><span class="k">Quiet hours</span><span class="t">Inside quiet hours nothing wakes on its own. A schedule whose time comes is deferred, not dropped: it fires when the window ends, with a <em>deferred</em> badge.</span></button></li><li><button type="button" data-i="4"><span class="k">Other ways in</span><span class="t">An agent can add, edit, switch or run a schedule itself through the bridge. Or export one as a Windows Scheduled Task, a small script plus the command that registers it.</span></button></li></ol>
+            <p class="note">The service runs Claude only, and only schedules and watch triggers; hooks, webhooks and workflows wait for VS Code. Only one window runs the scheduler, so two open windows never fire a schedule twice.</p>
+            
+          </div>
+          <figure class="fig" data-fig="schedules" aria-label="Schedules, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·2</b><span class="fk">Three kinds</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="triggers" data-f="triggers">
+          <div class="fth">
+            <span class="c">IV·3</span>
+            <h2>Watch triggers</h2>
+            <p class="s">A file lands in a folder and an agent wakes up. A live hook, or a post to a private address on your machine, works the same way.</p>
+            <a class="see" href="#au-flow">A watch trigger and its recipe, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Some work has no time of day. It starts when footage arrives, when a session ends, or when another program says so.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A file lands</span><span class="t">A watch trigger fires when a file or folder changes. Drop a note into a watched folder and its agent is at work about ten seconds later.</span></button></li><li><button type="button" data-i="1"><span class="k">Live hooks</span><span class="t">A hook trigger fires on a live event in a session: a turn stops, a session ends, a permission is asked, a context is compacted, a subagent finishes. It can be limited to one agent.</span></button></li><li><button type="button" data-i="2"><span class="k">A private address</span><span class="t">A webhook trigger gets a private address on this machine, <code>http://127.0.0.1:8377/trigger/&lt;token&gt;</code>. Whatever is posted to it reaches the prompt as <code>{payload}</code>; a wrong token gets nothing back but a 404.</span></button></li><li><button type="button" data-i="3"><span class="k">What it runs</span><span class="t">A firing does one of three things: runs a task on the agent you picked, dispatches it to whichever agent fits (your rules first, then a cheap classifier), or starts a workflow.</span></button></li><li><button type="button" data-i="4"><span class="k">Storm guards</span><span class="t">Each trigger has storm guards: it waits for 10 seconds of quiet, rests 60 seconds after firing, and fires at most 6 times an hour. A free check can ask first whether the folder has files at all. Its row keeps score: how often it fired, passed and failed.</span></button></li></ol>
+            <p class="note">The private address answers on this machine only; reaching it from outside needs a tunnel you set up yourself. A trigger that would watch its own output folder is refused, so it cannot wake itself.</p>
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.livePort</code></td><td class="v">8377</td><td>The local port that hooks and the private trigger addresses listen on.</td></tr><tr><td><code>agentFarm.dispatchRules</code></td><td class="v">[]</td><td>Your own patterns that send a firing to an agent before the classifier is asked.</td></tr><tr><td><code>agentFarm.dispatchClassifier</code></td><td class="v">on</td><td>When no rule matches, a cheap model picks the agent.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="triggers" aria-label="Watch triggers, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·3</b><span class="fk">A file lands</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="gatekeeper" data-f="gatekeeper">
+          <div class="fth">
+            <span class="c">IV·4</span>
+            <h2>Gatekeeper</h2>
+            <p class="s">Before a trigger wakes an agent, free local checks and then Jev, a model that never chats and only decides, say whether there is real work. Off, watching in the shadow, or on.</p>
+            <a class="see" href="#au-flow">Gatekeeper saying no, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>One folder watch woke opus 23 times over five nights, found nothing every time, and cost $70.90. A cooldown limits how often an agent wakes; it never asks whether there is anything to do.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Free checks first</span><span class="t">Gatekeeper answers small questions without waking an agent. Free local checks on numbers, dates, counts and patterns answer first, on this machine.</span></button></li><li><button type="button" data-i="1"><span class="k">Jev decides</span><span class="t">Then Jev, a small model that only answers typed questions, a probability, a choice or a score, and writes no text. For a trigger it reads the firing and the file's first 64 KB, or its git diff, and says how likely it is that there is work.</span></button></li><li><button type="button" data-i="2"><span class="k">In the shadow</span><span class="t">Each use starts off. In shadow, the old path still decides and Gatekeeper is asked afterwards, quietly; Farm Settings shows how often the two agreed over 30 days. Turning it on is your call.</span></button></li><li><button type="button" data-i="3"><span class="k">Four places</span><span class="t">It serves four places, each switched on its own: which agent a dispatch goes to, how a cut-off task carries on, whether a trigger fires, and where a workflow step goes.</span></button></li><li><button type="button" data-i="4"><span class="k">Never in the way</span><span class="t">It never stands in the way. With no rule, no key or an error, the caller's own path decides, and no other model is called instead. Answers are cached for 10 minutes, the input is masked, and the audit keeps only a hash and a length.</span></button></li></ol>
+            <p class="note">Rules come in layers, the built-in ones, yours, then a project's, the later one winning. Gatekeeper also comes as an MCP server with three tools, registered only when you ask.</p>
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.kapici.trigger</code></td><td class="v">off</td><td>Whether Gatekeeper decides a trigger&#39;s firing: off, shadow or on. The same for dispatch, retry and workflow.</td></tr><tr><td><code>agentFarm.kapici.timeoutMs</code></td><td class="v">3000</td><td>How long it may take; past it, the caller&#39;s own path decides.</td></tr><tr><td><code>agentFarm.kapici.route</code></td><td class="v">auto</td><td>Which service answers for Jev, picked from the key you keep in the vault.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="gatekeeper" aria-label="Gatekeeper, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·4</b><span class="fk">Free checks first</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="words" data-f="words">
+          <div class="fth">
+            <span class="c">IV·5</span>
+            <h2>Say it in words</h2>
+            <p class="s">Type &quot;run the filing batch on manager now&quot;. A cheap model turns it into a task, a schedule or a workflow, and nothing is set up until you press Create.</p>
+            <a class="see" href="#au-panel">The words box on the Runs tab <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Setting up a job, a schedule or a chain through forms is slow, and it is the reason a good idea for an automation never gets set up.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">One sentence</span><span class="t">Type a sentence into the command bar, from 🚀 on the Tasks page or the command palette.</span></button></li><li><button type="button" data-i="1"><span class="k">A plan</span><span class="t">A cheap model turns it into a plan: a one-time job, a schedule, or a chain of steps.</span></button></li><li><button type="button" data-i="2"><span class="k">Checked</span><span class="t">The plan is checked before you see it: only agents that exist, times worked out from today's date, steps in order. If the model rambles you get the error and its raw output, not a guess.</span></button></li><li><button type="button" data-i="3"><span class="k">Your Create</span><span class="t">You read the plan in plain words. Nothing is set up until you press Create, or Create &amp; Run.</span></button></li><li><button type="button" data-i="4"><span class="k">Who should do it</span><span class="t">Work that arrives with no agent named, a webhook body or a dropped file, goes to the Dispatcher: your patterns first, then a cheap classifier that reads what each agent says it is for. <code>Test Dispatcher…</code> shows where a sentence would land, and why.</span></button></li></ol>
+            <p class="note">Its tests run a real cheap model against sentences such as "tomorrow 09:00", a two-step chain's order and picking the agent.</p>
+            
+          </div>
+          <figure class="fig" data-fig="words" aria-label="Say it in words, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·5</b><span class="fk">One sentence</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="queue" data-f="queue">
+          <div class="fth">
+            <span class="c">IV·6</span>
+            <h2>Queue and limits</h2>
+            <p class="s">Runs wait their turn under ceilings, two at once and one per agent by default. A held run starts by itself as a slot frees.</p>
+            <a class="see" href="#au-panel">The Automation strip, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Unattended jobs pile onto the same agent and the same plan. An overnight factory can eat the morning&#39;s quota before you sit down.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Ceilings</span><span class="t">Two runs at once across the fleet, and one per agent, by default. Both are yours to change.</span></button></li><li><button type="button" data-i="1"><span class="k">Held, not dropped</span><span class="t">A run that meets a ceiling is not cancelled. It waits with a <em>deferred</em> badge and starts by itself when a slot frees.</span></button></li><li><button type="button" data-i="2"><span class="k">Who goes first</span><span class="t">Higher priority goes first, the older task on a tie, and a waiting task gains a point of priority every 30 minutes, so nothing waits for ever. Run Next moves one to the front.</span></button></li><li><button type="button" data-i="3"><span class="k">One after another</span><span class="t">An agent's own list of queued tasks waits for your ▶, unless you turn on auto-advance: then its next task starts as the last one ends.</span></button></li><li><button type="button" data-i="4"><span class="k">Checked before start</span><span class="t">Before a run starts it is checked: past the quota guard's line, automatic jobs wait; over its budget, it is parked with the reason written on it.</span></button></li></ol>
+            <p class="note">One VS Code window runs the queue; the others watch. If it closes, another takes over in about 20 seconds.</p>
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.maxConcurrentTasks</code></td><td class="v">2</td><td>Runs at once across the fleet. 0 = no ceiling.</td></tr><tr><td><code>agentFarm.maxConcurrentPerAgent</code></td><td class="v">1</td><td>Runs at once on one agent.</td></tr><tr><td><code>agentFarm.queueAutoAdvance</code></td><td class="v">off</td><td>Start an agent&#39;s next queued task when one finishes.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="queue" aria-label="Queue and limits, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·6</b><span class="fk">Ceilings</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="record" data-f="record">
+          <div class="fth">
+            <span class="c">IV·7</span>
+            <h2>A record of every run</h2>
+            <p class="s">Every run writes what it said to a file, is marked failed when it crashed, and carries its price. A job you set up often becomes a template, and finished rows move to a monthly history.</p>
+            <a class="see" href="#au-panel">The Runs tab, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A run that happened while you slept is only worth something if you can read what it said, know whether it really worked and what it cost, and if the job you set up every week does not have to be typed again.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">In the background</span><span class="t">A task runs as a background process, not in a terminal. All it says is written to a Markdown file with its title, agent and start time, and the exit code and duration go at the end. <code>Open Task Output</code> shows it, even while it is still running.</span></button></li><li><button type="button" data-i="1"><span class="k">Failed is failed</span><span class="t">An exit code other than 0 marks the task failed by itself, so a retry, a workflow's failure rule or the morning digest never takes a crash for a finished job.</span></button></li><li><button type="button" data-i="2"><span class="k">What it cost</span><span class="t">When a run ends, the farm finds the transcript it wrote and puts the price on the row, <em>done • $0.12 • 3m ago</em>, and the day's total goes into the daily digest. If another session ran in the same agent folder at the same time, it cannot tell whose cost was whose, so the row stays without a price.</span></button></li><li><button type="button" data-i="3"><span class="k">A template</span><span class="t">Right-click a task and <code>Save as Template</code>. A template belongs to one agent, or to any agent and then asks which when you run it. ▶ on a template makes a new task in one click.</span></button></li><li><button type="button" data-i="4"><span class="k">Nothing lost</span><span class="t"><code>Clear Finished Tasks</code> moves finished rows into a history file for each month, opened with <code>Open Task History</code>. The output folder stays under its ceiling by dropping the oldest outputs no task points to.</span></button></li></ol>
+            <p class="note">Over the bridge, <code>tasks.get</code> hands an agent the archived output of a task, so one agent can read what another one's night run produced.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.outputsMaxMB</code></td><td class="v">200</td><td>How big the folder of task outputs may grow, in MB, before the oldest unreferenced ones go.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="record" aria-label="A record of every run, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·7</b><span class="fk">In the background</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="retries" data-f="retries">
+          <div class="fth">
+            <span class="c">IV·8</span>
+            <h2>Retries and rounds</h2>
+            <p class="s">A run that fails or hits a usage limit tries again by itself, after 40 minutes or at the plan&#39;s reset, even on another account. A big job runs in rounds inside one conversation.</p>
+            <a class="see" href="#au-panel">Runs and their retries <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A run at 03:00 that hits a usage limit should not die with nobody watching. And a job in several stages should keep one conversation, not start four.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A wall at 03:00</span><span class="t">A run that fails tries again by itself, with everything it had: the same agent, account, route and prompt. By hand, <code>Retry with edited prompt…</code> sends it again with a change.</span></button></li><li><button type="button" data-i="1"><span class="k">Every 40 minutes</span><span class="t">Out of the box it waits 40 minutes between tries, or a growing pause if you set one.</span></button></li><li><button type="button" data-i="2"><span class="k">At the reset</span><span class="t">Reset-aware, it waits for the time the plan says it resets instead. Without it, a plan walled for four hours was retried every 40 minutes and failed six times.</span></button></li><li><button type="button" data-i="3"><span class="k">Another account</span><span class="t">It can carry on on another signed-in account of the same engine, but never the one that refused, never from an empty pool, and never for a failure that was not a limit.</span></button></li><li><button type="button" data-i="4"><span class="k">Rounds</span><span class="t">A task can have rounds: a second prompt, a third, each after a wait you set, all in the same conversation. The waits are queue rows, so a restart does not lose them, and a badge shows how far it is, R2/4.</span></button></li></ol>
+            <p class="note">A retry supervisor decides how a cut-off task goes on: it resumes only when there is a session to continue, and waits only when the reset time is known.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.taskRetry</code></td><td class="v">40 min, not reset-aware</td><td>How a failed run tries again: the pause, a growing back-off, the plan&#39;s reset, another account.</td></tr><tr><td><code>agentFarm.kapici.retry</code></td><td class="v">off</td><td>Let Gatekeeper decide how a cut-off task goes on.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="retries" aria-label="Retries and rounds, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·8</b><span class="fk">A wall at 03:00</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="mainswitch" data-f="mainswitch">
+          <div class="fth">
+            <span class="c">IV·9</span>
+            <h2>One switch</h2>
+            <p class="s">Stop every automation at once, pause it for 1, 8 or 24 hours, or keep quiet hours in which nothing wakes unattended.</p>
+            <a class="see" href="#au-strip">Pause all and quiet hours, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>With schedules, triggers, chains and night shifts running, you need one place that stops all of it, and nights in which nothing wakes.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">One switch</span><span class="t"><code>Pause all</code> stops every automation at once, with a reason if you give one. <code>Resume all</code> starts them again.</span></button></li><li><button type="button" data-i="1"><span class="k">For a while</span><span class="t">Or pause for 1, 8 or 24 hours, and it lifts by itself.</span></button></li><li><button type="button" data-i="2"><span class="k">Quiet hours</span><span class="t">Quiet hours, such as 23:30 to 04:30, may wrap past midnight. Inside them nothing wakes on its own; a schedule that comes due waits for the end of the window.</span></button></li><li><button type="button" data-i="3"><span class="k">You can still run it</span><span class="t">A run you start yourself ignores quiet hours. The main switch still stops it.</span></button></li><li><button type="button" data-i="4"><span class="k">Everything listens</span><span class="t">Schedules, triggers, workflows and the night shift all obey it. An agent can ask its state, or pause it, through the bridge.</span></button></li></ol>
+            <p class="note">The quiet hours for automations and the quiet hours for sounds are two separate settings: one keeps agents asleep, the other keeps the house quiet.</p>
+            
+          </div>
+          <figure class="fig" data-fig="mainswitch" aria-label="One switch, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·9</b><span class="fk">One switch</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="forecast" data-f="forecast">
+          <div class="fth">
+            <span class="c">IV·10</span>
+            <h2>Forecast</h2>
+            <p class="s">What your schedules will run over the next 7 days, each with its usual time and success rate from the last 30 days.</p>
+            <a class="see" href="#au-panel">The Tasks page, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Before a night or a week of unattended work, you want to see what will run, and whether the jobs you hand off come back.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The week ahead</span><span class="t">The forecast lists every schedule's runs over the next 7 days, day by day.</span></button></li><li><button type="button" data-i="1"><span class="k">How long, how sure</span><span class="t">Beside each run: that job's median time and its success rate over the last 30 days. The median counts only the runs that passed, and there is no dollar forecast.</span></button></li><li><button type="button" data-i="2"><span class="k">What is waiting</span><span class="t">It also shows what is running and what is waiting, with why it is waiting, and the total: how many runs, how much agent time.</span></button></li><li><button type="button" data-i="3"><span class="k">Health</span><span class="t">Each task's health card shows its success rate, green from 80%, red under 50%, with how often it was retried or sent back by a check.</span></button></li><li><button type="button" data-i="4"><span class="k">Chronic failures</span><span class="t">Insights warns when an agent passes under half its runs in 30 days, with at least five, and when a family of tasks has failed every recent run. A family is the same job whatever its date or number.</span></button></li></ol>
+            <p class="note">Task Analytics puts 30 days in one page: the figures, throughput, a scorecard per agent, task families and alerts, each table exportable as Markdown.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>forecastDays</code></td><td class="v">7</td><td>How many days ahead the forecast lists.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="forecast" aria-label="Forecast, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>IV·10</b><span class="fk">The week ahead</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Do schedules run with VS Code closed?</summary><p>On Windows, yes, if you install the small headless service: it runs schedules and watch triggers with Claude while VS Code is closed. Or export a schedule as a Windows Scheduled Task.</p></details><details><summary>How do I stop an empty folder from waking an expensive model?</summary><p>Give the trigger a free check, such as "the folder has files", or put Gatekeeper on it. Without either, one watch once cost <b>$70.90</b> in five nights of finding nothing.</p></details><details><summary>What happens to a schedule in quiet hours?</summary><p>It waits for the end of the window and then runs, marked deferred. A run you start yourself ignores quiet hours; the main switch still stops it.</p></details><details><summary>How many runs go at once?</summary><p>Two across the fleet and one per agent, by default. The rest wait, marked deferred, and start as slots free.</p></details><details><summary>What if a run hits my usage limit at night?</summary><p>It tries again by itself, after 40 minutes unless you set it otherwise. It can also wait for the plan's reset, or carry on on another signed-in account of the same engine.</p></details><details><summary>Is Gatekeeper on by default? Is there a quick start?</summary><p>Gatekeeper is off for every use; shadow shows how often it agrees with you before you turn it on, and it needs a key for Jev. For a quick start, one click sets up three examples: an inbox duty, a briefing at 09:00 and a two-agent chain.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="dnx" href="../../#ch-team" style="--c:var(--cyan)"><span class="k">Next district</span><span class="r">V</span><span class="n">Works as a team</span><span class="p">Agents on different engines plan, split and check each other.</span></a>
+        <a class="dall" href="../">All 83 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.11.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="../../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../../terms/">Terms</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../refunds/">Refunds</a>
+      <a href="mailto:agentfarm@muvusoft.uk">Contact</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>
