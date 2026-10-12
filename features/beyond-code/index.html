@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Beyond code · Agent Farm features</title>
+    <meta name="description" content="Agent Farm is not only for code: agents run a media production scene by scene, with any fal.ai or Replicate model, local FFmpeg cuts, a vision judge, a brand kit, a library that files every file by stage, Premiere sequences, a content calendar with approved publishing, the numbers back into the next idea, and a spoken daily briefing.">
+    <link rel="canonical" href="https://agentfarm.space/features/beyond-code/">
+    
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Beyond code · Agent Farm features">
+    <meta property="og:description" content="Agent Farm is not only for code: agents run a media production scene by scene, with any fal.ai or Replicate model, local FFmpeg cuts, a vision judge, a brand kit, a library that files every file by stage, Premiere sequences, a content calendar with approved publishing, the numbers back into the next idea, and a spoken daily briefing.">
+    <meta property="og:url" content="https://agentfarm.space/features/beyond-code/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/beyond-code.js?v=0.12.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.12.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a class="ch" href="../../#ch-relay">Relay</a><a class="ch" href="../../#ch-projects">Projects</a><a class="ch" href="../../#ch-studio">Studio</a><a class="ch" href="../../#ch-memory">Memory</a><a class="ch" href="../../#ch-bridge">Just ask</a><a class="ch" href="../../#ch-privacy">Local</a><a href="../../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:var(--claude)">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>III Beyond code</span></nav>
+      <header class="dh">
+        <span class="drm" aria-hidden="true">III</span>
+        <div>
+          <p class="dk"><span>District III of X</span><span>Thirteen things</span></p>
+          <h1>Beyond code</h1>
+          <p class="dp">Agents work as a production team and hand you finished media.</p>
+        </div>
+      </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-studio-l.jpg" srcset="../../assets/photos/d-studio-s.jpg 900w, ../../assets/photos/d-studio-l.jpg 1800w" sizes="100vw" alt="A colourist at a grading desk in front of four screens" loading="lazy" decoding="async" style="object-position:50% 35%"></div>
+  
+</figure>
+    <div class="wrap">
+      <p class="dpromise">Not all work is code. A video, a series of shorts or a week of posts is the same kind of long, many-step job, and agents can carry it the same way: an idea, a script, the shots, a judge that looks at every one, your keep or drop, and a sequence that opens in Premiere. You get the files, filed and described, not a chat about them.</p>
+      <ul class="dtl">
+        <li><a href="#studio"><span class="c">III·1</span><span class="n">Studio</span><span class="sg">6 scenes</span></a></li><li><a href="#crecipes"><span class="c">III·2</span><span class="n">Content recipes</span><span class="sg">3 ready-made</span></a></li><li><a href="#media"><span class="c">III·3</span><span class="n">Any media model</span><span class="sg">fal · Replicate</span></a></li><li><a href="#cuts"><span class="c">III·4</span><span class="n">Cut on your machine</span><span class="sg">10 recipes</span></a></li><li><a href="#judge"><span class="c">III·5</span><span class="n">Judge and triage</span><span class="sg">2 to triage</span></a></li><li><a href="#brand"><span class="c">III·6</span><span class="n">Brand kit</span><span class="sg">{brand.*}</span></a></li><li><a href="#library"><span class="c">III·7</span><span class="n">Five stages</span><span class="sg">source → asset</span></a></li><li><a href="#airtable"><span class="c">III·8</span><span class="n">Airtable engine</span><span class="sg">10 tools</span></a></li><li><a href="#inbox"><span class="c">III·9</span><span class="n">Media inbox</span><span class="sg">all_in</span></a></li><li><a href="#premiere"><span class="c">III·10</span><span class="n">Straight to Premiere</span><span class="sg">XML + EDL</span></a></li><li><a href="#calendar"><span class="c">III·11</span><span class="n">Content calendar</span><span class="sg">Mon 07:00</span></a></li><li><a href="#metrics"><span class="c">III·12</span><span class="n">What worked</span><span class="sg">{performance}</span></a></li><li><a href="#briefing"><span class="c">III·13</span><span class="n">Spoken briefing</span><span class="sg">daily</span></a></li>
+      </ul>
+    </div>
+    <section id="s-studio" class="gap" aria-label="Studio: agents make a short film, scene by scene">
+  <div class="wrap">
+    <p class="sx"><b>08</b> Studio</p>
+    <div class="sh">
+      <div><p class="pre">A production · scene by scene · demo</p><h2>Not only code. <em>A film, made by agents.</em></h2></div>
+      <p class="lead">Give the Studio a brief. Agents write the shots and a video model makes them. A vision model checks each one against your criteria, and a shot that fails is made again with the critique. You keep or drop; Premiere gets the sequence.</p>
+    </div>
+    <div class="sgrid">
+      <div class="spanel" id="st-panel" data-shows="crecipes media cuts judge brand library airtable inbox premiere calendar metrics briefing" aria-label="The Studio page, rebuilt with demo data">
+        <div class="mtabs" aria-hidden="true"><span>Agent Farm — Dashboard</span><span class="on">Studio</span><span>Agent Farm — Tasks</span></div>
+        <div class="sbody">
+          <div class="shead"><h3>🎬 Studio</h3><span id="st-sub">The last keeper · 3/6 scenes approved · $1.62 in 30 days</span></div>
+          <div class="stabs" id="st-tabs" role="tablist" aria-label="Studio tabs">
+            <button type="button" role="tab" data-tab="pipeline" title="the production, scene by scene" aria-selected="true" class="on">Pipeline<span class="cnt" data-cnt="pipeline"></span></button><button type="button" role="tab" data-tab="assets" title="everything that was made or ingested" aria-selected="false" class>Assets<span class="cnt" data-cnt="assets"></span></button><button type="button" role="tab" data-tab="triage" title="assets nobody has judged yet" aria-selected="false" class>Triage<span class="cnt" data-cnt="triage"></span></button><button type="button" role="tab" data-tab="assemble" title="the sequence Premiere would get" aria-selected="false" class>Assemble<span class="cnt" data-cnt="assemble"></span></button><button type="button" role="tab" data-tab="sources" title="providers · watched folders · budget" aria-selected="false" class>Sources<span class="cnt" data-cnt="sources"></span></button>
+          </div>
+          <p class="hint" id="st-hint">the production, scene by scene</p>
+          <div class="scard" id="st-card" hidden></div>
+          <div class="sview" id="st-view" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="screen">
+        <div class="scrhd"><span class="lv"><i></i>Screening</span><b>The last keeper</b><span class="tc" id="st-tc">00:00 / 00:15</span></div>
+        <div class="player" id="st-player">
+          <canvas id="st-film" aria-label="The last keeper, a demo film drawn on this page"></canvas>
+          <button type="button" class="pp" id="st-pp" aria-label="Play">▶</button>
+        </div>
+        <ol class="reel" id="st-reel" aria-label="Scenes in the sequence">
+          <li><button type="button" data-i="0"><span class="th" data-th="0"></span><span class="nm"><b>s01</b>Night falls on the rock</span><span class="ss" data-ss="0">draft</span></button></li><li><button type="button" data-i="1"><span class="th" data-th="1"></span><span class="nm"><b>s02</b>The steps</span><span class="ss" data-ss="1">draft</span></button></li><li><button type="button" data-i="2"><span class="th" data-th="2"></span><span class="nm"><b>s03</b>Lighting the lamp</span><span class="ss" data-ss="2">draft</span></button></li><li><button type="button" data-i="3"><span class="th" data-th="3"></span><span class="nm"><b>s04</b>The storm</span><span class="ss" data-ss="3">draft</span></button></li><li><button type="button" data-i="4"><span class="th" data-th="4"></span><span class="nm"><b>s05</b>Dawn</span><span class="ss" data-ss="4">draft</span></button></li><li><button type="button" data-i="5"><span class="th" data-th="5"></span><span class="nm"><b>s06</b>The logbook</span><span class="ss" data-ss="5">draft</span></button></li>
+        </ol>
+        <p class="cap">The sequence Premiere would get, playing. A demo film drawn on this page, frame by frame; in the app each shot comes from the model its step names, here a video model for every scene.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="studio" data-f="studio">
+          <div class="fth">
+            <span class="c">III·1</span>
+            <h2>Studio</h2>
+            <p class="s">Agents work as a production team: idea, research, script, shots, edit, judgement. You get assets, not chat.</p>
+            <a class="see" href="#s-studio">The Studio page, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A production has many parts: a list of scenes, a wall of generated files, an edit, the models and folders that feed them. When each lives in its own window, the thing you actually do, from a plan to a cut, exists nowhere as a whole.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Five tabs</span><span class="t">The Studio is one page with five tabs: Pipeline, the production scene by scene; Assets, everything made or brought in; Triage, what nobody has judged yet; Assemble, exactly what the export will hold; Sources, the providers, watched folders and what it all costs.</span></button></li><li><button type="button" data-i="1"><span class="k">The next step</span><span class="t">Each scene shows one button, its next step, and the step is read from what exists, not guessed: nothing made yet is Generate, files nobody judged is Triage, judged but not approved is Set status, approved is In sequence.</span></button></li><li><button type="button" data-i="2"><span class="k">A card&#39;s doors</span><span class="t">Every file made here keeps its doors. <em>Re-run</em> sends the same input again, <em>Vary…</em> lets you rewrite it, <em>Feedback…</em> asks what was wrong and folds your critique into the prompt, and <em>Scene…</em> files it under a scene.</span></button></li><li><button type="button" data-i="3"><span class="k">A production</span><span class="t">A production is a plain file in the agent's folder, <code>production.json</code>: a title and its scenes, one per line, each draft, generating, review or approved. You can edit it by hand.</span></button></li><li><button type="button" data-i="4"><span class="k">Agents drive it</span><span class="t">Everything a person clicks here, an agent can do too: fifteen bridge operations list the productions, find the files nobody has decided on, generate, judge, assign, approve and export. A long, repetitive production is exactly the job to hand over.</span></button></li></ol>
+            <p class="note">The old <em>Open Media Gallery</em> command still works: it opens the Studio on its Assets tab, which is what the gallery became.</p>
+            
+          </div>
+          <figure class="fig" data-fig="studio" aria-label="Studio, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·1</b><span class="fk">Five tabs</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="crecipes" data-f="crecipes">
+          <div class="fth">
+            <span class="c">III·2</span>
+            <h2>Content recipes</h2>
+            <p class="s">Long video to shorts, a weekly channel rhythm, a video edited in parts: install one and run it.</p>
+            <a class="see" href="#s-studio">Install a recipe, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A content workflow is many steps, and building one from a blank page is where most people stop. Tie it to named agents and it breaks the day you rename one.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">One pick</span><span class="t"><code>New Recipe Workflow</code> installs a whole workflow in one pick. It is saved like any workflow you build yourself, checked the same way, and you can change every step after.</span></button></li><li><button type="button" data-i="1"><span class="k">Three recipes</span><span class="t">Three content recipes come with it. <em>Video edited in parts</em> splits a video, edits each part from one brief, judges them and joins them over the original sound. <em>Long to shorts</em> turns a transcript into subtitled vertical shorts, each cut in one pass. <em>Weekly channel rhythm</em> goes from the week's idea to a publishing package for your approval.</span></button></li><li><button type="button" data-i="2"><span class="k">Roles, not agents</span><span class="t">A recipe's steps name roles, such as scriptwriter, editor or publisher, never agents. You bind each role to one of your agents once, in the workflow's Roles box.</span></button></li><li><button type="button" data-i="3"><span class="k">The showrunner</span><span class="t">A role you leave open goes to the showrunner, one agent you name in Farm Settings who takes every open role. A role bound to an agent that no longer exists stops the run and names both.</span></button></li><li><button type="button" data-i="4"><span class="k">This run only</span><span class="t"><code>Run with…</code> shows one box per role, with the agent the run will get and why. A pick there is for this run only; the workflow keeps its own binding.</span></button></li></ol>
+            <p class="note">Three quick one-agent recipes come too: text to image, text to image to video, and audio to text with Whisper. No recipe pins a judge or supervisor model, so the cost preset you run with decides them.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.showrunner</code></td><td class="v">youtuber</td><td>The agent that takes every role a workflow leaves open.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="crecipes" aria-label="Content recipes, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·2</b><span class="fk">One pick</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="media" data-f="media">
+          <div class="fth">
+            <span class="c">III·3</span>
+            <h2>Any media model</h2>
+            <p class="s">Images, video and voice from any fal.ai or Replicate model, a file on your computer uploaded once you agree, and every job priced by your rules under a monthly media budget.</p>
+            <a class="see" href="#s-studio">Sources and costs, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>The best image or video model changes every few months, and each lives behind its own site and its own API. A tool that wires in one is out of date by the time you learn it.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The model id</span><span class="t">A media step names its model in plain text, and the name says where it goes: <code>fal-ai/flux/schnell</code> goes to fal.ai, which reaches hundreds of image, video and voice models; <code>replicate:owner/name</code> goes to Replicate, latest or pinned to a version. Each uses its own key from the vault.</span></button></li><li><button type="button" data-i="1"><span class="k">Fed by the last step</span><span class="t">Its input is a JSON template, and the prompt an earlier agent wrote flows straight in. What the model returns is downloaded and kept, and its answer is handed to the next step.</span></button></li><li><button type="button" data-i="2"><span class="k">A long job</span><span class="t">A video can take minutes. The step stays running and asks the queue how it is doing at regular intervals, with a time limit you can set per step.</span></button></li><li><button type="button" data-i="3"><span class="k">A file of yours</span><span class="t">When the input names a file on your computer, the step asks before uploading it to the provider, then uploads it once and reuses the link until it expires. The question waits in Needs You like any approval.</span></button></li><li><button type="button" data-i="4"><span class="k">What it costs</span><span class="t">Every job is priced by your own rules, per image, per second or per request, and lands on the Dashboard beside your text spend. A monthly media budget warns once when the last 30 days pass it.</span></button></li></ol>
+            <p class="note">The prices that ship are placeholders: check them against your provider's price page. Without a key the step does not run, and says which key it needs.</p>
+            <details class="setd">
+                <summary>Settings · 4</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.mediaAuthSecret</code></td><td class="v">FAL_KEY</td><td>The name of the vault secret that holds the fal.ai key.</td></tr><tr><td><code>agentFarm.replicateAuthSecret</code></td><td class="v">REPLICATE_API_TOKEN</td><td>The name of the vault secret that holds the Replicate key.</td></tr><tr><td><code>agentFarm.mediaPricing</code></td><td class="v">a table</td><td>Your price rules per model, per image, second or request.</td></tr><tr><td><code>agentFarm.mediaBudgetMonthUSD</code></td><td class="v">0 (off)</td><td>The 30-day media spend that raises a warning, once a month.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="media" aria-label="Any media model, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·3</b><span class="fk">The model id</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="cuts" data-f="cuts">
+          <div class="fth">
+            <span class="c">III·4</span>
+            <h2>Cut on your machine</h2>
+            <p class="s">Ten FFmpeg recipes split, join, reframe, subtitle and level video and sound on this machine, as a workflow step with no model and no tokens.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Half of video work is cutting, joining, reframing and levelling, and none of it needs a model. Paying an agent to write an FFmpeg command, and trusting the command it wrote, is the slow and risky way to do it.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Ten recipes</span><span class="t">A tool step runs one of ten FFmpeg recipes on your machine: split, join, take the sound out, lay sound under the picture, reframe, burn in subtitles, cut a short, pull stills, level the loudness, re-encode.</span></button></li><li><button type="button" data-i="1"><span class="k">No shell</span><span class="t">FFmpeg is started with a list of arguments, never a shell line, so nothing in a file name or a value can run as a command. A recipe, preset or parameter name it does not know is refused when you save.</span></button></li><li><button type="button" data-i="2"><span class="k">Presets</span><span class="t">Named presets fill in the parameters you leave out: parts of ten seconds, a vertical 9:16 short, web loudness at −16 LUFS.</span></button></li><li><button type="button" data-i="3"><span class="k">What comes back</span><span class="t">What comes back is a small JSON on the run's board, with the files it wrote, so the next step can walk every part, or join them, without anyone copying a path.</span></button></li><li><button type="button" data-i="4"><span class="k">Filed as it goes</span><span class="t">No agent, no model and no token is involved, so a cut costs nothing. Every file it writes is filed into the media library as it goes, a failed one kept with a note.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>tool.outDir</code></td><td class="v">af-tool, beside the input</td><td>Where a recipe writes. Whether it may overwrite a file, or adds a suffix, is a setting too.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="cuts" aria-label="Cut on your machine, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·4</b><span class="fk">Ten recipes</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="judge" data-f="judge">
+          <div class="fth">
+            <span class="c">III·5</span>
+            <h2>Judge and triage</h2>
+            <p class="s">Give a step its criteria and a vision model checks every shot; a FAIL is made again with the critique. You keep or drop the rest in Triage.</p>
+            <a class="see" href="#s-studio">Triage, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A video model is wrong often enough that someone has to look at every shot. If that someone is you, the agents are only as fast as your evenings.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The criteria</span><span class="t">Give a media step its criteria in a sentence, such as one person, a clear face, the beam visible. When the file is made, a model that can see opens it and answers PASS or FAIL, with its reason.</span></button></li><li><button type="button" data-i="1"><span class="k">FAIL, made again</span><span class="t">A FAIL adds its reason to the prompt and the shot is made again, up to the retries you allow. A retry that would repeat the same mistake is not bought: the step stops and its supervisor is asked to change the plan.</span></button></li><li><button type="button" data-i="2"><span class="k">Before and after</span><span class="t">An edit is judged against what it started from. The judge sees the source and the result side by side and is asked whether only what you asked for changed, so colour bars that were already there do not read as a fault.</span></button></li><li><button type="button" data-i="3"><span class="k">Several at once</span><span class="t">A step can make up to four takes at once. The judge goes through them in order and the first that passes goes on; the others are kept, not handed on.</span></button></li><li><button type="button" data-i="4"><span class="k">Keep or drop</span><span class="t">What nobody has judged waits in Triage for your keep or drop, whether a workflow made it or it came in from a folder. A dropped file never goes into a sequence.</span></button></li></ol>
+            <p class="note">If the judge cannot run, the shot is let through and marked unjudged rather than blocking the line. Checks start on a cheap model and only a FAIL climbs to a stronger one: see the judge ladder in Measured, not claimed.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.judgeCompare</code></td><td class="v">auto</td><td>auto shows the judge the source beside an edit; never judges the result alone.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="judge" aria-label="Judge and triage, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·5</b><span class="fk">The criteria</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="brand" data-f="brand">
+          <div class="fth">
+            <span class="c">III·6</span>
+            <h2>Brand kit</h2>
+            <p class="s">Style, colours, type, voice, the logo rule and recurring characters, kept once per production; every step that asks for them gets the same ones.</p>
+            <a class="see" href="#s-studio">The brand kit in Sources <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A series looks like a series because the same colours, type, voice and faces come back every time. Typed again into every prompt, they drift by the third episode.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">One kit</span><span class="t">A production keeps one brand kit: style, what to avoid, colours, typography, the voice that reads, the logo rule, aspect, length, and the recurring characters, each with a name, a reference image and a description.</span></button></li><li><button type="button" data-i="1"><span class="k">Read by every step</span><span class="t">Any step reads it by name: <code>{brand.style}</code>, or a character's reference image. It is filled in on the step's own words only, never on what an earlier step wrote.</span></button></li><li><button type="button" data-i="2"><span class="k">A step&#39;s own</span><span class="t">A step can set a field of its own, such as a vertical aspect for the shorts, and only that field changes. Each box shows the production's value faintly and says where the value in force came from.</span></button></li><li><button type="button" data-i="3"><span class="k">Nothing hidden</span><span class="t">With no kit, the placeholder stays in the prompt as written, so a missing brand is something you can see, not a silent gap.</span></button></li><li><button type="button" data-i="4"><span class="k">Kept as a preset</span><span class="t">Keep a kit as a preset and start the next production from it. Taking a kept kit only fills the editor; nothing is written until you press Save, so one click never overwrites a kit.</span></button></li></ol>
+            
+            
+          </div>
+          <figure class="fig" data-fig="brand" aria-label="Brand kit, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·6</b><span class="fk">One kit</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="library" data-f="library">
+          <div class="fth">
+            <span class="c">III·7</span>
+            <h2>Five stages</h2>
+            <p class="s">Every file a run makes is filed by stage, from source to asset, with a record of what made it and what it was made from; a model fills in what it shows.</p>
+            <a class="see" href="#s-studio">The Assets wall, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A month of generating leaves thousands of files named like &lt;code&gt;output_0412.mp4&lt;/code&gt;. Which one was the good take, which prompt made it, and what it was cut from is gone by the next week.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Five stages</span><span class="t">Every file has a stage, and a folder to match: source for material that came in, raw for what did not make it but is kept, semi for half done, final for what truly worked, asset for the reusable best, reached only by promoting it.</span></button></li><li><button type="button" data-i="1"><span class="k">Filed as it runs</span><span class="t">A run files every file it makes as it goes, with a record: duration, size and codec read off the file, the model and prompt that made it, the run and step, and a fingerprint, so the same bytes are never recorded twice. What it was made from is linked as its cause.</span></button></li><li><button type="button" data-i="2"><span class="k">A model fills it in</span><span class="t">At the end of the run, a model that looks at the file fills in what only a look can tell: topic, tone, platform fit, accessibility, tags, and for a failed take which seconds can still be used. Claude opens images, Antigravity watches video frames.</span></button></li><li><button type="button" data-i="3"><span class="k">Your edits stay</span><span class="t">Only blank fields are filled. Your keep, drop, score, tags and notes are written onto the version you saw, and a record someone changed since is left alone, with the card saying so.</span></button></li><li><button type="button" data-i="4"><span class="k">Promoted</span><span class="t">Promote a file and it moves to the next stage folder with its record, after a yes or straight away, as you choose. The next run can start from your assets.</span></button></li></ol>
+            <p class="note">If the database is not running, the file is filed anyway and its record waits until it answers. Files made before the library existed can be brought in once; it shows what it would do before it does it.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.studioLibraryPromote</code></td><td class="v">asks first</td><td>Set to auto and a promotion moves the file at once.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="library" aria-label="Five stages, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·7</b><span class="fk">Five stages</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="airtable" data-f="airtable">
+          <div class="fth">
+            <span class="c">III·8</span>
+            <h2>Airtable engine</h2>
+            <p class="s">A local database of media records and knowledge that agents search, save to and update through ten tools; a run can take its material from it.</p>
+            <a class="see" href="#s-studio">Records on the Assets wall <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Records of what was made are only useful if agents can read and write them as easily as you can. A database only a person can open turns every agent into someone asking you to look something up.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Its own page</span><span class="t">The Airtable engine is a local database of media records and knowledge on your machine, and its module ships with Agent Farm. Its page shows each instance as a card: running or not, its port, what it holds, and a button to open its own panel.</span></button></li><li><button type="button" data-i="1"><span class="k">Ten tools</span><span class="t">One press registers it for every new Claude session, and <code>Probe tools</code> connects and checks. Agents then have ten tools: find instances, search, get a record, list templates, scan a folder for new files, save, update, and save knowledge or a note.</span></button></li><li><button type="button" data-i="2"><span class="k">Never overwritten</span><span class="t">A file is referenced by its path, never copied into the database. An agent's update is refused if the record changed since it read it, so an edit made in the panel is never silently overwritten.</span></button></li><li><button type="button" data-i="3"><span class="k">Started for you</span><span class="t">An instance that is down shows <code>Start</code>: it runs hidden, outlives VS Code, opens no browser tab and installs nothing. The records that waited for it are written then.</span></button></li><li><button type="button" data-i="4"><span class="k">A run&#39;s material</span><span class="t">A workflow input can be a search of the library, such as the newest twenty assets about lighthouses, and a for-each step walks what it finds. Whatever is made names its source as the cause, so the chain from raw to finished can be followed back.</span></button></li></ol>
+            <p class="note">Until you add your engine's folder, the tools explain what to do instead of failing. A change on the page reaches running agents on their next call, with no restart.</p>
+            
+          </div>
+          <figure class="fig" data-fig="airtable" aria-label="Airtable engine, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·8</b><span class="fk">Its own page</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="inbox" data-f="inbox">
+          <div class="fth">
+            <span class="c">III·9</span>
+            <h2>Media inbox</h2>
+            <p class="s">Drop files in a folder. Agents look at each one, file it by stage and fill in its card; anything unsure is asked, not guessed.</p>
+            <a class="see" href="#s-studio">The waiting area in Sources <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Not everything comes from a workflow: a clip downloaded by hand, a phone&#39;s photos, an export from your editor. Sorting them is the job everyone postpones, and the unsorted pile is where good material is lost.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The waiting area</span><span class="t">Each library has a waiting area, an <code>all_in</code> folder, where you drop files nobody has processed yet. Agents never put anything there; it is yours.</span></button></li><li><button type="button" data-i="1"><span class="k">Looked at</span><span class="t">On a pass, Claude looks at each image and Antigravity at each video's frames, and each is given a stage. Nothing goes straight to asset; that takes your promotion.</span></button></li><li><button type="button" data-i="2"><span class="k">Sure, or asked</span><span class="t">A file the model is sure of is filed, recorded and described. One it is unsure of stays where it is, and you get one question listing them all, or they wait for the next pass, as you choose.</span></button></li><li><button type="button" data-i="3"><span class="k">Watched folders</span><span class="t">Other folders can be watched. A new image, video or sound is registered where it lies, never copied, since video is big; a file still downloading is left until it stops growing, and a folder can be tied to a production and a scene.</span></button></li><li><button type="button" data-i="4"><span class="k">By hand</span><span class="t">Or register files by hand and bind them to a scene. A file from outside wears an <em>external</em> badge and has no Re-run, since there is no input to run again.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.allInWhen</code></td><td class="v">daily</td><td>Go through the waiting area with the daily media batch, or only when you ask.</td></tr><tr><td><code>agentFarm.allInUnsure</code></td><td class="v">ask</td><td>Ask about the files the model was unsure of, or leave them for the next pass.</td></tr><tr><td><code>agentFarm.ingestFolders</code></td><td class="v">[]</td><td>Folders scanned for new media, each optionally tied to a production and scene.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="inbox" aria-label="Media inbox, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·9</b><span class="fk">The waiting area</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="premiere" data-f="premiere">
+          <div class="fth">
+            <span class="c">III·10</span>
+            <h2>Straight to Premiere</h2>
+            <p class="s">The scenes become a sequence. Export it as XML and EDL, import it into Adobe Premiere and finish by hand.</p>
+            <a class="see" href="#s-studio">Assemble and export, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Agents can make the shots, but the final cut is a craft and a person&#39;s taste. A folder of clips with no order leaves you rebuilding the plan by hand before the real editing starts.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The sequence</span><span class="t">Assemble lays one clip per scene in the production's order: your kept video first, else any video, else a still. A dropped file is never taken, and a scene with nothing is skipped.</span></button></li><li><button type="button" data-i="1"><span class="k">Two files</span><span class="t">The export writes two files: an XML that Adobe Premiere opens with <code>File → Import</code>, its bins in scene order, and a CMX3600 EDL beside it for any other editor.</span></button></li><li><button type="button" data-i="2"><span class="k">Your frame rate</span><span class="t">It asks for the frame rate, 24, 25, 30 or 60, and a clip length per scene. You refine the timing in the edit, where it belongs.</span></button></li><li><button type="button" data-i="3"><span class="k">Back in</span><span class="t">Name an export from your editor with its scene, such as <code>P01_S03_T02.mp4</code>, and drop it in a watched folder: it lands on scene three by itself. The loop between the agents and your edit closes.</span></button></li><li><button type="button" data-i="4"><span class="k">The next step</span><span class="t">Watch your render folder with a trigger and a finished export can start the next step, such as the subtitles or the publishing package.</span></button></li></ol>
+            <p class="note">An agent can export too, the XML, the EDL or both; only files assigned to a scene are placed.</p>
+            
+          </div>
+          <figure class="fig" data-fig="premiere" aria-label="Straight to Premiere, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·10</b><span class="fk">The sequence</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="calendar" data-f="calendar">
+          <div class="fth">
+            <span class="c">III·11</span>
+            <h2>Content calendar</h2>
+            <p class="s">What gets made lands on a calendar in your vault. Once you approve, the publish step hands it to your own upload flow.</p>
+            <a class="see" href="#s-studio">The calendar and a publish, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A content plan in a spreadsheet nobody opens, and uploads done by hand at midnight, is how a weekly channel becomes a monthly one. An agent that uploads on its own is worse: one bad post is public before you see it.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A note per publish</span><span class="t">The calendar lives in your notes vault, one note per publish, in the format Obsidian's Full Calendar plugin shows: title, date, time, platform and status, from planned to published. Agent Farm changes only its own lines; the rest of the note is yours.</span></button></li><li><button type="button" data-i="1"><span class="k">Through your flow</span><span class="t">A publish step sends one platform's publish to your own flow, such as an n8n webhook that does the YouTube, Instagram or TikTok upload. Agent Farm keeps no platform password and uploads nothing itself.</span></button></li><li><button type="button" data-i="2"><span class="k">Your yes</span><span class="t">Before it sends, it asks for your yes by default. It can also send on its own, or only rehearse: build the whole package and keep it, sending nothing. It can go out now or at the note's planned time.</span></button></li><li><button type="button" data-i="3"><span class="k">Published</span><span class="t">When your flow answers, the note becomes published with its link and time, or ready if the flow only scheduled it, and the file's record says where it went.</span></button></li><li><button type="button" data-i="4"><span class="k">Overdue</span><span class="t">A publish past its time and still open shows on Living and in Needs You, oldest first, with buttons to open the note or its publish step. Move the date or mark it and the row goes.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.contentCalendarDir</code></td><td class="v">${vault}/01_INBOX/02_Calendar/CONTENT</td><td>The vault folder that holds one note per publish.</td></tr><tr><td><code>agentFarm.publishApproval</code></td><td class="v">ask</td><td>Ask before every publish, send on its own, or never send and only rehearse.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="calendar" aria-label="Content calendar, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·11</b><span class="fk">A note per publish</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="metrics" data-f="metrics">
+          <div class="fth">
+            <span class="c">III·12</span>
+            <h2>What worked</h2>
+            <p class="s">Views, watch time and engagement come back from your own analytics flow onto each published piece, and the next idea is written knowing what worked.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>The numbers live on the platforms and the ideas live in your head, and the two rarely meet. A channel that never looks back makes the same video that did not work, again.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Asked for</span><span class="t">A metrics step takes the published pieces of the last 30 days and asks your own flow for their numbers: views, watch time, completion, likes, comments, shares, saves and engagement.</span></button></li><li><button type="button" data-i="1"><span class="k">On the record</span><span class="t">Each answer lands on the piece's own record. If the flow sends no engagement rate, it is worked out from the interactions; an answer with no numbers at all fails the step rather than recording zeros.</span></button></li><li><button type="button" data-i="2"><span class="k">What worked</span><span class="t">From them, a short summary is written for any new idea: how similar published pieces did against the average, or, when nothing is similar, what performed best.</span></button></li><li><button type="button" data-i="3"><span class="k">Into the next idea</span><span class="t">The idea and script steps of a content recipe read it as <code>{performance}</code>, and the supervisor of a run gets it in its brief. The next idea is written knowing what worked.</span></button></li><li><button type="button" data-i="4"><span class="k">On its schedule</span><span class="t">How often it runs is the workflow's own schedule; there is no second clock to keep in step.</span></button></li></ol>
+            <p class="note">Which numbers are asked for is yours to choose, and a step can ask for its own. Switch the summary off and the prompts and the brief simply go without it.</p>
+            
+          </div>
+          <figure class="fig" data-fig="metrics" aria-label="What worked, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·12</b><span class="fk">Asked for</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="briefing" data-f="briefing">
+          <div class="fth">
+            <span class="c">III·13</span>
+            <h2>Spoken briefing</h2>
+            <p class="s">The daily digest read aloud: by this computer for free, or by a voice model you choose.</p>
+            <a class="see" href="#s-studio">The spoken briefing, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>At the end of the day you want to know what the farm did, but not by opening four pages. Sometimes your eyes are on something else entirely.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The digest</span><span class="t">The daily digest is one short card with no model call behind it: today's cost, the agents that worked, who spent most against their budget, how tasks and duties went, and any warnings.</span></button></li><li><button type="button" data-i="1"><span class="k">When it comes</span><span class="t">It comes at a time you set, through your webhook to Telegram, or when you ask for it.</span></button></li><li><button type="button" data-i="2"><span class="k">This computer reads it</span><span class="t">This computer can read it aloud for free, in a voice for the language it is written in, leaving out code and links that make no sense spoken.</span></button></li><li><button type="button" data-i="3"><span class="k">Or a voice model</span><span class="t">Or name a voice model on fal.ai and the briefing becomes an mp3 in a folder your phone syncs, ready for the walk in the morning. It uses the same key as your other media.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 3</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.dailyDigest</code></td><td class="v">off</td><td>The time the daily digest card is sent, such as 21:30.</td></tr><tr><td><code>agentFarm.digestTtsModel</code></td><td class="v">empty</td><td>The fal.ai voice model that reads the briefing into an mp3.</td></tr><tr><td><code>agentFarm.digestTtsFolder</code></td><td class="v">empty</td><td>Where the mp3 goes; empty uses the report folder.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="briefing" aria-label="Spoken briefing, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>III·13</b><span class="fk">The digest</span><span class="fn">1 / 4</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Does Agent Farm make the images and videos itself?</summary><p>No. It runs no model of its own: a media step calls the fal.ai or Replicate model you name, on your own key, and Agent Farm downloads, judges, files and assembles what comes back.</p></details><details><summary>What does a production cost?</summary><p>What your providers charge for the models you pick, and nothing more from us. Each job is priced by your rules and shown beside your text spend, a monthly media budget warns when you pass it, and the FFmpeg cuts on your machine cost nothing.</p></details><details><summary>Do I need Adobe Premiere?</summary><p>No. Premiere opens the XML directly, and the EDL beside it is a standard any editor reads. You can also just take the files from their stage folders.</p></details><details><summary>Will it post to my channels without asking?</summary><p>Not unless you tell it to. A publish waits for your yes by default, can be set to only rehearse, and goes out through your own upload flow; Agent Farm holds no platform password.</p></details><details><summary>Can I use clips I made somewhere else?</summary><p>Yes. Drop them in the waiting area to be looked at and filed, or in a watched folder to be registered where they are. They can be judged, kept, placed in a scene and exported like anything an agent made.</p></details><details><summary>Is this a real part of the product or a side demo?</summary><p>It is a real part. The whole chain, from a video split into parts, each edited and judged, to the parts joined over the original sound and filed as final, was run end to end with no copy and paste before it was called done.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="dnx" href="../recipes-and-triggers/" style="--c:var(--violet)"><span class="k">Next district</span><span class="r">IV</span><span class="n">Recipes and triggers</span><span class="p">Work that starts on time, on an event, or from one sentence.</span></a>
+        <a class="dall" href="../">All 92 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.12.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="../../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../../terms/">Terms</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../refunds/">Refunds</a>
+      <a href="mailto:agentfarm@muvusoft.uk">Contact</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>
