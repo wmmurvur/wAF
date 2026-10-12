@@ -2,6 +2,16 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.9.0 · 2026-10-12
+
+The sales pages: prices, early access, and the terms, privacy and refund pages. People in the photographs, at every kind of work.
+
+- New page Pricing (`/pricing/`): Free, Pro ($19), Fleet ($34, our pick) and Farm ($49) a month, in US dollars, with a monthly/yearly switch (a year costs ten months). Every plan has all 82 features; a plan changes only how far each goes: relay legs per chain, sessions at once, sign-ins in the pool, projects, workflows, schedules, night shifts, missions, Studio productions, the phone app and Telegram, search history, machines per licence, help. A table of what changes between plans, every feature on every plan by district, straight answers on pricing, and "Not only code": code, video, podcasts and channels, writing and research, small teams. Every price and limit comes from `src/data/plans.js`, so a change is one line.
+- Early access: during the beta the Free plan is open and the paid plans' buttons reserve a place. The form (email, plan, what it is mostly for, consent) is handled by `early-access.php` on the host: one line per address in a file outside the web folder, a honeypot and a minimum fill time against bots, no IP address kept. The header's and the relay hero's "Join early access" go to it, and the closing band links to the plans.
+- New pages Terms (`/terms/`), Privacy (`/privacy/`) and Refunds (`/refunds/`), drafts for legal review: Lemon Squeezy as reseller and merchant of record, what agents may do on your computer and who answers for it, following each AI provider's own terms, the licence check and what it keeps, the early-access list, 14 days to get your money back. The seller's name, country and contact address are marked gaps until they are filled in `src/data/site.js`; until then the pages carry a draft notice and `noindex`.
+- Photographs: the district pages' strips show people at work instead of landscapes (a desk at dusk, a wall of plans, a colourist, a planner at dawn, a team at a whiteboard, a notebook, a developer, two screens, the accounts, a quiet room). Picked by the owner from Unsplash and Pexels, self-hosted.
+- The header links to Pricing; the footer to Pricing, Terms, Privacy and Refunds, and credits Unsplash and Pexels. Between 980 and 1180 pixels the header keeps only Features and Pricing, so it no longer runs off the page.
+
 ## 0.8.0 · 2026-10-12
 
 The second district page, photographs between the chapters, and a Features page that moves.

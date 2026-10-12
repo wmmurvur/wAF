@@ -3,8 +3,11 @@
 Bu dal sitenin **bitmiş hali**: Hostinger'a olduğu gibi yüklenecek dosyalar. Sürüm {{VERSION}}, `source` dalındaki {{SOURCE}} commit'inden üretildi.
 
 ```
-index.html      ana sayfa
-features/       ana sayfanın arkasındaki sayfalar (her sayfa kendi klasöründe)
+index.html        ana sayfa
+features/         ana sayfanın arkasındaki sayfalar (her sayfa kendi klasöründe)
+pricing/          fiyatlar ve erken kayıt formu
+terms/ privacy/ refunds/   koşullar, gizlilik, iade
+early-access.php  erken kayıt formunu Hostinger'da kaydeden dosya
 favicon.svg     tarayıcı sekmesindeki simge
 robots.txt      arama motorları için
 assets/         stiller (site.css), scriptler, fontlar, sesler
@@ -20,9 +23,13 @@ assets/         stiller (site.css), scriptler, fontlar, sesler
 
 İki yoldan biri yeterli.
 
-**Elle yükleme:** hPanel'de Dosya Yöneticisi'ni (File Manager) aç, `public_html` klasörüne gir ve `README.md` dışındaki her şeyi, klasörleriyle birlikte yükle: şu an `index.html`, `favicon.svg`, `robots.txt`, `assets` ve `features`. Yeni sayfalar geldikçe yeni klasörler de eklenir; hepsi yüklenmeli.
+**Elle yükleme:** hPanel'de Dosya Yöneticisi'ni (File Manager) aç, `public_html` klasörüne gir ve `README.md` dışındaki her şeyi, klasörleriyle birlikte yükle: şu an `index.html`, `early-access.php`, `favicon.svg`, `robots.txt`, `assets`, `features`, `pricing`, `terms`, `privacy` ve `refunds`. Yeni sayfalar geldikçe yeni klasörler de eklenir; hepsi yüklenmeli.
 
 **Git ile:** hPanel'deki Git bölümünde depo adresi olarak `https://github.com/wmmurvur/wAF.git`, dal olarak `main` gir ve kurulum klasörü (directory) alanını boş bırak; dosyalar doğrudan `public_html`'e gelir. Bunun için `public_html`'in boş olması gerekir. Sonraki güncellemeler Deploy düğmesiyle tek tıkla gelir.
+
+## Erken kayıt listesi
+
+Fiyat sayfasındaki form `early-access.php`'ye gider. Her kayıt bir satır olarak `public_html`'in yanındaki `agentfarm-private/early-access.csv` dosyasına yazılır (tarayıcıdan ulaşılamaz). hPanel'in Dosya Yöneticisi'nde `public_html`'in bir üst klasörüne çıkınca görünür; Excel ya da Google Sheets ile açılır. Hosting o klasörü açmaya izin vermezse liste `public_html/.private/` içinde, web'e kapalı olarak tutulur.
 
 ## Değişiklik
 

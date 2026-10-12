@@ -1,9 +1,10 @@
 ---
 // Top bar. The version chip follows the running version of the demo (it changes when the agent updates Agent Farm).
 // On the landing the links are anchors on the page; on any other page they lead back to the landing's chapters.
+// Joining early access means reserving a paid plan, on /pricing/#early.
 import { rootOf } from '../data/site.js';
 const root = rootOf(Astro.url), home = root === '';
-const here = Astro.url.pathname.startsWith('/features') ? 'features' : '';
+const here = Astro.url.pathname.split('/').filter(Boolean)[0] || '';
 ---
 <div class="wrap">
   <header class="top">
@@ -13,8 +14,8 @@ const here = Astro.url.pathname.startsWith('/features') ? 'features' : '';
     </a>
     {home && <span class="verchip" title="The version running in the demo below"><i></i><span id="af-ver">3.931.0</span></span>}
     <nav class="nav" aria-label="Main">
-      <a href={`${root}features/`} aria-current={here === 'features' ? 'page' : undefined}>Features</a><a href={`${root}#ch-relay`}>Relay</a><a href={`${root}#ch-projects`}>Projects</a><a href={`${root}#ch-studio`}>Studio</a><a href={`${root}#ch-memory`}>Memory</a><a href={`${root}#ch-bridge`}>Just ask</a><a href={`${root}#ch-privacy`}>Local</a>
+      <a href={`${root}features/`} aria-current={here === 'features' ? 'page' : undefined}>Features</a><a class="ch" href={`${root}#ch-relay`}>Relay</a><a class="ch" href={`${root}#ch-projects`}>Projects</a><a class="ch" href={`${root}#ch-studio`}>Studio</a><a class="ch" href={`${root}#ch-memory`}>Memory</a><a class="ch" href={`${root}#ch-bridge`}>Just ask</a><a class="ch" href={`${root}#ch-privacy`}>Local</a><a href={`${root}pricing/`} aria-current={here === 'pricing' ? 'page' : undefined}>Pricing</a>
     </nav>
-    <a class="cta" href={`${root}#s-close`}>Join early access</a>
+    <a class="cta" href={here === 'pricing' ? '#early' : `${root}pricing/#early`}>Join early access</a>
   </header>
 </div>

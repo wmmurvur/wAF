@@ -1,0 +1,40 @@
+---
+// The terms, privacy and refund pages: one column of plain text, a short version first, the sections listed beside it
+// on a wide screen. Who sells and how to reach them come from site.legal; while it is a draft the page says so and
+// asks search engines not to index it.
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/pages/legal.css';
+import { site } from '../data/site.js';
+
+interface Props { title: string; description: string; h1: string; lead: string; toc: [string, string][]; }
+const { title, description, h1, lead, toc } = Astro.props;
+const L = site.legal;
+const others = [['terms', 'Terms'], ['privacy', 'Privacy'], ['refunds', 'Refunds']];
+const here = Astro.url.pathname.split('/').filter(Boolean)[0];
+---
+<Base title={title} description={description} script="legal" noindex={L.draft}>
+  <Header />
+  <main class="legalp">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>{h1}</span></nav>
+      {L.draft && <p class="draft"><b>Draft</b><span>This page is waiting for a legal review, and a few details are still to come; they are <mark>marked like this</mark>. Until then it is not final.</span></p>}
+      <div class="lgrid">
+        <aside class="ltoc" aria-label="On this page">
+          <p class="pre">On this page</p>
+          <ol>{toc.map(([id, t]) => <li><a href={`#${id}`}>{t}</a></li>)}</ol>
+          <p class="pre">Also</p>
+          <ul>{others.filter(([p]) => p !== here).map(([p, t]) => <li><a href={`../${p}/`}>{t}</a></li>)}<li><a href="../pricing/">Pricing</a></li></ul>
+        </aside>
+        <article class="ltext">
+          <h1>{h1}</h1>
+          <p class="upd">Last updated {new Date(L.updated + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</p>
+          <p class="lead">{lead}</p>
+          <slot />
+        </article>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

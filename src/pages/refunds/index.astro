@@ -1,0 +1,62 @@
+---
+// /refunds/: when a paid plan's money comes back and how to ask. Refunds go through Lemon Squeezy, the reseller; this
+// policy is ours and is more generous than its buyer terms require. A draft for the owner's legal review.
+import Legal from '../../layouts/Legal.astro';
+import Who from '../../components/Who.astro';
+
+const toc: [string, string][] = [
+  ['first', 'Your first payment'], ['renewals', 'Renewals'], ['changing', 'Changing plans'], ['how', 'How to ask'],
+  ['after', 'After a refund'], ['law', 'Your rights under the law'],
+];
+---
+<Legal
+  title="Refunds · Agent Farm"
+  description="Agent Farm refunds: your money back within 14 days of your first payment, for any reason, and how to ask."
+  h1="Refunds"
+  lead="If a paid plan is not right for you, you should not be stuck with it. This is when your money comes back, and how to ask for it."
+  toc={toc}
+>
+  <div class="short">
+    <h2>The short version</h2>
+    <ul>
+      <li>Within 14 days of your first payment for a plan: a full refund, for any reason, no questions asked.</li>
+      <li>A yearly renewal can be refunded within 14 days, too.</li>
+      <li>Cancel at any time and you are not charged again.</li>
+    </ul>
+  </div>
+
+  <section id="first">
+    <h2>1. Your first payment</h2>
+    <p>Write to us within 14 days of your first payment for a plan and we refund all of it, for any reason. You do not need to explain, although we are glad to hear what did not work.</p>
+  </section>
+
+  <section id="renewals">
+    <h2>2. Renewals</h2>
+    <ul>
+      <li><strong>Yearly plans:</strong> within 14 days of a yearly renewal you can ask for that payment back in full.</li>
+      <li><strong>Monthly plans:</strong> a monthly renewal is not refunded, but you can cancel at any time and are not charged again. If a renewal charged you after you had cancelled, or by a mistake, write to us within 14 days and we put it right.</li>
+    </ul>
+  </section>
+
+  <section id="changing">
+    <h2>3. Changing plans</h2>
+    <p>Moving to a larger or smaller plan in the middle of a period is settled automatically: you pay or are credited the difference for the days left. A change of plan does not start a new 14 days.</p>
+  </section>
+
+  <section id="how">
+    <h2>4. How to ask</h2>
+    <p>Write to <Who k="email" /> from the address you bought with, or include your order number, which is in your receipt. Lemon Squeezy, our reseller, sends the money back to the card or account you paid with. Banks usually take 5 to 10 working days to show it.</p>
+    <p>Please write to us before disputing a payment with your bank. A refund is faster for you, and a dispute can block future purchases.</p>
+  </section>
+
+  <section id="after">
+    <h2>5. After a refund</h2>
+    <p>The licence key stops working and Agent Farm returns to the Free plan's limits. Your work, your projects and your settings stay where they are.</p>
+    <p>We may refuse a refund only where it is plainly being abused, for example the same plan bought and refunded again and again.</p>
+  </section>
+
+  <section id="law">
+    <h2>6. Your rights under the law</h2>
+    <p>In the European Union and the United Kingdom, the law gives consumers 14 days to withdraw from an online purchase. For digital services that right can end once you start using them; our 14 days apply whether you have started or not. Nothing in this policy limits the rights the law of your country gives you.</p>
+  </section>
+</Legal>

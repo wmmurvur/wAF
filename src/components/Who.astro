@@ -1,0 +1,10 @@
+---
+// One detail of who sells Agent Farm (site.legal): the name, the country or the contact address. Until the owner fills
+// it in, a marked gap stands in its place.
+import { site } from '../data/site.js';
+interface Props { k: 'name' | 'country' | 'email'; }
+const { k } = Astro.props;
+const v = site.legal[k];
+const gap = { name: 'the owner\'s full legal name', country: 'country', email: 'contact email address' }[k];
+---
+{v ? (k === 'email' ? <a href={`mailto:${v}`}>{v}</a> : v) : <mark>[{gap}]</mark>}

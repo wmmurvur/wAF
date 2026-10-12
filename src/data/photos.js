@@ -1,6 +1,8 @@
 // The photographs on the site: people, desks, rooms and light between the rebuilt screens, so the farm is seen from the
-// side of the person it works for. All from Unsplash (unsplash.com/license: free to use, no permission needed), saved
-// in public/assets/photos at two widths (-l, -s) and served from there, so the site still makes no third-party request.
+// side of the person it works for, and the work is not only code. The landing's bands are from Unsplash
+// (unsplash.com/license: free to use, no permission needed); the rest the owner picked from Unsplash and Pexels (free
+// licences) and sent as files (src: 'owner'). All are saved in public/assets/photos at two widths (-l, -s) and served
+// from there, so the site still makes no third-party request.
 // id: the Unsplash photo id; pos: object-position for the crop; tall: a portrait photo, shown beside its text.
 export const photos = {
   friday:   { id: '1501504905252-473c47e087f8', alt: 'A laptop, a mug and an open notebook on a table by a bright window', pos: '50% 60%' },
@@ -9,16 +11,25 @@ export const photos = {
   studio:   { id: '1478720568477-152d9b164e26', alt: 'An old film projector throwing its beam through the dark', pos: '45% 50%' },
   team:     { id: '1531482615713-2afd69097998', alt: 'Two colleagues looking at a laptop together in a busy office', pos: '60% 40%' },
   monday:   { id: '1523206489230-c012c64b2b48', alt: 'A phone held above an open hand by the water', pos: '50% 50%', tall: true },
-  'd-relay':      { id: '1519681393784-d120267933ba', alt: 'Snowy mountains under a night sky full of stars', pos: '50% 60%' },
-  'd-projects':   { id: '1552664730-d307ca884978', alt: 'A team planning in front of a wall of sticky notes', pos: '50% 40%' },
-  'd-studio':     { id: '1485846234645-a62644f84728', alt: 'A hand holding a clapperboard against a desert sky', pos: '50% 45%' },
-  'd-automation': { id: '1506784983877-45594efa4cbe', alt: 'A cup of coffee on an open monthly planner', pos: '50% 50%' },
-  'd-team':       { id: '1517245386807-bb43f82c33c4', alt: 'People talking with their hands around a laptop', pos: '50% 45%' },
-  'd-memory':     { id: '1481627834876-b7833e8f5570', alt: 'A long library aisle lit by hanging bulbs', pos: '50% 35%' },
-  'd-engines':    { id: '1550439062-609e1531270e', alt: 'Someone at a desk in the dark between three glowing monitors', pos: '50% 50%' },
-  'd-bridge':     { id: '1520923642038-b4259acecbd7', alt: 'An orange rotary telephone on a wooden table', pos: '55% 60%' },
-  'd-measure':    { id: '1453928582365-b6ad33cbcf64', alt: 'A laptop, a cup of coffee and notes on a light wooden desk, from above', pos: '50% 50%' },
-  'd-privacy':    { id: '1470770841072-f978cf4d019e', alt: 'A wooden house on a still mountain lake', pos: '50% 60%' },
+  // the district pages' strips: people at the kind of work the district does (photos the owner picked, 2026-10-12)
+  'd-relay':      { src: 'owner', alt: 'An empty desk at dusk, a lamp still on beside a laptop and a phone', pos: '50% 55%' },
+  'd-projects':   { src: 'owner', alt: 'A hand pinning a card to a wall of plans and sketches', pos: '50% 40%' },
+  'd-studio':     { src: 'owner', alt: 'A colourist at a grading desk in front of four screens', pos: '50% 35%' },
+  'd-automation': { src: 'owner', alt: 'A cup of coffee on a monthly planner with the month\'s goals', pos: '50% 50%' },
+  'd-team':       { src: 'owner', alt: 'A team around a table while one of them sorts sticky notes on the wall', pos: '50% 35%' },
+  'd-memory':     { src: 'owner', alt: 'A fountain pen writing a line in a notebook', pos: '50% 50%' },
+  'd-engines':    { src: 'owner', alt: 'Two people working side by side at their monitors', pos: '50% 40%' },
+  'd-bridge':     { src: 'owner', alt: 'A woman in a café smiling at her phone', pos: '70% 40%' },
+  'd-measure':    { src: 'owner', alt: 'A hand holding a calculator over a folder of bills', pos: '50% 55%' },
+  'd-privacy':    { src: 'owner', alt: 'A quiet home office: a desk, a chair and a lamp by the wall', pos: '50% 50%' },
+  // the pricing page: the kinds of work one farm does, and a face beside its questions
+  'w-code':       { src: 'owner', alt: 'A developer with headphones at a terminal in a dim room', pos: '50% 40%', tall: true },
+  'w-video':      { src: 'owner', alt: 'A video editor at a desk under a wall of pinned frames', pos: '50% 60%', tall: true },
+  'w-audio':      { src: 'owner', alt: 'A podcaster with headphones speaking into a microphone', pos: '62% 40%' },
+  'w-writing':    { src: 'owner', alt: 'Hands typing on a laptop at a wooden table beside a mug of coffee', pos: '58% 50%' },
+  'w-team':       { src: 'owner', alt: 'A small team working on laptops around a wooden table', pos: '50% 45%' },
+  'p-faq':        { src: 'owner', alt: 'A smiling woman in a hoodie and denim jacket against a blue wall', pos: '50% 30%', tall: true },
+  'p-cut':        { src: 'owner', alt: 'A video timeline on an editing screen, close up', pos: '50% 50%' },
 };
 
 /* the human bands on the landing: a time or a place, a line, and what the farm is doing meanwhile */

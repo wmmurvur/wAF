@@ -1,0 +1,136 @@
+/* /pricing/ (pages/pricing/index.astro): plan cards, the kinds of work, the limit table, every feature by district,
+   answers beside a face, and the early-access form over a photograph. Scoped by .prc. */
+.prc .vh,.legalp .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.prc{padding-top:clamp(28px,4vw,48px)}
+.prc .phero h1{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(46px,7vw,112px);line-height:.86;text-wrap:balance}
+.prc .phero h1 em{font-style:normal;color:var(--lime)}
+.prc .phero .lead{max-width:720px;margin:22px 0 0;color:#c6c7b8;font-size:clamp(16px,1.3vw,18.5px)}
+.prc .beta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;margin:28px 0 0;padding:12px 16px;border:1px solid #3d3e30;background:#12130d;color:#c9cabb;font-size:14.5px;max-width:880px}
+.prc .beta b{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#0f1709;background:var(--yellow);padding:2px 7px}
+
+/* billing period */
+.prc .per{display:inline-flex;margin:clamp(34px,4vw,52px) 0 18px;border:1px solid #33342b}
+.prc .per button{font:inherit;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:none;border:0;padding:10px 16px;cursor:pointer}
+.prc .per button span{color:var(--lime);text-transform:none;letter-spacing:0;margin-left:6px}
+.prc .per button.on{background:#1a1b14;color:var(--ink);box-shadow:inset 0 -2px 0 var(--lime)}
+
+/* plan cards */
+.prc .plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.prc .plan{position:relative;display:flex;flex-direction:column;border:1px solid #2d2e26;background:linear-gradient(180deg,#14150f,#0e0f0a);padding:24px 22px 22px}
+.prc .plan.pick{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime),0 18px 60px -30px rgba(168,240,53,.45)}
+.prc .plan .flag{position:absolute;top:-11px;left:20px;margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#0f1709;background:var(--lime);padding:3px 8px}
+.prc .plan h2{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:34px;line-height:1;letter-spacing:.02em}
+.prc .plan .k{margin:8px 0 0;color:#c6c7b8;font-size:15px;min-height:45px}
+.prc .plan .price{display:flex;align-items:baseline;gap:8px;margin:18px 0 0}
+.prc .plan .price b{font-family:var(--display);font-weight:900;font-size:clamp(52px,4.6vw,68px);line-height:.9}
+.prc .plan .price span{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.prc .plan .alt{margin:6px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--faint);min-height:17px}
+.prc .plan:first-child .price{margin-bottom:23px}
+.prc .plan .who{margin:14px 0 0;color:var(--dim);font-size:13.5px;min-height:40px}
+.prc .plan ul{list-style:none;margin:16px 0 22px;padding:0;border-top:1px solid #26271f;flex:1}
+.prc .plan li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1e1f18;font-size:13.5px;color:#b9baa9}
+.prc .plan li b{font-family:var(--mono);font-weight:500;font-size:12.5px;color:var(--ink);text-align:right}
+.prc .plan li.all b{color:var(--lime)}
+.prc .plan .cta,.prc .plan .ghost{text-align:center;justify-content:center}
+.prc .tax{margin:14px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+
+/* the kinds of work */
+.prc .kinds{margin-top:clamp(80px,9vw,130px)}
+.prc .kinds h2{margin:0 0 26px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5vw,78px);line-height:.9}
+.prc .wtiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.prc .wtiles figure{position:relative;margin:0;aspect-ratio:3/4;overflow:hidden;background:#111}
+.prc .wtiles img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease-out}
+.prc .wtiles figure:hover img{transform:scale(1.05)}
+.prc .wtiles figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,10,7,0) 30%,rgba(9,10,7,.86) 66%,rgba(9,10,7,.96) 100%)}
+.prc .wtiles figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:16px;font-size:13.5px;line-height:1.45;color:#e6e6dc}
+.prc .wtiles figcaption b{display:block;margin-bottom:4px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:24px;line-height:1;color:#fbfbf4}
+
+/* tables */
+.prc .lim,.prc .every{margin-top:clamp(80px,9vw,130px)}
+.prc table{width:100%;border-collapse:collapse;font-size:14px}
+.prc th,.prc td{padding:11px 12px;border-bottom:1px solid #1f2019;text-align:left;vertical-align:top}
+.prc td{font-family:var(--mono);font-size:12.5px;color:var(--ink);width:15%}
+.prc td.pick{background:rgba(168,240,53,.05)}
+.prc thead th{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.prc thead th.pick{color:var(--lime)}
+.prc tbody th{font-weight:500;color:var(--ink)}
+.prc tbody th small{display:block;margin-top:3px;font-size:12.5px;font-weight:400;color:var(--faint);line-height:1.45}
+.prc .tbl{overflow-x:auto}
+.prc .ok{color:var(--lime)}
+.prc .lv{color:var(--yellow)}
+.prc .plabels{display:grid;grid-template-columns:minmax(0,40%) repeat(4,minmax(0,15%));position:sticky;top:0;z-index:2;background:linear-gradient(var(--void) 80%,transparent);padding:10px 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.prc .plabels span{padding-inline:12px}
+.prc .plabels .pick{color:var(--lime)}
+.prc .dist{border-top:1px solid var(--rule)}
+.prc .dist summary{display:flex;align-items:baseline;gap:14px;padding:16px 0;cursor:pointer;list-style:none}
+.prc .dist summary::-webkit-details-marker{display:none}
+.prc .dist summary::after{content:"+";margin-left:auto;font-family:var(--mono);color:var(--dim);font-size:18px}
+.prc .dist[open] summary::after{content:"−"}
+.prc .dist .r{font-family:var(--display);font-weight:900;font-size:30px;line-height:.8;color:var(--c);min-width:44px}
+.prc .dist .n{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:24px;line-height:1}
+.prc .dist .c{font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+.prc .dist table{margin-bottom:22px}
+.prc .dist tbody th{width:40%}
+.prc .dist tbody th a{text-decoration:none;border-bottom:1px solid #3a3b33}
+.prc .dist tbody th a:hover{border-color:var(--c)}
+
+/* answers beside a face */
+.prc .pfaq{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);margin-top:clamp(80px,9vw,130px);align-items:start}
+.prc .pfaq h2{margin:0 0 22px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5vw,78px);line-height:.9}
+.prc .pfaq h2 em,.prc .sh h2 em{font-style:normal;color:var(--lime)}
+.prc .pfaq dl{margin:0}
+.prc .pfaq dt{font-weight:600;font-size:16.5px;margin-top:22px}
+.prc .pfaq dd{margin:6px 0 0;color:#b9baa9;font-size:15px;max-width:640px}
+.prc .pfaq .legal{margin-top:28px;color:var(--dim);font-size:14px}
+.prc .pfaq .legal a{color:var(--ink)}
+.prc .fph{position:sticky;top:24px;margin:0;aspect-ratio:2/3;overflow:hidden}
+.prc .fph img{width:100%;height:100%;object-fit:cover;display:block}
+.prc .fph::after{content:"";position:absolute;inset:0;pointer-events:none}
+
+/* the early-access form over a photograph */
+.prc .early{position:relative;isolation:isolate;margin-top:clamp(80px,9vw,140px);padding-block:clamp(70px,8vw,120px)}
+.prc .early .ph{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.prc .early .ph img{width:100%;height:100%;object-fit:cover;display:block;opacity:.42}
+.prc .early .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--void) 0%,rgba(9,10,7,.35) 30%,rgba(9,10,7,.55) 70%,var(--void) 100%),linear-gradient(90deg,rgba(9,10,7,.85) 0%,rgba(9,10,7,.2) 70%)}
+.prc .ein{max-width:620px}
+.prc .ein h2{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,6vw,92px);line-height:.88}
+.prc .ein .lead{margin:16px 0 26px;color:#d6d7c9;font-size:16.5px}
+.prc form{display:grid;gap:14px}
+.prc form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.prc form .f{display:grid;gap:6px}
+.prc form .f span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.prc form input[type=email],.prc form select{font:inherit;font-size:15.5px;color:var(--ink);background:rgba(17,18,13,.92);border:1px solid #3a3b33;padding:12px 13px;min-width:0;border-radius:0}
+.prc form input[type=email]:focus,.prc form select:focus{outline:none;border-color:var(--lime)}
+.prc form .ck{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#c6c7b8}
+.prc form .ck input{margin-top:3px;accent-color:var(--lime)}
+.prc form .hp{position:absolute;left:-9999px}
+.prc form .cta{justify-self:start;border:0;cursor:pointer}
+.prc form .st{margin:0;min-height:22px;font-size:14.5px}
+.prc form .st.ok{color:var(--lime)}
+.prc form .st.no{color:#ff8fb3}
+.prc form[data-sent] :is(.f,.row,.ck,.cta){display:none}
+
+@media (max-width:1180px){
+  .prc .plans{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prc .wtiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .prc .pfaq{grid-template-columns:minmax(0,1fr)}
+  .prc .fph{position:relative;top:0;aspect-ratio:4/3}
+  .prc .wtiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prc .plabels{grid-template-columns:minmax(0,30%) repeat(4,minmax(0,17.5%));font-size:10px;letter-spacing:.04em}
+  .prc .plabels span{padding-inline:4px}
+  .prc .dist tbody th{width:30%}
+  .prc .dist th,.prc .dist td{padding:9px 4px}
+  .prc .dist td{font-size:10px;letter-spacing:-.04em}
+  .prc .dist tbody th small{display:none}
+}
+@media (max-width:620px){
+  .prc .plans{grid-template-columns:minmax(0,1fr)}
+  .prc .plan .k,.prc .plan .who{min-height:0}
+  .prc form .row{grid-template-columns:minmax(0,1fr)}
+  .prc .wtiles{grid-template-columns:minmax(0,1fr)}
+  .prc .wtiles figure{aspect-ratio:3/2}
+  .prc .dist .c{display:none}
+  .prc .lim table{min-width:620px}
+}

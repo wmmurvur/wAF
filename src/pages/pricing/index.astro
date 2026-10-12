@@ -1,0 +1,181 @@
+---
+// /pricing/: the plans (data/plans.js), who the farm is for, what changes between plans, every feature in every plan,
+// straight answers, and the early-access form. Every price and limit comes from data/plans.js; the features from
+// data/features.js. During the beta the paid plans' buttons reserve early access (the form at #early posts to
+// early-access.php on the host); with a checkout link in data/plans.js a button buys instead.
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/pages/pricing.css';
+import { pricing, limits, sameLimit, yearly, money } from '../../data/plans.js';
+import { districts, features, hasPage } from '../../data/features.js';
+import { photos } from '../../data/photos.js';
+import { licence } from '../../data/facts.js';
+import { site, rootOf } from '../../data/site.js';
+
+const root = rootOf(Astro.url);
+const P = pricing.plans, paid = P.filter(p => p.price > 0);
+const cardRows = limits.filter(l => l.card);
+const byFeature = Object.fromEntries(limits.filter(l => l.f).map(l => [l.f, l]));
+for (const [f, l] of Object.entries(sameLimit)) byFeature[f] = limits.find(x => x.id === l);
+const show = v => typeof v === 'number' ? String(v) : v;
+const buy = p => !pricing.beta && pricing.checkout[p.id];
+const href = (D, f) => hasPage(D) ? `../features/${D.slug}/#${f.id}` : `../#ch-${D.id}`;
+const img = (p, s) => `${root}assets/photos/${p}-${s}.jpg`;
+const who = [
+  { p: 'w-code', k: 'Code', t: 'Fixes, tests and refactors carried on leg after leg while you sleep.' },
+  { p: 'w-video', k: 'Video', t: 'A production team of agents, from the idea to a sequence you finish in Premiere.' },
+  { p: 'w-audio', k: 'Podcasts and channels', t: 'Long videos cut to shorts, a weekly channel rhythm, a media inbox that files itself.' },
+  { p: 'w-writing', k: 'Writing and research', t: 'A thesis, a book or a report as a backlog the agents work through, chapter by chapter.' },
+  { p: 'w-team', k: 'Small teams', t: 'A lead plans, a team on different engines does the work, and one word from you changes its course.' },
+];
+const FAQ = [
+  ['I already pay for Claude or ChatGPT. Why pay again?', 'Agent Farm never sells tokens. Your engines run on your own plans and keys, and that bill stays between you and them. What you pay for here is the farm around them: the relay, the night shift, the memory, the studio, the guards.'],
+  ['What happens when I reach a limit?', 'Nothing breaks and nothing is lost. A chain at its leg ceiling parks with its handover note, and a session over the limit waits in the queue. Carry it on by hand, or move up a plan.'],
+  ['Is there a trial?', 'The Free plan is the trial: every feature, with smaller limits, for as long as you like.'],
+  ['How does a yearly plan work?', `A year costs ${pricing.yearlyMonths} months, so two months are free.`],
+  ['Can I change plans or cancel?', 'Any time, from the customer page linked in your receipt. A cancelled plan runs to the end of the period you paid for.'],
+  ['Can I get my money back?', 'Yes, within 14 days of your first payment, for any reason. The refund policy has the details.'],
+  ['Who takes the payment?', 'Lemon Squeezy, our reseller (merchant of record). It takes the payment, charges the VAT or sales tax of your country and sends the invoice, with your company\'s details if you add them.'],
+  ['What does a paid licence send to you?', `It checks its key ${licence.checkEvery}: the key, a hash of the machine and the version. Nothing about your work. Without a connection it keeps working ${licence.offlineDays} days.`],
+  ['Will the prices change?', 'These are beta prices, and they may change before paid plans open. If you hold a plan, a new price applies only from your next renewal, and we tell you before it does.'],
+];
+---
+<Base
+  title="Pricing · Agent Farm"
+  description={`Agent Farm plans: Free, and ${paid.map(p => `${p.n} at ${money(p.price)}`).join(', ')} a month. Every plan has every feature; a plan changes how far each one goes. Your engines run on your own plans and keys.`}
+  script="pricing"
+>
+  <Header />
+  <main class="prc" data-ym={pricing.yearlyMonths}>
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>Pricing</span></nav>
+      <div class="phero">
+        <h1>Pay for the farm.<br /><em>Bring your own brains.</em></h1>
+        <p class="lead">Every plan has every feature, on all five engines, with your own plans and keys. A plan only changes how far each feature goes: how long a chain runs, how many sessions at once, how many sign-ins it can move between.</p>
+      </div>
+      {pricing.beta && <p class="beta"><b>Beta</b> The Free plan is open now. Paid plans open later: reserve one below and we write to you once, when they do. Prices and limits may still change.</p>}
+      <div class="per" role="group" aria-label="Billing period">
+        <button type="button" data-per="m" class="on" aria-pressed="true">Monthly</button>
+        <button type="button" data-per="y" aria-pressed="false">Yearly <span>two months free</span></button>
+      </div>
+      <div class="plans">
+        {P.map(p => (
+          <article class={`plan${p.pick ? ' pick' : ''}`} id={`plan-${p.id}`}>
+            {p.pick && <p class="flag">Our pick</p>}
+            <h2>{p.n}</h2>
+            <p class="k">{p.k}</p>
+            <p class="price">
+              {p.price === 0
+                ? <><b>{money(0)}</b><span>forever</span></>
+                : <><b data-m={money(p.price)} data-y={money(yearly(p))}>{money(p.price)}</b><span data-m="a month" data-y="a year">a month</span></>}
+            </p>
+            {p.price > 0 && <p class="alt" data-m={`or ${money(yearly(p))} a year`} data-y={`${money(+(yearly(p) / 12).toFixed(2))} a month, billed yearly`}>or {money(yearly(p))} a year</p>}
+            <p class="who">{p.who}</p>
+            <ul>
+              {cardRows.map(l => { const v = l.v[P.indexOf(p)]; return <li><span>{l.n}</span><b>{show(v)}</b></li>; })}
+              <li class="all"><span>All {features.length} features</span><b>✓</b></li>
+            </ul>
+            {p.price === 0
+              ? <a class="cta" href={site.get.href}>{site.get.label}</a>
+              : buy(p)
+                ? <a class="cta" href={pricing.checkout[p.id].monthly} data-m={pricing.checkout[p.id].monthly} data-y={pricing.checkout[p.id].yearly}>Buy {p.n}</a>
+                : <a class={p.pick ? 'cta' : 'ghost'} href="#early" data-plan={p.id}>Reserve {p.n}</a>}
+          </article>
+        ))}
+      </div>
+      <p class="tax">Prices in US dollars. VAT or sales tax is added at checkout where it applies.</p>
+    </div>
+
+    <section class="kinds" aria-labelledby="who-h">
+      <div class="wrap">
+        <p class="pre">One farm, any kind of work</p>
+        <h2 id="who-h">Not only code.</h2>
+        <div class="wtiles">
+          {who.map(w => (
+            <figure>
+              <img src={img(w.p, 'l')} srcset={`${img(w.p, 's')} ${photos[w.p].tall ? 500 : 600}w, ${img(w.p, 'l')} ${photos[w.p].tall ? 1000 : 1200}w`} sizes="(max-width: 860px) 50vw, 20vw" alt={photos[w.p].alt} loading="lazy" decoding="async" style={`object-position:${photos[w.p].pos}`} />
+              <figcaption><b>{w.k}</b>{w.t}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap lim" aria-labelledby="lim-h">
+      <div class="sh"><h2 id="lim-h">What changes <em>between plans</em></h2><p class="lead">Only these. Everything else is the same on every plan.</p></div>
+      <div class="tbl" role="region" aria-labelledby="lim-h" tabindex="0">
+        <table>
+          <thead><tr><th scope="col"><span class="vh">Limit</span></th>{P.map(p => <th scope="col" class={p.pick ? 'pick' : undefined}>{p.n}</th>)}</tr></thead>
+          <tbody>
+            {limits.map(l => (
+              <tr>
+                <th scope="row">{l.n}{l.note && <small>{l.note}</small>}</th>
+                {l.v.map((v, i) => <td class={P[i].pick ? 'pick' : undefined}>{show(v)}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap every" aria-labelledby="every-h">
+      <div class="sh"><h2 id="every-h">Every plan has <em>all {features.length}</em></h2><p class="lead">Each feature in its district, and how far it goes on each plan. Open a district to see them.</p></div>
+      <div class="plabels" aria-hidden="true"><span></span>{P.map(p => <span class={p.pick ? 'pick' : undefined}>{p.n}</span>)}</div>
+      {districts.map((D, i) => { const F = features.filter(f => f.d === i); return (
+        <details class="dist" style={`--c:${D.c}`} open={i === 0}>
+          <summary><span class="r">{D.r}</span><span class="n">{D.n}</span><span class="c">{F.length} features</span></summary>
+          <table>
+            <caption class="vh">{D.n}: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th>{P.map(p => <th scope="col">{p.n}</th>)}</tr></thead>
+            <tbody>
+              {F.map(f => { const l = byFeature[f.id]; return (
+                <tr>
+                  <th scope="row"><a href={href(D, f)}>{f.n}</a><small>{f.s}</small></th>
+                  {P.map((p, j) => <td class={p.pick ? 'pick' : undefined}>{l ? <span class="lv">{show(l.v[j])}</span> : <span class="ok" aria-label="Included">✓</span>}</td>)}
+                </tr>
+              ); })}
+            </tbody>
+          </table>
+        </details>
+      ); })}
+    </section>
+
+    <section class="wrap pfaq" aria-labelledby="pfaq-h">
+      <div class="fq">
+        <h2 id="pfaq-h">Straight <em>answers</em></h2>
+        <dl>{FAQ.map(([q, a]) => <><dt>{q}</dt><dd>{a}</dd></>)}</dl>
+        <p class="legal">The <a href="../terms/">terms</a>, the <a href="../privacy/">privacy policy</a> and the <a href="../refunds/">refund policy</a> say all of it in full.</p>
+      </div>
+      <figure class="fph"><img src={img('p-faq', 'l')} srcset={`${img('p-faq', 's')} 500w, ${img('p-faq', 'l')} 1000w`} sizes="(max-width: 860px) 100vw, 34vw" alt={photos['p-faq'].alt} loading="lazy" decoding="async" style={`object-position:${photos['p-faq'].pos}`} /></figure>
+    </section>
+
+    <section class="early" id="early" aria-labelledby="early-h">
+      <div class="ph" aria-hidden="true"><img src={img('p-cut', 'l')} srcset={`${img('p-cut', 's')} 900w, ${img('p-cut', 'l')} 1800w`} sizes="100vw" alt="" loading="lazy" decoding="async" /></div>
+      <div class="wrap">
+        <div class="ein">
+          <p class="pre">Early access</p>
+          <h2 id="early-h">Reserve a paid plan.</h2>
+          <p class="lead">Leave your address and we write once, when paid plans open. Until then the Free plan is yours to use.</p>
+          <form id="ea" action={`${root}early-access.php`} method="post" novalidate>
+            <label class="f"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" maxlength="254" /></label>
+            <div class="row">
+              <label class="f"><span>Plan</span>
+                <select name="plan">{paid.map(p => <option value={p.id} selected={p.pick}>{p.n} · {money(p.price)} a month</option>)}<option value="unsure">Not sure yet</option></select>
+              </label>
+              <label class="f"><span>Mostly for</span>
+                <select name="use"><option value="">Choose, if you like</option><option value="code">Code</option><option value="video">Video and audio</option><option value="writing">Writing and research</option><option value="team">A team's work</option><option value="other">Something else</option></select>
+              </label>
+            </div>
+            <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+            <input type="hidden" name="t" value="" />
+            <label class="ck"><input type="checkbox" name="consent" value="1" required /> <span>Write to me when paid plans open. Nothing else, and I can ask to be removed at any time (<a href="../privacy/#early-access">privacy</a>).</span></label>
+            <button type="submit" class="cta">Reserve my place</button>
+            <p class="st" id="ea-st" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

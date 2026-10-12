@@ -8,8 +8,8 @@ import '@fontsource-variable/geist-mono';
 import '../styles/base.css';
 import { site, rootOf } from '../data/site.js';
 
-interface Props { title: string; description: string; script?: string; }
-const { title, description, script = 'site' } = Astro.props;
+interface Props { title: string; description: string; script?: string; noindex?: boolean; }
+const { title, description, script = 'site', noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const root = rootOf(Astro.url);
 ---
@@ -21,6 +21,7 @@ const root = rootOf(Astro.url);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" type="image/svg+xml" href={`${root}favicon.svg`} />
     <meta name="theme-color" content="#090a07" />
     <meta property="og:type" content="website" />

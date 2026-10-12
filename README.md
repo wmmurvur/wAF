@@ -4,7 +4,7 @@
 
 The website of **Agent Farm**, mission control for AI agents in VS Code (publisher MuVuSOFT, extension id `muvusoft.agent-farm`).
 
-A long landing page and, behind it, the feature pages (plan v0.8): `/features/` with all 82 things, and one page per district of the board as each is written. Built as a static site with [Astro](https://astro.build). Every screen on it is rebuilt from real screenshots of the extension and runs on demo data. Every number it states comes from the extension's source or a real screen, and `src/data/facts.js` says where.
+A long landing page and, behind it, the feature pages (plan v0.8): `/features/` with all 82 things, and one page per district of the board as each is written. Then the sales pages: `/pricing/` with the plans and the early-access form, and the terms, privacy and refund pages. Built as a static site with [Astro](https://astro.build). Every screen on it is rebuilt from real screenshots of the extension and runs on demo data. Every number it states comes from the extension's source or a real screen, and `src/data/facts.js` says where.
 
 ## Commands
 
@@ -63,6 +63,17 @@ The order lives in `src/data/page.js` (plan v0.7 §5); section numbers and the s
 | `/features/never-stops/` | District I: the landing's Days and Rules demos, then each feature beside its figure: what it solves, its steps (a step clicked shows itself in the figure; some figures have a setting to slide), the settings folded, where to see it; questions; the next district | `src/pages/features/never-stops.astro`, `src/components/District.astro`, `src/data/deep/relay.js` |
 | `/features/safe-and-yours-alone/` | District X, the same way: the landing's Local chapter, then its eight features beside their figures (the machine, the licence check, the guards, Superpowers); questions | `src/pages/features/safe-and-yours-alone.astro`, `src/data/deep/privacy.js`, `src/scripts/figs/privacy.js` |
 
+## The sales pages
+
+| Address | Page | Made from |
+|---|---|---|
+| `/pricing/` | The plans (Free, Pro, Fleet, Farm) with a monthly/yearly switch, the kinds of work it is for, what changes between plans, every feature on every plan by district, answers, and the early-access form | `src/pages/pricing/index.astro`, `src/data/plans.js`, `src/scripts/pages/pricing.js` |
+| `/terms/`, `/privacy/`, `/refunds/` | The terms of use and licence, the privacy policy, the refund policy: a short version, then each part in full | `src/pages/<name>/index.astro`, `src/layouts/Legal.astro` |
+
+- **Prices and limits** live only in `src/data/plans.js`: the cards, the tables, the form and the page description read it. Every plan has every feature; a plan changes the limits. `beta: true` makes the paid plans' buttons reserve early access; a Lemon Squeezy link in `checkout` makes a button buy.
+- **The early-access form** posts to `public/early-access.php`, which Hostinger runs beside the static site. It keeps one CSV line per address (time, email, plan, use, the consent's wording date) in `agentfarm-private/early-access.csv` next to `public_html`, out of the web's reach, and emails `NOTIFY_TO` when that is filled in. A honeypot field and a minimum fill time keep bots out; no IP address is kept.
+- **The legal pages** take who sells and how to reach them from `legal` in `src/data/site.js`. An empty field shows as a marked gap; while `draft` is true the pages say they are drafts and carry `noindex`.
+
 A district gets its page by a page file, a `data/deep/<district id>.js` with its words (and `fig`, a label per step, for a feature drawn beside its text), a `scripts/figs/<district id>.js` that draws its figures, a `scripts/pages/<slug>.js` with its demos' scripts that calls `figures()` from `scripts/district.js`, and its id in `PAGES` (`src/data/features.js`). Until then its links go to its chapter on the landing. The words on a district page were checked in the extension's source; the citations are comments in its `data/deep` file.
 
 ## Structure
@@ -72,7 +83,8 @@ src/
   pages/index.astro            the landing: composes the sections in order
   pages/features/              /features/ and the district pages
   layouts/Base.astro           <head>, self-hosted fonts, global styles
-  components/                  Header, SideIndex, Chapter (a chapter opener), District (a district's page), Footer (markup only)
+  layouts/Legal.astro          the terms, privacy and refund pages' frame: draft notice, sections beside the text
+  components/                  Header, SideIndex, Chapter (a chapter opener), District (a district's page), Who (a seller detail on the legal pages), Footer (markup only)
   components/sections/         Relay … Close, one file per section (markup only)
   styles/base.css              tokens, header, buttons, shared section heading, footer
   styles/chapter.css           the chapter openers
@@ -90,11 +102,13 @@ src/
   data/page.js                 the page order and which chapter each section belongs to
   data/backlog.js              the demo backlog: project, the family the chain works, the queue, captures; the other projects and their tracks
   data/features.js             every capability (82), its district, where the page shows it, and the story steps: the board, the chapter openers, later /features and /pricing
-  data/photos.js               the photographs (Unsplash ids, crops) and the human bands' words
+  data/photos.js               the photographs (Unsplash ids or the owner's picks, crops) and the human bands' words
   data/emblems.js              the small moving emblem of each district on /features/
-  data/site.js                 links, the call to action, the site version, rootOf (the way back to the top folder from a page)
+  data/site.js                 links, the call to action, the site version, who sells (legal), rootOf (the way back to the top folder from a page)
+  data/plans.js                the plans, their prices and limits: everything /pricing/ states
   data/deep/*.js               what a district's page says beyond its tiles, with the source of each fact
 public/
+  early-access.php             the early-access form's handler, run by the host
   assets/sounds/               the extension's own tones (media/sounds)
   assets/photos/               the photographs, two widths each (-l, -s)
 scripts/
@@ -118,6 +132,8 @@ docs/DESIGN.md                 palette, type, motion and demo-data rules
 
 - Hosting: Hostinger (decided 2026-10-11).
 - The extension's repository is closing (plan v0.7 §8), so nothing links to it. The call to action goes to the Marketplace listing (`src/data/site.js`); check that the listing is live on the day the extension is published. The changelog gets its own page with the /features pages.
-- The header's "Join early access" goes to the closing band until an early access list exists.
+- The header's "Join early access" goes to the early-access form on `/pricing/#early`.
+- Prices, plans and limits are a first proposal (owner, 2026-10-12: $0, $19, $34, $49 a month, a year is ten months, no trial, Lemon Squeezy); change them in `src/data/plans.js`.
+- The legal pages are drafts until the owner's name, country and contact address are in `legal` (`src/data/site.js`) and a reviewer has read them; set `draft: false` then. `NOTIFY_TO` in `public/early-access.php` is empty until the owner gives an address.
 - Licence: the free version never contacts us; a paid licence checks its key once a day and keeps working 30 days offline (owner, 2026-10-12; `licence` in `src/data/facts.js`). Change the figures there when the extension ships its own.
 - An Open Graph image and the extra product pages (plan §6).
