@@ -14,7 +14,7 @@
     <meta property="og:description" content="Work that starts by itself: workflows that hand each step's output to the next, schedules that survive a closed laptop, triggers on a file, a hook or a private address, Gatekeeper deciding whether there is real work, one sentence instead of a form, a queue with ceilings, a record of every run with its output and price, retries and rounds, one switch for all of it, and a forecast of the week.">
     <meta property="og:url" content="https://agentfarm.space/features/recipes-and-triggers/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/recipes-and-triggers.js?v=0.11.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/recipes-and-triggers.js?v=0.12.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.11.0"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.12.0"></head>
   <body>
     
   <div class="wrap">
@@ -348,14 +348,14 @@
         <details><summary>Do schedules run with VS Code closed?</summary><p>On Windows, yes, if you install the small headless service: it runs schedules and watch triggers with Claude while VS Code is closed. Or export a schedule as a Windows Scheduled Task.</p></details><details><summary>How do I stop an empty folder from waking an expensive model?</summary><p>Give the trigger a free check, such as "the folder has files", or put Gatekeeper on it. Without either, one watch once cost <b>$70.90</b> in five nights of finding nothing.</p></details><details><summary>What happens to a schedule in quiet hours?</summary><p>It waits for the end of the window and then runs, marked deferred. A run you start yourself ignores quiet hours; the main switch still stops it.</p></details><details><summary>How many runs go at once?</summary><p>Two across the fleet and one per agent, by default. The rest wait, marked deferred, and start as slots free.</p></details><details><summary>What if a run hits my usage limit at night?</summary><p>It tries again by itself, after 40 minutes unless you set it otherwise. It can also wait for the plan's reset, or carry on on another signed-in account of the same engine.</p></details><details><summary>Is Gatekeeper on by default? Is there a quick start?</summary><p>Gatekeeper is off for every use; shadow shows how often it agrees with you before you turn it on, and it needs a key for Jev. For a quick start, one click sets up three examples: an inbox duty, a briefing at 09:00 and a two-agent chain.</p></details>
       </section>
       <nav class="dnext" aria-label="More features">
-        <a class="dnx" href="../../#ch-team" style="--c:var(--cyan)"><span class="k">Next district</span><span class="r">V</span><span class="n">Works as a team</span><span class="p">Agents on different engines plan, split and check each other.</span></a>
-        <a class="dall" href="../">All 83 features <i></i></a>
+        <a class="dnx" href="../works-as-a-team/" style="--c:var(--cyan)"><span class="k">Next district</span><span class="r">V</span><span class="n">Works as a team</span><span class="p">Agents on different engines plan, split and check each other.</span></a>
+        <a class="dall" href="../">All 84 features <i></i></a>
       </nav>
     </div>
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.11.0 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.12.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>

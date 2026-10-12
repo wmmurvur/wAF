@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Works as a team · Agent Farm features</title>
+    <meta name="description" content="Agents working together: a lead that plans and a team on different engines with one writer per folder and five hard caps, any session read by any agent, notes and tasks agents leave each other, your steer or veto above everything, the Console, questions that answer themselves when time runs out, Notices and the Work Queue, the Live Timeline, and parallel jobs in git worktrees.">
+    <link rel="canonical" href="https://agentfarm.space/features/works-as-a-team/">
+    
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Works as a team · Agent Farm features">
+    <meta property="og:description" content="Agents working together: a lead that plans and a team on different engines with one writer per folder and five hard caps, any session read by any agent, notes and tasks agents leave each other, your steer or veto above everything, the Console, questions that answer themselves when time runs out, Notices and the Work Queue, the Live Timeline, and parallel jobs in git worktrees.">
+    <meta property="og:url" content="https://agentfarm.space/features/works-as-a-team/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/works-as-a-team.js?v=0.12.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.12.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a class="ch" href="../../#ch-relay">Relay</a><a class="ch" href="../../#ch-projects">Projects</a><a class="ch" href="../../#ch-studio">Studio</a><a class="ch" href="../../#ch-memory">Memory</a><a class="ch" href="../../#ch-bridge">Just ask</a><a class="ch" href="../../#ch-privacy">Local</a><a href="../../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:var(--cyan)">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>V Works as a team</span></nav>
+      <header class="dh">
+        <span class="drm" aria-hidden="true">V</span>
+        <div>
+          <p class="dk"><span>District V of X</span><span>Nine things</span></p>
+          <h1>Works as a team</h1>
+          <p class="dp">Agents on different engines plan, split and check each other.</p>
+        </div>
+      </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-team-l.jpg" srcset="../../assets/photos/d-team-s.jpg 900w, ../../assets/photos/d-team-l.jpg 1800w" sizes="100vw" alt="A team around a table while one of them sorts sticky notes on the wall" loading="lazy" decoding="async" style="object-position:50% 35%"></div>
+  
+</figure>
+    <div class="wrap">
+      <p class="dpromise">One agent can only do so much, and five of them in the same folder get in each other&#39;s way. Here a lead plans and a team carries it out, each on the engine that suits it, writers taking turns. Agents read each other&#39;s sessions and leave each other notes; you see everyone in one column, answer from one list, and your word overrides any of them.</p>
+      <ul class="dtl">
+        <li><a href="#missions"><span class="c">V·1</span><span class="n">Missions</span><span class="sg">lead + 3</span></a></li><li><a href="#shared"><span class="c">V·2</span><span class="n">Shared sessions</span><span class="sg">by id</span></a></li><li><a href="#notes"><span class="c">V·3</span><span class="n">Agent notes</span><span class="sg">a2a</span></a></li><li><a href="#steer"><span class="c">V·4</span><span class="n">Steer and veto</span><span class="sg">mid-run</span></a></li><li><a href="#console"><span class="c">V·5</span><span class="n">Console</span><span class="sg">2 waiting</span></a></li><li><a href="#question"><span class="c">V·6</span><span class="n">Countdown questions</span><span class="sg">0:42</span></a></li><li><a href="#notices"><span class="c">V·7</span><span class="n">Notices and the queue</span><span class="sg">4 levels</span></a></li><li><a href="#timeline"><span class="c">V·8</span><span class="n">Live Timeline</span><span class="sg">live</span></a></li><li><a href="#worktrees"><span class="c">V·9</span><span class="n">Worktrees</span><span class="sg">git</span></a></li>
+      </ul>
+    </div>
+    <section id="s-together" class="gap" aria-label="Missions: a lead, a team and an honest verdict">
+  <div class="wrap">
+    <p class="sx"><b>10</b> Together</p>
+    <div class="sh">
+      <div><p class="pre">Missions · four engines, one team</p><h2>A lead, a team, <em>an honest verdict.</em></h2></div>
+      <p class="lead">Give a mission to a lead. It plans round by round, hands tasks to agents on different engines, reads what comes back, and ends by saying how it really went. Partial is an answer too.</p>
+    </div>
+    <div class="tgrid">
+      <div class="mgraph">
+        <div class="mhead"><span id="t-round">ROUND 1 / 8</span><span id="t-phase">planning</span></div>
+        <svg viewBox="0 0 520 440" role="img" aria-label="A lead agent sends tasks to four team agents and reads their results">
+          <path class="wire" id="t-w-dev" d="M190,220 C262,220 258,64 330,64"></path><path class="wire" id="t-w-rev" d="M190,220 C262,220 258,168 330,168"></path><path class="wire" id="t-w-tst" d="M190,220 C262,220 258,272 330,272"></path><path class="wire" id="t-w-wri" d="M190,220 C262,220 258,376 330,376"></path>
+          <g class="node lead" id="t-lead">
+            <rect x="20" y="180" width="170" height="80"></rect>
+            <text x="36" y="208" class="r">manager</text><text x="36" y="228" class="e">lead · Claude</text><text x="36" y="248" class="s" id="t-ls">planning round 1</text>
+          </g>
+          <g class="node " id="t-n-dev">
+              <rect x="330" y="32" width="170" height="64"></rect>
+              <text x="346" y="56" class="r">developer</text><text x="484" y="56" class="e " text-anchor="end">Claude</text><text x="346" y="80" class="s">idle</text>
+            </g><g class="node x" id="t-n-rev">
+              <rect x="330" y="136" width="170" height="64"></rect>
+              <text x="346" y="160" class="r">reviewer</text><text x="484" y="160" class="e x" text-anchor="end">Codex</text><text x="346" y="184" class="s">idle</text>
+            </g><g class="node a" id="t-n-tst">
+              <rect x="330" y="240" width="170" height="64"></rect>
+              <text x="346" y="264" class="r">tester</text><text x="484" y="264" class="e a" text-anchor="end">Antigravity</text><text x="346" y="288" class="s">idle</text>
+            </g><g class="node o" id="t-n-wri">
+              <rect x="330" y="344" width="170" height="64"></rect>
+              <text x="346" y="368" class="r">writer</text><text x="484" y="368" class="e o" text-anchor="end">OpenCode</text><text x="346" y="392" class="s">idle</text>
+            </g>
+          <g id="t-dots"></g>
+        </svg>
+        <div class="verdict" id="t-verdict" aria-live="polite"><b>Verdict</b><span class="pill ok">done</span><span class="pill part">partial</span><p>CSV and JSON lines export and pass their tests. The Windows path was never run, so the mission says partial, not done.</p></div>
+      </div>
+
+      <div class="mpanel" aria-label="The Missions page, rebuilt with demo data">
+        <div class="mtabs"><span>Console</span><span class="on">Agent Farm — Missions</span><span>Live Timeline</span></div>
+        <div class="mbody">
+          <h3>Missions</h3>
+          <p class="msub">Dynamic orchestration: a lead agent plans round by round, delegates to the team, and finishes with an honest verdict.</p>
+          <div class="sentry" id="t-sentry" data-shows="sentry">
+            <div class="sh1"><b>▾ Sentry</b><span class="run">RUNNING</span><span class="sq" id="t-sq">Backlog.md · item 4 of 11 · one clean session per item</span></div>
+            <p>A campaign takes the next item off a project backlog, opens a clean unattended session on it as an ordinary task row, and when that row ends it reads what the session left behind and opens the next one — until you stop it.</p>
+          </div>
+          <div class="mscroll">
+            <table class="mtable">
+              <thead><tr><th>Mission</th><th>Lead + team</th><th>Status</th><th>Rounds</th><th>Tasks</th><th>Tokens</th><th>Cost</th><th class="at">Started</th></tr></thead>
+              <tbody>
+                <tr class="live" id="t-row">
+                    <td><span class="tw">›</span>Timeline export, end to end<span class="adpt">ADPT</span></td>
+                    <td>manager +3</td>
+                    <td class="st"><span class="pill run">running</span></td>
+                    <td class="rd">R3/8</td><td class="tk">7</td><td class="to">412.6k</td><td class="co">$0.62 (mixed)</td><td class="at">Oct 11, 09:12</td>
+                  </tr><tr class>
+                    <td><span class="tw">›</span>Pricing table refresh</td>
+                    <td>manager +2</td>
+                    <td class="st"><span class="pill ok">done</span></td>
+                    <td class="rd">R4/6</td><td class="tk">6</td><td class="to">301.2k</td><td class="co">$0.48 (mixed)</td><td class="at">Oct 10, 16:40</td>
+                  </tr><tr class>
+                    <td><span class="tw">›</span>Do two agents really argue?<span class="adpt">ADPT</span></td>
+                    <td>reviewer +1</td>
+                    <td class="st"><span class="pill ok">done</span><span class="pill part">partial</span></td>
+                    <td class="rd">R2/5</td><td class="tk">1</td><td class="to">72.3k</td><td class="co">$0.10</td><td class="at">Oct 9, 17:53</td>
+                  </tr><tr class>
+                    <td><span class="tw">›</span>A chaired council that really argues<span class="adpt">ADPT</span></td>
+                    <td>manager +0</td>
+                    <td class="st"><span class="pill can">cancelled</span></td>
+                    <td class="rd">R1/8</td><td class="tk">3</td><td class="to">58.9k</td><td class="co">$0.11 (mixed)</td><td class="at">Oct 9, 21:17</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section id="s-console" class="gap" aria-label="The Agent Farm Console">
+  <div class="wrap">
+    <p class="sx"><b>03</b> The console</p>
+    <div class="hero">
+      <div>
+        <div class="eyebrow"><span class="live"></span><b>Rebuilt from real screenshots</b> · demo data</div>
+        <h2 class="h1"><span class="soft">This is the screen you work in.</span>Take it apart<span class="lime">.</span></h2>
+        <p class="sub">The real Agent Farm Console, rebuilt. Scroll and it assembles: the leg of the chain, <b>who is waiting for you</b>, a session that rebuilt the extension and kept talking, the context meter and the quota shield.</p>
+        <div class="ctas"><a class="ghost" href="#c-deck"><i></i>Assemble it</a></div>
+      </div>
+      <aside class="rail" aria-label="Live figures of the chain above">
+        <div class="rail-cap"><span>Live · chain chn_7f3a</span><span id="c-rclock">12:09:41</span></div>
+        <div class="rd"><div class="v c-y" id="c-r1">⑂ 92</div><div class="k">legs in one relay chain</div></div>
+        <div class="rd"><div class="v c-c" id="c-r2">26%</div><div class="k">context of this leg <em>/ hands over at 40%</em></div></div>
+        <div class="rd"><div class="v c-p" id="c-r3">71%</div><div class="k">5h window <em>→ next account at 90%</em></div></div>
+        <div class="rd"><div class="v c-l" id="c-r4">2</div><div class="k">waiting for you <em id="c-r4k">· longest 6m</em></div></div>
+      </aside>
+    </div>
+  </div>
+  <div class="stage" id="c-deck" role="group" aria-label="The Agent Farm Console, rebuilt from real screenshots with demo data">
+    <div class="sticky" id="c-sticky">
+      <div class="floor"></div>
+      <div class="deck" id="c-deckEl">
+        <div class="shadow"></div>
+        <div class="win" id="c-win">
+          <div class="tbar"><span class="vs"></span><span>File</span><span>Edit</span><span>Selection</span><span>View</span><span>Go</span><span>Run</span><span>Terminal</span><span>Help</span><span class="title">Untitled (Workspace)</span><span class="dots"><span>—</span><span>▢</span><span>✕</span></span></div>
+          <div class="body">
+            <div class="act"><i></i><i class="on"></i><span class="badge">456</span><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="side">
+              <h6>AGENT FARM</h6>
+              <h6>⌄ AGENTS</h6>
+              <div class="row">asistan <span>49d ago</span></div>
+              <div class="row">basit <span>8d ago</span></div>
+              <div class="row st"><b>⚠ developer</b> <span>STALLED ×4 · 220.9M tok</span></div>
+              <div class="row">explorer <span>29d ago</span></div>
+              <div class="row">genel <span>3d ago</span></div>
+              <div class="row">hafif <span>2d ago</span></div>
+              <div class="row">manager <span>15h ago</span></div>
+              <h6>⌄ TASKS</h6>
+              <div class="row">Plan <span>3/15 on · 8 manual</span></div>
+              <div class="row">AI engines radar <span>daily</span></div>
+              <div class="row">Weekly research <span>manager</span></div>
+              <h6>› MISSIONS</h6>
+              <h6>⌄ TOOLBOX</h6>
+              <div class="row">Skills <span>2 user · 0 agent</span></div>
+              <div class="row">MCP Servers <span>4 user</span></div>
+              <div class="row">Hooks <span>9 user</span></div>
+              <h6>⌄ LIVE FEED</h6>
+              <div id="c-feed"></div>
+            </div>
+            <div class="main">
+              <div class="tabs"><span class="tab on">Console (2)</span><span class="tab">Agent Farm — Live Timeline</span><span class="tab">Agent Farm — Now</span></div>
+              <div class="ph"><h3>Console</h3><p>developer · working</p></div>
+              <div class="pills"><span class="pill">Dashboard</span><span class="pill">Projects</span><span class="pill">Mobile</span><span class="pill l">Living</span><span class="pill n">Notices (1)</span><span class="pill q">Queue</span><span class="pill">Live Timeline</span><span class="pill">Agents</span><span class="pill">Tasks</span><span class="pill">Missions</span><span class="pill">Studio</span><span class="pill">Wiki</span><span class="pill">Toolbox</span></div>
+              <div class="content">
+                <div class="col">
+                  <div class="newbtn"><span>+ New session</span><span>⇅</span></div>
+                  <div class="wait" id="c-waitEl"><span><b>●</b> 2 waiting for you</span><span class="lg" id="c-longest">longest 6m</span></div>
+                  <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">chn_7f3a · relay leg 92 · X-52 clean up the old writer</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#0ce4458a)</span><span class="eng">Claude</span></div><div class="m"><span class="acct">pro-c</span><span style="margin-left:auto">2.7M tk</span></div><div class="t">pricing page copy</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#5202a238)</span><span class="eng agy">Antigravity</span></div><div class="m"><span style="margin-left:auto">86.5k tk</span></div><div class="t">mobile companion · pairing</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">6m</span> · 2 turns</div></div>
+                  <div class="resume">› Resume an existing session</div>
+                </div>
+                <div class="tx" id="c-tx"></div>
+              </div>
+              <div class="tool" id="c-tool"><b>⚡ Bash</b> npm run test -- test/test_export.js</div>
+              <div class="foot">
+                <div class="inp">Message developer…  (Ctrl+Enter sends)</div>
+                <div class="ctrls"><span>developer</span><span class="eng" style="margin-left:0">Claude</span><span class="sel">opus ▾</span><span class="sel">xhigh ▾</span><span class="sel" id="c-selAcct">acct-c ▾</span><span class="sel">bypassPermissions ▾</span><span class="btn2"><span>Send after turn</span><span>⏸ Interrupt</span><span>Send into turn</span></span></div>
+                <div class="strip" id="c-strip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sbar"><span>⑂ agent master*</span><span>1 active · <span id="c-sbCost">$41.20</span> today</span><span class="q" id="c-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="c-sbLeg">⑂ 92</span><span>Project</span><span>Git Graph</span><span class="r" id="c-sbVer">Agent Farm 3.931.0</span></div>
+          <div class="reload" id="c-reload"><div class="box"><div>Reloading window · installing <b id="c-rlVer">3.932.0</b></div><div class="prog"><i></i></div><div style="color:#8d8d82;font-size:11px">the session keeps its seat</div></div></div>
+        </div>
+        <!-- exploded-view pins; x/y are positions inside the 1200×690 window -->
+        <div class="pin" data-a="cLeg" style="--z:150;--c:var(--yellow)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>⑂ 92+</b>Legs of one relay chain</div></div>
+        <div class="pin" data-a="waitEl" data-ax=".15" style="--z:250;--c:var(--lime)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>2 waiting</b>Nobody waits unseen</div></div>
+        <div class="pin" data-a="tx" data-ay=".45" style="--z:200;--c:var(--cyan)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>Same seat</b>Rebuilt itself, kept talking</div></div>
+        <div class="pin" data-a="strip" data-ax=".22" style="--z:120;--c:var(--pink)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>Context meter</b>Fresh mind every leg</div></div>
+        <div class="pin" data-a="sbQ" style="--z:60;--c:var(--claude)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>5H / week</b>Quota shield rotates accounts</div></div>
+      </div>
+      <div class="caption"><span id="c-capText">Exploded view · the real Console, rebuilt</span><span class="bar"><i id="c-capBar"></i></span></div>
+    </div>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="missions" data-f="missions">
+          <div class="fth">
+            <span class="c">V·1</span>
+            <h2>Missions</h2>
+            <p class="s">A lead that cannot write plans round by round and hands the work to a team on different engines, one writer per folder, until the goal is met or one of five caps is reached.</p>
+            <a class="see" href="#s-together">A mission, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Some work does not fit in one agent: it needs planning, doing, reviewing and testing, and the next step depends on what the last one found. Drawing that as a fixed chain in advance means guessing.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A goal and a team</span><span class="t">You give a goal, a lead agent and a team. The role you type beside each member, coder, reviewer, tester, reaches the lead as a hint, and each member can run on its own engine and model: a strong model plans, cheaper ones carry out.</span></button></li><li><button type="button" data-i="1"><span class="k">Round by round</span><span class="t">Each round the lead makes one decision: hand out tasks, each with a prompt that stands on its own and its success criteria, ask you a question, or finish. The tasks run as ordinary tasks, metered and archived, and what comes back goes into the lead's own session for the next round.</span></button></li><li><button type="button" data-i="2"><span class="k">One writer</span><span class="t">The lead plans and does not work: its write tools are switched off while it plans. With a working folder, two writers never run at once; steps marked read-only, such as research or a review, may share a wave.</span></button></li><li><button type="button" data-i="3"><span class="k">Five caps</span><span class="t">Five hard caps: cost, rounds, tasks, minutes and tasks at once. Time spent waiting for you does not count. When one is spent the lead gets a round in which it may only finish, and sending the same work to the same agent twice is refused.</span></button></li><li><button type="button" data-i="4"><span class="k">An honest verdict</span><span class="t">A mission ends with a verdict, success, partial or failed, and a summary of what was and was not reached. By default each round waits for your Approve in Needs You; a Reject goes back to the lead, which plans again.</span></button></li></ol>
+            <p class="note">An adaptive mission takes an objective with criteria instead: independent tasks run side by side in waves, a reviewer is handed the real output of the task it reviews, and agents can hold a conversation in which each turn reads what the others actually wrote.</p>
+            
+          </div>
+          <figure class="fig" data-fig="missions" aria-label="Missions, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·1</b><span class="fk">A goal and a team</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="shared" data-f="shared">
+          <div class="fth">
+            <span class="c">V·2</span>
+            <h2>Shared sessions</h2>
+            <p class="s">Any agent can open any session by its id, whichever engine wrote it, see what was and wasn&#39;t done, and carry on.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A session written by Claude Code is a file Codex cannot read, and the other way round. Work started by one engine stopped there, unless you copied the important parts across by hand.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Where it is</span><span class="t"><code>sessions.find q=&lt;id&gt;</code> tells an agent where a session lives: its file, its engine, its agent and its folder.</span></button></li><li><button type="button" data-i="1"><span class="k">Read it</span><span class="t"><code>sessions.read</code> hands over the conversation itself. It takes the id, its first 8 characters or the transcript's path; a prefix two sessions share is refused with both candidates.</span></button></li><li><button type="button" data-i="2"><span class="k">The same words</span><span class="t">Every engine comes back in the same words: user, assistant, tool, toolResult, system. It reads through the transcript page's own parse, so what an agent reads is what you see on the screen.</span></button></li><li><button type="button" data-i="3"><span class="k">A page at a time</span><span class="t">It hands over 50 steps at a time, up to 500, filtered by role or turn, counted from the end if you like, and cuts a long step at 4,000 characters, saying how much it cut.</span></button></li><li><button type="button" data-i="4"><span class="k">No hunting</span><span class="t">An agent that searches the disk for a session id is stopped by a hook and told which bridge call to make instead, so nobody spends a context hunting through folders.</span></button></li></ol>
+            <p class="note">So the reviewer on Codex reads what the developer on Claude actually did, turn by turn, and carries on from there.</p>
+            
+          </div>
+          <figure class="fig" data-fig="shared" aria-label="Shared sessions, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·2</b><span class="fk">Where it is</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="notes" data-f="notes">
+          <div class="fth">
+            <span class="c">V·3</span>
+            <h2>Agent notes</h2>
+            <p class="s">Agents leave each other notes and hand tasks over, with a guard against loops.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Agents find things the next agent needs, a locked database, an API that changed, a result, and they find work they cannot do themselves. Telling you every time turns you into the postman.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A note</span><span class="t">A note is passive: a fact, a warning, a result. It is addressed by project, role and subject, not to one agent; any agent that fits can read it, and reading marks it read for that agent only.</span></button></li><li><button type="button" data-i="1"><span class="k">A task</span><span class="t">A task is work for exactly one agent, with the abilities it needs, such as write tools, a browser or a shell. It never crosses into another project. One addressed to a role waits 2 hours for that role before others may take it.</span></button></li><li><button type="button" data-i="2"><span class="k">A 30-minute lease</span><span class="t">The agent that takes it holds a 30-minute lease and renews it with a heartbeat and a line of progress. A lease that lapses puts the task back in the queue, and when two agents grab it at once exactly one wins.</span></button></li><li><button type="button" data-i="3"><span class="k">Done, or handed on</span><span class="t">Finished, it leaves a result note for the agent that asked, and nothing lands on your desk. An agent that cannot do it hands it to a role that can.</span></button></li><li><button type="button" data-i="4"><span class="k">Three strikes</span><span class="t">The third handoff in a row is refused and the task is marked blocked, so work cannot bounce between agents for ever. A blocked task waits for you to send it somewhere.</span></button></li></ol>
+            <p class="note">Agents look at the board when a session starts: <code>a2a.status</code> gives unread notes, tasks they could take and leases they hold in one call. A relay's handover shows there too, as a card that resolves itself when the next leg starts.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.a2a.preferredGraceHours</code></td><td class="v">2</td><td>How long a task waits for the role it names before another agent may take it.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="notes" aria-label="Agent notes, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·3</b><span class="fk">A note</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="steer" data-f="steer">
+          <div class="fth">
+            <span class="c">V·4</span>
+            <h2>Steer and veto</h2>
+            <p class="s">Your steer, veto or constraint outranks everything an agent was told, and reaches a running task with its next heartbeat.</p>
+            <a class="see" href="#s-together">A mission, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent on the wrong track keeps going until somebody stops it. Stopping it and starting over loses what it already got right.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Steer, veto, constraint</span><span class="t">Hover a note or a task on the A2A board and press +: a steer, a veto or a constraint, marked amber, red or blue on the card.</span></button></li><li><button type="button" data-i="1"><span class="k">Above everything</span><span class="t">Your directive outranks everything else the agent was told: its constitution, its own instructions and the task's. Where they disagree, it is obeyed.</span></button></li><li><button type="button" data-i="2"><span class="k">First thing it reads</span><span class="t">Whenever the agent looks at that note or task, the directive is the first thing in the answer, under <code>supervisor</code>, so it cannot be skimmed past.</span></button></li><li><button type="button" data-i="3"><span class="k">On a running task</span><span class="t">On a task already running it arrives with the next heartbeat. Re-route sends the task to another role, and ⚡ Run now opens a Console session for the agent you name.</span></button></li><li><button type="button" data-i="4"><span class="k">Workflows and missions</span><span class="t">A running workflow takes a steer, a veto or a constraint the same way. A mission takes a word for the lead's next decision, which lands at its next plan, never in the middle of the task already running.</span></button></li></ol>
+            
+            
+          </div>
+          <figure class="fig" data-fig="steer" aria-label="Steer and veto, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·4</b><span class="fk">Steer, veto, constraint</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="console" data-f="console">
+          <div class="fth">
+            <span class="c">V·5</span>
+            <h2>Console</h2>
+            <p class="s">Every session in one column: who is working, whose turn it is, which leg of which chain.</p>
+            <a class="see" href="#s-console">The Console, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Every CLI has its own terminal and its own habits. With eight sessions running at once you cannot tell which is working, which is stuck and which is waiting for you.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Five engines, one card</span><span class="t">Claude Code, Codex, Gemini CLI, Antigravity and OpenCode run as the same card in one column, each with its cost, its turns and how full its context is.</span></button></li><li><button type="button" data-i="1"><span class="k">Colour says it</span><span class="t">Colour tells the state at a glance: blue thinking, purple a tool or a test running, yellow asking you, green done, red stuck. A card keeps its four lines however long the text gets, so nothing jumps.</span></button></li><li><button type="button" data-i="2"><span class="k">Now, or next</span><span class="t">What you type while it works goes into the running turn, at its next step, marked ↯. ⏸ Hold keeps a message for when the turn ends, and it stays yours: rewrite it, say it now, or drop it.</span></button></li><li><button type="button" data-i="3"><span class="k">Change it live</span><span class="t">Model, effort and permission mode change while the session runs. Only the folder is fixed. A change the CLI refuses is shown in its own words, not quietly undone.</span></button></li><li><button type="button" data-i="4"><span class="k">Stop the turn</span><span class="t">⎋ Interrupt ends the turn and keeps the session and its context. A session reopens with the model, effort and permissions it closed with.</span></button></li></ol>
+            <p class="note">Your install, your subscription: the Console runs the CLI you already have, and the transcript lands where it always does, so every other page keeps reading it. Files and screenshots drop or paste straight into the box, and saved prompt snippets are a right-click away.</p>
+            
+          </div>
+          <figure class="fig" data-fig="console" aria-label="Console, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·5</b><span class="fk">Five engines, one card</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="question" data-f="question">
+          <div class="fth">
+            <span class="c">V·6</span>
+            <h2>Countdown questions</h2>
+            <p class="s">An agent&#39;s question picks the suggested answer when time runs out. A permission request always waits for you, with every stuck session, in Needs You.</p>
+            <a class="see" href="#s-console">Waiting for you, in the Console <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent asks a question at midnight, nobody is at the desk, and the whole night goes by waiting for one click.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">The countdown</span><span class="t">A question shows a countdown, 5 minutes unless you set another, from 5 seconds to 2 hours. When it ends, the option the agent marked Recommended is chosen, or the first one.</span></button></li><li><button type="button" data-i="1"><span class="k">Only you stop it</span><span class="t">Only your own Stop timer stops it; no agent and no bridge call can. A choice you started is kept: when time runs out your picks go, and only the questions you left open get the recommended answer.</span></button></li><li><button type="button" data-i="2"><span class="k">Some words wait</span><span class="t">A question with a destructive word in it, delete, drop, purge, remove, destroy, never runs on the clock. It waits for you.</span></button></li><li><button type="button" data-i="3"><span class="k">Permissions wait</span><span class="t">A tool permission never runs on a clock either. Allow once, allow and stop asking for that command for this session only, such as <code>npm:*</code>, or deny with a reason.</span></button></li><li><button type="button" data-i="4"><span class="k">One list</span><span class="t">Whatever is stuck on you is one list, Needs You, most urgent first: permissions, browser steps, a mission's question, an interrupted workflow, a stalled session. A row you clear comes back if the problem does.</span></button></li></ol>
+            <p class="note">The agent is told the timer answered, not you, and the transcript marks each answer as yours or the recommended one. The clock runs in VS Code itself, so it keeps going with the Console closed.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.console.autoAnswer.timeoutSeconds</code></td><td class="v">300</td><td>Seconds before a question picks its recommended answer. 5 to 7200.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="question" aria-label="Countdown questions, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·6</b><span class="fk">The countdown</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="notices" data-f="notices">
+          <div class="fth">
+            <span class="c">V·7</span>
+            <h2>Notices and the queue</h2>
+            <p class="s">Agents report, remind and ask on one board, by level, and your answer becomes work in the queue. Your side of it: leave a job for an agent, now or when its group fills.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Agents have things to tell you that are not urgent, and you have small jobs for them that come to mind while you work on something else. Both get lost in chats.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">One row each</span><span class="t">An agent leaves one row for each thing it wants to tell you: an update, a report, a result, a reminder, a suggestion, a warning or a question. A long report waits behind the row: 📄 Open full report.</span></button></li><li><button type="button" data-i="1"><span class="k">Four levels</span><span class="t">Each row has a level, from 1, routine, to 4. An unread one at level 3 or above, or a question nobody answered, older than 24 hours turns the bell in the status bar into a warning that names it.</span></button></li><li><button type="button" data-i="2"><span class="k">A question</span><span class="t">A question waits for you. Answer it, or close it unanswered, and the agent applies what you said and closes it on its next turn.</span></button></li><li><button type="button" data-i="3"><span class="k">Your answer is work</span><span class="t">Your answer, or Add to queue on any row, becomes an item in the Work Queue, routed back to the agent that asked, with the whole notice attached.</span></button></li><li><button type="button" data-i="4"><span class="k">Your side of it</span><span class="t">Your side: <code>Ctrl+Alt+A</code> drops a fix you noticed into the queue without leaving what you are doing. Items go captured, grouped, delegated, done, and never disappear unhandled; items for one agent are handed over together when the group is full or the oldest has waited long enough.</span></button></li></ol>
+            <p class="note">Needs You only holds what stays stuck if you never touch it. News, a blown budget or a proposal, goes to Notices, which is made to be read later. An agent that asks there can sleep until you answer, spending no tokens while it waits.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.noticeStaleHours</code></td><td class="v">24</td><td>When an unread important notice or an unanswered question turns the bell into a warning.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="notices" aria-label="Notices and the queue, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·7</b><span class="fk">One row each</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="timeline" data-f="timeline">
+          <div class="fth">
+            <span class="c">V·8</span>
+            <h2>Live Timeline</h2>
+            <p class="s">Every running session on one axis. Jump to one tool call among thousands; a stall raises a flag.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Thousands of tool calls across a dozen sessions cannot be read as text. You need to see who did what, when, and where something stopped.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A lane per session</span><span class="t">Each agent is a lane on one time axis. Two sessions of the same agent at once get a lane each, dev #1 and dev #2.</span></button></li><li><button type="button" data-i="1"><span class="k">Every event</span><span class="t">Green blocks are tool runs, as long as they took. A blue dot is your prompt, a blue ring the model's reply, a red diamond a permission wait, a purple one a compaction, an orange dot a subagent done.</span></button></li><li><button type="button" data-i="2"><span class="k">To the moment</span><span class="t">Click any mark and the session opens at that exact message, framed for a moment. Right-click and Copy Corpus copies the whole prompt or answer from the transcript.</span></button></li><li><button type="button" data-i="3"><span class="k">When it is your turn</span><span class="t">Four boxes beside each lane pick what happens when that session turns to you: a sound, the panel brought forward, a dialog, a toast. ⏱ tests them in 3 seconds. They belong to the session and work with the panel closed.</span></button></li><li><button type="button" data-i="4"><span class="k">Stalled</span><span class="t">A session silent for 4 minutes is marked stalled and joins Needs You. One whose process is gone says so, and can be cleared.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.stuckThresholdSeconds</code></td><td class="v">240</td><td>Seconds of silence before a session is marked stalled. 0 = never.</td></tr><tr><td><code>agentFarm.notifyTurnEnd</code></td><td class="v">off</td><td>A notification every time any agent finishes a turn. Can be noisy.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="timeline" aria-label="Live Timeline, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·8</b><span class="fk">A lane per session</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="worktrees" data-f="worktrees">
+          <div class="fth">
+            <span class="c">V·9</span>
+            <h2>Worktrees</h2>
+            <p class="s">Parallel jobs work in separate git worktrees, so they never step on each other.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Two agents in the same repository at once overwrite each other&#39;s files and mix their changes into one diff nobody can review.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Plan first</span><span class="t"><code>Run Parallel Worktrees…</code> takes an agent's repository and up to six prompts. Asked over the bridge, it first only says what it would do: the branches it would make, and whether they would run at once.</span></button></li><li><button type="button" data-i="1"><span class="k">A branch each</span><span class="t">Each prompt runs in its own git worktree, on an <code>af/</code> branch in a folder beside the repository, so no job touches another's files. As many run at once as the agent's ceiling allows; the rest wait their turn.</span></button></li><li><button type="button" data-i="2"><span class="k">Commit when done</span><span class="t">Each is told to commit when it is done, and its card shows on the board with ⑂ in front.</span></button></li><li><button type="button" data-i="3"><span class="k">Merge, open or discard</span><span class="t"><code>Worktree Runs…</code> lists them with their commits, the lines they changed and anything not committed. Merge brings one onto your branch and cleans up, Open shows it in a new window, Discard deletes it after asking.</span></button></li><li><button type="button" data-i="4"><span class="k">Nothing left behind</span><span class="t">A minute after VS Code opens, and each time the list opens, the repositories are swept: a merged <code>af/</code> branch is removed, and one with work of its own is listed to merge or discard.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.maxConcurrentPerAgent</code></td><td class="v">1</td><td>How many of one agent&#39;s runs go at once; the other worktrees wait.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="worktrees" aria-label="Worktrees, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>V·9</b><span class="fk">Plan first</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Can two agents edit the same files at once?</summary><p>Not by accident. In a mission with a working folder, writers take turns and only read-only steps share a wave. For jobs that should run side by side, each gets its own git worktree and branch.</p></details><details><summary>Can a mission run away with my plan?</summary><p>No. Every mission has five caps, cost, rounds, tasks, minutes and tasks at once, and when one is spent the lead may only finish. Repeating the same work to the same agent is refused.</p></details><details><summary>What if nobody answers an agent&#39;s question?</summary><p>When the countdown ends, the answer the agent recommended goes in, and the agent is told it was the timer. A destructive question and a tool permission are never answered on a clock: they wait in Needs You.</p></details><details><summary>Can agents on different engines work on the same thing?</summary><p>Yes. A mission's team can mix Claude Code, Codex, Gemini CLI, Antigravity and OpenCode, and any agent can read any engine's session in the same words.</p></details><details><summary>Do agents talk to each other?</summary><p>Through notes and tasks on the A2A board, and in an adaptive mission through a conversation in which each turn is shown what the others actually wrote. Nothing reaches you unless it is for you.</p></details><details><summary>What is the difference between Notices, the queue and Needs You?</summary><p>Notices is what agents tell you. The Work Queue is what you give them. Needs You is only what stays stuck until you act: a permission, a question no timer answers, a stalled session.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="dnx" href="../never-forgets/" style="--c:var(--agy)"><span class="k">Next district</span><span class="r">VI</span><span class="n">Never forgets</span><span class="p">Every session is kept, and what matters becomes a wiki.</span></a>
+        <a class="dall" href="../">All 84 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.12.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="../../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../../terms/">Terms</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../refunds/">Refunds</a>
+      <a href="mailto:agentfarm@muvusoft.uk">Contact</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>

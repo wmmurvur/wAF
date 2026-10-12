@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Never forgets · Agent Farm features</title>
+    <meta name="description" content="Every session from every engine kept in one table, any turn opened, replayed or exported, a wiki compiled from the turns you mark and the files you drop, Obsidian as the second brain, one search over everything by words or by meaning, agents' memory files that are measured, linked and kept honest, other machines' sessions, and reports written into your vault.">
+    <link rel="canonical" href="https://agentfarm.space/features/never-forgets/">
+    
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Never forgets · Agent Farm features">
+    <meta property="og:description" content="Every session from every engine kept in one table, any turn opened, replayed or exported, a wiki compiled from the turns you mark and the files you drop, Obsidian as the second brain, one search over everything by words or by meaning, agents' memory files that are measured, linked and kept honest, other machines' sessions, and reports written into your vault.">
+    <meta property="og:url" content="https://agentfarm.space/features/never-forgets/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/never-forgets.js?v=0.12.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.12.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a class="ch" href="../../#ch-relay">Relay</a><a class="ch" href="../../#ch-projects">Projects</a><a class="ch" href="../../#ch-studio">Studio</a><a class="ch" href="../../#ch-memory">Memory</a><a class="ch" href="../../#ch-bridge">Just ask</a><a class="ch" href="../../#ch-privacy">Local</a><a href="../../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:var(--agy)">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>VI Never forgets</span></nav>
+      <header class="dh">
+        <span class="drm" aria-hidden="true">VI</span>
+        <div>
+          <p class="dk"><span>District VI of X</span><span>Nine things</span></p>
+          <h1>Never forgets</h1>
+          <p class="dp">Every session is kept, and what matters becomes a wiki.</p>
+        </div>
+      </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-memory-l.jpg" srcset="../../assets/photos/d-memory-s.jpg 900w, ../../assets/photos/d-memory-l.jpg 1800w" sizes="100vw" alt="A fountain pen writing a line in a notebook" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
+  
+</figure>
+    <div class="wrap">
+      <p class="dpromise">Every conversation on this machine is kept, from every engine, with what it cost, and any turn of it is a click away. What mattered does not stay buried there: you mark it in passing, and later one run writes it into your wiki, one concept to a page, each fact pointing back to the turn it came from. Models get replaced; what they worked out stays.</p>
+      <ul class="dtl">
+        <li><a href="#sessions"><span class="c">VI·1</span><span class="n">Every session kept</span><span class="sg">1,499</span></a></li><li><a href="#turns"><span class="c">VI·2</span><span class="n">Any turn, replayed</span><span class="sg">replay</span></a></li><li><a href="#wiki"><span class="c">VI·3</span><span class="n">Wiki from sessions</span><span class="sg">compile</span></a></li><li><a href="#dropbox"><span class="c">VI·4</span><span class="n">Drop box</span><span class="sg">_RAW_</span></a></li><li><a href="#obsidian"><span class="c">VI·5</span><span class="n">Obsidian, the second brain</span><span class="sg">vault</span></a></li><li><a href="#search"><span class="c">VI·6</span><span class="n">Search everything</span><span class="sg">all engines</span></a></li><li><a href="#recall"><span class="c">VI·7</span><span class="n">Memory that gets used</span><span class="sg">recalled ×5</span></a></li><li><a href="#machines"><span class="c">VI·8</span><span class="n">Other machines</span><span class="sg">⇄ badge</span></a></li><li><a href="#reports"><span class="c">VI·9</span><span class="n">Reports and digests</span><span class="sg">weekly</span></a></li>
+      </ul>
+    </div>
+    <section id="s-memory" class="gap" aria-label="Never forgets: every session kept, and a wiki written from them">
+  <div class="wrap">
+    <p class="sx"><b>11</b> Memory</p>
+    <div class="sh">
+      <div><p class="pre">Sessions · wiki · Obsidian · memory</p><h2>Every session kept. <em>What mattered becomes a wiki.</em></h2></div>
+      <p class="lead">Every conversation on this machine is kept, from every engine, with what it cost. Mark the turn that mattered; nothing is written yet. Later one run reads the marked turns and writes wiki pages into your Obsidian vault, one concept to a page, each with its sources.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mpanel" id="me-panel" data-shows="sessions turns wiki dropbox search recall" aria-label="Agent Farm's Sessions, Search, Wiki and Memory Graph pages, rebuilt with demo data">
+        <div class="mtabs" id="me-tabs" role="tablist" aria-label="Pages">
+          <button type="button" role="tab" data-tab="sessions" aria-selected="true" class="on">Agent Farm — Sessions</button><button type="button" role="tab" data-tab="session" aria-selected="false" class>Session #7c41e2a0</button><button type="button" role="tab" data-tab="search" aria-selected="false" class>Search</button><button type="button" role="tab" data-tab="wiki" aria-selected="false" class>Wiki</button><button type="button" role="tab" data-tab="graph" aria-selected="false" class>Memory Graph</button>
+        </div>
+        <div class="mbody" id="me-view" aria-live="polite"></div>
+        <div class="keep" id="me-keep" hidden></div>
+      </div>
+      <div class="vault" id="me-vault" data-shows="obsidian reports" aria-label="The vault in Obsidian, with demo pages">
+        <div class="vhd">
+          <span class="vt">Vault · <b>Obsidian</b></span>
+          <span class="vseg" role="radiogroup" aria-label="Page or graph"><button type="button" role="radio" data-v="page" class="on" aria-checked="true">Page</button><button type="button" role="radio" data-v="graph" aria-checked="false">Graph</button></span>
+        </div>
+        <div class="vbody">
+          <nav class="tree" id="me-tree" aria-label="Vault files"></nav>
+          <div class="vmain">
+            <p class="crumb" id="me-crumb"></p>
+            <article class="note" id="me-note"></article>
+            <div class="gview" id="me-graph" hidden></div>
+          </div>
+        </div>
+        <p class="vcap" id="me-cap">You curate, agents write. Pages are plain Markdown in your own vault; the links between them are what Obsidian draws as a graph.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="sessions" data-f="sessions">
+          <div class="fth">
+            <span class="c">VI·1</span>
+            <h2>Every session kept</h2>
+            <p class="s">Yours and the farm&#39;s own runs, from every engine, with cost, tokens, context and the chain leg.</p>
+            <a class="see" href="#me-panel">The Sessions page, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Each CLI keeps its conversations in its own folder, in its own format. A week later nobody can say which session decided what, which one is still running, or what any of them cost.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Every engine</span><span class="t">Claude Code, Codex, Gemini CLI, Antigravity and OpenCode conversations are rows of the same table, each with its engine badge, read from where each CLI already writes them.</span></button></li><li><button type="button" data-i="1"><span class="k">Yours or the farm&#39;s</span><span class="t">A By column tells a session you started, 🧑, from one the farm ran, 🤖: a schedule, a trigger, a task, a mission. It is read from the transcript itself, never guessed, and the table opens on yours.</span></button></li><li><button type="button" data-i="2"><span class="k">Sorted by what matters</span><span class="t">Sort by recent, cost, tokens, context now, duration or turns, and the rows are that order's real top, not a re-slice. A green dot marks the ones running now, and ▸ unfolds a session's turns with each one's tokens and cost.</span></button></li><li><button type="button" data-i="3"><span class="k">Found again</span><span class="t">Filters take a title, an agent, errors, date ranges and ranges of any figure. A session id, or the 8 characters printed everywhere in the farm, finds that session on any engine.</span></button></li><li><button type="button" data-i="4"><span class="k">Kept your way</span><span class="t">Rename one without touching its transcript, pin it to your shelf, label it, file it to a project, resume it in the terminal or the Console on the engine it ran on. Select several and the same right-click acts on all of them.</span></button></li></ol>
+            <p class="note">A session's subagents are gathered under it, with what they cost together on the parent's row. A live feed shows the farm's newest prompts, tool calls and errors as they happen, and a click opens the session at that message.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.includeUnmatchedProjects</code></td><td class="v">false</td><td>Also list sessions outside your agents&#39; folders, under Other projects.</td></tr><tr><td><code>agentFarm.activeThresholdSeconds</code></td><td class="v">150</td><td>A session whose log changed within this many seconds counts as active.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="sessions" aria-label="Every session kept, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·1</b><span class="fk">Every engine</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="turns" data-f="turns">
+          <div class="fth">
+            <span class="c">VI·2</span>
+            <h2>Any turn, replayed</h2>
+            <p class="s">Open a session, filter its turns, replay it or export it as Markdown.</p>
+            <a class="see" href="#me-panel">A session, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A long session is a wall of text. The decision you are after is in one turn of forty, between screens of tool output nobody needs.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A map of turns</span><span class="t">A session opens folded, as its list of turns. Each band says Turn 3/12, the first sentence of what was asked, its tokens, cost and model, and gives the day it started when you point at it; ↑ and ↓ jump from turn to turn.</span></button></li><li><button type="button" data-i="1"><span class="k">Only what you want</span><span class="t">Show picks what you see: All, Dialog, you, the agent, tool calls, results or errors. Dialog is where it opens, and a failed tool result comes with a red edge, already open.</span></button></li><li><button type="button" data-i="2"><span class="k">Replay it</span><span class="t">▶ Replay plays the session step by step at its real pace, gaps capped at 5 seconds, at 1× to 8×, with jumps to the next error or the next prompt and one step back or forward.</span></button></li><li><button type="button" data-i="3"><span class="k">Export what you see</span><span class="t">⬇ Export MD asks first: the current view, with your filters, folds and ticked turns, or everything. The file names the session and the moment, and opens with its id, duration and totals.</span></button></li><li><button type="button" data-i="4"><span class="k">Every turn, farm-wide</span><span class="t">The Turns page lays out every turn of every session in the farm, one row each, sortable by cost, tokens, duration, tools or errors. A row opens its session at that turn.</span></button></li></ol>
+            <p class="note">A session also opens with the files it changed: each one's writes, lines added and removed and the turns that touched it, unfolding to that session's own edits. vs HEAD beside it shows what is still uncommitted in the file now, and an edit that failed is marked as never applied.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.maxTranscriptMessages</code></td><td class="v">1500</td><td>The newest messages shown for a very long session.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="turns" aria-label="Any turn, replayed, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·2</b><span class="fk">A map of turns</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="wiki" data-f="wiki">
+          <div class="fth">
+            <span class="c">VI·3</span>
+            <h2>Wiki from sessions</h2>
+            <p class="s">Mark a whole session or only the answers that matter. An agent compiles them into wiki pages, one concept per page.</p>
+            <a class="see" href="#me-panel">A turn kept and compiled, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Decisions get made in the middle of conversations and are never written up. Stopping to ask where a thought belongs in a wiki is exactly what makes sure it is never written down.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Mark it, free</span><span class="t">Marking is free, can be undone and writes nothing: 🔖 on a turn, or Add to Wiki Candidates… on a session, files it under one or more topics. Marking the same turn twice merges into one mark.</span></button></li><li><button type="button" data-i="1"><span class="k">Only the turns</span><span class="t">You mark only the turns that matter, 4 or 3-7 or the whole session, so greetings and commits stay out.</span></button></li><li><button type="button" data-i="2"><span class="k">One run compiles</span><span class="t">Compile Selected or Compile All Pending starts one run on your wiki agent, after a strip shows its engine, model and effort. The agent reads the marked turns, the wiki's own rules, its index and the pages already there.</span></button></li><li><button type="button" data-i="3"><span class="k">One concept a page</span><span class="t">It updates a page or opens a new one, one concept to a page, every fact footnoted to its transcript and turn. A newer decision does not erase the old one: it is written beside it, with a date.</span></button></li><li><button type="button" data-i="4"><span class="k">Nothing locked</span><span class="t">A run that crashes or runs out of quota locks nothing: its marks go back to waiting. 🩺 Lint lists orphan pages, broken links and pages missing from the index, and repairs nothing by itself.</span></button></li></ol>
+            <p class="note">The Wiki page shows what is waiting, what it is about and which pages a compile wrote, searchable with the farm's query grammar. A mark only reads compiled once the run itself says it wrote the page.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.wikiAgent</code></td><td class="v">developer</td><td>The agent that compiles the wiki.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="wiki" aria-label="Wiki from sessions, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·3</b><span class="fk">Mark it, free</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="dropbox" data-f="dropbox">
+          <div class="fth">
+            <span class="c">VI·4</span>
+            <h2>Drop box</h2>
+            <p class="s">Save a chat from any browser into the drop folder and it becomes wiki material by itself.</p>
+            <a class="see" href="#me-panel">The drop box in the Wiki page, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Much of what you learn never happens in a CLI: an answer in a browser chat, an export from another assistant, a note you typed yourself.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Drop a file</span><span class="t">Save it into the wiki's <code>_RAW_</code> folder. No command, no conversion and no naming rule.</span></button></li><li><button type="button" data-i="1"><span class="k">It is a candidate</span><span class="t">The pool notices it the next time it is looked at, and it becomes a candidate under its own file name with a RAW badge, beside the marked turns.</span></button></li><li><button type="button" data-i="2"><span class="k">Compiled with the rest</span><span class="t">A compile reads it with the rest, and the page cites it as an outside source, with the date.</span></button></li><li><button type="button" data-i="3"><span class="k">Filed as done</span><span class="t">The agent moves it into <code>_RAW_/_DONE_</code> in the same breath as it reports the page, so the drop box stays a to-do list rather than a pile.</span></button></li><li><button type="button" data-i="4"><span class="k">Nothing lost</span><span class="t">A file you took out of the queue is never brought back by the next scan, and one that disappears only takes its row with it if nobody had touched it. A missing drop box is made again.</span></button></li></ol>
+            <p class="note">The Wiki page's strip shows 📥 _RAW_ with how many files wait in it, and pressing it opens the folder.</p>
+            
+          </div>
+          <figure class="fig" data-fig="dropbox" aria-label="Drop box, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·4</b><span class="fk">Drop a file</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="obsidian" data-f="obsidian">
+          <div class="fth">
+            <span class="c">VI·5</span>
+            <h2>Obsidian, the second brain</h2>
+            <p class="s">Obsidian is the IDE, the model is the programmer, the wiki is the codebase. You curate, agents write.</p>
+            <a class="see" href="#me-vault">The vault, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Your notes live in one app and your agents&#39; notes in hidden folders, and the two drift apart. Every change to how things are organised leaves a trail of documents that are no longer true.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">You curate, agents write</span><span class="t">Obsidian is the IDE, the model is the programmer, the wiki is the codebase. You never write the wiki: agents do, and you read, link and correct it in Obsidian.</span></button></li><li><button type="button" data-i="1"><span class="k">Facts in the vault</span><span class="t">Facts live in the vault: plans, backlogs, decisions, your preferences. Methods live with the agents, in their CLAUDE.md and reference files. An agent points to where a fact lives instead of copying it into its own memory.</span></button></li><li><button type="button" data-i="2"><span class="k">Both sides, no rot</span><span class="t">Your side and the agents' side live next to each other. A rule you set is applied to both without asking, and every change of structure updates your documents as well, so nothing goes stale.</span></button></li><li><button type="button" data-i="3"><span class="k">Plain Markdown</span><span class="t">Everything stays Markdown Obsidian understands: ticking a plan item changes one character of the file, the Tasks plugin's icons are left intact, and a write is refused if Obsidian saved the file in between.</span></button></li><li><button type="button" data-i="4"><span class="k">Paths that travel</span><span class="t">Folder settings can say <code>${vault}</code>, <code>${home}</code> or <code>${today}</code>, and a variable with nothing behind it cancels the path rather than guessing one. Pages open in the editor, its preview, Obsidian or an app of your choice.</span></button></li></ol>
+            <p class="note">Settings checks the wiki's three files, its rules, its index and its log, and offers 🛠 Start the wiki here when they are missing. Until they exist, the compile buttons say why they will not run.</p>
+            
+          </div>
+          <figure class="fig" data-fig="obsidian" aria-label="Obsidian, the second brain, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·5</b><span class="fk">You curate, agents write</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="search" data-f="search">
+          <div class="fth">
+            <span class="c">VI·6</span>
+            <h2>Search everything</h2>
+            <p class="s">Search every transcript of every engine, by its words or by what it meant, and land on the exact message.</p>
+            <a class="see" href="#me-panel">Search, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>&quot;Which session did we decide that in?&quot; With hundreds of sessions on five engines, scrolling is not an answer.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Every engine</span><span class="t">Search reads Claude Code, Codex, Gemini and Antigravity transcripts with the parser the session view uses, and each result carries its engine. You choose what to look in: you, the agent, one agent's brief to another, tools, results, and the agents' memory notes.</span></button></li><li><button type="button" data-i="1"><span class="k">One grammar</span><span class="t">One grammar works in every search box of the extension: <code>foo bar</code> for both, <code>OR</code>, <code>-foo</code> to leave out, parentheses, <code>"an exact phrase"</code>, <code>refact*</code>, whole words or regex. A half-typed query is not an error.</span></button></li><li><button type="button" data-i="2"><span class="k">The exact message</span><span class="t">Results come grouped by session under the turn they were in, and a click opens the session at that very message. The page says how many matched and how many it showed, so a preview limit never passes for the whole answer.</span></button></li><li><button type="button" data-i="3"><span class="k">By meaning</span><span class="t">Meaning finds passages by what they were about, through Gemini or any OpenAI-compatible endpoint, Ollama included, which keeps it on your machine. It covers Claude Code conversations and says how many others are outside it, and it runs only when you press Search, since a query may be a paid call.</span></button></li><li><button type="button" data-i="4"><span class="k">I know the id</span><span class="t">Paste a session id, or its first 8 characters, and Find session ID opens it on whichever engine it ran.</span></button></li></ol>
+            <p class="note">A fleet-wide search answers in milliseconds from a cache of the conversations' text, built the first time you search. It is a cache, never your transcripts: losing it costs a rebuild and nothing else.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.embeddingsProvider</code></td><td class="v">off</td><td>Meaning search: gemini, or openai for any compatible endpoint, Ollama included.</td></tr><tr><td><code>agentFarm.semanticMaxSessions</code></td><td class="v">300</td><td>How many recent sessions the meaning index covers.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="search" aria-label="Search everything, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·6</b><span class="fk">Every engine</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="recall" data-f="recall">
+          <div class="fth">
+            <span class="c">VI·7</span>
+            <h2>Memory that gets used</h2>
+            <p class="s">Each agent&#39;s memory files say which were really recalled in 30 days, which the index lost and which contradict each other, and a graph shows how they link up.</p>
+            <a class="see" href="#me-panel">The Memory Graph, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Agents keep memory files, and an index of them loads into every session. Nobody knows which files are ever read, which ones the index has lost, or which say the opposite of another.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">What it recalled</span><span class="t">Each agent's memory reads like <em>12 files · ~6k tok · 7 recalled (30d)</em>, and each file says <em>recalled ×5, last 2h</em> or <em>not recalled</em>. Recalled means the agent opened it with a tool, counted from its own sessions.</span></button></li><li><button type="button" data-i="1"><span class="k">Born in the index</span><span class="t">A new memory file and its line in the index are written together, from the page or by the agent over the bridge, so none is born lost. A file the index does not name is marked ⚠ orphan, and Fix Memory Index adds or drops lines, with a backup.</span></button></li><li><button type="button" data-i="2"><span class="k">Contradictions</span><span class="t">Scan Memory Contradictions has a cheap model read the files against each other and list the claims that disagree: which two files, which two sentences. The findings are advice, not edits.</span></button></li><li><button type="button" data-i="3"><span class="k">Distilled, with a diff</span><span class="t">A bloated or stale file can be distilled: a draft merges the repeats, marks contradictions and sets old lines aside, you read it as a diff, and Apply writes it with a backup.</span></button></li><li><button type="button" data-i="4"><span class="k">A graph of it</span><span class="t">The Memory Graph draws the links between records: recalled ones green, ones missing from the index ringed, plus broken links, islands and hubs. Copies that drifted apart across agents can be compared, synced or merged, and Ask Fleet Memory searches every agent's memory by meaning.</span></button></li></ol>
+            <p class="note">CLAUDE.md, the memory index and AGENTS.md load at the start of every session and are paid for every time, so an agent whose fixed load passes its budget gets a warning.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.staleMemoryDays</code></td><td class="v">45</td><td>A memory file untouched this long is flagged as stale.</td></tr><tr><td><code>agentFarm.contextBudgetTokens</code></td><td class="v">8000</td><td>The weight of what loads into every session before a warning.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="recall" aria-label="Memory that gets used, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·7</b><span class="fk">What it recalled</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="machines" data-f="machines">
+          <div class="fth">
+            <span class="c">VI·8</span>
+            <h2>Other machines</h2>
+            <p class="s">Sessions synced from your other computers show up in the same lists, with a machine badge on each.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Agents on a laptop and a desktop are two farms. The history and the cost of one never show up on the other.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Mirror it</span><span class="t">Mirror the other machine's <code>.claude</code> folder onto this one with any sync tool: Syncthing, OneDrive, a copy over SSH.</span></button></li><li><button type="button" data-i="1"><span class="k">Name it</span><span class="t">Name it in one setting, such as <code>{ "name": "laptop", "dir": "D:/sync/laptop/.claude" }</code>.</span></button></li><li><button type="button" data-i="2"><span class="k">The ⇄ badge</span><span class="t">Its sessions join the same tables with a ⇄ laptop badge, and cost, scorecards and search all cover them.</span></button></li><li><button type="button" data-i="3"><span class="k">Counted right</span><span class="t">Sessions are matched to agents by their working folder, so the same layout on both machines counts each to the right agent; the rest gather under Other projects (laptop).</span></button></li><li><button type="button" data-i="4"><span class="k">Read-only</span><span class="t">Agent Farm writes nothing into the mirrored folder. If its projects folder is missing at startup, it warns you that the sync may have stopped.</span></button></li></ol>
+            
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.extraClaudeDirs</code></td><td class="v">[]</td><td>Other machines&#39; synced .claude folders, each with a name.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="machines" aria-label="Other machines, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·8</b><span class="fk">Mirror it</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="reports" data-f="reports">
+          <div class="fth">
+            <span class="c">VI·9</span>
+            <h2>Reports and digests</h2>
+            <p class="s">Daily and weekly digests and fleet reports, written into your vault.</p>
+            <a class="see" href="#me-vault">A report in the vault, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>The farm works while you are elsewhere. At the end of a week you want one page that says what it did and what it cost, in the place you keep everything else.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A scorecard</span><span class="t">Export Fleet Report writes a Markdown scorecard for 7, 30 or 90 days: totals, every agent side by side with sessions, cost, tokens, tools, error rate, cache efficiency, context load and memory, the models used, the most expensive sessions and the health findings.</span></button></li><li><button type="button" data-i="1"><span class="k">Cache efficiency</span><span class="t">Cache efficiency is the share of prompt tokens read from cache. High means the same context is read cheaply again and again; low points to short sessions that could be one.</span></button></li><li><button type="button" data-i="2"><span class="k">On its own</span><span class="t">Set it to daily or weekly and the report appears by itself, <code>AgentFarm-Report-2026-W28.md</code>, checked every hour while VS Code is open.</span></button></li><li><button type="button" data-i="3"><span class="k">What the jobs made</span><span class="t">What your scheduled jobs and workflows produced in the period is added as its own section, and the Task Outputs Digest gathers it alone for today, 7 or 30 days, failed runs marked ⛔.</span></button></li><li><button type="button" data-i="4"><span class="k">Into your vault</span><span class="t">Both land in the folder you name, usually in your vault, where they are linked and searched like any other page.</span></button></li></ol>
+            <p class="note">The day's scorecard can also reach your phone over Telegram, and each project gets its own weekly summary.</p>
+            <details class="setd">
+                <summary>Settings · 4</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.autoReport</code></td><td class="v">off</td><td>Write the fleet report by itself: daily or weekly.</td></tr><tr><td><code>agentFarm.autoReportFolder</code></td><td class="v"></td><td>The folder the reports are written to, such as one in your vault.</td></tr><tr><td><code>agentFarm.autoReportDays</code></td><td class="v">7</td><td>How many days a report covers.</td></tr><tr><td><code>agentFarm.autoReportIncludeOutputs</code></td><td class="v">true</td><td>Add the task outputs of the period to the report.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="reports" aria-label="Reports and digests, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VI·9</b><span class="fk">A scorecard</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Does Agent Farm copy my conversations somewhere?</summary><p>No. They stay where each CLI writes them. Agent Farm reads them, and keeps an index and a search cache it can rebuild at any time; even renaming a session leaves its transcript untouched.</p></details><details><summary>Do I need Obsidian?</summary><p>The wiki is a folder of Markdown pages, written for Obsidian, where the links and the graph come alive. Pages can just as well open in VS Code or an app of your choice.</p></details><details><summary>Does building the wiki cost money?</summary><p>Marking costs nothing. A compile is one run on your wiki agent, metered like any task, and before it starts a strip shows the engine, model and effort it will use.</p></details><details><summary>Does searching by meaning send my conversations out?</summary><p>It is off until you choose a provider. With a cloud provider the passages go to it to be indexed; with Ollama everything stays on your machine. Text and regex search never leave it.</p></details><details><summary>Can it read every old conversation?</summary><p>Claude Code, Codex, Gemini and OpenCode, yes. Antigravity stored its older conversations in a form with no published schema, so only the ones Agent Farm hosted itself, which it writes out as plain JSON, open in full.</p></details><details><summary>What is the difference between an agent&#39;s memory and the wiki?</summary><p>An agent's memory is its own notes, loaded through its index into every session it starts. The wiki is shared knowledge, compiled from sessions for you and every agent, and it lives in your vault.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="dnx" href="../../#ch-engines" style="--c:#7fa0f8"><span class="k">Next district</span><span class="r">VII</span><span class="n">Any brain</span><span class="p">Five engines, and through routes, almost any model.</span></a>
+        <a class="dall" href="../">All 84 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.12.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="../../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../../terms/">Terms</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../refunds/">Refunds</a>
+      <a href="mailto:agentfarm@muvusoft.uk">Contact</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>
