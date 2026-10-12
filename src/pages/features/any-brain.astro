@@ -1,0 +1,10 @@
+---
+// /features/any-brain/: district VII, Any brain. Its live demo is the landing's own: the Engines page with a test turn
+// and a route added from a template, the Secrets page and the switchboard beside them (Brains). The words are in
+// data/deep/engines.js; the figures beside each feature are drawn by scripts/figs/engines.js.
+import District from '../../components/District.astro';
+import Brains from '../../components/sections/Brains.astro';
+import deep from '../../data/deep/engines.js';
+import '../../styles/pages/figs-engines.css';
+---
+<District d={6} deep={deep} script="any-brain"><Brains /></District>

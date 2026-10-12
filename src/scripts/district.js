@@ -4,7 +4,12 @@
 // moves whatever else must move. The first time a figure is seen it plays its steps by itself, one every few
 // seconds, while it is on screen; a click on a step, or on the arrows under the figure, takes over. With reduced
 // motion it opens on its last step. On a phone the figure stays in the flow above the steps and the arrows step it.
+// A feature's "see it live" link that points into the page tells the live demo there which feature to show, as a
+// chapter tile does on the landing ('feature').
 import './bands.js';
+import { emit } from './state.js';
+
+for (const a of document.querySelectorAll('.ft .see[href^="#"]')) a.addEventListener('click', () => emit('feature', a.closest('.ft').dataset.f));
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 

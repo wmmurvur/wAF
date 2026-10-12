@@ -152,7 +152,7 @@ export default {
       ],
       // Blueprint, Secret Vault: "Farm only (X-409, 3.745.0)" and the health check on plaintext keys
       note: 'A secret can be marked <em>farm only</em>: Agent Farm still uses it, but no agent\'s task receives it. The Gatekeeper key starts that way. And a key found in plain text in a config file is reported, so you can move it to the vault.',
-      see: { href: '../../#br-panel', l: 'Secrets on the home page' },
+      see: { href: '../any-brain/#vault', l: 'The vault, in Any brain' },
     },
 
     browser: {

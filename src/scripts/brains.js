@@ -15,7 +15,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
 const ENGINES = [
   { id: 'claude', l: 'Claude Code', cmd: 'claude', b: 'on a plan', bill: 'A Claude Pro or Max plan, signed in once in the browser. An API key is the alternative, not the normal route.', key: 'Add key' },
   { id: 'codex', l: 'Codex', cmd: 'codex', b: 'on a plan', bill: 'A ChatGPT Plus, Pro, Team or Business plan, signed in once in the browser — exactly like Claude Code. An API key is the alternative.', key: 'Add key' },
-  { id: 'gemini', l: 'Gemini', cmd: 'gemini', b: 'on a key', bill: 'A Google account sign-in or an API key. The CLI states no per-turn price, so a dollar figure beside a Gemini session is derived from your pricing rules, never quoted.', key: 'Replace key' },
+  { id: 'gemini', l: 'Gemini', cmd: 'gemini', b: 'on a key', bill: 'An API key, kept in the vault: the CLI\'s Google-account sign-in was retired in June 2026. The CLI states no per-turn price, so a dollar figure beside a Gemini session is derived from your pricing rules, never quoted.', key: 'Replace key' },
   { id: 'agy', l: 'Antigravity', cmd: 'agy', b: 'on a plan', bill: 'A Google account signed into the Antigravity app — the CLI borrows that sign-in. There is no API key for this engine and nothing to keep in the vault.' },
   { id: 'opencode', l: 'OpenCode', cmd: 'opencode', b: 'no sign-in needed', bill: 'Its own connected provider needs no sign-in at all: free models, zero credentials, real turns. Signing in, or a provider key, adds the paid models beside them.' },
 ];
@@ -135,7 +135,7 @@ function secretsView() {
     <div class="tools"><span class="in">filter secrets…</span><span class="add">+ Add secret</span></div>
     <div class="stb"><div class="th"><span>Name</span><span>Value</span><span>Description</span><span>Used by (scope)</span></div>
     ${SECRETS.map(([n, d, s]) => `<div class="tr"><code>${n}</code><span class="dots">•••••••• <em>edit</em></span><span class="ds">${d || '—'}</span><span class="sc">${s.map(x => `<i class="${x === 'all agents' ? 'all' : x === 'farm only' ? 'fo' : x.startsWith('⚙') ? 'af' : x.startsWith('🔗') ? 'rt' : ''}">${x}</i>`).join('')}</span></div>`).join('')}</div>
-    <p class="foot">A key's value never crosses the bridge either: an agent can ask for the names, never for what is behind them.</p>`;
+    <p class="foot">A key never crosses the bridge either: the vault has no bridge operation, so an agent uses the keys open to its task and can never ask for one.</p>`;
 }
 
 /* ---------- the panel ---------- */

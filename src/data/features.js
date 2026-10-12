@@ -28,7 +28,7 @@ export const Word = n => word(n)[0].toUpperCase() + word(n).slice(1);
 export const LAST = districts[districts.length - 1].r;
 
 /* the districts whose own page is built (plan v0.8 §6); the others' links go to their chapter on the landing until theirs is */
-const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'team', 'memory', 'measure', 'privacy']);
+const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'team', 'memory', 'engines', 'measure', 'privacy']);
 export const hasPage = D => PAGES.has(D.id);
 
 export const features = [
@@ -101,7 +101,10 @@ export const features = [
   { id: 'health', d: 6, n: 'Route health', s: 'What each route offers is checked for free. A real, paid turn is only spent when you press for it.', sig: 'free check', src: 'Engines → Route health (M9)' },
   { id: 'vault', d: 6, n: 'Secret vault', s: 'Keys live in your OS keychain, open only to the agents you choose. A key\'s value never crosses the bridge.', sig: 'keychain', src: 'Secrets page (Mz2); _REF/bridge.md §C' },
   { id: 'accounts', d: 6, n: 'Many sign-ins', s: 'Several sign-ins of Claude Code or Codex side by side, without signing out. An account is a config folder, not a copied credential.', sig: '4 accounts', src: 'Engines → Accounts (Mz3a); engineAccounts.ts' },
-  { id: 'switch', d: 6, n: 'Switch the model', s: 'Change the model, effort or account of a session from the Console, between turns.', sig: 'mid-session', at: 's-console', src: 'Console model and effort pickers (M11)' },
+  { id: 'switch', d: 6, n: 'Switch the model', s: 'Change the model, effort or permissions of a running session from the Console. It takes effect from the next turn, and the conversation stays.', sig: 'mid-session', at: 's-console', src: 'Console model and effort pickers (M11); Blueprint: The model changes mid-conversation; DNA §2.2' },
+  { id: 'doors', d: 6, n: 'Eleven doors', s: 'Start a session from the Console, a row, a right-click, a saved setup, the command palette, the bridge or Telegram: all eleven doors carry the same engine, model, account and permissions.', sig: '11 doors', src: 'owner\'s list §9; DNA §1.2 (11 entry points, reopen parity); Blueprint: Start Session…' },
+  { id: 'sync', d: 6, n: 'One agent, every engine', s: 'An agent\'s rules, duties and MCP servers are written out in the files Codex, Antigravity and OpenCode read, and kept in step in both directions.', sig: 'AGENTS.md', src: 'Blueprint: Antigravity Compatibility (Sync Agent, Sync Constitution, directional sync)' },
+  { id: 'portable', d: 6, n: 'Any machine', s: 'Tasks, missions and their history travel between computers in git: one machine\'s paths are saved as tokens and open on the other machine\'s folders.', sig: '${home}', src: 'Blueprint: Machine-independent stores and paths (2.76.0); DNA §1.3; owner\'s list §21' },
 
   // VIII · Just ask
   { id: 'bridge', d: 7, n: 'Just ask', s: 'Say "make me a weekly video recipe" in a chat. The agent sets it up through the bridge; you never open a form.', sig: 'in chat', at: 's-bridge', src: '_REF/bridge.md' },
