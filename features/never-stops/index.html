@@ -6,6 +6,7 @@
     <title>Never stops · Agent Farm features</title>
     <meta name="description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
     <link rel="canonical" href="https://agentfarm.space/features/never-stops/">
+    
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <meta name="theme-color" content="#090a07">
     <meta property="og:type" content="website">
@@ -13,7 +14,7 @@
     <meta property="og:description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
     <meta property="og:url" content="https://agentfarm.space/features/never-stops/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/never-stops.js?v=0.8.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/never-stops.js?v=0.9.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -21,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.8.0"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.9.0"></head>
   <body>
     
   <div class="wrap">
@@ -32,9 +33,9 @@
     </a>
     
     <nav class="nav" aria-label="Main">
-      <a href="../../features/" aria-current="page">Features</a><a href="../../#ch-relay">Relay</a><a href="../../#ch-projects">Projects</a><a href="../../#ch-studio">Studio</a><a href="../../#ch-memory">Memory</a><a href="../../#ch-bridge">Just ask</a><a href="../../#ch-privacy">Local</a>
+      <a href="../../features/" aria-current="page">Features</a><a class="ch" href="../../#ch-relay">Relay</a><a class="ch" href="../../#ch-projects">Projects</a><a class="ch" href="../../#ch-studio">Studio</a><a class="ch" href="../../#ch-memory">Memory</a><a class="ch" href="../../#ch-bridge">Just ask</a><a class="ch" href="../../#ch-privacy">Local</a><a href="../../pricing/">Pricing</a>
     </nav>
-    <a class="cta" href="../../#s-close">Join early access</a>
+    <a class="cta" href="../../pricing/#early">Join early access</a>
   </header>
 </div>
   <main class="dpage" style="--c:var(--yellow)">
@@ -50,7 +51,7 @@
       </header>
     </div>
     <figure class="band plain" data-band>
-  <div class="ph"><img src="../../assets/photos/d-relay-l.jpg" srcset="../../assets/photos/d-relay-s.jpg 900w, ../../assets/photos/d-relay-l.jpg 1800w" sizes="100vw" alt="Snowy mountains under a night sky full of stars" loading="lazy" decoding="async" style="object-position:50% 60%"></div>
+  <div class="ph"><img src="../../assets/photos/d-relay-l.jpg" srcset="../../assets/photos/d-relay-s.jpg 900w, ../../assets/photos/d-relay-l.jpg 1800w" sizes="100vw" alt="An empty desk at dusk, a lamp still on beside a laptop and a phone" loading="lazy" decoding="async" style="object-position:50% 55%"></div>
   
 </figure>
     <div class="wrap">
@@ -282,11 +283,15 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.8.0 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.9.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
+      <a href="../../pricing/">Pricing</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
-      <span>Photos from Unsplash</span>
+      <a href="../../terms/">Terms</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../refunds/">Refunds</a>
+      <span>Photos: Unsplash, Pexels</span>
       <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
     </nav>
   </footer>

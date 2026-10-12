@@ -6,6 +6,7 @@
     <title>Agent Farm · Mission control for AI agents in VS Code</title>
     <meta name="description" content="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us.">
     <link rel="canonical" href="https://agentfarm.space/">
+    
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="theme-color" content="#090a07">
     <meta property="og:type" content="website">
@@ -13,7 +14,7 @@
     <meta property="og:description" content="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.8.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.9.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -21,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.8.0"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.9.0"></head>
   <body>
     
   <div class="wrap">
@@ -32,9 +33,9 @@
     </a>
     <span class="verchip" title="The version running in the demo below"><i></i><span id="af-ver">3.931.0</span></span>
     <nav class="nav" aria-label="Main">
-      <a href="features/">Features</a><a href="#ch-relay">Relay</a><a href="#ch-projects">Projects</a><a href="#ch-studio">Studio</a><a href="#ch-memory">Memory</a><a href="#ch-bridge">Just ask</a><a href="#ch-privacy">Local</a>
+      <a href="features/">Features</a><a class="ch" href="#ch-relay">Relay</a><a class="ch" href="#ch-projects">Projects</a><a class="ch" href="#ch-studio">Studio</a><a class="ch" href="#ch-memory">Memory</a><a class="ch" href="#ch-bridge">Just ask</a><a class="ch" href="#ch-privacy">Local</a><a href="pricing/">Pricing</a>
     </nav>
-    <a class="cta" href="#s-close">Join early access</a>
+    <a class="cta" href="pricing/#early">Join early access</a>
   </header>
 </div>
   <nav class="snav" id="snav" aria-label="Sections and chapters">
@@ -60,7 +61,7 @@
           <p class="pre">Mission control for AI agents · VS Code</p>
           <h1>Your agents forget. <em>Your fleet doesn't.</em></h1>
           <p class="lede">At <b>40% context</b> a session stops, commits, writes a handover note and passes the baton. A fresh session reads the note and carries on: <b>item after item off your backlog, day and night</b>, never from a rotting context. Code, a video series or a thesis: it all runs the same way.</p>
-          <div class="ctas"><a class="cta" href="#s-close">Join early access</a><a class="ghost" href="#s-days">Watch one chain run day and night</a></div>
+          <div class="ctas"><a class="cta" href="pricing/#early">Join early access</a><a class="ghost" href="#s-days">Watch one chain run day and night</a></div>
         </div>
       </div>
       <div class="railhd"><span><b>⑂ relay track</b> · every card is one fresh session</span><span>commit · account · length · context at handover</span></div>
@@ -1165,6 +1166,7 @@
       <div><p class="pre">Agent Farm for VS Code</p><h2>Fill the backlog. <em>The fleet works it off, day and night.</em></h2><p>Claude Code · Codex · Gemini · Antigravity · OpenCode · runs on your machine</p></div>
       <div class="go">
         <a class="cta" href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">Get Agent Farm</a>
+        <a class="ghost" href="pricing/">Free to start · see the plans</a>
         <span class="still"><i></i>The chain on this page is at <b id="x-leg">⑂ 92</b> and still running</span>
       </div>
     </div>
@@ -1173,11 +1175,15 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.8.0 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.9.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
+      <a href="pricing/">Pricing</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
-      <span>Photos from Unsplash</span>
+      <a href="terms/">Terms</a>
+      <a href="privacy/">Privacy</a>
+      <a href="refunds/">Refunds</a>
+      <span>Photos: Unsplash, Pexels</span>
       <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
     </nav>
   </footer>

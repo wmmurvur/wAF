@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Pricing · Agent Farm</title>
+    <meta name="description" content="Agent Farm plans: Free, and Pro at $19, Fleet at $34, Farm at $49 a month. Every plan has every feature; a plan changes how far each one goes. Your engines run on your own plans and keys.">
+    <link rel="canonical" href="https://agentfarm.space/pricing/">
+    
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pricing · Agent Farm">
+    <meta property="og:description" content="Agent Farm plans: Free, and Pro at $19, Fleet at $34, Farm at $49 a month. Every plan has every feature; a plan changes how far each one goes. Your engines run on your own plans and keys.">
+    <meta property="og:url" content="https://agentfarm.space/pricing/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../assets/pricing.js?v=0.9.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.9.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../features/">Features</a><a class="ch" href="../#ch-relay">Relay</a><a class="ch" href="../#ch-projects">Projects</a><a class="ch" href="../#ch-studio">Studio</a><a class="ch" href="../#ch-memory">Memory</a><a class="ch" href="../#ch-bridge">Just ask</a><a class="ch" href="../#ch-privacy">Local</a><a href="../pricing/" aria-current="page">Pricing</a>
+    </nav>
+    <a class="cta" href="#early">Join early access</a>
+  </header>
+</div>
+  <main class="prc" data-ym="10">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>Pricing</span></nav>
+      <div class="phero">
+        <h1>Pay for the farm.<br><em>Bring your own brains.</em></h1>
+        <p class="lead">Every plan has every feature, on all five engines, with your own plans and keys. A plan only changes how far each feature goes: how long a chain runs, how many sessions at once, how many sign-ins it can move between.</p>
+      </div>
+      <p class="beta"><b>Beta</b> The Free plan is open now. Paid plans open later: reserve one below and we write to you once, when they do. Prices and limits may still change.</p>
+      <div class="per" role="group" aria-label="Billing period">
+        <button type="button" data-per="m" class="on" aria-pressed="true">Monthly</button>
+        <button type="button" data-per="y" aria-pressed="false">Yearly <span>two months free</span></button>
+      </div>
+      <div class="plans">
+        <article class="plan" id="plan-free">
+            
+            <h2>Free</h2>
+            <p class="k">Every part of the farm, to try on real work.</p>
+            <p class="price">
+              <b>$0</b><span>forever</span>
+            </p>
+            
+            <p class="who">One night of it, to see what it does.</p>
+            <ul>
+              <li><span>Relay legs per chain</span><b>3</b></li><li><span>Sessions running at once</span><b>3</b></li><li><span>Sign-ins in the pool</span><b>2</b></li><li><span>Projects with their own memory</span><b>3</b></li><li><span>Phone app and Telegram</span><b>Watch, 20 answers a day</b></li>
+              <li class="all"><span>All 82 features</span><b>✓</b></li>
+            </ul>
+            <a class="cta" href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">Get Agent Farm</a>
+          </article><article class="plan" id="plan-pro">
+            
+            <h2>Pro</h2>
+            <p class="k">One person&#39;s work, carried on through the night.</p>
+            <p class="price">
+              <b data-m="$19" data-y="$190">$19</b><span data-m="a month" data-y="a year">a month</span>
+            </p>
+            <p class="alt" data-m="or $190 a year" data-y="$15.83 a month, billed yearly">or $190 a year</p>
+            <p class="who">Solo makers: code, video, writing, research.</p>
+            <ul>
+              <li><span>Relay legs per chain</span><b>15</b></li><li><span>Sessions running at once</span><b>6</b></li><li><span>Sign-ins in the pool</span><b>4</b></li><li><span>Projects with their own memory</span><b>15</b></li><li><span>Phone app and Telegram</span><b>Full control</b></li>
+              <li class="all"><span>All 82 features</span><b>✓</b></li>
+            </ul>
+            <a class="ghost" href="#early" data-plan="pro">Reserve Pro</a>
+          </article><article class="plan pick" id="plan-fleet">
+            <p class="flag">Our pick</p>
+            <h2>Fleet</h2>
+            <p class="k">Many projects and sign-ins, side by side.</p>
+            <p class="price">
+              <b data-m="$34" data-y="$340">$34</b><span data-m="a month" data-y="a year">a month</span>
+            </p>
+            <p class="alt" data-m="or $340 a year" data-y="$28.33 a month, billed yearly">or $340 a year</p>
+            <p class="who">People who run several projects, or a small studio.</p>
+            <ul>
+              <li><span>Relay legs per chain</span><b>50</b></li><li><span>Sessions running at once</span><b>12</b></li><li><span>Sign-ins in the pool</span><b>10</b></li><li><span>Projects with their own memory</span><b>50</b></li><li><span>Phone app and Telegram</span><b>Full control</b></li>
+              <li class="all"><span>All 82 features</span><b>✓</b></li>
+            </ul>
+            <a class="cta" href="#early" data-plan="fleet">Reserve Fleet</a>
+          </article><article class="plan" id="plan-farm">
+            
+            <h2>Farm</h2>
+            <p class="k">No ceilings anywhere.</p>
+            <p class="price">
+              <b data-m="$49" data-y="$490">$49</b><span data-m="a month" data-y="a year">a month</span>
+            </p>
+            <p class="alt" data-m="or $490 a year" data-y="$40.83 a month, billed yearly">or $490 a year</p>
+            <p class="who">Whole days and nights of work on every engine you have.</p>
+            <ul>
+              <li><span>Relay legs per chain</span><b>Unlimited</b></li><li><span>Sessions running at once</span><b>Unlimited</b></li><li><span>Sign-ins in the pool</span><b>Unlimited</b></li><li><span>Projects with their own memory</span><b>Unlimited</b></li><li><span>Phone app and Telegram</span><b>Full control</b></li>
+              <li class="all"><span>All 82 features</span><b>✓</b></li>
+            </ul>
+            <a class="ghost" href="#early" data-plan="farm">Reserve Farm</a>
+          </article>
+      </div>
+      <p class="tax">Prices in US dollars. VAT or sales tax is added at checkout where it applies.</p>
+    </div>
+
+    <section class="kinds" aria-labelledby="who-h">
+      <div class="wrap">
+        <p class="pre">One farm, any kind of work</p>
+        <h2 id="who-h">Not only code.</h2>
+        <div class="wtiles">
+          <figure>
+              <img src="../assets/photos/w-code-l.jpg" srcset="../assets/photos/w-code-s.jpg 500w, ../assets/photos/w-code-l.jpg 1000w" sizes="(max-width: 860px) 50vw, 20vw" alt="A developer with headphones at a terminal in a dim room" loading="lazy" decoding="async" style="object-position:50% 40%">
+              <figcaption><b>Code</b>Fixes, tests and refactors carried on leg after leg while you sleep.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/w-video-l.jpg" srcset="../assets/photos/w-video-s.jpg 500w, ../assets/photos/w-video-l.jpg 1000w" sizes="(max-width: 860px) 50vw, 20vw" alt="A video editor at a desk under a wall of pinned frames" loading="lazy" decoding="async" style="object-position:50% 60%">
+              <figcaption><b>Video</b>A production team of agents, from the idea to a sequence you finish in Premiere.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/w-audio-l.jpg" srcset="../assets/photos/w-audio-s.jpg 600w, ../assets/photos/w-audio-l.jpg 1200w" sizes="(max-width: 860px) 50vw, 20vw" alt="A podcaster with headphones speaking into a microphone" loading="lazy" decoding="async" style="object-position:62% 40%">
+              <figcaption><b>Podcasts and channels</b>Long videos cut to shorts, a weekly channel rhythm, a media inbox that files itself.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/w-writing-l.jpg" srcset="../assets/photos/w-writing-s.jpg 600w, ../assets/photos/w-writing-l.jpg 1200w" sizes="(max-width: 860px) 50vw, 20vw" alt="Hands typing on a laptop at a wooden table beside a mug of coffee" loading="lazy" decoding="async" style="object-position:58% 50%">
+              <figcaption><b>Writing and research</b>A thesis, a book or a report as a backlog the agents work through, chapter by chapter.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/w-team-l.jpg" srcset="../assets/photos/w-team-s.jpg 600w, ../assets/photos/w-team-l.jpg 1200w" sizes="(max-width: 860px) 50vw, 20vw" alt="A small team working on laptops around a wooden table" loading="lazy" decoding="async" style="object-position:50% 45%">
+              <figcaption><b>Small teams</b>A lead plans, a team on different engines does the work, and one word from you changes its course.</figcaption>
+            </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap lim" aria-labelledby="lim-h">
+      <div class="sh"><h2 id="lim-h">What changes <em>between plans</em></h2><p class="lead">Only these. Everything else is the same on every plan.</p></div>
+      <div class="tbl" role="region" aria-labelledby="lim-h" tabindex="0">
+        <table>
+          <thead><tr><th scope="col"><span class="vh">Limit</span></th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col" class="pick">Fleet</th><th scope="col">Farm</th></tr></thead>
+          <tbody>
+            <tr>
+                <th scope="row">Relay legs per chain<small>A chain that reaches its ceiling parks with its handover note; you can carry it on yourself.</small></th>
+                <td>3</td><td>15</td><td class="pick">50</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Sessions running at once</th>
+                <td>3</td><td>6</td><td class="pick">12</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Sign-ins in the pool<small>Your own plans and keys on any engine, used as each provider&#39;s terms allow; the relay and the night shift move between them.</small></th>
+                <td>2</td><td>4</td><td class="pick">10</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Projects with their own memory</th>
+                <td>3</td><td>15</td><td class="pick">50</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Saved workflows and recipes</th>
+                <td>3</td><td>15</td><td class="pick">50</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Schedules and watch triggers</th>
+                <td>3</td><td>15</td><td class="pick">50</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Night shifts (Sentry)</th>
+                <td>1, three rounds</td><td>1</td><td class="pick">3 at once</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Missions running at once</th>
+                <td>1</td><td>2</td><td class="pick">5</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Studio productions</th>
+                <td>1</td><td>5</td><td class="pick">20</td><td>Unlimited</td>
+              </tr><tr>
+                <th scope="row">Phone app and Telegram</th>
+                <td>Watch, 20 answers a day</td><td>Full control</td><td class="pick">Full control</td><td>Full control</td>
+              </tr><tr>
+                <th scope="row">Search history</th>
+                <td>30 days</td><td>1 year</td><td class="pick">Everything</td><td>Everything</td>
+              </tr><tr>
+                <th scope="row">Machines per licence</th>
+                <td>No licence needed</td><td>2</td><td class="pick">3</td><td>5</td>
+              </tr><tr>
+                <th scope="row">Help</th>
+                <td>Community</td><td>Email</td><td class="pick">Priority email</td><td>Priority email, and a say in what comes next</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap every" aria-labelledby="every-h">
+      <div class="sh"><h2 id="every-h">Every plan has <em>all 82</em></h2><p class="lead">Each feature in its district, and how far it goes on each plan. Open a district to see them.</p></div>
+      <div class="plabels" aria-hidden="true"><span></span><span>Free</span><span>Pro</span><span class="pick">Fleet</span><span>Farm</span></div>
+      <details class="dist" style="--c:var(--yellow)" open>
+          <summary><span class="r">I</span><span class="n">Never stops</span><span class="c">7 features</span></summary>
+          <table>
+            <caption class="vh">Never stops: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../features/never-stops/#relay">Baton relay</a><small>At the context level you set (40% by default), a session commits, writes a handover note and a fresh session carries on. No context rot.</small></th>
+                  <td><span class="lv">3</span></td><td><span class="lv">15</span></td><td class="pick"><span class="lv">50</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/never-stops/#quota">Quota handover</a><small>Before the 5-hour window fills, the next leg opens on the account with the most room.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/never-stops/#policies">Account policies</a><small>Four built-in rules (@emptiest, @pool, @standing, @round-robin) or your own. A rule that can pick no account refuses the launch and says why.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/never-stops/#park">Park and wake</a><small>One account or ten, when all of them are full the chain waits for the first reset and carries on by itself.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/never-stops/#ouroboros">Ouroboros</a><small>An agent builds a new Agent Farm, restarts it inside VS Code and carries on in the same session. Nobody has to restart anything.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/never-stops/#sentry">Sentry</a><small>An agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next.</small></th>
+                  <td><span class="lv">1, three rounds</span></td><td><span class="lv">1</span></td><td class="pick"><span class="lv">3 at once</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/never-stops/#brakes">Brakes</a><small>A leg ceiling per chain, spend caps per workflow and one stop for a whole chain. Recorded, never deleted.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:var(--teal)">
+          <summary><span class="r">II</span><span class="n">Any project</span><span class="c">7 features</span></summary>
+          <table>
+            <caption class="vh">Any project: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-projects">Any kind of project</a><small>Software, a documentary series, a thesis, homework, an ad campaign. Same backlog, different work.</small></th>
+                  <td><span class="lv">3</span></td><td><span class="lv">15</span></td><td class="pick"><span class="lv">50</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-projects">Backlog</a><small>Write a thought down in one line. The fleet works the list off in the order you set.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-projects">Track</a><small>How every closed item was closed: which session, which turn, what was tried first. The log can be rebuilt from the sessions.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-projects">Project context</a><small>Every session starts with the project&#39;s charter, plan, backlog and worklog, so no agent starts cold.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-projects">Handover letter</a><small>Passing a project on? An automatic brief says what is still open and why.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-projects">Portfolio</a><small>Every project&#39;s phase and backlog on one screen.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-projects">Cost and analysis</a><small>Weeks, rhythm, how long an item takes from open to closed, and where the money went.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:var(--claude)">
+          <summary><span class="r">III</span><span class="n">Beyond code</span><span class="c">8 features</span></summary>
+          <table>
+            <caption class="vh">Beyond code: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-studio">Studio</a><small>Agents work as a production team: idea, research, script, shots, edit, judgement. You get assets, not chat.</small></th>
+                  <td><span class="lv">1</span></td><td><span class="lv">5</span></td><td class="pick"><span class="lv">20</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-studio">Content recipes</a><small>Long video to shorts, a weekly channel rhythm, a video edited in parts: install one and run it.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-studio">Judge and triage</a><small>Give a step its criteria and a vision model checks every shot; a FAIL is made again with the critique. You keep or drop the rest in Triage.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-studio">Straight to Premiere</a><small>The scenes become a sequence. Export it as XML and EDL, import it into Adobe Premiere and finish by hand.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-studio">Media inbox</a><small>Drop files in a folder. Agents look at each one, file it by stage and fill in its card; anything unsure is asked, not guessed.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-studio">Content calendar</a><small>What gets made lands on a calendar in your vault. Once you approve, the publish step hands it to your own upload flow.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-studio">Any media model</a><small>Images, video and voice from fal.ai and Replicate models, priced per model under a monthly media budget; nine FFmpeg recipes cut, join, subtitle and convert on your machine.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-studio">Spoken briefing</a><small>The daily digest read aloud: by this computer for free, or by a voice model you choose.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:var(--violet)">
+          <summary><span class="r">IV</span><span class="n">Recipes and triggers</span><span class="c">9 features</span></summary>
+          <table>
+            <caption class="vh">Recipes and triggers: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-automation">Workflows</a><small>A chain where each step gets the last one&#39;s output. A step can be an agent, an API call, a render, a browser, or a stop to ask you.</small></th>
+                  <td><span class="lv">3</span></td><td><span class="lv">15</span></td><td class="pick"><span class="lv">50</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">Schedules</a><small>Daily, weekly or once at a date and hour. A missed run can run late, be skipped, or ask you. With VS Code closed, a small service on Windows still runs them.</small></th>
+                  <td><span class="lv">3</span></td><td><span class="lv">15</span></td><td class="pick"><span class="lv">50</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">Watch triggers</a><small>A file lands in a folder and an agent wakes up. Hooks and webhooks work the same way.</small></th>
+                  <td><span class="lv">3</span></td><td><span class="lv">15</span></td><td class="pick"><span class="lv">50</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">Gatekeeper</a><small>Before anyone wakes, Jev, a model that never chats and only decides, says whether there is real work. Off, watching in the shadow, or on.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">Say it in words</a><small>Type &quot;run the filing batch on manager now&quot;. A cheap model turns it into a task, a schedule or a workflow and shows it to you before anything runs.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">Queue and limits</a><small>Runs wait their turn under concurrency ceilings, and the next one starts as one finishes.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">Retries and rounds</a><small>A run stopped by a session limit tries again by itself, every 40 minutes or on a growing pause. A big job runs in rounds inside one conversation.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">One switch</a><small>Stop every automation at once, pause it until an hour you name, or keep quiet hours in which nothing wakes unattended.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-automation">Forecast</a><small>How long the next run should take and how likely it is to pass, from the last 30 days.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:var(--cyan)">
+          <summary><span class="r">V</span><span class="n">Works as a team</span><span class="c">9 features</span></summary>
+          <table>
+            <caption class="vh">Works as a team: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-team">Missions</a><small>A lead that cannot write plans round by round and hands the work to a team on different engines, one writer per folder, until the goal is met or one of five caps is reached.</small></th>
+                  <td><span class="lv">1</span></td><td><span class="lv">2</span></td><td class="pick"><span class="lv">5</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Shared sessions</a><small>Any agent can open any session by its id, whichever engine wrote it, see what was and wasn&#39;t done, and carry on.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Agent notes</a><small>Agents leave each other notes and hand tasks over, with a guard against loops.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Steer and veto</a><small>Your steer, veto or new constraint changes a running team&#39;s course at once.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Console</a><small>Every session in one column: who is working, whose turn it is, which leg of which chain.</small></th>
+                  <td><span class="lv">3</span></td><td><span class="lv">6</span></td><td class="pick"><span class="lv">12</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Countdown questions</a><small>An agent&#39;s question picks the suggested answer when time runs out. A permission request always waits for you, with every stuck session, in Needs You.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Notices and the queue</a><small>Agents report, remind and ask on one board, by level, and your answer becomes work in the queue. Your side of it: leave a job for an agent, now or when its group fills.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Live Timeline</a><small>Every running session on one axis. Jump to one tool call among thousands; a stall raises a flag.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-team">Worktrees</a><small>Parallel jobs work in separate git worktrees, so they never step on each other.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:var(--agy)">
+          <summary><span class="r">VI</span><span class="n">Never forgets</span><span class="c">8 features</span></summary>
+          <table>
+            <caption class="vh">Never forgets: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-memory">Every session kept</a><small>Yours and the farm&#39;s own runs, from every engine, with cost, tokens, context and the chain leg.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-memory">Any turn, replayed</a><small>Open a session, filter its turns, replay it or export it as Markdown.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-memory">Wiki from sessions</a><small>Mark a whole session or only the answers that matter. An agent compiles them into wiki pages, one concept per page.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-memory">Drop box</a><small>Save a chat from any browser into the drop folder and it becomes wiki material by itself.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-memory">Obsidian, the second brain</a><small>Obsidian is the IDE, the model is the programmer, the wiki is the codebase. You curate, agents write.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-memory">Search everything</a><small>Search every transcript of every engine, by its words or by what it meant. A memory graph shows how each agent&#39;s notes link up, and which it actually recalled.</small></th>
+                  <td><span class="lv">30 days</span></td><td><span class="lv">1 year</span></td><td class="pick"><span class="lv">Everything</span></td><td><span class="lv">Everything</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-memory">Other machines</a><small>Sessions synced from your other computers show up in the same lists, with a machine badge on each.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-memory">Reports and digests</a><small>Daily and weekly digests and fleet reports, written into your vault.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:#7fa0f8">
+          <summary><span class="r">VII</span><span class="n">Any brain</span><span class="c">7 features</span></summary>
+          <table>
+            <caption class="vh">Any brain: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-engines">Five engines</a><small>Claude Code, Codex, Gemini, Antigravity and OpenCode. What is read off disk says so; only one real test call proves an engine works.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-engines">Plug-in brains</a><small>Claude Code and OpenCode can run other models through a route: free or paid, from a provider or an address on your own machine. Five engines, any number of brains.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-engines">Free-model radar</a><small>Set it up once as a schedule: every morning an agent checks which models are free today and adds new ones as routes, over the bridge.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-engines">Route health</a><small>What each route offers is checked for free. A real, paid turn is only spent when you press for it.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-engines">Secret vault</a><small>Keys live in your OS keychain, open only to the agents you choose. A key&#39;s value never crosses the bridge.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-engines">Many sign-ins</a><small>Several sign-ins of Claude Code or Codex side by side, without signing out. An account is a config folder, not a copied credential.</small></th>
+                  <td><span class="lv">2</span></td><td><span class="lv">4</span></td><td class="pick"><span class="lv">10</span></td><td><span class="lv">Unlimited</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-engines">Switch the model</a><small>Change the model, effort or account of a session from the Console, between turns.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:var(--ink)">
+          <summary><span class="r">VIII</span><span class="n">Just ask</span><span class="c">10 features</span></summary>
+          <table>
+            <caption class="vh">Just ask: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-bridge">Just ask</a><small>Say &quot;make me a weekly video recipe&quot; in a chat. The agent sets it up through the bridge; you never open a form.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">579 operations</a><small>What you can do with a click, an agent can do with a call: a button with no operation fails the build. Only the secret vault stays off it, on purpose. New abilities show up in farm.ops by themselves.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">One command line</a><small>The bridge is a single shell command, so any agent that can run a command can use the farm. Gatekeeper also comes as an MCP server.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">Agents with a home</a><small>Each agent keeps its own identity, duties that run every turn or session, and tools. The Toolbox edits skills, MCP servers, hooks and plugins for all of them in one form.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">Capability Matrix</a><small>Which agent has which skill, MCP server and memory file, and which of them were actually used in 30 days.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">Phone app</a><small>Start a session, approve with a button and watch the fleet from your pocket, in the Agent Farm phone app, or on a read-only web page on any device you allow.</small></th>
+                  <td><span class="lv">Watch, 20 answers a day</span></td><td><span class="lv">Full control</span></td><td class="pick"><span class="lv">Full control</span></td><td><span class="lv">Full control</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">Telegram</a><small>A Telegram chat talks to your agents. A card arrives when a turn ends or asks, and one tap answers it. Only the chats you allow, within a daily budget.</small></th>
+                  <td><span class="lv">Watch, 20 answers a day</span></td><td><span class="lv">Full control</span></td><td class="pick"><span class="lv">Full control</span></td><td><span class="lv">Full control</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">Sound</a><small>A tone for every event, for one agent or for one session: ten made for it and room for ten of your own, with quiet hours and a reminder for an unanswered question.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">Read aloud</a><small>An answer, a selection or the daily briefing read aloud, each in its own language, and whoever is asking named after the tone.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-bridge">Take it with you</a><small>Pack an agent as an .agentpack: its rules, tools, workflows and schedules, never its memory or secrets. Unpack it on another machine.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:#de8cf0">
+          <summary><span class="r">IX</span><span class="n">Measured, not claimed</span><span class="c">9 features</span></summary>
+          <table>
+            <caption class="vh">Measured, not claimed: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../#ch-measure">Live plan usage</a><small>How full each account&#39;s five-hour window and week are, and when they reset, in the status bar and on the Dashboard. Every engine&#39;s limit apart.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Where it went</a><small>Every turn split into nine kinds of step, from the model&#39;s thinking, billed as output, to local tools that cost nothing to run but make the next call bigger. Every figure is shown raw and weighted.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Budgets</a><small>A daily budget per agent or for the whole fleet, a cap per workflow and per mission, a monthly media budget. A warning at 80%, an error past 100%.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Cheaper, not stopped</a><small>As a window fills, automatic jobs wait for it to loosen, or move to a cheaper model. Sessions you opened by hand are left alone.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Cost alarms</a><small>A run that costs far more than its usual, or a week that jumps, raises a flag. The usual is a median of real runs, not a guess.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Honest numbers</a><small>Costs come from your own transcripts. A free model&#39;s zero is a real zero; a missing figure is shown as missing.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Judge ladder</a><small>A check is judged by a cheap model first. Only a fail climbs to a stronger one, and a pass there overturns it, so no retry is paid for nothing.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Evals</a><small>Saved cases replayed after a change of model or instructions: accuracy, tests passed and what got worse, on a scorecard, not on how sure an agent sounds.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../#ch-measure">Insights</a><small>Repeated corrections turn into suggested rules. A finding is fixed, handed to its agent or dismissed, and whether the fix held is tracked.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details><details class="dist" style="--c:var(--dim)">
+          <summary><span class="r">X</span><span class="n">Safe and yours alone</span><span class="c">8 features</span></summary>
+          <table>
+            <caption class="vh">Safe and yours alone: every feature on every plan</caption>
+            <thead class="vh"><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Fleet</th><th scope="col">Farm</th></tr></thead>
+            <tbody>
+              <tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#local">On your machine</a><small>It runs inside VS Code and your work stays on your disk. The live hooks listen on 127.0.0.1 only.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#telemetry">No telemetry</a><small>No analytics, no usage statistics: we don&#39;t know which features you use, how often or on what. Free never contacts us; a paid licence only checks its key.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#shellguard">ShellGuard</a><small>Before a shell command runs, the shapes that garble or hide it are refused: non-ASCII, backticks, long heredocs, long quoted text. The agent is told the safe way: write the text to a file.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#bridgeguard">BridgeGuard</a><small>An agent that goes searching the disk for a session by its id is stopped and sent to the bridge, which reads it properly.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#permissions">Permissions as shown</a><small>The permission a card shows is the one in force; if a policy forbids it, the session is refused, never quietly downgraded. A lint finds blanket allows and dangerous patterns.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#masking">Keys kept out</a><small>Route keys are scrubbed from whatever a run prints, and Gatekeeper&#39;s log keeps only a hash and a length of what it read.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#browser">Browser on a leash</a><small>A browser step opens only the sites on its allow list, or fails without running, and asks you before each run unless you chose otherwise.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr><tr>
+                  <th scope="row"><a href="../features/safe-and-yours-alone/#superpowers">Superpowers</a><small>Engineering disciplines on disk, such as tests first and systematic debugging, with quality gates.</small></th>
+                  <td><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td><td class="pick"><span class="ok" aria-label="Included">✓</span></td><td><span class="ok" aria-label="Included">✓</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </details>
+    </section>
+
+    <section class="wrap pfaq" aria-labelledby="pfaq-h">
+      <div class="fq">
+        <h2 id="pfaq-h">Straight <em>answers</em></h2>
+        <dl><dt>I already pay for Claude or ChatGPT. Why pay again?</dt><dd>Agent Farm never sells tokens. Your engines run on your own plans and keys, and that bill stays between you and them. What you pay for here is the farm around them: the relay, the night shift, the memory, the studio, the guards.</dd><dt>What happens when I reach a limit?</dt><dd>Nothing breaks and nothing is lost. A chain at its leg ceiling parks with its handover note, and a session over the limit waits in the queue. Carry it on by hand, or move up a plan.</dd><dt>Is there a trial?</dt><dd>The Free plan is the trial: every feature, with smaller limits, for as long as you like.</dd><dt>How does a yearly plan work?</dt><dd>A year costs 10 months, so two months are free.</dd><dt>Can I change plans or cancel?</dt><dd>Any time, from the customer page linked in your receipt. A cancelled plan runs to the end of the period you paid for.</dd><dt>Can I get my money back?</dt><dd>Yes, within 14 days of your first payment, for any reason. The refund policy has the details.</dd><dt>Who takes the payment?</dt><dd>Lemon Squeezy, our reseller (merchant of record). It takes the payment, charges the VAT or sales tax of your country and sends the invoice, with your company&#39;s details if you add them.</dd><dt>What does a paid licence send to you?</dt><dd>It checks its key once a day: the key, a hash of the machine and the version. Nothing about your work. Without a connection it keeps working 30 days.</dd><dt>Will the prices change?</dt><dd>These are beta prices, and they may change before paid plans open. If you hold a plan, a new price applies only from your next renewal, and we tell you before it does.</dd></dl>
+        <p class="legal">The <a href="../terms/">terms</a>, the <a href="../privacy/">privacy policy</a> and the <a href="../refunds/">refund policy</a> say all of it in full.</p>
+      </div>
+      <figure class="fph"><img src="../assets/photos/p-faq-l.jpg" srcset="../assets/photos/p-faq-s.jpg 500w, ../assets/photos/p-faq-l.jpg 1000w" sizes="(max-width: 860px) 100vw, 34vw" alt="A smiling woman in a hoodie and denim jacket against a blue wall" loading="lazy" decoding="async" style="object-position:50% 30%"></figure>
+    </section>
+
+    <section class="early" id="early" aria-labelledby="early-h">
+      <div class="ph" aria-hidden="true"><img src="../assets/photos/p-cut-l.jpg" srcset="../assets/photos/p-cut-s.jpg 900w, ../assets/photos/p-cut-l.jpg 1800w" sizes="100vw" alt="" loading="lazy" decoding="async"></div>
+      <div class="wrap">
+        <div class="ein">
+          <p class="pre">Early access</p>
+          <h2 id="early-h">Reserve a paid plan.</h2>
+          <p class="lead">Leave your address and we write once, when paid plans open. Until then the Free plan is yours to use.</p>
+          <form id="ea" action="../early-access.php" method="post" novalidate>
+            <label class="f"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" maxlength="254"></label>
+            <div class="row">
+              <label class="f"><span>Plan</span>
+                <select name="plan"><option value="pro">Pro · $19 a month</option><option value="fleet" selected>Fleet · $34 a month</option><option value="farm">Farm · $49 a month</option><option value="unsure">Not sure yet</option></select>
+              </label>
+              <label class="f"><span>Mostly for</span>
+                <select name="use"><option value="">Choose, if you like</option><option value="code">Code</option><option value="video">Video and audio</option><option value="writing">Writing and research</option><option value="team">A team's work</option><option value="other">Something else</option></select>
+              </label>
+            </div>
+            <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            <input type="hidden" name="t" value="">
+            <label class="ck"><input type="checkbox" name="consent" value="1" required> <span>Write to me when paid plans open. Nothing else, and I can ask to be removed at any time (<a href="../privacy/#early-access">privacy</a>).</span></label>
+            <button type="submit" class="cta">Reserve my place</button>
+            <p class="st" id="ea-st" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.9.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../features/">Features</a>
+      <a href="../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../terms/">Terms</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../refunds/">Refunds</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>

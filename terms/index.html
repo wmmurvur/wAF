@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Terms · Agent Farm</title>
+    <meta name="description" content="The terms of use and the licence of Agent Farm for VS Code: what you may do with it, what it does on your computer, paid plans, and who is responsible for what.">
+    <link rel="canonical" href="https://agentfarm.space/terms/">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Terms · Agent Farm">
+    <meta property="og:description" content="The terms of use and the licence of Agent Farm for VS Code: what you may do with it, what it does on your computer, paid plans, and who is responsible for what.">
+    <meta property="og:url" content="https://agentfarm.space/terms/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../assets/legal.js?v=0.9.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.9.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../features/">Features</a><a class="ch" href="../#ch-relay">Relay</a><a class="ch" href="../#ch-projects">Projects</a><a class="ch" href="../#ch-studio">Studio</a><a class="ch" href="../#ch-memory">Memory</a><a class="ch" href="../#ch-bridge">Just ask</a><a class="ch" href="../#ch-privacy">Local</a><a href="../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="legalp">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>Terms</span></nav>
+      <p class="draft"><b>Draft</b><span>This page is waiting for a legal review, and a few details are still to come; they are <mark>marked like this</mark>. Until then it is not final.</span></p>
+      <div class="lgrid">
+        <aside class="ltoc" aria-label="On this page">
+          <p class="pre">On this page</p>
+          <ol><li><a href="#who">Who we are</a></li><li><a href="#licence">Your licence</a></li><li><a href="#not">What you may not do</a></li><li><a href="#engines">Your work and your engines</a></li><li><a href="#agents">Agents act on your computer</a></li><li><a href="#paid">Paid plans and billing</a></li><li><a href="#check">The licence check</a></li><li><a href="#beta">The beta and early access</a></li><li><a href="#services">Other services</a></li><li><a href="#warranty">No promises beyond the law</a></li><li><a href="#liability">Limits on liability</a></li><li><a href="#ending">Ending</a></li><li><a href="#changes">Changes to these terms</a></li><li><a href="#law">Law and disputes</a></li><li><a href="#names">Names and trademarks</a></li><li><a href="#contact">Contact</a></li></ol>
+          <p class="pre">Also</p>
+          <ul><li><a href="../privacy/">Privacy</a></li><li><a href="../refunds/">Refunds</a></li><li><a href="../pricing/">Pricing</a></li></ul>
+        </aside>
+        <article class="ltext">
+          <h1>Terms</h1>
+          <p class="upd">Last updated 12 October 2026</p>
+          <p class="lead">The agreement between you and the maker of Agent Farm: what you may do with it, what we promise and what we cannot. We kept it as short and plain as it can be while still being complete.</p>
+          
+  <div class="short">
+    <h2>The short version</h2>
+    <ul>
+      <li>You may use Agent Farm on the plan you hold, within its limits. The Free plan needs no licence.</li>
+      <li>Your work stays yours. Agent Farm runs no AI model itself and sends us nothing about your work.</li>
+      <li>Your engines run on your own accounts and keys, and each provider's own terms apply to them. Following those terms is up to you.</li>
+      <li>Agents run commands and change files on your computer. Keep version control and backups, and check what they produce.</li>
+      <li>Paid plans are sold by Lemon Squeezy, our reseller. You can cancel at any time, and get your money back within 14 days of your first payment.</li>
+    </ul>
+  </div>
+
+  <section id="who">
+    <h2>1. Who we are</h2>
+    <p>Agent Farm is made by <mark>[the owner&#39;s full legal name]</mark>, an individual trading as MuVuSOFT, in <mark>[country]</mark> ("we", "us"). These terms are an agreement between you and us. They cover the Agent Farm extension for Visual Studio Code, its phone app and this website (together, "Agent Farm").</p>
+    <p>By installing or using Agent Farm you accept these terms. If you use it for a company or another organisation, you accept them for that organisation and confirm you may do so. You must be old enough to make a binding contract where you live.</p>
+  </section>
+
+  <section id="licence">
+    <h2>2. Your licence</h2>
+    <p>We give you a personal, non-exclusive, non-transferable licence to install and use Agent Farm for your own work and your organisation's work, on the plan you hold and within its limits, as shown on the <a href="../pricing/">pricing page</a>.</p>
+    <ul>
+      <li><strong>Free plan:</strong> needs no licence key and may be used on any number of your computers.</li>
+      <li><strong>Paid plans:</strong> one licence key may be active on the number of computers its plan allows (2, 3, 5, from the smallest paid plan to the largest). You can release a computer and use the key on another.</li>
+    </ul>
+    <p>Agent Farm is licensed to you, not sold. We keep all rights in it that these terms do not give you.</p>
+  </section>
+
+  <section id="not">
+    <h2>3. What you may not do</h2>
+    <ul>
+      <li>Copy, sell, rent, sublicense or redistribute Agent Farm, or share a licence key beyond the computers its plan allows.</li>
+      <li>Get around the licence check or the limits of a plan, or help someone else do so.</li>
+      <li>Decompile or reverse engineer Agent Farm, except where the law allows it whatever these terms say.</li>
+      <li>Use Agent Farm to break the law, to infringe anyone's rights, or to attack, overload or spam other people's systems.</li>
+    </ul>
+  </section>
+
+  <section id="engines">
+    <h2>4. Your work and your engines</h2>
+    <p><strong>Your work is yours.</strong> Your code, documents, media, prompts and everything your agents produce belong to you (or to whoever they belonged to before). We do not receive them and claim no rights in them.</p>
+    <p><strong>Agent Farm runs no AI model itself.</strong> It drives the command-line tools you install (Claude Code, Codex, Gemini, Antigravity, OpenCode), signed in with your own accounts and API keys. What you use them for is between you and each provider, under that provider's terms and prices, and you pay them directly.</p>
+    <p><strong>Following each provider's terms is up to you.</strong> Some providers limit how their subscriptions may be used by other tools, how much may be automated, or whether accounts may be shared or used in turn. Agent Farm cannot check this for you. Use the accounts and keys you put in it only as their providers allow. We are not responsible if a provider limits, charges or suspends your account because of how it was used.</p>
+  </section>
+
+  <section id="agents">
+    <h2>5. Agents act on your computer</h2>
+    <p>This is the part we most want you to read. AI agents started through Agent Farm can run commands, create, change and delete files, make commits, spend your quota or money with their providers, and reach services you have connected. They can be wrong, and they can be wrong with confidence.</p>
+    <ul>
+      <li>You decide what agents may do: the permission mode of each engine, the folders they work in, the services they can reach. Agent Farm's guards (handovers, stops, limits, permission modes and parked chains) reduce the risk; they cannot remove it.</li>
+      <li>Keep your work under version control and backed up, and do not give agents access you could not afford to lose.</li>
+      <li>Check what agents produce before you rely on it, publish it or hand it in. That matters most for code going to production, and for legal, medical, financial or academic work. For academic work, follow your institution's rules on AI tools.</li>
+    </ul>
+    <p>You are responsible for what you run with Agent Farm and for what you do with its results.</p>
+  </section>
+
+  <section id="paid">
+    <h2>6. Paid plans and billing</h2>
+    <p><strong>Lemon Squeezy sells our paid plans.</strong> It is our reseller and the merchant of record: you buy from Lemon Squeezy, it takes the payment, charges the VAT or sales tax of your country and sends the invoice, under its own <a href="https://www.lemonsqueezy.com/buyer-terms">buyer terms</a>. The licence to use Agent Farm comes from us, under these terms.</p>
+    <ul>
+      <li><strong>Renewal.</strong> A plan renews by itself each month or each year, as you chose, until you cancel it.</li>
+      <li><strong>Cancelling.</strong> Cancel at any time from the customer page linked in your receipt, or by writing to us. Your plan runs to the end of the period you paid for, then Agent Farm returns to the Free plan's limits. Nothing you made is lost.</li>
+      <li><strong>Refunds.</strong> Within 14 days of your first payment, for any reason. The <a href="../refunds/">refund policy</a> has the details.</li>
+      <li><strong>Prices.</strong> If a price changes, we tell you at least 30 days before, and the new price applies only from your next renewal. You can cancel before it does.</li>
+      <li><strong>Limits.</strong> We may raise the limits of a plan at any time. We do not lower the limits of a plan you hold during a period you have already paid for.</li>
+    </ul>
+  </section>
+
+  <section id="check">
+    <h2>7. The licence check</h2>
+    <p>A paid plan checks its key once a day. The check sends the key, a hash of the computer's identifier (not its name) and the version of Agent Farm, and nothing about your work. Without a connection Agent Farm keeps working for 30 days. If a key is not valid any more, or has not been checked for longer than that, Agent Farm returns to the Free plan's limits; it does not stop, and it deletes nothing. The <a href="../privacy/#licence">privacy policy</a> says what is kept.</p>
+  </section>
+
+  <section id="beta">
+    <h2>8. The beta and early access</h2>
+    <p>Agent Farm is in beta. Features can change, move between plans or be removed, and some things will break. The plans, their prices and their limits may change before paid plans open.</p>
+    <p>Reserving a paid plan on the pricing page is not a purchase. It costs nothing and commits neither you nor us; it only lets us write to you once, when paid plans open.</p>
+  </section>
+
+  <section id="services">
+    <h2>9. Other services</h2>
+    <p>Agent Farm can work with services run by others, such as your AI providers, GitHub, Telegram or Airtable, and is installed from the Visual Studio Code Marketplace. Each of these is governed by its own terms and privacy policy. We do not run them and are not responsible for them.</p>
+  </section>
+
+  <section id="warranty">
+    <h2>10. No promises beyond the law</h2>
+    <p>We work hard to make Agent Farm reliable, but we provide it "as is" and "as available". As far as the law allows, we make no promise that it will be free of errors or interruptions, that it suits a particular purpose, or that anything an agent produces is correct.</p>
+    <p>If you are a consumer, the law of your country may give you rights that no contract can take away. Nothing in these terms limits them.</p>
+  </section>
+
+  <section id="liability">
+    <h2>11. Limits on liability</h2>
+    <p>As far as the law allows:</p>
+    <ul>
+      <li>We are not liable for indirect or consequential loss, for lost profits, revenue or data, for charges from your providers or the suspension of your accounts with them, or for what commands run by agents did on your computer or elsewhere.</li>
+      <li>Our total liability to you for any claim is limited to the greater of what you paid for Agent Farm in the 12 months before the claim, and 50 US dollars.</li>
+    </ul>
+    <p>Nothing in these terms limits liability for death or personal injury caused by negligence, for fraud, or for anything else the law does not allow to be limited.</p>
+  </section>
+
+  <section id="ending">
+    <h2>12. Ending</h2>
+    <p>You may stop using Agent Farm at any time. We may suspend or end a licence if you seriously break these terms, for example by sharing a key or getting around the limits of a plan. Where it is reasonable we warn you first and give you a chance to put it right. If we end a paid licence without any fault of yours, we refund the part of the period you paid for and did not get.</p>
+    <p>The parts of these terms that by their nature should last (your work being yours, the limits on liability, law and disputes) continue after the agreement ends.</p>
+  </section>
+
+  <section id="changes">
+    <h2>13. Changes to these terms</h2>
+    <p>We may update these terms as Agent Farm changes. The date at the top says when they last changed. If a change matters to people who pay, we tell them by email at least 30 days before it applies, and they can cancel before then. Using Agent Farm after a change means you accept the new terms.</p>
+  </section>
+
+  <section id="law">
+    <h2>14. Law and disputes</h2>
+    <p>These terms are governed by the law of <mark>[country]</mark>, and its courts decide disputes about them. If you are a consumer, you keep the protection of the mandatory law of the country you live in, and you may bring a claim in its courts.</p>
+    <p>If something goes wrong, please write to us first. Most things can be put right faster that way.</p>
+  </section>
+
+  <section id="names">
+    <h2>15. Names and trademarks</h2>
+    <p>Agent Farm and MuVuSOFT are our names. Claude Code, Codex, Gemini, Antigravity, OpenCode, Visual Studio Code and the other products named on this site belong to their owners. Agent Farm works with them but is not made, endorsed or sponsored by them.</p>
+  </section>
+
+  <section id="contact">
+    <h2>16. Contact</h2>
+    <p><mark>[the owner&#39;s full legal name]</mark>, trading as MuVuSOFT, <mark>[country]</mark>. Email: <mark>[contact email address]</mark>.</p>
+  </section>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.9.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../features/">Features</a>
+      <a href="../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../terms/">Terms</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../refunds/">Refunds</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>

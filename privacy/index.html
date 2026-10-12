@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Privacy · Agent Farm</title>
+    <meta name="description" content="What Agent Farm and agentfarm.space collect, and what they never do: no cookies, no analytics, no telemetry, and nothing about your work.">
+    <link rel="canonical" href="https://agentfarm.space/privacy/">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy · Agent Farm">
+    <meta property="og:description" content="What Agent Farm and agentfarm.space collect, and what they never do: no cookies, no analytics, no telemetry, and nothing about your work.">
+    <meta property="og:url" content="https://agentfarm.space/privacy/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../assets/legal.js?v=0.9.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.9.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../features/">Features</a><a class="ch" href="../#ch-relay">Relay</a><a class="ch" href="../#ch-projects">Projects</a><a class="ch" href="../#ch-studio">Studio</a><a class="ch" href="../#ch-memory">Memory</a><a class="ch" href="../#ch-bridge">Just ask</a><a class="ch" href="../#ch-privacy">Local</a><a href="../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="legalp">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>Privacy</span></nav>
+      <p class="draft"><b>Draft</b><span>This page is waiting for a legal review, and a few details are still to come; they are <mark>marked like this</mark>. Until then it is not final.</span></p>
+      <div class="lgrid">
+        <aside class="ltoc" aria-label="On this page">
+          <p class="pre">On this page</p>
+          <ol><li><a href="#who">Who is responsible</a></li><li><a href="#site">This website</a></li><li><a href="#early-access">The early-access list</a></li><li><a href="#extension">The Agent Farm extension</a></li><li><a href="#licence">A paid licence</a></li><li><a href="#buying">Buying a plan</a></li><li><a href="#mail">Writing to us</a></li><li><a href="#others">Who else handles data</a></li><li><a href="#transfers">Data outside your country</a></li><li><a href="#rights">Your rights</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes</a></li></ol>
+          <p class="pre">Also</p>
+          <ul><li><a href="../terms/">Terms</a></li><li><a href="../refunds/">Refunds</a></li><li><a href="../pricing/">Pricing</a></li></ul>
+        </aside>
+        <article class="ltext">
+          <h1>Privacy</h1>
+          <p class="upd">Last updated 12 October 2026</p>
+          <p class="lead">Agent Farm is built to run on your computer and keep your work there. This page says exactly what does reach us, why, for how long, and what you can ask us to do with it.</p>
+          
+  <div class="short">
+    <h2>The short version</h2>
+    <ul>
+      <li>This website sets no cookies, runs no analytics and loads nothing from anyone else.</li>
+      <li>The Free plan of Agent Farm never contacts us. There is no telemetry.</li>
+      <li>A paid licence checks its key once a day: the key, a hash of the computer and the version. Nothing else.</li>
+      <li>We never receive your code, prompts and answers, transcripts, file, folder and project names, account names, costs and tokens or which features you use, or how often.</li>
+      <li>If you reserve a paid plan, we keep your email address to write to you once, when paid plans open.</li>
+    </ul>
+  </div>
+
+  <section id="who">
+    <h2>1. Who is responsible</h2>
+    <p>The controller of your personal data is <mark>[the owner&#39;s full legal name]</mark>, an individual trading as MuVuSOFT, in <mark>[country]</mark> ("we", "us"). Write to <mark>[contact email address]</mark> about anything on this page.</p>
+  </section>
+
+  <section id="site">
+    <h2>2. This website</h2>
+    <p><strong>No cookies, no analytics, no trackers.</strong> The fonts, photographs and scripts of agentfarm.space are served from the site itself, so opening a page sends no request to anyone else.</p>
+    <p><strong>Server logs.</strong> Our web host, Hostinger, records each request to the site as every web server does: the IP address, the time, the page asked for, the browser's description of itself and the page you came from. These logs are kept for a short time to keep the site running and secure, and are not used to follow anyone. Legal basis: our legitimate interest in a working, secure website (GDPR Art. 6(1)(f)).</p>
+    <p><strong>One note in your browser.</strong> The home page keeps one entry in your browser's session storage (<code>af-boot</code>) so that its opening animation plays once per tab. It never leaves your browser and is gone when you close the tab.</p>
+  </section>
+
+  <section id="early-access">
+    <h2>3. The early-access list</h2>
+    <p>When you reserve a paid plan on the <a href="../pricing/#early">pricing page</a>, we keep:</p>
+    <ul>
+      <li>your email address;</li>
+      <li>the plan you chose and, if you said, what you mostly use Agent Farm for;</li>
+      <li>the time you signed up, and the version of this policy you agreed to.</li>
+    </ul>
+    <p>We do not keep your IP address or anything about your browser with it.</p>
+    <p><strong>Why:</strong> to write to you once, when paid plans open, about the plan you reserved. We do not add you to a newsletter and do not pass your address to anyone. <strong>Legal basis:</strong> your consent (GDPR Art. 6(1)(a)), which you give with the box on the form and can take back at any time.</p>
+    <p><strong>Where:</strong> in a file on our web host, outside the folders the website serves, and in a notification email to us. <strong>How long:</strong> until we have written to you after paid plans open, and no longer than six months after that; sooner if you ask. To be removed, write to <mark>[contact email address]</mark> or answer our email.</p>
+  </section>
+
+  <section id="extension">
+    <h2>4. The Agent Farm extension</h2>
+    <p>Agent Farm runs on your computer, inside Visual Studio Code. Your projects, prompts, transcripts and settings stay there.</p>
+    <ul>
+      <li><strong>The Free plan never contacts us.</strong> There is no telemetry, no crash reporting and no usage counting.</li>
+      <li><strong>Your engines</strong> talk to their own providers (for example Anthropic, OpenAI or Google) exactly as they do without Agent Farm, under those providers' privacy policies. We are not part of that connection.</li>
+      <li><strong>Services you switch on</strong>, such as Telegram, GitHub, Airtable or a webhook, are reached directly from your computer, under their own privacy policies.</li>
+      <li><strong>The phone app</strong> connects straight to your computer over an encrypted connection, after you pair it with a one-time code. Nothing passes through us.</li>
+    </ul>
+  </section>
+
+  <section id="licence">
+    <h2>5. A paid licence</h2>
+    <p>A paid plan checks its key when you activate it and then once a day. Each check sends:</p>
+    <ul>
+      <li>the licence key;</li>
+      <li>a hash of the identifier Visual Studio Code gives the computer: it tells one computer from another, not whose it is or what it is called;</li>
+      <li>the version of Agent Farm.</li>
+    </ul>
+    <p>The answer says whether the key is valid and until when. We keep, for each key: its plan, which computer hashes are active on it and when each last checked in. That is what lets a key be used on the number of computers its plan allows.</p>
+    <p>It never sends your code, prompts and answers, transcripts, file, folder and project names, account names, costs and tokens or which features you use, or how often.</p>
+    <p><strong>Legal basis:</strong> providing the plan you bought (GDPR Art. 6(1)(b)). <strong>How long:</strong> while the licence is active, and for 12 months after it ends, in case you come back or a question about it arises.</p>
+  </section>
+
+  <section id="buying">
+    <h2>6. Buying a plan</h2>
+    <p>Paid plans are sold by Lemon Squeezy, our reseller and merchant of record. It collects your name, email address, billing address, payment details and, if you give it, your tax number, under its own <a href="https://www.lemonsqueezy.com/privacy">privacy policy</a>. We never see your card details.</p>
+    <p>From Lemon Squeezy we receive your name, email address, country, what you bought, and your licence key and its status. <strong>Why:</strong> to provide the plan, answer your questions and keep the records the law requires. <strong>Legal basis:</strong> the contract (GDPR Art. 6(1)(b)) and our legal obligations (Art. 6(1)(c)). <strong>How long:</strong> as long as tax and accounting law requires us to keep records of a sale, and otherwise as for the licence above.</p>
+  </section>
+
+  <section id="mail">
+    <h2>7. Writing to us</h2>
+    <p>If you email us, we keep the conversation for as long as it takes to help you and to deal with anything that follows from it. Legal basis: our legitimate interest in answering you, or the contract if you are a customer.</p>
+  </section>
+
+  <section id="others">
+    <h2>8. Who else handles data</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th scope="col">Who</th><th scope="col">What for</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Hostinger</th><td>Hosting this website, its server logs and the early-access list; our email.</td></tr>
+          <tr><th scope="row">Lemon Squeezy</th><td>Selling paid plans: payment, tax, invoices, the customer page and licence keys.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>They handle data only on our behalf or under their own policies as described above. We do not sell personal data or share it for advertising. We disclose it to authorities only when the law requires it.</p>
+  </section>
+
+  <section id="transfers">
+    <h2>9. Data outside your country</h2>
+    <p>The services above may handle data in countries other than yours, including the United States. Where the law requires it, they protect it with safeguards such as the European Commission's standard contractual clauses.</p>
+  </section>
+
+  <section id="rights">
+    <h2>10. Your rights</h2>
+    <p>You may ask us to show you the personal data we hold about you, to correct it, to delete it, to limit how we use it, or to give it to you in a portable form, and you may object to our use of it. Where we rely on your consent, you may take it back at any time. Write to <mark>[contact email address]</mark>; we answer within one month.</p>
+    <p>You may also complain to the data protection authority of the country you live in: in the United Kingdom the Information Commissioner's Office, in the European Union your national authority. We would like the chance to put things right first.</p>
+  </section>
+
+  <section id="security">
+    <h2>11. Security</h2>
+    <p>The site is served over an encrypted connection, the early-access list is kept outside the folders the website serves, and we keep as little as we can. The less there is, the less there is to lose.</p>
+  </section>
+
+  <section id="children">
+    <h2>12. Children</h2>
+    <p>Agent Farm is not meant for children under 16, and we do not knowingly keep their data. If you think a child has signed up, write to us and we will delete it.</p>
+  </section>
+
+  <section id="changes">
+    <h2>13. Changes</h2>
+    <p>The date at the top says when this policy last changed. If we change what we collect or why, we say so on this page before it applies, and we email customers about any change that matters to them.</p>
+  </section>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.9.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../features/">Features</a>
+      <a href="../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../terms/">Terms</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../refunds/">Refunds</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>
