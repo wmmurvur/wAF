@@ -39,6 +39,7 @@
 #s-studio .cal li{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:10px;align-items:center;padding:4px 2px;border-bottom:1px solid #33342d}
 #s-studio .cal .d{color:#8f8f84;font-size:11.5px}
 #s-studio .cal b{font-weight:500;color:#e6e6dc}
+#s-studio .cal .mt{display:block;font-style:normal;font-weight:400;font-size:11px;color:#8f8f84}
 #s-studio .cs{font-size:10.5px;padding:0 7px;border-radius:8px;line-height:16px;border:1px solid #55564c;color:#b9baa9}
 #s-studio .cs.published{color:var(--lime);border-color:#5a8c09}
 #s-studio .cs.ready{color:var(--claude);border-color:#8a6430}

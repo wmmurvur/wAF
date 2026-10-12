@@ -22,13 +22,13 @@ export const districts = [
 ];
 
 /* the number of districts in words, and the last numeral ("Chapter IV of X") */
-const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen'];
 export const word = n => WORDS[n] ?? String(n);
 export const Word = n => word(n)[0].toUpperCase() + word(n).slice(1);
 export const LAST = districts[districts.length - 1].r;
 
 /* the districts whose own page is built (plan v0.8 §6); the others' links go to their chapter on the landing until theirs is */
-const PAGES = new Set(['relay', 'projects', 'automation', 'bridge', 'team', 'memory', 'engines', 'measure', 'privacy']);
+const PAGES = new Set(['relay', 'projects', 'studio', 'automation', 'bridge', 'team', 'memory', 'engines', 'measure', 'privacy']);
 export const hasPage = D => PAGES.has(D.id);
 
 export const features = [
@@ -53,11 +53,16 @@ export const features = [
   // III · Beyond code
   { id: 'studio', d: 2, n: 'Studio', s: 'Agents work as a production team: idea, research, script, shots, edit, judgement. You get assets, not chat.', sig: '6 scenes', at: 's-studio', src: 'Studio page (M1a, M1b); studio.*; production.json scenes' },
   { id: 'crecipes', d: 2, n: 'Content recipes', s: 'Long video to shorts, a weekly channel rhythm, a video edited in parts: install one and run it.', sig: '3 ready-made', at: 's-studio', src: 'workflows.recipes / workflows.addRecipe; contentRecipes.ts' },
+  { id: 'media', d: 2, n: 'Any media model', s: 'Images, video and voice from any fal.ai or Replicate model, a file on your computer uploaded once you agree, and every job priced by your rules under a monthly media budget.', sig: 'fal · Replicate', at: 's-studio', src: 'Blueprint: Media Step; Media Cost and Budget; Feeding the flow (M-41); FULL list 19' },
+  { id: 'cuts', d: 2, n: 'Cut on your machine', s: 'Ten FFmpeg recipes split, join, reframe, subtitle and level video and sound on this machine, as a workflow step with no model and no tokens.', sig: '10 recipes', at: 's-studio', src: 'Blueprint: Tool step — local media recipes (M-49); mediaRecipes.ts' },
   { id: 'judge', d: 2, n: 'Judge and triage', s: 'Give a step its criteria and a vision model checks every shot; a FAIL is made again with the critique. You keep or drop the rest in Triage.', sig: '2 to triage', at: 's-studio', src: 'tasks.ts vision QA gate; judgeEngines.ts; Studio → Triage (M1a)' },
-  { id: 'premiere', d: 2, n: 'Straight to Premiere', s: 'The scenes become a sequence. Export it as XML and EDL, import it into Adobe Premiere and finish by hand.', sig: 'XML + EDL', at: 's-studio', src: 'src/core/premiere.ts (xmeml v4 + CMX3600); Studio → Assemble' },
+  { id: 'brand', d: 2, n: 'Brand kit', s: 'Style, colours, type, voice, the logo rule and recurring characters, kept once per production; every step that asks for them gets the same ones.', sig: '{brand.*}', at: 's-studio', src: 'Blueprint: Production Scenes › Brand kit (M-50, 3.702.0–3.704.0); brandKit.ts' },
+  { id: 'library', d: 2, n: 'Five stages', s: 'Every file a run makes is filed by stage, from source to asset, with a record of what made it and what it was made from; a model fills in what it shows.', sig: 'source → asset', at: 's-studio', src: 'Blueprint: Airtable Engine Module › The media library (X-417–X-419); Studio › Assets (3.681.0–3.682.0)' },
+  { id: 'airtable', d: 2, n: 'Airtable engine', s: 'A local database of media records and knowledge that agents search, save to and update through ten tools; a run can take its material from it.', sig: '10 tools', at: 's-studio', src: 'Blueprint: Airtable Engine Module (3.0.0; X-416, X-420); src/mcp/airtable' },
   { id: 'inbox', d: 2, n: 'Media inbox', s: 'Drop files in a folder. Agents look at each one, file it by stage and fill in its card; anything unsure is asked, not guessed.', sig: 'all_in', at: 's-studio', src: 'allInIntake.ts' },
+  { id: 'premiere', d: 2, n: 'Straight to Premiere', s: 'The scenes become a sequence. Export it as XML and EDL, import it into Adobe Premiere and finish by hand.', sig: 'XML + EDL', at: 's-studio', src: 'src/core/premiere.ts (xmeml v4 + CMX3600); Studio → Assemble' },
   { id: 'calendar', d: 2, n: 'Content calendar', s: 'What gets made lands on a calendar in your vault. Once you approve, the publish step hands it to your own upload flow.', sig: 'Mon 07:00', at: 's-studio', src: 'contentCalendar.ts; publishStep.ts (webhook, approval ask)' },
-  { id: 'media', d: 2, n: 'Any media model', s: 'Images, video and voice from fal.ai and Replicate models, priced per model under a monthly media budget; nine FFmpeg recipes cut, join, subtitle and convert on your machine.', sig: '9 FFmpeg', src: 'mediaRecipes.ts; mediaBudgetMonthUSD; Technical DNA §5–§6; FULL list 19' },
+  { id: 'metrics', d: 2, n: 'What worked', s: 'Views, watch time and engagement come back from your own analytics flow onto each published piece, and the next idea is written knowing what worked.', sig: '{performance}', at: 's-studio', src: 'Blueprint: Analytics feedback — the metrics step (M-52, 3.720.0); contentMetrics.ts' },
   { id: 'briefing', d: 2, n: 'Spoken briefing', s: 'The daily digest read aloud: by this computer for free, or by a voice model you choose.', sig: 'daily', at: 's-studio', src: 'briefing.ts; digestTtsModel' },
 
   // IV · Recipes and triggers

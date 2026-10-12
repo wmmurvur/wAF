@@ -114,7 +114,7 @@ const RECIPES = [
   ['Audio → Text (Whisper)', 'quick', 'transcribe the audio file, the agent summarizes it'],
 ];
 const BRIEF = 'Today: six media made, three agents active. Spending, three dollars eighteen. Tasks: one running, none queued. Finished today: twelve, one error. No health findings.';
-const CAL = [['Sun 12', 'The storm, cut down', 'published'], ['Mon 13', 'The last keeper · teaser', 'ready'], ['Wed 15', 'Keeper, part two', 'producing'], ['Fri 17', 'Questions from the rock', 'planned']];
+const CAL = [['Sun 12', 'The storm, cut down', 'published', '1.2k views · 41% watched to the end · 5.8% engaged'], ['Mon 13', 'The last keeper · teaser', 'ready'], ['Wed 15', 'Keeper, part two', 'producing'], ['Fri 17', 'Questions from the rock', 'planned']];
 const FORMS = {
   'Vary…': ['Run it again, changed', '<label>Input<textarea rows="3">{"prompt": "a lighthouse in a storm, beam sweeping through rain, night blues", "duration": "5"}</textarea></label>', 'Run the variation'],
   'Feedback…': ['Run it again, with a critique', '<label>What was wrong / what should change<input value="the beam should sweep left to right, slower"></label>', 'Run it with the critique'],
@@ -126,7 +126,7 @@ function openCard(kind, a) {
   if (kind === 'recipes') h = `<div class="chd"><b>Install a recipe</b><span>a whole workflow in one pick</span><button type="button" class="x" data-act="close" aria-label="Close">✕</button></div>
     <ul class="rcp">${RECIPES.map(([t, k, d]) => `<li><div><b>${t}</b><span class="kd">${k}</span><p>${d}</p></div><button type="button" data-install="${t}">Install</button></li>`).join('')}</ul>`;
   else if (kind === 'calendar') h = `<div class="chd"><b>Content calendar</b><span>notes in your vault</span><button type="button" class="x" data-act="close" aria-label="Close">✕</button></div>
-    <ul class="cal">${CAL.map(([d, t, s]) => `<li><span class="d">${d}</span><b>${t}</b><span class="cs ${s}">${s}</span></li>`).join('')}</ul>
+    <ul class="cal">${CAL.map(([d, t, s, m]) => `<li><span class="d">${d}</span><b>${t}${m ? `<em class="mt">${m}</em>` : ''}</b><span class="cs ${s}">${s}</span></li>`).join('')}</ul>
     <div class="ask" id="st-pub"><p>Publish "The last keeper · teaser" to YouTube?</p><button type="button" class="go" data-act="publish">Publish</button><button type="button" data-act="close">Not now</button></div>`;
   else if (kind === 'briefing') h = `<div class="chd"><b>Spoken briefing</b><span>the daily digest, read aloud</span><button type="button" class="x" data-act="close" aria-label="Close">✕</button></div>
     <p class="brief">"${BRIEF}"</p><div class="ask"><button type="button" class="go" data-act="speak">▶ Speak it</button><p>Read by this computer, for free. Name a voice model instead and it saves an mp3.</p></div>`;
@@ -140,7 +140,7 @@ function openCard(kind, a) {
 function note(msg) { card.hidden = false; cardKind = 'note'; card.innerHTML = `<p class="msg">${msg}</p>`; setTimeout(() => { if (cardKind === 'note') { card.hidden = true; cardKind = ''; } }, 5200); }
 
 /* ---------- tabs ---------- */
-const SHOW = { pipeline: 'studio', assets: 'studio', triage: 'judge', assemble: 'premiere', sources: 'inbox' };
+const SHOW = { pipeline: 'studio', assets: 'library', triage: 'judge', assemble: 'premiere', sources: 'inbox' };
 let tab = 'pipeline', user = false;
 function counts() {
   const set = (k, v) => { tabsEl.querySelector(`[data-cnt="${k}"]`).textContent = v || ''; };
@@ -213,7 +213,7 @@ card.addEventListener('click', e => {
 });
 
 /* the chapter III tiles */
-const FEAT = { studio: ['pipeline'], crecipes: ['pipeline', 'recipes'], judge: ['triage'], premiere: ['assemble'], inbox: ['sources'], calendar: ['pipeline', 'calendar'], briefing: ['pipeline', 'briefing'] };
+const FEAT = { studio: ['pipeline'], crecipes: ['pipeline', 'recipes'], media: ['sources'], cuts: ['pipeline', 'recipes'], judge: ['triage'], brand: ['sources'], library: ['assets'], airtable: ['assets'], inbox: ['sources'], premiere: ['assemble'], calendar: ['pipeline', 'calendar'], metrics: ['pipeline', 'calendar'], briefing: ['pipeline', 'briefing'] };
 on('feature', id => { const f = FEAT[id]; if (!f) return; user = true; setTab(f[0]); if (f[1]) openCard(f[1]); });
 
 /* ---------- the player and the reel ---------- */

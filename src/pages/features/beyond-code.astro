@@ -1,0 +1,10 @@
+---
+// /features/beyond-code/: district III, Beyond code. Its live demo is the landing's own: the Studio page of one demo
+// production, "The last keeper", and the film it makes (Studio). The words are in data/deep/studio.js; the figures
+// beside each feature are drawn by scripts/figs/studio.js.
+import District from '../../components/District.astro';
+import Studio from '../../components/sections/Studio.astro';
+import deep from '../../data/deep/studio.js';
+import '../../styles/pages/figs-studio.css';
+---
+<District d={2} deep={deep} script="beyond-code"><Studio /></District>
