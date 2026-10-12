@@ -1,0 +1,93 @@
+---
+// Console (from prototype v2.1): the real Console rebuilt from screenshots 004 and 035,
+// shown as an exploded view that assembles as you scroll. Its working session is the live relay leg.
+import '../../styles/sections/console.css';
+import { no } from '../../data/page.js';
+---
+<section id="s-console" class="gap" aria-label="The Agent Farm Console">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-console')}</b> The console</p>
+    <div class="hero">
+      <div>
+        <div class="eyebrow"><span class="live"></span><b>Rebuilt from real screenshots</b> · demo data</div>
+        <h2 class="h1"><span class="soft">This is the screen you work in.</span>Take it apart<span class="lime">.</span></h2>
+        <p class="sub">The real Agent Farm Console, rebuilt. Scroll and it assembles: the leg of the chain, <b>who is waiting for you</b>, a session that rebuilt the extension and kept talking, the context meter and the quota shield.</p>
+        <div class="ctas"><a class="ghost" href="#c-deck"><i></i>Assemble it</a></div>
+      </div>
+      <aside class="rail" aria-label="Live figures of the chain above">
+        <div class="rail-cap"><span>Live · chain chn_7f3a</span><span id="c-rclock">12:09:41</span></div>
+        <div class="rd"><div class="v c-y" id="c-r1">⑂ 92</div><div class="k">legs in one relay chain</div></div>
+        <div class="rd"><div class="v c-c" id="c-r2">26%</div><div class="k">context of this leg <em>/ hands over at 40%</em></div></div>
+        <div class="rd"><div class="v c-p" id="c-r3">71%</div><div class="k">5h window <em>→ next account at 90%</em></div></div>
+        <div class="rd"><div class="v c-l" id="c-r4">2</div><div class="k">waiting for you <em id="c-r4k">· longest 6m</em></div></div>
+      </aside>
+    </div>
+  </div>
+  <div class="stage" id="c-deck" role="group" aria-label="The Agent Farm Console, rebuilt from real screenshots with demo data">
+    <div class="sticky" id="c-sticky">
+      <div class="floor"></div>
+      <div class="deck" id="c-deckEl">
+        <div class="shadow"></div>
+        <div class="win" id="c-win">
+          <div class="tbar"><span class="vs"></span><span>File</span><span>Edit</span><span>Selection</span><span>View</span><span>Go</span><span>Run</span><span>Terminal</span><span>Help</span><span class="title">Untitled (Workspace)</span><span class="dots"><span>—</span><span>▢</span><span>✕</span></span></div>
+          <div class="body">
+            <div class="act"><i></i><i class="on"></i><span class="badge">456</span><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="side">
+              <h6>AGENT FARM</h6>
+              <h6>⌄ AGENTS</h6>
+              <div class="row">asistan <span>49d ago</span></div>
+              <div class="row">basit <span>8d ago</span></div>
+              <div class="row st"><b>⚠ developer</b> <span>STALLED ×4 · 220.9M tok</span></div>
+              <div class="row">explorer <span>29d ago</span></div>
+              <div class="row">genel <span>3d ago</span></div>
+              <div class="row">hafif <span>2d ago</span></div>
+              <div class="row">manager <span>15h ago</span></div>
+              <h6>⌄ TASKS</h6>
+              <div class="row">Plan <span>3/15 on · 8 manual</span></div>
+              <div class="row">AI engines radar <span>daily</span></div>
+              <div class="row">Weekly research <span>manager</span></div>
+              <h6>› MISSIONS</h6>
+              <h6>⌄ TOOLBOX</h6>
+              <div class="row">Skills <span>2 user · 0 agent</span></div>
+              <div class="row">MCP Servers <span>4 user</span></div>
+              <div class="row">Hooks <span>9 user</span></div>
+              <h6>⌄ LIVE FEED</h6>
+              <div id="c-feed"></div>
+            </div>
+            <div class="main">
+              <div class="tabs"><span class="tab on">Console (2)</span><span class="tab">Agent Farm — Live Timeline</span><span class="tab">Agent Farm — Now</span></div>
+              <div class="ph"><h3>Console</h3><p>developer · working</p></div>
+              <div class="pills"><span class="pill">Dashboard</span><span class="pill">Projects</span><span class="pill">Mobile</span><span class="pill l">Living</span><span class="pill n">Notices (1)</span><span class="pill q">Queue</span><span class="pill">Live Timeline</span><span class="pill">Agents</span><span class="pill">Tasks</span><span class="pill">Missions</span><span class="pill">Studio</span><span class="pill">Wiki</span><span class="pill">Toolbox</span></div>
+              <div class="content">
+                <div class="col">
+                  <div class="newbtn"><span>+ New session</span><span>⇅</span></div>
+                  <div class="wait" id="c-waitEl"><span><b>●</b> 2 waiting for you</span><span class="lg" id="c-longest">longest 6m</span></div>
+                  <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">chn_7f3a · relay leg 92 · X-52 clean up the old writer</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#0ce4458a)</span><span class="eng">Claude</span></div><div class="m"><span class="acct">pro-c</span><span style="margin-left:auto">2.7M tk</span></div><div class="t">pricing page copy</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#5202a238)</span><span class="eng agy">Antigravity</span></div><div class="m"><span style="margin-left:auto">86.5k tk</span></div><div class="t">mobile companion · pairing</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">6m</span> · 2 turns</div></div>
+                  <div class="resume">› Resume an existing session</div>
+                </div>
+                <div class="tx" id="c-tx"></div>
+              </div>
+              <div class="tool" id="c-tool"><b>⚡ Bash</b> npm run test -- test/test_export.js</div>
+              <div class="foot">
+                <div class="inp">Message developer…  (Ctrl+Enter sends)</div>
+                <div class="ctrls"><span>developer</span><span class="eng" style="margin-left:0">Claude</span><span class="sel">opus ▾</span><span class="sel">xhigh ▾</span><span class="sel" id="c-selAcct">acct-c ▾</span><span class="sel">bypassPermissions ▾</span><span class="btn2"><span>Send after turn</span><span>⏸ Interrupt</span><span>Send into turn</span></span></div>
+                <div class="strip" id="c-strip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sbar"><span>⑂ agent master*</span><span>1 active · <span id="c-sbCost">$41.20</span> today</span><span class="q" id="c-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="c-sbLeg">⑂ 92</span><span>Project</span><span>Git Graph</span><span class="r" id="c-sbVer">Agent Farm 3.931.0</span></div>
+          <div class="reload" id="c-reload"><div class="box"><div>Reloading window · installing <b id="c-rlVer">3.932.0</b></div><div class="prog"><i></i></div><div style="color:#8d8d82;font-size:11px">the session keeps its seat</div></div></div>
+        </div>
+        <!-- exploded-view pins; x/y are positions inside the 1200×690 window -->
+        <div class="pin" data-a="cLeg" style="--z:150;--c:var(--yellow)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>⑂ 92+</b>Legs of one relay chain</div></div>
+        <div class="pin" data-a="waitEl" data-ax=".15" style="--z:250;--c:var(--lime)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>2 waiting</b>Nobody waits unseen</div></div>
+        <div class="pin" data-a="tx" data-ay=".45" style="--z:200;--c:var(--cyan)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>Same seat</b>Rebuilt itself, kept talking</div></div>
+        <div class="pin" data-a="strip" data-ax=".22" style="--z:120;--c:var(--pink)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>Context meter</b>Fresh mind every leg</div></div>
+        <div class="pin" data-a="sbQ" style="--z:60;--c:var(--claude)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>5H / week</b>Quota shield rotates accounts</div></div>
+      </div>
+      <div class="caption"><span id="c-capText">Exploded view · the real Console, rebuilt</span><span class="bar"><i id="c-capBar"></i></span></div>
+    </div>
+  </div>
+</section>

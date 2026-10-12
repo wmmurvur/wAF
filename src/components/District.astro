@@ -1,0 +1,93 @@
+---
+// A district's own page (plan v0.8 §2, the detail page template of plan v0.5 §4): the district's opener with its tiles,
+// the chapter's live demos from the landing (the page's slot, the same components, not rebuilt), then one block per
+// feature, questions, and the way on. A feature whose words carry `fig` (a label per step) is drawn beside its text:
+// its steps are buttons, and the figure beside them (scripts/figs/<district>.js, run by scripts/district.js) shows
+// what each step does; the settings fold away. A feature without `fig` reads as text: what it solves, how it works,
+// the settings that steer it, where to see it.
+// The words come from data/deep/<district id>.js; names, sentences and tile figures from data/features.js, so a name
+// changes once and changes on the board, the chapter, /features/ and here.
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Band from './Band.astro';
+import { photos } from '../data/photos.js';
+import '../styles/pages/district.css';
+import '../styles/pages/figs.css';
+import { districts, features, hasPage, Word, LAST } from '../data/features.js';
+
+interface Props { d: number; deep: any; script: string; }
+const { d, deep, script } = Astro.props;
+const D = districts[d], F = features.filter(f => f.d === d);
+const next = districts[(d + 1) % districts.length];
+const nextHref = hasPage(next) ? `../${next.slug}/` : `../../#ch-${next.id}`;
+---
+<Base title={`${D.n} · Agent Farm features`} description={deep.description} script={script}>
+  <Header />
+  <main class="dpage" style={`--c:${D.c}`}>
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>{D.r} {D.n}</span></nav>
+      <header class="dh">
+        <span class="dr" aria-hidden="true">{D.r}</span>
+        <div>
+          <p class="dk"><span>District {D.r} of {LAST}</span><span>{Word(F.length)} things</span></p>
+          <h1>{D.n}</h1>
+          <p class="dp">{D.k}</p>
+        </div>
+      </header>
+    </div>
+    {photos[`d-${D.id}`] && <Band p={`d-${D.id}`} plain />}
+    <div class="wrap">
+      <p class="dpromise">{deep.promise}</p>
+      <ul class="dtl">
+        {F.map((f, j) => <li><a href={`#${f.id}`}><span class="c">{D.r}·{j + 1}</span><span class="n">{f.n}</span><span class="sg">{f.sig}</span></a></li>)}
+      </ul>
+    </div>
+    <slot />
+    <div class="wrap">
+      {F.map((f, j) => { const x = deep.features[f.id]; return (
+        <article class={`ft${x.fig ? ' hasfig' : ''}`} id={f.id} data-f={f.id}>
+          <div class="fth">
+            <span class="c">{D.r}·{j + 1}</span>
+            <h2>{f.n}</h2>
+            <p class="s">{f.s}</p>
+            {x.see && <a class="see" href={x.see.href}>{x.see.l} <i></i></a>}
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>{x.why}</p>
+            <h3>How it works{x.fig && <span class="hint"> · pick a step</span>}</h3>
+            {x.fig
+              ? <ol class="steps">{x.how.map((st, i) => <li><button type="button" data-i={i}><span class="k">{x.fig[i]}</span><span class="t" set:html={st} /></button></li>)}</ol>
+              : <ol>{x.how.map(st => <li set:html={st} />)}</ol>}
+            {x.note && <p class="note" set:html={x.note} />}
+            {x.set && x.set.length > 0 && (
+              <details class="setd" open={!x.fig}>
+                <summary>Settings · {x.set.length}</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody>{x.set.map(([k, v, t]) => <tr><td><code>{k}</code></td><td class="v">{v}</td><td>{t}</td></tr>)}</tbody>
+                </table>
+              </details>
+            )}
+          </div>
+          {x.fig && (
+            <figure class="fig" data-fig={f.id} aria-label={`${f.n}, step by step (demo)`}>
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>{D.r}·{j + 1}</b><span class="fk">{x.fig[0]}</span><span class="fn">1 / {x.fig.length}</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+          )}
+        </article>
+      ); })}
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        {deep.faq.map(([q, a]) => <details><summary>{q}</summary><p set:html={a} /></details>)}
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="nx" href={nextHref} style={`--c:${next.c}`}><span class="k">Next district</span><span class="r">{next.r}</span><span class="n">{next.n}</span><span class="p">{next.k}</span></a>
+        <a class="all" href="../">All {features.length} features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <Footer />
+</Base>

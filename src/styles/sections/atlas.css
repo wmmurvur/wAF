@@ -1,0 +1,80 @@
+/* The whole farm (#s-atlas): ten districts of tiles on one dark board (two rows of five), a story bar above and a desk below.
+   The board borrows the fleet wall's frame; a lit tile uses the fleet's lime "on" state. Each district has its own accent (--c). */
+#s-atlas .sh .lead b{color:var(--ink);font-weight:500}
+#s-atlas .abar{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap}
+#s-atlas .abar .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+#s-atlas .stories{display:flex;gap:8px;flex-wrap:wrap}
+#s-atlas .stories button{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);background:#0d0e0a;border:1px solid #33342d;padding:8px 12px;cursor:pointer;overflow:hidden}
+#s-atlas .stories button i{width:0;height:0;border-left:6px solid #5f6056;border-top:4px solid transparent;border-bottom:4px solid transparent}
+#s-atlas .stories button::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:calc(var(--p,0)*100%);background:var(--lime);transition:width .5s}
+#s-atlas .stories button:hover{color:var(--ink);border-color:#4b4c44}
+#s-atlas .stories button.on{color:var(--ink);border-color:var(--lime)}
+#s-atlas .stories button.on i{border-left-color:var(--lime)}
+
+#s-atlas .amap{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:10px;background:#050604;border:1px solid var(--rule)}
+#s-atlas .dist{background:var(--bezel);border:1px solid #2a2b23;border-top:2px solid var(--c);padding:12px 12px 11px;min-width:0;container-type:inline-size}
+#s-atlas .dist header{display:flex;align-items:baseline;gap:10px}
+#s-atlas .dist header b{font-family:var(--display);font-weight:800;font-size:24px;line-height:1;color:var(--c)}
+#s-atlas .dist h3{margin:0;font-family:var(--display);font-weight:800;font-size:22px;line-height:1;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#s-atlas .dist header span{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint)}
+#s-atlas .dist .k{margin:6px 0 10px;color:var(--dim);font-size:12.5px;line-height:1.38;min-height:calc(3*1.38em)}
+#s-atlas .dist ul{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+#s-atlas .tile{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left;font:inherit;font-size:13px;line-height:1.35;color:#cfd0c4;background:#191a14;border:1px solid #2a2b23;padding:5px 9px;cursor:pointer;transition:border-color .3s,background .3s,box-shadow .4s,opacity .4s,color .3s}
+#s-atlas .tile .n{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#s-atlas .tile .sg{flex:none;font-family:var(--mono);font-size:10.5px;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums}
+#s-atlas .tile:hover{border-color:var(--c);color:var(--ink)}
+#s-atlas .tile.on{border-color:var(--c);color:var(--ink);background:color-mix(in srgb,var(--c) 16%,#191a14)}
+#s-atlas .tile.on .sg{color:var(--c)}
+/* a story dims the board and lights its path */
+#s-atlas .amap.story .tile{opacity:.42}
+#s-atlas .amap.story .tile.past{opacity:1;border-color:#5a8c09;color:#dff5b8}
+#s-atlas .amap.story .tile.lit{opacity:1;border-color:var(--lime);color:var(--ink);background:rgba(168,240,53,.14);box-shadow:0 0 0 1px var(--lime),0 0 34px -6px rgba(168,240,53,.55)}
+#s-atlas .amap.story .tile.lit .sg,#s-atlas .amap.story .tile.past .sg{color:var(--lime)}
+#s-atlas .lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:visible}
+#s-atlas .lines path{fill:none;stroke:#5a8c09;stroke-width:1.5}
+#s-atlas .lines path.halo{stroke:#050604;stroke-width:6;opacity:.75}
+#s-atlas .lines path.flow{stroke:var(--lime);stroke-width:2;stroke-dasharray:6 7;animation:atlas-flow .9s linear infinite}
+#s-atlas .lines circle{fill:var(--lime)}
+@keyframes atlas-flow{to{stroke-dashoffset:-13}}
+
+#s-atlas .adesk{position:sticky;bottom:0;z-index:5;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;border:1px solid var(--rule);border-top:0;padding:16px 20px;background:#0d0e0a;box-shadow:0 -14px 30px -18px #000}
+#s-atlas .adesk .code{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,44px);line-height:1;text-transform:uppercase;color:var(--lime);letter-spacing:.02em;white-space:nowrap;min-width:3.2ch}
+#s-atlas .adesk .tx b{display:block;font-size:clamp(17px,1.5vw,21px);font-weight:500;color:var(--ink);line-height:1.35}
+#s-atlas .adesk .tx span{color:var(--dim);font-size:14.5px}
+#s-atlas .adesk .act{display:flex;gap:10px}
+#s-atlas .adesk .nx{background:none;cursor:pointer}
+#s-atlas [hidden]{display:none!important}
+
+/* signals drop out when a district is too narrow to hold them */
+@container (max-width:205px){#s-atlas .tile .sg{display:none}}
+
+/* the last row: the figures under the tiles (data/facts.js) */
+#s-atlas .nums{grid-column:1/-1;background:#0b0c08;border:1px solid #2a2b23;border-top:2px solid var(--lime);padding:12px 14px;display:grid;align-content:start;gap:8px}
+#s-atlas .nums .lbl{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+#s-atlas .nums dl{margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px 14px}
+#s-atlas .nums dt{font-family:var(--display);font-weight:800;font-size:clamp(30px,2.6vw,42px);line-height:.95;color:var(--ink)}
+#s-atlas .nums div:first-child dt{color:var(--lime)}
+#s-atlas .nums dd{margin:2px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+
+/* the story so far, under the desk text (phones, where the board is too tall to see the path) */
+#s-atlas .trail{display:none;list-style:none;margin:6px 0 0;padding:0;flex-wrap:wrap;gap:2px 0;font-family:var(--mono);font-size:11px;color:#7d8a5c}
+#s-atlas .trail li+li::before{content:"→";margin:0 6px;color:#4b4c44}
+#s-atlas .trail li.now{color:var(--lime)}
+
+@media (max-width:1099px){#s-atlas .amap{grid-template-columns:repeat(2,minmax(0,1fr))}
+#s-atlas .nums dl{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){#s-atlas .amap{grid-template-columns:minmax(0,1fr);padding:8px;gap:8px}
+#s-atlas .lines{display:none}
+#s-atlas .dist .k{min-height:0}
+#s-atlas .dist ul{display:flex;flex-wrap:wrap;gap:5px}
+#s-atlas .dist li{display:contents}
+#s-atlas .tile{width:auto;padding:5px 9px}
+#s-atlas .tile .sg{display:none}
+#s-atlas .trail{display:flex}}
+@media (max-width:620px){#s-atlas .adesk{grid-template-columns:auto minmax(0,1fr);gap:6px 14px;padding:12px 14px}
+#s-atlas .adesk .code{font-size:26px}
+#s-atlas .adesk .tx b{font-size:16px}
+#s-atlas .adesk .act{grid-column:1/-1}
+#s-atlas .adesk .act .ghost{padding:7px 12px;font-size:11px}
+#s-atlas .adesk .tx span{font-size:13px}
+#s-atlas .stories button{font-size:11.5px;padding:7px 10px}}

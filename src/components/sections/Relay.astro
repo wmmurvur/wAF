@@ -1,0 +1,52 @@
+---
+// Relay hero (from prototype v2.3): giant leg counter, relay track, context / quota / console instruments.
+import '../../styles/sections/relay.css';
+import { facts, relay } from '../../data/facts.js';
+---
+<section id="s-relay" aria-label="The baton relay, live demo">
+  <div class="boot" id="r-boot" aria-hidden="true"><pre id="r-bootTx"></pre></div>
+  <div class="reboot" id="r-reboot" aria-hidden="true"><div><b>Restarting extension host</b><span id="r-rbTx">agent-farm 3.931.0 → 3.932.0</span><i></i></div></div>
+
+  <div class="hero" id="top">
+    <div class="wrap">
+      <div class="kick"><span class="live">Baton relay · live</span><span>chain chn_7f3a</span><span>demo data</span></div>
+      <div class="hgrid">
+        <div>
+          <div class="counter" role="img" id="r-counter" aria-label={`Leg ${facts.realChainLegs} of one relay chain`}>
+            <svg class="fork" viewBox="0 0 100 148" aria-hidden="true"><path d="M14 6 V52 Q14 78 50 78 Q86 78 86 52 V6 M50 78 V142" /></svg>
+            <div class="odo" id="r-odo"></div>
+          </div>
+          <div class="cap"><span>legs in one chain</span><span><b>on the backlog since Wed 21:00</b></span><span>⑂ {facts.realChainLegs} is from a real session</span></div>
+        </div>
+        <div class="copy">
+          <p class="pre">Mission control for AI agents · VS Code</p>
+          <h1>Your agents forget. <em>Your fleet doesn't.</em></h1>
+          <p class="lede">At <b>{relay.contextHandoverPct}% context</b> a session stops, commits, writes a handover note and passes the baton. A fresh session reads the note and carries on: <b>item after item off your backlog, day and night</b>, never from a rotting context. Code, a video series or a thesis: it all runs the same way.</p>
+          <div class="ctas"><a class="cta" href="#s-close">Join early access</a><a class="ghost" href="#s-days">Watch one chain run day and night</a></div>
+        </div>
+      </div>
+      <div class="railhd"><span><b>⑂ relay track</b> · every card is one fresh session</span><span>commit · account · length · context at handover</span></div>
+    </div>
+    <div class="rail" id="r-rail" aria-label="Relay track: recent legs of the chain"><div class="trk" id="r-trk"></div><div class="baton" id="r-baton"></div></div>
+    <div class="wrap">
+      <div class="inst">
+        <div class="pn">
+          <div class="ph"><span>Context · leg <b id="r-iLeg">⑂ 92</b></span><span class="state" id="r-iState">working</span></div>
+          <div class="bigv"><span id="r-iCtx">26.0</span><small>%</small></div>
+          <div class="sub" id="r-iTok">260k of 1.0M tokens</div>
+          <div class="gwrap"><div class="gauge" id="r-gauge"><i id="r-gFill"></i><u style={`left:${relay.contextConvergePct}%`}><em>{relay.contextConvergePct} converge</em></u><u class="h" style={`left:${relay.contextHandoverPct}%`}><em>{relay.contextHandoverPct} hand over</em></u></div></div>
+        </div>
+        <div class="pn">
+          <div class="ph"><span>Quota shield</span><span class="state" id="r-qState">@emptiest</span></div>
+          <div id="r-qAccs"></div>
+          <div class="sub" style="margin-top:auto;padding-top:10px">5-hour window · hand over at {relay.quotaHandoverPct}% · week at {relay.quotaWeeklyHandoverPct}%</div>
+        </div>
+        <div class="pn con">
+          <div class="ph"><span>Console · developer</span><span class="state" id="r-cSeat">same seat</span></div>
+          <div class="lines" id="r-lines" aria-live="polite"></div>
+          <div class="cstrip" id="r-cstrip"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

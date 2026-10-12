@@ -1,0 +1,39 @@
+---
+// Any brain (chapter VII, plan v0.7 §3): five engines, and through routes, almost any model. The panel rebuilds the
+// Engines page (screenshots M9, M9b, Mz3a, Mz3b; media/engines.js, afRouteForm.js, afAccounts.js, afPolicies.js) and the
+// Secrets page (Mz2; media/secrets.js) with demo data. Beside it a switchboard: which engine runs which brain, and the
+// routes that only Claude Code and OpenCode take (src/core/providerCatalog.ts: the shipped templates). scripts/brains.js
+// runs it: an engine test buys one real turn, a route is added from a template and tested. Facts:
+// AF-WEB_NOTES_phase2-facts §VII. Accounts, keys, routes and model names in the form are demo data.
+import '../../styles/sections/brains.css';
+import { no } from '../../data/page.js';
+---
+<section id="s-brains" class="gap" aria-label="Any brain: five engines, and other models through routes">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-brains')}</b> Brains</p>
+    <div class="sh">
+      <div><p class="pre">Engines · routes · sign-ins · keys</p><h2>Five engines. <em>Any number of brains.</em></h2></div>
+      <p class="lead">Claude Code, Codex, Gemini, Antigravity and OpenCode, each paid for the way you already pay. Claude Code and OpenCode can also run other models through a route: a provider's, a free one, or one at an address on your own machine. Keys stay in your OS keychain.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bpanel" id="br-panel" data-shows="engines routes radar health accounts policies vault" aria-label="Agent Farm's Engines and Secrets pages, rebuilt with demo data">
+        <div class="mtabs" id="br-tabs" role="tablist" aria-label="Pages">
+          <button type="button" role="tab" data-tab="engines" class="on" aria-selected="true">Agent Farm — Engines</button>
+          <button type="button" role="tab" data-tab="secrets" aria-selected="false">Agent Farm — Secrets</button>
+        </div>
+        <div class="jump" id="br-jump" role="tablist" aria-label="Parts of the Engines page">
+          <button type="button" role="tab" data-tab="engines" class="on" aria-selected="true">Engines</button>
+          <button type="button" role="tab" data-tab="routes" aria-selected="false">Providers and routes</button>
+          <button type="button" role="tab" data-tab="accounts" aria-selected="false">Accounts</button>
+        </div>
+        <div class="bbody" id="br-view" aria-live="polite"></div>
+      </div>
+      <div class="board" id="br-board" aria-label="Which engine runs which brain">
+        <div class="bhd"><span>Switchboard</span><b>engine → brain</b></div>
+        <div class="sw" id="br-sw"></div>
+        <p class="launch" id="br-launch"></p>
+        <p class="bcap">A plan, a key or an app sign-in is each engine's own. A route is one address, one key and its models, lent to Claude Code or OpenCode when a session starts; it is never written into their files.</p>
+      </div>
+    </div>
+  </div>
+</section>

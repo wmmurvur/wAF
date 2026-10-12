@@ -1,0 +1,17 @@
+---
+// A human band (data/photos.js): a photograph with a time or a place, a line, and what the farm is doing meanwhile.
+// Wide photos run edge to edge and drift slowly while on screen (scripts/bands.js); a tall one sits beside its words.
+// With only `p`, it is a plain photo strip (a district page's header).
+import '../styles/band.css';
+import { photos, bands } from '../data/photos.js';
+import { rootOf } from '../data/site.js';
+interface Props { p: string; plain?: boolean; }
+const { p, plain = false } = Astro.props;
+const P = photos[p], B = plain ? null : bands[p], root = rootOf(Astro.url);
+const src = s => `${root}assets/photos/${p}-${s}.jpg`;
+const sizes = P.tall ? '(max-width: 860px) 100vw, 40vw' : '100vw';
+---
+<figure class={`band${P.tall ? ' tall' : ''}${plain ? ' plain' : ''}`} data-band>
+  <div class="ph"><img src={src('l')} srcset={`${src('s')} ${P.tall ? 560 : 900}w, ${src('l')} ${P.tall ? 1000 : 1800}w`} sizes={sizes} alt={P.alt} loading="lazy" decoding="async" style={`object-position:${P.pos}`} /></div>
+  {B && <figcaption class="wrap"><p class="bk">{B.k}</p><p class="bt">{B.t}</p><p class="bs">{B.s}</p></figcaption>}
+</figure>

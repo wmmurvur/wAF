@@ -1,0 +1,36 @@
+---
+// Start (plan §5.12–5.13): straight answers, then the closing band from prototype v2.3.
+// Every answer is a limit or a default stated in the extension's README or package.json; none is softened.
+import '../../styles/sections/close.css';
+import { relay, licence } from '../../data/facts.js';
+import { site } from '../../data/site.js';
+import { no } from '../../data/page.js';
+const FAQ = [
+  { q: 'Where does the work come from?', a: 'From each project\'s backlog: a plain Backlog.md you write and put in order. Every session starts with the top of the queue in its brief, agents tick off what they finish, and anything waiting on an unfinished item is held back.' },
+  { q: 'Which engines does it run?', a: 'Claude Code, Codex, Gemini, Antigravity and OpenCode. A session, a task, a schedule, a workflow step or a mission delegation can run on any of them, and Agent Farm reads each CLI\'s own history on disk.' },
+  { q: 'Is the cost figure a real bill?', a: 'Only Claude Code and OpenCode publish a price per turn. For the others a cost is derived from your pricing rules: good for comparing runs, not a bill. $0.00 is never printed where no price exists.' },
+  { q: 'Does every engine show up live, mid-turn?', a: 'Claude Code and Codex report each step through their own hooks, and Agent Farm\'s hook relay forwards Gemini\'s, so their sessions reach the Live Timeline mid-turn. Antigravity and OpenCode have no hooks: Agent Farm follows the sessions it hosts for them. Only Claude Code can be told something back through a hook, so the context and quota lines reach its sessions; on the other engines a line that could not be said is recorded as undelivered.' },
+  { q: 'What happens when every account is out of quota?', a: `A leg hands over at ${relay.quotaHandoverPct}% of its five-hour window and the next one opens on the emptiest account. When none is left, the chain parks until the first reset, then wakes and carries on.` },
+  { q: 'Can a chain run away?', a: `Chains stop after ${relay.batonMaxHops} legs by default. Set the limit to 0 for no ceiling. Two legs in a row that end on the same commit stop the chain either way.` },
+  { q: 'Does anything leave my machine?', a: `Nothing about your work comes to us. Free, Agent Farm never contacts us. A paid licence checks itself ${licence.checkEvery}: the key, a hash of the machine and the version, nothing else, and without a connection it keeps working for ${licence.offlineDays} days. There is no telemetry. Your engines talk to their own providers, exactly as they do without Agent Farm, and anything else it reaches is a service you switched on yourself.` },
+];
+---
+<section id="s-close" class="gap" aria-label="Straight answers and how to start">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-close')}</b> Start</p>
+    <div class="sh">
+      <div><p class="pre">Straight answers</p><h2>What it does, <em>and where it stops.</em></h2></div>
+      <p class="lead">The limits are stated, not hidden. They follow from what the engines themselves offer.</p>
+    </div>
+    <div class="faq">
+      {FAQ.map((f, i) => <details open={i === 0}><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    </div>
+    <div class="end">
+      <div><p class="pre">Agent Farm for VS Code</p><h2>Fill the backlog. <em>The fleet works it off, day and night.</em></h2><p>Claude Code · Codex · Gemini · Antigravity · OpenCode · runs on your machine</p></div>
+      <div class="go">
+        <a class="cta" href={site.get.href}>{site.get.label}</a>
+        <span class="still"><i></i>The chain on this page is at <b id="x-leg">⑂ 92</b> and still running</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+// Just ask (chapter VIII, plan v0.7 §3 and §5: the peak of the page, "you never have to learn any of this, say it").
+// A chat with an agent: you ask in one sentence, the agent drives the farm through the bridge, a single shell command
+// (_REF/bridge.md; src/service/af.ts; src/core/bridgeStartText.ts tells every session the way in at its start). Each
+// call raises a notification, "Agent Farm bridge: <op> — ok" (extension.ts), and the farm beside the chat changes.
+// The ops, their arguments and the recipe are the extension's own (workflows.addRecipe, schedules.add with kind weekly,
+// dow 1 = Monday, hour 7; sessions.find / sessions.read; secrets.list gives names only; providers.add with secretRef;
+// agents.pack.export never carries memory or secrets). scripts/bridge.js plays them. Facts: AF-WEB_NOTES_phase2-facts §VIII.
+import '../../styles/sections/bridge.css';
+import { no } from '../../data/page.js';
+import { facts } from '../../data/facts.js';
+const ASKS = [
+  ['weekly', 'Make a weekly video for the channel, every Monday at 7.'],
+  ['resume', 'Pick up where session 7c41e2a0 left off.'],
+  ['route', 'OpenRouter has a new free model. Add it as a route.'],
+  ['pack', 'Pack the showrunner for my laptop.'],
+  ['ops', 'What can you do in the farm?'],
+];
+---
+<section id="s-bridge" class="gap" aria-label="Just ask: an agent sets the farm up for you">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-bridge')}</b> Just ask</p>
+    <div class="sh">
+      <div><p class="pre">The bridge · one shell command · {facts.bridgeOps} operations</p><h2>You never have to learn any of this. <em>Just ask.</em></h2></div>
+      <p class="lead">Every session is told at its start how to reach the farm. So you say it in one sentence and the agent does it: it reads what the farm can do, then calls it, one command at a time. Each call shows up as a notification. Nothing is done behind your back.</p>
+    </div>
+    <div class="kgrid">
+      <div class="kchat" id="bg-chat" data-shows="bridge ops mcp move shared" aria-label="A chat with an agent, demo">
+        <div class="khd"><span class="dot"></span><b>showrunner</b><span>Claude Code · in the Console</span></div>
+        <p class="kstart">Agent Farm bridge: run node "…/bridge/af.js" &lt;op&gt; [@args.json] from the shell — it is not an MCP tool, and every engine and account reaches it the same way.</p>
+        <div class="klog" id="bg-log" aria-live="polite"></div>
+        <div class="kask" id="bg-asks" role="group" aria-label="Ask the agent">
+          {ASKS.map(([id, t], i) => <button type="button" data-ask={id} class={i === 0 ? 'on' : ''}>{t}</button>)}
+        </div>
+      </div>
+      <div class="kdesk" id="bg-desk" aria-label="What changes in the farm while the agent works">
+        <div class="dhd"><span>The farm, meanwhile</span><b id="bg-dt">Tasks · Plan</b></div>
+        <div class="dview" id="bg-view"></div>
+        <div class="toasts" id="bg-toasts" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>

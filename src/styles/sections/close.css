@@ -1,0 +1,16 @@
+/* Start (#s-close): straight answers and the closing band. The band itself (.end) is styled in relay.css. */
+#s-close .faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;border-top:1px solid var(--rule)}
+#s-close details{border-bottom:1px solid var(--rule)}
+#s-close summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 0;font-size:17px;font-weight:500;color:var(--ink)}
+#s-close summary::-webkit-details-marker{display:none}
+#s-close summary::before{content:"+";font-family:var(--mono);color:var(--lime);width:14px;flex:none;transition:transform .2s}
+#s-close details[open] summary::before{content:"–"}
+#s-close summary:hover{color:var(--lime)}
+#s-close details p{margin:0 0 18px 28px;color:#b9baa9;font-size:15px;max-width:620px}
+#s-close .end{margin-top:clamp(56px,7vw,100px)}
+#s-close .go{display:grid;gap:12px;justify-items:start}
+#s-close .still{display:block;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+#s-close .still i{display:inline-block;vertical-align:middle;margin:0 8px 2px 0;width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);animation:close-blink 1.4s steps(2) infinite}
+#s-close .still b{color:var(--yellow);font-weight:500;white-space:nowrap}
+@keyframes close-blink{50%{opacity:.25}}
+@media (max-width:860px){#s-close .faq{grid-template-columns:minmax(0,1fr)}}

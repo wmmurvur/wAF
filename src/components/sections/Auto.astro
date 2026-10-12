@@ -1,0 +1,61 @@
+---
+// Recipes and triggers (chapter IV, plan v0.7 §3): work that starts by itself. The panel rebuilds the Tasks page from
+// the owner's screenshots (M7-8-a, b, d) and the extension's own copy (media/tasksPage.js: the Automation strip, the
+// Plan and Runs tabs and their ledes, the words box). Beside it, one watch trigger drawn as a flow: a file lands, the
+// Gatekeeper's trigger check asks Jev whether it is real work (settings: Off · Shadow · On, M15; built-in rule
+// trigger.has-work), and the ready-made recipe "Long to shorts" runs its five real steps. scripts/auto.js runs it.
+// Facts: AF-WEB_NOTES_phase2-facts §IV. Agents, folders, times and costs are demo data.
+import '../../styles/sections/auto.css';
+import { no } from '../../data/page.js';
+const STEPS = [['Extract the sound', 'tool · ffmpeg'], ['Transcript', 'media · whisper'], ['Pick the moments', 'agent · editor'], ['Cut the shorts', 'tool · ffmpeg, one per moment'], ['Final check', 'checkpoint']];
+const FILES = [['interview-take-4.mp4', '48 min of video'], ['~$interview.tmp', 'a lock file'], ['notes.md', 'only spaces changed']];
+---
+<section id="s-auto" class="gap" aria-label="Recipes and triggers: work that starts by itself">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-auto')}</b> Recipes and triggers</p>
+    <div class="sh">
+      <div><p class="pre">Tasks · schedules · triggers · workflows</p><h2>Work that starts <em>by itself.</em></h2></div>
+      <p class="lead">On a clock, when a file lands, or from one sentence in plain words. Switch Gatekeeper on and, before any model is woken, Jev, a model that never chats and only decides, says whether there is real work. Noise wakes nobody.</p>
+    </div>
+    <div class="agrid">
+      <div class="apanel" id="au-panel" data-shows="flows schedules words queue retries forecast" aria-label="The Tasks page, rebuilt with demo data">
+        <div class="mtabs" aria-hidden="true"><span>Studio</span><span>Agent Farm — Sessions</span><span class="on">Agent Farm — Tasks</span></div>
+        <div class="abody">
+          <div class="ahead"><h3>Tasks</h3><span>plan what runs · see what ran — updated <b id="au-upd">03:12</b></span></div>
+          <div class="strip" id="au-strip">
+            <div class="sh1"><b>Automation</b><span class="run">running</span><span class="sp"></span><span class="ctl">⏸ Pause all</span><span class="ctl">1h</span><span class="ctl">8h</span><span class="ctl">24h</span><span class="ctl">🌙 Quiet off</span></div>
+            <div class="stats">
+              <span data-k="run" title="launch slots in use">⚙️ <b id="au-run">0</b>/5 running</span>
+              <span data-k="on" title="switchable definitions are on">📅 <b>4</b>/15 switched on</span>
+              <span data-k="today" title="since midnight: finished, failed">🏁 today <b id="au-ok">19</b>✓ <b>0</b>✗</span>
+              <span data-k="cost">💵 <b id="au-cost">$2.31</b>/7d</span>
+              <span data-k="saved" title="wake-ups a guard suppressed">🛡 <b id="au-saved">2</b> saved</span>
+              <span data-k="att" title="definitions with something wrong">⚠️ <b>0</b> need attention</span>
+            </div>
+          </div>
+          <div class="ttabs" id="au-tabs" role="tablist" aria-label="Tasks tabs">
+            <button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">📅 Plan <span>9</span></button>
+            <button type="button" role="tab" data-tab="runs" aria-selected="false">▶ Runs <span id="au-nruns">61</span></button>
+            <span class="tbtn">＋ New task</span><span class="tbtn">📊 Analytics</span>
+          </div>
+          <div class="aview" id="au-view" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="flow" id="au-flow" data-shows="triggers gatekeeper" aria-label="One watch trigger, its Gatekeeper check and the recipe it runs">
+        <div class="fhd">
+          <span>⚡ Watch trigger · <b>New footage</b></span>
+          <span class="mode" id="au-mode" role="radiogroup" aria-label="Gatekeeper trigger check"><i>Trigger check</i><button type="button" role="radio" data-m="off" aria-checked="false">Off</button><button type="button" role="radio" data-m="shadow" aria-checked="false">Shadow</button><button type="button" role="radio" data-m="on" class="on" aria-checked="true">On</button></span>
+        </div>
+        <div class="node folder"><div class="nh"><b>📁 Studio\inbox</b><span>watched · debounce 5 s · cooldown 60 s</span></div><div class="files" id="au-files"></div></div>
+        <i class="wire" id="au-w1"></i>
+        <div class="node gate" id="au-gate"><div class="nh"><b>🛡 Gatekeeper</b><span>trigger.has-work · asks Jev · waits 3 s at most</span></div><p class="vd" id="au-vd">Waiting for a firing.</p></div>
+        <i class="wire" id="au-w2"></i>
+        <div class="node wf" id="au-wf"><div class="nh"><b>🔗 Long to shorts</b><span>a ready-made recipe · {'{file}'} → its video input</span></div>
+          <ol class="steps" id="au-steps">{STEPS.map(([t, k], i) => <li><span class="n">{i + 1}</span><b>{t}</b><em>{k}</em></li>)}</ol>
+        </div>
+        <div class="drops"><span>Drop a file in the folder</span>{FILES.map(([f, d], i) => <button type="button" data-file={i}><b>{f}</b><em>{d}</em></button>)}</div>
+        <p class="log" id="au-log" aria-live="polite">Gatekeeper is off by default. Here it is on, so you can watch it say no.</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+// Rules (from prototype v2.3): the relay's real defaults, read from the extension's package.json (see data/facts.js).
+import { relay } from '../../data/facts.js';
+import { no } from '../../data/page.js';
+const RULES = [
+  { n: `${relay.contextConvergePct}%`, c: 'var(--yellow)', h: 'Converge', p: 'The session is told once to start nothing new and finish the step in flight.', code: 'contextConvergePct' },
+  { n: `${relay.contextHandoverPct}%`, c: 'var(--lime)', h: 'Hand over', p: 'It stops, commits, writes its handover note and ends the run. The next leg opens with that note.', code: 'contextHandoverPct' },
+  { n: `${relay.quotaHandoverPct}%`, c: 'var(--pink)', h: 'Quota handover', p: "When its account's five-hour window is this full, the leg hands over and the next one opens on another account.", code: 'quotaHandoverPct' },
+  { n: `${relay.quotaWeeklyHandoverPct}%`, c: 'var(--cyan)', h: 'Weekly line', p: 'The same handover for the weekly window, so a chain never runs an account into the wall.', code: 'quotaWeeklyHandoverPct' },
+  { n: 'PARK', c: 'var(--teal)', h: 'Wait for the reset', p: 'Every account past the wall? The next leg parks until the first reset, then wakes and carries on.', code: 'parked until 02:15' },
+  { n: 'BRAKE', c: 'var(--violet)', h: 'Barren-chain brake', p: 'Two legs in a row that end on the same commit stop the chain, instead of burning quota on nothing.', code: 'batonMaxHops' },
+  { n: 'FAILSAFE', c: 'var(--claude)', h: 'Emergency leg', p: 'A leg cut off by an error or left with uncommitted work gets a successor that is told what it left.', code: 'batonEmergencyTemplate' },
+  { n: '0', c: 'var(--lime)', h: 'No ceiling', p: `Chains are capped at ${relay.batonMaxHops} legs by default. Set it to 0 and the relay runs until the work is done.`, code: 'batonMaxHops: 0' },
+];
+---
+<section id="s-rules" class="gap" aria-label="The rules of the relay">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-rules')}</b> The rules of the relay</p>
+    <div class="sh">
+      <div><p class="pre">Real defaults · every one is a setting</p><h2>Runs <em>without you.</em> Braked so it never runs away.</h2></div>
+      <p class="lead">Every number below is a setting you can change. These are the defaults the extension ships with.</p>
+    </div>
+    <div class="rgrid">
+      {RULES.map(r => <div class="rule" style={`--c:${r.c}`}><span class="n">{r.n}</span><h3>{r.h}</h3><p>{r.p}</p><code>{r.code}</code></div>)}
+    </div>
+  </div>
+</section>

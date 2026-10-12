@@ -1,0 +1,60 @@
+---
+// Backlog: project management runs over a work list. The panel rebuilds the Projects page, Backlog tab
+// (owner's screenshots of 11 Oct 2026: project tabs, capture box, area chips, Next up strip, rows with codes, families,
+// sizes and #byAI / #byREQ) with the demo backlog in data/backlog.js. Statements come from the extension's
+// BLUEPRINT ("The backlog — the standing pile of work") and package.json (Add to Backlog on Ctrl+Alt+B).
+// scripts/backlog.js renders the queue from state.js and runs the demo: a thought is captured and filed,
+// and the item the live relay leg is working closes when the hero's leg closes it.
+// Chapter II adds the project list (other kinds of work on the same page: a documentary, a thesis, a campaign) and the
+// Track tab (screenshot M14: tracked, events, sessions, turns, span, uncertain; Items view with each item's sessions and
+// turns), both from data/backlog.js.
+import '../../styles/sections/backlog.css';
+import { project, AREAS, projects } from '../../data/backlog.js';
+import { no } from '../../data/page.js';
+const TABS = ['Home', 'Work', 'Timeline', 'Sessions', 'Plan', 'Backlog', 'Track', 'Docs', 'People', 'Cost', 'Analysis', 'Code'];
+---
+<section id="s-backlog" class="gap" aria-label="Backlog: every project runs on a work list that agents work through">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-backlog')}</b> Backlog</p>
+    <div class="sh">
+      <div><p class="pre">Projects of any kind · the work list · the track</p><h2>You write the work down. <em>The fleet works it off.</em></h2></div>
+      <p class="lead">An app, a documentary, a thesis, a campaign: every project has its own page, and the work waits in one plain Backlog.md file. You put it in order; agents take the top of it, item by item, and tick off what they finish. The Track tab remembers how each one was done.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bpanel" id="b-panel" data-shows="backlog kinds track" aria-label="The Projects page, Backlog and Track tabs, rebuilt with demo data">
+        <div class="mtabs"><span>Console</span><span class="on">Agent Farm — Projects</span><span>Live Timeline</span></div>
+        <div class="pbody">
+          <div class="plist" id="b-plist" role="group" aria-label="Projects"><span class="pl">Active {projects.length}</span>{projects.map((p, i) => <button type="button" data-p={p.id} aria-pressed={i === 0 ? 'true' : 'false'} class={i === 0 ? 'on' : ''}><i></i>{p.name}</button>)}</div>
+          <div class="phead"><h3 id="b-name">{project.name}</h3><span id="b-meta">{project.sessions} sessions · the relay chain is on it</span></div>
+          <p class="pdesc" id="b-desc">{projects[0].desc}</p>
+          <div class="ptabs" id="b-tabs">{TABS.map((t, i) => t === 'Backlog' || t === 'Track' ? <button type="button" data-tab={t.toLowerCase()} aria-pressed={t === 'Backlog' ? 'true' : 'false'} class={t === 'Backlog' ? 'on' : ''} style={`--tc:var(--t${i})`}>{t}</button> : <span aria-hidden="true" style={`--tc:var(--t${i})`}>{t}</span>)}</div>
+          <div id="b-blv">
+          <div class="bline"><span><b id="b-open">{project.open}</b> open · <b id="b-done">{project.done}</b> done</span><span class="file">Backlog.md</span><span class="btn">🧹 Tidy file order</span><span class="btn">⚭ Gather families</span></div>
+          <div class="capt">
+            <p class="ch">Capture</p>
+            <div class="crow">
+              <div class="ta" id="b-ta"><span class="ph" id="b-ph">what needs doing — no code needed, file it later</span><span id="b-typed"></span><i class="caret"></i></div>
+              <div class="sel" aria-hidden="true"><span>— area —</span><span>— type —</span><span>· normal</span><span>— size —</span><span class="w">— part of —</span><b class="add" id="b-add">Add</b></div>
+            </div>
+          </div>
+          <div class="areas" id="b-areas" aria-hidden="true"><span class="on">all areas</span>{AREAS.map(([a, n]) => <span>{a} {n}</span>)}</div>
+          <div class="next">
+            <div class="nh"><b>Next up</b><span><span id="b-q">14</span> queued · agents take 5</span></div>
+            <div class="chips" id="b-chips"></div>
+          </div>
+          <ol class="rows" id="b-rows" aria-live="polite"></ol>
+          </div>
+          <div id="b-trv" class="trv" hidden></div>
+        </div>
+      </div>
+      <ul class="pts">
+        <li><b>One line is enough.</b> No code, no form. Ctrl+Alt+B takes a thought from anywhere in VS Code, and it is filed later, by you or by an agent sweeping.</li>
+        <li><b>The order is yours.</b> Drag the queue. "Do the top five" means your top five, and anything waiting on an unfinished item is held back, with the reason shown.</li>
+        <li><b>Every session starts with what's next.</b> The top of the queue rides in each session's brief, so a chain moves on to the next item with no paste and no lookup.</li>
+        <li><b>Big work comes in families.</b> A whole and its parts, sized XS to XL. Below, one chain works through twelve parts, day and night.</li>
+        <li><b>Agents say what they wrote.</b> <code>#byAI</code> is something an agent noticed and filed itself: a proposal. <code>#byREQ</code> is your thought, typed by an agent.</li>
+        <li><b>A plain file with a memory.</b> Backlog.md opens in Obsidian and travels in git. The Track tab keeps which session, and which turn of it, worked each item, and what an agent tried that did not work, so the next one starts from there.</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+// Fleet (from prototype v2.2): a control-room wall of six live Agent Farm pages, rebuilt from real screenshots.
+import '../../styles/sections/fleet.css';
+import { no } from '../../data/page.js';
+---
+<section id="s-fleet" class="gap" aria-label="The fleet: six Agent Farm pages on one wall">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-fleet')}</b> The fleet</p>
+    <div class="band">
+      <div><p class="pre">Don't just talk to one agent.</p><h2 class="h1">Command an <em>entire fleet.</em></h2></div>
+      <div class="side"><p><b>Claude Code, Codex, Gemini, Antigravity and OpenCode</b> on one wall. Agents work through your backlog, sessions pass the baton day and night, accounts rotate before they run dry, and nothing about your work is sent to us.</p><a class="ghost" href="#s-console"><i></i>Open the console</a></div>
+    </div>
+    <div class="wall" id="f-wall" role="group" aria-label="Six live Agent Farm pages, rebuilt from real screenshots with demo data">
+        <div class="mon" data-i="0"><div class="scr"><div class="hd"><b>Live Timeline</b><span>● listening on 127.0.0.1:8377</span><span class="r" id="f-tlClock">12:10</span></div><canvas id="f-tl"></canvas></div><div class="lab"><span>CH-01 · Live Timeline</span><span>swim lanes</span></div></div>
+        <div class="mon" data-i="1"><div class="scr"><div class="hd"><b>Console</b><span>developer · working</span></div>
+          <div class="cgrid"><div><div class="wt"><span><b>●</b> 2 waiting for you</span><span id="f-cLong">longest 6m</span></div>
+            <div class="cc"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="s"><span class="leg" id="f-cLeg">⑂ 92</span> · <span id="f-cTok">1.8M</span> tk</div><div class="s"><i>working</i> · ctx <span id="f-cCtx">110k</span> / 1.0M</div></div>
+            <div class="cc t"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="s"><i>your turn</i> · 6m · 4 turns</div></div>
+            <div class="cc t"><div class="h"><b>developer</b><span class="eng a">Antigravity</span></div><div class="s"><i>your turn</i> · 5m · 2 turns</div></div>
+            <div class="cc" style="border-left-color:#66675d"><div class="h"><b>reviewer</b><span class="eng x">Codex</span></div><div class="s">idle · 12m · 9 turns</div></div></div>
+            <div class="lns" id="f-cLines"><div class="ln tl"><span>TOOL</span><span>▸ Bash npm run package <b>✓</b></span></div><div class="ln tl"><span>TOOL</span><span>▸ af farm.restartExtensionHost resume=true</span></div><div class="ln"><span>AGENT</span><span>Window reloaded. Checking that the new build is the one actually running.</span></div><div class="ln y"><span>YOU</span><span>Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.</span></div><div class="ln"><span>AGENT</span><span>3.931.0 is running. Same seat. Continuing the live test.</span></div></div></div>
+          <div class="cstrip" id="f-cStrip">session 3efb20bf · ctx 110.2k / 1.0M · 11% · ⑂ 92 · ~$4.92</div></div><div class="lab"><span>CH-02 · Console</span><span>sessions</span></div></div>
+        <div class="mon" data-i="2"><div class="scr"><div class="hd"><b>Accounts</b><span>Claude Code · 4 accounts</span><span class="r">auto-refresh: on</span></div><div id="f-accs"></div><div class="alog" id="f-alog"></div></div><div class="lab"><span>CH-03 · Accounts</span><span>quota shield</span></div></div>
+        <div class="mon" data-i="3"><div class="scr"><div class="hd"><b>Agent Farm</b><span>dashboard · demo data</span><span class="r">14d</span></div>
+          <div class="kpis"><div class="kp"><div class="k">ACTIVE NOW</div><div class="v">1<span style="font-size:2cqw;color:#9a9a8f">/9</span></div><div class="n">agents</div></div><div class="kp"><div class="k">COST TODAY</div><div class="v" id="f-dCost">$41</div><div class="n">API-equivalent</div></div><div class="kp"><div class="k">SESSIONS</div><div class="v" id="f-dSes">1499</div><div class="n">all engines</div></div><div class="kp"><div class="k">WAITING</div><div class="v" style="color:var(--lime)">2</div><div class="n">longest 6m</div></div></div>
+          <div class="pu"><div class="row"><span>Current session</span><span class="tr"><i id="f-pu1" style="width:91%;background:var(--pink)"></i></span><span id="f-pu1t" style="color:var(--pink)">91%</span></div><div class="row"><span>Current week (all models)</span><span class="tr"><i style="width:17%;background:var(--cyan)"></i></span><span style="color:var(--cyan)">17%</span></div></div>
+          <canvas id="f-bars"></canvas></div><div class="lab"><span>CH-04 · Dashboard</span><span>cost & quota</span></div></div>
+        <div class="mon" data-i="4"><div class="scr"><div class="hd"><b>Now</b><span>the farm on your phone</span></div>
+          <div class="now"><div class="box"><h5>Waiting for you 2</h5><div class="r"><span class="d"></span>developer <span class="eng" style="margin-left:0">Claude</span> 6m</div><div class="r" style="color:#9a9a8f;padding-left:2.2cqw">question · auto-answer in <b id="f-nAA" style="color:var(--yellow);font-weight:400">0:42</b></div><div class="r"><span class="d"></span>developer <span class="eng a" style="margin-left:0">Antigravity</span> 5m</div><div class="r" style="color:#9a9a8f;padding-left:2.2cqw">your turn · reply from here</div></div>
+            <div class="box"><h5>Running 3</h5><div class="r"><span class="d"></span>developer <span class="eng" style="margin-left:0">Claude</span> working</div><div class="r"><span class="d" style="background:#9a9a8f"></span>developer <span class="eng a" style="margin-left:0">Antigravity</span> idle</div><div class="r"><span class="d" style="background:#9a9a8f"></span>reviewer <span class="eng x" style="margin-left:0">Codex</span> idle</div></div>
+            <div class="box"><h5>Today</h5><div class="big" id="f-nCost">$41.20</div><div style="font-size:1.6cqw;color:#9a9a8f">spent today</div><div id="f-nAcc" style="display:grid;gap:.8cqw;margin-top:1.4cqw"></div></div></div>
+          <div class="notes"><span><b>●</b> Notices · chn_7f3a handed over to a fresh leg (ctx 40%)</span><span><b>●</b> Notices · acct-c at 90% · next leg moves to acct-d</span></div></div><div class="lab"><span>CH-05 · Now</span><span>phone view</span></div></div>
+        <div class="mon" data-i="5"><div class="scr"><div class="hd"><b>Chains</b><span>⑂ baton relay</span><span class="r">3 chains</span></div><div id="f-chains"></div><div class="hand" id="f-hand"></div></div><div class="lab"><span>CH-06 · Chains</span><span>baton relay</span></div></div>
+      </div>
+      <div class="desk" aria-live="polite"><span class="ch" id="f-dkCh">CH-01</span><div class="tx"><b id="f-dkT">Every agent on one timeline.</b><span id="f-dkS">Tool runs, prompts, permission waits and compactions, per session, live from the hooks.</span></div><div class="dots" id="f-dots"></div></div>
+      <div class="sb" aria-label="Status bar ticker"><span class="hide">⑂ agent master*</span><span>1 active · <span id="f-sbCost">$41.20</span> today</span><span class="q" id="f-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="f-sbLeg">⑂ 92</span><span class="feed"><div id="f-feed"></div></span><span class="hide" id="f-sbVer">Agent Farm 3.931.0</span></div>
+  </div>
+</section>

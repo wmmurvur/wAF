@@ -1,0 +1,75 @@
+/* Just ask (#s-bridge): a chat with an agent driving the farm over the bridge, and the farm beside it with the
+   extension's bridge notifications. Chapter VIII's accent is --ink: the plainest chapter, because it is only words. */
+#s-bridge{--c:var(--ink)}
+#s-bridge .kgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(18px,2.6vw,40px);align-items:start}
+#s-bridge button{font-family:var(--ui)}
+
+/* the chat */
+#s-bridge .kchat{background:#15160f;border:1px solid #3a3b33;box-shadow:0 40px 100px -40px rgba(0,0,0,.9);font-family:var(--ui);color:#d9d9ce;min-width:0;display:flex;flex-direction:column}
+#s-bridge .khd{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid #2e2f28;font-size:12.5px;background:#1b1c16}
+#s-bridge .khd .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+#s-bridge .khd b{color:#f1f1e7}
+#s-bridge .khd span:last-child{color:#8f8f84}
+#s-bridge .kstart{margin:0;padding:7px 14px;font-family:var(--mono);font-size:10.5px;line-height:1.5;color:#6f705f;border-bottom:1px dashed #2e2f28}
+#s-bridge .klog{height:470px;overflow:auto;scrollbar-width:thin;scrollbar-color:#45463e transparent;padding:12px 14px;display:flex;flex-direction:column;gap:9px;font-size:13px;line-height:1.55}
+#s-bridge .klog em{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6f705f;margin-bottom:2px}
+#s-bridge .mu{align-self:flex-end;max-width:82%;background:#2b2c26;border:1px solid #3a3b33;padding:7px 11px;color:#f1f1e7}
+#s-bridge .ma{max-width:92%;color:#e8e8de;border-left:2px solid var(--lime);padding-left:10px}
+#s-bridge .mc,#s-bridge .mf{background:#0f100b;border:1px solid #2a2b23;padding:6px 10px;min-width:0}
+#s-bridge .mc code{display:block;font-family:var(--mono);font-size:12px;color:#cfd0c4;white-space:pre-wrap;overflow-wrap:anywhere}
+#s-bridge .mc code b{font-weight:400;color:var(--lime)}
+#s-bridge .mc pre,#s-bridge .mf pre{margin:4px 0 0;font-family:var(--mono);font-size:11px;line-height:1.5;color:#8f8f84;white-space:pre-wrap;overflow-wrap:anywhere}
+#s-bridge .mc pre:empty{display:none}
+#s-bridge .mf pre{color:#b9baa9}
+#s-bridge .kask{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px 12px;border-top:1px solid #2e2f28;background:#1b1c16}
+#s-bridge .kask button{font-size:12px;line-height:1.35;text-align:left;color:#cfd0c4;background:#26271f;border:1px solid #3a3b33;border-radius:14px;padding:5px 12px;cursor:pointer;transition:border-color .2s,color .2s}
+#s-bridge .kask button:hover{border-color:#8f8f84;color:#f1f1e7}
+#s-bridge .kask button.on{border-color:var(--lime);color:#f1f1e7;background:#232d14}
+
+/* the farm, meanwhile */
+#s-bridge .kdesk{position:sticky;top:76px;background:#1f201b;border:1px solid #3a3b33;font-family:var(--ui);color:#d9d9ce;min-width:0;display:flex;flex-direction:column;min-height:420px}
+#s-bridge .dhd{display:flex;align-items:baseline;gap:10px;padding:9px 14px;border-bottom:1px solid #2e2f28;background:#181914;font-size:12px}
+#s-bridge .dhd span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8f8f84}
+#s-bridge .dhd b{margin-left:auto;font-weight:400;color:#f1f1e7}
+#s-bridge .dview{padding:12px 14px;font-size:12.5px;flex:1}
+#s-bridge .dg{margin:8px 0 4px;font-size:10.5px;letter-spacing:.06em;color:#a3a495;background:#2a2b25;padding:3px 8px}
+#s-bridge .dg:first-child{margin-top:0}
+#s-bridge .dr,#s-bridge .dc{display:flex;flex-direction:column;gap:1px;padding:6px 8px;border-bottom:1px solid #2e2f28}
+#s-bridge .dr b,#s-bridge .dc b{color:#f1f1e7;font-weight:600}
+#s-bridge .dr span,#s-bridge .dc span{font-size:11.5px;color:#a3a495}
+#s-bridge .dc{background:#26271f;border:1px solid #33342d;margin-bottom:6px}
+#s-bridge .dc .mono{font-family:var(--mono);font-size:10.5px}
+#s-bridge .nw{animation:bg-new 2.6s ease-out;box-shadow:inset 3px 0 0 var(--lime)}
+@keyframes bg-new{from{background:#2f3d14}}
+#s-bridge .dn{margin:10px 0 0;font-size:12px;color:#e4c76a;background:#2b2818;padding:6px 9px;line-height:1.45}
+#s-bridge .dn b{color:#f1f1e7;font-family:var(--mono);font-weight:400;font-size:11px}
+#s-bridge .dim{margin:0 0 8px;color:#8f8f84}
+#s-bridge .pk{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px}
+#s-bridge .pk li{font-size:12px;padding-left:20px;position:relative;color:#d9d9ce}
+#s-bridge .pk li::before{position:absolute;left:2px}
+#s-bridge .pk .y::before{content:'✓';color:var(--lime)}
+#s-bridge .pk .n{color:#a3a495}
+#s-bridge .pk .n::before{content:'✗';color:var(--pink)}
+#s-bridge .ns{display:flex;flex-wrap:wrap;gap:5px}
+#s-bridge .ns span{font-family:var(--mono);font-size:11px;color:#cfd0c4;border:1px solid #3a3b33;padding:2px 7px}
+#s-bridge .ns i{font-style:normal;color:#6f705f;margin-left:5px}
+#s-bridge .ns .more{border-style:dashed;color:#8f8f84}
+
+/* VS Code notifications, bottom right of the desk */
+#s-bridge .toasts{display:flex;flex-direction:column;gap:5px;padding:0 10px 10px;align-items:flex-end;min-height:110px;justify-content:flex-end}
+#s-bridge .toast{margin:0;width:min(100%,330px);box-sizing:border-box;background:#252526;border:1px solid #454545;box-shadow:0 6px 18px rgba(0,0,0,.5);padding:7px 10px;font-size:12px;color:#cccccc;animation:bg-in .35s ease-out;transition:opacity .6s,transform .6s}
+#s-bridge .toast i{font-style:normal;color:#3794ff;margin-right:4px}
+#s-bridge .toast.out{opacity:0;transform:translateX(16px)}
+@keyframes bg-in{from{opacity:0;transform:translateY(10px)}}
+
+@media (max-width:1100px){
+  #s-bridge .kgrid{grid-template-columns:minmax(0,1fr)}
+  #s-bridge .kdesk{position:static;min-height:0}
+}
+@media (max-width:700px){
+  #s-bridge .klog{height:440px;padding:10px}
+  #s-bridge .kstart{display:none}
+  #s-bridge .mu{max-width:92%}
+  #s-bridge .kask{padding:8px 10px 10px}
+}
+@media (prefers-reduced-motion:reduce){#s-bridge .toast,#s-bridge .nw{animation:none}}

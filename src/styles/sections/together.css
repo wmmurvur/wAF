@@ -1,0 +1,72 @@
+/* Together (#s-together): the mission graph and the Missions page (screenshot 043). */
+#s-together .tgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,3vw,44px);align-items:start}
+
+/* graph */
+#s-together .mgraph{border:1px solid var(--rule);background:radial-gradient(120% 80% at 20% 50%,rgba(168,240,53,.06),transparent 60%),var(--void-2);padding:16px 16px 18px;min-width:0}
+#s-together .mhead{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+#s-together .mhead span:first-child{color:var(--lime)}
+#s-together svg{display:block;width:100%;height:auto;margin-top:6px}
+#s-together .wire{fill:none;stroke:#34352d;stroke-width:1.5;transition:stroke .4s}
+#s-together .wire.on{stroke:#5a8c09}
+#s-together .wire.back{stroke:#2f7f86}
+#s-together .node rect{fill:#16170f;stroke:#3a3b33;stroke-width:1.2;transition:stroke .3s,fill .3s}
+#s-together .node text{font-family:var(--mono);font-size:12px;fill:#8f8f84}
+#s-together .node .r{font-family:var(--sans);font-size:15px;font-weight:600;fill:#f1f1e7}
+#s-together .node .e{font-size:11.5px;fill:var(--claude)}
+#s-together .node .e.x{fill:#9ad}#s-together .node .e.a{fill:var(--agy)}#s-together .node .e.o{fill:var(--teal)}
+#s-together .node .s{font-size:11px}
+#s-together .lead rect{stroke:#5a8c09;fill:#141a0b}
+#s-together .lead.think rect{stroke:var(--lime);filter:drop-shadow(0 0 10px rgba(168,240,53,.45))}
+#s-together .node.work rect{stroke:var(--lime);fill:#141a0b}
+#s-together .node.work .s{fill:var(--lime)}
+#s-together .node.back rect{stroke:var(--cyan)}
+#s-together .node.back .s{fill:var(--cyan)}
+#s-together #t-dots circle{filter:drop-shadow(0 0 5px currentColor)}
+#s-together .verdict{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding:12px 14px;border:1px solid #4d6b1c;border-left:4px solid var(--lime);background:#141a0b;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+#s-together .verdict.on{opacity:1;transform:none}
+#s-together .verdict b{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);font-weight:500;margin-right:4px}
+#s-together .verdict p{flex-basis:100%;margin:2px 0 0;font-size:14px;color:#cfd0c4}
+
+/* pills (Missions page) */
+#s-together .pill{display:inline-block;font-family:var(--ui);font-size:11px;line-height:17px;padding:0 8px;border-radius:9px;border:1px solid;white-space:nowrap}
+#s-together .pill.ok{color:var(--lime);border-color:#5a8c09;background:rgba(168,240,53,.1)}
+#s-together .pill.part{color:#f2a03d;border-color:#9a5d17;background:rgba(242,160,61,.1)}
+#s-together .pill.can{color:#ff6a7a;border-color:#8c2b3a;background:rgba(224,36,94,.12)}
+#s-together .pill.run{color:var(--cyan);border-color:#2f7f86;background:rgba(113,227,237,.1)}
+
+/* the Missions page */
+#s-together .mpanel{background:#1f201b;border:1px solid #3a3b33;box-shadow:0 40px 100px -40px rgba(0,0,0,.9);font-family:var(--ui);color:#d9d9ce;min-width:0}
+#s-together .mtabs{display:flex;background:#181914;border-bottom:1px solid #2e2f28;font-size:12.5px;color:#8f8f84;overflow:hidden;white-space:nowrap}
+#s-together .mtabs span{padding:8px 14px;border-right:1px solid #2e2f28}
+#s-together .mtabs .on{background:#1f201b;color:#f1f1e7;box-shadow:inset 0 1px 0 var(--blue)}
+#s-together .mbody{padding:16px 18px 18px}
+#s-together h3{margin:0;font-size:18px;font-weight:600;color:#f1f1e7}
+#s-together .msub{margin:4px 0 14px;font-size:12.5px;color:#a3a495}
+#s-together .sentry{background:#2a2a20;border:1px solid #3f3e2c;padding:10px 12px;margin-bottom:14px}
+#s-together .sh1{display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;font-size:13px}
+#s-together .sh1 b{color:#f1f1e7;font-weight:600}
+#s-together .sh1 .run{font-size:10.5px;letter-spacing:.08em;color:var(--lime);display:flex;align-items:center;gap:6px}
+#s-together .sh1 .run::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);animation:together-blink 1.6s infinite}
+#s-together .sh1 .sq{margin-left:auto;font-family:var(--mono);font-size:11px;color:#a3a495}
+#s-together .sentry p{margin:6px 0 0;font-size:12px;line-height:1.5;color:#b9baa9}
+@keyframes together-blink{50%{opacity:.25}}
+#s-together .mscroll{overflow-x:auto}
+#s-together .mtable{width:100%;border-collapse:collapse;font-size:12.5px;min-width:640px}
+#s-together th{text-align:left;font-weight:600;color:#cfd0c4;padding:6px 8px;border-bottom:1px solid #2e2f28;white-space:nowrap}
+#s-together td{padding:7px 8px;border-bottom:1px solid #26271f;white-space:nowrap;color:#d9d9ce}
+#s-together td:first-child{white-space:normal;min-width:190px;color:#f1f1e7}
+#s-together .tw{color:#6c6d63;margin-right:8px}
+#s-together .adpt{font-size:9.5px;letter-spacing:.06em;color:var(--yellow);border:1px solid #6f6c2a;padding:0 5px;margin-left:8px;vertical-align:1px}
+#s-together .st .pill+.pill{margin-left:4px}
+#s-together .rd,#s-together .tk,#s-together .to{font-family:var(--mono);font-size:12px}
+#s-together .co{color:#f2a03d}
+#s-together .at{color:#8f8f84}
+#s-together tr.live td{background:rgba(168,240,53,.05)}
+#s-together tr.live td:first-child{box-shadow:inset 3px 0 0 var(--lime)}
+#s-together tr.flash td{animation:together-flash 1.2s ease-out}
+@keyframes together-flash{from{background:rgba(168,240,53,.22)}}
+
+@media (max-width:1100px){#s-together .tgrid{grid-template-columns:minmax(0,1fr)}#s-together .mgraph{max-width:640px}}
+@media (max-width:1600px) and (min-width:1101px){#s-together .at{display:none}}
+@media (max-width:620px){#s-together .sh1 .sq{margin-left:0;flex-basis:100%}#s-together .node .r{font-size:17px}#s-together .node .e,#s-together .node .s{font-size:13px}#s-together .node text{font-size:13px}}
+@media (prefers-reduced-motion:reduce){#s-together *{animation:none!important;transition:none!important}}

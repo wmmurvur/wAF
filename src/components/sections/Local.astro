@@ -1,0 +1,84 @@
+---
+// Local (plan §5.10): what reaches us, said exactly, then the engineering proof from prototype v2.1.
+// Statements come from the extension README (no telemetry; hooks listener on 127.0.0.1; secrets in the OS keychain),
+// Remote Access settings (web view on this machine or your network), the Accounts page (screenshot 074: "An account is a
+// config directory, not a copied credential") and the owner's licence plan (data/facts.js licence, 2026-10-12): the free
+// version never contacts us, a paid licence checks its key once a day and nothing else. The optional services named in
+// the caption are the Technical DNA's (§3, §5, §7): Jev's providers, fal.ai and Replicate, Telegram.
+// The proof figures come from data/facts.js; the .proof styles are shared with the Console through console.css.
+import '../../styles/sections/local.css';
+import { facts, relay, licence } from '../../data/facts.js';
+import { no } from '../../data/page.js';
+const json = o => `{ ${Object.entries(o).map(([k, v]) => `"${k}": ${JSON.stringify(v)}`).join(', ')} }`;
+const ENG = [
+  { n: 'Claude Code', c: 'var(--claude)', p: 'Anthropic' },
+  { n: 'Codex', c: '#9ad', p: 'OpenAI' },
+  { n: 'Gemini', c: '#84a9f0', p: 'Google' },
+  { n: 'Antigravity', c: 'var(--agy)', p: 'Google' },
+  { n: 'OpenCode', c: 'var(--teal)', p: 'its providers' },
+];
+---
+<section id="s-local" class="gap" aria-label="Local: nothing about your work reaches us, and the proof">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-local')}</b> Local</p>
+    <div class="lgrid">
+      <div class="stmt">
+        <p class="zero"><b>0</b> bytes</p>
+        <p class="to">of your work to us. <em>Ever.</em></p>
+        <ul class="pts">
+          <li><b>Free: nothing to us at all.</b> No account with us, no request to a server of ours. It runs inside VS Code and reads each CLI's own files on disk.</li>
+          <li><b>A paid licence: one check, {licence.checkEvery}.</b> The whole message is beside this. If it cannot reach us, it keeps working for {licence.offlineDays} days.</li>
+          <li><b>No telemetry, no analytics.</b> We don't know which features you use, how often, or on what.</li>
+          <li><b>Secrets stay in the OS keychain.</b> An account is a config folder, not a copied credential.</li>
+          <li><b>Live hooks listen on 127.0.0.1 only.</b> The phone page is yours to switch on, on your own network.</li>
+        </ul>
+      </div>
+      <figure class="mach" id="l-mach" aria-label="Your engines talk to their own providers. Your work never goes to us; a paid licence sends one small check.">
+        <svg viewBox="0 0 560 420" aria-hidden="true">
+          <g class="us">
+            <rect x="380" y="18" width="160" height="56" rx="28" />
+            <text x="460" y="42" text-anchor="middle" class="ut">MuVuSOFT</text>
+            <text x="460" y="60" text-anchor="middle" class="us2">licence check only</text>
+          </g>
+          <path class="cut" d="M290,160 L392,50" />
+          <text x="300" y="112" class="wl" transform="rotate(-47 300 112)">your work</text>
+          <g class="x"><line x1="335" y1="96" x2="351" y2="112" /><line x1="351" y1="96" x2="335" y2="112" /></g>
+          <path class="lic" id="l-lic" d="M304,182 L452,74" />
+          <circle class="pkt" r="4" />
+          <text x="398" y="150" class="ll">licence · {licence.checkEvery}</text>
+          <rect class="box" x="20" y="120" width="300" height="280" />
+          <text x="36" y="146" class="bt">YOUR MACHINE</text>
+          <rect class="af" x="36" y="160" width="268" height="44" />
+          <text x="52" y="187" class="aft">VS Code · Agent Farm</text>
+          {ENG.map((e, i) => (
+            <g class="eng">
+              <rect x="36" y={220 + i * 34} width="128" height="26" style={`stroke:${e.c}`} />
+              <text x="48" y={238 + i * 34} style={`fill:${e.c}`}>{e.n}</text>
+              <path class="wire" d={`M164,${233 + i * 34} L400,${233 + i * 34}`} style={`stroke:${e.c}`} />
+              <text x="410" y={237 + i * 34} class="pv">{e.p}</text>
+            </g>
+          ))}
+        </svg>
+        <div class="msg" aria-label="Everything a paid licence sends to us">
+          <p class="mh"><span>The licence check, whole</span><span>paid licence · {licence.checkEvery}</span></p>
+          <pre><span class="ar">→</span> {json(licence.sends)}
+<span class="ar">←</span> {json(licence.answer)}</pre>
+          <p class="nv"><b>Never in it:</b> {licence.never.join(' · ')}.</p>
+        </div>
+        <figcaption>Your engines talk to their own providers, as they always do. Anything else Agent Farm reaches is a service you switch on yourself: a voice for the briefing, a media model in Studio, Jev for Gatekeeper, Telegram.</figcaption>
+      </figure>
+    </div>
+
+    <section class="proof" aria-label="The proof">
+      <div><h2>Built like <span>infrastructure.</span></h2><p class="src">Every number stated on this page comes from a real screen of the app or from its source. The moving parts are demos, with demo data.</p></div>
+      <div class="facts">
+        <div class="fact"><b>{facts.tests}</b><span>tests behind {facts.releases} releases</span><small>Technical DNA · CHANGELOG.md</small></div>
+        <div class="fact"><b class="c-l">0</b><span>runtime dependencies, 0 telemetry</span><small>package.json · README</small></div>
+        <div class="fact"><b class="c-y">⑂ {facts.realChainLegs}</b><span>legs in one real relay chain</span><small>Console · session strip</small></div>
+        <div class="fact"><b>{facts.engines.length}</b><span>engines, each measured against a real binary</span><small>Engines page</small></div>
+        <div class="fact"><b>{relay.contextHandoverPct}%</b><span>the context line where a leg hands over</span><small>contextHandoverPct</small></div>
+        <div class="fact"><b>{facts.commands}</b><span>commands and {facts.settings} settings, in one extension</span><small>package.json</small></div>
+      </div>
+    </section>
+  </div>
+</section>

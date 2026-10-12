@@ -1,0 +1,51 @@
+---
+// Studio (chapter III, plan v0.7 §3): a production made scene by scene. The panel rebuilds the Studio page from the
+// owner's screenshots (M1a, M1b) and the extension's own copy (media/studio.js: the five tabs and their hints, scene
+// statuses, card buttons, Triage, Assemble and the Premiere export). It plays a demo production, "The last keeper";
+// beside it the film itself, drawn frame by frame in scripts/film.js. scripts/studio.js renders the tabs and runs the
+// demo; the tiles of chapter III switch the page to the part that shows them. Facts: AF-WEB_NOTES_phase2-facts §III.
+import '../../styles/sections/studio.css';
+import { no } from '../../data/page.js';
+import { SCENES } from '../../scripts/film.js';
+const TABS = [
+  ['pipeline', 'Pipeline', 'the production, scene by scene'],
+  ['assets', 'Assets', 'everything that was made or ingested'],
+  ['triage', 'Triage', 'assets nobody has judged yet'],
+  ['assemble', 'Assemble', 'the sequence Premiere would get'],
+  ['sources', 'Sources', 'providers · watched folders · budget'],
+];
+---
+<section id="s-studio" class="gap" aria-label="Studio: agents make a short film, scene by scene">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-studio')}</b> Studio</p>
+    <div class="sh">
+      <div><p class="pre">A production · scene by scene · demo</p><h2>Not only code. <em>A film, made by agents.</em></h2></div>
+      <p class="lead">Give the Studio a brief. Agents write the shots and a video model makes them. A vision model checks each one against your criteria, and a shot that fails is made again with the critique. You keep or drop; Premiere gets the sequence.</p>
+    </div>
+    <div class="sgrid">
+      <div class="spanel" id="st-panel" data-shows="crecipes judge premiere inbox calendar briefing" aria-label="The Studio page, rebuilt with demo data">
+        <div class="mtabs" aria-hidden="true"><span>Agent Farm — Dashboard</span><span class="on">Studio</span><span>Agent Farm — Tasks</span></div>
+        <div class="sbody">
+          <div class="shead"><h3>🎬 Studio</h3><span id="st-sub">The last keeper · 3/6 scenes approved · $1.62 in 30 days</span></div>
+          <div class="stabs" id="st-tabs" role="tablist" aria-label="Studio tabs">
+            {TABS.map(([id, label, hint], i) => <button type="button" role="tab" data-tab={id} title={hint} aria-selected={i === 0 ? 'true' : 'false'} class={i === 0 ? 'on' : ''}>{label}<span class="cnt" data-cnt={id}></span></button>)}
+          </div>
+          <p class="hint" id="st-hint">{TABS[0][2]}</p>
+          <div class="scard" id="st-card" hidden></div>
+          <div class="sview" id="st-view" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="screen">
+        <div class="scrhd"><span class="lv"><i></i>Screening</span><b>The last keeper</b><span class="tc" id="st-tc">00:00 / 00:15</span></div>
+        <div class="player" id="st-player">
+          <canvas id="st-film" aria-label="The last keeper, a demo film drawn on this page"></canvas>
+          <button type="button" class="pp" id="st-pp" aria-label="Play">▶</button>
+        </div>
+        <ol class="reel" id="st-reel" aria-label="Scenes in the sequence">
+          {SCENES.map((s, i) => <li><button type="button" data-i={i}><span class="th" data-th={i}></span><span class="nm"><b>{s.id}</b>{s.t}</span><span class="ss" data-ss={i}>draft</span></button></li>)}
+        </ol>
+        <p class="cap">The sequence Premiere would get, playing. A demo film drawn on this page, frame by frame; in the app each shot comes from the model its step names, here a video model for every scene.</p>
+      </div>
+    </div>
+  </div>
+</section>

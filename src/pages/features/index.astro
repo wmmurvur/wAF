@@ -1,0 +1,71 @@
+---
+// /features/: everything Agent Farm does, the tiles of the whole-farm board as cards in their districts (plan v0.8 §2).
+// Search and the district buttons filter the cards (scripts/pages/features.js). The board in the hero plays the
+// whole-farm stories across the districts' cells; each district header has a small moving emblem (data/emblems.js);
+// the cards come in as their district reaches the screen. A card leads to its district's page once
+// that page is built, and to the district's chapter on the landing until then.
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/pages/features.css';
+import { districts, features, stories, hasPage, word } from '../../data/features.js';
+import { emblems } from '../../data/emblems.js';
+
+const total = features.length;
+const href = (D, f) => hasPage(D) ? `${D.slug}/${f ? '#' + f.id : ''}` : `../#ch-${D.id}`;
+---
+<Base
+  title="Features · Agent Farm"
+  description={`Everything Agent Farm does: ${total} things in ${word(districts.length)} districts, from relay chains that never stop to agents that make films, each one checked against the extension's source.`}
+  script="features"
+>
+  <Header />
+  <main class="fhub">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../">Agent Farm</a><span>Features</span></nav>
+      <div class="fhero">
+        <div class="fht">
+          <h1>Everything<br /><em>the farm does.</em></h1>
+          <p class="lead">{total} things in {word(districts.length)} districts. Each one is something Agent Farm does today, checked against its source. Search them, or pick a district.</p>
+        </div>
+        <figure class="fbd" id="fh-board" aria-label="One event travelling across the districts, demo">
+          <div class="cols">
+            {districts.map((D, i) => (
+              <div class="col" style={`--c:${D.c}`}><b>{D.r}</b>
+                {features.filter(f => f.d === i).map(f => <a class="cell" href={`#c-${f.id}`} data-f={f.id} title={f.n} aria-label={f.n}></a>)}
+              </div>
+            ))}
+          </div>
+          <svg class="path" id="fh-path" aria-hidden="true"></svg>
+          <figcaption class="cap" aria-live="polite"><span class="sn"><span id="fh-sn">{stories[0].n}</span><span class="dots" id="fh-dots">{stories.map((s, i) => <button type="button" data-s={i} aria-label={s.n}></button>)}</span></span><b id="fh-t">{stories[0].steps[0].t}</b><span id="fh-x">{stories[0].steps[0].x}</span></figcaption>
+        </figure>
+      </div>
+      <div class="fbar">
+        <label class="fq"><span>Search</span><input type="search" id="fh-q" placeholder="relay, Telegram, Premiere, quota…" autocomplete="off" spellcheck="false" /><span class="fn" id="fh-n" aria-live="polite">{total} shown</span></label>
+        <div class="fds" role="group" aria-label="Districts">
+          <button type="button" data-d="" class="on" aria-pressed="true">All</button>
+          {districts.map((D, i) => <button type="button" data-d={i} style={`--c:${D.c}`} aria-pressed="false"><b>{D.r}</b> {D.n}</button>)}
+        </div>
+      </div>
+      {districts.map((D, i) => (
+        <section class="fd" id={D.slug} data-d={i} style={`--c:${D.c}`} aria-labelledby={`fd-${D.id}`}>
+          <header class="fdh">
+            <span class="fr" aria-hidden="true">{D.r}</span>
+            <div><h2 id={`fd-${D.id}`}>{D.n}</h2><p>{D.k}</p></div>
+            <svg class="emb" viewBox="0 0 72 44" aria-hidden="true" set:html={emblems[D.id]}></svg>
+            <a class="fgo" href={href(D)}>{hasPage(D) ? 'Read the district' : 'See it on the home page'} <i></i></a>
+          </header>
+          <ul class="fcs">
+            {features.filter(f => f.d === i).map(f => (
+              <li class="fc" id={`c-${f.id}`} data-q={`${f.n} ${f.s} ${f.sig} ${D.n}`.toLowerCase()}>
+                <a href={href(D, f)}><span class="n">{f.n}</span><span class="sg">{f.sig}</span><span class="s">{f.s}</span></a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      <p class="fnone" id="fh-none" hidden>Nothing matches that. Try a shorter word, or <button type="button" id="fh-clear">show all {total}</button>.</p>
+    </div>
+  </main>
+  <Footer />
+</Base>

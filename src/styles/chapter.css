@@ -1,0 +1,41 @@
+/* Chapter openers (components/Chapter.astro): the district's numeral and name over a rule in its colour (--c), its tiles
+   in one row, and a readout under them. Tiles share the look of the whole-farm board (sections/atlas.css). */
+.chap{padding-top:clamp(90px,11vw,170px)}
+.chap .chd{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 clamp(18px,2.6vw,40px);align-items:end;border-top:1px solid var(--rule);padding-top:24px}
+.chap .chd::before{content:"";position:absolute;left:0;top:-1px;width:min(240px,32%);height:2px;background:var(--c)}
+.chap .chd:has(.cmore){grid-template-columns:auto minmax(0,1fr) auto}
+.chap .cmore{display:inline-flex;align-items:center;gap:8px;align-self:end;margin-bottom:4px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid #4b4c44;padding:8px 13px;white-space:nowrap}
+.chap .cmore:hover{border-color:var(--c)}
+.chap .cmore i{width:0;height:0;border-left:7px solid var(--c);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.chap .cr{font-family:var(--display);font-weight:900;font-size:clamp(84px,11vw,176px);line-height:.76;color:var(--c);letter-spacing:-.01em}
+.chap .ck{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 8px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.chap .ck span+span{color:var(--faint)}
+.chap .ct{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,4.8vw,76px);line-height:.88}
+.chap .cp{margin:10px 0 0;color:#b9baa9;font-size:16px;max-width:640px}
+.chap .ctl{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.chap .ctile{display:flex;align-items:center;gap:10px;font:inherit;font-size:13.5px;line-height:1.3;color:#cfd0c4;background:#191a14;border:1px solid #2a2b23;padding:7px 11px;cursor:pointer;transition:border-color .25s,background .25s,color .25s}
+.chap .ctile .sg{font-family:var(--mono);font-size:10.5px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chap .ctile:hover{border-color:var(--c);color:var(--ink)}
+.chap .ctile.cur{border-color:color-mix(in srgb,var(--c) 55%,#2a2b23)}
+.chap .ctile.cur .sg{color:var(--c)}
+.chap .ctile.on{border-color:var(--c);color:var(--ink);background:color-mix(in srgb,var(--c) 16%,#191a14)}
+.chap .ctile.on .sg{color:var(--c)}
+.chap .crd{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;margin-top:10px;padding:10px 16px;background:#0d0e0a;border:1px solid var(--rule);border-left:2px solid var(--c);min-height:52px}
+.chap .cc{font-family:var(--display);font-weight:800;font-size:24px;line-height:1;color:var(--c);white-space:nowrap;min-width:2.6ch}
+.chap .cx{color:#cfd0c4;font-size:15px}
+.chap .cgo{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid #4b4c44;padding:7px 12px;white-space:nowrap}
+.chap .cgo:hover{border-color:var(--c)}
+.chap .cgo i{width:0;height:0;border-top:7px solid var(--c);border-left:4.5px solid transparent;border-right:4.5px solid transparent}
+.chap .cgo[hidden]{display:none}
+/* the chapter's first section sits close under its opener */
+.chap + section.gap{padding-top:clamp(44px,5vw,76px)}
+@media (max-width:620px){
+  .chap .chd,.chap .chd:has(.cmore){grid-template-columns:minmax(0,1fr)}
+  .chap .cmore{justify-self:start;margin-top:14px}
+  .chap .cr{font-size:76px;margin-bottom:10px}
+  .chap .ctile{font-size:12.5px;padding:6px 9px}
+  .chap .ctile .sg{display:none}
+  .chap .crd{grid-template-columns:auto minmax(0,1fr);padding:10px 12px}
+  .chap .cgo{grid-column:1/-1;justify-self:start}
+  .chap .cx{font-size:14px}
+}

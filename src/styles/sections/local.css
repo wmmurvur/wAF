@@ -1,0 +1,56 @@
+/* Local (#s-local): the "0 bytes of your work" statement, the machine diagram and the licence check's whole message. The .proof block below it is styled in console.css. */
+#s-local .lgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center;padding-bottom:clamp(36px,5vw,64px)}
+#s-local .zero{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(72px,10vw,168px);line-height:.82;letter-spacing:-.01em}
+#s-local .zero b{color:var(--lime);font-weight:900;filter:drop-shadow(0 0 30px rgba(168,240,53,.35))}
+#s-local .to{margin:4px 0 26px;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(30px,3.4vw,54px);line-height:.95;color:#b9baa9}
+#s-local .to em{font-style:normal;color:var(--ink)}
+#s-local .pts{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:560px}
+#s-local .pts li{position:relative;padding-left:22px;color:#b9baa9;font-size:15px}
+#s-local .pts li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:2px;background:var(--lime)}
+#s-local .pts b{color:var(--ink);font-weight:500}
+
+#s-local .mach{margin:0;min-width:0}
+#s-local .mach svg{display:block;width:100%;height:auto}
+#s-local .mach figcaption{margin-top:8px;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+#s-local .box{fill:rgba(168,240,53,.03);stroke:#5a8c09;stroke-width:1.3}
+#s-local .bt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;fill:var(--lime)}
+#s-local .af{fill:#16170f;stroke:#3a3b33}
+#s-local .aft{font-family:var(--sans);font-size:14px;font-weight:600;fill:#f1f1e7}
+#s-local .eng rect{fill:#11120d;stroke-width:1}
+#s-local .eng text{font-family:var(--ui);font-size:12px}
+#s-local .eng .pv{fill:var(--dim);font-family:var(--mono);font-size:11px}
+#s-local .wire{fill:none;stroke-width:1.2;stroke-dasharray:3 5;opacity:.6;animation:local-flow 1.2s linear infinite}
+@keyframes local-flow{to{stroke-dashoffset:-16}}
+#s-local .us rect{fill:none;stroke:#4b4c44;stroke-dasharray:4 4}
+#s-local .ut{font-family:var(--mono);font-size:11.5px;fill:var(--dim)}
+#s-local .us2{font-family:var(--mono);font-size:11px;fill:var(--lime)}
+#s-local .cut{fill:none;stroke:var(--pink);stroke-width:1.6;stroke-dasharray:150;stroke-dashoffset:150}
+#s-local .wl{font-family:var(--mono);font-size:10.5px;fill:var(--pink);opacity:0;transition:opacity .4s .6s}
+#s-local .mach.on .wl{opacity:.85}
+/* the licence line: thin, lime, and one small packet that goes out and comes back while the section is on screen */
+#s-local .lic{fill:none;stroke:var(--lime);stroke-width:1;stroke-dasharray:2 4;opacity:.7}
+#s-local .ll{font-family:var(--mono);font-size:10.5px;fill:var(--lime)}
+#s-local .pkt{fill:var(--lime);offset-path:path("M304,182 L452,74");offset-distance:0%;opacity:0}
+#s-local .mach.vis .pkt{animation:local-pkt 6s 2s ease-in-out infinite}
+@keyframes local-pkt{0%{offset-distance:0%;opacity:0}6%{opacity:1}40%{offset-distance:100%;opacity:1}50%{offset-distance:100%;opacity:0}55%{offset-distance:100%;opacity:1}90%{offset-distance:0%;opacity:1}96%,100%{offset-distance:0%;opacity:0}}
+#s-local .msg{margin-top:10px;border:1px solid #2e3a17;background:rgba(168,240,53,.03);padding:12px 14px}
+#s-local .msg .mh{margin:0 0 8px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+#s-local .msg .mh span+span{color:var(--dim)}
+#s-local .msg pre{margin:0;font-family:var(--mono);font-size:12px;line-height:1.7;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+#s-local .msg .ar{color:var(--lime)}
+#s-local .msg .nv{margin:10px 0 0;font-size:13px;color:#b9baa9}
+#s-local .msg .nv b{color:var(--pink);font-weight:500}
+#s-local .x line{stroke:var(--pink);stroke-width:2.2;opacity:0}
+#s-local .us{opacity:.35;transition:opacity .6s 1.6s}
+/* on view: the line reaches out, is cut, and the place it was heading for turns out not to exist */
+#s-local .mach.on .cut{animation:local-reach 1.6s ease-out forwards}
+#s-local .mach.on .x line{animation:local-x .3s 1.1s forwards}
+#s-local .mach.on .us{opacity:1}
+@keyframes local-reach{0%{stroke-dashoffset:150}60%{stroke-dashoffset:75}100%{stroke-dashoffset:75;opacity:.4}}
+@keyframes local-x{to{opacity:1}}
+
+#s-local .proof{padding-block:clamp(36px,4vw,56px) 0}
+#s-local .proof .src{margin:16px 0 0;color:#b9baa9;font-size:15px;max-width:420px}
+@media (max-width:900px){#s-local .lgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){#s-local .eng text{font-size:16px}#s-local .eng .pv{font-size:14px}#s-local .aft{font-size:18px}#s-local .bt{font-size:14px}#s-local .ut,#s-local .us2{font-size:14px}#s-local .wl,#s-local .ll{font-size:13px}}
+@media (prefers-reduced-motion:reduce){#s-local .cut{stroke-dashoffset:75}#s-local .x line{opacity:1}#s-local .us{opacity:1}#s-local .wl{opacity:.85}#s-local .mach.vis .pkt{animation:none}}

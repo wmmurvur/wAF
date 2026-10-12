@@ -1,0 +1,45 @@
+---
+// Never forgets (chapter VI, plan v0.7 §3): every session kept, and what matters becomes a wiki. The panel rebuilds five
+// pages of the extension with demo data: Sessions (screenshot M3; media/sessionsTable.js), one session (M4;
+// media/sessionViewer.js) with the "Keep for the wiki" panel (media/afWiki.js), Search (media/search.js), the Wiki
+// cockpit (media/wiki.js) and the Memory Graph (media/memgraph.js). Beside it, the vault as Obsidian shows it (M5): the
+// page a compile writes follows the procedure's template (_REF/wiki.md: 00_WIKI/<Category>/<Concept>.md, one concept per
+// page, its sources listed), and the graph of the pages. scripts/memory.js renders it and runs the demo: a turn is kept,
+// a compile run writes the page, the graph grows a node. Facts: AF-WEB_NOTES_phase2-facts §VI. All rows are demo data.
+import '../../styles/sections/memory.css';
+import { no } from '../../data/page.js';
+const TABS = [['sessions', 'Agent Farm — Sessions'], ['session', 'Session #7c41e2a0'], ['search', 'Search'], ['wiki', 'Wiki'], ['graph', 'Memory Graph']];
+---
+<section id="s-memory" class="gap" aria-label="Never forgets: every session kept, and a wiki written from them">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-memory')}</b> Memory</p>
+    <div class="sh">
+      <div><p class="pre">Sessions · wiki · Obsidian · memory</p><h2>Every session kept. <em>What mattered becomes a wiki.</em></h2></div>
+      <p class="lead">Every conversation on this machine is kept, from every engine, with what it cost. Mark the turn that mattered; nothing is written yet. Later one run reads the marked turns and writes wiki pages into your Obsidian vault, one concept to a page, each with its sources.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mpanel" id="me-panel" data-shows="sessions turns wiki dropbox search" aria-label="Agent Farm's Sessions, Search, Wiki and Memory Graph pages, rebuilt with demo data">
+        <div class="mtabs" id="me-tabs" role="tablist" aria-label="Pages">
+          {TABS.map(([id, label], i) => <button type="button" role="tab" data-tab={id} aria-selected={i === 0 ? 'true' : 'false'} class={i === 0 ? 'on' : ''}>{label}</button>)}
+        </div>
+        <div class="mbody" id="me-view" aria-live="polite"></div>
+        <div class="keep" id="me-keep" hidden></div>
+      </div>
+      <div class="vault" id="me-vault" data-shows="obsidian reports" aria-label="The vault in Obsidian, with demo pages">
+        <div class="vhd">
+          <span class="vt">Vault · <b>Obsidian</b></span>
+          <span class="vseg" role="radiogroup" aria-label="Page or graph"><button type="button" role="radio" data-v="page" class="on" aria-checked="true">Page</button><button type="button" role="radio" data-v="graph" aria-checked="false">Graph</button></span>
+        </div>
+        <div class="vbody">
+          <nav class="tree" id="me-tree" aria-label="Vault files"></nav>
+          <div class="vmain">
+            <p class="crumb" id="me-crumb"></p>
+            <article class="note" id="me-note"></article>
+            <div class="gview" id="me-graph" hidden></div>
+          </div>
+        </div>
+        <p class="vcap" id="me-cap">You curate, agents write. Pages are plain Markdown in your own vault; the links between them are what Obsidian draws as a graph.</p>
+      </div>
+    </div>
+  </div>
+</section>

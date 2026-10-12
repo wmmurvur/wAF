@@ -1,0 +1,20 @@
+---
+// Top bar. The version chip follows the running version of the demo (it changes when the agent updates Agent Farm).
+// On the landing the links are anchors on the page; on any other page they lead back to the landing's chapters.
+import { rootOf } from '../data/site.js';
+const root = rootOf(Astro.url), home = root === '';
+const here = Astro.url.pathname.startsWith('/features') ? 'features' : '';
+---
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href={home ? '#top' : root} aria-label={home ? 'Agent Farm, back to the top' : 'Agent Farm, the home page'}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"/><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"/><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"/><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"/></svg>
+      Agent Farm
+    </a>
+    {home && <span class="verchip" title="The version running in the demo below"><i></i><span id="af-ver">3.931.0</span></span>}
+    <nav class="nav" aria-label="Main">
+      <a href={`${root}features/`} aria-current={here === 'features' ? 'page' : undefined}>Features</a><a href={`${root}#ch-relay`}>Relay</a><a href={`${root}#ch-projects`}>Projects</a><a href={`${root}#ch-studio`}>Studio</a><a href={`${root}#ch-memory`}>Memory</a><a href={`${root}#ch-bridge`}>Just ask</a><a href={`${root}#ch-privacy`}>Local</a>
+    </nav>
+    <a class="cta" href={`${root}#s-close`}>Join early access</a>
+  </header>
+</div>

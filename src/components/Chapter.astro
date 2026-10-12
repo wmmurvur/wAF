@@ -1,0 +1,31 @@
+---
+// A chapter opener (plan v0.7 §2, layer 3): one district of the whole-farm board becomes a chapter of the page.
+// It shows the district's numeral, name and pitch, and its tiles from data/features.js, the same tiles as the board.
+// Clicking a tile reads it out under the row (scripts/chapters.js); a demo in the chapter that can show the tile switches to it.
+// Once the district has its own page (plan v0.8), the opener links to it.
+import '../styles/chapter.css';
+import { districts, features, hasPage, Word, LAST } from '../data/features.js';
+const { d } = Astro.props;
+const D = districts[d], F = features.filter(f => f.d === d);
+---
+<header class="chap" id={`ch-${D.id}`} style={`--c:${D.c}`} data-d={d} aria-label={`Chapter ${D.r} of ${LAST}: ${D.n}`}>
+  <div class="wrap">
+    <div class="chd">
+      <span class="cr" aria-hidden="true">{D.r}</span>
+      <div class="cn">
+        <p class="ck"><span>Chapter {D.r} of {LAST}</span><span>{F.length} things</span></p>
+        <p class="ct">{D.n}</p>
+        <p class="cp">{D.k}</p>
+      </div>
+      {hasPage(D) && <a class="cmore" href={`features/${D.slug}/`}>Everything about it <i></i></a>}
+    </div>
+    <ul class="ctl">
+      {F.map((f, j) => <li><button type="button" class="ctile" data-f={f.id} data-code={`${D.r}·${j + 1}`}><span class="n">{f.n}</span><span class="sg" data-sig={f.id}>{f.sig}</span></button></li>)}
+    </ul>
+    <div class="crd" aria-live="polite">
+      <span class="cc">{D.r}</span>
+      <span class="cx">{Word(F.length)} things in this chapter. Pick one to read it, or scroll on and watch them work.</span>
+      <a class="cgo" href="#top" hidden>See it <i></i></a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,114 @@
+/* A district's own page (components/District.astro). The opener echoes the chapter opener on the landing; the
+   landing's demos sit under it as they are, without their landing numbers; then one block per feature, questions,
+   and the next district. The district's colour is --c. */
+.dpage{padding-top:28px}
+.dpage .dh{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 clamp(18px,2.6vw,40px);align-items:end;border-top:1px solid var(--rule);padding-top:24px}
+.dpage .dh::before{content:"";position:absolute;left:0;top:-1px;width:min(240px,32%);height:2px;background:var(--c)}
+.dpage .dr{font-family:var(--display);font-weight:900;font-size:clamp(84px,11vw,176px);line-height:.76;color:var(--c)}
+.dpage .dk{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 8px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.dpage .dk span+span{color:var(--faint)}
+.dpage h1{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(48px,6vw,96px);line-height:.86}
+.dpage .dp{margin:10px 0 0;color:#b9baa9;font-size:17px;max-width:680px}
+.dpage .dpromise{margin:28px 0 0;max-width:860px;font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:#dcddd1;text-wrap:pretty}
+.dpage .dtl{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.dpage .dtl a{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#cfd0c4;background:#191a14;border:1px solid #2a2b23;padding:7px 11px;text-decoration:none;transition:border-color .25s,color .25s}
+.dpage .dtl a:hover{border-color:var(--c);color:var(--ink)}
+.dpage .dtl .c{font-family:var(--display);font-weight:800;color:var(--c)}
+.dpage .dtl .sg{font-family:var(--mono);font-size:10.5px;color:var(--faint);white-space:nowrap}
+/* the landing's sections, here without their landing numbers */
+.dpage .sx b{display:none}
+
+.dpage .ft{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:24px clamp(28px,4vw,72px);border-top:1px solid var(--rule);padding-block:clamp(40px,4.5vw,64px) 8px;scroll-margin-top:12px}
+.dpage .ft:first-child{margin-top:clamp(60px,7vw,110px)}
+.dpage .fth{align-self:start;position:sticky;top:20px}
+.dpage .fth .c{font-family:var(--display);font-weight:800;font-size:22px;color:var(--c)}
+.dpage .fth h2{margin:4px 0 0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(34px,3.4vw,52px);line-height:.9}
+.dpage .fth .s{margin:12px 0 0;color:#b9baa9;font-size:15.5px}
+.dpage .see{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid #4b4c44;padding:7px 12px}
+.dpage .see:hover{border-color:var(--c)}
+.dpage .see i{width:0;height:0;border-left:7px solid var(--c);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.dpage .ftb{max-width:780px}
+.dpage .ftb h3{margin:26px 0 8px;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.dpage .ftb h3:first-child{margin-top:0}
+.dpage .ftb p{margin:0;color:#d6d7cb;font-size:16px;line-height:1.6}
+.dpage .ftb ol{margin:0;padding-left:1.4em;color:#d6d7cb;font-size:16px;line-height:1.6}
+.dpage .ftb li+li{margin-top:6px}
+.dpage .ftb li::marker{font-family:var(--mono);font-size:12px;color:var(--c)}
+.dpage code{font-family:var(--mono);font-size:.86em;color:#e6e7da;background:#1a1b15;border:1px solid #2a2b23;padding:0 4px}
+.dpage .sets{width:100%;border-collapse:collapse;font-size:14px}
+.dpage .sets th{text-align:left;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:0 12px 6px 0;border-bottom:1px solid var(--rule)}
+.dpage .sets td{vertical-align:top;padding:9px 12px 9px 0;border-bottom:1px solid #1d1e18;color:#c6c7ba;line-height:1.5}
+.dpage .sets td:first-child{white-space:nowrap}
+.dpage .sets td.v{font-family:var(--mono);font-size:13px;color:var(--c);white-space:nowrap}
+.dpage .ftb .note{margin-top:18px;padding:10px 14px;border-left:2px solid var(--c);background:#11120d;color:#b9baa9;font-size:14.5px}
+
+/* a feature drawn beside its text: header and words on the left, the figure on the right, held in view while the steps
+   are read; a step clicked (or the figure playing them by itself the first time it is seen) shows that step */
+.dpage .ft.hasfig{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);grid-template-areas:"h fig" "b fig";align-items:start}
+.dpage .ft.hasfig .fth{grid-area:h;position:static}
+.dpage .ft.hasfig .ftb{grid-area:b;max-width:none}
+.dpage .ft.hasfig .fig{grid-area:fig;position:sticky;top:16px;margin:0}
+.dpage .ftb h3 .hint{color:var(--faint);letter-spacing:.08em;text-transform:none}
+.dpage .steps{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:st}
+.dpage .steps li{counter-increment:st}
+.dpage .steps button{display:grid;grid-template-columns:28px minmax(0,1fr);gap:2px 10px;width:100%;text-align:left;font:inherit;color:#bfc0b3;background:none;border:0;border-left:2px solid #2a2b23;padding:8px 10px 9px 10px;cursor:pointer;transition:background .25s,border-color .25s,color .25s}
+.dpage .steps button::before{content:counter(st,decimal-leading-zero);grid-row:span 2;font-family:var(--mono);font-size:11.5px;color:var(--faint);padding-top:2px}
+.dpage .steps .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.dpage .steps .t{font-size:15px;line-height:1.55}
+.dpage .steps button:hover{background:#11120d;color:var(--ink)}
+.dpage .steps li.past button{border-left-color:color-mix(in srgb,var(--c) 45%,#2a2b23)}
+.dpage .steps li.on button{background:#13140e;border-left-color:var(--c);color:var(--ink)}
+.dpage .steps li.on button::before,.dpage .steps li.on .k{color:var(--c)}
+.dpage .setd{margin-top:22px;border-top:1px solid var(--rule)}
+.dpage .setd summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;padding:12px 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.dpage .setd summary::-webkit-details-marker{display:none}
+.dpage .setd summary::after{content:"+";color:var(--c)}
+.dpage .setd[open] summary::after{content:"−"}
+.dpage .setd summary:hover{color:var(--ink)}
+.dpage .fcap{display:flex;align-items:baseline;gap:12px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.dpage .fcap b{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:.02em;color:var(--c)}
+.dpage .fcap .fn{margin-left:auto;color:var(--faint)}
+.dpage .fcap button{font:inherit;font-size:15px;line-height:1;color:var(--ink);background:#151610;border:1px solid #33342b;width:30px;height:26px;cursor:pointer}
+.dpage .fcap button:hover{border-color:var(--c)}
+.dpage .fcap button:disabled{opacity:.3;cursor:default}
+
+.dpage .faq{margin-top:clamp(70px,8vw,120px);border-top:1px solid var(--rule);padding-top:28px;max-width:980px}
+.dpage .faq h2{margin:0 0 14px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(34px,3.4vw,52px);line-height:.9}
+.dpage .faq details{border-bottom:1px solid var(--rule)}
+.dpage .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 0;font-size:17px;font-weight:600}
+.dpage .faq summary::-webkit-details-marker{display:none}
+.dpage .faq summary::after{content:"+";font-family:var(--mono);color:var(--c);font-weight:400}
+.dpage .faq details[open] summary::after{content:"−"}
+.dpage .faq details p{margin:0 0 18px;color:#c6c7ba;line-height:1.6;max-width:820px}
+
+.dpage .dnext{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:stretch;margin-top:clamp(60px,7vw,100px)}
+.dpage .nx{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"k k" "r n" "r p";gap:2px 18px;padding:18px 20px;border:1px solid var(--rule);text-decoration:none;transition:border-color .25s}
+.dpage .nx:hover{border-color:var(--c)}
+.dpage .nx .k{grid-area:k;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.dpage .nx .r{grid-area:r;font-family:var(--display);font-weight:900;font-size:64px;line-height:.8;color:var(--c)}
+.dpage .nx .n{grid-area:n;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:32px;line-height:.9}
+.dpage .nx .p{grid-area:p;color:#b9baa9;font-size:14.5px}
+.dpage .all{display:inline-flex;align-items:center;gap:8px;align-self:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid #4b4c44;padding:10px 14px;white-space:nowrap}
+.dpage .all:hover{border-color:var(--lime)}
+.dpage .all i{width:0;height:0;border-left:7px solid var(--lime);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+
+@media (max-width:900px){
+  .dpage .ft{grid-template-columns:minmax(0,1fr)}
+  .dpage .fth{position:static}
+  .dpage .ft.hasfig{grid-template-columns:minmax(0,1fr);grid-template-areas:"h" "fig" "b"}
+  .dpage .ft.hasfig .fig{position:static}
+  .dpage .dnext{grid-template-columns:minmax(0,1fr)}
+  .dpage .all{justify-self:start}
+}
+@media (max-width:620px){
+  .dpage .dh{grid-template-columns:minmax(0,1fr)}
+  .dpage .dr{font-size:76px;margin-bottom:10px}
+  .dpage .dtl a{font-size:12.5px;padding:6px 9px}
+  .dpage .dtl .sg{display:none}
+  .dpage .sets,.dpage .sets tbody,.dpage .sets tr,.dpage .sets td{display:block}
+  .dpage .sets thead{display:none}
+  .dpage .sets tr{padding:10px 0;border-bottom:1px solid #1d1e18}
+  .dpage .sets td{border:0;padding:2px 0}
+  .dpage .sets td:first-child{white-space:normal}
+  .dpage .nx .r{font-size:52px}
+}

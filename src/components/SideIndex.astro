@@ -1,0 +1,16 @@
+---
+// Fixed index on the right edge (desktop), built from data/page.js: the opening sections, then one line per chapter
+// (I to IX), then the close. A chapter's line stays lit while any of its sections crosses the middle of the screen.
+import { page } from '../data/page.js';
+import { districts } from '../data/features.js';
+const items = [];
+for (const p of page) {
+  if (p.d === undefined) { items.push({ href: p.id, label: p.label, ids: [p.id] }); continue; }
+  const D = districts[p.d], last = items[items.length - 1];
+  if (last && last.d === p.d) { last.ids.push(p.id); continue; }
+  items.push({ href: `ch-${D.id}`, label: `${D.r} · ${D.n}`, ids: [`ch-${D.id}`, p.id], d: p.d, c: D.c });
+}
+---
+<nav class="snav" id="snav" aria-label="Sections and chapters">
+  {items.map(it => <a href={`#${it.href}`} data-for={it.ids.join(' ')} style={it.c && `--c:${it.c}`}><span>{it.label}</span><i></i></a>)}
+</nav>

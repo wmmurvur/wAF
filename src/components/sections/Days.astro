@@ -1,0 +1,36 @@
+---
+// Days (from prototype v2.3): one chain drawn across the three days and four nights it ran, and the backlog it
+// worked through. Seeded simulation of the real relay rules; the items come from data/backlog.js (demo).
+import { facts } from '../../data/facts.js';
+import { family, parts, queue } from '../../data/backlog.js';
+import { no } from '../../data/page.js';
+---
+<section id="s-days" class="gap" aria-label="One relay chain across three days and four nights, working through a backlog">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-days')}</b> Day and night</p>
+    <div class="sh">
+      <div><p class="pre">chn_7f3a · demo data shaped like the real chain</p><h2 id="d-title">Ninety-two legs. <em>Three days, four nights.</em> Straight off the backlog.</h2></div>
+      <p class="lead">Every block is one fresh session, coloured by the account it ran on. The band above it is the backlog item it was given: when an item closes, the next session opens on the next one in your queue. Night or day makes no difference to it. A hatched gap is the chain waiting for a quota reset, then waking by itself. Hover a block to read it.</p>
+    </div>
+    <div class="dgrid">
+      <div class="strip" id="d-strip"><canvas id="d-canvas" aria-label={`Timeline of ${facts.realChainLegs} relay legs across three days and four nights`}></canvas><div class="tip" id="d-tip"></div></div>
+      <aside class="dbl" aria-label="The backlog items this chain worked through">
+        <div class="dbh"><span>Backlog.md</span><b id="d-done">0 / {parts.length} closed</b></div>
+        <p class="fam"><code>{family.c}</code>{family.t}<span class="sz">{family.s}</span></p>
+        <ol id="d-items">
+          {parts.map(p => <li data-c={p.c}><i class="cb"></i><code>{p.c}</code><span class="t">{p.t}</span><span class="sz">{p.s}</span></li>)}
+        </ol>
+        <p class="nx">next in the queue: <code>{queue[0].c}</code> {queue[0].t}</p>
+      </aside>
+    </div>
+    <div class="stats">
+      <div><b id="d-legs">0</b><span>legs</span></div>
+      <div><b id="d-hours">0h</b><span>wall clock</span></div>
+      <div><b id="d-items-n">0</b><span>items closed</span></div>
+      <div><b id="d-parks">0</b><span>parks till reset</span></div>
+      <div><b id="d-quota">0</b><span>quota handovers</span></div>
+      <div><b id="d-updates">0</b><span>self-updates</span></div>
+    </div>
+    <div class="legend" id="d-legend"></div>
+  </div>
+</section>

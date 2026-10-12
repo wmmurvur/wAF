@@ -1,0 +1,54 @@
+---
+// The whole farm (plan v0.7 §2–§4): everything Agent Farm does, as tiles on one map of its districts. Click a tile
+// to read it on the desk below, or let a story run: one event travels across districts, lighting the tiles it touches.
+// Tiles, districts and stories come from data/features.js, the list the /features pages and /pricing will share;
+// the numbers card from data/facts.js.
+import '../../styles/sections/atlas.css';
+import { districts, features, stories, word, Word } from '../../data/features.js';
+import { facts } from '../../data/facts.js';
+import { no } from '../../data/page.js';
+const byD = districts.map((_, i) => features.filter(f => f.d === i));
+---
+<section id="s-atlas" class="gap" aria-label="The whole farm: everything Agent Farm does, on one map">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-atlas')}</b> The whole farm</p>
+    <div class="sh">
+      <h2>You have seen the screens. <em>Here is the whole farm.</em></h2>
+      <p class="lead">Every tile is something Agent Farm does today, <b>{features.length}</b> of them in {word(districts.length)} districts. Code is only one part: the same farm cuts videos, writes up a thesis chapter and keeps a weekly channel going. Watch one event travel through the farm, or click any tile.</p>
+    </div>
+    <div class="abar">
+      <span class="lbl">Stories</span>
+      <div class="stories" id="a-stories">
+        {stories.map((s, i) => <button type="button" data-s={i}><i></i>{s.n}</button>)}
+      </div>
+    </div>
+    <div class="amap" id="a-map">
+      <svg class="lines" id="a-lines" aria-hidden="true"></svg>
+      {districts.map((d, i) => (
+        <div class="dist" style={`--c:${d.c}`}>
+          <header><b>{d.r}</b><h3>{d.n}</h3><span>{byD[i].length}</span></header>
+          <p class="k">{d.k}</p>
+          <ul>
+            {byD[i].map((f, j) => <li><button type="button" class="tile" data-f={f.id} data-code={`${d.r}·${j + 1}`}><span class="n">{f.n}</span><span class="sg" data-sig={f.id}>{f.sig}</span></button></li>)}
+          </ul>
+        </div>
+      ))}
+      <div class="nums" aria-label="Agent Farm in numbers">
+        <p class="lbl">Under the tiles</p>
+        <dl>
+          <div><dt>{features.length}</dt><dd>things it does</dd></div>
+          <div><dt>{facts.commands}</dt><dd>commands</dd></div>
+          <div><dt>{facts.settings}</dt><dd>settings</dd></div>
+          <div><dt>{facts.bridgeOps}</dt><dd>bridge operations</dd></div>
+          <div><dt>{facts.engines.length}</dt><dd>engines</dd></div>
+          <div><dt>{facts.releases}</dt><dd>releases</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="adesk" aria-live="polite">
+      <span class="code" id="a-code">{features.length}</span>
+      <div class="tx"><b id="a-t">Things it does today.</b><span id="a-s">{Word(districts.length)} districts. Click a tile, or pick a story above.</span><ol class="trail" id="a-trail"></ol></div>
+      <div class="act"><a class="ghost" id="a-go" href="#s-atlas" hidden><i></i>See it on this page</a><button type="button" class="ghost nx" id="a-next" hidden>Next step</button></div>
+    </div>
+  </div>
+</section>

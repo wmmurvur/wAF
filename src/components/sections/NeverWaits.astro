@@ -1,0 +1,158 @@
+---
+// Never waits (plan §5.4, chapter VIII): a question card with an auto-answer countdown, a tool permission that waits for
+// you, and where they reach you: the Now page on a phone (screenshot 023, three tabs from screenshot 021) or a Telegram
+// chat (Settings → Remote Access, Mz5; the card is src/core/telegramDigest.ts: header, DONE, WAITING ON YOU or STATUS,
+// figures, and the buttons of keyboardFor). Below, the Sound page rebuilt (060, Mz4): a tone per event, per agent and per
+// session, Say who, and reading answers aloud (agentFarm.alerts.*, speech.ts, readingPrefs.ts, reader.ts).
+// The quota chip lights when the relay hero makes a quota handover, so the whole page shows one farm.
+// scripts/waits.js runs the cards, the phone and the chat; scripts/soundpage.js runs the Sound page.
+import '../../styles/sections/waits.css';
+import { no } from '../../data/page.js';
+/* id: the tone's file (scripts/sound.js); on: rings out of the box (agentFarm.alerts.on); say: Say who for it in the demo;
+   word: what Say who says for it (speechPhrases.ts, English); who: whose name it says in the demo */
+const EVENTS = [
+  { ev: 'Turn finished', tone: 'Crystal', id: 'crystal', word: 'turn finished', who: 'developer' },
+  { ev: 'Asking you', tone: 'Intercom knock', id: 'knock', word: 'asking you', who: 'reviewer', say: true },
+  { ev: 'Stalled', tone: 'Deep sonar', id: 'sonar', word: 'stalled', who: 'tester' },
+  { ev: 'Session ended', tone: 'Marimba', id: 'marimba', word: 'session ended', who: 'reviewer' },
+  { ev: 'Error', tone: 'Bell, urgent', id: 'bell', word: 'error', who: 'developer' },
+  { ev: 'New notice', tone: 'Zen bowl', id: 'zen', word: 'new notice', who: 'manager' },
+  { ev: 'Question card', tone: 'Pulse', id: 'pulse', on: true, word: 'a question card for you', who: 'developer', say: true },
+  { ev: 'Workflow asks you', tone: 'Pop', id: 'pop', on: true, word: 'a workflow is asking you', who: 'showrunner' },
+  { ev: 'Quota running out', tone: 'Thin ticks', id: 'ticks', word: 'quota running out', who: 'acct-b' },
+  { ev: 'Mission ended', tone: 'Lullaby', id: 'lullaby', word: 'mission ended', who: 'Timeline export' },
+];
+const SESSIONS = [
+  { s: 'developer #1', e: 'Claude Code', snd: 'like-all', tone: "all's", who: "all's", read: false, also: [] },
+  { s: 'developer #2', e: 'Antigravity', snd: 'silent', tone: '—', who: '—', read: false, also: [] },
+  { s: 'reviewer #1', e: 'Codex', snd: 'always', tone: 'Marimba', who: 'its own', read: true, also: ['toast'] },
+];
+const SND = [['like-all', 'Like all'], ['always', 'Always'], ['silent', 'Silent']];
+const ALSO = [['focus', '◎ Focus'], ['modal', '▣ Pop-up'], ['toast', '▭ Notification']];
+---
+<section id="s-waits" class="gap" aria-label="Never waits: question cards, permissions, the phone, Telegram and sound">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-waits')}</b> Never waits</p>
+    <div class="sh">
+      <div><p class="pre">Question cards · phone · Telegram · sound · voice</p><h2>Away from the desk. <em>Never in the way.</em></h2></div>
+      <p class="lead">An agent with a question doesn't sit idle for hours. A countdown runs, and when it ends the recommended answer goes in. Permissions are different: they wait for you, ring, and reach your phone or a Telegram chat, where one tap answers. Every event has its own sound, and any answer can be read aloud.</p>
+    </div>
+    <div class="wgrid">
+      <div class="cards">
+        <div class="qcard" id="w-q">
+          <div class="qh">
+            <span class="who"><i></i>developer</span><span class="eng">Claude</span><span class="kind">question</span>
+            <span class="ring" role="timer" aria-label="Auto-answer countdown"><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5" /><circle class="fg" id="w-ring" cx="18" cy="18" r="15.5" /></svg><b id="w-cd">0:12</b></span>
+          </div>
+          <p class="qq" id="w-qq">Which export format should the timeline use?</p>
+          <div class="opts" id="w-opts"></div>
+          <p class="qf" id="w-qf">Nobody at the desk? When the ring runs out, the recommended option goes in.</p>
+        </div>
+        <div class="qcard perm" id="w-perm">
+          <div class="qh"><span class="who"><i></i>reviewer</span><span class="eng x">Codex</span><span class="kind">permission</span><span class="since" id="w-since">waiting 4m</span></div>
+          <p class="qq" id="w-pq">Run <code>git push origin main</code>?</p>
+          <p class="qf" id="w-pf">A tool permission is never answered for you. It waits, rings, and reaches your phone.</p>
+        </div>
+        <div class="sound" id="w-sound" aria-label="Sound events">
+          <span data-ev="card"><i></i>Question card · Pulse</span>
+          <span data-ev="ask"><i></i>Asking you · Intercom knock</span>
+          <span data-ev="done"><i></i>Turn finished · Crystal</span>
+          <span data-ev="quota"><i></i>Quota running out · Thin ticks</span>
+          <button type="button" class="snd" id="w-snd" aria-pressed="false">Sound off</button>
+        </div>
+      </div>
+      <div class="phone" id="w-phone" data-shows="phone telegram">
+        <div class="dev" id="w-dev" role="group" aria-label="Where it reaches you">
+          <button type="button" data-dev="app" class="on" aria-pressed="true">📱 Phone app</button><button type="button" data-dev="tg" aria-pressed="false">💬 Telegram</button>
+        </div>
+        <div class="frame">
+          <div class="notch"></div>
+          <div class="scr" id="w-app">
+            <div class="tabs"><span class="on">● Now</span><span>● Web</span><span>Devices</span></div>
+            <h4>Now</h4>
+            <p class="psub" id="w-psub">2 waiting · 3 running · $41.20 today</p>
+            <div class="box"><h5>Waiting for you <span id="w-pw">2</span> ›</h5><div id="w-pwl"></div></div>
+            <div class="box"><h5>Running 3 ›</h5>
+              <div class="run"><span class="d on"></span><b>developer</b><span class="eng">Claude</span><em>working</em></div>
+              <div class="run"><span class="d"></span><b>developer</b><span class="eng a">Antigravity</span><em>idle</em></div>
+              <div class="run"><span class="d"></span><b>reviewer</b><span class="eng x">Codex</span><em>waiting</em></div>
+            </div>
+            <div class="box"><h5>Today</h5><div class="cost"><b id="w-pc">$41.20</b> spent today</div><div id="w-pacc"></div></div>
+            <div class="inp"><span>developer · working ▾</span><span>Say something…</span></div>
+          </div>
+          <div class="scr tg" id="w-tg" hidden>
+            <div class="tgh"><i>AF</i><div><b>Agent Farm</b><span>bot · bound to developer</span></div></div>
+            <div class="tgl" id="w-tgl" aria-live="polite"></div>
+            <div class="tgi"><span>Message</span><i>➤</i></div>
+          </div>
+        </div>
+        <p class="cap" id="w-cap">The farm on your phone, in three tabs: Now, Web and Devices.</p>
+      </div>
+    </div>
+
+    <div class="sndp" id="w-sp" data-shows="sound voice" aria-label="The Sound page, rebuilt with demo data">
+      <div class="sptabs"><span>Console</span><span class="on">Agent Farm — Sound</span><span>Settings</span></div>
+      <div class="spb">
+        <div class="spseg" id="w-spseg" role="group" aria-label="Sound page view">
+          <button type="button" data-st="events" class="on" aria-pressed="true">Events</button><button type="button" data-st="sessions" aria-pressed="false">Sessions</button><button type="button" data-st="voice" aria-pressed="false">Voice</button>
+          <span class="mute" id="w-spmute">🔊 rings on <b id="w-spn">2</b> of 10 events · Quiet hours off · Mute all off</span>
+        </div>
+
+        <div class="spv" data-v="events">
+          <div class="evt" role="table" aria-label="Which sound each event plays">
+            <div class="er hd" role="row"><span>Event</span><span>Rings</span><span>Tone</span><span></span><span>Say who</span></div>
+            {EVENTS.map(e => (
+              <div class="er" role="row" data-id={e.id} data-word={e.word} data-who={e.who}>
+                <span class="en">{e.ev}</span>
+                <label class="ck"><input type="checkbox" class="rg" checked={e.on} aria-label={`${e.ev} rings`} /></label>
+                <select class="tn" aria-label={`Tone for ${e.ev}`}>{EVENTS.map(o => <option value={o.id} selected={o.id === e.id}>{o.id === e.id ? `Default — ${o.tone}` : o.tone}</option>)}</select>
+                <button type="button" class="pl" aria-label={`Play the tone for ${e.ev}`}><i></i></button>
+                <label class="ck"><input type="checkbox" class="sw" checked={e.say} aria-label={`Say who for ${e.ev}`} /></label>
+              </div>
+            ))}
+          </div>
+          <div class="side">
+            <div class="ln"><b>Tone volume</b><input type="range" id="w-tvol" min="0" max="100" value="100" aria-label="Tone volume" /><span id="w-tvoln">100</span></div>
+            <div class="ln"><b>Also sent to</b><span class="chs"><button type="button" class="ch on" data-to="app">📱 Phone · on</button><button type="button" class="ch on" data-to="tg">💬 Telegram · on</button><span class="ch off">🔗 Webhook · off</span></span></div>
+            <div class="ln col"><b>Your own sounds</b><span>Ten tones made for it, and room for ten of your own: any sound file a player on your machine can play. An event, an agent or one session can take any of them.</span></div>
+            <div class="ln col"><b>Reminder</b><span>A question still unanswered after 3 minutes rings a lighter tone, up to twice. A finished turn needs nothing from you, so it never nags.</span></div>
+            <div class="ln col"><b>Quiet hours</b><span>A window that wraps midnight, 23:00 – 08:00 for example. Sounds only: the cards still arrive.</span></div>
+          </div>
+        </div>
+
+        <div class="spv" data-v="sessions" hidden>
+          <div class="sbar"><span class="on">Sessions</span><span>Agents</span><b id="w-sdiff">3 live · 2 sound different</b><span class="sel">All live ▾</span></div>
+          <div class="stbl" role="table" aria-label="Each live session's sound">
+            <div class="sr hd" role="row"><span>Session</span><span>Engine</span><span>Sound</span><span>Tone</span><span>Say who</span><span>Read aloud</span><span>Also</span></div>
+            {SESSIONS.map((r, i) => (
+              <div class="sr" role="row" data-i={i}>
+                <span class="sn">{r.s}</span><span class="se">{r.e}</span>
+                <select class="ss" aria-label={`Sound for ${r.s}`}>{SND.map(([v, t]) => <option value={v} selected={v === r.snd}>{t}</option>)}</select>
+                <span class="st">{r.tone}</span><span class="sw">{r.who}</span>
+                <label class="ck"><input type="checkbox" class="ra" checked={r.read} aria-label={`Read ${r.s}'s answers aloud`} /></label>
+                <span class="sa">{ALSO.map(([k, t]) => <i class={r.also.includes(k) ? 'on' : ''}>{t}</i>)}</span>
+              </div>
+            ))}
+          </div>
+          <p class="note" id="w-snote">Every session can sound like the rest (Like all), ring even when the fleet is quiet (Always), or never make a sound (Silent). It can take its own tones and its own voice, and have every answer read aloud as its turn ends. The Agents tab does the same for all of one agent's sessions.</p>
+        </div>
+
+        <div class="spv" data-v="voice" hidden>
+          <p class="vh">Voice</p>
+          <div class="vrow"><b>Say who</b><span class="vl"><label class="ck"><input type="checkbox" id="w-swon" checked /> on</label><span class="sel">Auto — match the answer's language ▾</span><span class="rng">Speed <input type="range" id="w-swrate" min="-10" max="10" value="0" aria-label="Say who speed" /></span></span></div>
+          <div class="vrow"><b>Sentence</b><span class="vl"><input type="text" id="w-swt" value="{agent}, {event}" maxlength="160" aria-label="What Say who says" /><span class="tok">+ agent</span><span class="tok">+ event</span><span class="tok">+ session</span><button type="button" class="hear" id="w-swh">▶ Hear it</button><span class="said" id="w-sws">"developer, asking you"</span></span></div>
+          <p class="vh">Reading <span>a message's 🔊, Read Last Answer, Read Selection, Read aloud and the daily briefing</span></p>
+          <div class="vrow"><b>Voice</b><span class="vl"><span class="sel">Auto — match the text's language ▾</span><span class="rng">Speed <input type="range" id="w-rdrate" min="-10" max="10" value="0" aria-label="Reading speed" /></span></span></div>
+          <div class="vrow"><b>Length</b><span class="vl"><span class="sel">Read aloud reads the first part, then says there is more ▾</span></span></div>
+          <div class="vrow"><b>Code</b><span class="vl"><span class="sel">Say its size — "a 3-line code block" ▾</span></span></div>
+          <div class="ans" id="w-ans">
+            <div class="ah"><span class="who"><i></i>developer</span><span class="eng">Claude</span><span class="tn">turn 14 · its last answer</span><button type="button" class="rd" id="w-rd" title="Read this answer aloud">🔊 Read</button><button type="button" class="rd" id="w-rs" title="Select some words above, then press">Read selection</button></div>
+            <div class="ab" id="w-ab"></div>
+            <p class="af" id="w-af">Press 🔊 to hear the whole answer, or select a few words and press Read selection. Code is said by its size, not read out character by character.</p>
+          </div>
+          <p class="note">In the app the voice is your system's own, local and free: Windows speech, macOS say, Linux spd-say. A Turkish answer is read by a Turkish voice and an English one by an English voice. Here your browser reads it, with a voice on this device only, so the text goes nowhere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

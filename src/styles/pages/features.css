@@ -1,0 +1,119 @@
+/* /features/ (pages/features/index.astro): the whole farm's tiles as cards in their districts, with search and district
+   buttons in a bar that stays at the top while the list scrolls. A district's colour is --c, as on the board. */
+.fhub{padding-block:28px 40px}
+
+/* the hero: the title, and a board of every district's cells on which the whole-farm stories travel (scripts/pages/features.js) */
+.fhub .fhero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:24px clamp(28px,4vw,64px);align-items:end;margin-bottom:28px}
+.fhub .fht h1{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5vw,78px);line-height:.9}
+.fhub .fht h1 em{font-style:normal;color:var(--lime)}
+.fhub .fht .lead{margin:18px 0 0;color:#b9baa9;font-size:16px;max-width:520px}
+.fhub .fbd{position:relative;margin:0;background:#050604;border:1px solid var(--rule);padding:12px 12px 0}
+.fhub .fbd .cols{position:relative;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;align-items:start}
+.fhub .fbd .col{display:grid;gap:3px;min-width:0}
+.fhub .fbd .col b{font-family:var(--display);font-weight:800;font-size:15px;line-height:1;color:var(--c);margin-bottom:3px}
+.fhub .fbd .cell{display:block;height:13px;background:color-mix(in srgb,var(--c) 13%,#141510);border:1px solid color-mix(in srgb,var(--c) 24%,#2a2b23);transition:background .35s,border-color .35s,box-shadow .45s,opacity .35s}
+.fhub .fbd .cell:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 30%,#191a14)}
+.fhub .fbd.story .cell{opacity:.5}
+.fhub .fbd .cell.past{opacity:1;border-color:#5a8c09;background:rgba(168,240,53,.18)}
+.fhub .fbd .cell.lit{opacity:1;border-color:var(--lime);background:var(--lime);box-shadow:0 0 18px -2px rgba(168,240,53,.7)}
+.fhub .fbd .path{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.fhub .fbd .path polyline{fill:none;stroke:var(--lime);stroke-width:1.5;stroke-dasharray:5 6;animation:fhub-flow .9s linear infinite;opacity:.9}
+.fhub .fbd .path circle{fill:var(--lime)}
+@keyframes fhub-flow{to{stroke-dashoffset:-11}}
+.fhub .fbd .cap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 14px;align-items:baseline;margin:12px -12px 0;padding:10px 12px 12px;border-top:1px solid var(--rule);background:#0d0e0a;min-height:76px}
+.fhub .fbd .sn{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.fhub .fbd .dots{display:flex;gap:5px}
+.fhub .fbd .dots button{width:8px;height:8px;border-radius:50%;border:1px solid #4b4c44;background:none;padding:0;cursor:pointer}
+.fhub .fbd .dots button.on{background:var(--lime);border-color:var(--lime)}
+.fhub .fbd .cap>b{font-family:var(--display);font-weight:800;font-size:26px;line-height:1;color:var(--lime);white-space:nowrap}
+.fhub .fbd .cap>span:last-child{font-size:14px;color:#dcddd1;line-height:1.4}
+
+/* cards come in when their district reaches the screen; the emblem moves only then */
+.fhub.anim .fc{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s;transition-delay:calc(var(--i,0) * 35ms)}
+.fhub.anim .fd.in .fc{opacity:1;transform:none}
+.fhub .fc a{position:relative;overflow:hidden}
+.fhub .fc a::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--c);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 35ms + .15s)}
+.fhub .fd.in .fc a::before{transform:scaleX(.18)}
+.fhub .fc a:hover::before{transform:scaleX(1);transition-delay:0s}
+.fhub .fc.hl a{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime)}
+.fhub .emb{width:72px;height:44px;color:var(--c);fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;align-self:center;overflow:visible}
+.fhub .fd .emb *{animation-play-state:paused}
+.fhub .fd.vis .emb *{animation-play-state:running}
+.fhub .emb .e-run{animation:emb-run 2.4s ease-in-out infinite}
+@keyframes emb-run{0%{cx:10}45%,55%{cx:36}100%{cx:62}}
+.fhub .emb .e-t1{stroke-dasharray:14;stroke-dashoffset:14;animation:emb-tick 3s ease-out infinite}
+.fhub .emb .e-t2{stroke-dasharray:14;stroke-dashoffset:14;animation:emb-tick 3s .8s ease-out infinite}
+@keyframes emb-tick{0%{stroke-dashoffset:14}25%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+.fhub .emb .e-film{animation:emb-film 2.2s linear infinite}
+@keyframes emb-film{to{transform:translateX(-18px)}}
+.fhub .emb .e-hand{transform-origin:22px 22px;animation:emb-spin 4s linear infinite}
+@keyframes emb-spin{to{transform:rotate(360deg)}}
+.fhub .emb .e-blink{animation:emb-blink 4s steps(1) infinite}
+@keyframes emb-blink{0%,70%{fill:none}71%,100%{fill:currentColor}}
+.fhub .emb .e-pulse{offset-path:path("M36 9L12 35H60Z");animation:emb-pulse 3s linear infinite}
+@keyframes emb-pulse{from{offset-distance:0%}to{offset-distance:100%}}
+.fhub .emb .e-page{animation:emb-page 3s ease-in-out infinite}
+@keyframes emb-page{0%,20%{transform:translate(0,0)}60%,100%{transform:translate(-8px,10px);opacity:.25}}
+.fhub .emb .e-route{stroke-dasharray:4 5;animation:fhub-flow .8s linear infinite}
+.fhub .emb .e-d1,.fhub .emb .e-d2,.fhub .emb .e-d3{animation:emb-dot 1.2s ease-in-out infinite}
+.fhub .emb .e-d2{animation-delay:.2s}.fhub .emb .e-d3{animation-delay:.4s}
+@keyframes emb-dot{0%,100%{opacity:.25}50%{opacity:1}}
+.fhub .emb .e-needle{transform-origin:36px 38px;animation:emb-needle 3.2s ease-in-out infinite alternate}
+@keyframes emb-needle{from{transform:rotate(-60deg)}to{transform:rotate(55deg)}}
+.fhub .emb .e-b1{transform-origin:8px 38px;animation:emb-bar 2.4s ease-in-out infinite alternate}
+.fhub .emb .e-b2{transform-origin:63px 38px;animation:emb-bar 2.4s .6s ease-in-out infinite alternate}
+@keyframes emb-bar{from{transform:scaleY(.4)}to{transform:scaleY(1.4)}}
+.fhub .emb .e-check{stroke-dasharray:26;stroke-dashoffset:26;animation:emb-check 3s ease-out infinite}
+@keyframes emb-check{0%{stroke-dashoffset:26}35%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+
+.fhub .fbar{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:minmax(240px,280px) minmax(0,1fr);gap:10px 20px;align-items:center;padding:12px 0 16px;background:linear-gradient(var(--void) 82%,transparent)}
+.fhub .fq{display:flex;align-items:center;gap:10px;border:1px solid #33342b;background:#11120d;padding:0 12px}
+.fhub .fq:focus-within{border-color:var(--lime)}
+.fhub .fq span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.fhub .fq input{flex:1;min-width:0;background:none;border:0;color:var(--ink);font:inherit;font-size:14.5px;padding:10px 0;outline:none}
+.fhub .fds{display:flex;gap:5px}
+.fhub .fds button{font:inherit;font-size:12.5px;color:#b9baa9;background:#151610;border:1px solid #2a2b23;padding:5px 9px;cursor:pointer;white-space:nowrap;transition:border-color .2s,background .2s,color .2s}
+.fhub .fds button b{font-family:var(--display);font-weight:800;color:var(--c,var(--lime));margin-right:2px}
+.fhub .fds button:hover{border-color:var(--c,var(--lime));color:var(--ink)}
+.fhub .fds button.on{border-color:var(--c,var(--lime));color:var(--ink);background:color-mix(in srgb,var(--c,var(--lime)) 14%,#151610)}
+.fhub .fq .fn{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:none;color:var(--faint);white-space:nowrap}
+.fhub .fd{margin-top:clamp(36px,4vw,56px);scroll-margin-top:90px}
+.fhub .fd[hidden],.fhub .fc[hidden]{display:none}
+.fhub .fdh{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:0 22px;align-items:end;border-top:1px solid var(--rule);padding-top:16px}
+.fhub .fdh::before{content:"";position:absolute;left:0;top:-1px;width:min(200px,30%);height:2px;background:var(--c)}
+.fhub .fr{font-family:var(--display);font-weight:900;font-size:clamp(56px,6vw,92px);line-height:.78;color:var(--c)}
+.fhub .fdh h2{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(28px,3vw,44px);line-height:.9}
+.fhub .fdh p{margin:6px 0 0;color:#b9baa9;font-size:15px}
+.fhub .fgo{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid #4b4c44;padding:7px 12px;white-space:nowrap}
+.fhub .fgo:hover{border-color:var(--c)}
+.fhub .fgo i{width:0;height:0;border-left:7px solid var(--c);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.fhub .fcs{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.fhub .fc a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:start;gap:4px 12px;height:100%;padding:12px 14px 14px;background:#141510;border:1px solid #26271f;text-decoration:none;transition:border-color .2s,background .2s}
+.fhub .fc a:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 7%,#141510)}
+.fhub .fc .n{font-weight:600;font-size:15px;color:var(--ink)}
+.fhub .fc .sg{align-self:center;font-family:var(--mono);font-size:10.5px;color:var(--faint);white-space:nowrap}
+.fhub .fc a:hover .sg{color:var(--c)}
+.fhub .fc .s{grid-column:1/-1;color:#a9aa9b;font-size:13.5px;line-height:1.5}
+.fhub .fnone{margin:48px 0;color:var(--dim)}
+.fhub .fnone[hidden]{display:none}
+.fhub .fnone button{font:inherit;color:var(--lime);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+@media (max-width:1360px){
+  .fhub .fbar{grid-template-columns:minmax(0,1fr)}
+  .fhub .fq{max-width:420px}
+  .fhub .fds{flex-wrap:wrap}
+}
+@media (max-width:980px){
+  .fhub .fhero{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:620px){
+  .fhub .emb{display:none}
+  .fhub .fbd .cols{gap:3px}
+  .fhub .fbd .cell{height:10px}
+  .fhub .fbd .cap>b{font-size:20px}
+  .fhub .fds{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * clamp(16px,3vw,40px));padding-inline:clamp(16px,3vw,40px)}
+  .fhub .fdh{grid-template-columns:auto minmax(0,1fr);gap:0 14px}
+  .fhub .fgo{grid-column:1/-1;justify-self:start;margin-top:14px}
+  .fhub .fr{font-size:54px}
+}
+
+@media (prefers-reduced-motion:reduce){.fhub.anim .fc{opacity:1;transform:none}.fhub .emb *{animation:none!important}}

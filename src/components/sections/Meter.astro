@@ -1,0 +1,66 @@
+---
+// Measured, not claimed (chapter IX, owner 2026-10-12): the FULL list's A6 (cost and quota) and C15 (quality).
+// Three panels rebuilt with demo data: the plan of every account (status bar and Dashboard 5h card; planusage.ts,
+// quotaDowngradePercent), where the money and the window went (the nine kinds of step and the raw and ⚖ weighted
+// figures of the Blueprint's "What Work Costs"; agentFarm.budgets warns at 80%; anomaly.ts flags against a median),
+// and the judge's ladder (agentFarm.judgeLadder, A-27: a FAIL is judged once more on the next rung; an upper PASS
+// overturns it and no retry is paid). scripts/meter.js runs them on the farm the rest of the page shares.
+import '../../styles/sections/meter.css';
+import { no } from '../../data/page.js';
+const KINDS = [
+  ['◈', 'thinking', 'billed as output, the dearest token there is'],
+  ['▸', 'reply', 'the model writing: output'],
+  ['⌘', 'local tool', 'runs on this machine, free to run'],
+  ['↩', 'tool result', 'free to make, and what makes the next call bigger'],
+  ['⇄', 'MCP tool', 'a request to an MCP server, no model tokens'],
+  ['⌗', 'web', 'out to the internet; the page comes back into context'],
+  ['⑂', 'sub-agent', 'its own conversation, on this session\'s budget'],
+  ['⚙', 'harness', 'inside the CLI: no model, no network'],
+  ['·', 'local only', 'never reached a model'],
+];
+---
+<section id="s-meter" class="gap" aria-label="Measured, not claimed: cost, quota and quality in numbers">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-meter')}</b> Measured</p>
+    <div class="sh">
+      <div><p class="pre">Cost · plan · quality</p><h2>Every cent counted. <em>Every check scored.</em></h2></div>
+      <p class="lead">Agents always sound sure. The farm does not take their word for it: it reads what each step cost from the transcripts, keeps every account's window in view, and has the work judged against its criteria by the cheapest model that can tell.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mp" id="m-plan" data-shows="planuse downgrade">
+        <p class="mh"><b>Plan</b><span>every account · live</span></p>
+        <div class="acc" id="m-acc"></div>
+        <p class="dg" id="m-dg"></p>
+        <p class="sbar" id="m-sbar" aria-label="The status bar"></p>
+      </div>
+      <div class="mp" id="m-spend" data-shows="steps budgets anomaly honest">
+        <p class="mh"><b>Where it went</b><span>the live leg · from its transcript</span></p>
+        <div class="tot"><b id="m-usd">$1.86</b><span id="m-tok">4.21M raw · ⚖ 0.62M</span><span id="m-api">26api·99steps</span></div>
+        <div class="strip" id="m-strip" aria-hidden="true"></div>
+        <ul class="kinds">
+          {KINDS.map(([g, n, t], i) => <li data-k={i} title={t}><i>{g}</i><span>{n}</span><b>0</b></li>)}
+        </ul>
+        <p class="ksel" id="m-ksel">◈ thinking: billed as output, the dearest token there is.</p>
+        <div class="bud" id="m-bud"></div>
+        <ul class="flags">
+          <li class="an" id="m-an"><b>⚑</b> <span>weekly-video ran <em>$4.10</em>; its median is $0.92</span></li>
+          <li><b>$0.00</b> <span>OpenCode on a free model: a real zero</span></li>
+          <li><b>—</b> <span>a model with no price rule: no figure and a warning, never a made-up $0</span></li>
+        </ul>
+      </div>
+      <div class="mp" id="m-judge" data-shows="ladder evals insights">
+        <p class="mh"><b>Judge ladder</b><span>a step's check · cheap first</span></p>
+        <div class="chk"><span class="lb">Check</span><b id="m-what">shot-3.png</b><span class="cr" id="m-crit">“the beam is visible through the rain”</span></div>
+        <ol class="rungs" id="m-rungs"></ol>
+        <p class="vd" id="m-vd" aria-live="polite"></p>
+        <button type="button" class="ghost" id="m-again"><i></i>Judge another</button>
+        <div class="ev">
+          <p class="lb">Evals · after a model change</p>
+          <div class="evr"><span>cases passed</span><b>47 / 50</b><em class="dn">−1</em></div>
+          <div class="evr"><span>tests passed</span><b>100%</b><em>=</em></div>
+          <div class="evr"><span>Insights</span><b>2 findings</b><em class="up">1 rule suggested</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
