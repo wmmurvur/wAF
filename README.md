@@ -4,7 +4,7 @@
 
 The website of **Agent Farm**, mission control for AI agents in VS Code (publisher MuVuSOFT, extension id `muvusoft.agent-farm`).
 
-A long landing page and, behind it, the feature pages (plan v0.8): `/features/` with all 84 things, and one page per district of the board as each is written. Then the sales pages: `/pricing/` with the plans and the early-access form, and the terms, privacy and refund pages. Built as a static site with [Astro](https://astro.build). Every screen on it is rebuilt from real screenshots of the extension and runs on demo data. Every number it states comes from the extension's source or a real screen, and `src/data/facts.js` says where.
+A long landing page and, behind it, the feature pages (plan v0.8): `/features/` with all 92 things, and one page for each of the ten districts of the board. Then the sales pages: `/pricing/` with the plans and the early-access form, the terms, privacy and refund pages, and `/about/`. Built as a static site with [Astro](https://astro.build). Every screen on it is rebuilt from real screenshots of the extension and runs on demo data. Every number it states comes from the extension's source or a real screen, and `src/data/facts.js` says where.
 
 ## Commands
 
@@ -60,7 +60,7 @@ The order lives in `src/data/page.js` (plan v0.7 §5); section numbers and the s
 
 | Address | Page | Made from |
 |---|---|---|
-| `/features/` | All 84 things as cards in their ten districts; search and district buttons, kept in the address (`?q=…&d=…`) | `src/pages/features/index.astro`, `src/data/features.js` |
+| `/features/` | All 92 things as cards in their ten districts; search and district buttons, kept in the address (`?q=…&d=…`) | `src/pages/features/index.astro`, `src/data/features.js` |
 | `/features/never-stops/` | District I: the landing's Days and Rules demos, then each feature beside its figure: what it solves, its steps (a step clicked shows itself in the figure; some figures have a setting to slide), the settings folded, where to see it; questions; the next district | `src/pages/features/never-stops.astro`, `src/components/District.astro`, `src/data/deep/relay.js` |
 | `/features/any-project/` | District II: the landing's Backlog chapter, then its seven features beside their figures (four kinds of project, the backlog file and its queue, the track, the brief every session starts with, the handover letter, the portfolio, cost and analysis); questions | `src/pages/features/any-project.astro`, `src/data/deep/projects.js`, `src/scripts/figs/projects.js` |
 | `/features/measured-not-claimed/` | District IX: the landing's Measured chapter, then its nine features beside their figures (plan usage, where the money went, budgets, the downgrade, cost alarms, honest numbers, the judge's ladder, evals, Insights); questions | `src/pages/features/measured-not-claimed.astro`, `src/data/deep/measure.js`, `src/scripts/figs/measure.js` |
@@ -69,6 +69,8 @@ The order lives in `src/data/page.js` (plan v0.7 §5); section numbers and the s
 | `/features/works-as-a-team/` | District V: the landing's mission and Console, then its nine features beside their figures (missions, shared sessions, agent notes and tasks, steer and veto, the Console, countdown questions, Notices and the queue, the Live Timeline, worktrees); questions | `src/pages/features/works-as-a-team.astro`, `src/data/deep/team.js`, `src/scripts/figs/team.js` |
 | `/features/never-forgets/` | District VI: the landing's Never forgets chapter, then its nine features beside their figures (every session kept, any turn replayed, the wiki, the drop box, Obsidian, search, agents' memory, other machines, reports); questions | `src/pages/features/never-forgets.astro`, `src/data/deep/memory.js`, `src/scripts/figs/memory.js` |
 | `/features/just-ask/` | District VIII: the landing's Just ask and Never waits chapters, then its ten features beside their figures (the bridge, its operations, the one command line, agents with a home, the capability matrix, the phone app, Telegram, sound, reading aloud, agent packs); a few figures play real tones or speak with the browser's own voice; questions | `src/pages/features/just-ask.astro`, `src/data/deep/bridge.js`, `src/scripts/figs/bridge.js` |
+| `/features/any-brain/` | District VII: the landing's Brains chapter, then its ten features beside their figures (five engines, plug-in routes, the free-model radar, route health, the secret vault, many sign-ins, switching the model, the eleven doors, one agent for every engine, any machine); questions | `src/pages/features/any-brain.astro`, `src/data/deep/engines.js`, `src/scripts/figs/engines.js` |
+| `/features/beyond-code/` | District III: the landing's Studio chapter, then its thirteen features beside their figures (the Studio, content recipes, any media model, FFmpeg cuts, the vision judge and Triage, the brand kit, the five-stage library, the Airtable engine, the media inbox, Premiere, the content calendar, what worked, the spoken briefing); questions | `src/pages/features/beyond-code.astro`, `src/data/deep/studio.js`, `src/scripts/figs/studio.js` |
 
 ## The sales pages
 
@@ -76,6 +78,7 @@ The order lives in `src/data/page.js` (plan v0.7 §5); section numbers and the s
 |---|---|---|
 | `/pricing/` | The plans (Free, Pro, Fleet, Farm) with a monthly/yearly switch, the kinds of work it is for, what changes between plans, every feature on every plan by district, answers, and the early-access form | `src/pages/pricing/index.astro`, `src/data/plans.js`, `src/scripts/pages/pricing.js` |
 | `/terms/`, `/privacy/`, `/refunds/` | The terms of use and licence, the privacy policy, the refund policy: a short version, then each part in full | `src/pages/<name>/index.astro`, `src/layouts/Legal.astro` |
+| `/about/` | Who makes Agent Farm and how: four numbers from `facts.js`, why it exists, how it is made, what we promise, how to write to us. A photo of the maker's own workplace goes in `photos.js` as `about` | `src/pages/about/index.astro`, `src/styles/pages/about.css` |
 
 - **Prices and limits** live only in `src/data/plans.js`: the cards, the tables, the form and the page description read it. Every plan has every feature; a plan changes the limits. `beta: true` makes the paid plans' buttons reserve early access; a Lemon Squeezy link in `checkout` makes a button buy.
 - **The early-access form** posts to `public/early-access.php`, which Hostinger runs beside the static site. It keeps one CSV line per address (time, email, plan, use, the consent's wording date) in `agentfarm-private/early-access.csv` next to `public_html`, out of the web's reach, and emails `NOTIFY_TO` when that is filled in. A honeypot field and a minimum fill time keep bots out; no IP address is kept.
@@ -108,7 +111,7 @@ src/
   data/facts.js                every stated figure, with its source
   data/page.js                 the page order and which chapter each section belongs to
   data/backlog.js              the demo backlog: project, the family the chain works, the queue, captures; the other projects and their tracks
-  data/features.js             every capability (84), its district, where the page shows it, and the story steps: the board, the chapter openers, later /features and /pricing
+  data/features.js             every capability (92), its district, where the page shows it, and the story steps: the board, the chapter openers, later /features and /pricing
   data/photos.js               the photographs (Unsplash ids or the owner's picks, crops) and the human bands' words
   data/emblems.js              the small moving emblem of each district on /features/
   data/site.js                 links, the call to action, the site version, who sells (legal), rootOf (the way back to the top folder from a page)

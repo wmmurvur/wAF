@@ -2,6 +2,17 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.0 · 2026-10-12
+
+The last two district pages, so every district of the board now has its own, and a page about who makes Agent Farm.
+
+- Any brain, the district page (`/features/any-brain/`): all ten of district VII's features beside their figures, with the landing's Brains chapter as its live demo. Things to try: the Engines page's four questions, an install line typed and not run, ⚡ Test as one real turn; a route from a template, its tiers, the inherited `ANTHROPIC_` names cleared and the key bound to its address; the free-model radar; route health's free check and a paid test on a press; the vault's keychain, `{secret:NAME}` and its scopes; accounts as folders, one standing; the model switched from the next turn; the eleven doors and a saved setup; one agent's rules written to `AGENTS.md`; paths saved as tokens and healed on another machine.
+- Beyond code, the district page (`/features/beyond-code/`): all thirteen of district III's features beside their figures, with the landing's Studio chapter as its live demo. Things to try: the Studio's five tabs and a scene's next step; a card's Re-run, Vary, Feedback and Scene; the three content recipes, their roles and the showrunner; a model id that picks fal.ai or Replicate, a long job polled, a local file uploaded after a yes; the ten FFmpeg recipes as argument lists; a FAIL made again, an edit judged beside its source, four takes and the first PASS, Triage; the brand kit with and without a kit; a run's files filed by stage and a promotion to asset; the Airtable engine's instances, its ten tools and Start; the all_in waiting area and a watched folder; the Premiere export at your frame rate; a publish asked, sent or only rehearsed; what worked, fed into the next idea; the daily digest read aloud.
+- Five new tiles in district III, from the product's own feature list: Cut on your machine, Brand kit, Five stages, Airtable engine and What worked. Any media model now names its two providers and the upload that waits for your yes. Three new tiles in district VII: Eleven doors, One agent, every engine, and Any machine. 92 things in all.
+- About (`/about/`): who makes Agent Farm, how it is made, what we promise, and how to write to us. Linked from the footer.
+- Corrections found while writing VII: Gemini runs on an API key (its Google-account sign-in was retired), the vault has no bridge operation, so an agent can never ask for a key, and switching the model mid-session cannot change the account.
+- The atlas keeps its tiles inside their column when a district has many.
+
 ## 0.12.0 · 2026-10-12
 
 Two more district pages: agents that work as a team, and a farm that forgets nothing.

@@ -1,0 +1,35 @@
+/* /about/: who makes Agent Farm. A title, four numbers, four short sections in two columns. Scoped by .aboutp. */
+.aboutp{padding-top:clamp(28px,4vw,48px);padding-bottom:clamp(40px,6vw,90px)}
+.aboutp .ah{max-width:980px}
+.aboutp .pre{margin:0 0 14px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.aboutp h1{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(52px,8vw,128px);line-height:.86}
+.aboutp h1 em{font-style:normal;color:var(--lime)}
+.aboutp .lead{margin:26px 0 0;max-width:760px;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#d6d7c9}
+.aboutp .band{margin-top:clamp(36px,5vw,64px)}
+.aboutp .nums{list-style:none;margin:clamp(40px,6vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);background:#0d0e0a}
+.aboutp .nums li{display:grid;gap:4px;padding:20px 22px;border-right:1px solid var(--rule)}
+.aboutp .nums li:last-child{border-right:0}
+.aboutp .nums b{font-family:var(--display);font-weight:800;font-size:clamp(40px,4.4vw,64px);line-height:.9;color:var(--ink)}
+.aboutp .nums li:first-child b{color:var(--lime)}
+.aboutp .nums span{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.aboutp .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,80px) clamp(32px,5vw,90px);margin-top:clamp(44px,6vw,80px)}
+.aboutp h2{margin:0 0 12px;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(28px,2.8vw,38px);line-height:1}
+.aboutp section p,.aboutp section li,.aboutp dd{color:#c3c4b4;font-size:16px;line-height:1.7}
+.aboutp section p{margin:10px 0 0}
+.aboutp section ul{margin:10px 0 0;padding-left:20px}
+.aboutp section li{margin:6px 0}
+.aboutp a{color:var(--ink);text-decoration-color:var(--lime);text-underline-offset:3px}
+.aboutp .more{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.aboutp .more a{color:var(--dim);text-decoration:none}
+.aboutp .more a::after{content:" →";color:var(--lime)}
+.aboutp .more a:hover{color:var(--ink)}
+.aboutp .who{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px 16px;margin:20px 0 0;padding:16px 18px;border:1px solid var(--rule);background:#0d0e0a}
+.aboutp dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding-top:4px}
+.aboutp dd{margin:0}
+@media (max-width:860px){
+  .aboutp .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aboutp .nums li:nth-child(2){border-right:0}
+  .aboutp .nums li:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .aboutp .cols{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:480px){.aboutp .who{grid-template-columns:minmax(0,1fr);gap:2px}.aboutp dd{margin-bottom:8px}}
