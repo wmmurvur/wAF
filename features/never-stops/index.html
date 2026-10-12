@@ -14,7 +14,7 @@
     <meta property="og:description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
     <meta property="og:url" content="https://agentfarm.space/features/never-stops/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/never-stops.js?v=0.12.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/never-stops.js?v=0.13.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.12.0"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.0"></head>
   <body>
     
   <div class="wrap">
@@ -283,10 +283,11 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.12.0 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.0 · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>
+      <a href="../../about/">About</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
       <a href="../../terms/">Terms</a>
       <a href="../../privacy/">Privacy</a>
