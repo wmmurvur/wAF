@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Any brain · Agent Farm features</title>
+    <meta name="description" content="Agent Farm runs five engines, Claude Code, Codex, Gemini, Antigravity and OpenCode, and through routes almost any model: a real test turn when you ask for one, routes with tiers and health checks, a keychain vault, several sign-ins of one engine, the model switched mid-conversation, eleven doors that carry the same setup, one agent's rules written for every engine, and a farm that moves between machines.">
+    <link rel="canonical" href="https://agentfarm.space/features/any-brain/">
+    
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="theme-color" content="#090a07">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Any brain · Agent Farm features">
+    <meta property="og:description" content="Agent Farm runs five engines, Claude Code, Codex, Gemini, Antigravity and OpenCode, and through routes almost any model: a real test turn when you ask for one, routes with tiers and health checks, a keychain vault, several sign-ins of one engine, the model switched mid-conversation, eleven doors that carry the same setup, one agent's rules written for every engine, and a farm that moves between machines.">
+    <meta property="og:url" content="https://agentfarm.space/features/any-brain/">
+    <meta name="twitter:card" content="summary">
+    <script defer src="../../assets/any-brain.js?v=0.12.0"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+         nothing does, so there a click on such a link goes to the index.html itself. -->
+    <script>
+      if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
+        const a = e.target.closest && e.target.closest('a[href]'), h = a && a.getAttribute('href');
+        const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
+        if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
+      });
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.12.0"></head>
+  <body>
+    
+  <div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../" aria-label="Agent Farm, the home page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
+      Agent Farm
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a href="../../features/" aria-current="page">Features</a><a class="ch" href="../../#ch-relay">Relay</a><a class="ch" href="../../#ch-projects">Projects</a><a class="ch" href="../../#ch-studio">Studio</a><a class="ch" href="../../#ch-memory">Memory</a><a class="ch" href="../../#ch-bridge">Just ask</a><a class="ch" href="../../#ch-privacy">Local</a><a href="../../pricing/">Pricing</a>
+    </nav>
+    <a class="cta" href="../../pricing/#early">Join early access</a>
+  </header>
+</div>
+  <main class="dpage" style="--c:#7fa0f8">
+    <div class="wrap">
+      <nav class="crumb" aria-label="You are here"><a href="../../">Agent Farm</a><a href="../">Features</a><span>VII Any brain</span></nav>
+      <header class="dh">
+        <span class="drm" aria-hidden="true">VII</span>
+        <div>
+          <p class="dk"><span>District VII of X</span><span>Ten things</span></p>
+          <h1>Any brain</h1>
+          <p class="dp">Five engines, and through routes, almost any model.</p>
+        </div>
+      </header>
+    </div>
+    <figure class="band plain" data-band>
+  <div class="ph"><img src="../../assets/photos/d-engines-l.jpg" srcset="../../assets/photos/d-engines-s.jpg 900w, ../../assets/photos/d-engines-l.jpg 1800w" sizes="100vw" alt="Two people working side by side at their monitors" loading="lazy" decoding="async" style="object-position:50% 40%"></div>
+  
+</figure>
+    <div class="wrap">
+      <p class="dpromise">Every AI company sells its own tool, and each one wants your work inside it. Agent Farm runs no model of its own: it drives the CLIs you already pay for, side by side, and lends Claude Code and OpenCode any other model through a route. Change the brain behind an agent and the way you work stays the same.</p>
+      <ul class="dtl">
+        <li><a href="#engines"><span class="c">VII·1</span><span class="n">Five engines</span><span class="sg">5</span></a></li><li><a href="#routes"><span class="c">VII·2</span><span class="n">Plug-in brains</span><span class="sg">3 routes</span></a></li><li><a href="#radar"><span class="c">VII·3</span><span class="n">Free-model radar</span><span class="sg">04:30 daily</span></a></li><li><a href="#health"><span class="c">VII·4</span><span class="n">Route health</span><span class="sg">free check</span></a></li><li><a href="#vault"><span class="c">VII·5</span><span class="n">Secret vault</span><span class="sg">keychain</span></a></li><li><a href="#accounts"><span class="c">VII·6</span><span class="n">Many sign-ins</span><span class="sg">4 accounts</span></a></li><li><a href="#switch"><span class="c">VII·7</span><span class="n">Switch the model</span><span class="sg">mid-session</span></a></li><li><a href="#doors"><span class="c">VII·8</span><span class="n">Eleven doors</span><span class="sg">11 doors</span></a></li><li><a href="#sync"><span class="c">VII·9</span><span class="n">One agent, every engine</span><span class="sg">AGENTS.md</span></a></li><li><a href="#portable"><span class="c">VII·10</span><span class="n">Any machine</span><span class="sg">${home}</span></a></li>
+      </ul>
+    </div>
+    <section id="s-brains" class="gap" aria-label="Any brain: five engines, and other models through routes">
+  <div class="wrap">
+    <p class="sx"><b>12</b> Brains</p>
+    <div class="sh">
+      <div><p class="pre">Engines · routes · sign-ins · keys</p><h2>Five engines. <em>Any number of brains.</em></h2></div>
+      <p class="lead">Claude Code, Codex, Gemini, Antigravity and OpenCode, each paid for the way you already pay. Claude Code and OpenCode can also run other models through a route: a provider's, a free one, or one at an address on your own machine. Keys stay in your OS keychain.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bpanel" id="br-panel" data-shows="engines routes radar health accounts policies vault" aria-label="Agent Farm's Engines and Secrets pages, rebuilt with demo data">
+        <div class="mtabs" id="br-tabs" role="tablist" aria-label="Pages">
+          <button type="button" role="tab" data-tab="engines" class="on" aria-selected="true">Agent Farm — Engines</button>
+          <button type="button" role="tab" data-tab="secrets" aria-selected="false">Agent Farm — Secrets</button>
+        </div>
+        <div class="jump" id="br-jump" role="tablist" aria-label="Parts of the Engines page">
+          <button type="button" role="tab" data-tab="engines" class="on" aria-selected="true">Engines</button>
+          <button type="button" role="tab" data-tab="routes" aria-selected="false">Providers and routes</button>
+          <button type="button" role="tab" data-tab="accounts" aria-selected="false">Accounts</button>
+        </div>
+        <div class="bbody" id="br-view" aria-live="polite"></div>
+      </div>
+      <div class="board" id="br-board" aria-label="Which engine runs which brain">
+        <div class="bhd"><span>Switchboard</span><b>engine → brain</b></div>
+        <div class="sw" id="br-sw"></div>
+        <p class="launch" id="br-launch"></p>
+        <p class="bcap">A plan, a key or an app sign-in is each engine's own. A route is one address, one key and its models, lent to Claude Code or OpenCode when a session starts; it is never written into their files.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <div class="wrap">
+      <article class="ft hasfig" id="engines" data-f="engines">
+          <div class="fth">
+            <span class="c">VII·1</span>
+            <h2>Five engines</h2>
+            <p class="s">Claude Code, Codex, Gemini, Antigravity and OpenCode. What is read off disk says so; only one real test call proves an engine works.</p>
+            <a class="see" href="#s-brains">The Engines page, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Five agent CLIs means five installers, five sign-ins and five ways of being paid for. A file on disk can say signed in while every call fails, and a tool that only works with one of them decides your model for you.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Four questions</span><span class="t">The Engines page answers four questions for each engine: is the CLI on this machine, how is it paid for, is it signed in, and what is the one thing to do next.</span></button></li><li><button type="button" data-i="1"><span class="k">Paid your way</span><span class="t">Each is paid the way you already pay: Claude Code on a Pro or Max plan, Codex on a ChatGPT plan, Gemini on an API key, Antigravity on the app's Google sign-in, OpenCode on its own free models with no sign-in at all. A plan's sign-in stays in the CLI's own files and never passes through Agent Farm.</span></button></li><li><button type="button" data-i="2"><span class="k">The next step</span><span class="t">An engine that is not installed is never told to sign in. Its row carries the install command, the vendor's own script where there is one, typed into a terminal for you to read and run. Nothing runs by itself.</span></button></li><li><button type="button" data-i="3"><span class="k">One real turn</span><span class="t"><code>⚡ Test</code> buys one real turn: the smallest model, a four-word prompt, read-only where the engine allows. It never runs on a schedule or when the page opens; its verdict keeps its age, and a failure is told in the engine's own words.</span></button></li><li><button type="button" data-i="4"><span class="k">Offered, refused</span><span class="t">Every picker offers all five. One that cannot run here stays in the list, greyed, with the one thing to do about it, because hiding it would make "not installed" and "not signed in" look the same.</span></button></li></ol>
+            <p class="note">For a CLI it does not know, a profile runs any command line, keeps its output and reports its exit code. It is a command runner, never a sixth engine: no invented transcript, price or live view.</p>
+            <details class="setd">
+                <summary>Settings · 2</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.cliProfiles</code></td><td class="v">[]</td><td>Command lines for a CLI Agent Farm does not know, with {prompt} and {args} filled in.</td></tr><tr><td><code>agentFarm.modelAliases</code></td><td class="v">haiku, sonnet, opus, fable</td><td>Model names every picker offers; add a new one once. Codex&#39;s and Antigravity&#39;s lists are read from the engines themselves.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="engines" aria-label="Five engines, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·1</b><span class="fk">Four questions</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="routes" data-f="routes">
+          <div class="fth">
+            <span class="c">VII·2</span>
+            <h2>Plug-in brains</h2>
+            <p class="s">Claude Code and OpenCode can run other models through a route: free or paid, from a provider or an address on your own machine. Five engines, any number of brains.</p>
+            <a class="see" href="#s-brains">Add a route, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Claude Code and OpenCode are good programs, and the best model for a job is not always the one their maker sells. Pointing them somewhere else by hand means environment variables, and a variable left over in a window quietly sends a session to the wrong company.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">One route</span><span class="t">A route is one address, one key and its models: a provider's (Kimi and MiniMax come as templates), a free one, or a model at an http address on this machine.</span></button></li><li><button type="button" data-i="1"><span class="k">Its tiers</span><span class="t">Its tiers map opus, sonnet and haiku onto the route's own model names, so a session that asks for sonnet gets the route's model, and one that asks for nothing gets the default tier. A Context figure tells Claude Code how big the window really is.</span></button></li><li><button type="button" data-i="2"><span class="k">Two engines</span><span class="t">One route serves both engines: given to Claude Code when a session starts, lent to OpenCode without touching its files. OpenCode's own providers stay its own, in a group of their own.</span></button></li><li><button type="button" data-i="3"><span class="k">Nothing inherited</span><span class="t">Every inherited <code>ANTHROPIC_</code> variable is cleared, 75 names read out of the real binary, so a session picked as Kimi cannot run on whatever the window was carrying. The key is bound to the route's address: change the address and the key stops.</span></button></li><li><button type="button" data-i="4"><span class="k">On the card</span><span class="t">The card wears the route beside the engine badge, with the endpoint on hover. On Claude Code a route holds for the whole session; on OpenCode it may change between turns.</span></button></li></ol>
+            <p class="note">Removing a route first settles every saved setup that names it, and a launch that would land on a route that is gone is refused at every door.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.contextWindowTokens</code></td><td class="v">0 (auto)</td><td>The context ceiling. 0 = the window the engine states, else the Context of the route the session runs on, else the model&#39;s.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="routes" aria-label="Plug-in brains, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·2</b><span class="fk">One route</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="radar" data-f="radar">
+          <div class="fth">
+            <span class="c">VII·3</span>
+            <h2>Free-model radar</h2>
+            <p class="s">Set it up once as a schedule: every morning an agent checks which models are free today and adds new ones as routes, over the bridge.</p>
+            <a class="see" href="#s-brains">A route the radar added <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Providers hand out free models and take them back again. Keeping up by hand means reading their pages every morning and retyping routes.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">A schedule</span><span class="t">It is not a button: it is a schedule you write once, even in a sentence, such as "every day at 04:30, explorer checks which models are free today".</span></button></li><li><button type="button" data-i="1"><span class="k">At 04:30</span><span class="t">At that hour an agent opens a session, reads a provider's list of today's free models and compares it with the routes you already have.</span></button></li><li><button type="button" data-i="2"><span class="k">Free today</span><span class="t">Its report goes where every run's does: what is new, what has gone, what answered. A run that finds nothing new changes nothing.</span></button></li><li><button type="button" data-i="3"><span class="k">A new route</span><span class="t">A new one becomes a route over the bridge, addressed and tiered, naming a key you already keep in the vault. The route holds the key's name; the agent never sees its value.</span></button></li><li><button type="button" data-i="4"><span class="k">Yours to use</span><span class="t">The route arrives untested, and nothing moves onto it by itself: you pick it for a session, an agent or a saved setup when you want it.</span></button></li></ol>
+            <p class="note">The owner of Agent Farm runs this every night. It is an example of what the parts can do together, not a feature you switch on.</p>
+            
+          </div>
+          <figure class="fig" data-fig="radar" aria-label="Free-model radar, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·3</b><span class="fk">A schedule</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="health" data-f="health">
+          <div class="fth">
+            <span class="c">VII·4</span>
+            <h2>Route health</h2>
+            <p class="s">What each route offers is checked for free. A real, paid turn is only spent when you press for it.</p>
+            <a class="see" href="#s-brains">Route health, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A route is an address and a key you typed months ago. You want to know it still works before a night of work runs on it, without paying a turn every time a page opens.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Free to know</span><span class="t">For each route, the free check reads everything that can be known without spending: is it set up, does the address answer with its list of models, and how many it offers.</span></button></li><li><button type="button" data-i="1"><span class="k">By engine</span><span class="t">Routes are listed by the engine they serve: Claude Code's, beside the first-party Anthropic one, and OpenCode's, beside its own providers.</span></button></li><li><button type="button" data-i="2"><span class="k">Never tested is normal</span><span class="t">"Available, never tested" is the ordinary state, not a warning. The free check is all that can be known for free.</span></button></li><li><button type="button" data-i="3"><span class="k">One turn, pressed</span><span class="t"><code>Test route</code> spends one real turn on that engine through that route, and only when you press it. The answer keeps its age: tested two days ago is not tested just now.</span></button></li><li><button type="button" data-i="4"><span class="k">Asked and answered</span><span class="t">Every launch writes down which route it was started on, at which revision, beside what the engine reported back. Claude Code never names its route in a transcript, so that record is the only witness.</span></button></li></ol>
+            
+            
+          </div>
+          <figure class="fig" data-fig="health" aria-label="Route health, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·4</b><span class="fk">Free to know</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="vault" data-f="vault">
+          <div class="fth">
+            <span class="c">VII·5</span>
+            <h2>Secret vault</h2>
+            <p class="s">Keys live in your OS keychain, open only to the agents you choose. A key&#39;s value never crosses the bridge.</p>
+            <a class="see" href="#s-brains">The Secrets page, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Keys pasted into settings files end up in git, in screenshots and in an agent&#39;s context. Every model behind a route, every media service and every bot needs one.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Into the keychain</span><span class="t"><code>Set Secret…</code> puts a key into your OS keychain. It is hidden as you type and never written to a settings file.</span></button></li><li><button type="button" data-i="1"><span class="k">As a variable</span><span class="t">It reaches the work as an environment variable: save <code>FAL_KEY</code> and every task the key is open to sees <code>FAL_KEY</code>.</span></button></li><li><button type="button" data-i="2"><span class="k">As {secret:NAME}</span><span class="t">In a webhook step or a notification address, <code>{secret:FAL_KEY}</code> is replaced with the value at the moment of the call. The value is never written to any file.</span></button></li><li><button type="button" data-i="3"><span class="k">Who may use it</span><span class="t">Each key says who may use it: all agents, only the agents you tick, or Agent Farm alone, for a key such as Gatekeeper's that no agent should be handed.</span></button></li><li><button type="button" data-i="4"><span class="k">Names only</span><span class="t">The list shows names, never values. The vault has no bridge operation at all: an agent uses the keys open to its task and can never ask the bridge for one.</span></button></li></ol>
+            <p class="note">If something that looks like a key turns up in plain text in a config file, the health check tells you to move it into the vault.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.mediaAuthSecret</code></td><td class="v">FAL_KEY</td><td>The name of the key media steps use.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="vault" aria-label="Secret vault, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·5</b><span class="fk">Into the keychain</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="accounts" data-f="accounts">
+          <div class="fth">
+            <span class="c">VII·6</span>
+            <h2>Many sign-ins</h2>
+            <p class="s">Several sign-ins of Claude Code or Codex side by side, without signing out. An account is a config folder, not a copied credential.</p>
+            <a class="see" href="#s-brains">The Accounts page, live <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Two or three plans on one machine meant signing out and in all day, the right browser profile, a fresh login, and sometimes a night of work on the wrong plan.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Capture a sign-in</span><span class="t">Sign in as usual, then capture the sign-in on the Engines page under a name of your own. Each account gets a slot of its own.</span></button></li><li><button type="button" data-i="1"><span class="k">A folder, not a copy</span><span class="t">An account is a config folder, not a copied credential. A session started on it points the engine at that folder, so two accounts run side by side and the session you are talking to is never touched.</span></button></li><li><button type="button" data-i="2"><span class="k">Standing, or this one</span><span class="t">One account per engine is standing; any other is one press away. Every door that starts a session has an account box, and a task says which account it spends when it is written.</span></button></li><li><button type="button" data-i="3"><span class="k">Its quota</span><span class="t">Each card shows its five-hour and weekly bars. They are read one at a time, a few seconds apart, so asking how much is left never becomes what spends it.</span></button></li><li><button type="button" data-i="4"><span class="k">Refused, not guessed</span><span class="t">An account that does not exist is refused, never swapped for whoever is signed in, and an account belongs to one engine. Claude Code and Codex have this; the other three were found to work another way.</span></button></li></ol>
+            <p class="note">An account can be switched off without being removed, and signing out clears its credentials but keeps its folder. Which account a session gets can also be left to a rule: see Account policies in Never stops.</p>
+            
+          </div>
+          <figure class="fig" data-fig="accounts" aria-label="Many sign-ins, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·6</b><span class="fk">Capture a sign-in</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="switch" data-f="switch">
+          <div class="fth">
+            <span class="c">VII·7</span>
+            <h2>Switch the model</h2>
+            <p class="s">Change the model, effort or permissions of a running session from the Console. It takes effect from the next turn, and the conversation stays.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>Halfway through a conversation you know whether it needs the big model or the cheap one. Starting again to change it loses the context you built.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Mid-conversation</span><span class="t">In the Console the model box works on a running session. The switch takes effect from the next turn, and the conversation, its context and its transcript stay as they are.</span></button></li><li><button type="button" data-i="1"><span class="k">Until it agrees</span><span class="t">It is pending until the CLI agrees. A refusal shows as an error and leaves the model alone, so the box never names a model that is not answering.</span></button></li><li><button type="button" data-i="2"><span class="k">Effort, permissions</span><span class="t">Effort and the permission mode change the same way on Claude Code, as live settings on the running process.</span></button></li><li><button type="button" data-i="3"><span class="k">Per engine</span><span class="t">Codex, Gemini and Antigravity start one process per turn, so there the boxes are the next turn's flags, and a message typed mid-turn waits for the turn to end. The line under the box says which kind of engine you are on.</span></button></li><li><button type="button" data-i="4"><span class="k">Who serves it</span><span class="t">Who serves it is a different question. On Claude Code a route holds for the session, and a change is refused with a fork or a new session offered; OpenCode may change provider between turns.</span></button></li></ol>
+            <p class="note">Each turn's line ends with the model and effort that answered it, so a switch made meanwhile cannot rewrite the turn you are watching. An agent can switch too, with <code>console.setModel</code>.</p>
+            
+          </div>
+          <figure class="fig" data-fig="switch" aria-label="Switch the model, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·7</b><span class="fk">Mid-conversation</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="doors" data-f="doors">
+          <div class="fth">
+            <span class="c">VII·8</span>
+            <h2>Eleven doors</h2>
+            <p class="s">Start a session from the Console, a row, a right-click, a saved setup, the command palette, the bridge or Telegram: all eleven doors carry the same engine, model, account and permissions.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A session can be started from many places, and a setting that one of them forgets is a session on the wrong model, the wrong account or with the wrong permissions, which you notice afterwards.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Eleven places</span><span class="t">Eleven places start a session: the Console, the sidebar tree, a right-click, a saved setup, the launcher, the terminal-or-Console picker, the project tree, the pages, the command palette, the bridge and Telegram.</span></button></li><li><button type="button" data-i="1"><span class="k">The same boxes</span><span class="t">Each carries the same choices: agent, engine, route, model, effort, permissions, account and the Superpowers discipline. A door that drops one fails the build.</span></button></li><li><button type="button" data-i="2"><span class="k">One Enter</span><span class="t">A setup you use often is a saved setup, such as "deep review" = opus, xhigh, plan, and one click starts it. The launcher remembers what each agent last ran with, on each engine separately.</span></button></li><li><button type="button" data-i="3"><span class="k">Where it runs</span><span class="t">Where it runs is a choice too: the Console, a terminal (VS Code's or your system's own), or the background as a task. In a terminal, the launcher's top line is the exact command that will run.</span></button></li><li><button type="button" data-i="4"><span class="k">Back as it closed</span><span class="t">A session you reopen comes back with the model, effort and permissions it closed with, on the engine the conversation was had with.</span></button></li></ol>
+            <p class="note">From Telegram, <code>/new developer</code> starts a real Console session on your desktop with that agent's last setup, under the chat's daily budget.</p>
+            <details class="setd">
+                <summary>Settings · 1</summary>
+                <table class="sets">
+                  <thead><tr><th scope="col">Setting</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead>
+                  <tbody><tr><td><code>agentFarm.launchDefaults</code></td><td class="v">{}</td><td>The engine, model, effort and permissions every session starts with. An empty field adds no flag.</td></tr></tbody>
+                </table>
+              </details>
+          </div>
+          <figure class="fig" data-fig="doors" aria-label="Eleven doors, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·8</b><span class="fk">Eleven places</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="sync" data-f="sync">
+          <div class="fth">
+            <span class="c">VII·9</span>
+            <h2>One agent, every engine</h2>
+            <p class="s">An agent&#39;s rules, duties and MCP servers are written out in the files Codex, Antigravity and OpenCode read, and kept in step in both directions.</p>
+            
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>An agent&#39;s rules are written for one engine: Claude Code reads CLAUDE.md, the others read AGENTS.md and their own folders. Without a copy they start as strangers, and a copy kept by hand goes stale the day you change the original.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">One instruction file</span><span class="t"><code>Sync Agent with the Other Engines…</code> writes the agent's CLAUDE.md as an AGENTS.md in the same folder, the file Codex and Antigravity both walk up to read. Memory files are plain Markdown and need no copy at all.</span></button></li><li><button type="button" data-i="1"><span class="k">Duties and tools</span><span class="t">Its standing duties become workflow files Antigravity calls as <code>/duty-name</code>. Its MCP servers become a suggested config for Gemini and for Codex, which you merge yourself: Agent Farm never writes into their home folders.</span></button></li><li><button type="button" data-i="2"><span class="k">The constitution</span><span class="t">A nest of agents shares one constitution. <code>⚖ Sync Constitution</code> mirrors it once into the nest's own AGENTS.md, and every engine picks it up on its way up from whichever agent folder it runs in.</span></button></li><li><button type="button" data-i="3"><span class="k">Which side moved</span><span class="t">It is not a one-time export. Fingerprints say which side moved: a changed CLAUDE.md is a reminder in Insights; a changed AGENTS.md, because an Antigravity session taught the agent something, can be applied back to CLAUDE.md.</span></button></li><li><button type="button" data-i="4"><span class="k">Never overwritten</span><span class="t">If both changed you get a conflict, a diff and a direction to pick, and the losing side is kept as a backup. Files you wrote yourself are not touched without asking.</span></button></li></ol>
+            <p class="note">The sync also says what Antigravity will load from that folder: which files, how big, any text that would arrive twice and any file past its 24,000-byte cut.</p>
+            
+          </div>
+          <figure class="fig" data-fig="sync" aria-label="One agent, every engine, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·9</b><span class="fk">One instruction file</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article><article class="ft hasfig" id="portable" data-f="portable">
+          <div class="fth">
+            <span class="c">VII·10</span>
+            <h2>Any machine</h2>
+            <p class="s">Tasks, missions and their history travel between computers in git: one machine&#39;s paths are saved as tokens and open on the other machine&#39;s folders.</p>
+            <a class="see" href="../just-ask/#move">Take one agent with you <i></i></a>
+          </div>
+          <div class="ftb">
+            <h3>What it solves</h3>
+            <p>A new computer, or a second one, should not mean setting the farm up again. Files full of one machine&#39;s paths break on every other.</p>
+            <h3>How it works<span class="hint"> · pick a step</span></h3>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Saved as tokens</span><span class="t">The farm's own records, its tasks, missions and run history, can travel between machines in git. On save, a machine's path becomes a token such as <code>${home}</code> or <code>${claudeDir}</code>.</span></button></li><li><button type="button" data-i="1"><span class="k">Back as folders</span><span class="t">On load the tokens become this machine's own folders.</span></button></li><li><button type="button" data-i="2"><span class="k">Healed on load</span><span class="t">A record written before the tokens, with another computer's <code>C:\Users\…\.claude</code> path in it, heals itself on load. Only values that are a path are changed; a prompt is never touched.</span></button></li><li><button type="button" data-i="3"><span class="k">Settings that travel</span><span class="t">Every folder setting takes <code>%USERPROFILE%</code>, <code>${env:VAR}</code> or <code>~</code>, so one settings file synced through git works on both machines. The fleet's state is lifted out of VS Code's per-machine store as well.</span></button></li><li><button type="button" data-i="4"><span class="k">Never guessed</span><span class="t">A path variable this machine cannot resolve is refused, never guessed.</span></button></li></ol>
+            <p class="note">One agent travels as an .agentpack, and another machine's sessions can be read here as they happen.</p>
+            
+          </div>
+          <figure class="fig" data-fig="portable" aria-label="Any machine, step by step (demo)">
+              <div class="fv"></div>
+              <figcaption class="fcap"><b>VII·10</b><span class="fk">Saved as tokens</span><span class="fn">1 / 5</span><button type="button" class="fp" aria-label="Previous step">‹</button><button type="button" class="fx" aria-label="Next step">›</button></figcaption>
+            </figure>
+        </article>
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        <details><summary>Does Agent Farm have a model of its own?</summary><p>No. It runs no model itself: it drives the agent CLIs you have installed, on your own plans and keys, and reads back what they wrote. What you pay those companies is unchanged.</p></details><details><summary>Do I need all five engines?</summary><p>No. One is enough. The ones you do not have stay in the pickers, greyed, with the one thing it would take to use them, and a Claude Code session and a Codex session can run side by side whenever you want both.</p></details><details><summary>Can I use a model that runs on my own computer?</summary><p>Yes. Give it a route at an http address on this machine, such as 127.0.0.1, and Claude Code or OpenCode will run it. OpenCode also has free models of its own that need no sign-in.</p></details><details><summary>Why can only Claude Code and OpenCode use routes?</summary><p>Because only those two can be pointed at another provider. Codex, Gemini and Antigravity each talk to their own maker's models, so for them there is nothing to route; you pick their model, effort and permissions instead.</p></details><details><summary>What does a session on a plan cost on the page?</summary><p>An engine on a plan reports tokens, not money, so Agent Farm shows tokens and says why there is no price. It never prints $0.00 for work that was paid for by a plan.</p></details><details><summary>Can another engine carry on work one engine started?</summary><p>Yes, by reading it: any agent can read any session, whichever engine wrote it, in the same five roles, and carry on. A resume itself always reopens on the engine the conversation was had with.</p></details>
+      </section>
+      <nav class="dnext" aria-label="More features">
+        <a class="dnx" href="../just-ask/" style="--c:var(--ink)"><span class="k">Next district</span><span class="r">VIII</span><span class="n">Just ask</span><span class="p">You never have to learn the farm. Tell an agent, it sets it up.</span></a>
+        <a class="dall" href="../">All 87 features <i></i></a>
+      </nav>
+    </div>
+  </main>
+  <div class="wrap">
+  <footer>
+    <span class="ver">AF-WEB v0.12.0 · screens rebuilt from the real app, with demo data</span>
+    <nav aria-label="Footer">
+      <a href="../../features/">Features</a>
+      <a href="../../pricing/">Pricing</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=muvusoft.agent-farm">VS Code Marketplace</a>
+      <a href="../../terms/">Terms</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../refunds/">Refunds</a>
+      <a href="mailto:agentfarm@muvusoft.uk">Contact</a>
+      <span>Photos: Unsplash, Pexels</span>
+      <span>Crafted by <a href="https://muvusoft.uk/">MuVuSOFT</a></span>
+    </nav>
+  </footer>
+</div>
+
+  </body>
+</html>
