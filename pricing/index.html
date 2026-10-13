@@ -14,7 +14,7 @@
     <meta property="og:description" content="Agent Farm plans: Free, and Pro at $19, Fleet at $34, Farm at $49 a month. Every plan has every feature; a plan changes how far each one goes. Your engines run on your own plans and keys.">
     <meta property="og:url" content="https://agentfarm.space/pricing/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../assets/pricing.js?v=0.13.3"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../assets/pricing.js?v=0.13.4"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../assets/site.css?v=0.13.3"></head>
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.13.4"></head>
   <body>
     
   <div class="wrap">
@@ -114,28 +114,53 @@
 
     <section class="kinds" aria-labelledby="who-h">
       <div class="wrap">
-        <p class="pre">One farm, any kind of work</p>
-        <h2 id="who-h">Wherever agents can work.</h2>
-        <p class="klead">Agent Farm is open to whatever AI is open to. Its agents are not one chat at a time: you run them as a fleet, organise them into teams, connect them to your tools and set them into the patterns your work needs.</p>
-        <div class="wtiles">
+        <div class="khd">
+          <div><p class="pre">One farm, any kind of work</p><h2 id="who-h">Not only code.</h2></div>
+          <p class="karr"><button type="button" class="kb" data-k="-1" aria-label="Back">←</button><button type="button" class="kb" data-k="1" aria-label="More">→</button></p>
+        </div>
+        <div class="wtiles" role="region" aria-label="What else the farm does" tabindex="0">
           <figure>
-              <img src="../assets/photos/w-code-l.jpg" srcset="../assets/photos/w-code-s.jpg 500w, ../assets/photos/w-code-l.jpg 1000w" sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt="A developer with headphones at a terminal in a dim room" loading="lazy" decoding="async" style="object-position:50% 40%">
-              <figcaption><b>Code</b>Fixes, tests and refactors carried on leg after leg while you sleep.</figcaption>
+              <img src="../assets/photos/w-video-l.jpg" srcset="../assets/photos/w-video-s.jpg 500w, ../assets/photos/w-video-l.jpg 1000w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A video editor at a desk under a wall of pinned frames" loading="lazy" decoding="async" style="object-position:50% 60%">
+              <figcaption><i>For creators</i><b>A content studio</b>Films, shorts, podcasts and posts, made by a crew of agents from idea to cut.</figcaption>
             </figure><figure>
-              <img src="../assets/photos/w-video-l.jpg" srcset="../assets/photos/w-video-s.jpg 500w, ../assets/photos/w-video-l.jpg 1000w" sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt="A video editor at a desk under a wall of pinned frames" loading="lazy" decoding="async" style="object-position:50% 60%">
-              <figcaption><b>Video and all content</b>A production team of agents from the idea to the finished piece: films, shorts, audio, images and posts, filed and put on a calendar.</figcaption>
+              <img src="../assets/photos/d-memory-l.jpg" srcset="../assets/photos/d-memory-s.jpg 900w, ../assets/photos/d-memory-l.jpg 1800w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A fountain pen writing a line in a notebook" loading="lazy" decoding="async" style="object-position:50% 50%">
+              <figcaption><i>For researchers</i><b>A second brain</b>What your agents learn becomes a wiki that keeps growing. No chat is ever lost.</figcaption>
             </figure><figure>
-              <img src="../assets/photos/d-automation-l.jpg" srcset="../assets/photos/d-automation-s.jpg 600w, ../assets/photos/d-automation-l.jpg 1200w" sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt="A cup of coffee on a monthly planner with the month's goals" loading="lazy" decoding="async" style="object-position:50% 50%">
-              <figcaption><b>Automation</b>Workflows of agents, HTTP calls, media jobs and browser runs, started by a schedule, a file, a hook or one sentence. Any process you can describe.</figcaption>
+              <img src="../assets/photos/d-automation-l.jpg" srcset="../assets/photos/d-automation-s.jpg 900w, ../assets/photos/d-automation-l.jpg 1800w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A cup of coffee on a monthly planner with the month's goals" loading="lazy" decoding="async" style="object-position:50% 50%">
+              <figcaption><i>For every routine</i><b>Automation</b>Say it in one sentence, or chain it: schedules, triggers and workflows that run themselves.</figcaption>
             </figure><figure>
-              <img src="../assets/photos/w-writing-l.jpg" srcset="../assets/photos/w-writing-s.jpg 600w, ../assets/photos/w-writing-l.jpg 1200w" sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt="Hands typing on a laptop at a wooden table beside a mug of coffee" loading="lazy" decoding="async" style="object-position:58% 50%">
-              <figcaption><b>Anything agents do</b>Research, writing, data, documents, operations: five engines and any model you route to them, open to whatever AI can do next.</figcaption>
+              <img src="../assets/photos/d-bridge-l.jpg" srcset="../assets/photos/d-bridge-s.jpg 900w, ../assets/photos/d-bridge-l.jpg 1080w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A woman in a café smiling at her phone" loading="lazy" decoding="async" style="object-position:70% 40%">
+              <figcaption><i>For your own life</i><b>A life OS</b>A briefing read aloud each morning, reminders, small jobs off your plate. A lighter day.</figcaption>
             </figure><figure>
-              <img src="../assets/photos/d-team-l.jpg" srcset="../assets/photos/d-team-s.jpg 600w, ../assets/photos/d-team-l.jpg 1200w" sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt="A team around a table while one of them sorts sticky notes on the wall" loading="lazy" decoding="async" style="object-position:50% 35%">
-              <figcaption><b>A fleet, not a chat</b>Agents organised into teams with a lead and roles, leaving each other notes, set into the recipes you choose and changed whenever you like.</figcaption>
+              <img src="../assets/photos/d-projects-l.jpg" srcset="../assets/photos/d-projects-s.jpg 900w, ../assets/photos/d-projects-l.jpg 1800w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A hand pinning a card to a wall of plans and sketches" loading="lazy" decoding="async" style="object-position:50% 40%">
+              <figcaption><i>For teams</i><b>Projects on autopilot</b>Hand a team&#39;s backlog to the agents. They work it off in your order and report back.</figcaption>
             </figure><figure>
-              <img src="../assets/photos/w-team-l.jpg" srcset="../assets/photos/w-team-s.jpg 600w, ../assets/photos/w-team-l.jpg 1200w" sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt="A small team working on laptops around a wooden table" loading="lazy" decoding="async" style="object-position:50% 45%">
-              <figcaption><b>Teams and companies</b>From one person to a whole company: your own workflows on autopilot, on the engines and accounts you already pay for.</figcaption>
+              <img src="../assets/photos/d-team-l.jpg" srcset="../assets/photos/d-team-s.jpg 900w, ../assets/photos/d-team-l.jpg 1800w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A team around a table while one of them sorts sticky notes on the wall" loading="lazy" decoding="async" style="object-position:50% 35%">
+              <figcaption><i>For power users</i><b>An agent OS</b>Five engines as one organised fleet: teams, roles, chains, and a ping when they need you.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/d-relay-l.jpg" srcset="../assets/photos/d-relay-s.jpg 900w, ../assets/photos/d-relay-l.jpg 1800w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="An empty desk at dusk, a lamp still on beside a laptop and a phone" loading="lazy" decoding="async" style="object-position:50% 55%">
+              <figcaption><i>For deadlines</i><b>Through the night</b>A full context, a spent plan, three in the morning: the work hands itself on and keeps going.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/w-writing-l.jpg" srcset="../assets/photos/w-writing-s.jpg 600w, ../assets/photos/w-writing-l.jpg 1200w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="Hands typing on a laptop at a wooden table beside a mug of coffee" loading="lazy" decoding="async" style="object-position:58% 50%">
+              <figcaption><i>For authors</i><b>Research and writing</b>A thesis, a book or a report as a backlog the agents work through, chapter by chapter.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/w-audio-l.jpg" srcset="../assets/photos/w-audio-s.jpg 600w, ../assets/photos/w-audio-l.jpg 1200w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A podcaster with headphones speaking into a microphone" loading="lazy" decoding="async" style="object-position:62% 40%">
+              <figcaption><i>For channels</i><b>Channels and podcasts</b>Long videos cut into shorts, a weekly rhythm, an inbox that files your media itself.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/monday-l.jpg" srcset="../assets/photos/monday-s.jpg 560w, ../assets/photos/monday-l.jpg 1000w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A phone held above an open hand by the water" loading="lazy" decoding="async" style="object-position:50% 50%">
+              <figcaption><i>On the go</i><b>From anywhere</b>Telegram, your voice or the phone app: give the farm a job and get the answer back.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/d-engines-l.jpg" srcset="../assets/photos/d-engines-s.jpg 900w, ../assets/photos/d-engines-l.jpg 1200w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="Two people working side by side at their monitors" loading="lazy" decoding="async" style="object-position:50% 40%">
+              <figcaption><i>For every AI you use</i><b>Any engine, any model</b>Claude Code, Codex, Gemini, Antigravity and OpenCode, plus the free models of the day.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/w-team-l.jpg" srcset="../assets/photos/w-team-s.jpg 600w, ../assets/photos/w-team-l.jpg 1200w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A small team working on laptops around a wooden table" loading="lazy" decoding="async" style="object-position:50% 45%">
+              <figcaption><i>For companies</i><b>Teams and companies</b>From one person to a whole company: your workflows on autopilot, on the accounts you already pay for.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/d-privacy-l.jpg" srcset="../assets/photos/d-privacy-s.jpg 900w, ../assets/photos/d-privacy-l.jpg 1800w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A quiet home office: a desk, a chair and a lamp by the wall" loading="lazy" decoding="async" style="object-position:50% 50%">
+              <figcaption><i>For private work</i><b>Yours alone</b>Your work stays on your machine. The free version never even calls home.</figcaption>
+            </figure><figure>
+              <img src="../assets/photos/d-measure-l.jpg" srcset="../assets/photos/d-measure-s.jpg 900w, ../assets/photos/d-measure-l.jpg 1800w" sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt="A hand holding a calculator over a folder of bills" loading="lazy" decoding="async" style="object-position:50% 55%">
+              <figcaption><i>For budgets</i><b>Costs in sight</b>Budgets, honest numbers, and a cheaper model when the money runs low.</figcaption>
             </figure>
         </div>
       </div>
@@ -602,7 +627,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.3-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.4-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../features/">Features</a>
       <a href="../pricing/">Pricing</a>
