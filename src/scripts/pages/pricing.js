@@ -2,6 +2,19 @@
 // early-access form, sent to early-access.php on the host. Opened from disk there is no host, and the form says so.
 import '../header.js';
 
+// the kinds of work: a row that slides; the arrows move it by about two tiles, and the fade at its edge goes at the end
+const row = document.querySelector('.prc .wtiles');
+if (row) {
+  const kb = [...document.querySelectorAll('.prc .kb')];
+  const edge = () => {
+    const end = row.scrollLeft + row.clientWidth >= row.scrollWidth - 4;
+    row.classList.toggle('end', end);
+    kb.forEach(b => { b.disabled = b.dataset.k === '1' ? end : row.scrollLeft <= 4; });
+  };
+  kb.forEach(b => b.addEventListener('click', () => row.scrollBy({ left: +b.dataset.k * row.clientWidth * 0.75 })));
+  row.addEventListener('scroll', edge, { passive: true }); addEventListener('resize', edge); edge();
+}
+
 const per = document.querySelector('.prc .per');
 function period(p) {
   for (const b of per.querySelectorAll('button')) { const on = b.dataset.per === p; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }

@@ -22,17 +22,28 @@ const show = v => typeof v === 'number' ? String(v) : v;
 const buy = p => !pricing.beta && pricing.checkout[p.id];
 const href = (D, f) => hasPage(D) ? `../features/${D.slug}/#${f.id}` : `../#ch-${D.id}`;
 const img = (p, s) => `${root}assets/photos/${p}-${s}.jpg`;
-// The kinds of work (owner, 2026-10-13): not a short list of trades but the breadth of it. Code; video and every other
-// kind of content; automation of any process; anything an agent can do; agents run as an organised fleet; and anyone
-// from one person to a company. Every claim maps to a district: I, III, IV, VII, V.
+// The kinds of work beyond code (owner, 2026-10-13): a row that slides sideways, so it can say a lot and stay short.
+// Each tile is a way in, professional or personal, that makes someone who thinks "I don't code" say "I could use it
+// for that". The first few are the widest doors. Each maps to a district (III, VI, IV, VIII, II, V, I, VII, X, IX).
 const who = [
-  { p: 'w-code', k: 'Code', t: 'Fixes, tests and refactors carried on leg after leg while you sleep.' },
-  { p: 'w-video', k: 'Video and all content', t: 'A production team of agents from the idea to the finished piece: films, shorts, audio, images and posts, filed and put on a calendar.' },
-  { p: 'd-automation', k: 'Automation', t: 'Workflows of agents, HTTP calls, media jobs and browser runs, started by a schedule, a file, a hook or one sentence. Any process you can describe.' },
-  { p: 'w-writing', k: 'Anything agents do', t: 'Research, writing, data, documents, operations: five engines and any model you route to them, open to whatever AI can do next.' },
-  { p: 'd-team', k: 'A fleet, not a chat', t: 'Agents organised into teams with a lead and roles, leaving each other notes, set into the recipes you choose and changed whenever you like.' },
-  { p: 'w-team', k: 'Teams and companies', t: 'From one person to a whole company: your own workflows on autopilot, on the engines and accounts you already pay for.' },
+  { p: 'w-video', a: 'For creators', k: 'A content studio', t: 'Films, shorts, podcasts and posts, made by a crew of agents from idea to cut.' },
+  { p: 'd-memory', a: 'For researchers', k: 'A second brain', t: 'What your agents learn becomes a wiki that keeps growing. No chat is ever lost.' },
+  { p: 'd-automation', a: 'For every routine', k: 'Automation', t: 'Say it in one sentence, or chain it: schedules, triggers and workflows that run themselves.' },
+  { p: 'd-bridge', a: 'For your own life', k: 'A life OS', t: 'A briefing read aloud each morning, reminders, small jobs off your plate. A lighter day.' },
+  { p: 'd-projects', a: 'For teams', k: 'Projects on autopilot', t: 'Hand a team\'s backlog to the agents. They work it off in your order and report back.' },
+  { p: 'd-team', a: 'For power users', k: 'An agent OS', t: 'Five engines as one organised fleet: teams, roles, chains, and a ping when they need you.' },
+  { p: 'd-relay', a: 'For deadlines', k: 'Through the night', t: 'A full context, a spent plan, three in the morning: the work hands itself on and keeps going.' },
+  { p: 'w-writing', a: 'For authors', k: 'Research and writing', t: 'A thesis, a book or a report as a backlog the agents work through, chapter by chapter.' },
+  { p: 'w-audio', a: 'For channels', k: 'Channels and podcasts', t: 'Long videos cut into shorts, a weekly rhythm, an inbox that files your media itself.' },
+  { p: 'monday', a: 'On the go', k: 'From anywhere', t: 'Telegram, your voice or the phone app: give the farm a job and get the answer back.' },
+  { p: 'd-engines', a: 'For every AI you use', k: 'Any engine, any model', t: 'Claude Code, Codex, Gemini, Antigravity and OpenCode, plus the free models of the day.' },
+  { p: 'w-team', a: 'For companies', k: 'Teams and companies', t: 'From one person to a whole company: your workflows on autopilot, on the accounts you already pay for.' },
+  { p: 'd-privacy', a: 'For private work', k: 'Yours alone', t: 'Your work stays on your machine. The free version never even calls home.' },
+  { p: 'd-measure', a: 'For budgets', k: 'Costs in sight', t: 'Budgets, honest numbers, and a cheaper model when the money runs low.' },
 ];
+// srcset widths of each photo's two files
+const WSZ = { 'w-video': [500, 1000], monday: [560, 1000], 'd-bridge': [900, 1080], 'd-engines': [900, 1200] };
+const wsz = p => WSZ[p] || (p.startsWith('d-') ? [900, 1800] : photos[p].tall ? [500, 1000] : [600, 1200]);
 const FAQ = [
   ['I already pay for Claude or ChatGPT. Why pay again?', 'Agent Farm never sells tokens. Your engines run on your own plans and keys, and that bill stays between you and them. What you pay for here is the farm around them: the relay, the night shift, the memory, the studio, the guards.'],
   ['What happens when I reach a limit?', 'Nothing breaks and nothing is lost. A chain at its leg ceiling parks with its handover note, and a session over the limit waits in the queue. Carry it on by hand, or move up a plan.'],
@@ -93,14 +104,15 @@ const FAQ = [
 
     <section class="kinds" aria-labelledby="who-h">
       <div class="wrap">
-        <p class="pre">One farm, any kind of work</p>
-        <h2 id="who-h">Wherever agents can work.</h2>
-        <p class="klead">Agent Farm is open to whatever AI is open to. Its agents are not one chat at a time: you run them as a fleet, organise them into teams, connect them to your tools and set them into the patterns your work needs.</p>
-        <div class="wtiles">
+        <div class="khd">
+          <div><p class="pre">One farm, any kind of work</p><h2 id="who-h">Not only code.</h2></div>
+          <p class="karr"><button type="button" class="kb" data-k="-1" aria-label="Back">←</button><button type="button" class="kb" data-k="1" aria-label="More">→</button></p>
+        </div>
+        <div class="wtiles" role="region" aria-label="What else the farm does" tabindex="0">
           {who.map(w => (
             <figure>
-              <img src={img(w.p, 'l')} srcset={`${img(w.p, 's')} ${photos[w.p].tall ? 500 : 600}w, ${img(w.p, 'l')} ${photos[w.p].tall ? 1000 : 1200}w`} sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt={photos[w.p].alt} loading="lazy" decoding="async" style={`object-position:${photos[w.p].pos}`} />
-              <figcaption><b>{w.k}</b>{w.t}</figcaption>
+              <img src={img(w.p, 'l')} srcset={`${img(w.p, 's')} ${wsz(w.p)[0]}w, ${img(w.p, 'l')} ${wsz(w.p)[1]}w`} sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt={photos[w.p].alt} loading="lazy" decoding="async" style={`object-position:${photos[w.p].pos}`} />
+              <figcaption><i>{w.a}</i><b>{w.k}</b>{w.t}</figcaption>
             </figure>
           ))}
         </div>

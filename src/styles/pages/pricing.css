@@ -37,14 +37,21 @@
 /* the kinds of work */
 .prc .kinds{margin-top:clamp(80px,9vw,130px)}
 .prc .kinds h2{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5vw,78px);line-height:.9}
-.prc .kinds .klead{margin:18px 0 28px;max-width:780px;font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#d6d7c9}
-.prc .wtiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.prc .wtiles figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#111}
+.prc .khd{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:26px}
+.prc .karr{display:flex;gap:8px;margin:0}
+.prc .kb{width:44px;height:44px;border:1px solid var(--rule);background:#0d0e0a;color:var(--ink);font-size:18px;cursor:pointer}
+.prc .kb:hover:not(:disabled){border-color:var(--lime);color:var(--lime)}
+.prc .kb:disabled{opacity:.35;cursor:default}
+.prc .wtiles{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 50px) / 5.4);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.prc .wtiles.end{-webkit-mask-image:none;mask-image:none}
+.prc .wtiles:focus-visible{outline:1px solid var(--lime);outline-offset:4px}
+.prc .wtiles figure{position:relative;margin:0;aspect-ratio:4/5;scroll-snap-align:start;overflow:hidden;background:#111}
 .prc .wtiles img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease-out}
 .prc .wtiles figure:hover img{transform:scale(1.05)}
 .prc .wtiles figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,10,7,0) 30%,rgba(9,10,7,.86) 66%,rgba(9,10,7,.96) 100%)}
 .prc .wtiles figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:16px;font-size:13.5px;line-height:1.45;color:#e6e6dc}
-.prc .wtiles figcaption b{display:block;margin-bottom:4px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:24px;line-height:1;color:#fbfbf4}
+.prc .wtiles figcaption i{display:block;margin-bottom:7px;font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+.prc .wtiles figcaption b{display:block;margin-bottom:4px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(19px,1.6vw,23px);line-height:1;color:#fbfbf4}
 
 /* tables */
 .prc .lim,.prc .every{margin-top:clamp(80px,9vw,130px)}
@@ -113,11 +120,11 @@
 
 @media (max-width:1180px){
   .prc .plans{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prc .wtiles{grid-auto-columns:calc((100% - 30px) / 3.4)}
 }
 @media (max-width:860px){
   .prc .pfaq{grid-template-columns:minmax(0,1fr)}
   .prc .fph{position:relative;top:0;aspect-ratio:4/3}
-  .prc .wtiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .prc .plabels{grid-template-columns:minmax(0,30%) repeat(4,minmax(0,17.5%));font-size:10px;letter-spacing:.04em}
   .prc .plabels span{padding-inline:4px}
   .prc .dist tbody th{width:30%}
@@ -129,8 +136,8 @@
   .prc .plans{grid-template-columns:minmax(0,1fr)}
   .prc .plan .k,.prc .plan .who{min-height:0}
   .prc form .row{grid-template-columns:minmax(0,1fr)}
-  .prc .wtiles{grid-template-columns:minmax(0,1fr)}
-  .prc .wtiles figure{aspect-ratio:3/2}
+  .prc .wtiles{grid-auto-columns:calc((100% - 10px) / 1.45)}
+  .prc .karr{display:none}
   .prc .dist .c{display:none}
   .prc .lim table{min-width:620px}
 }

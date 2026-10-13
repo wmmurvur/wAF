@@ -2,6 +2,10 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.4 · 2026-10-13
+
+- Pricing, "Not only code." is back as the title, without the extra paragraph, and its row now slides: fourteen ways in beyond code, each with who it is for (a content studio, a second brain, automation, a life OS, projects on autopilot, an agent OS, through the night, research and writing, channels and podcasts, from anywhere, any engine, teams and companies, yours alone, costs in sight). Arrows move it on a wide screen; on a phone it is swiped.
+
 ## 0.13.3 · 2026-10-13
 
 - Pricing: "Not only code" becomes "Wherever agents can work", with a line on running agents as a fleet, and six kinds of work instead of five trades: code; video and all content; automation; anything agents do; a fleet, not a chat; teams and companies. "Small teams" is gone: companies use it too. The plans' "for whom" lines follow.
