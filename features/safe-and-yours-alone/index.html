@@ -14,7 +14,7 @@
     <meta property="og:description" content="Agent Farm runs on your machine and nothing about your work comes to us: the free version never contacts us, and a paid licence checks its key once a day. Guards stop the shell commands, disk searches, permissions and browser visits an agent should not make, and keys stay out of what a run prints.">
     <meta property="og:url" content="https://agentfarm.space/features/safe-and-yours-alone/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/safe-and-yours-alone.js?v=0.13.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/safe-and-yours-alone.js?v=0.13.2"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,14 +22,14 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.1"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.2"></head>
   <body>
     
   <div class="wrap">
   <header class="top">
     <a class="brand" href="../../" aria-label="Agent Farm, the home page">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
-      Agent Farm
+      Agent Farm<span class="bb">beta</span>
     </a>
     
     <nav class="nav" aria-label="Main">
@@ -121,7 +121,7 @@
         </svg>
         <div class="msg" aria-label="Everything a paid licence sends to us">
           <p class="mh"><span>The licence check, whole</span><span>paid licence · once a day</span></p>
-          <pre><span class="ar">→</span> { &quot;key&quot;: &quot;AF-7Q2K-…-M4XD&quot;, &quot;device&quot;: &quot;a91f…e07b&quot;, &quot;version&quot;: &quot;3.931.0&quot; }
+          <pre><span class="ar">→</span> { &quot;key&quot;: &quot;AF-7Q2K-…-M4XD&quot;, &quot;device&quot;: &quot;a91f…e07b&quot;, &quot;version&quot;: &quot;3.931.0-beta&quot; }
 <span class="ar">←</span> { &quot;valid&quot;: true, &quot;until&quot;: &quot;2026-11-12&quot; }</pre>
           <p class="nv"><b>Never in it:</b> your code · prompts and answers · transcripts · file, folder and project names · account names · costs and tokens · which features you use, or how often.</p>
         </div>
@@ -344,7 +344,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.2-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>

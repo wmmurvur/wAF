@@ -14,7 +14,7 @@
     <meta property="og:description" content="Everything Agent Farm does: 92 things in ten districts, from relay chains that never stop to agents that make films, each one checked against the extension's source.">
     <meta property="og:url" content="https://agentfarm.space/features/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../assets/features.js?v=0.13.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../assets/features.js?v=0.13.2"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,14 +22,14 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../assets/site.css?v=0.13.1"></head>
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.13.2"></head>
   <body>
     
   <div class="wrap">
   <header class="top">
     <a class="brand" href="../" aria-label="Agent Farm, the home page">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
-      Agent Farm
+      Agent Farm<span class="bb">beta</span>
     </a>
     
     <nav class="nav" aria-label="Main">
@@ -97,8 +97,8 @@
                 <a href="never-stops/#policies"><span class="n">Account policies</span><span class="sg">4 built in</span><span class="s">Four built-in rules (@emptiest, @pool, @standing, @round-robin) or your own. A rule that can pick no account refuses the launch and says why.</span></a>
               </li><li class="fc" id="c-park" data-q="park and wake one account or ten, when all of them are full the chain waits for the first reset and carries on by itself. 2 parks never stops">
                 <a href="never-stops/#park"><span class="n">Park and wake</span><span class="sg">2 parks</span><span class="s">One account or ten, when all of them are full the chain waits for the first reset and carries on by itself.</span></a>
-              </li><li class="fc" id="c-ouroboros" data-q="ouroboros an agent builds a new agent farm, restarts it inside vs code and carries on in the same session. nobody has to restart anything. 3.931.0 never stops">
-                <a href="never-stops/#ouroboros"><span class="n">Ouroboros</span><span class="sg">3.931.0</span><span class="s">An agent builds a new Agent Farm, restarts it inside VS Code and carries on in the same session. Nobody has to restart anything.</span></a>
+              </li><li class="fc" id="c-ouroboros" data-q="ouroboros an agent builds a new agent farm, restarts it inside vs code and carries on in the same session. nobody has to restart anything. 3.931.0-beta never stops">
+                <a href="never-stops/#ouroboros"><span class="n">Ouroboros</span><span class="sg">3.931.0-beta</span><span class="s">An agent builds a new Agent Farm, restarts it inside VS Code and carries on in the same session. Nobody has to restart anything.</span></a>
               </li><li class="fc" id="c-sentry" data-q="sentry an agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next. on watch never stops">
                 <a href="never-stops/#sentry"><span class="n">Sentry</span><span class="sg">on watch</span><span class="s">An agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next.</span></a>
               </li><li class="fc" id="c-brakes" data-q="brakes a leg ceiling per chain, spend caps per workflow and one stop for a whole chain. recorded, never deleted. baton.stop never stops">
@@ -371,7 +371,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.2-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../features/">Features</a>
       <a href="../pricing/">Pricing</a>

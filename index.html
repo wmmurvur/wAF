@@ -14,7 +14,7 @@
     <meta property="og:description" content="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.13.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.13.2"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,16 +22,16 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.13.1"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.13.2"></head>
   <body>
     
   <div class="wrap">
   <header class="top">
     <a class="brand" href="#top" aria-label="Agent Farm, back to the top">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
-      Agent Farm
+      Agent Farm<span class="bb">beta</span>
     </a>
-    <span class="verchip" title="The version running in the demo below"><i></i><span id="af-ver">3.931.0</span></span>
+    <span class="verchip" title="Agent Farm is in beta. The version running in the demo below"><i></i><span id="af-ver">3.931.0</span><b>beta</b></span>
     <nav class="nav" aria-label="Main">
       <a href="features/">Features</a><a class="ch" href="#ch-relay">Relay</a><a class="ch" href="#ch-projects">Projects</a><a class="ch" href="#ch-studio">Studio</a><a class="ch" href="#ch-memory">Memory</a><a class="ch" href="#ch-bridge">Just ask</a><a class="ch" href="#ch-privacy">Local</a><a href="pricing/">Pricing</a>
     </nav>
@@ -44,7 +44,7 @@
   <main>
     <section id="s-relay" aria-label="The baton relay, live demo">
   <div class="boot" id="r-boot" aria-hidden="true"><pre id="r-bootTx"></pre></div>
-  <div class="reboot" id="r-reboot" aria-hidden="true"><div><b>Restarting extension host</b><span id="r-rbTx">agent-farm 3.931.0 → 3.932.0</span><i></i></div></div>
+  <div class="reboot" id="r-reboot" aria-hidden="true"><div><b>Restarting extension host</b><span id="r-rbTx">agent-farm 3.931.0-beta → 3.932.0-beta</span><i></i></div></div>
 
   <div class="hero" id="top">
     <div class="wrap">
@@ -103,7 +103,7 @@
             <div class="cc t"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="s"><i>your turn</i> · 6m · 4 turns</div></div>
             <div class="cc t"><div class="h"><b>developer</b><span class="eng a">Antigravity</span></div><div class="s"><i>your turn</i> · 5m · 2 turns</div></div>
             <div class="cc" style="border-left-color:#66675d"><div class="h"><b>reviewer</b><span class="eng x">Codex</span></div><div class="s">idle · 12m · 9 turns</div></div></div>
-            <div class="lns" id="f-cLines"><div class="ln tl"><span>TOOL</span><span>▸ Bash npm run package <b>✓</b></span></div><div class="ln tl"><span>TOOL</span><span>▸ af farm.restartExtensionHost resume=true</span></div><div class="ln"><span>AGENT</span><span>Window reloaded. Checking that the new build is the one actually running.</span></div><div class="ln y"><span>YOU</span><span>Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.</span></div><div class="ln"><span>AGENT</span><span>3.931.0 is running. Same seat. Continuing the live test.</span></div></div></div>
+            <div class="lns" id="f-cLines"><div class="ln tl"><span>TOOL</span><span>▸ Bash npm run package <b>✓</b></span></div><div class="ln tl"><span>TOOL</span><span>▸ af farm.restartExtensionHost resume=true</span></div><div class="ln"><span>AGENT</span><span>Window reloaded. Checking that the new build is the one actually running.</span></div><div class="ln y"><span>YOU</span><span>Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.</span></div><div class="ln"><span>AGENT</span><span>3.931.0-beta is running. Same seat. Continuing the live test.</span></div></div></div>
           <div class="cstrip" id="f-cStrip">session 3efb20bf · ctx 110.2k / 1.0M · 11% · ⑂ 92 · ~$4.92</div></div><div class="lab"><span>CH-02 · Console</span><span>sessions</span></div></div>
         <div class="mon" data-i="2"><div class="scr"><div class="hd"><b>Accounts</b><span>Claude Code · 4 accounts</span><span class="r">auto-refresh: on</span></div><div id="f-accs"></div><div class="alog" id="f-alog"></div></div><div class="lab"><span>CH-03 · Accounts</span><span>quota shield</span></div></div>
         <div class="mon" data-i="3"><div class="scr"><div class="hd"><b>Agent Farm</b><span>dashboard · demo data</span><span class="r">14d</span></div>
@@ -118,7 +118,7 @@
         <div class="mon" data-i="5"><div class="scr"><div class="hd"><b>Chains</b><span>⑂ baton relay</span><span class="r">3 chains</span></div><div id="f-chains"></div><div class="hand" id="f-hand"></div></div><div class="lab"><span>CH-06 · Chains</span><span>baton relay</span></div></div>
       </div>
       <div class="desk" aria-live="polite"><span class="ch" id="f-dkCh">CH-01</span><div class="tx"><b id="f-dkT">Every agent on one timeline.</b><span id="f-dkS">Tool runs, prompts, permission waits and compactions, per session, live from the hooks.</span></div><div class="dots" id="f-dots"></div></div>
-      <div class="sb" aria-label="Status bar ticker"><span class="hide">⑂ agent master*</span><span>1 active · <span id="f-sbCost">$41.20</span> today</span><span class="q" id="f-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="f-sbLeg">⑂ 92</span><span class="feed"><div id="f-feed"></div></span><span class="hide" id="f-sbVer">Agent Farm 3.931.0</span></div>
+      <div class="sb" aria-label="Status bar ticker"><span class="hide">⑂ agent master*</span><span>1 active · <span id="f-sbCost">$41.20</span> today</span><span class="q" id="f-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="f-sbLeg">⑂ 92</span><span class="feed"><div id="f-feed"></div></span><span class="hide" id="f-sbVer">Agent Farm 3.931.0-beta</span></div>
   </div>
 </section><section id="s-console" class="gap" aria-label="The Agent Farm Console">
   <div class="wrap">
@@ -193,8 +193,8 @@
               </div>
             </div>
           </div>
-          <div class="sbar"><span>⑂ agent master*</span><span>1 active · <span id="c-sbCost">$41.20</span> today</span><span class="q" id="c-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="c-sbLeg">⑂ 92</span><span>Project</span><span>Git Graph</span><span class="r" id="c-sbVer">Agent Farm 3.931.0</span></div>
-          <div class="reload" id="c-reload"><div class="box"><div>Reloading window · installing <b id="c-rlVer">3.932.0</b></div><div class="prog"><i></i></div><div style="color:#8d8d82;font-size:11px">the session keeps its seat</div></div></div>
+          <div class="sbar"><span>⑂ agent master*</span><span>1 active · <span id="c-sbCost">$41.20</span> today</span><span class="q" id="c-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="c-sbLeg">⑂ 92</span><span>Project</span><span>Git Graph</span><span class="r" id="c-sbVer">Agent Farm 3.931.0-beta</span></div>
+          <div class="reload" id="c-reload"><div class="box"><div>Reloading window · installing <b id="c-rlVer">3.932.0-beta</b></div><div class="prog"><i></i></div><div style="color:#8d8d82;font-size:11px">the session keeps its seat</div></div></div>
         </div>
         <!-- exploded-view pins; x/y are positions inside the 1200×690 window -->
         <div class="pin" data-a="cLeg" style="--z:150;--c:var(--yellow)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>⑂ 92+</b>Legs of one relay chain</div></div>
@@ -225,7 +225,7 @@
           <header><b>I</b><h3>Never stops</h3><span>7</span></header>
           <p class="k">Work keeps going through full contexts, full accounts and its own updates.</p>
           <ul>
-            <li><button type="button" class="tile" data-f="relay" data-code="I·1"><span class="n">Baton relay</span><span class="sg" data-sig="relay">⑂ 92</span></button></li><li><button type="button" class="tile" data-f="quota" data-code="I·2"><span class="n">Quota handover</span><span class="sg" data-sig="quota">acct-c 71%</span></button></li><li><button type="button" class="tile" data-f="policies" data-code="I·3"><span class="n">Account policies</span><span class="sg" data-sig="policies">4 built in</span></button></li><li><button type="button" class="tile" data-f="park" data-code="I·4"><span class="n">Park and wake</span><span class="sg" data-sig="park">2 parks</span></button></li><li><button type="button" class="tile" data-f="ouroboros" data-code="I·5"><span class="n">Ouroboros</span><span class="sg" data-sig="ouroboros">3.931.0</span></button></li><li><button type="button" class="tile" data-f="sentry" data-code="I·6"><span class="n">Sentry</span><span class="sg" data-sig="sentry">on watch</span></button></li><li><button type="button" class="tile" data-f="brakes" data-code="I·7"><span class="n">Brakes</span><span class="sg" data-sig="brakes">baton.stop</span></button></li>
+            <li><button type="button" class="tile" data-f="relay" data-code="I·1"><span class="n">Baton relay</span><span class="sg" data-sig="relay">⑂ 92</span></button></li><li><button type="button" class="tile" data-f="quota" data-code="I·2"><span class="n">Quota handover</span><span class="sg" data-sig="quota">acct-c 71%</span></button></li><li><button type="button" class="tile" data-f="policies" data-code="I·3"><span class="n">Account policies</span><span class="sg" data-sig="policies">4 built in</span></button></li><li><button type="button" class="tile" data-f="park" data-code="I·4"><span class="n">Park and wake</span><span class="sg" data-sig="park">2 parks</span></button></li><li><button type="button" class="tile" data-f="ouroboros" data-code="I·5"><span class="n">Ouroboros</span><span class="sg" data-sig="ouroboros">3.931.0-beta</span></button></li><li><button type="button" class="tile" data-f="sentry" data-code="I·6"><span class="n">Sentry</span><span class="sg" data-sig="sentry">on watch</span></button></li><li><button type="button" class="tile" data-f="brakes" data-code="I·7"><span class="n">Brakes</span><span class="sg" data-sig="brakes">baton.stop</span></button></li>
           </ul>
         </div><div class="dist" style="--c:var(--teal)">
           <header><b>II</b><h3>Any project</h3><span>7</span></header>
@@ -315,7 +315,7 @@
       <a class="cmore" href="features/never-stops/">Everything about it <i></i></a>
     </div>
     <ul class="ctl">
-      <li><button type="button" class="ctile" data-f="relay" data-code="I·1"><span class="n">Baton relay</span><span class="sg" data-sig="relay">⑂ 92</span></button></li><li><button type="button" class="ctile" data-f="quota" data-code="I·2"><span class="n">Quota handover</span><span class="sg" data-sig="quota">acct-c 71%</span></button></li><li><button type="button" class="ctile" data-f="policies" data-code="I·3"><span class="n">Account policies</span><span class="sg" data-sig="policies">4 built in</span></button></li><li><button type="button" class="ctile" data-f="park" data-code="I·4"><span class="n">Park and wake</span><span class="sg" data-sig="park">2 parks</span></button></li><li><button type="button" class="ctile" data-f="ouroboros" data-code="I·5"><span class="n">Ouroboros</span><span class="sg" data-sig="ouroboros">3.931.0</span></button></li><li><button type="button" class="ctile" data-f="sentry" data-code="I·6"><span class="n">Sentry</span><span class="sg" data-sig="sentry">on watch</span></button></li><li><button type="button" class="ctile" data-f="brakes" data-code="I·7"><span class="n">Brakes</span><span class="sg" data-sig="brakes">baton.stop</span></button></li>
+      <li><button type="button" class="ctile" data-f="relay" data-code="I·1"><span class="n">Baton relay</span><span class="sg" data-sig="relay">⑂ 92</span></button></li><li><button type="button" class="ctile" data-f="quota" data-code="I·2"><span class="n">Quota handover</span><span class="sg" data-sig="quota">acct-c 71%</span></button></li><li><button type="button" class="ctile" data-f="policies" data-code="I·3"><span class="n">Account policies</span><span class="sg" data-sig="policies">4 built in</span></button></li><li><button type="button" class="ctile" data-f="park" data-code="I·4"><span class="n">Park and wake</span><span class="sg" data-sig="park">2 parks</span></button></li><li><button type="button" class="ctile" data-f="ouroboros" data-code="I·5"><span class="n">Ouroboros</span><span class="sg" data-sig="ouroboros">3.931.0-beta</span></button></li><li><button type="button" class="ctile" data-f="sentry" data-code="I·6"><span class="n">Sentry</span><span class="sg" data-sig="sentry">on watch</span></button></li><li><button type="button" class="ctile" data-f="brakes" data-code="I·7"><span class="n">Brakes</span><span class="sg" data-sig="brakes">baton.stop</span></button></li>
     </ul>
     <div class="crd" aria-live="polite">
       <span class="cc">I</span>
@@ -1132,7 +1132,7 @@
         </svg>
         <div class="msg" aria-label="Everything a paid licence sends to us">
           <p class="mh"><span>The licence check, whole</span><span>paid licence · once a day</span></p>
-          <pre><span class="ar">→</span> { &quot;key&quot;: &quot;AF-7Q2K-…-M4XD&quot;, &quot;device&quot;: &quot;a91f…e07b&quot;, &quot;version&quot;: &quot;3.931.0&quot; }
+          <pre><span class="ar">→</span> { &quot;key&quot;: &quot;AF-7Q2K-…-M4XD&quot;, &quot;device&quot;: &quot;a91f…e07b&quot;, &quot;version&quot;: &quot;3.931.0-beta&quot; }
 <span class="ar">←</span> { &quot;valid&quot;: true, &quot;until&quot;: &quot;2026-11-12&quot; }</pre>
           <p class="nv"><b>Never in it:</b> your code · prompts and answers · transcripts · file, folder and project names · account names · costs and tokens · which features you use, or how often.</p>
         </div>
@@ -1175,7 +1175,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.2-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
       <a href="pricing/">Pricing</a>

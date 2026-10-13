@@ -14,7 +14,7 @@
     <meta property="og:description" content="Agent Farm plans: Free, and Pro at $19, Fleet at $34, Farm at $49 a month. Every plan has every feature; a plan changes how far each one goes. Your engines run on your own plans and keys.">
     <meta property="og:url" content="https://agentfarm.space/pricing/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../assets/pricing.js?v=0.13.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../assets/pricing.js?v=0.13.2"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,14 +22,14 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../assets/site.css?v=0.13.1"></head>
+    </script><link rel="stylesheet" href="../assets/site.css?v=0.13.2"></head>
   <body>
     
   <div class="wrap">
   <header class="top">
     <a class="brand" href="../" aria-label="Agent Farm, the home page">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
-      Agent Farm
+      Agent Farm<span class="bb">beta</span>
     </a>
     
     <nav class="nav" aria-label="Main">
@@ -598,7 +598,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.2-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../features/">Features</a>
       <a href="../pricing/">Pricing</a>

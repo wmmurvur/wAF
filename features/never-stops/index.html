@@ -14,7 +14,7 @@
     <meta property="og:description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
     <meta property="og:url" content="https://agentfarm.space/features/never-stops/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/never-stops.js?v=0.13.1"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/never-stops.js?v=0.13.2"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,14 +22,14 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.1"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.2"></head>
   <body>
     
   <div class="wrap">
   <header class="top">
     <a class="brand" href="../../" aria-label="Agent Farm, the home page">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"></circle><circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"></line><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"></line><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"></line><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"></line></svg>
-      Agent Farm
+      Agent Farm<span class="bb">beta</span>
     </a>
     
     <nav class="nav" aria-label="Main">
@@ -57,7 +57,7 @@
     <div class="wrap">
       <p class="dpromise">A long job outlives any one session. When a context fills, a fresh session takes over from a handover note. When an account&#39;s window fills, the next leg opens on another account. When every account is full, the chain waits for the reset and carries on. You set the lines and the brakes once.</p>
       <ul class="dtl">
-        <li><a href="#relay"><span class="c">I·1</span><span class="n">Baton relay</span><span class="sg">⑂ 92</span></a></li><li><a href="#quota"><span class="c">I·2</span><span class="n">Quota handover</span><span class="sg">acct-c 71%</span></a></li><li><a href="#policies"><span class="c">I·3</span><span class="n">Account policies</span><span class="sg">4 built in</span></a></li><li><a href="#park"><span class="c">I·4</span><span class="n">Park and wake</span><span class="sg">2 parks</span></a></li><li><a href="#ouroboros"><span class="c">I·5</span><span class="n">Ouroboros</span><span class="sg">3.931.0</span></a></li><li><a href="#sentry"><span class="c">I·6</span><span class="n">Sentry</span><span class="sg">on watch</span></a></li><li><a href="#brakes"><span class="c">I·7</span><span class="n">Brakes</span><span class="sg">baton.stop</span></a></li>
+        <li><a href="#relay"><span class="c">I·1</span><span class="n">Baton relay</span><span class="sg">⑂ 92</span></a></li><li><a href="#quota"><span class="c">I·2</span><span class="n">Quota handover</span><span class="sg">acct-c 71%</span></a></li><li><a href="#policies"><span class="c">I·3</span><span class="n">Account policies</span><span class="sg">4 built in</span></a></li><li><a href="#park"><span class="c">I·4</span><span class="n">Park and wake</span><span class="sg">2 parks</span></a></li><li><a href="#ouroboros"><span class="c">I·5</span><span class="n">Ouroboros</span><span class="sg">3.931.0-beta</span></a></li><li><a href="#sentry"><span class="c">I·6</span><span class="n">Sentry</span><span class="sg">on watch</span></a></li><li><a href="#brakes"><span class="c">I·7</span><span class="n">Brakes</span><span class="sg">baton.stop</span></a></li>
       </ul>
     </div>
     <section id="s-days" class="gap" aria-label="One relay chain across three days and four nights, working through a backlog">
@@ -212,7 +212,7 @@
             <h3>What it solves</h3>
             <p>An agent that improves Agent Farm itself needs the new build running. Restarting VS Code&#39;s extensions would normally cut off every session, its own included.</p>
             <h3>How it works<span class="hint"> · pick a step</span></h3>
-            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Asked</span><span class="t">The agent asks, over the bridge, for the extension host to restart and for its session to resume. The request is refused if this window restarted less than 20 seconds ago.</span></button></li><li><button type="button" data-i="1"><span class="k">Armed</span><span class="t">If other sessions are starting or working, the restart is armed, not fired, and goes the moment the last of them is done. The asking session does not hold it up.</span></button></li><li><button type="button" data-i="2"><span class="k">The new build</span><span class="t">If a newer build is on disk, the restart becomes a window reload, so the new build is the one that runs.</span></button></li><li><button type="button" data-i="3"><span class="k">Taken up</span><span class="t">After the restart every console session is taken up again, same conversation, same id, and nudged after a 30-second grace. Its card says: "Agent Farm restarted on 3.931.0 and took this session up where it left off."</span></button></li><li><button type="button" data-i="4"><span class="k">Runs resumed</span><span class="t">Runs in the background that the restart cut off are picked up again, never more than 3 times, so a restart loop cannot keep spawning them.</span></button></li></ol>
+            <ol class="fsteps"><li><button type="button" data-i="0"><span class="k">Asked</span><span class="t">The agent asks, over the bridge, for the extension host to restart and for its session to resume. The request is refused if this window restarted less than 20 seconds ago.</span></button></li><li><button type="button" data-i="1"><span class="k">Armed</span><span class="t">If other sessions are starting or working, the restart is armed, not fired, and goes the moment the last of them is done. The asking session does not hold it up.</span></button></li><li><button type="button" data-i="2"><span class="k">The new build</span><span class="t">If a newer build is on disk, the restart becomes a window reload, so the new build is the one that runs.</span></button></li><li><button type="button" data-i="3"><span class="k">Taken up</span><span class="t">After the restart every console session is taken up again, same conversation, same id, and nudged after a 30-second grace. Its card says: "Agent Farm restarted on 3.931.0-beta and took this session up where it left off."</span></button></li><li><button type="button" data-i="4"><span class="k">Runs resumed</span><span class="t">Runs in the background that the restart cut off are picked up again, never more than 3 times, so a restart loop cannot keep spawning them.</span></button></li></ol>
             <p class="note">There is no button and no setting for this. It is something an agent does over the bridge (<code>farm.restartExtensionHost</code>, with resume), behind fixed guards.</p>
             
           </div>
@@ -283,7 +283,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.1 · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.2-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>
