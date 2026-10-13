@@ -2,6 +2,10 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.1 · 2026-10-13
+
+- The MuVuSOFT logo in place of the plain name: its brain mark and wordmark on a white tile in the footer, and the full logo beside the title of the About page. The files are in `public/assets/brand/`.
+
 ## 0.13.0 · 2026-10-12
 
 The last two district pages, so every district of the board now has its own, and a page about who makes Agent Farm.

@@ -16,7 +16,7 @@ const root = rootOf(Astro.url);
       <a href={`${root}refunds/`}>Refunds</a>
       {site.legal.email && <a href={`mailto:${site.legal.email}`}>Contact</a>}
       <span>Photos: Unsplash, Pexels</span>
-      <span>Crafted by <a href={site.maker.href}>{site.maker.name}</a></span>
+      <span class="mk">Crafted by <a class="mklogo" href={site.maker.href}><img src={`${root}assets/brand/muvusoft-lockup.png`} alt={site.maker.name} width="84" height="20" /></a></span>
     </nav>
   </footer>
 </div>

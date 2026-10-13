@@ -58,7 +58,7 @@ const urls = pages(DIST).filter(f => !/<meta name="robots" content="noindex"/.te
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`);
 
 /* 6. nothing else may be left in assets/ */
-const extra = fs.readdirSync(A).filter(f => !['site.css', 'fonts', 'sounds', 'photos', ...Object.keys(ENTRIES).map(n => `${n}.js`)].includes(f));
+const extra = fs.readdirSync(A).filter(f => !['site.css', 'fonts', 'sounds', 'photos', 'brand', ...Object.keys(ENTRIES).map(n => `${n}.js`)].includes(f));
 if (extra.length) throw new Error(`unexpected files in ${A}: ${extra.join(', ')}`);
 
 const size = d => fs.readdirSync(d, { withFileTypes: true }).reduce((n, e) => n + (e.isDirectory() ? size(path.join(d, e.name)) : fs.statSync(path.join(d, e.name)).size), 0);

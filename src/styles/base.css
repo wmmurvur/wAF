@@ -73,6 +73,9 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border
 footer a{color:var(--dim);text-decoration:none}
 footer a:hover{color:var(--ink)}
 footer nav{display:flex;flex-wrap:wrap;gap:18px}
+footer .mk{display:inline-flex;align-items:center;gap:10px}
+footer .mklogo{display:inline-flex;padding:5px 9px;border-radius:6px;background:#fff}
+footer .mklogo img{display:block;height:20px;width:auto}
 .ver{color:var(--yellow)}
 
 @media (max-width:1180px){.nav .ch{display:none}}
