@@ -7,6 +7,7 @@
 //           some of them live), at = the section of this page that shows it today, src = where it was checked.
 
 import { facts } from './facts.js';
+import { appVer, vtag } from './site.js';
 
 export const districts = [
   { id: 'relay', slug: 'never-stops', r: 'I', n: 'Never stops', k: 'Work keeps going through full contexts, full accounts and its own updates.', c: 'var(--yellow)' },
@@ -37,7 +38,7 @@ export const features = [
   { id: 'quota', d: 0, n: 'Quota handover', s: 'Before the 5-hour window fills, the next leg opens on the account with the most room.', sig: 'acct-c 71%', at: 's-rules', src: 'agentFarm quota handover 90%; screenshot 075' },
   { id: 'policies', d: 0, n: 'Account policies', s: 'Four built-in rules (@emptiest, @pool, @standing, @round-robin) or your own. A rule that can pick no account refuses the launch and says why.', sig: '4 built in', src: 'Accounts → Account policies (M13, Mz3b)' },
   { id: 'park', d: 0, n: 'Park and wake', s: 'One account or ten, when all of them are full the chain waits for the first reset and carries on by itself.', sig: '2 parks', at: 's-days', src: 'baton park until reset' },
-  { id: 'ouroboros', d: 0, n: 'Ouroboros', s: 'An agent builds a new Agent Farm, restarts it inside VS Code and carries on in the same session. Nobody has to restart anything.', sig: '3.931.0', at: 's-relay', src: 'farm.restartExtensionHost resume=true' },
+  { id: 'ouroboros', d: 0, n: 'Ouroboros', s: 'An agent builds a new Agent Farm, restarts it inside VS Code and carries on in the same session. Nobody has to restart anything.', sig: vtag(appVer(0)), at: 's-relay', src: 'farm.restartExtensionHost resume=true' },
   { id: 'sentry', d: 0, n: 'Sentry', s: 'An agent runs the chain instead of a fixed rule: it takes the next item, opens a clean session, reads the result and decides what comes next.', sig: 'on watch', src: 'src/core/sentryLeader.ts; settings → Sentry' },
   { id: 'brakes', d: 0, n: 'Brakes', s: 'A leg ceiling per chain, spend caps per workflow and one stop for a whole chain. Recorded, never deleted.', sig: 'baton.stop', at: 's-rules', src: 'batonMaxHops, workflowSpendCap, baton.stop' },
 

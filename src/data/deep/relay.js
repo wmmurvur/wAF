@@ -3,6 +3,7 @@
 // extension's source at 19187ad (notes: AF-WEB_NOTES_district-I_v1.0); the citations are the comments.
 // how and note may hold <code>; everything else is plain text. fig: a short label per step of how, shown on the
 // step and under the feature's figure (scripts/figs/relay.js draws the figures and what each step shows).
+import { appVer, vtag } from '../site.js';
 
 export default {
   description: 'Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension\'s own.',
@@ -110,7 +111,7 @@ export default {
         // selfRestart.ts:92-102, 402-440
         'If a newer build is on disk, the restart becomes a window reload, so the new build is the one that runs.',
         // extension.ts:30443-30645; consoleRevive.ts:270-279
-        'After the restart every console session is taken up again, same conversation, same id, and nudged after a 30-second grace. Its card says: "Agent Farm restarted on 3.931.0 and took this session up where it left off."',
+        `After the restart every console session is taken up again, same conversation, same id, and nudged after a 30-second grace. Its card says: "Agent Farm restarted on ${vtag(appVer(0))} and took this session up where it left off."`,
         // tasks.ts:772, 2671-2740
         'Runs in the background that the restart cut off are picked up again, never more than 3 times, so a restart loop cannot keep spawning them.',
       ],

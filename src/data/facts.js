@@ -1,8 +1,9 @@
 // Every figure the site states about Agent Farm, with where it was checked.
 // Source repo: katehuyen/vsc_AgentFarm. Re-check these when the extension ships a release that changes them.
 
+import { appVer, vtag } from './site.js';
+
 export const facts = {
-  version: '3.930.0',          // package.json "version" (the screenshots show 3.931.0 running)
   releases: '1,053',           // CHANGELOG.md, one "## x.y.z" heading per release
   commands: 602,               // package.json contributes.commands
   settings: 243,               // package.json contributes.configuration; Settings page reads "243 settings"
@@ -32,7 +33,7 @@ export const relay = {
 export const licence = {
   checkEvery: 'once a day',
   offlineDays: 30,
-  sends: { key: 'AF-7Q2K-…-M4XD', device: 'a91f…e07b', version: '3.931.0' }, // device: a hash of the machine, not its name
+  sends: { key: 'AF-7Q2K-…-M4XD', device: 'a91f…e07b', version: vtag(appVer(0)) }, // device: a hash of the machine, not its name
   answer: { valid: true, until: '2026-11-12' },
   never: ['your code', 'prompts and answers', 'transcripts', 'file, folder and project names', 'account names', 'costs and tokens', 'which features you use, or how often'],
 };

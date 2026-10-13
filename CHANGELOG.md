@@ -2,6 +2,11 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.2 · 2026-10-13
+
+- One place for Agent Farm's version: `app` and `beta` in `src/data/site.js`. The top chip, the demo screens and figures, the Ouroboros tile and the privacy payload all read it, and while `beta` is true every version the site prints carries "-beta" (the chip and the footer show a BETA tag; on phones the tag sits on the brand).
+- About speaks as MuVuSOFT: no owner's name, country or "individual" on the page. The terms and privacy pages open with MuVuSOFT and keep the seller's legal details once, where the law asks for them.
+
 ## 0.13.1 · 2026-10-13
 
 - The MuVuSOFT logo in place of the plain name: its brain mark and wordmark on a white tile in the footer, and the full logo beside the title of the About page. The files are in `public/assets/brand/`.

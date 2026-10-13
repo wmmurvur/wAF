@@ -1,17 +1,18 @@
 // Console: the real Agent Farm Console rebuilt (screenshots 004, 035) as an exploded view that assembles on scroll.
 // Its working session is the live relay leg from state.js; its own Ouroboros plays when the section is on screen.
 import { ACCT, S, BQ, reduce, wait, on, vis, canOuro, startOuro, nextVer, finishOuro } from './state.js';
+import { appVer, vtag } from '../data/site.js';
 
 const $ = id => document.getElementById('c-' + id);
 const flat = () => matchMedia('(max-width: 900px)').matches;
 
 /* transcript: real lines from screenshot 004, translated to English, with the real restart notice verbatim */
 const SCRIPT = [
-  ['agent', 'Handing over: reading quota, both boards and the delivery rule, then loading 3.931.0.'],
+  ['agent', `Handing over: reading quota, both boards and the delivery rule, then loading ${vtag(appVer(0))}.`],
   ['agent', 'Window reloaded. Checking that the new build is the one actually running.'],
   ['you', 'Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id. You were mid-turn when it went down, so the one answer you were writing was lost on the way; nothing before it is missing.'],
-  ['agent', 'Back in the same seat after the reload. extensions.json says 3.931.0; checking the running build.'],
-  ['agent', '3.931.0 is running (new bootId, pending false, no twin sessions). Running the live test for the export next.'],
+  ['agent', `Back in the same seat after the reload. extensions.json says ${vtag(appVer(0))}; checking the running build.`],
+  ['agent', `${vtag(appVer(0))} is running (new bootId, pending false, no twin sessions). Running the live test for the export next.`],
   ['agent', 'The export file was 0 bytes at 03:04; the previous leg said otherwise. Reading the core module from the top.'],
 ];
 const tx = $('tx');
@@ -51,7 +52,7 @@ function ui() {
   $('r2').textContent = Math.round(S.ctx) + '%'; $('r3').textContent = Math.round(a.h) + '%';
   $('longest').textContent = 'longest ' + S.longest + 'm'; $('t2').textContent = S.longest + 'm'; $('t3').textContent = Math.max(1, S.longest - 1) + 'm'; $('r4k').textContent = `· longest ${S.longest}m`;
   $('sbQ').textContent = `◷ 2h 40m · ${Math.round(a.h)}% / wk ${Math.round(a.w)}%`; $('sbCost').textContent = '$' + S.cost.toFixed(2);
-  $('sbVer').textContent = 'Agent Farm ' + S.ver;
+  $('sbVer').textContent = 'Agent Farm ' + vtag(S.ver);
 }
 ui();
 on('pass', p => { addLine('sys', `⑂ ${p.from} → ⑂ ${p.to} · ${p.why === 'q' ? 'quota handover at 90%' : 'handed over at 40%'} · committed ${p.commit}`, true); ui(); });
@@ -63,7 +64,7 @@ async function ouroboros() {
   startOuro();
   const next = nextVer();
   for (const t of TOOLS) { $('tool').innerHTML = `<b>⚡ Bash</b> ${t.replace('NEXT', next)}`; await wait(1300); }
-  $('rlVer').textContent = next; $('reload').classList.add('on'); await wait(2500);
+  $('rlVer').textContent = vtag(next); $('reload').classList.add('on'); await wait(2500);
   finishOuro(next); ui(); $('reload').classList.remove('on');
   await addLine('you', 'Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.', true);
   await wait(500);

@@ -3,6 +3,7 @@
 // the extension's defaults (data/deep/relay.js cites them); names, ids and texts are demo data, the same farm as the
 // landing (chain chn_7f3a, leg 92, acct-a to acct-d).
 import { ACCT } from '../state.js';
+import { appVer, vtag } from '../../data/site.js';
 
 const A = Object.fromEntries(ACCT.map(a => [a.n, a.c]));
 const slider = (key, min, max, step, val, unit = '%') =>
@@ -120,15 +121,15 @@ export default {
   /* I·5 an agent restarts Agent Farm and carries on in the same session */
   ouroboros(fv) {
     fv.innerHTML = `
-      <div class="hd"><b>Ouroboros</b><span>Agent Farm <span class="vv">3.930.0</span></span></div>
+      <div class="hd"><b>Ouroboros</b><span>Agent Farm <span class="vv">${vtag(appVer(-1))}</span></span></div>
       <pre class="cmd">$ node af.js farm.restartExtensionHost resume=true</pre>
       <p class="msg dim">Refused if this window restarted less than 20 seconds ago.</p>
       <div class="busy" data-from="1"><span class="ses"><i></i>⑂ 92 · working</span><span class="ses"><i></i>review · working</span><b>armed</b><em>fires when the last of them is done</em></div>
-      <div class="build" data-from="2"><span>3.930.0</span><i>→</i><span class="nw">3.931.0</span><em>a newer build is on disk, so the restart becomes a window reload</em></div>
-      <div class="card" data-from="3"><p class="ch">Console · session 3efb20bf</p><p>Agent Farm restarted on 3.931.0 and took this session up where it left off.</p><small>same conversation, same id · nudged after a 30-second grace</small></div>
+      <div class="build" data-from="2"><span>${vtag(appVer(-1))}</span><i>→</i><span class="nw">${vtag(appVer(0))}</span><em>a newer build is on disk, so the restart becomes a window reload</em></div>
+      <div class="card" data-from="3"><p class="ch">Console · session 3efb20bf</p><p>Agent Farm restarted on ${vtag(appVer(0))} and took this session up where it left off.</p><small>same conversation, same id · nudged after a 30-second grace</small></div>
       <p class="msg l" data-from="4">Background run 41 was cut off by the restart: picked up again (1 of 3 at most).</p>`;
     const vv = fv.querySelector('.vv'), ses = fv.querySelectorAll('.busy .ses');
-    return { step(i) { vv.textContent = i >= 2 ? '3.931.0' : '3.930.0'; vv.classList.toggle('nw', i >= 2); ses.forEach(x => x.classList.toggle('done', i >= 2)); } };
+    return { step(i) { vv.textContent = vtag(appVer(i >= 2 ? 0 : -1)); vv.classList.toggle('nw', i >= 2); ses.forEach(x => x.classList.toggle('done', i >= 2)); } };
   },
 
   /* I·6 a sentry campaign in rounds, with a leader that wakes only when it must; the mode is yours to switch */

@@ -1,11 +1,11 @@
 ---
 // Footer (plan §5.14): the maker stays quiet here, and the page says plainly that its screens use demo data.
-import { site, rootOf } from '../data/site.js';
+import { site, rootOf, vtag } from '../data/site.js';
 const root = rootOf(Astro.url);
 ---
 <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v{site.version} · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB {vtag(`v${site.version}`)} · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href={`${root}features/`}>Features</a>
       <a href={`${root}pricing/`}>Pricing</a>

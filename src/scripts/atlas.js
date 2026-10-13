@@ -4,6 +4,7 @@
 // here and on the same tiles in the chapter openers below.
 import { S, ACCT, BL, reduce, on, vis } from './state.js';
 import { districts, features, stories } from '../data/features.js';
+import { vtag } from '../data/site.js';
 
 const $ = id => document.getElementById('a-' + id);
 const map = $('map'), svg = $('lines'), trail = $('trail'), chips = [...$('stories').children];
@@ -20,7 +21,7 @@ function live() {
   const a = ACCT[S.acc];
   sig('relay', `⑂ ${S.leg}`);
   sig('quota', `${a.n} ${Math.round(a.h)}%`);
-  sig('ouroboros', S.ver);
+  sig('ouroboros', vtag(S.ver));
   sig('backlog', `${BL.open} open`);
   sig('track', `${BL.done} closed`);
   sig('sessions', (1499 + S.passes).toLocaleString('en-US'));

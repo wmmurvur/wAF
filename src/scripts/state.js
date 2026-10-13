@@ -2,6 +2,7 @@
 // The relay hero (relay.js) is the only writer of leg, context and quota; other sections read the state and listen for events.
 // All data here is demo data shaped like the real app; nothing is fetched.
 import { project, family, live, queue, captures, nextCode } from '../data/backlog.js';
+import { site } from '../data/site.js';
 
 const hex = n => Array.from({ length: n }, () => '0123456789abcdef'[(Math.random() * 16) | 0]).join('');
 
@@ -19,7 +20,7 @@ export const ACCT = [
 
 /* leg: the live relay leg; ctx: its context in %; acc: index of the standing account; sid: the live session id. */
 export const S = {
-  leg: 92, ctx: 26, acc: 2, sid: '3efb20bf', ver: '3.931.0', boot: '7c2e91f4',
+  leg: 92, ctx: 26, acc: 2, sid: '3efb20bf', ver: site.app, boot: '7c2e91f4',
   phase: 'work', busy: false, passes: 0, cost: 41.2, tok: 1.8, longest: 6,
 };
 

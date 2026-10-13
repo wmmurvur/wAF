@@ -1,6 +1,7 @@
 // Relay hero: boot log, rolling leg counter, relay track, context / quota / console instruments, self-update glitch.
 // This script runs the relay simulation for the whole page (see state.js).
 import { ACCT, S, BQ, reduce, wait, hex, emit, emptiest, vis, canOuro, startOuro, nextVer, finishOuro, legDone } from './state.js';
+import { vtag } from '../data/site.js';
 
 const $ = id => document.getElementById('r-' + id);
 const pick = a => a[(Math.random() * a.length) | 0];
@@ -146,10 +147,10 @@ async function ouroboros() {
   const from = S.ver, to = nextVer();
   line('agent', 'The fix is in. Packaging a new build to test it live.');
   await wait(900); line('tool', 'npm run package <b>✓</b>');
-  await wait(900); line('tool', `code --install-extension agent-farm-${to}.vsix <b>✓</b>`);
+  await wait(900); line('tool', `code --install-extension agent-farm-${vtag(to)}.vsix <b>✓</b>`);
   await wait(900); line('tool', 'af farm.restartExtensionHost resume=true');
   await wait(500);
-  $('rbTx').textContent = `agent-farm ${from} → ${to}`;
+  $('rbTx').textContent = `agent-farm ${vtag(from)} → ${vtag(to)}`;
   emit('reloading');
   if (!reduce) document.body.classList.add('af-glitch');
   await wait(1500);
@@ -189,7 +190,7 @@ function loop(t) {
 
 /* ---------- boot ---------- */
 const BOOT = [
-  `<span class="ok">agent-farm ${S.ver}</span>  <span class="k">bootId ${S.boot} · 0 runtime dependencies</span>`,
+  `<span class="ok">agent-farm ${vtag(S.ver)}</span>  <span class="k">bootId ${S.boot} · 0 runtime dependencies</span>`,
   `<span class="k">engines </span> claude-code <span class="ok">✓</span>  codex <span class="ok">✓</span>  antigravity <span class="ok">✓</span>  opencode <span class="ok">✓</span>  gemini <span class="k">not installed</span>`,
   `<span class="k">accounts</span> 4 signed in · next leg rule <span class="y">@emptiest</span>`,
   `<span class="k">live    </span> listening on 127.0.0.1:8377 <span class="k">(this machine only)</span>`,

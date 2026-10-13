@@ -2,10 +2,11 @@
 // Relay hero (from prototype v2.3): giant leg counter, relay track, context / quota / console instruments.
 import '../../styles/sections/relay.css';
 import { facts, relay } from '../../data/facts.js';
+import { appVer, vtag } from '../../data/site.js';
 ---
 <section id="s-relay" aria-label="The baton relay, live demo">
   <div class="boot" id="r-boot" aria-hidden="true"><pre id="r-bootTx"></pre></div>
-  <div class="reboot" id="r-reboot" aria-hidden="true"><div><b>Restarting extension host</b><span id="r-rbTx">agent-farm 3.931.0 → 3.932.0</span><i></i></div></div>
+  <div class="reboot" id="r-reboot" aria-hidden="true"><div><b>Restarting extension host</b><span id="r-rbTx">agent-farm {vtag(appVer(0))} → {vtag(appVer(1))}</span><i></i></div></div>
 
   <div class="hero" id="top">
     <div class="wrap">

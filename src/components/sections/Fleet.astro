@@ -2,6 +2,7 @@
 // Fleet (from prototype v2.2): a control-room wall of six live Agent Farm pages, rebuilt from real screenshots.
 import '../../styles/sections/fleet.css';
 import { no } from '../../data/page.js';
+import { appVer, vtag } from '../../data/site.js';
 ---
 <section id="s-fleet" class="gap" aria-label="The fleet: six Agent Farm pages on one wall">
   <div class="wrap">
@@ -18,7 +19,7 @@ import { no } from '../../data/page.js';
             <div class="cc t"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="s"><i>your turn</i> · 6m · 4 turns</div></div>
             <div class="cc t"><div class="h"><b>developer</b><span class="eng a">Antigravity</span></div><div class="s"><i>your turn</i> · 5m · 2 turns</div></div>
             <div class="cc" style="border-left-color:#66675d"><div class="h"><b>reviewer</b><span class="eng x">Codex</span></div><div class="s">idle · 12m · 9 turns</div></div></div>
-            <div class="lns" id="f-cLines"><div class="ln tl"><span>TOOL</span><span>▸ Bash npm run package <b>✓</b></span></div><div class="ln tl"><span>TOOL</span><span>▸ af farm.restartExtensionHost resume=true</span></div><div class="ln"><span>AGENT</span><span>Window reloaded. Checking that the new build is the one actually running.</span></div><div class="ln y"><span>YOU</span><span>Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.</span></div><div class="ln"><span>AGENT</span><span>3.931.0 is running. Same seat. Continuing the live test.</span></div></div></div>
+            <div class="lns" id="f-cLines"><div class="ln tl"><span>TOOL</span><span>▸ Bash npm run package <b>✓</b></span></div><div class="ln tl"><span>TOOL</span><span>▸ af farm.restartExtensionHost resume=true</span></div><div class="ln"><span>AGENT</span><span>Window reloaded. Checking that the new build is the one actually running.</span></div><div class="ln y"><span>YOU</span><span>Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.</span></div><div class="ln"><span>AGENT</span><span>{vtag(appVer(0))} is running. Same seat. Continuing the live test.</span></div></div></div>
           <div class="cstrip" id="f-cStrip">session 3efb20bf · ctx 110.2k / 1.0M · 11% · ⑂ 92 · ~$4.92</div></div><div class="lab"><span>CH-02 · Console</span><span>sessions</span></div></div>
         <div class="mon" data-i="2"><div class="scr"><div class="hd"><b>Accounts</b><span>Claude Code · 4 accounts</span><span class="r">auto-refresh: on</span></div><div id="f-accs"></div><div class="alog" id="f-alog"></div></div><div class="lab"><span>CH-03 · Accounts</span><span>quota shield</span></div></div>
         <div class="mon" data-i="3"><div class="scr"><div class="hd"><b>Agent Farm</b><span>dashboard · demo data</span><span class="r">14d</span></div>
@@ -33,6 +34,6 @@ import { no } from '../../data/page.js';
         <div class="mon" data-i="5"><div class="scr"><div class="hd"><b>Chains</b><span>⑂ baton relay</span><span class="r">3 chains</span></div><div id="f-chains"></div><div class="hand" id="f-hand"></div></div><div class="lab"><span>CH-06 · Chains</span><span>baton relay</span></div></div>
       </div>
       <div class="desk" aria-live="polite"><span class="ch" id="f-dkCh">CH-01</span><div class="tx"><b id="f-dkT">Every agent on one timeline.</b><span id="f-dkS">Tool runs, prompts, permission waits and compactions, per session, live from the hooks.</span></div><div class="dots" id="f-dots"></div></div>
-      <div class="sb" aria-label="Status bar ticker"><span class="hide">⑂ agent master*</span><span>1 active · <span id="f-sbCost">$41.20</span> today</span><span class="q" id="f-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="f-sbLeg">⑂ 92</span><span class="feed"><div id="f-feed"></div></span><span class="hide" id="f-sbVer">Agent Farm 3.931.0</span></div>
+      <div class="sb" aria-label="Status bar ticker"><span class="hide">⑂ agent master*</span><span>1 active · <span id="f-sbCost">$41.20</span> today</span><span class="q" id="f-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="f-sbLeg">⑂ 92</span><span class="feed"><div id="f-feed"></div></span><span class="hide" id="f-sbVer">Agent Farm {vtag(appVer(0))}</span></div>
   </div>
 </section>

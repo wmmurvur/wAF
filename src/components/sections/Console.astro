@@ -3,6 +3,7 @@
 // shown as an exploded view that assembles as you scroll. Its working session is the live relay leg.
 import '../../styles/sections/console.css';
 import { no } from '../../data/page.js';
+import { appVer, vtag } from '../../data/site.js';
 ---
 <section id="s-console" class="gap" aria-label="The Agent Farm Console">
   <div class="wrap">
@@ -77,8 +78,8 @@ import { no } from '../../data/page.js';
               </div>
             </div>
           </div>
-          <div class="sbar"><span>⑂ agent master*</span><span>1 active · <span id="c-sbCost">$41.20</span> today</span><span class="q" id="c-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="c-sbLeg">⑂ 92</span><span>Project</span><span>Git Graph</span><span class="r" id="c-sbVer">Agent Farm 3.931.0</span></div>
-          <div class="reload" id="c-reload"><div class="box"><div>Reloading window · installing <b id="c-rlVer">3.932.0</b></div><div class="prog"><i></i></div><div style="color:#8d8d82;font-size:11px">the session keeps its seat</div></div></div>
+          <div class="sbar"><span>⑂ agent master*</span><span>1 active · <span id="c-sbCost">$41.20</span> today</span><span class="q" id="c-sbQ">◷ 2h 40m · 91% / wk 17%</span><span class="leg" id="c-sbLeg">⑂ 92</span><span>Project</span><span>Git Graph</span><span class="r" id="c-sbVer">Agent Farm {vtag(appVer(0))}</span></div>
+          <div class="reload" id="c-reload"><div class="box"><div>Reloading window · installing <b id="c-rlVer">{vtag(appVer(1))}</b></div><div class="prog"><i></i></div><div style="color:#8d8d82;font-size:11px">the session keeps its seat</div></div></div>
         </div>
         <!-- exploded-view pins; x/y are positions inside the 1200×690 window -->
         <div class="pin" data-a="cLeg" style="--z:150;--c:var(--yellow)"><i class="dot"></i><i class="stem"></i><div class="tag"><b>⑂ 92+</b>Legs of one relay chain</div></div>

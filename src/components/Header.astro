@@ -2,7 +2,7 @@
 // Top bar. The version chip follows the running version of the demo (it changes when the agent updates Agent Farm).
 // On the landing the links are anchors on the page; on any other page they lead back to the landing's chapters.
 // Joining early access means reserving a paid plan, on /pricing/#early.
-import { rootOf } from '../data/site.js';
+import { site, rootOf } from '../data/site.js';
 const root = rootOf(Astro.url), home = root === '';
 const here = Astro.url.pathname.split('/').filter(Boolean)[0] || '';
 ---
@@ -10,9 +10,9 @@ const here = Astro.url.pathname.split('/').filter(Boolean)[0] || '';
   <header class="top">
     <a class="brand" href={home ? '#top' : root} aria-label={home ? 'Agent Farm, back to the top' : 'Agent Farm, the home page'}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="6.5" y1="6.5" x2="10.1" y2="10.1"/><line x1="17.5" y1="6.5" x2="13.9" y2="10.1"/><line x1="6.5" y1="17.5" x2="10.1" y2="13.9"/><line x1="17.5" y1="17.5" x2="13.9" y2="13.9"/></svg>
-      Agent Farm
+      Agent Farm{site.beta && <span class="bb">beta</span>}
     </a>
-    {home && <span class="verchip" title="The version running in the demo below"><i></i><span id="af-ver">3.931.0</span></span>}
+    {home && <span class="verchip" title={site.beta ? 'Agent Farm is in beta. The version running in the demo below' : 'The version running in the demo below'}><i></i><span id="af-ver">{site.app}</span>{site.beta && <b>beta</b>}</span>}
     <nav class="nav" aria-label="Main">
       <a href={`${root}features/`} aria-current={here === 'features' ? 'page' : undefined}>Features</a><a class="ch" href={`${root}#ch-relay`}>Relay</a><a class="ch" href={`${root}#ch-projects`}>Projects</a><a class="ch" href={`${root}#ch-studio`}>Studio</a><a class="ch" href={`${root}#ch-memory`}>Memory</a><a class="ch" href={`${root}#ch-bridge`}>Just ask</a><a class="ch" href={`${root}#ch-privacy`}>Local</a><a href={`${root}pricing/`} aria-current={here === 'pricing' ? 'page' : undefined}>Pricing</a>
     </nav>

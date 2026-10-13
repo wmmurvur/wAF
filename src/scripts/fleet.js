@@ -1,6 +1,7 @@
 // Fleet: a control-room wall of six Agent Farm pages (Live Timeline, Console, Accounts, Dashboard, Now, Chains).
 // Layouts follow screenshots 032/035, 004, 075, 010/011, 023 and the Chains panel; data is demo data from state.js.
 import { ACCT, S, reduce, on, emptiest, vis } from './state.js';
+import { vtag } from '../data/site.js';
 
 const $ = id => document.getElementById('f-' + id);
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
@@ -135,7 +136,7 @@ function ui() {
   $('dSes').textContent = 1499 + S.passes;
   $('pu1').style.width = a.h + '%'; $('pu1t').textContent = Math.round(a.h) + '%';
   $('sbQ').textContent = `◷ 2h 40m · ${Math.round(a.h)}% / wk ${Math.round(a.w)}%`;
-  $('sbVer').textContent = 'Agent Farm ' + S.ver;
+  $('sbVer').textContent = 'Agent Farm ' + vtag(S.ver);
   aa = aa > 1 ? aa - 0.5 : 42; $('nAA').textContent = '0:' + String(Math.ceil(aa)).padStart(2, '0');
 }
 

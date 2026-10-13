@@ -1,8 +1,7 @@
 ---
-// /about/: who makes Agent Farm and how. The maker trades as an individual under the MuVuSOFT name (site.legal, owner
-// 2026-10-12); every figure comes from data/facts.js and data/features.js, and the promises are the ones the Local
-// chapter and the privacy page make (facts.licence). A photo of the maker's own workplace goes in data/photos.js as
-// 'about' (the owner's own, not stock); until it is there the page has no photo strip.
+// /about/: who makes Agent Farm and how. It speaks as MuVuSOFT only, with no owner's name, country or "individual"
+// here and no photo (owner, 2026-10-13); the legal pages name the seller. Every figure comes from data/facts.js and
+// data/features.js, and the promises are the ones the Local chapter and the privacy page make (facts.licence).
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -20,7 +19,7 @@ const NUM = [
   [String(facts.runtimeDependencies), 'runtime dependencies'],
 ];
 ---
-<Base title="About · Agent Farm" description={`Agent Farm is made by ${site.maker.name}, the name ${L.name} works under in ${L.country}: one maker, a farm of agents, and nothing about your work sent to us.`} script="legal">
+<Base title="About · Agent Farm" description={`Agent Farm is made by ${site.maker.name}: a farm of agents that keeps working, and nothing about your work sent to us.`} script="legal">
   <Header />
   <main class="aboutp">
     <div class="wrap">
@@ -28,8 +27,8 @@ const NUM = [
       <header class="ah">
         <div>
         <p class="pre">About</p>
-        <h1>One maker.<br /><em>A farm of agents.</em></h1>
-        <p class="lead">Agent Farm is made by {site.maker.name}, the name {L.name} works under, in {L.country}. There is no company and no sales team behind it: one person who wanted agents to keep working through a full context, an empty plan and the night, and built the tool that lets them.</p>
+        <h1>Built to keep going.<br /><em>A farm of agents.</em></h1>
+        <p class="lead">Agent Farm is made by {site.maker.name}. We wanted agents to keep working through a full context, an empty plan and the night, so we built the tool that lets them.</p>
         </div>
         <a class="logo" href={site.maker.href}><img src="../assets/brand/muvusoft-logo.png" alt={site.maker.name} width="220" height="207" /></a>
       </header>
@@ -60,10 +59,9 @@ const NUM = [
         </section>
         <section>
           <h2>Write to us</h2>
-          <p>A question, a bug, an idea for the farm: write to <a href={`mailto:${L.email}`}>{L.email}</a>. It reaches the person who builds Agent Farm, not a ticket queue.</p>
+          <p>A question, a bug, an idea for the farm: write to <a href={`mailto:${L.email}`}>{L.email}</a>. It goes straight to the makers of Agent Farm, not to a ticket queue.</p>
           <dl class="who">
-            <dt>Made by</dt><dd><a href={site.maker.href}>{site.maker.name}</a>, the trading name of {L.name}, an individual, not a company</dd>
-            <dt>Based in</dt><dd>{L.country}</dd>
+            <dt>Made by</dt><dd><a href={site.maker.href}>{site.maker.name}</a></dd>
             <dt>Get it</dt><dd><a href={site.get.href}>Agent Farm on the VS Code Marketplace</a></dd>
           </dl>
         </section>
