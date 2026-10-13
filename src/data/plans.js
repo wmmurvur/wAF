@@ -20,9 +20,9 @@ export const pricing = {
   updated: '2026-10-12',
   plans: [
     { id: 'free', n: 'Free', price: 0, k: 'Every part of the farm, to try on real work.', who: 'One night of it, to see what it does.' },
-    { id: 'pro', n: 'Pro', price: 19, k: 'One person\'s work, carried on through the night.', who: 'Solo makers: code, video, writing, research.' },
-    { id: 'fleet', n: 'Fleet', price: 34, k: 'Many projects and sign-ins, side by side.', who: 'People who run several projects, or a small studio.', pick: true },
-    { id: 'farm', n: 'Farm', price: 49, k: 'No ceilings anywhere.', who: 'Whole days and nights of work on every engine you have.' },
+    { id: 'pro', n: 'Pro', price: 19, k: 'One person\'s work, carried on through the night.', who: 'One person\'s work of any kind: code, content, automation, research.' },
+    { id: 'fleet', n: 'Fleet', price: 34, k: 'Many projects and sign-ins, side by side.', who: 'Several projects at once, a studio or a team.', pick: true },
+    { id: 'farm', n: 'Farm', price: 49, k: 'No ceilings anywhere.', who: 'Teams and companies: whole days and nights of work on every engine they have.' },
   ],
   checkout: {},                           // e.g. pro: { monthly: 'https://…lemonsqueezy.com/buy/…', yearly: '…' }
 };

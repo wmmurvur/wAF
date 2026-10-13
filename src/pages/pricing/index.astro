@@ -22,12 +22,16 @@ const show = v => typeof v === 'number' ? String(v) : v;
 const buy = p => !pricing.beta && pricing.checkout[p.id];
 const href = (D, f) => hasPage(D) ? `../features/${D.slug}/#${f.id}` : `../#ch-${D.id}`;
 const img = (p, s) => `${root}assets/photos/${p}-${s}.jpg`;
+// The kinds of work (owner, 2026-10-13): not a short list of trades but the breadth of it. Code; video and every other
+// kind of content; automation of any process; anything an agent can do; agents run as an organised fleet; and anyone
+// from one person to a company. Every claim maps to a district: I, III, IV, VII, V.
 const who = [
   { p: 'w-code', k: 'Code', t: 'Fixes, tests and refactors carried on leg after leg while you sleep.' },
-  { p: 'w-video', k: 'Video', t: 'A production team of agents, from the idea to a sequence you finish in Premiere.' },
-  { p: 'w-audio', k: 'Podcasts and channels', t: 'Long videos cut to shorts, a weekly channel rhythm, a media inbox that files itself.' },
-  { p: 'w-writing', k: 'Writing and research', t: 'A thesis, a book or a report as a backlog the agents work through, chapter by chapter.' },
-  { p: 'w-team', k: 'Small teams', t: 'A lead plans, a team on different engines does the work, and one word from you changes its course.' },
+  { p: 'w-video', k: 'Video and all content', t: 'A production team of agents from the idea to the finished piece: films, shorts, audio, images and posts, filed and put on a calendar.' },
+  { p: 'd-automation', k: 'Automation', t: 'Workflows of agents, HTTP calls, media jobs and browser runs, started by a schedule, a file, a hook or one sentence. Any process you can describe.' },
+  { p: 'w-writing', k: 'Anything agents do', t: 'Research, writing, data, documents, operations: five engines and any model you route to them, open to whatever AI can do next.' },
+  { p: 'd-team', k: 'A fleet, not a chat', t: 'Agents organised into teams with a lead and roles, leaving each other notes, set into the recipes you choose and changed whenever you like.' },
+  { p: 'w-team', k: 'Teams and companies', t: 'From one person to a whole company: your own workflows on autopilot, on the engines and accounts you already pay for.' },
 ];
 const FAQ = [
   ['I already pay for Claude or ChatGPT. Why pay again?', 'Agent Farm never sells tokens. Your engines run on your own plans and keys, and that bill stays between you and them. What you pay for here is the farm around them: the relay, the night shift, the memory, the studio, the guards.'],
@@ -90,11 +94,12 @@ const FAQ = [
     <section class="kinds" aria-labelledby="who-h">
       <div class="wrap">
         <p class="pre">One farm, any kind of work</p>
-        <h2 id="who-h">Not only code.</h2>
+        <h2 id="who-h">Wherever agents can work.</h2>
+        <p class="klead">Agent Farm is open to whatever AI is open to. Its agents are not one chat at a time: you run them as a fleet, organise them into teams, connect them to your tools and set them into the patterns your work needs.</p>
         <div class="wtiles">
           {who.map(w => (
             <figure>
-              <img src={img(w.p, 'l')} srcset={`${img(w.p, 's')} ${photos[w.p].tall ? 500 : 600}w, ${img(w.p, 'l')} ${photos[w.p].tall ? 1000 : 1200}w`} sizes="(max-width: 860px) 50vw, 20vw" alt={photos[w.p].alt} loading="lazy" decoding="async" style={`object-position:${photos[w.p].pos}`} />
+              <img src={img(w.p, 'l')} srcset={`${img(w.p, 's')} ${photos[w.p].tall ? 500 : 600}w, ${img(w.p, 'l')} ${photos[w.p].tall ? 1000 : 1200}w`} sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" alt={photos[w.p].alt} loading="lazy" decoding="async" style={`object-position:${photos[w.p].pos}`} />
               <figcaption><b>{w.k}</b>{w.t}</figcaption>
             </figure>
           ))}

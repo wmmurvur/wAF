@@ -2,6 +2,10 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.3 · 2026-10-13
+
+- Pricing: "Not only code" becomes "Wherever agents can work", with a line on running agents as a fleet, and six kinds of work instead of five trades: code; video and all content; automation; anything agents do; a fleet, not a chat; teams and companies. "Small teams" is gone: companies use it too. The plans' "for whom" lines follow.
+
 ## 0.13.2 · 2026-10-13
 
 - One place for Agent Farm's version: `app` and `beta` in `src/data/site.js`. The top chip, the demo screens and figures, the Ouroboros tile and the privacy payload all read it, and while `beta` is true every version the site prints carries "-beta" (the chip and the footer show a BETA tag; on phones the tag sits on the brand).

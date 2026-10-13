@@ -36,9 +36,10 @@
 
 /* the kinds of work */
 .prc .kinds{margin-top:clamp(80px,9vw,130px)}
-.prc .kinds h2{margin:0 0 26px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5vw,78px);line-height:.9}
-.prc .wtiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.prc .wtiles figure{position:relative;margin:0;aspect-ratio:3/4;overflow:hidden;background:#111}
+.prc .kinds h2{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5vw,78px);line-height:.9}
+.prc .kinds .klead{margin:18px 0 28px;max-width:780px;font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#d6d7c9}
+.prc .wtiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.prc .wtiles figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#111}
 .prc .wtiles img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease-out}
 .prc .wtiles figure:hover img{transform:scale(1.05)}
 .prc .wtiles figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,10,7,0) 30%,rgba(9,10,7,.86) 66%,rgba(9,10,7,.96) 100%)}
@@ -112,7 +113,6 @@
 
 @media (max-width:1180px){
   .prc .plans{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .prc .wtiles{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:860px){
   .prc .pfaq{grid-template-columns:minmax(0,1fr)}
