@@ -4,7 +4,7 @@
 //
 // The CSV: ../agentfarm-private/early-access.csv, beside public_html, where no browser can reach it. If the host does
 // not let us make that folder, .private/ in this folder, closed to the web by its own .htaccess.
-// Columns: time (UTC), email, plan, use, consent (the wording's date), so a removal request or a consent question can
+// Columns: time (UTC), email, plan, use (what it is for, joined by +), consent (the wording's date), so a removal request or a consent question can
 // be answered from the file. Nothing else is kept: no IP address, no browser, no cookie.
 //
 // NOTIFY_TO: where the note about a new sign-up goes (owner, 2026-10-12); answering the note answers the person.
@@ -12,9 +12,10 @@
 
 const NOTIFY_TO = 'apply_farm@muvusoft.uk';
 const NOTIFY_FROM = 'noreply@agentfarm.space';
-const CONSENT = 'privacy policy 2026-10-12';
+const CONSENT = 'privacy policy 2026-10-13';
 const PLANS = ['pro', 'fleet', 'farm', 'unsure'];
-const USES = ['', 'code', 'video', 'writing', 'team', 'other'];
+// what a reservation says it is for, any number of them (the form's chips); video and writing came from the first form
+const USES = ['code', 'content', 'knowledge', 'automation', 'life', 'projects', 'fleet', 'team', 'other', 'video', 'writing'];
 const MIN_SECONDS = 3;                // a person takes longer than this to fill the form
 const MAX_BYTES = 5 * 1024 * 1024;    // a list this long means something is wrong
 
@@ -45,10 +46,11 @@ if (($_POST['website'] ?? '') !== '' || ($t > 0 && time() * 1000 - $t < MIN_SECO
 
 $email = trim((string)($_POST['email'] ?? ''));
 $plan = (string)($_POST['plan'] ?? 'unsure');
-$use = (string)($_POST['use'] ?? '');
+$uses = $_POST['use'] ?? [];
+if (!is_array($uses)) $uses = [$uses];
+$use = implode('+', array_values(array_unique(array_filter($uses, function ($u) { return is_string($u) && in_array($u, USES, true); }))));
 if (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) $fail(422, 'That email address does not look right.');
 if (!in_array($plan, PLANS, true)) $plan = 'unsure';
-if (!in_array($use, USES, true)) $use = '';
 if (($_POST['consent'] ?? '') !== '1') $fail(422, 'Tick the box, so we may write to you.');
 
 // where the list lives
@@ -83,7 +85,7 @@ flock($fh, LOCK_UN);
 fclose($fh);
 
 if (!$again && NOTIFY_TO !== '') {
-  @mail(NOTIFY_TO, "Agent Farm early access: $plan", "A new early-access sign-up.\n\nEmail: $email\nPlan: $plan\nMostly for: " . ($use ?: '-') . "\n",
+  @mail(NOTIFY_TO, "Agent Farm early access: $plan", "A new early-access sign-up.\n\nEmail: $email\nPlan: $plan\nFor: " . ($use ?: '-') . "\n",
     'From: Agent Farm <' . NOTIFY_FROM . ">\r\nReply-To: $email\r\nContent-Type: text/plain; charset=utf-8");
 }
 

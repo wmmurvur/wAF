@@ -14,7 +14,7 @@
     <meta property="og:description" content="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.13.4"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.13.5"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.13.4"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.13.5"></head>
   <body>
     
   <div class="wrap">
@@ -93,7 +93,7 @@
     <p class="sx"><b>02</b> The fleet</p>
     <div class="band">
       <div><p class="pre">Don't just talk to one agent.</p><h2 class="h1">Command an <em>entire fleet.</em></h2></div>
-      <div class="side"><p><b>Claude Code, Codex, Gemini, Antigravity and OpenCode</b> on one wall. Agents work through your backlog, sessions pass the baton day and night, accounts rotate before they run dry, and nothing about your work is sent to us.</p><a class="ghost" href="#s-console"><i></i>Open the console</a></div>
+      <div class="side"><p><b>Claude Code, Codex, Gemini, Antigravity and OpenCode</b> on one wall. Agents work through your backlog, sessions pass the baton day and night, accounts rotate before they run dry, and nothing about your work is sent to us.</p><a class="ghost" href="#s-console"><i></i>Open the console</a><div class="thm" role="group" aria-label="Screen theme"><span>Follows your VS Code theme</span><button type="button" data-t="dark" aria-pressed="true">Dark</button><button type="button" data-t="light" aria-pressed="false">Light</button></div></div>
     </div>
     <div class="wall" id="f-wall" role="group" aria-label="Six live Agent Farm pages, rebuilt from real screenshots with demo data">
         <div class="mon" data-i="0"><div class="scr"><div class="hd"><b>Live Timeline</b><span>● listening on 127.0.0.1:8377</span><span class="r" id="f-tlClock">12:10</span></div><canvas id="f-tl"></canvas></div><div class="lab"><span>CH-01 · Live Timeline</span><span>swim lanes</span></div></div>
@@ -1175,7 +1175,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.4-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.5-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
       <a href="pricing/">Pricing</a>

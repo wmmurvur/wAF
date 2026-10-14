@@ -1,6 +1,6 @@
 # agentfarm.space · bitmiş site
 
-Bu dal sitenin **bitmiş hali**: Hostinger'a olduğu gibi yüklenecek dosyalar. Sürüm 0.13.4, `source` dalındaki 4f47184 commit'inden üretildi.
+Bu dal sitenin **bitmiş hali**: Hostinger'a olduğu gibi yüklenecek dosyalar. Sürüm 0.13.5, `source` dalındaki c8cd365 commit'inden üretildi.
 
 ```
 index.html        ana sayfa
