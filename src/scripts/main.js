@@ -5,6 +5,7 @@ import './header.js';
 import './sideindex.js';
 import './bands.js';
 import './relay.js';
+import './farm.js';
 import './fleet.js';
 import './atlas.js';
 import './chapters.js';

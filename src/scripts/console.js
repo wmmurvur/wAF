@@ -111,6 +111,32 @@ addEventListener('resize', () => { fit(); placePins(); onScroll(); });
 addEventListener('scroll', onScroll, { passive: true });
 fit(); onScroll();
 
+/* light or dark, as VS Code is set: a curtain (a copy of the window in the other dress, wiped across) turns one into the
+   other. While nobody has picked, the window changes dress now and then once it is assembled and on screen. */
+const thm = [...document.querySelectorAll('#s-console .thm button')];
+let dress = 'dark', picked = false, busy = false;
+function wear(t) {
+  if (t === dress || busy) return;
+  dress = t;
+  thm.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.t === t)));
+  if (reduce) { win.classList.toggle('light', t === 'light'); return; }
+  busy = true;
+  const c = win.cloneNode(true);
+  c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(e => e.removeAttribute('id'));
+  c.classList.toggle('light', t === 'light'); c.classList.add('cur'); c.setAttribute('aria-hidden', 'true');
+  const seam = document.createElement('i'); seam.className = 'seam';
+  win.after(c, seam);
+  setTimeout(() => { win.classList.toggle('light', t === 'light'); c.remove(); seam.remove(); busy = false; }, 980);
+}
+thm.forEach(b => b.addEventListener('click', () => { picked = true; wear(b.dataset.t); }));
+if (!reduce) {
+  let held = 0;
+  setInterval(() => {
+    if (picked || busy || !vis['s-console'] || !(flat() || prog > 0.9)) { held = 0; return; }
+    if (++held >= 7) { held = 0; wear(dress === 'dark' ? 'light' : 'dark'); }
+  }, 1000);
+}
+
 if (reduce) {
   deck.style.setProperty('--tilt', '0deg'); deck.style.setProperty('--rz', '0deg');
 } else {

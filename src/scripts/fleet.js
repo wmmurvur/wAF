@@ -3,20 +3,6 @@
 import { ACCT, S, reduce, on, emptiest, vis } from './state.js';
 import { vtag } from '../data/site.js';
 
-/* the screens' theme: dark or light, as VS Code is set. The first time the wall is seen it shows light for a moment. */
-const wall = document.getElementById('f-wall'), thm = [...document.querySelectorAll('#s-fleet .thm button')];
-let picked = false;
-const theme = t => { wall.classList.toggle('light', t === 'light'); thm.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.t === t))); };
-thm.forEach(b => b.addEventListener('click', () => { picked = true; theme(b.dataset.t); }));
-if (!reduce && 'IntersectionObserver' in window) {
-  const io = new IntersectionObserver(es => {
-    if (!es.some(e => e.isIntersecting)) return;
-    io.disconnect();
-    setTimeout(() => { if (picked) return; theme('light'); setTimeout(() => { if (!picked) theme('dark'); }, 4500); }, 2500);
-  }, { threshold: 0.45 });
-  io.observe(wall);
-}
-
 const $ = id => document.getElementById('f-' + id);
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const C = { lime: css('--lime'), pink: css('--pink'), cyan: css('--cyan'), violet: css('--violet'), yellow: css('--yellow'), red: css('--red'), claude: css('--claude') };

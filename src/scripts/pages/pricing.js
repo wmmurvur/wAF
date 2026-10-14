@@ -2,17 +2,22 @@
 // early-access form, sent to early-access.php on the host. Opened from disk there is no host, and the form says so.
 import '../header.js';
 
-// the kinds of work: a row that slides; the arrows move it by about two tiles, and the fade at its edge goes at the end
-const row = document.querySelector('.prc .wtiles');
-if (row) {
-  const kb = [...document.querySelectorAll('.prc .kb')];
-  const edge = () => {
-    const end = row.scrollLeft + row.clientWidth >= row.scrollWidth - 4;
-    row.classList.toggle('end', end);
-    kb.forEach(b => { b.disabled = b.dataset.k === '1' ? end : row.scrollLeft <= 4; });
-  };
-  kb.forEach(b => b.addEventListener('click', () => row.scrollBy({ left: +b.dataset.k * row.clientWidth * 0.75 })));
-  row.addEventListener('scroll', edge, { passive: true }); addEventListener('resize', edge); edge();
+// the kinds of work: a fanned deck. The card under the pointer, in focus or tapped opens; left alone and on screen, the
+// deck opens the next card every few seconds, so its words are read without a hover.
+const cards = [...document.querySelectorAll('.prc .fc')];
+if (cards.length) {
+  let cur = 0, idle = 0, seen = false;
+  const open = i => { cur = i; cards.forEach((c, k) => c.classList.toggle('on', k === i)); };
+  cards.forEach((c, i) => {
+    c.addEventListener('mouseenter', () => { if (matchMedia('(hover: hover)').matches) { idle = -3; open(i); } });
+    c.addEventListener('focus', () => { idle = -3; open(i); });
+    c.addEventListener('click', () => { idle = -3; open(i); });
+  });
+  const deck = cards[0].parentElement;
+  deck.addEventListener('mouseleave', () => { idle = 0; });
+  if ('IntersectionObserver' in window) new IntersectionObserver(es => { seen = es[0].isIntersecting; }, { threshold: 0.5 }).observe(deck);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+    setInterval(() => { if (!seen || deck.matches(':hover') || deck.contains(document.activeElement)) return; if (++idle >= 4) { idle = 0; open((cur + 1) % cards.length); } }, 1000);
 }
 
 const per = document.querySelector('.prc .per');

@@ -1,4 +1,4 @@
-/* /about/: who makes Agent Farm. A title, four numbers, four short sections in two columns. Scoped by .aboutp. */
+/* /about/: who makes Agent Farm. A title, four numbers, why a farm across both columns, then four short sections in two columns. Scoped by .aboutp. */
 .aboutp{padding-top:clamp(28px,4vw,48px);padding-bottom:clamp(40px,6vw,90px)}
 .aboutp .ah{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(28px,4vw,64px);align-items:end}
 .aboutp .ah .logo{display:block;padding:22px;border-radius:14px;background:#fff}
@@ -15,6 +15,10 @@
 .aboutp .nums li:first-child b{color:var(--lime)}
 .aboutp .nums span{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
 .aboutp .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,80px) clamp(32px,5vw,90px);margin-top:clamp(44px,6vw,80px)}
+.aboutp .farm{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,2fr);gap:12px clamp(32px,5vw,90px);padding:clamp(22px,3vw,34px) clamp(22px,3vw,36px);border:1px solid rgba(168,240,53,.35);background:radial-gradient(90% 140% at 0% 0%,rgba(168,240,53,.12),rgba(168,240,53,0) 60%),#0d0e0a}
+.aboutp .farm h2{color:var(--lime)}
+.aboutp .farm p:first-child{margin-top:0}
+.aboutp .farm b{color:var(--ink);font-weight:500}
 .aboutp h2{margin:0 0 12px;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(28px,2.8vw,38px);line-height:1}
 .aboutp section p,.aboutp section li,.aboutp dd{color:#c3c4b4;font-size:16px;line-height:1.7}
 .aboutp section p{margin:10px 0 0}
@@ -36,5 +40,6 @@
   .aboutp .nums li:nth-child(2){border-right:0}
   .aboutp .nums li:nth-child(-n+2){border-bottom:1px solid var(--rule)}
   .aboutp .cols{grid-template-columns:minmax(0,1fr)}
+  .aboutp .farm{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:480px){.aboutp .who{grid-template-columns:minmax(0,1fr);gap:2px}.aboutp dd{margin-bottom:8px}}

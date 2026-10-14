@@ -1,0 +1,50 @@
+/* Why a farm (#s-farm): the words on the left, one agent's home on the right, growing from Day 1 to Month 4. */
+#s-farm .fgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+#s-farm h2{margin:0 0 18px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,5.6vw,92px);line-height:.88;text-wrap:balance}
+#s-farm h2 em{display:block;font-style:normal;color:var(--lime)}
+#s-farm .lead{margin:0 0 22px;max-width:540px;color:#b9baa9;font-size:16.5px;line-height:1.55}
+#s-farm .pts{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:540px}
+#s-farm .pts li{position:relative;padding-left:22px;color:#b9baa9;font-size:15px;line-height:1.5}
+#s-farm .pts li::before{content:"";position:absolute;left:0;top:.65em;width:10px;height:2px;background:var(--lime)}
+#s-farm .pts b{color:var(--ink);font-weight:500}
+
+/* the agent's home, drawn like an Agent Farm page */
+#s-farm .home{position:relative;margin:0;min-width:0;padding:18px 20px 16px;background:linear-gradient(180deg,#14150f,#0d0e0a);border:1px solid #2c2d25;border-radius:12px;font-family:var(--ui);box-shadow:0 40px 80px -40px rgba(0,0,0,.9),0 0 0 1px rgba(168,240,53,.05)}
+#s-farm .home::before{content:"";position:absolute;inset:-1px;border-radius:12px;padding:1px;background:linear-gradient(160deg,rgba(168,240,53,.5),rgba(168,240,53,0) 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+#s-farm .hd{display:flex;align-items:center;gap:9px;font-size:14px;color:#f1f1e7}
+#s-farm .hd .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+#s-farm .hd .r{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+#s-farm .tabs{display:flex;gap:2px;margin:14px 0 16px;border-bottom:1px solid #2a2b23;font-size:12px;color:#8d8e82;overflow:hidden}
+#s-farm .tabs span{padding:6px 10px;border-bottom:2px solid transparent;white-space:nowrap}
+#s-farm .tabs .on{color:#f1f1e7;border-bottom-color:var(--lime)}
+#s-farm .kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#s-farm .kv>div{display:grid;gap:2px;padding:10px 12px;background:#0a0b08;border:1px solid #23241d;border-radius:8px}
+#s-farm .kv .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+#s-farm .kv .v{font-family:var(--display);font-weight:800;font-size:clamp(28px,2.6vw,38px);line-height:1;color:var(--lime);font-variant-numeric:tabular-nums}
+#s-farm .kv .n{font-size:11.5px;color:#8d8e82}
+#s-farm .grow{height:3px;margin:14px 0 16px;background:#22231c;border-radius:2px;overflow:hidden}
+#s-farm .grow i{display:block;height:100%;background:linear-gradient(90deg,#5a8c09,var(--lime));box-shadow:0 0 12px rgba(168,240,53,.6);transition:width 1.1s cubic-bezier(.3,.7,.2,1)}
+#s-farm .lh{margin:0 0 8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+#s-farm .rules{list-style:none;margin:0 0 16px;padding:0;display:grid;align-content:start;gap:4px;min-height:calc(5 * 32px + 16px)}
+#s-farm .rules li{display:flex;align-items:center;gap:10px;height:32px;padding:0 12px;border-radius:7px;background:#12130e;border:1px solid #23241d;font-size:13.5px;color:#e2e3d8;transition:opacity .45s,transform .45s,background-color 1.2s,border-color 1.2s}
+#s-farm .rules li span{color:var(--lime);font-size:12px}
+#s-farm .rules li.new{background:rgba(168,240,53,.12);border-color:rgba(168,240,53,.45)}
+#s-farm .rules li.none{color:#8d8e82;font-style:italic;background:none;border-style:dashed}
+#s-farm .rules li.out{display:none}
+#s-farm .rules li.in{animation:farm-in .5s cubic-bezier(.3,.7,.2,1) both}
+@keyframes farm-in{from{opacity:0;transform:translateY(-6px)}}
+#s-farm .ages{display:flex;gap:6px}
+#s-farm .ages button{flex:1;padding:8px 0;border:1px solid #2c2d25;border-radius:7px;background:none;color:var(--dim);font-family:var(--mono);font-size:12px;letter-spacing:.06em;cursor:pointer;transition:color .3s,border-color .3s,background-color .3s}
+#s-farm .ages button:hover{color:var(--ink);border-color:#4b4c44}
+#s-farm .ages button[aria-pressed="true"]{color:#0b0c08;background:var(--lime);border-color:var(--lime)}
+#s-farm .ages button:focus-visible{outline:1px solid var(--lime);outline-offset:2px}
+
+@media (max-width:900px){#s-farm .fgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){
+  #s-farm .home{padding:16px 14px 14px}
+  #s-farm .kv{gap:6px}
+  #s-farm .kv>div{padding:9px 9px}
+  #s-farm .kv .n{font-size:10.5px}
+  #s-farm .rules li{font-size:12.5px;padding:0 10px}
+}
+@media (prefers-reduced-motion:reduce){#s-farm .grow i,#s-farm .rules li{transition:none}#s-farm .rules li.in{animation:none}}

@@ -22,24 +22,25 @@ const show = v => typeof v === 'number' ? String(v) : v;
 const buy = p => !pricing.beta && pricing.checkout[p.id];
 const href = (D, f) => hasPage(D) ? `../features/${D.slug}/#${f.id}` : `../#ch-${D.id}`;
 const img = (p, s) => `${root}assets/photos/${p}-${s}.jpg`;
-// The kinds of work (owner, 2026-10-13): a row that slides sideways, so it can say a lot and stay short. Every tile is a
-// place to use it, professional or personal, not a feature (features have their own pages): someone who thinks "I don't
-// code" should find their own work here. Code stays first; the last, wider tile says the list is only a start.
+// The kinds of work (owner, 2026-10-14): a fanned deck, not a strip to scroll. Every card is a place to use it, at work
+// or at home, so that someone who thinks "I don't code" finds their own work; code is the first card, not the only one.
+// The last card says why it is a farm: agents grow here (owner's feature list §14). Each line maps to a district.
 const who = [
-  { p: 'w-code', a: 'For developers', k: 'Code', t: 'Fixes, tests and refactors carried on, leg after leg, while you sleep.' },
-  { p: 'w-video', a: 'For creators', k: 'A content studio', t: 'Films, shorts, podcasts and posts, made by a crew of agents from idea to cut.' },
-  { p: 'd-automation', a: 'For every routine', k: 'Automation, any size', t: 'One small task every morning, or a whole team with a lead agent that runs a project on its own.' },
-  { p: 'd-memory', a: 'For knowledge work', k: 'A second brain', t: 'What your agents learn becomes a wiki that keeps growing. No chat is ever lost.' },
-  { p: 'w-writing', a: 'For authors and academics', k: 'Books and theses', t: 'A book, a thesis or a paper as a plan the agents work through, chapter by chapter.' },
-  { p: 'd-bridge', a: 'For your own life', k: 'A life OS', t: 'A briefing read aloud each morning, reminders, small jobs off your plate. A lighter day.' },
-  { p: 'd-projects', a: 'For teams', k: 'Projects on autopilot', t: 'Hand the backlog to the agents. They work it off in your order and report back.' },
-  { p: 'w-team', a: 'For companies', k: 'Your own workflows', t: 'Put the company\'s processes on autopilot, on the accounts you already pay for.' },
-  { p: 'w-audio', a: 'For channels', k: 'Channels and podcasts', t: 'Long videos cut into shorts, a weekly rhythm, an inbox that files your media itself.' },
-  { p: 'd-team', a: 'For power users', k: 'An agent OS', t: 'Agents as one organised fleet: teams, roles, chains, and a ping when they need you.' },
+  { p: 'w-code', a: 'For developers', k: 'Code that ships overnight', t: 'Fixes, tests and refactors carried on leg after leg while you sleep, each leg handing a clean note to the next. You wake up to commits, not a stalled chat.' },
+  { p: 'w-video', a: 'For creators', k: 'A studio, not a prompt', t: 'Films, shorts, podcasts and posts made by a crew of agents, from the idea to the cut you finish in Premiere, then put on your calendar.' },
+  { p: 'd-automation', a: 'For every routine', k: 'Automation at any size', t: 'A small job every morning, a workflow that wakes when a file lands, or a whole team with a lead agent that runs a project to the end. Say it in one sentence.' },
+  { p: 'd-memory', a: 'For knowledge work', k: 'A second brain', t: 'Every session is kept and grows into a wiki of what was learned, in Obsidian if you like. What one agent found out, the next one knows.' },
+  { p: 'w-writing', a: 'For authors and academics', k: 'Books, theses, papers', t: 'A long work split into chapters the agents draft and revise in your order, with every note and source kept from one session to the next.' },
+  { p: 'd-bridge', a: 'For your own life', k: 'A life OS', t: 'A briefing read aloud each morning, reminders that come to you, small errands handed off from your phone. Agents that make the day lighter.' },
+  { p: 'd-projects', a: 'For teams', k: 'Projects on autopilot', t: 'Hand the backlog to the agents. They work it off in your order, ask when they need you and report back on one board.' },
+  { p: 'w-team', a: 'For companies', k: 'Your own workflows', t: 'The way your company works, turned into recipes the agents run, on the engines and accounts you already pay for.' },
+  { p: 'd-team', a: 'For power users', k: 'An agent OS', t: 'Engines, accounts, keys, tools and agents under one roof. Chain them, schedule them, steer them, from one console.' },
 ];
 // What a reservation can say it is for (the form's chips; early-access.php keeps the same values). Follows the tiles.
 const USES = [['code', 'Code'], ['content', 'Video, audio and content'], ['knowledge', 'Research and a second brain'], ['automation', 'Automation and workflows'], ['life', 'My everyday life'], ['projects', 'Projects and backlogs'], ['fleet', 'A fleet of agents'], ['team', 'A team or a company'], ['other', 'Something else']];
 // srcset widths of each photo's two files
+// each card's place in the fan: a slight tilt and an arc, like a hand of cards held open (straightened when it opens)
+const fanAt = i => { const t = (i - who.length / 2) / (who.length / 2); return `--r:${(t * 2.6).toFixed(2)}deg;--y:${(t * t * 16).toFixed(1)}px;z-index:${i + 1}`; };
 const WSZ = { 'w-video': [500, 1000], 'w-code': [500, 1000], 'd-bridge': [900, 1080] };
 const wsz = p => WSZ[p] || (p.startsWith('d-') ? [900, 1800] : photos[p].tall ? [500, 1000] : [600, 1200]);
 const FAQ = [
@@ -102,20 +103,22 @@ const FAQ = [
 
     <section class="kinds" aria-labelledby="who-h">
       <div class="wrap">
-        <div class="khd">
-          <div><p class="pre">One farm, any kind of work</p><h2 id="who-h">Not only code.</h2></div>
-          <p class="karr"><button type="button" class="kb" data-k="-1" aria-label="Back">←</button><button type="button" class="kb" data-k="1" aria-label="More">→</button></p>
-        </div>
-        <div class="wtiles" role="region" aria-label="What else the farm does" tabindex="0">
-          {who.map(w => (
-            <figure>
-              <img src={img(w.p, 'l')} srcset={`${img(w.p, 's')} ${wsz(w.p)[0]}w, ${img(w.p, 'l')} ${wsz(w.p)[1]}w`} sizes="(max-width: 620px) 72vw, (max-width: 1180px) 30vw, 19vw" alt={photos[w.p].alt} loading="lazy" decoding="async" style={`object-position:${photos[w.p].pos}`} />
-              <figcaption><i>{w.a}</i><b>{w.k}</b>{w.t}</figcaption>
-            </figure>
+        <p class="pre">One farm, any kind of work</p>
+        <h2 id="who-h">Not only code.</h2>
+        <div class="fan">
+          {who.map((w, i) => (
+            <article class={i === 0 ? 'fc on' : 'fc'} tabindex="0" aria-label={`${w.a}: ${w.k}`} style={fanAt(i)}>
+              <img src={img(w.p, 'l')} srcset={`${img(w.p, 's')} ${wsz(w.p)[0]}w, ${img(w.p, 'l')} ${wsz(w.p)[1]}w`} sizes="(max-width: 760px) 100vw, 30vw" alt="" loading="lazy" decoding="async" style={`object-position:${photos[w.p].pos}`} />
+              <span class="ix" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <span class="vt" aria-hidden="true">{w.k}</span>
+              <div class="fx"><i>{w.a}</i><b>{w.k}</b><p>{w.t}</p></div>
+            </article>
           ))}
-          <figure class="fin">
-            <figcaption><i>And everything else</i><b>If an agent can do it, the farm can run it.</b>Day and night, one agent or a fleet. We have named a few; the limit is your imagination.</figcaption>
-          </figure>
+          <article class="fc farm" tabindex="0" aria-label="Why a farm: agents grow here" style={fanAt(who.length)}>
+            <span class="ix" aria-hidden="true">{String(who.length + 1).padStart(2, '0')}</span>
+            <span class="vt" aria-hidden="true">Why a farm</span>
+            <div class="fx"><i>Why a farm</i><b>Agents grow here.</b><p>Each agent has its own home, rules, duties, tools and a memory that grows with every job. Direct one with precision or a whole fleet; over time they become agents that know you.</p></div>
+          </article>
         </div>
       </div>
     </section>

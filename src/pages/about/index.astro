@@ -1,5 +1,5 @@
 ---
-// /about/: who makes Agent Farm and how. It speaks as MuVuSOFT only, with no owner's name, country or "individual"
+// /about/: who makes Agent Farm, why it is a farm (agents grow there; owner, 2026-10-14) and how. It speaks as MuVuSOFT only, with no owner's name, country or "individual"
 // here and no photo (owner, 2026-10-13); the legal pages name the seller. Every figure comes from data/facts.js and
 // data/features.js, and the promises are the ones the Local chapter and the privacy page make (facts.licence).
 import Base from '../../layouts/Base.astro';
@@ -19,7 +19,7 @@ const NUM = [
   [String(facts.runtimeDependencies), 'runtime dependencies'],
 ];
 ---
-<Base title="About · Agent Farm" description={`Agent Farm is made by ${site.maker.name}: a farm of agents that keeps working, and nothing about your work sent to us.`} script="legal">
+<Base title="About · Agent Farm" description={`Agent Farm is made by ${site.maker.name}: a farm where AI agents keep working, grow into agents that know how you work, and send nothing about your work to us.`} script="legal">
   <Header />
   <main class="aboutp">
     <div class="wrap">
@@ -39,6 +39,13 @@ const NUM = [
         {NUM.map(([n, t]) => <li><b>{n}</b><span>{t}</span></li>)}
       </ul>
       <div class="cols">
+        <section class="farm">
+          <h2>Why a farm</h2>
+          <div>
+            <p><b>Because agents grow here.</b> On the farm an agent is not a chat window you close and lose. It has a home of its own: an identity, rules, duties, tools and a memory that grows with every job it does.</p>
+            <p>The corrections you keep making come back as rules it keeps, a judge checks what it brings back, and over the weeks it becomes an agent fitted to you: your habits, your standards, the way you work. Direct one with precision, or raise a whole fleet and put it into teams. The tools are the same.</p>
+          </div>
+        </section>
         <section>
           <h2>Why it exists</h2>
           <p>Every AI company sells its own tool, and each one wants your work inside it. Each stops when a context fills up or a plan runs out, and each forgets what the last session learned.</p>

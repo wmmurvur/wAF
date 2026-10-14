@@ -7,17 +7,6 @@
 #s-fleet .side{max-width:360px;display:grid;gap:16px;justify-items:start}
 #s-fleet .side p{margin:0;color:#b9baa9;font-size:16px;line-height:1.5}
 #s-fleet .side p b{color:var(--ink);font-weight:500}
-/* light or dark screens: Agent Farm takes the VS Code theme, so the wall can show both (a light theme drawn by inverting the dark one) */
-#s-fleet .thm{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
-#s-fleet .thm span{margin-right:6px}
-#s-fleet .thm button{font:inherit;letter-spacing:inherit;text-transform:inherit;padding:6px 11px;border:1px solid var(--rule);background:transparent;color:var(--dim);cursor:pointer}
-#s-fleet .thm button[aria-pressed=true]{border-color:var(--lime);color:var(--void);background:var(--lime)}
-#s-fleet .thm button[data-t=light][aria-pressed=true]{background:#f4f1ea;border-color:#f4f1ea}
-#s-fleet .wall .scr{transition:filter .7s ease,background-color .7s ease}
-#s-fleet .wall.light .scr{background-color:#120e0a;filter:invert(1) hue-rotate(180deg) saturate(1.35)}
-#s-fleet .wall.light .scr::after{opacity:0}
-#s-fleet .wall.light .mon{filter:brightness(.94)}
-#s-fleet .wall.light .mon.on,#s-fleet .wall.light .mon:hover{filter:none}
 #s-fleet .wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:10px;background:#050604;border:1px solid var(--rule);position:relative}
 #s-fleet .mon{position:relative;background:var(--bezel);border:1px solid #2a2b23;padding:6px 6px 22px;cursor:pointer;transition:filter .5s,opacity .5s,border-color .4s,box-shadow .5s;filter:saturate(.7) brightness(.8);container-type:inline-size;min-width:0}
 #s-fleet .mon.on{filter:none;border-color:var(--lime);box-shadow:0 0 0 1px var(--lime),0 0 60px -10px rgba(168,240,53,.45)}

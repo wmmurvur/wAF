@@ -8,6 +8,7 @@
 
 export const page = [
   { id: 's-relay', label: 'Relay' },
+  { id: 's-farm', label: 'Why a farm' },
   { id: 's-fleet', label: 'The fleet' },
   { id: 's-console', label: 'The console' },
   { id: 's-atlas', label: 'The whole farm' },
@@ -26,7 +27,7 @@ export const page = [
   { id: 's-close', label: 'Start' },
 ];
 
-/** the section's number on the page, "01" to "16" */
+/** the section's number on the page, "01" to "17" */
 export const no = id => {
   const i = page.findIndex(p => p.id === id);
   if (i < 0) throw new Error(`page.js has no section ${id}`);

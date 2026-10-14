@@ -146,3 +146,70 @@
 @media (max-width:520px){:is(#s-console,#s-local) .rail{grid-template-columns:minmax(0,1fr)}
 :is(#s-console,#s-local) .rd{border-right:0!important;border-bottom:1px solid var(--rule)!important}
 :is(#s-console,#s-local) .rd:last-child{border-bottom:0!important}}
+/* light or dark: Agent Farm takes the VS Code theme. The window has a light dress (from the owner's light-theme
+   screenshot, demo data), and a curtain (a clipped copy of the window, wiped across) turns one into the other. */
+#s-console .thm{position:absolute;bottom:16px;right:clamp(16px,3vw,40px);z-index:6;display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+#s-console .thm span{margin-right:6px}
+#s-console .thm button{font:inherit;letter-spacing:inherit;text-transform:inherit;padding:7px 12px;border:1px solid var(--rule);background:rgba(9,10,7,.7);color:var(--dim);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+#s-console .thm button:hover{color:var(--ink);border-color:#5f6056}
+#s-console .thm button[aria-pressed=true]{background:var(--lime);border-color:var(--lime);color:var(--void)}
+#s-console .thm button[data-t=light][aria-pressed=true]{background:#f8f8f6;border-color:#f8f8f6}
+#s-console .win.cur{transform:translateZ(1px);clip-path:inset(0 100% 0 0);animation:console-cur .95s cubic-bezier(.7,0,.25,1) forwards;pointer-events:none}
+#s-console .seam{position:absolute;top:-6px;bottom:-6px;left:0;width:2px;background:var(--lime);box-shadow:0 0 18px 3px rgba(168,240,53,.8);transform:translateZ(2px);animation:console-seam .95s cubic-bezier(.7,0,.25,1) forwards;pointer-events:none}
+@keyframes console-cur{to{clip-path:inset(0 0 0 0)}}
+@keyframes console-seam{to{left:100%;opacity:.0}}
+#s-console .win.light{background:#fff;border-color:#cfcfcf;color:#3b3b3b;box-shadow:0 0 0 1px rgba(0,0,0,.3),0 50px 120px -30px rgba(0,0,0,.9),0 0 90px -20px rgba(255,255,255,.22)}
+#s-console .win.light .tbar{background:#f8f8f8;color:#3b3b3b;border-bottom-color:#e5e5e5}
+#s-console .win.light .tbar .title,#s-console .win.light .tbar .dots{color:#616161}
+#s-console .win.light .act{background:#f8f8f8;border-right-color:#e5e5e5}
+#s-console .win.light .act i{border-color:#8b8b8b}
+#s-console .win.light .act i.on{border-color:#2c8a2c}
+#s-console .win.light .act .badge{background:#f2c94c}
+#s-console .win.light .side{background:#f8f8f8;border-right-color:#e5e5e5}
+#s-console .win.light .side h6{color:#616161}
+#s-console .win.light .side .row{color:#3b3b3b}
+#s-console .win.light .side .row span{color:#8b8b8b}
+#s-console .win.light .side .row.st b{color:#a86b00}
+#s-console .win.light .side .ok,#s-console .win.light .tool b,#s-console .win.light .ln.sys .txt,#s-console .win.light .reload .box b{color:#2c8a2c}
+#s-console .win.light .tabs{background:#f3f3f3;border-bottom-color:#e5e5e5}
+#s-console .win.light .tab{color:#616161;border-right-color:#e5e5e5}
+#s-console .win.light .tab.on{background:#fff;color:#c2410c;border-top-color:#c2410c}
+#s-console .win.light .ph h3,#s-console .win.light .card .h b,#s-console .win.light .card .t,#s-console .win.light .ln .txt{color:#1f1f1f}
+#s-console .win.light .ph p,#s-console .win.light .card .m,#s-console .win.light .card .s,#s-console .win.light .strip{color:#616161}
+#s-console .win.light .pill{background:#f3f3f3;color:#3b3b3b;box-shadow:inset 0 0 0 1px #e2e2e2}
+#s-console .win.light .pill.l{box-shadow:inset 0 0 0 1px #e2e2e2,inset 2px 0 0 #c2185b}
+#s-console .win.light .pill.n{box-shadow:inset 0 0 0 1px #e2e2e2,inset 2px 0 0 #d9a400}
+#s-console .win.light .pill.q{box-shadow:inset 0 0 0 1px #e2e2e2,inset 2px 0 0 #0f7b84}
+#s-console .win.light .newbtn,#s-console .win.light .resume{background:#f3f3f3;color:#3b3b3b}
+#s-console .win.light .wait{border-color:#93cf93;background:#ecf7ec;color:#1d5e1d}
+#s-console .win.light .wait b{color:#2c8a2c}
+#s-console .win.light .wait .lg{color:#3f7d3f}
+#s-console .win.light .card{background:#fff;border-color:#dcdcdc}
+#s-console .win.light .card.work{background:#f3fafb;border-color:#a9d3d6;border-left-color:#0f7b84}
+#s-console .win.light .card.turn{background:#f4faf2;border-color:#b5dbae;border-left-color:#2c8a2c}
+#s-console .win.light .card .h span{color:#8b8b8b}
+#s-console .win.light .eng{border-color:#b5651d;color:#b5651d}
+#s-console .win.light .eng.agy{border-color:#c2185b;color:#c2185b}
+#s-console .win.light .acct{border-color:#c8c8c8;color:#616161}
+#s-console .win.light .leg{color:#a86b00}
+#s-console .win.light .card .s em{color:#0f7b84}
+#s-console .win.light .card .s em.y{color:#2c8a2c}
+#s-console .win.light .dotp{background:#0f7b84}
+#s-console .win.light .card.turn .dotp{background:#2c8a2c}
+#s-console .win.light .ln .who{color:#8b8b8b}
+#s-console .win.light .ln.you .txt{background:#eef6e8;border-left-color:#2c8a2c;color:#1f1f1f}
+#s-console .win.light .ln .caret{background:#2c8a2c}
+#s-console .win.light .tool{color:#3b3b3b;border-top-color:#e5e5e5}
+#s-console .win.light .foot{border-top-color:#e5e5e5}
+#s-console .win.light .inp{background:#fff;border-color:#cfcfcf;color:#8b8b8b}
+#s-console .win.light .ctrls{color:#3b3b3b}
+#s-console .win.light .sel{background:#fff;border-color:#cfcfcf}
+#s-console .win.light .btn2 span{background:#f3f3f3}
+#s-console .win.light .sbar{background:#f8f8f8;color:#3b3b3b;border-top-color:#e5e5e5}
+#s-console .win.light .sbar .q{color:#b5651d}
+#s-console .win.light .reload{background:rgba(255,255,255,.94)}
+#s-console .win.light .reload .box{color:#3b3b3b}
+#s-console .win.light .reload .prog{background:#e2e2e2}
+#s-console .win.light .reload .prog i{background:#2c8a2c}
+@media (max-width:900px){#s-console .thm{position:static;justify-self:start;flex-wrap:wrap;max-width:calc(100vw - 32px);margin:0 0 14px 16px}}
+@media (max-width:520px){#s-console .thm span{flex-basis:100%;margin:0 0 4px}}

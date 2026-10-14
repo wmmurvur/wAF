@@ -1,5 +1,5 @@
 ---
-// agentfarm.space, the landing page. The order lives in data/page.js (plan v0.7 §5): the relay hero, the fleet wall,
+// agentfarm.space, the landing page. The order lives in data/page.js (plan v0.7 §5): the relay hero, why a farm, the fleet wall,
 // the whole farm on one board, then one chapter per district of the board, each opened by its tiles, and the close.
 // docs/DESIGN.md has the map.
 import Base from '../layouts/Base.astro';
@@ -8,6 +8,7 @@ import SideIndex from '../components/SideIndex.astro';
 import Footer from '../components/Footer.astro';
 import Chapter from '../components/Chapter.astro';
 import Relay from '../components/sections/Relay.astro';
+import Farm from '../components/sections/Farm.astro';
 import Fleet from '../components/sections/Fleet.astro';
 import Atlas from '../components/sections/Atlas.astro';
 import Days from '../components/sections/Days.astro';
@@ -28,7 +29,7 @@ import Band from '../components/Band.astro';
 import { page } from '../data/page.js';
 
 const SECTION = {
-  's-relay': Relay, 's-fleet': Fleet, 's-atlas': Atlas, 's-days': Days, 's-rules': Rules, 's-backlog': Backlog,
+  's-relay': Relay, 's-farm': Farm, 's-fleet': Fleet, 's-atlas': Atlas, 's-days': Days, 's-rules': Rules, 's-backlog': Backlog,
   's-studio': Studio, 's-auto': Auto, 's-console': Console, 's-together': Together, 's-memory': Memory, 's-brains': Brains, 's-bridge': Bridge,
   's-waits': NeverWaits,
   's-meter': Meter, 's-local': Local, 's-close': Close,
@@ -38,7 +39,7 @@ const blocks = page.map((p, i) => ({ C: SECTION[p.id], opens: p.d !== undefined 
 ---
 <Base
   title="Agent Farm · Mission control for AI agents in VS Code"
-  description="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us."
+  description="Agent Farm, in VS Code: direct one AI agent with precision or a whole fleet. Claude Code, Codex, Gemini, Antigravity and OpenCode work your backlog day and night, and grow into agents that know how you work."
 >
   <Header />
   <SideIndex />

@@ -2,6 +2,14 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.6 · 2026-10-14
+
+- Landing, new section 02 "Why a farm", right after the relay: agents are raised here, fitted to you. One agent's home (memory, judge pass rate, toolbox, rules learned from you) grows from Day 1 to Week 3 to Month 4 while it is on screen; the ages can be picked. The side index and the section numbers follow. The landing and About descriptions say it too.
+- Console section: the window can be dark or light, as VS Code is set. A "Your VS Code theme" Dark / Light switch sits at its foot, and a curtain wipes one into the other; left alone, the assembled window changes now and then. The light window is drawn from the light theme, with demo data.
+- The fleet wall's theme switch is gone; the wall is dark again, with "Open the console" alone.
+- Pricing, "Not only code.": the sliding row becomes a fanned deck of ten cards, held like a hand of cards. Each shows its slice of photo and its name; the one under the pointer (or the next, in turn, when it is left alone) opens and reads. On a phone it stands up as a stack, tap to open. New words for every card, Code first; the closing card says why it is a farm, in place of "if an agent can do it".
+- About: a "Why a farm" block across both columns.
+
 ## 0.13.5 · 2026-10-14
 
 - The fleet wall can show its six screens light or dark (Agent Farm follows the VS Code theme). A Dark / Light switch sits under "Open the console", and the first time the wall is seen it turns light for a moment and back.

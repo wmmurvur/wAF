@@ -1,0 +1,58 @@
+---
+// Why a farm (owner, 2026-10-14): the name says what the product is for. Agents are not rented by the chat here; they
+// live on the farm and grow. From the owner's feature list: §14 (each agent has its own home: identity file, duties,
+// toolbox and a memory that keeps growing; "not a throwaway chat window but a specialist that lives, learns and keeps
+// on the farm") and §15 (a judge model scores the work; repeated corrections are turned into proposed rules).
+// The card on the right is one agent's home at three ages, with demo data; scripts/farm.js plays the ages in turn.
+import '../../styles/sections/farm.css';
+import { no } from '../../data/page.js';
+/* one agent at three ages: memory notes, judge pass rate, and the rules it has learned from you so far */
+const AGES = [
+  { k: 'Day 1', mem: 12, pass: 71, tools: 6 },
+  { k: 'Week 3', mem: 418, pass: 89, tools: 9 },
+  { k: 'Month 4', mem: 2960, pass: 97, tools: 14 },
+];
+const RULES = [
+  { at: 1, t: 'Writes commit messages the way you do' },
+  { at: 1, t: 'Runs the tests before every push' },
+  { at: 2, t: 'Leaves your morning note by 08:00' },
+  { at: 2, t: 'Keeps Monday\'s quota for the release' },
+  { at: 2, t: 'Asks before it touches the billing code' },
+];
+const last = AGES[AGES.length - 1];
+---
+<section id="s-farm" class="gap" aria-label="Why a farm: agents grow here and become agents fitted to you">
+  <div class="wrap">
+    <p class="sx"><b>{no('s-farm')}</b> Why a farm</p>
+    <div class="fgrid">
+      <div class="say">
+        <p class="pre">Not a chat window. A place to grow.</p>
+        <h2>Agents are raised here. <em>Fitted to you.</em></h2>
+        <p class="lead">A chat forgets you when it closes. An agent on the farm has a home of its own, and everything it does there stays. It notices the corrections you keep making, a judge scores its work, and week by week it works more the way you would.</p>
+        <ul class="pts">
+          <li><b>A home of its own.</b> Identity, rules, duties, tools and a memory that grows with every job, on your disk.</li>
+          <li><b>It learns you.</b> The corrections you repeat come back as rules for it to keep, once you say yes.</li>
+          <li><b>One agent or a fleet.</b> Direct one with precision, or a whole fleet with the same tools.</li>
+        </ul>
+      </div>
+      <figure class="home" id="g-home" data-ages={JSON.stringify(AGES)} aria-label={`One agent's home at three ages, demo data. By ${last.k}: ${last.mem.toLocaleString('en-US')} notes in memory, ${last.pass}% of its work passes the judge, and five rules learned from you.`}>
+        <div class="hd"><span class="dot"></span><b>developer</b><span class="eng">Claude</span><span class="r">agent home</span></div>
+        <div class="tabs" aria-hidden="true"><span>Identity</span><span>Duties</span><span>Toolbox</span><span class="on">Memory</span><span>Rules</span></div>
+        <div class="kv">
+          <div><span class="k">Memory</span><span class="v" id="g-mem">{last.mem.toLocaleString('en-US')}</span><span class="n">notes kept</span></div>
+          <div><span class="k">Judge</span><span class="v" id="g-pass">{last.pass}%</span><span class="n">work that passes</span></div>
+          <div><span class="k">Toolbox</span><span class="v" id="g-tools">{last.tools}</span><span class="n">tools it uses</span></div>
+        </div>
+        <div class="grow" aria-hidden="true"><i id="g-bar" style="width:100%"></i></div>
+        <p class="lh">Rules learned from you</p>
+        <ol class="rules" id="g-rules">
+          <li class="none out">None yet. It reads your project and its instructions first.</li>
+          {RULES.map(r => <li data-at={r.at}><span>✓</span>{r.t}</li>)}
+        </ol>
+        <div class="ages" role="group" aria-label="The same agent at three ages">
+          {AGES.map((a, i) => <button type="button" data-i={i} aria-pressed={String(i === AGES.length - 1)}>{a.k}</button>)}
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
