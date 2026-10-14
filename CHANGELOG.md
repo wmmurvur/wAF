@@ -2,6 +2,12 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.5 · 2026-10-14
+
+- The fleet wall can show its six screens light or dark (Agent Farm follows the VS Code theme). A Dark / Light switch sits under "Open the console", and the first time the wall is seen it turns light for a moment and back.
+- Pricing, "Not only code.": the row keeps to places to use it, with Code first again, then a content studio, automation at any size (from one small task to a team with a lead that runs a project), a second brain, books and theses, a life OS, projects on autopilot, your own workflows, channels and podcasts, and an agent OS. The feature tiles (phone, engines, privacy, costs, the night) are gone, and a wider last tile closes it: if an agent can do it, the farm can run it.
+- Early access: "Mostly for" becomes "What would you use it for? Pick any", nine choices that follow the row; early-access.php keeps them joined by "+". The privacy page says so (dated 2026-10-13).
+
 ## 0.13.4 · 2026-10-13
 
 - Pricing, "Not only code." is back as the title, without the extra paragraph, and its row now slides: fourteen ways in beyond code, each with who it is for (a content studio, a second brain, automation, a life OS, projects on autopilot, an agent OS, through the night, research and writing, channels and podcasts, from anywhere, any engine, teams and companies, yours alone, costs in sight). Arrows move it on a wide screen; on a phone it is swiped.

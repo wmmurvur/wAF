@@ -3,7 +3,7 @@
 // (publisher muvusoft, name agent-farm in the extension's package.json). The changelog gets its own page with the /features pages.
 
 export const site = {
-  version: '0.13.4',                                        // this website, see CHANGELOG.md
+  version: '0.13.5',                                        // this website, see CHANGELOG.md
   // Agent Farm's version, as the demos show it running, and whether it is in beta (owner, 2026-10-13). Change them
   // here and every page follows: the top chip, the demo screens and figures, the tiles and the footer. While `beta`
   // is true every version the site prints carries "-beta" (vtag below).
@@ -15,7 +15,7 @@ export const site = {
   // Who sells Agent Farm and how to reach them, for the terms, privacy and refund pages and the footer (owner,
   // 2026-10-12). The owner trades as an individual under the MuVuSOFT name. An empty field shows as a marked gap on those pages; while `draft` is true they
   // carry a draft notice and ask search engines not to index them.
-  legal: { name: 'Murat Vural', country: 'Vietnam', email: 'agentfarm@muvusoft.uk', draft: true, updated: '2026-10-12' },
+  legal: { name: 'Murat Vural', country: 'Vietnam', email: 'agentfarm@muvusoft.uk', draft: true, updated: '2026-10-13' },
 };
 
 /** the way back to the site's top folder from a page: '' on the landing, '../' on /features/, '../../' below it */

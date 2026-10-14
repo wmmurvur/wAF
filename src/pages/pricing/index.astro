@@ -22,27 +22,25 @@ const show = v => typeof v === 'number' ? String(v) : v;
 const buy = p => !pricing.beta && pricing.checkout[p.id];
 const href = (D, f) => hasPage(D) ? `../features/${D.slug}/#${f.id}` : `../#ch-${D.id}`;
 const img = (p, s) => `${root}assets/photos/${p}-${s}.jpg`;
-// The kinds of work beyond code (owner, 2026-10-13): a row that slides sideways, so it can say a lot and stay short.
-// Each tile is a way in, professional or personal, that makes someone who thinks "I don't code" say "I could use it
-// for that". The first few are the widest doors. Each maps to a district (III, VI, IV, VIII, II, V, I, VII, X, IX).
+// The kinds of work (owner, 2026-10-13): a row that slides sideways, so it can say a lot and stay short. Every tile is a
+// place to use it, professional or personal, not a feature (features have their own pages): someone who thinks "I don't
+// code" should find their own work here. Code stays first; the last, wider tile says the list is only a start.
 const who = [
+  { p: 'w-code', a: 'For developers', k: 'Code', t: 'Fixes, tests and refactors carried on, leg after leg, while you sleep.' },
   { p: 'w-video', a: 'For creators', k: 'A content studio', t: 'Films, shorts, podcasts and posts, made by a crew of agents from idea to cut.' },
-  { p: 'd-memory', a: 'For researchers', k: 'A second brain', t: 'What your agents learn becomes a wiki that keeps growing. No chat is ever lost.' },
-  { p: 'd-automation', a: 'For every routine', k: 'Automation', t: 'Say it in one sentence, or chain it: schedules, triggers and workflows that run themselves.' },
+  { p: 'd-automation', a: 'For every routine', k: 'Automation, any size', t: 'One small task every morning, or a whole team with a lead agent that runs a project on its own.' },
+  { p: 'd-memory', a: 'For knowledge work', k: 'A second brain', t: 'What your agents learn becomes a wiki that keeps growing. No chat is ever lost.' },
+  { p: 'w-writing', a: 'For authors and academics', k: 'Books and theses', t: 'A book, a thesis or a paper as a plan the agents work through, chapter by chapter.' },
   { p: 'd-bridge', a: 'For your own life', k: 'A life OS', t: 'A briefing read aloud each morning, reminders, small jobs off your plate. A lighter day.' },
-  { p: 'd-projects', a: 'For teams', k: 'Projects on autopilot', t: 'Hand a team\'s backlog to the agents. They work it off in your order and report back.' },
-  { p: 'd-team', a: 'For power users', k: 'An agent OS', t: 'Five engines as one organised fleet: teams, roles, chains, and a ping when they need you.' },
-  { p: 'd-relay', a: 'For deadlines', k: 'Through the night', t: 'A full context, a spent plan, three in the morning: the work hands itself on and keeps going.' },
-  { p: 'w-writing', a: 'For authors', k: 'Research and writing', t: 'A thesis, a book or a report as a backlog the agents work through, chapter by chapter.' },
+  { p: 'd-projects', a: 'For teams', k: 'Projects on autopilot', t: 'Hand the backlog to the agents. They work it off in your order and report back.' },
+  { p: 'w-team', a: 'For companies', k: 'Your own workflows', t: 'Put the company\'s processes on autopilot, on the accounts you already pay for.' },
   { p: 'w-audio', a: 'For channels', k: 'Channels and podcasts', t: 'Long videos cut into shorts, a weekly rhythm, an inbox that files your media itself.' },
-  { p: 'monday', a: 'On the go', k: 'From anywhere', t: 'Telegram, your voice or the phone app: give the farm a job and get the answer back.' },
-  { p: 'd-engines', a: 'For every AI you use', k: 'Any engine, any model', t: 'Claude Code, Codex, Gemini, Antigravity and OpenCode, plus the free models of the day.' },
-  { p: 'w-team', a: 'For companies', k: 'Teams and companies', t: 'From one person to a whole company: your workflows on autopilot, on the accounts you already pay for.' },
-  { p: 'd-privacy', a: 'For private work', k: 'Yours alone', t: 'Your work stays on your machine. The free version never even calls home.' },
-  { p: 'd-measure', a: 'For budgets', k: 'Costs in sight', t: 'Budgets, honest numbers, and a cheaper model when the money runs low.' },
+  { p: 'd-team', a: 'For power users', k: 'An agent OS', t: 'Agents as one organised fleet: teams, roles, chains, and a ping when they need you.' },
 ];
+// What a reservation can say it is for (the form's chips; early-access.php keeps the same values). Follows the tiles.
+const USES = [['code', 'Code'], ['content', 'Video, audio and content'], ['knowledge', 'Research and a second brain'], ['automation', 'Automation and workflows'], ['life', 'My everyday life'], ['projects', 'Projects and backlogs'], ['fleet', 'A fleet of agents'], ['team', 'A team or a company'], ['other', 'Something else']];
 // srcset widths of each photo's two files
-const WSZ = { 'w-video': [500, 1000], monday: [560, 1000], 'd-bridge': [900, 1080], 'd-engines': [900, 1200] };
+const WSZ = { 'w-video': [500, 1000], 'w-code': [500, 1000], 'd-bridge': [900, 1080] };
 const wsz = p => WSZ[p] || (p.startsWith('d-') ? [900, 1800] : photos[p].tall ? [500, 1000] : [600, 1200]);
 const FAQ = [
   ['I already pay for Claude or ChatGPT. Why pay again?', 'Agent Farm never sells tokens. Your engines run on your own plans and keys, and that bill stays between you and them. What you pay for here is the farm around them: the relay, the night shift, the memory, the studio, the guards.'],
@@ -115,6 +113,9 @@ const FAQ = [
               <figcaption><i>{w.a}</i><b>{w.k}</b>{w.t}</figcaption>
             </figure>
           ))}
+          <figure class="fin">
+            <figcaption><i>And everything else</i><b>If an agent can do it, the farm can run it.</b>Day and night, one agent or a fleet. We have named a few; the limit is your imagination.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -175,15 +176,15 @@ const FAQ = [
           <h2 id="early-h">Reserve a paid plan.</h2>
           <p class="lead">Leave your address and we write once, when paid plans open. Until then the Free plan is yours to use.</p>
           <form id="ea" action={`${root}early-access.php`} method="post" novalidate>
-            <label class="f"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" maxlength="254" /></label>
             <div class="row">
+              <label class="f"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" maxlength="254" /></label>
               <label class="f"><span>Plan</span>
                 <select name="plan">{paid.map(p => <option value={p.id} selected={p.pick}>{p.n} · {money(p.price)} a month</option>)}<option value="unsure">Not sure yet</option></select>
               </label>
-              <label class="f"><span>Mostly for</span>
-                <select name="use"><option value="">Choose, if you like</option><option value="code">Code</option><option value="video">Video and audio</option><option value="writing">Writing and research</option><option value="team">A team's work</option><option value="other">Something else</option></select>
-              </label>
             </div>
+            <fieldset class="uses"><legend>What would you use it for? <em>Pick any</em></legend>
+              {USES.map(([v, t]) => <label><input type="checkbox" name="use[]" value={v} /><span>{t}</span></label>)}
+            </fieldset>
             <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
             <input type="hidden" name="t" value="" />
             <label class="ck"><input type="checkbox" name="consent" value="1" required /> <span>Write to me when paid plans open. Nothing else, and I can ask to be removed at any time (<a href="../privacy/#early-access">privacy</a>).</span></label>

@@ -50,6 +50,10 @@
 .prc .wtiles figure:hover img{transform:scale(1.05)}
 .prc .wtiles figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,10,7,0) 30%,rgba(9,10,7,.86) 66%,rgba(9,10,7,.96) 100%)}
 .prc .wtiles figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:16px;font-size:13.5px;line-height:1.45;color:#e6e6dc}
+.prc .wtiles .fin{grid-column:span 2;aspect-ratio:auto;display:flex;align-items:flex-end;background:radial-gradient(120% 90% at 85% 10%,rgba(168,240,53,.28),rgba(168,240,53,0) 60%),linear-gradient(160deg,#1b2410,#0d0e0a 70%);border:1px solid rgba(168,240,53,.35)}
+.prc .wtiles .fin::after{display:none}
+.prc .wtiles .fin figcaption{position:static;padding:22px 24px;font-size:15px;color:#d6d7c9}
+.prc .wtiles .fin figcaption b{font-size:clamp(26px,2.6vw,40px);line-height:.95;margin-bottom:12px;color:var(--lime)}
 .prc .wtiles figcaption i{display:block;margin-bottom:7px;font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
 .prc .wtiles figcaption b{display:block;margin-bottom:4px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(19px,1.6vw,23px);line-height:1;color:#fbfbf4}
 
@@ -109,6 +113,16 @@
 .prc form .f span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 .prc form input[type=email],.prc form select{font:inherit;font-size:15.5px;color:var(--ink);background:rgba(17,18,13,.92);border:1px solid #3a3b33;padding:12px 13px;min-width:0;border-radius:0}
 .prc form input[type=email]:focus,.prc form select:focus{outline:none;border-color:var(--lime)}
+.prc form .uses{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.prc form .uses legend{float:left;width:100%;padding:0;margin:0 0 4px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.prc form .uses legend em{font-style:normal;color:var(--faint)}
+.prc form .uses label{position:relative;cursor:pointer}
+.prc form .uses input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.prc form .uses span{display:block;padding:8px 12px;border:1px solid #3a3b33;background:rgba(17,18,13,.92);font-size:14px;color:#d6d7c9;transition:border-color .15s,background .15s}
+.prc form .uses label:hover span{border-color:#5f6056}
+.prc form .uses input:checked+span{border-color:var(--lime);color:var(--ink);background:rgba(168,240,53,.12)}
+.prc form .uses input:checked+span::before{content:"✓ ";color:var(--lime)}
+.prc form .uses input:focus-visible+span{outline:1px solid var(--lime);outline-offset:2px}
 .prc form .ck{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#c6c7b8}
 .prc form .ck input{margin-top:3px;accent-color:var(--lime)}
 .prc form .hp{position:absolute;left:-9999px}
@@ -137,6 +151,7 @@
   .prc .plan .k,.prc .plan .who{min-height:0}
   .prc form .row{grid-template-columns:minmax(0,1fr)}
   .prc .wtiles{grid-auto-columns:calc((100% - 10px) / 1.45)}
+  .prc .wtiles .fin{grid-column:span 1}
   .prc .karr{display:none}
   .prc .dist .c{display:none}
   .prc .lim table{min-width:620px}
