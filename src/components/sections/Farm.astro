@@ -3,9 +3,13 @@
 // live on the farm and grow. From the owner's feature list: §14 (each agent has its own home: identity file, duties,
 // toolbox and a memory that keeps growing; "not a throwaway chat window but a specialist that lives, learns and keeps
 // on the farm") and §15 (a judge model scores the work; repeated corrections are turned into proposed rules).
-// The card on the right is one agent's home at three ages, with demo data; scripts/farm.js plays the ages in turn.
+// Four parts, two by two: the title beside a person leading a team of agents (the owner's photo), then the words
+// beside one agent's home at three ages, with demo data; scripts/farm.js plays the ages in turn. It sits in chapter I, just above "The farm is still at it."
 import '../../styles/sections/farm.css';
 import { no } from '../../data/page.js';
+import { photos } from '../../data/photos.js';
+import { rootOf } from '../../data/site.js';
+const root = rootOf(Astro.url);
 /* one agent at three ages: memory notes, judge pass rate, and the rules it has learned from you so far */
 const AGES = [
   { k: 'Day 1', mem: 12, pass: 71, tools: 6 },
@@ -25,9 +29,12 @@ const last = AGES[AGES.length - 1];
   <div class="wrap">
     <p class="sx"><b>{no('s-farm')}</b> Why a farm</p>
     <div class="fgrid">
-      <div class="say">
+      <div class="fhd">
         <p class="pre">Not a chat window. A place to grow.</p>
         <h2>Agents are raised here. <em>Fitted to you.</em></h2>
+      </div>
+      <div class="ph"><img src={`${root}assets/photos/farm-l.jpg`} srcset={`${root}assets/photos/farm-s.jpg 560w, ${root}assets/photos/farm-l.jpg 800w`} sizes="(max-width: 900px) 100vw, 45vw" alt={photos.farm.alt} loading="lazy" decoding="async" width="800" height="500" /><span class="tag">You lead · they learn you</span></div>
+      <div class="say">
         <p class="lead">A chat forgets you when it closes. An agent on the farm has a home of its own, and everything it does there stays. It notices the corrections you keep making, a judge scores its work, and week by week it works more the way you would.</p>
         <ul class="pts">
           <li><b>A home of its own.</b> Identity, rules, duties, tools and a memory that grows with every job, on your disk.</li>

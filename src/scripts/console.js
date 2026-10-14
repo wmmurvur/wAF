@@ -77,7 +77,7 @@ const deck = $('deckEl'), stage = $('deck'), sticky = $('sticky'), win = $('win'
 let prog = 0;
 function fit() {
   const w = sticky.clientWidth, h = innerHeight;
-  if (flat()) { deck.style.setProperty('--s', Math.min(1, (w - 32) / 1200)); return; }
+  if (flat()) { deck.style.setProperty('--s', Math.min(1, (w - 32) / 1200)); $('capBar').style.width = '100%'; $('capText').textContent = 'The real Console, rebuilt · demo data'; return; }
   deck.style.setProperty('--s', Math.min((w - 80) / 1200, (h - 120) / 690, 1.05).toFixed(3));
 }
 function onScroll() {
@@ -112,11 +112,14 @@ addEventListener('scroll', onScroll, { passive: true });
 fit(); onScroll();
 
 /* light or dark, as VS Code is set: a curtain (a copy of the window in the other dress, wiped across) turns one into the
-   other. While nobody has picked, the window changes dress now and then once it is assembled and on screen. */
-const thm = [...document.querySelectorAll('#s-console .thm button')];
-let dress = 'dark', picked = false, busy = false;
+   other. Nobody goes looking for a theme switch, so until someone uses it the window shows it by itself: once it is
+   assembled and in view it turns light, a note by the switch says so, and a few seconds later it turns dark again.
+   The switch lights up with it, so the eye finds where the change came from. A click ends the show for good. */
+const thmBox = document.getElementById('c-thm'), thm = [...thmBox.querySelectorAll('button')];
+let dress = 'dark', picked = false, busy = false, queued = null;
 function wear(t) {
-  if (t === dress || busy) return;
+  if (busy) { queued = t; return; }
+  if (t === dress) return;
   dress = t;
   thm.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.t === t)));
   if (reduce) { win.classList.toggle('light', t === 'light'); return; }
@@ -126,15 +129,29 @@ function wear(t) {
   c.classList.toggle('light', t === 'light'); c.classList.add('cur'); c.setAttribute('aria-hidden', 'true');
   const seam = document.createElement('i'); seam.className = 'seam';
   win.after(c, seam);
-  setTimeout(() => { win.classList.toggle('light', t === 'light'); c.remove(); seam.remove(); busy = false; }, 980);
+  setTimeout(() => {
+    win.classList.toggle('light', t === 'light'); c.remove(); seam.remove(); busy = false;
+    if (queued) { const q = queued; queued = null; wear(q); }
+  }, 980);
 }
-thm.forEach(b => b.addEventListener('click', () => { picked = true; wear(b.dataset.t); }));
+thm.forEach(b => b.addEventListener('click', () => { picked = true; thmBox.classList.remove('hint'); wear(b.dataset.t); }));
 if (!reduce) {
-  let held = 0;
+  let settled = 0, gap = 0, show = false;
+  const inView = () => { const r = win.getBoundingClientRect(); return r.top > -r.height * 0.25 && r.bottom < innerHeight + r.height * 0.25; };
   setInterval(() => {
-    if (picked || busy || !vis['s-console'] || !(flat() || prog > 0.9)) { held = 0; return; }
-    if (++held >= 7) { held = 0; wear(dress === 'dark' ? 'light' : 'dark'); }
-  }, 1000);
+    if (picked || busy || show) return;
+    if (!vis['s-console'] || !(flat() ? inView() : prog > 0.7)) { settled = 0; return; }
+    if (gap > 0) { gap--; return; }
+    if (++settled < 2) return;
+    settled = 0; show = true;
+    const lb = thm.find(b => b.dataset.t === 'light'); thmBox.style.setProperty('--tipx', lb.offsetLeft + lb.offsetWidth / 2 - 7 + 'px');
+    wear('light'); thmBox.classList.add('hint');
+    setTimeout(() => {
+      show = false; gap = 20;
+      if (picked) return;
+      thmBox.classList.remove('hint'); wear('dark');
+    }, 5400);
+  }, 500);
 }
 
 if (reduce) {

@@ -2,17 +2,18 @@
 // section number on each one (".sx") and the side index are computed from it, so moving a section is one line here.
 // d: the chapter (an index into districts in data/features.js); sections with the same d follow one chapter opener.
 // The console comes third, right after the fleet wall, as the three v2 heroes were planned (owner, 2026-10-12);
-// chapter V's tiles that it shows still lead up to it.
+// chapter V's tiles that it shows still lead up to it. Why a farm sits just above "The farm is still at it." (owner,
+// 2026-10-14: not at the top, where it pushed the fleet and the console down).
 // band: a human band (components/Band.astro, data/photos.js) before the section, and before its chapter opener if it
 // opens one; after: a band after the section.
 
 export const page = [
   { id: 's-relay', label: 'Relay' },
-  { id: 's-farm', label: 'Why a farm' },
   { id: 's-fleet', label: 'The fleet' },
   { id: 's-console', label: 'The console' },
   { id: 's-atlas', label: 'The whole farm' },
-  { id: 's-days', label: 'Day and night', d: 0, band: 'friday', after: 'night' },
+  { id: 's-days', label: 'Day and night', d: 0, band: 'friday' },
+  { id: 's-farm', label: 'Why a farm', d: 0, after: 'night' },
   { id: 's-rules', label: 'The rules of the relay', d: 0 },
   { id: 's-backlog', label: 'Backlog', d: 1, band: 'backlog' },
   { id: 's-studio', label: 'Studio', d: 2, band: 'studio' },

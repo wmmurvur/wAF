@@ -22,6 +22,8 @@ export const photos = {
   'd-bridge':     { src: 'owner', alt: 'A woman in a café smiling at her phone', pos: '70% 40%' },
   'd-measure':    { src: 'owner', alt: 'A hand holding a calculator over a folder of bills', pos: '50% 55%' },
   'd-privacy':    { src: 'owner', alt: 'A quiet home office: a desk, a chair and a lamp by the wall', pos: '50% 50%' },
+  // the landing's "Why a farm" section: a person leading a team of agents (the owner sent it, 2026-10-14)
+  farm:           { src: 'owner', alt: 'A person standing among robots, guiding them by threads to screens of code, documents, search and charts', pos: '50% 50%' },
   // the pricing page: the kinds of work one farm does, and a face beside its questions
   'w-code':       { src: 'owner', alt: 'A developer with headphones at a terminal in a dim room', pos: '50% 40%', tall: true },
   'w-video':      { src: 'owner', alt: 'A video editor at a desk under a wall of pinned frames', pos: '50% 60%', tall: true },

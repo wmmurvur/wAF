@@ -2,6 +2,12 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.7 · 2026-10-14
+
+- Console: nobody goes looking for a theme switch, so the window shows it by itself. Once it is assembled and in view, it turns light, a note by the switch says "Light theme, too" and the Light button glows; a few seconds later it turns dark again, and it does so now and then while on screen. One click on the switch ends the show for good.
+- Console on a phone: the window, the switch and the caption keep a 16px gutter, and the caption reads "The real Console, rebuilt · demo data".
+- Landing: "Why a farm" moves down from the top to chapter I, just above "The farm is still at it.", so the fleet and the Console come first again. It is laid out two by two: the title beside a photo of a person leading a team of agents (the owner's), the words beside the agent's home.
+
 ## 0.13.6 · 2026-10-14
 
 - Landing, new section 02 "Why a farm", right after the relay: agents are raised here, fitted to you. One agent's home (memory, judge pass rate, toolbox, rules learned from you) grows from Day 1 to Week 3 to Month 4 while it is on screen; the ages can be picked. The side index and the section numbers follow. The landing and About descriptions say it too.
