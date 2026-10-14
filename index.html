@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Agent Farm · Mission control for AI agents in VS Code</title>
-    <meta name="description" content="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us.">
+    <meta name="description" content="Agent Farm, in VS Code: direct one AI agent with precision or a whole fleet. Claude Code, Codex, Gemini, Antigravity and OpenCode work your backlog day and night, and grow into agents that know how you work.">
     <link rel="canonical" href="https://agentfarm.space/">
     
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="theme-color" content="#090a07">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Agent Farm · Mission control for AI agents in VS Code">
-    <meta property="og:description" content="Run Claude Code, Codex, Gemini, Antigravity and OpenCode from one console. Agents work through your project backlog item by item, code or not; relay chains run day and night across accounts, and nothing about your work is sent to us.">
+    <meta property="og:description" content="Agent Farm, in VS Code: direct one AI agent with precision or a whole fleet. Claude Code, Codex, Gemini, Antigravity and OpenCode work your backlog day and night, and grow into agents that know how you work.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.13.5"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.13.6"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.13.5"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.13.6"></head>
   <body>
     
   <div class="wrap">
@@ -39,7 +39,7 @@
   </header>
 </div>
   <nav class="snav" id="snav" aria-label="Sections and chapters">
-  <a href="#s-relay" data-for="s-relay"><span>Relay</span><i></i></a><a href="#s-fleet" data-for="s-fleet"><span>The fleet</span><i></i></a><a href="#s-console" data-for="s-console"><span>The console</span><i></i></a><a href="#s-atlas" data-for="s-atlas"><span>The whole farm</span><i></i></a><a href="#ch-relay" data-for="ch-relay s-days s-rules" style="--c:var(--yellow)"><span>I · Never stops</span><i></i></a><a href="#ch-projects" data-for="ch-projects s-backlog" style="--c:var(--teal)"><span>II · Any project</span><i></i></a><a href="#ch-studio" data-for="ch-studio s-studio" style="--c:var(--claude)"><span>III · Beyond code</span><i></i></a><a href="#ch-automation" data-for="ch-automation s-auto" style="--c:var(--violet)"><span>IV · Recipes and triggers</span><i></i></a><a href="#ch-team" data-for="ch-team s-together" style="--c:var(--cyan)"><span>V · Works as a team</span><i></i></a><a href="#ch-memory" data-for="ch-memory s-memory" style="--c:var(--agy)"><span>VI · Never forgets</span><i></i></a><a href="#ch-engines" data-for="ch-engines s-brains" style="--c:#7fa0f8"><span>VII · Any brain</span><i></i></a><a href="#ch-bridge" data-for="ch-bridge s-bridge s-waits" style="--c:var(--ink)"><span>VIII · Just ask</span><i></i></a><a href="#ch-measure" data-for="ch-measure s-meter" style="--c:#de8cf0"><span>IX · Measured, not claimed</span><i></i></a><a href="#ch-privacy" data-for="ch-privacy s-local" style="--c:var(--dim)"><span>X · Safe and yours alone</span><i></i></a><a href="#s-close" data-for="s-close"><span>Start</span><i></i></a>
+  <a href="#s-relay" data-for="s-relay"><span>Relay</span><i></i></a><a href="#s-farm" data-for="s-farm"><span>Why a farm</span><i></i></a><a href="#s-fleet" data-for="s-fleet"><span>The fleet</span><i></i></a><a href="#s-console" data-for="s-console"><span>The console</span><i></i></a><a href="#s-atlas" data-for="s-atlas"><span>The whole farm</span><i></i></a><a href="#ch-relay" data-for="ch-relay s-days s-rules" style="--c:var(--yellow)"><span>I · Never stops</span><i></i></a><a href="#ch-projects" data-for="ch-projects s-backlog" style="--c:var(--teal)"><span>II · Any project</span><i></i></a><a href="#ch-studio" data-for="ch-studio s-studio" style="--c:var(--claude)"><span>III · Beyond code</span><i></i></a><a href="#ch-automation" data-for="ch-automation s-auto" style="--c:var(--violet)"><span>IV · Recipes and triggers</span><i></i></a><a href="#ch-team" data-for="ch-team s-together" style="--c:var(--cyan)"><span>V · Works as a team</span><i></i></a><a href="#ch-memory" data-for="ch-memory s-memory" style="--c:var(--agy)"><span>VI · Never forgets</span><i></i></a><a href="#ch-engines" data-for="ch-engines s-brains" style="--c:#7fa0f8"><span>VII · Any brain</span><i></i></a><a href="#ch-bridge" data-for="ch-bridge s-bridge s-waits" style="--c:var(--ink)"><span>VIII · Just ask</span><i></i></a><a href="#ch-measure" data-for="ch-measure s-meter" style="--c:#de8cf0"><span>IX · Measured, not claimed</span><i></i></a><a href="#ch-privacy" data-for="ch-privacy s-local" style="--c:var(--dim)"><span>X · Safe and yours alone</span><i></i></a><a href="#s-close" data-for="s-close"><span>Start</span><i></i></a>
 </nav>
   <main>
     <section id="s-relay" aria-label="The baton relay, live demo">
@@ -88,12 +88,46 @@
       </div>
     </div>
   </div>
+</section><section id="s-farm" class="gap" aria-label="Why a farm: agents grow here and become agents fitted to you">
+  <div class="wrap">
+    <p class="sx"><b>02</b> Why a farm</p>
+    <div class="fgrid">
+      <div class="say">
+        <p class="pre">Not a chat window. A place to grow.</p>
+        <h2>Agents are raised here. <em>Fitted to you.</em></h2>
+        <p class="lead">A chat forgets you when it closes. An agent on the farm has a home of its own, and everything it does there stays. It notices the corrections you keep making, a judge scores its work, and week by week it works more the way you would.</p>
+        <ul class="pts">
+          <li><b>A home of its own.</b> Identity, rules, duties, tools and a memory that grows with every job, on your disk.</li>
+          <li><b>It learns you.</b> The corrections you repeat come back as rules for it to keep, once you say yes.</li>
+          <li><b>One agent or a fleet.</b> Direct one with precision, or a whole fleet with the same tools.</li>
+        </ul>
+      </div>
+      <figure class="home" id="g-home" data-ages="[{&quot;k&quot;:&quot;Day 1&quot;,&quot;mem&quot;:12,&quot;pass&quot;:71,&quot;tools&quot;:6},{&quot;k&quot;:&quot;Week 3&quot;,&quot;mem&quot;:418,&quot;pass&quot;:89,&quot;tools&quot;:9},{&quot;k&quot;:&quot;Month 4&quot;,&quot;mem&quot;:2960,&quot;pass&quot;:97,&quot;tools&quot;:14}]" aria-label="One agent's home at three ages, demo data. By Month 4: 2,960 notes in memory, 97% of its work passes the judge, and five rules learned from you.">
+        <div class="hd"><span class="dot"></span><b>developer</b><span class="eng">Claude</span><span class="r">agent home</span></div>
+        <div class="tabs" aria-hidden="true"><span>Identity</span><span>Duties</span><span>Toolbox</span><span class="on">Memory</span><span>Rules</span></div>
+        <div class="kv">
+          <div><span class="k">Memory</span><span class="v" id="g-mem">2,960</span><span class="n">notes kept</span></div>
+          <div><span class="k">Judge</span><span class="v" id="g-pass">97%</span><span class="n">work that passes</span></div>
+          <div><span class="k">Toolbox</span><span class="v" id="g-tools">14</span><span class="n">tools it uses</span></div>
+        </div>
+        <div class="grow" aria-hidden="true"><i id="g-bar" style="width:100%"></i></div>
+        <p class="lh">Rules learned from you</p>
+        <ol class="rules" id="g-rules">
+          <li class="none out">None yet. It reads your project and its instructions first.</li>
+          <li data-at="1"><span>✓</span>Writes commit messages the way you do</li><li data-at="1"><span>✓</span>Runs the tests before every push</li><li data-at="2"><span>✓</span>Leaves your morning note by 08:00</li><li data-at="2"><span>✓</span>Keeps Monday&#39;s quota for the release</li><li data-at="2"><span>✓</span>Asks before it touches the billing code</li>
+        </ol>
+        <div class="ages" role="group" aria-label="The same agent at three ages">
+          <button type="button" data-i="0" aria-pressed="false">Day 1</button><button type="button" data-i="1" aria-pressed="false">Week 3</button><button type="button" data-i="2" aria-pressed="true">Month 4</button>
+        </div>
+      </figure>
+    </div>
+  </div>
 </section><section id="s-fleet" class="gap" aria-label="The fleet: six Agent Farm pages on one wall">
   <div class="wrap">
-    <p class="sx"><b>02</b> The fleet</p>
+    <p class="sx"><b>03</b> The fleet</p>
     <div class="band">
       <div><p class="pre">Don't just talk to one agent.</p><h2 class="h1">Command an <em>entire fleet.</em></h2></div>
-      <div class="side"><p><b>Claude Code, Codex, Gemini, Antigravity and OpenCode</b> on one wall. Agents work through your backlog, sessions pass the baton day and night, accounts rotate before they run dry, and nothing about your work is sent to us.</p><a class="ghost" href="#s-console"><i></i>Open the console</a><div class="thm" role="group" aria-label="Screen theme"><span>Follows your VS Code theme</span><button type="button" data-t="dark" aria-pressed="true">Dark</button><button type="button" data-t="light" aria-pressed="false">Light</button></div></div>
+      <div class="side"><p><b>Claude Code, Codex, Gemini, Antigravity and OpenCode</b> on one wall. Agents work through your backlog, sessions pass the baton day and night, accounts rotate before they run dry, and nothing about your work is sent to us.</p><a class="ghost" href="#s-console"><i></i>Open the console</a></div>
     </div>
     <div class="wall" id="f-wall" role="group" aria-label="Six live Agent Farm pages, rebuilt from real screenshots with demo data">
         <div class="mon" data-i="0"><div class="scr"><div class="hd"><b>Live Timeline</b><span>● listening on 127.0.0.1:8377</span><span class="r" id="f-tlClock">12:10</span></div><canvas id="f-tl"></canvas></div><div class="lab"><span>CH-01 · Live Timeline</span><span>swim lanes</span></div></div>
@@ -122,7 +156,7 @@
   </div>
 </section><section id="s-console" class="gap" aria-label="The Agent Farm Console">
   <div class="wrap">
-    <p class="sx"><b>03</b> The console</p>
+    <p class="sx"><b>04</b> The console</p>
     <div class="hero">
       <div>
         <div class="eyebrow"><span class="live"></span><b>Rebuilt from real screenshots</b> · demo data</div>
@@ -141,6 +175,7 @@
   </div>
   <div class="stage" id="c-deck" role="group" aria-label="The Agent Farm Console, rebuilt from real screenshots with demo data">
     <div class="sticky" id="c-sticky">
+      <div class="thm" role="group" aria-label="Theme of the window"><span>Your VS Code theme</span><button type="button" data-t="dark" aria-pressed="true">Dark</button><button type="button" data-t="light" aria-pressed="false">Light</button></div>
       <div class="floor"></div>
       <div class="deck" id="c-deckEl">
         <div class="shadow"></div>
@@ -208,7 +243,7 @@
   </div>
 </section><section id="s-atlas" class="gap" aria-label="The whole farm: everything Agent Farm does, on one map">
   <div class="wrap">
-    <p class="sx"><b>04</b> The whole farm</p>
+    <p class="sx"><b>05</b> The whole farm</p>
     <div class="sh">
       <h2>You have seen the screens. <em>Here is the whole farm.</em></h2>
       <p class="lead">Every tile is something Agent Farm does today, <b>92</b> of them in ten districts. Code is only one part: the same farm cuts videos, writes up a thesis chapter and keeps a weekly channel going. Watch one event travel through the farm, or click any tile.</p>
@@ -325,7 +360,7 @@
   </div>
 </header><section id="s-days" class="gap" aria-label="One relay chain across three days and four nights, working through a backlog">
   <div class="wrap">
-    <p class="sx"><b>05</b> Day and night</p>
+    <p class="sx"><b>06</b> Day and night</p>
     <div class="sh">
       <div><p class="pre">chn_7f3a · demo data shaped like the real chain</p><h2 id="d-title">Ninety-two legs. <em>Three days, four nights.</em> Straight off the backlog.</h2></div>
       <p class="lead">Every block is one fresh session, coloured by the account it ran on. The band above it is the backlog item it was given: when an item closes, the next session opens on the next one in your queue. Night or day makes no difference to it. A hatched gap is the chain waiting for a quota reset, then waking by itself. Hover a block to read it.</p>
@@ -356,7 +391,7 @@
   <figcaption class="wrap"><p class="bk">Sat 03:12</p><p class="bt">The farm is still at it.</p><p class="bs">Leg after leg, account after account. Nobody has to stay awake for it.</p></figcaption>
 </figure><section id="s-rules" class="gap" aria-label="The rules of the relay">
   <div class="wrap">
-    <p class="sx"><b>06</b> The rules of the relay</p>
+    <p class="sx"><b>07</b> The rules of the relay</p>
     <div class="sh">
       <div><p class="pre">Real defaults · every one is a setting</p><h2>Runs <em>without you.</em> Braked so it never runs away.</h2></div>
       <p class="lead">Every number below is a setting you can change. These are the defaults the extension ships with.</p>
@@ -390,7 +425,7 @@
   </div>
 </header><section id="s-backlog" class="gap" aria-label="Backlog: every project runs on a work list that agents work through">
   <div class="wrap">
-    <p class="sx"><b>07</b> Backlog</p>
+    <p class="sx"><b>08</b> Backlog</p>
     <div class="sh">
       <div><p class="pre">Projects of any kind · the work list · the track</p><h2>You write the work down. <em>The fleet works it off.</em></h2></div>
       <p class="lead">An app, a documentary, a thesis, a campaign: every project has its own page, and the work waits in one plain Backlog.md file. You put it in order; agents take the top of it, item by item, and tick off what they finish. The Track tab remembers how each one was done.</p>
@@ -457,7 +492,7 @@
   </div>
 </header><section id="s-studio" class="gap" aria-label="Studio: agents make a short film, scene by scene">
   <div class="wrap">
-    <p class="sx"><b>08</b> Studio</p>
+    <p class="sx"><b>09</b> Studio</p>
     <div class="sh">
       <div><p class="pre">A production · scene by scene · demo</p><h2>Not only code. <em>A film, made by agents.</em></h2></div>
       <p class="lead">Give the Studio a brief. Agents write the shots and a video model makes them. A vision model checks each one against your criteria, and a shot that fails is made again with the critique. You keep or drop; Premiere gets the sequence.</p>
@@ -510,7 +545,7 @@
   </div>
 </header><section id="s-auto" class="gap" aria-label="Recipes and triggers: work that starts by itself">
   <div class="wrap">
-    <p class="sx"><b>09</b> Recipes and triggers</p>
+    <p class="sx"><b>10</b> Recipes and triggers</p>
     <div class="sh">
       <div><p class="pre">Tasks · schedules · triggers · workflows</p><h2>Work that starts <em>by itself.</em></h2></div>
       <p class="lead">On a clock, when a file lands, or from one sentence in plain words. Switch Gatekeeper on and, before any model is woken, Jev, a model that never chats and only decides, says whether there is real work. Noise wakes nobody.</p>
@@ -581,7 +616,7 @@
   </div>
 </header><section id="s-together" class="gap" aria-label="Missions: a lead, a team and an honest verdict">
   <div class="wrap">
-    <p class="sx"><b>10</b> Together</p>
+    <p class="sx"><b>11</b> Together</p>
     <div class="sh">
       <div><p class="pre">Missions · four engines, one team</p><h2>A lead, a team, <em>an honest verdict.</em></h2></div>
       <p class="lead">Give a mission to a lead. It plans round by round, hands tasks to agents on different engines, reads what comes back, and ends by saying how it really went. Partial is an answer too.</p>
@@ -676,7 +711,7 @@
   </div>
 </header><section id="s-memory" class="gap" aria-label="Never forgets: every session kept, and a wiki written from them">
   <div class="wrap">
-    <p class="sx"><b>11</b> Memory</p>
+    <p class="sx"><b>12</b> Memory</p>
     <div class="sh">
       <div><p class="pre">Sessions · wiki · Obsidian · memory</p><h2>Every session kept. <em>What mattered becomes a wiki.</em></h2></div>
       <p class="lead">Every conversation on this machine is kept, from every engine, with what it cost. Mark the turn that mattered; nothing is written yet. Later one run reads the marked turns and writes wiki pages into your Obsidian vault, one concept to a page, each with its sources.</p>
@@ -728,7 +763,7 @@
   </div>
 </header><section id="s-brains" class="gap" aria-label="Any brain: five engines, and other models through routes">
   <div class="wrap">
-    <p class="sx"><b>12</b> Brains</p>
+    <p class="sx"><b>13</b> Brains</p>
     <div class="sh">
       <div><p class="pre">Engines · routes · sign-ins · keys</p><h2>Five engines. <em>Any number of brains.</em></h2></div>
       <p class="lead">Claude Code, Codex, Gemini, Antigravity and OpenCode, each paid for the way you already pay. Claude Code and OpenCode can also run other models through a route: a provider's, a free one, or one at an address on your own machine. Keys stay in your OS keychain.</p>
@@ -776,7 +811,7 @@
   </div>
 </header><section id="s-bridge" class="gap" aria-label="Just ask: an agent sets the farm up for you">
   <div class="wrap">
-    <p class="sx"><b>13</b> Just ask</p>
+    <p class="sx"><b>14</b> Just ask</p>
     <div class="sh">
       <div><p class="pre">The bridge · one shell command · 579 operations</p><h2>You never have to learn any of this. <em>Just ask.</em></h2></div>
       <p class="lead">Every session is told at its start how to reach the farm. So you say it in one sentence and the agent does it: it reads what the farm can do, then calls it, one command at a time. Each call shows up as a notification. Nothing is done behind your back.</p>
@@ -802,7 +837,7 @@
   <figcaption class="wrap"><p class="bk">Mon 08:00</p><p class="bt">Coffee, and the weekend&#39;s work.</p><p class="bs">On your phone: nine items closed, two waiting for you. One tap answers each.</p></figcaption>
 </figure><section id="s-waits" class="gap" aria-label="Never waits: question cards, permissions, the phone, Telegram and sound">
   <div class="wrap">
-    <p class="sx"><b>14</b> Never waits</p>
+    <p class="sx"><b>15</b> Never waits</p>
     <div class="sh">
       <div><p class="pre">Question cards · phone · Telegram · sound · voice</p><h2>Away from the desk. <em>Never in the way.</em></h2></div>
       <p class="lead">An agent with a question doesn't sit idle for hours. A countdown runs, and when it ends the recommended answer goes in. Permissions are different: they wait for you, ring, and reach your phone or a Telegram chat, where one tap answers. Every event has its own sound, and any answer can be read aloud.</p>
@@ -1009,7 +1044,7 @@
   </div>
 </header><section id="s-meter" class="gap" aria-label="Measured, not claimed: cost, quota and quality in numbers">
   <div class="wrap">
-    <p class="sx"><b>15</b> Measured</p>
+    <p class="sx"><b>16</b> Measured</p>
     <div class="sh">
       <div><p class="pre">Cost · plan · quality</p><h2>Every cent counted. <em>Every check scored.</em></h2></div>
       <p class="lead">Agents always sound sure. The farm does not take their word for it: it reads what each step cost from the transcripts, keeps every account's window in view, and has the work judged against its criteria by the cheapest model that can tell.</p>
@@ -1073,7 +1108,7 @@
   </div>
 </header><section id="s-local" class="gap" aria-label="Local: nothing about your work reaches us, and the proof">
   <div class="wrap">
-    <p class="sx"><b>16</b> Local</p>
+    <p class="sx"><b>17</b> Local</p>
     <div class="lgrid">
       <div class="stmt">
         <p class="zero"><b>0</b> bytes</p>
@@ -1154,7 +1189,7 @@
   </div>
 </section><section id="s-close" class="gap" aria-label="Straight answers and how to start">
   <div class="wrap">
-    <p class="sx"><b>17</b> Start</p>
+    <p class="sx"><b>18</b> Start</p>
     <div class="sh">
       <div><p class="pre">Straight answers</p><h2>What it does, <em>and where it stops.</em></h2></div>
       <p class="lead">The limits are stated, not hidden. They follow from what the engines themselves offer.</p>
@@ -1175,7 +1210,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.5-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.6-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
       <a href="pricing/">Pricing</a>
