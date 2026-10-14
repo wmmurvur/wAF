@@ -14,7 +14,7 @@
     <meta property="og:description" content="Agent Farm, in VS Code: direct one AI agent with precision or a whole fleet. Claude Code, Codex, Gemini, Antigravity and OpenCode work your backlog day and night, and grow into agents that know how you work.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.13.6"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.13.7"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.13.6"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.13.7"></head>
   <body>
     
   <div class="wrap">
@@ -39,7 +39,7 @@
   </header>
 </div>
   <nav class="snav" id="snav" aria-label="Sections and chapters">
-  <a href="#s-relay" data-for="s-relay"><span>Relay</span><i></i></a><a href="#s-farm" data-for="s-farm"><span>Why a farm</span><i></i></a><a href="#s-fleet" data-for="s-fleet"><span>The fleet</span><i></i></a><a href="#s-console" data-for="s-console"><span>The console</span><i></i></a><a href="#s-atlas" data-for="s-atlas"><span>The whole farm</span><i></i></a><a href="#ch-relay" data-for="ch-relay s-days s-rules" style="--c:var(--yellow)"><span>I · Never stops</span><i></i></a><a href="#ch-projects" data-for="ch-projects s-backlog" style="--c:var(--teal)"><span>II · Any project</span><i></i></a><a href="#ch-studio" data-for="ch-studio s-studio" style="--c:var(--claude)"><span>III · Beyond code</span><i></i></a><a href="#ch-automation" data-for="ch-automation s-auto" style="--c:var(--violet)"><span>IV · Recipes and triggers</span><i></i></a><a href="#ch-team" data-for="ch-team s-together" style="--c:var(--cyan)"><span>V · Works as a team</span><i></i></a><a href="#ch-memory" data-for="ch-memory s-memory" style="--c:var(--agy)"><span>VI · Never forgets</span><i></i></a><a href="#ch-engines" data-for="ch-engines s-brains" style="--c:#7fa0f8"><span>VII · Any brain</span><i></i></a><a href="#ch-bridge" data-for="ch-bridge s-bridge s-waits" style="--c:var(--ink)"><span>VIII · Just ask</span><i></i></a><a href="#ch-measure" data-for="ch-measure s-meter" style="--c:#de8cf0"><span>IX · Measured, not claimed</span><i></i></a><a href="#ch-privacy" data-for="ch-privacy s-local" style="--c:var(--dim)"><span>X · Safe and yours alone</span><i></i></a><a href="#s-close" data-for="s-close"><span>Start</span><i></i></a>
+  <a href="#s-relay" data-for="s-relay"><span>Relay</span><i></i></a><a href="#s-fleet" data-for="s-fleet"><span>The fleet</span><i></i></a><a href="#s-console" data-for="s-console"><span>The console</span><i></i></a><a href="#s-atlas" data-for="s-atlas"><span>The whole farm</span><i></i></a><a href="#ch-relay" data-for="ch-relay s-days s-farm s-rules" style="--c:var(--yellow)"><span>I · Never stops</span><i></i></a><a href="#ch-projects" data-for="ch-projects s-backlog" style="--c:var(--teal)"><span>II · Any project</span><i></i></a><a href="#ch-studio" data-for="ch-studio s-studio" style="--c:var(--claude)"><span>III · Beyond code</span><i></i></a><a href="#ch-automation" data-for="ch-automation s-auto" style="--c:var(--violet)"><span>IV · Recipes and triggers</span><i></i></a><a href="#ch-team" data-for="ch-team s-together" style="--c:var(--cyan)"><span>V · Works as a team</span><i></i></a><a href="#ch-memory" data-for="ch-memory s-memory" style="--c:var(--agy)"><span>VI · Never forgets</span><i></i></a><a href="#ch-engines" data-for="ch-engines s-brains" style="--c:#7fa0f8"><span>VII · Any brain</span><i></i></a><a href="#ch-bridge" data-for="ch-bridge s-bridge s-waits" style="--c:var(--ink)"><span>VIII · Just ask</span><i></i></a><a href="#ch-measure" data-for="ch-measure s-meter" style="--c:#de8cf0"><span>IX · Measured, not claimed</span><i></i></a><a href="#ch-privacy" data-for="ch-privacy s-local" style="--c:var(--dim)"><span>X · Safe and yours alone</span><i></i></a><a href="#s-close" data-for="s-close"><span>Start</span><i></i></a>
 </nav>
   <main>
     <section id="s-relay" aria-label="The baton relay, live demo">
@@ -88,43 +88,9 @@
       </div>
     </div>
   </div>
-</section><section id="s-farm" class="gap" aria-label="Why a farm: agents grow here and become agents fitted to you">
-  <div class="wrap">
-    <p class="sx"><b>02</b> Why a farm</p>
-    <div class="fgrid">
-      <div class="say">
-        <p class="pre">Not a chat window. A place to grow.</p>
-        <h2>Agents are raised here. <em>Fitted to you.</em></h2>
-        <p class="lead">A chat forgets you when it closes. An agent on the farm has a home of its own, and everything it does there stays. It notices the corrections you keep making, a judge scores its work, and week by week it works more the way you would.</p>
-        <ul class="pts">
-          <li><b>A home of its own.</b> Identity, rules, duties, tools and a memory that grows with every job, on your disk.</li>
-          <li><b>It learns you.</b> The corrections you repeat come back as rules for it to keep, once you say yes.</li>
-          <li><b>One agent or a fleet.</b> Direct one with precision, or a whole fleet with the same tools.</li>
-        </ul>
-      </div>
-      <figure class="home" id="g-home" data-ages="[{&quot;k&quot;:&quot;Day 1&quot;,&quot;mem&quot;:12,&quot;pass&quot;:71,&quot;tools&quot;:6},{&quot;k&quot;:&quot;Week 3&quot;,&quot;mem&quot;:418,&quot;pass&quot;:89,&quot;tools&quot;:9},{&quot;k&quot;:&quot;Month 4&quot;,&quot;mem&quot;:2960,&quot;pass&quot;:97,&quot;tools&quot;:14}]" aria-label="One agent's home at three ages, demo data. By Month 4: 2,960 notes in memory, 97% of its work passes the judge, and five rules learned from you.">
-        <div class="hd"><span class="dot"></span><b>developer</b><span class="eng">Claude</span><span class="r">agent home</span></div>
-        <div class="tabs" aria-hidden="true"><span>Identity</span><span>Duties</span><span>Toolbox</span><span class="on">Memory</span><span>Rules</span></div>
-        <div class="kv">
-          <div><span class="k">Memory</span><span class="v" id="g-mem">2,960</span><span class="n">notes kept</span></div>
-          <div><span class="k">Judge</span><span class="v" id="g-pass">97%</span><span class="n">work that passes</span></div>
-          <div><span class="k">Toolbox</span><span class="v" id="g-tools">14</span><span class="n">tools it uses</span></div>
-        </div>
-        <div class="grow" aria-hidden="true"><i id="g-bar" style="width:100%"></i></div>
-        <p class="lh">Rules learned from you</p>
-        <ol class="rules" id="g-rules">
-          <li class="none out">None yet. It reads your project and its instructions first.</li>
-          <li data-at="1"><span>✓</span>Writes commit messages the way you do</li><li data-at="1"><span>✓</span>Runs the tests before every push</li><li data-at="2"><span>✓</span>Leaves your morning note by 08:00</li><li data-at="2"><span>✓</span>Keeps Monday&#39;s quota for the release</li><li data-at="2"><span>✓</span>Asks before it touches the billing code</li>
-        </ol>
-        <div class="ages" role="group" aria-label="The same agent at three ages">
-          <button type="button" data-i="0" aria-pressed="false">Day 1</button><button type="button" data-i="1" aria-pressed="false">Week 3</button><button type="button" data-i="2" aria-pressed="true">Month 4</button>
-        </div>
-      </figure>
-    </div>
-  </div>
 </section><section id="s-fleet" class="gap" aria-label="The fleet: six Agent Farm pages on one wall">
   <div class="wrap">
-    <p class="sx"><b>03</b> The fleet</p>
+    <p class="sx"><b>02</b> The fleet</p>
     <div class="band">
       <div><p class="pre">Don't just talk to one agent.</p><h2 class="h1">Command an <em>entire fleet.</em></h2></div>
       <div class="side"><p><b>Claude Code, Codex, Gemini, Antigravity and OpenCode</b> on one wall. Agents work through your backlog, sessions pass the baton day and night, accounts rotate before they run dry, and nothing about your work is sent to us.</p><a class="ghost" href="#s-console"><i></i>Open the console</a></div>
@@ -156,7 +122,7 @@
   </div>
 </section><section id="s-console" class="gap" aria-label="The Agent Farm Console">
   <div class="wrap">
-    <p class="sx"><b>04</b> The console</p>
+    <p class="sx"><b>03</b> The console</p>
     <div class="hero">
       <div>
         <div class="eyebrow"><span class="live"></span><b>Rebuilt from real screenshots</b> · demo data</div>
@@ -175,7 +141,7 @@
   </div>
   <div class="stage" id="c-deck" role="group" aria-label="The Agent Farm Console, rebuilt from real screenshots with demo data">
     <div class="sticky" id="c-sticky">
-      <div class="thm" role="group" aria-label="Theme of the window"><span>Your VS Code theme</span><button type="button" data-t="dark" aria-pressed="true">Dark</button><button type="button" data-t="light" aria-pressed="false">Light</button></div>
+      <div class="thm" id="c-thm" role="group" aria-label="Theme of the window"><p class="tip" aria-hidden="true"><b>Light theme, too.</b> Agent Farm wears your VS Code theme. Switch it here whenever you like.</p><span>Your VS Code theme</span><button type="button" data-t="dark" aria-pressed="true">Dark</button><button type="button" data-t="light" aria-pressed="false">Light</button></div>
       <div class="floor"></div>
       <div class="deck" id="c-deckEl">
         <div class="shadow"></div>
@@ -243,7 +209,7 @@
   </div>
 </section><section id="s-atlas" class="gap" aria-label="The whole farm: everything Agent Farm does, on one map">
   <div class="wrap">
-    <p class="sx"><b>05</b> The whole farm</p>
+    <p class="sx"><b>04</b> The whole farm</p>
     <div class="sh">
       <h2>You have seen the screens. <em>Here is the whole farm.</em></h2>
       <p class="lead">Every tile is something Agent Farm does today, <b>92</b> of them in ten districts. Code is only one part: the same farm cuts videos, writes up a thesis chapter and keeps a weekly channel going. Watch one event travel through the farm, or click any tile.</p>
@@ -360,7 +326,7 @@
   </div>
 </header><section id="s-days" class="gap" aria-label="One relay chain across three days and four nights, working through a backlog">
   <div class="wrap">
-    <p class="sx"><b>06</b> Day and night</p>
+    <p class="sx"><b>05</b> Day and night</p>
     <div class="sh">
       <div><p class="pre">chn_7f3a · demo data shaped like the real chain</p><h2 id="d-title">Ninety-two legs. <em>Three days, four nights.</em> Straight off the backlog.</h2></div>
       <p class="lead">Every block is one fresh session, coloured by the account it ran on. The band above it is the backlog item it was given: when an item closes, the next session opens on the next one in your queue. Night or day makes no difference to it. A hatched gap is the chain waiting for a quota reset, then waking by itself. Hover a block to read it.</p>
@@ -385,6 +351,43 @@
       <div><b id="d-updates">0</b><span>self-updates</span></div>
     </div>
     <div class="legend" id="d-legend"></div>
+  </div>
+</section><section id="s-farm" class="gap" aria-label="Why a farm: agents grow here and become agents fitted to you">
+  <div class="wrap">
+    <p class="sx"><b>06</b> Why a farm</p>
+    <div class="fgrid">
+      <div class="fhd">
+        <p class="pre">Not a chat window. A place to grow.</p>
+        <h2>Agents are raised here. <em>Fitted to you.</em></h2>
+      </div>
+      <div class="ph"><img src="assets/photos/farm-l.jpg" srcset="assets/photos/farm-s.jpg 560w, assets/photos/farm-l.jpg 800w" sizes="(max-width: 900px) 100vw, 45vw" alt="A person standing among robots, guiding them by threads to screens of code, documents, search and charts" loading="lazy" decoding="async" width="800" height="500"><span class="tag">You lead · they learn you</span></div>
+      <div class="say">
+        <p class="lead">A chat forgets you when it closes. An agent on the farm has a home of its own, and everything it does there stays. It notices the corrections you keep making, a judge scores its work, and week by week it works more the way you would.</p>
+        <ul class="pts">
+          <li><b>A home of its own.</b> Identity, rules, duties, tools and a memory that grows with every job, on your disk.</li>
+          <li><b>It learns you.</b> The corrections you repeat come back as rules for it to keep, once you say yes.</li>
+          <li><b>One agent or a fleet.</b> Direct one with precision, or a whole fleet with the same tools.</li>
+        </ul>
+      </div>
+      <figure class="home" id="g-home" data-ages="[{&quot;k&quot;:&quot;Day 1&quot;,&quot;mem&quot;:12,&quot;pass&quot;:71,&quot;tools&quot;:6},{&quot;k&quot;:&quot;Week 3&quot;,&quot;mem&quot;:418,&quot;pass&quot;:89,&quot;tools&quot;:9},{&quot;k&quot;:&quot;Month 4&quot;,&quot;mem&quot;:2960,&quot;pass&quot;:97,&quot;tools&quot;:14}]" aria-label="One agent's home at three ages, demo data. By Month 4: 2,960 notes in memory, 97% of its work passes the judge, and five rules learned from you.">
+        <div class="hd"><span class="dot"></span><b>developer</b><span class="eng">Claude</span><span class="r">agent home</span></div>
+        <div class="tabs" aria-hidden="true"><span>Identity</span><span>Duties</span><span>Toolbox</span><span class="on">Memory</span><span>Rules</span></div>
+        <div class="kv">
+          <div><span class="k">Memory</span><span class="v" id="g-mem">2,960</span><span class="n">notes kept</span></div>
+          <div><span class="k">Judge</span><span class="v" id="g-pass">97%</span><span class="n">work that passes</span></div>
+          <div><span class="k">Toolbox</span><span class="v" id="g-tools">14</span><span class="n">tools it uses</span></div>
+        </div>
+        <div class="grow" aria-hidden="true"><i id="g-bar" style="width:100%"></i></div>
+        <p class="lh">Rules learned from you</p>
+        <ol class="rules" id="g-rules">
+          <li class="none out">None yet. It reads your project and its instructions first.</li>
+          <li data-at="1"><span>✓</span>Writes commit messages the way you do</li><li data-at="1"><span>✓</span>Runs the tests before every push</li><li data-at="2"><span>✓</span>Leaves your morning note by 08:00</li><li data-at="2"><span>✓</span>Keeps Monday&#39;s quota for the release</li><li data-at="2"><span>✓</span>Asks before it touches the billing code</li>
+        </ol>
+        <div class="ages" role="group" aria-label="The same agent at three ages">
+          <button type="button" data-i="0" aria-pressed="false">Day 1</button><button type="button" data-i="1" aria-pressed="false">Week 3</button><button type="button" data-i="2" aria-pressed="true">Month 4</button>
+        </div>
+      </figure>
+    </div>
   </div>
 </section><figure class="band" data-band>
   <div class="ph"><img src="assets/photos/night-l.jpg" srcset="assets/photos/night-s.jpg 900w, assets/photos/night-l.jpg 1800w" sizes="100vw" alt="A city at night seen from a hill, its lights spread to the horizon" loading="lazy" decoding="async" style="object-position:50% 70%"></div>
@@ -1210,7 +1213,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.6-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.7-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
       <a href="pricing/">Pricing</a>

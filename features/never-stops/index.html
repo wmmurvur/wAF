@@ -14,7 +14,7 @@
     <meta property="og:description" content="Relay chains that hand over before the context fills, move to the account with room, wait for the reset when every account is full, and stop when they should. Every default is the extension's own.">
     <meta property="og:url" content="https://agentfarm.space/features/never-stops/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/never-stops.js?v=0.13.6"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/never-stops.js?v=0.13.7"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.6"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.7"></head>
   <body>
     
   <div class="wrap">
@@ -62,7 +62,7 @@
     </div>
     <section id="s-days" class="gap" aria-label="One relay chain across three days and four nights, working through a backlog">
   <div class="wrap">
-    <p class="sx"><b>06</b> Day and night</p>
+    <p class="sx"><b>05</b> Day and night</p>
     <div class="sh">
       <div><p class="pre">chn_7f3a · demo data shaped like the real chain</p><h2 id="d-title">Ninety-two legs. <em>Three days, four nights.</em> Straight off the backlog.</h2></div>
       <p class="lead">Every block is one fresh session, coloured by the account it ran on. The band above it is the backlog item it was given: when an item closes, the next session opens on the next one in your queue. Night or day makes no difference to it. A hatched gap is the chain waiting for a quota reset, then waking by itself. Hover a block to read it.</p>
@@ -283,7 +283,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.6-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.7-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>
