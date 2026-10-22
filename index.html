@@ -14,7 +14,7 @@
     <meta property="og:description" content="Agent Farm, in VS Code: direct one AI agent with precision or a whole fleet. Claude Code, Codex, Gemini, Antigravity and OpenCode work your backlog day and night, and grow into agents that know how you work.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.13.7"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.13.8"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.13.7"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.13.8"></head>
   <body>
     
   <div class="wrap">
@@ -99,10 +99,10 @@
         <div class="mon" data-i="0"><div class="scr"><div class="hd"><b>Live Timeline</b><span>● listening on 127.0.0.1:8377</span><span class="r" id="f-tlClock">12:10</span></div><canvas id="f-tl"></canvas></div><div class="lab"><span>CH-01 · Live Timeline</span><span>swim lanes</span></div></div>
         <div class="mon" data-i="1"><div class="scr"><div class="hd"><b>Console</b><span>developer · working</span></div>
           <div class="cgrid"><div><div class="wt"><span><b>●</b> 2 waiting for you</span><span id="f-cLong">longest 6m</span></div>
-            <div class="cc"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="s"><span class="leg" id="f-cLeg">⑂ 92</span> · <span id="f-cTok">1.8M</span> tk</div><div class="s"><i>working</i> · ctx <span id="f-cCtx">110k</span> / 1.0M</div></div>
-            <div class="cc t"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="s"><i>your turn</i> · 6m · 4 turns</div></div>
-            <div class="cc t"><div class="h"><b>developer</b><span class="eng a">Antigravity</span></div><div class="s"><i>your turn</i> · 5m · 2 turns</div></div>
-            <div class="cc" style="border-left-color:#66675d"><div class="h"><b>reviewer</b><span class="eng x">Codex</span></div><div class="s">idle · 12m · 9 turns</div></div></div>
+            <div class="cc"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="q">X-52 clean up the old writer…</div><div class="s"><i>working</i> · <span class="leg" id="f-cLeg">⑂ 92</span> · <span id="f-cTok">1.8M</span> tk · ctx <span id="f-cCtx">110k</span></div></div>
+            <div class="cc t"><div class="h"><b>youtuber</b><span class="eng o">OpenCode</span></div><div class="q">Research ten history videos for the channel…</div><div class="s"><i>your turn</i> · 6m · 4 turns</div></div>
+            <div class="cc t"><div class="h"><b>scholar</b><span class="eng g">Gemini</span></div><div class="q">Run the chapter 3 regressions on the new survey…</div><div class="s"><i>your turn</i> · 5m · 2 turns</div></div>
+            <div class="cc" style="border-left-color:#66675d"><div class="h"><b>analyst</b><span class="eng x">Codex</span></div><div class="q">Morning market brief: screen my watchlist…</div><div class="s">idle · 12m · 9 turns</div></div></div>
             <div class="lns" id="f-cLines"><div class="ln tl"><span>TOOL</span><span>▸ Bash npm run package <b>✓</b></span></div><div class="ln tl"><span>TOOL</span><span>▸ af farm.restartExtensionHost resume=true</span></div><div class="ln"><span>AGENT</span><span>Window reloaded. Checking that the new build is the one actually running.</span></div><div class="ln y"><span>YOU</span><span>Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.</span></div><div class="ln"><span>AGENT</span><span>3.931.0-beta is running. Same seat. Continuing the live test.</span></div></div></div>
           <div class="cstrip" id="f-cStrip">session 3efb20bf · ctx 110.2k / 1.0M · 11% · ⑂ 92 · ~$4.92</div></div><div class="lab"><span>CH-02 · Console</span><span>sessions</span></div></div>
         <div class="mon" data-i="2"><div class="scr"><div class="hd"><b>Accounts</b><span>Claude Code · 4 accounts</span><span class="r">auto-refresh: on</span></div><div id="f-accs"></div><div class="alog" id="f-alog"></div></div><div class="lab"><span>CH-03 · Accounts</span><span>quota shield</span></div></div>
@@ -111,8 +111,8 @@
           <div class="pu"><div class="row"><span>Current session</span><span class="tr"><i id="f-pu1" style="width:91%;background:var(--pink)"></i></span><span id="f-pu1t" style="color:var(--pink)">91%</span></div><div class="row"><span>Current week (all models)</span><span class="tr"><i style="width:17%;background:var(--cyan)"></i></span><span style="color:var(--cyan)">17%</span></div></div>
           <canvas id="f-bars"></canvas></div><div class="lab"><span>CH-04 · Dashboard</span><span>cost & quota</span></div></div>
         <div class="mon" data-i="4"><div class="scr"><div class="hd"><b>Now</b><span>the farm on your phone</span></div>
-          <div class="now"><div class="box"><h5>Waiting for you 2</h5><div class="r"><span class="d"></span>developer <span class="eng" style="margin-left:0">Claude</span> 6m</div><div class="r" style="color:#9a9a8f;padding-left:2.2cqw">question · auto-answer in <b id="f-nAA" style="color:var(--yellow);font-weight:400">0:42</b></div><div class="r"><span class="d"></span>developer <span class="eng a" style="margin-left:0">Antigravity</span> 5m</div><div class="r" style="color:#9a9a8f;padding-left:2.2cqw">your turn · reply from here</div></div>
-            <div class="box"><h5>Running 3</h5><div class="r"><span class="d"></span>developer <span class="eng" style="margin-left:0">Claude</span> working</div><div class="r"><span class="d" style="background:#9a9a8f"></span>developer <span class="eng a" style="margin-left:0">Antigravity</span> idle</div><div class="r"><span class="d" style="background:#9a9a8f"></span>reviewer <span class="eng x" style="margin-left:0">Codex</span> idle</div></div>
+          <div class="now"><div class="box"><h5>Waiting for you 2</h5><div class="r"><span class="d"></span>youtuber <span class="eng o" style="margin-left:0">OpenCode</span> 6m</div><div class="r" style="color:#9a9a8f;padding-left:2.2cqw">question · auto-answer in <b id="f-nAA" style="color:var(--yellow);font-weight:400">0:42</b></div><div class="r"><span class="d"></span>scholar <span class="eng g" style="margin-left:0">Gemini</span> 5m</div><div class="r" style="color:#9a9a8f;padding-left:2.2cqw">your turn · reply from here</div></div>
+            <div class="box"><h5>Running 3</h5><div class="r"><span class="d"></span>developer <span class="eng" style="margin-left:0">Claude</span> working</div><div class="r"><span class="d"></span>writer <span class="eng" style="margin-left:0">Claude</span> working</div><div class="r"><span class="d" style="background:#9a9a8f"></span>analyst <span class="eng x" style="margin-left:0">Codex</span> idle</div></div>
             <div class="box"><h5>Today</h5><div class="big" id="f-nCost">$41.20</div><div style="font-size:1.6cqw;color:#9a9a8f">spent today</div><div id="f-nAcc" style="display:grid;gap:.8cqw;margin-top:1.4cqw"></div></div></div>
           <div class="notes"><span><b>●</b> Notices · chn_7f3a handed over to a fresh leg (ctx 40%)</span><span><b>●</b> Notices · acct-c at 90% · next leg moves to acct-d</span></div></div><div class="lab"><span>CH-05 · Now</span><span>phone view</span></div></div>
         <div class="mon" data-i="5"><div class="scr"><div class="hd"><b>Chains</b><span>⑂ baton relay</span><span class="r">3 chains</span></div><div id="f-chains"></div><div class="hand" id="f-hand"></div></div><div class="lab"><span>CH-06 · Chains</span><span>baton relay</span></div></div>
@@ -152,17 +152,19 @@
             <div class="side">
               <h6>AGENT FARM</h6>
               <h6>⌄ AGENTS</h6>
-              <div class="row">asistan <span>49d ago</span></div>
-              <div class="row">basit <span>8d ago</span></div>
+              <div class="row">analyst <span>2h ago</span></div>
+              <div class="row">assistant <span>49d ago</span></div>
               <div class="row st"><b>⚠ developer</b> <span>STALLED ×4 · 220.9M tok</span></div>
-              <div class="row">explorer <span>29d ago</span></div>
-              <div class="row">genel <span>3d ago</span></div>
-              <div class="row">hafif <span>2d ago</span></div>
+              <div class="row">editor <span>3d ago</span></div>
               <div class="row">manager <span>15h ago</span></div>
+              <div class="row">scholar <span>8d ago</span></div>
+              <div class="row">writer <span>1d ago</span></div>
+              <div class="row">youtuber <span>20m ago</span></div>
               <h6>⌄ TASKS</h6>
               <div class="row">Plan <span>3/15 on · 8 manual</span></div>
-              <div class="row">AI engines radar <span>daily</span></div>
-              <div class="row">Weekly research <span>manager</span></div>
+              <div class="row">Market brief <span>analyst · daily</span></div>
+              <div class="row">Channel ideas <span>youtuber · Mon</span></div>
+              <div class="row">Weekly research <span>scholar</span></div>
               <h6>› MISSIONS</h6>
               <h6>⌄ TOOLBOX</h6>
               <div class="row">Skills <span>2 user · 0 agent</span></div>
@@ -179,9 +181,14 @@
                 <div class="col">
                   <div class="newbtn"><span>+ New session</span><span>⇅</span></div>
                   <div class="wait" id="c-waitEl"><span><b>●</b> 2 waiting for you</span><span class="lg" id="c-longest">longest 6m</span></div>
+                  <div class="list" id="c-list"><div class="lst" id="c-lst">
                   <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">chn_7f3a · relay leg 92 · X-52 clean up the old writer</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
-                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#0ce4458a)</span><span class="eng">Claude</span></div><div class="m"><span class="acct">pro-c</span><span style="margin-left:auto">2.7M tk</span></div><div class="t">pricing page copy</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
-                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#5202a238)</span><span class="eng agy">Antigravity</span></div><div class="m"><span style="margin-left:auto">86.5k tk</span></div><div class="t">mobile companion · pairing</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">6m</span> · 2 turns</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>youtuber</b><span>(#a61c09e4)</span><span class="eng o">OpenCode</span></div><div class="t">Research ten history videos for the channel, each with sources and a hook…</div><div class="s"><em>working</em> · 3 turns · ctx 48.2k / 256k</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>scholar</b><span>(#7d2e51b0)</span><span class="eng g">Gemini</span></div><div class="m"><span class="leg">⛓ step 2 of 3</span><span style="margin-left:auto">640k tk</span></div><div class="t">Chain: clean the survey data, run the chapter 3 regressions, then write Table 3…</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>analyst</b><span>(#c90f3a72)</span><span class="eng x">Codex</span></div><div class="t">Morning market brief: screen my watchlist for earnings, gaps and unusual volume…</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">5m</span> · 2 turns</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>writer</b><span>(#1b84e6d3)</span><span class="eng">Claude</span></div><div class="t">Draft chapter 7 from the outline, in my voice, about 3,000 words…</div><div class="s"><em>working</em> · 1 turn · ctx 82.4k / 1.0M</div></div>
+                  <div class="card idle"><div class="h"><span class="dotp"></span><b>editor</b><span>(#e52a7f18)</span><span class="eng agy">Antigravity</span></div><div class="t">Cut interview-take-4 into four shorts with burned-in captions…</div><div class="s">done · 12m ago · 9 turns</div></div>
+                  </div><i class="sb" id="c-sb"></i></div>
                   <div class="resume">› Resume an existing session</div>
                 </div>
                 <div class="tx" id="c-tx"></div>
@@ -670,7 +677,7 @@
                     <td class="st"><span class="pill run">running</span></td>
                     <td class="rd">R3/8</td><td class="tk">7</td><td class="to">412.6k</td><td class="co">$0.62 (mixed)</td><td class="at">Oct 11, 09:12</td>
                   </tr><tr class>
-                    <td><span class="tw">›</span>Pricing table refresh</td>
+                    <td><span class="tw">›</span>Q3 earnings, ten companies compared</td>
                     <td>manager +2</td>
                     <td class="st"><span class="pill ok">done</span></td>
                     <td class="rd">R4/6</td><td class="tk">6</td><td class="to">301.2k</td><td class="co">$0.48 (mixed)</td><td class="at">Oct 10, 16:40</td>
@@ -882,7 +889,7 @@
             <div class="box"><h5>Waiting for you <span id="w-pw">2</span> ›</h5><div id="w-pwl"></div></div>
             <div class="box"><h5>Running 3 ›</h5>
               <div class="run"><span class="d on"></span><b>developer</b><span class="eng">Claude</span><em>working</em></div>
-              <div class="run"><span class="d"></span><b>developer</b><span class="eng a">Antigravity</span><em>idle</em></div>
+              <div class="run"><span class="d"></span><b>scholar</b><span class="eng g">Gemini</span><em>idle</em></div>
               <div class="run"><span class="d"></span><b>reviewer</b><span class="eng x">Codex</span><em>waiting</em></div>
             </div>
             <div class="box"><h5>Today</h5><div class="cost"><b id="w-pc">$41.20</b> spent today</div><div id="w-pacc"></div></div>
@@ -985,22 +992,22 @@
           <div class="stbl" role="table" aria-label="Each live session's sound">
             <div class="sr hd" role="row"><span>Session</span><span>Engine</span><span>Sound</span><span>Tone</span><span>Say who</span><span>Read aloud</span><span>Also</span></div>
             <div class="sr" role="row" data-i="0">
-                <span class="sn">developer #1</span><span class="se">Claude Code</span>
-                <select class="ss" aria-label="Sound for developer #1"><option value="like-all" selected>Like all</option><option value="always">Always</option><option value="silent">Silent</option></select>
+                <span class="sn">developer</span><span class="se">Claude Code</span>
+                <select class="ss" aria-label="Sound for developer"><option value="like-all" selected>Like all</option><option value="always">Always</option><option value="silent">Silent</option></select>
                 <span class="st">all&#39;s</span><span class="sw">all&#39;s</span>
-                <label class="ck"><input type="checkbox" class="ra" aria-label="Read developer #1's answers aloud"></label>
+                <label class="ck"><input type="checkbox" class="ra" aria-label="Read developer's answers aloud"></label>
                 <span class="sa"><i class>◎ Focus</i><i class>▣ Pop-up</i><i class>▭ Notification</i></span>
               </div><div class="sr" role="row" data-i="1">
-                <span class="sn">developer #2</span><span class="se">Antigravity</span>
-                <select class="ss" aria-label="Sound for developer #2"><option value="like-all">Like all</option><option value="always">Always</option><option value="silent" selected>Silent</option></select>
+                <span class="sn">youtuber</span><span class="se">OpenCode</span>
+                <select class="ss" aria-label="Sound for youtuber"><option value="like-all">Like all</option><option value="always">Always</option><option value="silent" selected>Silent</option></select>
                 <span class="st">—</span><span class="sw">—</span>
-                <label class="ck"><input type="checkbox" class="ra" aria-label="Read developer #2's answers aloud"></label>
+                <label class="ck"><input type="checkbox" class="ra" aria-label="Read youtuber's answers aloud"></label>
                 <span class="sa"><i class>◎ Focus</i><i class>▣ Pop-up</i><i class>▭ Notification</i></span>
               </div><div class="sr" role="row" data-i="2">
-                <span class="sn">reviewer #1</span><span class="se">Codex</span>
-                <select class="ss" aria-label="Sound for reviewer #1"><option value="like-all">Like all</option><option value="always" selected>Always</option><option value="silent">Silent</option></select>
+                <span class="sn">reviewer</span><span class="se">Codex</span>
+                <select class="ss" aria-label="Sound for reviewer"><option value="like-all">Like all</option><option value="always" selected>Always</option><option value="silent">Silent</option></select>
                 <span class="st">Marimba</span><span class="sw">its own</span>
-                <label class="ck"><input type="checkbox" class="ra" checked aria-label="Read reviewer #1's answers aloud"></label>
+                <label class="ck"><input type="checkbox" class="ra" checked aria-label="Read reviewer's answers aloud"></label>
                 <span class="sa"><i class>◎ Focus</i><i class>▣ Pop-up</i><i class="on">▭ Notification</i></span>
               </div>
           </div>
@@ -1213,7 +1220,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.7-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.8-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
       <a href="pricing/">Pricing</a>

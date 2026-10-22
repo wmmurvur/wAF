@@ -14,7 +14,7 @@
     <meta property="og:description" content="Tell an agent what you want and it sets the farm up for you: one shell command any agent can run, an operation for every button, agents with their own folders and duties, a matrix of who has what, and the farm in your pocket by phone, Telegram, sound and voice.">
     <meta property="og:url" content="https://agentfarm.space/features/just-ask/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/just-ask.js?v=0.13.7"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/just-ask.js?v=0.13.8"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.7"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.8"></head>
   <body>
     
   <div class="wrap">
@@ -127,7 +127,7 @@
             <div class="box"><h5>Waiting for you <span id="w-pw">2</span> ›</h5><div id="w-pwl"></div></div>
             <div class="box"><h5>Running 3 ›</h5>
               <div class="run"><span class="d on"></span><b>developer</b><span class="eng">Claude</span><em>working</em></div>
-              <div class="run"><span class="d"></span><b>developer</b><span class="eng a">Antigravity</span><em>idle</em></div>
+              <div class="run"><span class="d"></span><b>scholar</b><span class="eng g">Gemini</span><em>idle</em></div>
               <div class="run"><span class="d"></span><b>reviewer</b><span class="eng x">Codex</span><em>waiting</em></div>
             </div>
             <div class="box"><h5>Today</h5><div class="cost"><b id="w-pc">$41.20</b> spent today</div><div id="w-pacc"></div></div>
@@ -230,22 +230,22 @@
           <div class="stbl" role="table" aria-label="Each live session's sound">
             <div class="sr hd" role="row"><span>Session</span><span>Engine</span><span>Sound</span><span>Tone</span><span>Say who</span><span>Read aloud</span><span>Also</span></div>
             <div class="sr" role="row" data-i="0">
-                <span class="sn">developer #1</span><span class="se">Claude Code</span>
-                <select class="ss" aria-label="Sound for developer #1"><option value="like-all" selected>Like all</option><option value="always">Always</option><option value="silent">Silent</option></select>
+                <span class="sn">developer</span><span class="se">Claude Code</span>
+                <select class="ss" aria-label="Sound for developer"><option value="like-all" selected>Like all</option><option value="always">Always</option><option value="silent">Silent</option></select>
                 <span class="st">all&#39;s</span><span class="sw">all&#39;s</span>
-                <label class="ck"><input type="checkbox" class="ra" aria-label="Read developer #1's answers aloud"></label>
+                <label class="ck"><input type="checkbox" class="ra" aria-label="Read developer's answers aloud"></label>
                 <span class="sa"><i class>◎ Focus</i><i class>▣ Pop-up</i><i class>▭ Notification</i></span>
               </div><div class="sr" role="row" data-i="1">
-                <span class="sn">developer #2</span><span class="se">Antigravity</span>
-                <select class="ss" aria-label="Sound for developer #2"><option value="like-all">Like all</option><option value="always">Always</option><option value="silent" selected>Silent</option></select>
+                <span class="sn">youtuber</span><span class="se">OpenCode</span>
+                <select class="ss" aria-label="Sound for youtuber"><option value="like-all">Like all</option><option value="always">Always</option><option value="silent" selected>Silent</option></select>
                 <span class="st">—</span><span class="sw">—</span>
-                <label class="ck"><input type="checkbox" class="ra" aria-label="Read developer #2's answers aloud"></label>
+                <label class="ck"><input type="checkbox" class="ra" aria-label="Read youtuber's answers aloud"></label>
                 <span class="sa"><i class>◎ Focus</i><i class>▣ Pop-up</i><i class>▭ Notification</i></span>
               </div><div class="sr" role="row" data-i="2">
-                <span class="sn">reviewer #1</span><span class="se">Codex</span>
-                <select class="ss" aria-label="Sound for reviewer #1"><option value="like-all">Like all</option><option value="always" selected>Always</option><option value="silent">Silent</option></select>
+                <span class="sn">reviewer</span><span class="se">Codex</span>
+                <select class="ss" aria-label="Sound for reviewer"><option value="like-all">Like all</option><option value="always" selected>Always</option><option value="silent">Silent</option></select>
                 <span class="st">Marimba</span><span class="sw">its own</span>
-                <label class="ck"><input type="checkbox" class="ra" checked aria-label="Read reviewer #1's answers aloud"></label>
+                <label class="ck"><input type="checkbox" class="ra" checked aria-label="Read reviewer's answers aloud"></label>
                 <span class="sa"><i class>◎ Focus</i><i class>▣ Pop-up</i><i class="on">▭ Notification</i></span>
               </div>
           </div>
@@ -505,7 +505,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.7-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.8-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>
