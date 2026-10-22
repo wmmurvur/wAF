@@ -63,7 +63,7 @@
 :is(#s-console,#s-local) .pill.l{box-shadow:inset 2px 0 0 var(--pink)}
 :is(#s-console,#s-local) .pill.n{box-shadow:inset 2px 0 0 var(--yellow)}
 :is(#s-console,#s-local) .pill.q{box-shadow:inset 2px 0 0 var(--cyan)}
-:is(#s-console,#s-local) .content{display:grid;grid-template-columns:230px 1fr;gap:12px;padding:0 16px;min-height:0;overflow:hidden}
+:is(#s-console,#s-local) .content{display:grid;grid-template-columns:252px 1fr;gap:12px;padding:0 16px;min-height:0;overflow:hidden}
 :is(#s-console,#s-local) .col{display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
 :is(#s-console,#s-local) .newbtn{display:flex;justify-content:space-between;background:#34352e;border-radius:3px;padding:6px 10px;color:#e1e1d6}
 :is(#s-console,#s-local) .wait{display:flex;justify-content:space-between;align-items:center;border:1px solid #5a8c09;background:rgba(168,240,53,.09);border-radius:4px;padding:5px 9px;color:#dff5b8;font-size:11.5px}
@@ -77,6 +77,17 @@
 :is(#s-console,#s-local) .card .h span{color:#8d8d82}
 :is(#s-console,#s-local) .eng{margin-left:auto;font-size:10px;border:1px solid var(--claude);color:var(--claude);border-radius:9px;padding:0 6px;line-height:15px}
 :is(#s-console,#s-local) .eng.agy{border-color:var(--agy);color:var(--agy)}
+:is(#s-console,#s-local) .eng.o{border-color:var(--teal);color:var(--teal)}
+:is(#s-console,#s-local) .eng.g{border-color:#7fa0f8;color:#7fa0f8}
+:is(#s-console,#s-local) .eng.x{border-color:#9ad;color:#9ad}
+/* more sessions than the column holds, as in the real Console: the list steps through them by itself (console.js) */
+/* each session shows the first words of its instruction, two lines of them, so the kind of work reads at a glance */
+#s-console .list .card .t{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:1.35}
+#s-console .list{position:relative;flex:1;min-height:0;overflow:hidden;padding-right:7px}
+#s-console .lst{position:relative;display:flex;flex-direction:column;gap:8px;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+#s-console .list .sb{position:absolute;right:0;top:0;width:3px;height:40%;border-radius:2px;background:#5a5b52;transition:top .9s cubic-bezier(.3,.7,.2,1)}
+:is(#s-console,#s-local) .card.idle{border-left-color:#66675d}
+:is(#s-console,#s-local) .card.idle .dotp{background:#66675d}
 :is(#s-console,#s-local) .card .m{display:flex;align-items:center;gap:8px;color:#9a9a8f}
 :is(#s-console,#s-local) .acct{border:1px solid #66675d;border-radius:9px;padding:0 6px;color:#9a9a8f;font-size:10px}
 :is(#s-console,#s-local) .leg{color:var(--yellow);font-weight:600}
@@ -198,6 +209,11 @@
 #s-console .win.light .card .h span{color:#8b8b8b}
 #s-console .win.light .eng{border-color:#b5651d;color:#b5651d}
 #s-console .win.light .eng.agy{border-color:#c2185b;color:#c2185b}
+#s-console .win.light .eng.o{border-color:#0f7b84;color:#0f7b84}
+#s-console .win.light .eng.g{border-color:#3a6cf0;color:#3a6cf0}
+#s-console .win.light .eng.x{border-color:#4a6f8a;color:#4a6f8a}
+#s-console .win.light .card.idle{border-left-color:#bdbdbd}
+#s-console .win.light .list .sb{background:#c8c8c8}
 #s-console .win.light .acct{border-color:#c8c8c8;color:#616161}
 #s-console .win.light .leg{color:#a86b00}
 #s-console .win.light .card .s em{color:#0f7b84}

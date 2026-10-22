@@ -2,6 +2,13 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.8 · 2026-10-22
+
+- The screens no longer read as coding only. The big Console now holds six sessions, each a different kind of work on a different engine, and each shows the first words of its instruction: developer (Claude), youtuber researching history videos (OpenCode), scholar running a chain from survey data to regressions to Table 3 (Gemini), analyst writing the morning market brief (Codex), writer drafting chapter 7 (Claude), editor cutting an interview into shorts (Antigravity). More sessions than the column holds, so the list steps through them by itself once the window is assembled. The side list, tasks and live feed follow.
+- The fleet wall: the Console monitor shows developer, youtuber, scholar and analyst with their first words; the Live Timeline lanes, the Now page and the chains carry the same mix.
+- Never waits and Together: a few rows take the new names (youtuber, scholar, a Q3 earnings mission).
+- Turkish words left in the screens are gone: the Console's agent names (asistan, basit, genel, hafif) and the timeline's "genel". The read-aloud demo on Just ask shows German beside English instead of Turkish.
+
 ## 0.13.7 · 2026-10-14
 
 - Console: nobody goes looking for a theme switch, so the window shows it by itself. Once it is assembled and in view, it turns light, a note by the switch says "Light theme, too" and the Light button glows; a few seconds later it turns dark again, and it does so now and then while on screen. One click on the switch ends the show for good.

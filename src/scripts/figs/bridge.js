@@ -304,7 +304,7 @@ then the phone asks your machine: farm.away</pre>
   voice(fv) {
     const L = [
       { k: 'English', lang: 'en-US', v: 'Microsoft Zira · en-US', md: 'Fixed. The cap lived in the writer:\n```ts\nconst MAX = 10_000;\n```\nI removed it. 212 tests pass.', read: 'Fixed. The cap lived in the writer. I removed it. 212 tests pass.' },
-      { k: 'Türkçe', lang: 'tr-TR', v: 'Microsoft Tolga · tr-TR', md: 'Bitti. Sınır yazıcıdaydı:\n```ts\nconst MAX = 10_000;\n```\nKaldırdım. 212 test geçiyor.', read: 'Bitti. Sınır yazıcıdaydı. Kaldırdım. 212 test geçiyor.' },
+      { k: 'Deutsch', lang: 'de-DE', v: 'Microsoft Katja · de-DE', md: 'Behoben. Die Grenze saß im Writer:\n```ts\nconst MAX = 10_000;\n```\nIch habe sie entfernt. 212 Tests laufen durch.', read: 'Behoben. Die Grenze saß im Writer. Ich habe sie entfernt. 212 Tests laufen durch.' },
     ];
     fv.innerHTML = `
       <div class="hd"><b>Read aloud</b><span>Sound page › Voice · demo</span></div>

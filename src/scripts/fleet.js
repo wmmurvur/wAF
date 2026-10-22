@@ -45,7 +45,7 @@ let TL, BARS;
 function sizeAll() { TL = fitCanvas($('tl'), 0.84); BARS = fitCanvas($('bars'), 0.34); }
 
 /* Live Timeline lanes; colours follow the real legend (tool run, prompt, permission wait, compaction, waiting on its own work) */
-const lanes = ['developer #1', 'developer #2', 'developer #3', 'developer #4', 'genel', 'reviewer'].map((n, i) => ({ n, ev: [], wait: null, rate: [1.5, 0.45, 0.35, 0.55, 0.6, 0.8][i] }));
+const lanes = ['developer', 'youtuber', 'scholar', 'analyst', 'writer', 'editor'].map((n, i) => ({ n, ev: [], wait: null, rate: [1.5, 0.45, 0.35, 0.55, 0.6, 0.8][i] }));
 let T = 0;
 function laneTick(dt) {
   lanes.forEach((l, i) => {
@@ -106,7 +106,7 @@ function logDraw() { $('alog').innerHTML = ALOG.slice(-3).map(l => `<span>${l}</
 on('rotate', r => { ALOG.push(`<b>${hhmm()}</b> ${ACCT[r.from].n} ${r.why === 'q' ? 'at 90%' : 'past the 70% wall'} · moved to ${ACCT[r.to].n}`); logDraw(); });
 
 /* ---------- chains ---------- */
-const chains = [{ id: 'chn_7f3a', state: 'run', what: 'timeline export' }, { id: 'chn_2c91', leg: 34, state: 'park', what: 'pricing table', until: '02:15' }, { id: 'chn_b04e', leg: 18, state: 'done', what: 'docs sweep' }];
+const chains = [{ id: 'chn_7f3a', state: 'run', what: 'timeline export' }, { id: 'chn_2c91', leg: 34, state: 'park', what: 'thesis, chapter 3', until: '02:15' }, { id: 'chn_b04e', leg: 18, state: 'done', what: 'history channel, ep. 12' }];
 function chainDraw() {
   $('chains').innerHTML = chains.map(c => {
     const n = c.id === 'chn_7f3a' ? S.leg : c.leg;
@@ -123,7 +123,7 @@ function handDraw() {
 on('pass', p => { hand = p; chainDraw(); handDraw(); });
 
 /* ---------- live figures ---------- */
-const FEED = ['developer: Edit src/export/rows.ts', 'developer: Bash npm run compile', 'reviewer: Read src/core/baton.ts', 'developer: Bash git commit -m "export: rows"', 'manager: Read Backlog.md', 'developer: Edit media/console.js', 'genel: notify Weekly radar is ready'];
+const FEED = ['developer: Edit src/export/rows.ts', 'youtuber: Read sources/fall-of-rome.md', 'scholar: Bash Rscript models/ch3.R', 'analyst: Bash python screen.py --watchlist', 'editor: Bash ffmpeg cut take-4 → short-2', 'writer: Edit chapters/07.md', 'manager: notify Weekly radar is ready'];
 $('feed').innerHTML = FEED.concat(FEED).map(f => `<span><b>✓</b> ${f}</span>`).join('');
 let aa = 42;
 function ui() {

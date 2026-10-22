@@ -37,17 +37,19 @@ import { appVer, vtag } from '../../data/site.js';
             <div class="side">
               <h6>AGENT FARM</h6>
               <h6>⌄ AGENTS</h6>
-              <div class="row">asistan <span>49d ago</span></div>
-              <div class="row">basit <span>8d ago</span></div>
+              <div class="row">analyst <span>2h ago</span></div>
+              <div class="row">assistant <span>49d ago</span></div>
               <div class="row st"><b>⚠ developer</b> <span>STALLED ×4 · 220.9M tok</span></div>
-              <div class="row">explorer <span>29d ago</span></div>
-              <div class="row">genel <span>3d ago</span></div>
-              <div class="row">hafif <span>2d ago</span></div>
+              <div class="row">editor <span>3d ago</span></div>
               <div class="row">manager <span>15h ago</span></div>
+              <div class="row">scholar <span>8d ago</span></div>
+              <div class="row">writer <span>1d ago</span></div>
+              <div class="row">youtuber <span>20m ago</span></div>
               <h6>⌄ TASKS</h6>
               <div class="row">Plan <span>3/15 on · 8 manual</span></div>
-              <div class="row">AI engines radar <span>daily</span></div>
-              <div class="row">Weekly research <span>manager</span></div>
+              <div class="row">Market brief <span>analyst · daily</span></div>
+              <div class="row">Channel ideas <span>youtuber · Mon</span></div>
+              <div class="row">Weekly research <span>scholar</span></div>
               <h6>› MISSIONS</h6>
               <h6>⌄ TOOLBOX</h6>
               <div class="row">Skills <span>2 user · 0 agent</span></div>
@@ -64,9 +66,14 @@ import { appVer, vtag } from '../../data/site.js';
                 <div class="col">
                   <div class="newbtn"><span>+ New session</span><span>⇅</span></div>
                   <div class="wait" id="c-waitEl"><span><b>●</b> 2 waiting for you</span><span class="lg" id="c-longest">longest 6m</span></div>
+                  <div class="list" id="c-list"><div class="lst" id="c-lst">
                   <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">chn_7f3a · relay leg 92 · X-52 clean up the old writer</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
-                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#0ce4458a)</span><span class="eng">Claude</span></div><div class="m"><span class="acct">pro-c</span><span style="margin-left:auto">2.7M tk</span></div><div class="t">pricing page copy</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
-                  <div class="card turn"><div class="h"><span class="dotp"></span><b>developer</b><span>(#5202a238)</span><span class="eng agy">Antigravity</span></div><div class="m"><span style="margin-left:auto">86.5k tk</span></div><div class="t">mobile companion · pairing</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">6m</span> · 2 turns</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>youtuber</b><span>(#a61c09e4)</span><span class="eng o">OpenCode</span></div><div class="t">Research ten history videos for the channel, each with sources and a hook…</div><div class="s"><em>working</em> · 3 turns · ctx 48.2k / 256k</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>scholar</b><span>(#7d2e51b0)</span><span class="eng g">Gemini</span></div><div class="m"><span class="leg">⛓ step 2 of 3</span><span style="margin-left:auto">640k tk</span></div><div class="t">Chain: clean the survey data, run the chapter 3 regressions, then write Table 3…</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
+                  <div class="card turn"><div class="h"><span class="dotp"></span><b>analyst</b><span>(#c90f3a72)</span><span class="eng x">Codex</span></div><div class="t">Morning market brief: screen my watchlist for earnings, gaps and unusual volume…</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">5m</span> · 2 turns</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>writer</b><span>(#1b84e6d3)</span><span class="eng">Claude</span></div><div class="t">Draft chapter 7 from the outline, in my voice, about 3,000 words…</div><div class="s"><em>working</em> · 1 turn · ctx 82.4k / 1.0M</div></div>
+                  <div class="card idle"><div class="h"><span class="dotp"></span><b>editor</b><span>(#e52a7f18)</span><span class="eng agy">Antigravity</span></div><div class="t">Cut interview-take-4 into four shorts with burned-in captions…</div><div class="s">done · 12m ago · 9 turns</div></div>
+                  </div><i class="sb" id="c-sb"></i></div>
                   <div class="resume">› Resume an existing session</div>
                 </div>
                 <div class="tx" id="c-tx"></div>

@@ -32,7 +32,7 @@ function addLine(kind, text, typed) {
 SCRIPT.forEach(([k, t]) => addLine(k, t, false));
 
 /* live feed in the sidebar */
-const FEED = ['✓ developer: Edit src/export/rows.ts', '✓ developer: Bash npm run compile', '✓ developer: Read test/test_export.js', '✓ developer: Edit media/console.js', '◷ developer: notify Now the core fix', '✓ manager: Read Backlog.md', '✓ developer: Bash git commit -m "export: rows"'];
+const FEED = ['✓ developer: Edit src/export/rows.ts', '✓ youtuber: Read sources/fall-of-rome.md', '✓ scholar: Bash Rscript models/ch3.R', '✓ analyst: Bash python screen.py --watchlist', '◷ writer: notify Chapter 7 draft is ready', '✓ editor: Bash ffmpeg cut take-4 → short-2', '✓ developer: Bash npm run compile', '✓ manager: Read Backlog.md'];
 const feed = $('feed'); let fi = 0;
 function feedTick() {
   const f = FEED[fi++ % FEED.length], d = document.createElement('div');
@@ -152,6 +152,32 @@ if (!reduce) {
       thmBox.classList.remove('hint'); wear('dark');
     }, 5400);
   }, 500);
+}
+
+/* the session list: more sessions than the column holds, each a different kind of work. Once the window is assembled
+   and on screen, it steps down one card at a time, holds at the end and goes back to the top; the thumb follows. */
+const lst = $('lst'), list = $('list'), sb = $('sb');
+let row = 0;
+function showRow(i) {
+  const cards = [...lst.children], max = Math.max(0, lst.scrollHeight - list.clientHeight);
+  const y = Math.min(max, cards[i] ? cards[i].offsetTop : 0);
+  lst.style.transform = `translateY(${-y}px)`;
+  sb.style.height = (list.clientHeight / lst.scrollHeight * 100).toFixed(1) + '%';
+  sb.style.top = (y / lst.scrollHeight * 100).toFixed(1) + '%';
+  return y >= max;
+}
+showRow(0); document.fonts?.ready.then(() => showRow(row));
+addEventListener('resize', () => showRow(row));
+if (!reduce) {
+  let t = 0, end = false;
+  setInterval(() => {
+    if (!vis['s-console']) return;
+    if (!flat() && prog < 0.75) { if (row) { row = 0; end = showRow(0); } t = 0; return; }
+    if (++t < (end ? 5 : 3)) return;
+    t = 0;
+    if (end) { row = 0; end = showRow(0); return; }
+    end = showRow(++row);
+  }, 1000);
 }
 
 if (reduce) {
