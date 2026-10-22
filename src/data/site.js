@@ -3,7 +3,7 @@
 // (publisher muvusoft, name agent-farm in the extension's package.json). The changelog gets its own page with the /features pages.
 
 export const site = {
-  version: '0.13.8',                                        // this website, see CHANGELOG.md
+  version: '0.13.9',                                        // this website, see CHANGELOG.md
   // Agent Farm's version, as the demos show it running, and whether it is in beta (owner, 2026-10-13). Change them
   // here and every page follows: the top chip, the demo screens and figures, the tiles and the footer. While `beta`
   // is true every version the site prints carries "-beta" (vtag below).

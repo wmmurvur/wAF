@@ -2,6 +2,13 @@
 
 All notable changes to agentfarm.space. The site follows [semantic versioning](https://semver.org).
 
+## 0.13.9 · 2026-10-22
+
+- Console: the developer builds Agent Farm's own video pipeline (VIDEO PIPELINE BUILD, the owner's session translated), and the youtuber runs that pipeline on episode 12 with OpenCode on a free model (North-Mini-Code). The fleet wall's small Console shows the youtuber card the same way, inside the card.
+- Backlog panel: the project is Agent Farm itself, with its real counts and areas, and real items from its Backlog.md in the queue among the coding ones. The Track tab shows real items too.
+- Projects page tabs work as in the app: the open tab sits on the page in its own colour (Backlog yellow, Track violet), the other looks like any tab.
+- Day and night, the relay chain and the other sections stay as they were.
+
 ## 0.13.8 · 2026-10-22
 
 - The screens no longer read as coding only. The big Console now holds six sessions, each a different kind of work on a different engine, and each shows the first words of its instruction: developer (Claude), youtuber researching history videos (OpenCode), scholar running a chain from survey data to regressions to Table 3 (Gemini), analyst writing the morning market brief (Codex), writer drafting chapter 7 (Claude), editor cutting an interview into shorts (Antigravity). More sessions than the column holds, so the list steps through them by itself once the window is assembled. The side list, tasks and live feed follow.

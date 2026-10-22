@@ -8,9 +8,9 @@ const NS = 'http://www.w3.org/2000/svg';
 
 /* three rounds of a demo mission; each sends tasks to part of the team */
 const ROUNDS = [
-  { dev: 'run the 7 scenarios', tst: 'count the messages' },
-  { dev: 'undo, then re-apply', rev: 'compare the bytes', wri: 'draft closing notes' },
-  { rev: 'test the editor link', tst: 'render on Windows' },
+  { dev: 'write the CSV writer', tst: 'run test_export' },
+  { dev: 'add JSON lines', rev: 'read the diff', wri: 'draft the docs' },
+  { rev: 'check both formats', tst: 'run the live test' },
 ];
 const MAX = 8;
 

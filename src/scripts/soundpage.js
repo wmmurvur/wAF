@@ -90,9 +90,9 @@ $('swh').addEventListener('click', () => { user = true; if (!speak(announcement(
 
 /* the answer: two paragraphs and a 3-line code block; what is spoken is built with the offsets of every word */
 const ANS = [
-  { p: 'Done. The de-hum is measured now, not guessed: the equalizer takes the hum and its two harmonics down, and the voice stays clean:' },
-  { code: 'for (const f of [50, 100, 150])\n  filters.push(`equalizer=f=${f}:t=q:w=8:g=-30`);\nawait ffmpeg(input, filters.join(","), output);' },
-  { p: 'All eight sound tests pass, and the full suite is green. Next in the item: part 3, picture in picture and the logo.' },
+  { p: 'Done. The exporter now streams rows in batches of 64k instead of loading the whole transcript, so the writer stays small:' },
+  { code: 'for await (const batch of rows(file, 65536)) {\n  await out.write(toCsv(batch));\n}' },
+  { p: 'A million rows export in 41 seconds and memory stays flat. Next in the backlog: U-12, rows past 10k.' },
 ];
 const ab = $('ab');
 let spoken = '', marks = [];

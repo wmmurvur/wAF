@@ -1,6 +1,6 @@
 /* Backlog (#s-backlog): the Projects page, Backlog tab, rebuilt (owner's screenshots, 11 Oct 2026) and the points beside it.
    Tab colours and tag pills follow the screenshots; the page itself uses the VS Code dark surfaces of the other rebuilt screens. */
-#s-backlog{--t0:#3d6e73;--t1:#4b536b;--t2:#8a6430;--t3:#4c6e46;--t4:#68732f;--t5:#e3cf5a;--t6:#5f4c80;--t7:#6e5840;--t8:#84405f;--t9:#606f3a;--t10:#40597e;--t11:#4c6e42}
+#s-backlog{--t0:#3d6e73;--t1:#4b536b;--t2:#8a6430;--t3:#4c6e46;--t4:#68732f;--t5:#8c8a45;--t6:#5f4c80;--t7:#6e5840;--t8:#84405f;--t9:#606f3a;--t10:#40597e;--t11:#4c6e42}
 #s-backlog .bgrid{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:clamp(24px,3.4vw,52px);align-items:start}
 
 /* the panel */
@@ -23,12 +23,15 @@
 #s-backlog .phead{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
 #s-backlog .phead h3{margin:0;font-size:17px;font-weight:600;color:#f1f1e7}
 #s-backlog .phead span{font-size:12.5px;color:#a3a495}
-#s-backlog .ptabs{display:flex;gap:3px;margin:12px 0 0;border-bottom:1px solid #3a3b33;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+#s-backlog .ptabs{display:flex;gap:3px;margin:9px 0 0;padding-top:3px;border-bottom:1px solid #3a3b33;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
 #s-backlog .ptabs::-webkit-scrollbar{display:none}
 #s-backlog .ptabs span,#s-backlog .ptabs button{flex:none;padding:6px 11px 5px;font-family:var(--ui);font-size:12px;color:#d6d6cb;background:color-mix(in srgb,var(--tc) 32%,#1f201b);border:0;border-top:3px solid var(--tc);border-radius:4px 4px 0 0}
-#s-backlog .ptabs button{cursor:pointer;box-shadow:inset 0 -2px 0 rgba(241,241,231,.35)}
+#s-backlog .ptabs button{cursor:pointer}
 #s-backlog .ptabs button:hover{color:#fff;background:color-mix(in srgb,var(--tc) 48%,#1f201b)}
-#s-backlog .ptabs .on{box-shadow:none;background:#3a382a;color:#fff;font-weight:600;border-top-color:var(--t5);padding-top:8px;margin-top:-2px}
+/* as in the app: the open tab sits on the page in its own colour, brighter (Backlog yellow, Track violet); the other one looks like any tab */
+#s-backlog .ptabs [data-tab="backlog"]{--ta:#e3cf5a}
+#s-backlog .ptabs [data-tab="track"]{--ta:#a98af5}
+#s-backlog .ptabs .on,#s-backlog .ptabs .on:hover{background:#1f201b;color:#fff;font-weight:600;border-top-color:var(--ta);box-shadow:inset 1px 0 0 #4a4b42,inset -1px 0 0 #4a4b42;padding-top:8px;margin-top:-2px}
 #s-backlog .bline{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;margin:14px 0 12px;font-size:13px;color:#cfd0c4}
 #s-backlog .bline b{font-size:17px;color:#f1f1e7;font-weight:600;font-variant-numeric:tabular-nums}
 #s-backlog .bline .file{font-size:12px;color:#a3a495}

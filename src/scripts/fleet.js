@@ -106,7 +106,7 @@ function logDraw() { $('alog').innerHTML = ALOG.slice(-3).map(l => `<span>${l}</
 on('rotate', r => { ALOG.push(`<b>${hhmm()}</b> ${ACCT[r.from].n} ${r.why === 'q' ? 'at 90%' : 'past the 70% wall'} · moved to ${ACCT[r.to].n}`); logDraw(); });
 
 /* ---------- chains ---------- */
-const chains = [{ id: 'chn_7f3a', state: 'run', what: 'video pipeline' }, { id: 'chn_2c91', leg: 34, state: 'park', what: 'thesis, chapter 3', until: '02:15' }, { id: 'chn_b04e', leg: 18, state: 'done', what: 'history channel, ep. 11' }];
+const chains = [{ id: 'chn_7f3a', state: 'run', what: 'timeline export' }, { id: 'chn_2c91', leg: 34, state: 'park', what: 'thesis, chapter 3', until: '02:15' }, { id: 'chn_b04e', leg: 18, state: 'done', what: 'history channel, ep. 11' }];
 function chainDraw() {
   $('chains').innerHTML = chains.map(c => {
     const n = c.id === 'chn_7f3a' ? S.leg : c.leg;
@@ -123,7 +123,7 @@ function handDraw() {
 on('pass', p => { hand = p; chainDraw(); handDraw(); });
 
 /* ---------- live figures ---------- */
-const FEED = ['developer: Edit src/core/pipeline/editCompose.ts', 'youtuber: Pipeline: voice-over for episode 12', 'scholar: Bash Rscript models/ch3.R', 'analyst: Bash python screen.py --watchlist', 'editor: Bash ffmpeg cut take-4 → short-2', 'writer: Edit chapters/07.md', 'manager: notify Weekly radar is ready'];
+const FEED = ['developer: Edit src/bridge/ops.meta.json', 'youtuber: Pipeline: voice-over for episode 12', 'scholar: Bash Rscript models/ch3.R', 'analyst: Bash python screen.py --watchlist', 'editor: Bash ffmpeg cut take-4 → short-2', 'writer: Edit chapters/07.md', 'manager: notify Weekly radar is ready'];
 $('feed').innerHTML = FEED.concat(FEED).map(f => `<span><b>✓</b> ${f}</span>`).join('');
 let aa = 42;
 function ui() {

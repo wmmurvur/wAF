@@ -23,7 +23,7 @@ export default {
         <div class="ctxr"><div class="bar ctx"><i></i><u class="cv" style="left:35%"><em>converge 35%</em></u><u class="ho"><em>hand over</em></u></div><span class="pct">ctx <b>26</b>%</span></div>
         <p class="msg y" data-from="1">CONTEXT CONVERGE · start nothing new, finish the step in flight.</p>
         <p class="msg l" data-from="1">CONTEXT HANDOVER · stop, commit, write the handover note, end the run.</p>
-        <div class="baton" data-from="2"><code>baton.pass</code><q>Parts 1 and 2 of M-101 are done and committed (a41c9e2). Next is part 3, editCompose.ts: pip, side_by_side, logo, intro_outro. The de-hum still stops at 16.9 dB of the 20.</q></div>
+        <div class="baton" data-from="2"><code>baton.pass</code><q>Parts 7 and 8 of the export are done and committed (a41c9e2). Next is part 9, the CSV writer: its date column still fails across a DST change.</q></div>
       </div>
       <p class="flow" data-from="3">↓ leg 92 has ended. A fresh session opens; the old one is never resumed.</p>
       <div class="sess new" data-from="3">
@@ -137,7 +137,7 @@ export default {
     const RD = [['acct-a', 'ok'], ['acct-b', 'ok'], ['acct-c', 'no note'], ['acct-a', 'ok'], ['acct-b', 'failed'], ['acct-c', 'empty'], ['acct-a', 'empty'], ['acct-b', 'empty']];
     const off = st => st !== 'ok';
     fv.innerHTML = `
-      <div class="hd"><b>Sentry</b><span>campaign · Agent Farm backlog</span></div>
+      <div class="hd"><b>Sentry</b><span>campaign · orbit-app backlog</span></div>
       <div class="modes" role="group" aria-label="The leader's mode"><button type="button" data-m="0">Mechanical</button><button type="button" data-m="1" class="on">Hybrid</button><button type="button" data-m="2">Intelligent</button></div>
       <ol class="rounds">${RD.map(([a, st], k) => `<li class="${st.replace(' ', '')}" style="--ac:${A[a]}" ${k >= 5 ? 'data-from="4"' : ''}><b>R${k + 1}</b><span>${a}</span><em>${st === 'ok' ? '✓ note' : st}</em><i class="ld" title="the leader woke">◆</i></li>`).join('')}</ol>
       <p class="mc"></p>

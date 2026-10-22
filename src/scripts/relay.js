@@ -77,8 +77,8 @@ function line(kind, html) {
   L.appendChild(d);
   while (L.children.length > 8) L.firstChild.remove();
 }
-const TOOLS = ['Read src/core/pipeline/editCompose.ts', 'Edit src/core/pipeline/editSound.ts <b>✓</b>', 'Bash npm run compile <b>✓</b>', 'Grep "intro_outro" src/core/pipeline/',
-  'Bash ffmpeg -i hum.wav -af equalizer=f=50:t=q:w=8:g=-30 eq.wav <b>✓</b>', 'Bash npm test -- --full <b>✓ 41,569 passed</b>', 'Edit src/bridge/ops.meta.json <b>✓</b>', 'Read Backlog.md', 'Bash git diff --stat'];
+const TOOLS = ['Read src/export/timelineExport.ts', 'Edit src/export/rows.ts <b>✓</b>', 'Bash npm run compile <b>✓</b>', 'Grep "handoverNote" src/',
+  'Bash npm test -- export <b>✓ 214 passed</b>', 'Edit media/console.js <b>✓</b>', 'Read Backlog.md', 'Bash git diff --stat'];
 function strip() { $('cstrip').innerHTML = `session ${S.sid} · ctx ${(S.ctx * 10).toFixed(1)}k / 1.0M · ${Math.round(S.ctx)}% · <b>⑂ ${S.leg}</b> · ${ACCT[S.acc].n} · bootId ${S.boot}`; }
 
 /* ---------- instruments ---------- */
@@ -201,8 +201,8 @@ function start() {
   odo(S.leg); accDraw(); strip(); inst();
   line('farm', `fresh session ${S.sid} · ⑂ ${S.leg} on ${ACCT[S.acc].n}`);
   line('agent', `Handover note from ⑂ ${S.leg - 1} read. Picking up ${item()}, the last part of ${BQ[0].part}.`);
-  line('tool', 'Edit src/core/pipeline/editCompose.ts <b>✓</b>');
-  line('tool', 'Bash npm test -- --full <b>✓ 885 files · 0 failed</b>');
+  line('tool', 'Edit src/export/timelineExport.ts <b>✓</b>');
+  line('tool', 'Bash npm test -- export <b>✓ 214 passed</b>');
   const boot = $('boot');
   /* the boot log plays once per visit, and only when the page opens at the top */
   let seen = false;
