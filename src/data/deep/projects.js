@@ -68,7 +68,7 @@ export default {
         // Blueprint, The Backloglog ("The ledger"; projects.track including touch)
         'Each time an item is worked, the agent says so: touched it, closed it, with a note. A ledger keeps the code, what happened, when, which session, which turn and who. It is only ever added to, so two windows and an agent writing at once lose nothing.',
         // Blueprint, The Backloglog ("The touch event is what makes the ledger worth keeping")
-        'The touches are the point. "Root cause is in rows.ts; ran out of time" is the history the next session reads before it writes a line. Closing happens once; how it got there is the item\'s story.',
+        'The touches are the point. "Split by size first; the start-up order broke, so it was rolled back" is the history the next session reads before it writes a line. Closing happens once; how it got there is the item\'s story.',
         // Blueprint, The Backloglog ("Which session it was is INFERRED"; doubt codes; outside events)
         'Which session it was is worked out, and when it cannot be sure it says why: two live sessions, none, a stale one, the turn unknown, a reconstruction. A box ticked in Obsidian is noticed and recorded, with no turn made up for it.',
         // Blueprint, The Backloglog ("Two files, two owners"; "One trace stays in the file itself")
@@ -93,7 +93,7 @@ export default {
         // Blueprint, project session protocol (--append-system-prompt-file; Cost: 538 input tokens); Technical DNA §2.2 (pinned identical bytes, X-267), §2.3 (Codex: first prompt)
         'Claude Code takes the brief as an added system prompt; Codex, which has no such channel, in its first prompt. It is the same bytes every time, so the provider\'s cache keeps it: a full brief measured 538 tokens, and one regenerated file once cost 303,987 tokens to read again.',
         // Blueprint, project session protocol ("Transparency is not optional here"; "The window only speaks for tasks a person made"); Projects ("A resume is told about its OWN project")
-        'You can see it: the Console shows <code>◧ orbit-app — project context active</code>, and its hover is the text itself. A resumed session is told about its own project, not the window\'s. A schedule firing at 3 a.m. gets a project only if the schedule names one.',
+        'You can see it: the Console shows <code>◧ Agent Farm — project context active</code>, and its hover is the text itself. A resumed session is told about its own project, not the window\'s. A schedule firing at 3 a.m. gets a project only if the schedule names one.',
         // Blueprint, The documents (the write side: log, plan.check, decision.add, deliver)
         'And the work goes back in: an agent that finishes something adds a worklog line, ticks the plan item, records a decision or a delivery. The next brief is built from what happened, not from what somebody remembered to type.',
       ],

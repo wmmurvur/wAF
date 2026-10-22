@@ -80,6 +80,11 @@
 :is(#s-console,#s-local) .eng.o{border-color:var(--teal);color:var(--teal)}
 :is(#s-console,#s-local) .eng.g{border-color:#7fa0f8;color:#7fa0f8}
 :is(#s-console,#s-local) .eng.x{border-color:#9ad;color:#9ad}
+:is(#s-console,#s-local) .rt{margin-left:auto;font-size:10px;border:1px dashed #6d8fdc;color:#d3e26b;border-radius:9px;padding:0 6px;line-height:15px;white-space:nowrap}
+:is(#s-console,#s-local) .card .m .eng{margin-left:0}
+:is(#s-console,#s-local) .card .h>span:not(.eng):not(.rt){min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+:is(#s-console,#s-local) .card .h .eng,:is(#s-console,#s-local) .card .h .rt{flex:none}
+:is(#s-console,#s-local) .card .m .fr{color:#b9c96a;font-size:10px}
 /* more sessions than the column holds, as in the real Console: the list steps through them by itself (console.js) */
 /* each session shows the first words of its instruction, two lines of them, so the kind of work reads at a glance */
 #s-console .list .card .t{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:1.35}
@@ -212,6 +217,8 @@
 #s-console .win.light .eng.o{border-color:#0f7b84;color:#0f7b84}
 #s-console .win.light .eng.g{border-color:#3a6cf0;color:#3a6cf0}
 #s-console .win.light .eng.x{border-color:#4a6f8a;color:#4a6f8a}
+#s-console .win.light .rt{border-color:#3a6cf0;color:#5e6f00}
+#s-console .win.light .card .m .fr{color:#5e6f00}
 #s-console .win.light .card.idle{border-left-color:#bdbdbd}
 #s-console .win.light .list .sb{background:#c8c8c8}
 #s-console .win.light .acct{border-color:#c8c8c8;color:#616161}

@@ -1,59 +1,61 @@
-// The demo backlog every section shares: one project, the family the relay chain works through, and the queue behind it.
+// The backlog every section shares: one project, the family the relay chain works through, and the queue behind it.
 // Shaped like the real Projects → Backlog page (area codes, families, sizes S to XL, #byAI / #byREQ, ⛔ waits on),
-// which keeps the work in a plain Backlog.md file. Every item here is invented; nothing comes from a real backlog.
+// which keeps the work in a plain Backlog.md file. The project is Agent Farm itself, and the items are its own (owner's
+// video of 22 Oct 2026, translated): its agents building its video pipeline, phases A to E. Counts and areas are the real
+// page's; legs, captures and the few items without a code in that video are demo data.
 
-export const project = { name: 'orbit-app', sessions: 412, open: 38, done: 214 };
+export const project = { name: 'Agent Farm', sessions: 1463, open: 73, done: 561 };
 
 /* Areas come from the file's own headings. Counts are the open items in each; they add up to project.open. */
-export const AREAS = [['P', 1], ['K', 4], ['S', 2], ['M', 0], ['N', 0], ['B', 0], ['A', 0], ['U', 9], ['X', 22]];
+export const AREAS = [['P', 1], ['K', 5], ['S', 2], ['M', 40], ['N', 1], ['B', 0], ['A', 0], ['U', 5], ['X', 19]];
 
-/* The whole the chain in Days works through, then its twelve parts in queue order.
+/* The whole the chain in Days works through, then its twelve parts in queue order: Phase A, B and the start of C.
    legs: how many relay legs each part took in the demo chain (they add up to 92; the last one is still open). */
-export const family = { c: 'X-40', t: 'Timeline export, end to end', s: 'XL', k: 'feat' };
+export const family = { c: 'M-64', t: 'Video pipeline: a brief in, a finished video out', s: 'XL', k: 'feat' };
 export const parts = [
-  { c: 'X-41', t: 'index the transcripts', s: 'S', k: 'feat', legs: 5 },
-  { c: 'X-42', t: 'stream rows into the exporter', s: 'M', k: 'feat', legs: 9 },
-  { c: 'X-43', t: 'write the CSV schema test', s: 'S', k: 'test', legs: 4 },
-  { c: 'X-44', t: 'handle a 1M-row transcript', s: 'L', k: 'bug', legs: 13 },
-  { c: 'X-45', t: 'JSON lines on the same stream', s: 'M', k: 'feat', legs: 8 },
-  { c: 'X-46', t: 'resume a broken export from the last row', s: 'L', k: 'feat', legs: 12 },
-  { c: 'X-47', t: 'wire the export button', s: 'S', k: 'ux', legs: 4 },
-  { c: 'X-48', t: 'add the progress notice', s: 'S', k: 'ux', legs: 5 },
-  { c: 'X-49', t: 'Windows paths past 260 characters', s: 'M', k: 'bug', legs: 9 },
-  { c: 'X-50', t: 'tests at 10k, 1M and 10M rows', s: 'L', k: 'test', legs: 14 },
-  { c: 'X-51', t: 'document the export path', s: 'S', k: 'docs', legs: 4 },
-  { c: 'X-52', t: 'clean up the old writer', s: 'M', k: 'refactor', legs: 5 },
+  { c: 'M-70', t: 'A-0 common ground: skeleton and purity gate', s: 'M', k: 'feat', legs: 5 },
+  { c: 'M-71', t: 'A-1 capability profile, proven by a trial encode', s: 'M', k: 'feat', legs: 7 },
+  { c: 'M-80', t: 'A-10 sound chain: voice, music bed, master mix', s: 'L', k: 'feat', legs: 9 },
+  { c: 'M-81', t: 'A-11 final render and 480p draft in one pass', s: 'L', k: 'feat', legs: 10 },
+  { c: 'M-82', t: 'A-12 preflight: 32 checks before the render', s: 'M', k: 'test', legs: 8 },
+  { c: 'M-83', t: 'A-13 voice-over price: unknown is never zero', s: 'S', k: 'feat', legs: 4 },
+  { c: 'M-90', t: 'B-3 versions: undo, redo, approve, lock', s: 'M', k: 'feat', legs: 8 },
+  { c: 'M-91', t: 'B-4 project lock: one writer at a time', s: 'M', k: 'feat', legs: 6 },
+  { c: 'M-93', t: 'B-6 route finder: plans back from the goal', s: 'L', k: 'feat', legs: 12 },
+  { c: 'M-99', t: 'Phase B acceptance, measured on this machine', s: 'S', k: 'chore', legs: 5 },
+  { c: 'M-100', t: 'C-0 editing actors: trim, cut, join, speed', s: 'L', k: 'feat', legs: 13 },
+  { c: 'M-101', t: 'C-1 sound and compose: de-hum, pip, logo, intro', s: 'L', k: 'feat', legs: 5 },
 ];
 
 /* What is queued after the family. by: who wrote the line (AI = an agent filed it itself, REQ = you asked an agent to);
    wait: an unfinished item it waits on, so it is held back. */
 export const queue = [
-  { c: 'U-12', t: 'export drops rows past 10k', s: 'M', k: 'bug' },
-  { c: 'X-53', t: 'Excel opens the UTF-8 CSV as Latin-1', s: 'S', k: 'bug', by: 'AI' },
-  { c: 'K-7', t: 'settings search finds nothing for "quota"', s: 'S', k: 'bug', by: 'REQ' },
-  { c: 'S-9', t: 'session list slows down past 1,000 rows', s: 'M', k: 'perf' },
-  { c: 'X-54', t: 'Parquet as a third export format', s: 'L', k: 'feat', wait: 'X-52' },
-  { c: 'U-31', t: 'export dialog forgets the last folder', s: 'S', k: 'ux' },
+  { c: 'M-106', t: 'C-6 preview: storyboard, cut, sound, text, 480p', s: 'M', k: 'feat' },
   { c: 'K-8', t: 'quota bar rounds 89.6% up to 90%', s: 'S', k: 'bug', by: 'AI' },
-  { c: 'U-33', t: 'keyboard shortcut for the export', s: 'S', k: 'ux', by: 'REQ' },
-  { c: 'S-10', t: 'archive sessions older than a year', s: 'M', k: 'feat' },
-  { c: 'P-3', t: 'release notes for 2.0', s: 'S', k: 'docs' },
-  { c: 'X-55', t: 'export a single turn from the transcript', s: 'S', k: 'feat' },
-  { c: 'K-9', t: 'warn before a leg starts on a full account', s: 'M', k: 'ux', by: 'AI' },
-  { c: 'U-34', t: 'empty state for a project with no sessions', s: 'S', k: 'ux' },
+  { c: 'M-107', t: 'C-7 ad-hoc runner for work that is not on the map', s: 'L', k: 'feat', by: 'REQ' },
+  { c: 'M-108', t: 'C-8 script actor: hash allow-list, runs on your yes', s: 'L', k: 'feat', wait: 'M-107' },
+  { c: 'M-109', t: 'C-9 editor bridge both ways: Premiere and CapCut', s: 'L', k: 'feat' },
+  { c: 'U-189', t: 'Agent Farm in more languages, English first', s: 'L', k: 'ux', by: 'REQ' },
+  { c: 'M-110', t: 'C-10 bench agent and its pipeline playbook', s: 'M', k: 'feat' },
+  { c: 'M-111', t: 'C-11 one door to the bench, from any video', s: 'L', k: 'ux', wait: 'M-110' },
+  { c: 'S-9', t: 'session list slows down past 1,000 rows', s: 'M', k: 'perf' },
+  { c: 'M-112', t: 'Phase C closing: seven scenarios on the bench', s: 'M', k: 'chore' },
+  { c: 'M-113', t: 'D-0 package file and autonomy: supervised to full', s: 'L', k: 'feat' },
+  { c: 'M-114', t: 'D-1 experiment mode: variants side by side', s: 'L', k: 'feat', wait: 'M-113' },
+  { c: 'M-122', t: 'E-1 publish to YouTube with your own sign-in', s: 'L', k: 'feat', by: 'REQ' },
 ];
 
 /* Thoughts filed while the page runs: typed into the capture box by a person, or filed by an agent mid-job (#byAI).
    a: the area the item is filed under; it gets the next free number there (codes only count up). */
 export const captures = [
-  { who: 'you', t: 'the export should say which account each leg ran on', a: 'X', k: 'feat', s: 'S' },
-  { who: 'agent', t: 'rows.ts swallows a write error on a full disk', a: 'X', k: 'bug', s: 'S' },
-  { who: 'you', t: 'dark theme for the export dialog', a: 'U', k: 'ux', s: 'M' },
-  { who: 'agent', t: 'test_export.js leaves temp files behind on Windows', a: 'X', k: 'test', s: 'S' },
+  { who: 'you', t: 'every episode also as a 9:16 short, by default', a: 'M', k: 'feat', s: 'S' },
+  { who: 'agent', t: 'this ffmpeg build has no arnndn; fall back to afftdn', a: 'M', k: 'bug', s: 'S' },
+  { who: 'you', t: 'subtitles in Spanish and German for every episode', a: 'M', k: 'feat', s: 'M' },
+  { who: 'agent', t: 'the trial encode leaves a temp file behind on Windows', a: 'M', k: 'test', s: 'S' },
   { who: 'you', t: 'a weekly digest of what the chains closed', a: 'S', k: 'feat', s: 'M' },
   { who: 'agent', t: 'quota bar flickers when two accounts tie', a: 'K', k: 'bug', s: 'S' },
 ];
-export const nextCode = { P: 4, K: 10, S: 11, U: 35, X: 56 };
+export const nextCode = { P: 2, K: 10, S: 11, M: 137, U: 197, X: 570 };
 
 /* the live item: the last part of the family, on the relay hero's live leg */
 export const live = parts[parts.length - 1];
@@ -62,7 +64,7 @@ export const live = parts[parts.length - 1];
    is only a backlog whose items are not code"). Any #tag is a kind (projectBacklog.ts: "the shipped set is a suggestion"),
    so a film files #shoot and #edit and a thesis files #write. who: the agent on the first item. All of it is demo data. */
 export const projects = [
-  { id: 'orbit', name: 'orbit-app', desc: 'A desktop app that turns session transcripts into timelines.' },
+  { id: 'farm', name: 'Agent Farm', desc: 'This extension, built by its own agents. Right now they are building its video pipeline.' },
   {
     id: 'keeper', name: 'The last keeper', sessions: 96, open: 17, done: 41, queued: 9,
     desc: 'A documentary series in six episodes: the last lighthouse keepers, and the storms they wrote down.',
@@ -110,21 +112,21 @@ export const projects = [
 /* Projects → Track (screenshot M14; projects.track / projects.tracks in extension.ts): which session, which turn of it,
    when and by whom each item was worked, with a note when it was not finished. "Three months from now K-8 leads back to
    the exact turns it was fought in." uncertain: the attribution is a best effort and says why (multi: two of your
-   sessions were live). Session ids line up with the Memory chapter's demo sessions. */
+   sessions were live). Agent Farm's figures, M-93's and M-100's notes and session ids are the owner's (video, 22 Oct 2026). */
 export const tracks = {
-  orbit: {
-    stats: [['231', 'tracked'], ['1,318', 'events'], ['371', 'sessions'], ['2,904', 'turns'], ['131d', 'span']], unc: 3,
+  farm: {
+    stats: [['1,305', 'tracked'], ['4,067', 'events'], ['525', 'sessions'], ['1,065', 'turns'], ['79d', 'span']], unc: 3,
     items: [
-      { c: 'U-12', st: 'open', k: 'bug', t: 'export drops rows past 10k', s: 'M', n: [2, 3, '6d'],
-        ev: [['Jul 3, 22:41', 'a91c03e2', 14, 'developer · Claude', 'touched', 'root cause is in rows.ts; ran out of time'],
-             ['Jul 9, 10:05', '5d2e77b1', 3, 'reviewer · Codex', 'touched', 'the cap lives in the writer, not the query']],
-        next: 'Next up after X-52. The session that takes it reads both notes before it writes a line.' },
-      { c: 'X-51', st: 'done', k: 'docs', t: 'document the export path', s: 'S', n: [4, 4, '1d'],
-        ev: [['Oct 10, 21:16', 'e0b4c9d1', 9, 'developer · Claude', 'done', 'docs/export.md written; the dialog screenshots redone']] },
+      { c: 'X-499', st: 'open', k: 'debt', t: 'split the biggest files without breaking start-up', s: 'M', n: [2, 22, '3d'],
+        ev: [['Sep 9, 23:12', 'b7d13216', 18, 'developer · Claude', 'touched', 'split by size first; the start-up order broke, so it was rolled back'],
+             ['Sep 12, 10:40', '5d2e77b1', 4, 'reviewer · Codex', 'touched', 'split by feature, not by size: one folder per panel, the start-up list kept in one place']],
+        next: 'Queued after Phase C. The session that takes it reads both notes before it writes a line.' },
+      { c: 'M-93', st: 'done', k: 'feat', t: 'B-6 route finder: plans back from the goal', s: 'L', n: [2, 2, '1d'],
+        ev: [['Oct 20, 06:30', 'b0d2ec28', 2, 'developer · Claude', 'done', 'planner.ts, pure code: it plans back from the goal and says why each step runs. Full suite: 885 files, 41,569 tests passed, 0 failed.']] },
       { c: 'K-8', st: 'open', k: 'bug', by: 'AI', t: 'quota bar rounds 89.6% up to 90%', s: 'S', n: [1, 1, '0d'], unc: 'multi',
-        ev: [['Oct 8, 14:02', '8a5f2c64', 22, 'developer · Claude', 'opened', 'noticed mid-job and filed: a proposal']] },
-      { c: 'X-44', st: 'done', k: 'bug', t: 'handle a 1M-row transcript', s: 'L', n: [13, 31, '4d'],
-        ev: [['Oct 5, 03:40', 'c4d18a07', 6, 'developer · Claude', 'done', 'rows stream in 64k batches; 1M rows export in 41s with flat memory']] },
+        ev: [['Oct 21, 14:02', '8a5f2c64', 22, 'developer · Claude', 'opened', 'noticed mid-job and filed: a proposal']] },
+      { c: 'M-100', st: 'done', k: 'feat', t: 'C-0 editing actors: trim, cut, join, speed', s: 'L', n: [3, 3, '2d'],
+        ev: [['Oct 21, 11:48', '85340699', 3, 'developer · Claude', 'done', 'nine parts: the fragment contract, the cut-list core, then trim, cut, join, crop, rotate, speed, freeze, reverse and the audio track']] },
     ],
   },
   keeper: {

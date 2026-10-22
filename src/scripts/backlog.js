@@ -4,7 +4,7 @@
 // Rows and chips are re-rendered from the queue and slid into place, so every move reads as the queue changing.
 // Chapter II: the project list shows the same page for a documentary, a thesis and a campaign, and the Track tab shows how
 // items were worked (data/backlog.js). On first sight a short tour visits them once, then the live queue carries on; a click
-// anywhere in the panel ends the tour. The live queue only moves on screen while orbit-app's Backlog tab is showing.
+// anywhere in the panel ends the tour. The live queue only moves on screen while Agent Farm's own Backlog tab is showing.
 import { S, BQ, BL, ACCT, on, emit, vis, reduce, nextCapture, file } from './state.js';
 import { project, AREAS, projects, tracks } from '../data/backlog.js';
 
@@ -15,8 +15,8 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 /* waits, then keeps waiting while the section is off screen or the tab is hidden */
 async function hold(ms) { await sleep(ms); while (!vis['s-backlog'] || document.hidden || !live()) await sleep(400); }
 
-let cur = 'orbit', tab = 'backlog', user = false, open = null;
-const live = () => cur === 'orbit' && tab === 'backlog';
+let cur = 'farm', tab = 'backlog', user = false, open = null;
+const live = () => cur === 'farm' && tab === 'backlog';
 
 const rowsEl = $('rows'), chipsEl = $('chips');
 let extra = null; /* a row shown under the queue: a capture in the inbox, or an item just filed at the back */
@@ -66,7 +66,7 @@ function move(fn) {
 const P = Object.fromEntries(projects.map(p => [p.id, p]));
 const blv = $('blv'), trv = $('trv'), plist = $('plist'), tabs = $('tabs');
 
-/* another project's backlog: the same page, its own areas, queue and rows, still (only orbit-app's queue is live here) */
+/* another project's backlog: the same page, its own areas, queue and rows, still (only Agent Farm's own queue is live here) */
 function still(p) {
   $('areas').innerHTML = `<span class="on">all areas</span>${p.areas.map(([a, n]) => `<span>${a} ${n}</span>`).join('')}`;
   rowsEl.innerHTML = p.rows.map((it, i) => `<li class="row${i === 0 ? ' doing' : ''}" data-c="${it.c}"><span class="no${i < TAKE ? ' take' : ''}">${i + 1}</span><i class="cb"></i><code>${it.c}</code><span class="t">${esc(it.t)}</span>${meta(it)}`
@@ -107,13 +107,13 @@ function show(p, t) {
   for (const b of plist.querySelectorAll('button')) { const on = b.dataset.p === cur; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }
   for (const b of tabs.querySelectorAll('button')) { const on = b.dataset.tab === tab; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }
   $('name').textContent = pr.name;
-  $('meta').textContent = cur === 'orbit' ? `${project.sessions} sessions · the relay chain is on it` : `${pr.sessions} sessions`;
+  $('meta').textContent = cur === 'farm' ? `${project.sessions} sessions · the relay chain is on it` : `${pr.sessions} sessions`;
   $('desc').textContent = pr.desc;
   blv.hidden = tab !== 'backlog'; trv.hidden = tab !== 'track';
   if (tab === 'track') track();
-  else if (cur === 'orbit') { $('areas').innerHTML = `<span class="on">all areas</span>${AREAS.map(([a, n]) => `<span>${a} ${n}</span>`).join('')}`; render(); }
+  else if (cur === 'farm') { $('areas').innerHTML = `<span class="on">all areas</span>${AREAS.map(([a, n]) => `<span>${a} ${n}</span>`).join('')}`; render(); }
   else still(pr);
-  emit('showing', tab === 'track' ? 'track' : cur === 'orbit' ? 'backlog' : 'kinds');
+  emit('showing', tab === 'track' ? 'track' : cur === 'farm' ? 'backlog' : 'kinds');
 }
 
 $('panel').addEventListener('click', e => {
@@ -128,20 +128,20 @@ trv.addEventListener('keydown', e => { const ti = e.target.closest('.ti'); if (t
 /* the chapter II tiles */
 on('feature', id => {
   if (id === 'kinds') { user = true; open = null; show('keeper', 'backlog'); }
-  else if (id === 'track') { user = true; open = 'U-12'; show('orbit', 'track'); }
-  else if (id === 'backlog') { user = true; show('orbit', 'backlog'); }
+  else if (id === 'track') { user = true; open = 'X-499'; show('farm', 'track'); }
+  else if (id === 'backlog') { user = true; show('farm', 'backlog'); }
 });
 
-/* the tour, once: three other kinds of project, then how U-12 was fought over three months, then back to the live queue */
+/* the tour, once: three other kinds of project, then how X-499 was fought over, then back to the live queue */
 async function seen(ms) { await sleep(ms); while (!vis['s-backlog'] || document.hidden) await sleep(400); return !user; }
 async function tour() {
   for (const [p, ms] of [['keeper', 4200], ['thesis', 3600], ['spring', 3200]]) { if (user) return; show(p, 'backlog'); if (!await seen(ms)) return; }
   if (user) return;
-  open = 'U-12'; cur = 'orbit'; tab = 'track'; show(); track(0);
-  const n = tracks.orbit.items[0].ev.length;
+  open = 'X-499'; cur = 'farm'; tab = 'track'; show(); track(0);
+  const n = tracks.farm.items[0].ev.length;
   for (let k = 1; k <= n; k++) { if (!await seen(1500)) return; track(k); }
   if (!await seen(5200)) return;
-  open = null; show('orbit', 'backlog');
+  open = null; show('farm', 'backlog');
 }
 
 render();

@@ -20,7 +20,7 @@ const EVENTS = [
   { ev: 'Question card', tone: 'Pulse', id: 'pulse', on: true, word: 'a question card for you', who: 'developer', say: true },
   { ev: 'Workflow asks you', tone: 'Pop', id: 'pop', on: true, word: 'a workflow is asking you', who: 'showrunner' },
   { ev: 'Quota running out', tone: 'Thin ticks', id: 'ticks', word: 'quota running out', who: 'acct-b' },
-  { ev: 'Mission ended', tone: 'Lullaby', id: 'lullaby', word: 'mission ended', who: 'Timeline export' },
+  { ev: 'Mission ended', tone: 'Lullaby', id: 'lullaby', word: 'mission ended', who: 'Phase C closing' },
 ];
 const SESSIONS = [
   { s: 'developer', e: 'Claude Code', snd: 'like-all', tone: "all's", who: "all's", read: false, also: [] },
@@ -44,7 +44,7 @@ const ALSO = [['focus', '◎ Focus'], ['modal', '▣ Pop-up'], ['toast', '▭ No
             <span class="who"><i></i>developer</span><span class="eng">Claude</span><span class="kind">question</span>
             <span class="ring" role="timer" aria-label="Auto-answer countdown"><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5" /><circle class="fg" id="w-ring" cx="18" cy="18" r="15.5" /></svg><b id="w-cd">0:12</b></span>
           </div>
-          <p class="qq" id="w-qq">Which export format should the timeline use?</p>
+          <p class="qq" id="w-qq">The notch takes 16.9 dB off the hum; the target is 20. Which filter should ship?</p>
           <div class="opts" id="w-opts"></div>
           <p class="qf" id="w-qf">Nobody at the desk? When the ring runs out, the recommended option goes in.</p>
         </div>

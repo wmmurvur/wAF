@@ -6,15 +6,23 @@ import { appVer, vtag } from '../data/site.js';
 const $ = id => document.getElementById('c-' + id);
 const flat = () => matchMedia('(max-width: 900px)').matches;
 
-/* transcript: real lines from screenshot 004, translated to English, with the real restart notice verbatim */
-const SCRIPT = [
-  ['agent', `Handing over: reading quota, both boards and the delivery rule, then loading ${vtag(appVer(0))}.`],
-  ['agent', 'Window reloaded. Checking that the new build is the one actually running.'],
-  ['you', 'Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id. You were mid-turn when it went down, so the one answer you were writing was lost on the way; nothing before it is missing.'],
-  ['agent', `Back in the same seat after the reload. extensions.json says ${vtag(appVer(0))}; checking the running build.`],
-  ['agent', `${vtag(appVer(0))} is running (new bootId, pending false, no twin sessions). Running the live test for the export next.`],
-  ['agent', 'The export file was 0 bytes at 03:04; the previous leg said otherwise. Reading the core module from the top.'],
+/* transcript: the developer building Agent Farm's own video pipeline (item M-101). The lines are the owner's real
+   session of 21 Oct 2026, translated to English; each brings the tool it ran. They are typed in turn while the window
+   is on screen, and after the test run the agent packs a new build, installs it and comes back in the same seat. */
+const WORK = [
+  ['Handover rule read: keep working until the 5-hour window reaches 90%. While the suite runs, drafting part 3 (editCompose.ts: pip, side_by_side, logo, intro_outro).', '<b>✎ Edit</b> src/core/pipeline/editCompose.ts'],
+  ['While waiting, writing the closing records as files: decision notice, work log, item trace, handover load.', '<b>✎ Write</b> _REF/m101/handover-load.md'],
+  ['Updating the Bridge op descriptions (tools.recipes / tools.run) so they explain the built-in recipes.', '<b>✎ Edit</b> src/bridge/ops.meta.json'],
+  ['The hook is right; writing the script to a file and running it.', '<b>⚡ Bash</b> node .af/tmp/hook-check.mjs'],
+  ['Updating the guide summaries (ops.meta.json, studio.md).', '<b>✎ Edit</b> docs/guide/studio.md'],
+  ['Copying the tests into the repo and adapting them to the new API (durationSec, untimed per segment).', '<b>✎ Edit</b> test/pipeline/editCompose.test.ts'],
+  ['Compiling and running the new and affected tests.', '<b>⚡ Bash</b> npm run compile && npm test -- test/pipeline', true],
+  ['Hum band dropped 16.9 dB; the threshold is 20 dB. To measure the notch\'s real depth, trying other Q values and the equalizer alternative straight on the wav.', '<b>⚡ Bash</b> ffmpeg -i hum.wav -af equalizer=f=50:t=q:w=8:g=-30 eq.wav'],
+  ['8/0. Matching the word "notch" in the header comment to the measured method, then starting the full suite.', '<b>⚡ Bash</b> npm test -- --full'],
+  ['While the suite runs, reading the handover rule (_REF/handover.md); quota is nearing the handover line.', '<b>◷ Read</b> _REF/handover.md'],
 ];
+/* shown at first: the six lines before the test run */
+const FIRST = 6;
 const tx = $('tx');
 function addLine(kind, text, typed) {
   const d = document.createElement('div');
@@ -29,10 +37,12 @@ function addLine(kind, text, typed) {
     (function step() { i += 2 + ((Math.random() * 3) | 0); t.textContent = text.slice(0, i); t.appendChild(cur); if (i < text.length) setTimeout(step, 22); else { cur.remove(); res(); } })();
   });
 }
-SCRIPT.forEach(([k, t]) => addLine(k, t, false));
+WORK.slice(0, FIRST).forEach(([t]) => addLine('agent', t, false));
+let wi = FIRST;
+$('tool').innerHTML = WORK[FIRST - 1][1];
 
 /* live feed in the sidebar */
-const FEED = ['✓ developer: Edit src/export/rows.ts', '✓ youtuber: Read sources/fall-of-rome.md', '✓ scholar: Bash Rscript models/ch3.R', '✓ analyst: Bash python screen.py --watchlist', '◷ writer: notify Chapter 7 draft is ready', '✓ editor: Bash ffmpeg cut take-4 → short-2', '✓ developer: Bash npm run compile', '✓ manager: Read Backlog.md'];
+const FEED = ['✓ developer: Edit src/core/pipeline/editCompose.ts', '✓ youtuber: Pipeline: voice-over for episode 12', '✓ scholar: Bash Rscript models/ch3.R', '✓ analyst: Bash python screen.py --watchlist', '◷ writer: notify Chapter 7 draft is ready', '✓ editor: Bash ffmpeg cut take-4 → short-2', '✓ developer: Bash npm run compile', '✓ manager: Read Backlog.md'];
 const feed = $('feed'); let fi = 0;
 function feedTick() {
   const f = FEED[fi++ % FEED.length], d = document.createElement('div');
@@ -47,7 +57,7 @@ function ui() {
   $('strip').innerHTML = `<u>session ${S.sid}</u> · ctx ${k}k / 1.0M · ${Math.round(S.ctx)}% · <span class="leg">⑂ ${S.leg}</span> · ~$${(S.tok * 2.7).toFixed(2)} (${S.tok.toFixed(1)}M tokens) this session · 1 turn · 1 running`;
   $('cSid').textContent = `(#${S.sid})`; $('cAcct').textContent = a.n; $('selAcct').textContent = a.n + ' ▾';
   $('cCtx').textContent = k + 'k'; $('cTok').textContent = S.tok.toFixed(1) + 'M tk';
-  $('cLeg').textContent = '⑂ ' + S.leg; $('cTitle').textContent = `chn_7f3a · relay leg ${S.leg} · ${BQ[0].c} ${BQ[0].t}`;
+  $('cLeg').textContent = '⑂ ' + S.leg; $('cTitle').title = `chn_7f3a · relay leg ${S.leg} · ${BQ[0].c} ${BQ[0].t}`;
   $('sbLeg').textContent = '⑂ ' + S.leg; $('r1').textContent = '⑂ ' + S.leg;
   $('r2').textContent = Math.round(S.ctx) + '%'; $('r3').textContent = Math.round(a.h) + '%';
   $('longest').textContent = 'longest ' + S.longest + 'm'; $('t2').textContent = S.longest + 'm'; $('t3').textContent = Math.max(1, S.longest - 1) + 'm'; $('r4k').textContent = `· longest ${S.longest}m`;
@@ -59,7 +69,7 @@ on('pass', p => { addLine('sys', `⑂ ${p.from} → ⑂ ${p.to} · ${p.why === '
 on('ver', ui);
 
 /* Ouroboros: the agent ships a build, the window reloads, the session comes back in its seat */
-const TOOLS = ['npm run test -- test/test_export.js', 'npm run package', 'code --install-extension dist/vsix/agent-farm-NEXT.vsix', 'af farm.restartExtensionHost resume=true'];
+const TOOLS = ['npm run package', 'code --install-extension dist/vsix/agent-farm-NEXT.vsix', 'af farm.restartExtensionHost resume=true'];
 async function ouroboros() {
   startOuro();
   const next = nextVer();
@@ -68,8 +78,15 @@ async function ouroboros() {
   finishOuro(next); ui(); $('reload').classList.remove('on');
   await addLine('you', 'Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.', true);
   await wait(500);
-  await addLine('agent', `${next} is running. Same seat, same conversation. Continuing the live test.`, true);
-  $('tool').innerHTML = '<b>⚡ Bash</b> npm run test -- test/test_export.js';
+  await addLine('agent', `${next} is running. Same seat, same conversation. Trying the new recipes live.`, true);
+}
+
+/* the next line of work, typed, with the tool it ran; after the test run comes a new build of Agent Farm */
+async function work() {
+  const [t, tool, build] = WORK[wi++ % WORK.length];
+  $('tool').innerHTML = tool;
+  await addLine('agent', t, true);
+  if (build && canOuro()) { await wait(1800); await ouroboros(); }
 }
 
 /* scroll-driven assembly */
@@ -190,11 +207,11 @@ if (reduce) {
     $('rclock').textContent = [Math.floor(clock / 3600) % 24, Math.floor(clock / 60) % 60, clock % 60].map(n => String(n).padStart(2, '0')).join(':');
     ui(); if (sec % 3 === 0) feedTick();
   }, 1000);
-  /* the Ouroboros plays once the window is mostly assembled and on screen */
+  /* the session works on, a line at a time, once the window is mostly assembled and on screen */
   (async function loop() {
     for (;;) {
-      await wait(1500);
-      if (vis['s-console'] && (flat() || prog > 0.55) && canOuro()) await ouroboros();
+      await wait(4800);
+      if (vis['s-console'] && (flat() || prog > 0.55) && !S.busy) await work();
     }
   })();
 }

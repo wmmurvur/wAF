@@ -11,9 +11,9 @@ const SECS = 12, RING = 97.4;
 
 /* questions an agent asks mid-task; the first option is the recommended one */
 const QUESTIONS = [
-  { q: 'Which export format should the timeline use?', o: ['CSV', 'JSON lines', 'Both'], done: 'The exporter streams rows now, 64k at a time. Before I wire the button I need the format.' },
-  { q: 'The old export writer is still imported in two places. Remove it, or keep a shim?', o: ['Remove it', 'Keep a shim'], done: 'Two files still import the old writer: export/legacy.ts and test_export.js.' },
-  { q: 'What should the new row limit setting be called?', o: ['<code>timelineExportMaxRows</code>', '<code>exportRowCap</code>'], done: 'The row cap is a setting now, read once per export. It needs a name.' },
+  { q: 'The notch takes 16.9 dB off the hum; the target is 20. Which filter should ship?', o: ['Equalizer, measured', 'Notch, as it is', 'Both, as variants'], done: 'The de-hum is measured on a real wav now, and 8 of 8 tests pass. Before part 3 I need the filter.' },
+  { q: 'Picture in picture: where should the small frame sit by default?', o: ['Bottom right', 'Top right', 'Ask each time'], done: 'pip, side_by_side, logo and intro_outro are drafted in editCompose.ts. The default corner is a choice.' },
+  { q: 'What should the new loudness setting be called?', o: ['<code>pipeline.loudnessLufs</code>', '<code>audio.targetLufs</code>'], done: 'Loudness is a setting now, read once per render. It needs a name.' },
 ];
 const PERMS = ['git push origin main', 'rm -rf dist/vsix'];
 
@@ -102,19 +102,19 @@ function tcard(c) {
 function chat() {
   const Q = QUESTIONS[qi % QUESTIONS.length], cmd = PERMS[pi % PERMS.length], gest = [['⏸ Cancel', 'x'], ['📄 Diff', 'x'], ['📊 Status', 'x']];
   const rev = {
-    head: '🤖 reviewer · 📁 orbit-app · 🎯 review X-51 before it ships · Turn 6', at: Date.now() - permSince * 60000,
+    head: '🤖 reviewer · 📁 Agent Farm · 🎯 review M-100 before it ships · Turn 6', at: Date.now() - permSince * 60000,
     done: 'Review done: two nits fixed, and every test passes.',
     status: permOpen ? `❓ WAITING ON YOU\nPermission: Bash\n${cmd}` : perm.dataset.d === 'deny' ? `❓ WAITING ON YOU\nPermission refused: ${cmd}` : '❓ STATUS\nStill working.',
     fig: '⏱ 48s · 61k tok', kb: permOpen ? [[['✅ Allow', 'allow'], ['🚫 Deny', 'deny']], gest] : [gest],
   };
   const dev = {
-    head: '🤖 developer · 📁 orbit-app · 🎯 X-52 clean up the old writer · Turn 14', at: qAt,
+    head: '🤖 developer · 📁 Agent Farm · 🎯 M-101 sound and compose · Turn 14', at: qAt,
     done: Q.done,
     status: answered ? '❓ STATUS\nStill working.' : `❓ WAITING ON YOU\n${strip(Q.q)}\n${Q.o.map(o => '   · ' + strip(o)).join('\n')}\n⏳ Auto-answer at ${hm(qAt + SECS * 1000)} — then "${strip(Q.o[0])}" is chosen for you.`,
     fig: '⏱ 3m 41s · 412k tok', kb: answered ? [gest] : [...Q.o.map((o, i) => [[strip(o), 'q' + i]]), gest],
   };
   tgl.innerHTML = tcard(rev)
-    + `<div class="bo">also put the account each leg ran on in the export<time>${hm(sentAt)} ✓✓</time></div>`
+    + `<div class="bo">also make a 9:16 short of every episode<time>${hm(sentAt)} ✓✓</time></div>`
     + `<div class="bi">⏸ developer is working (turn 14). Queued — it goes in when this turn ends.<time>${hm(sentAt + 2000)}</time></div>`
     + tcard(dev);
   tgl.scrollTop = tgl.scrollHeight;

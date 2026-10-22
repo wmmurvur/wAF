@@ -48,7 +48,7 @@ import { appVer, vtag } from '../../data/site.js';
               <h6>⌄ TASKS</h6>
               <div class="row">Plan <span>3/15 on · 8 manual</span></div>
               <div class="row">Market brief <span>analyst · daily</span></div>
-              <div class="row">Channel ideas <span>youtuber · Mon</span></div>
+              <div class="row">Weekly episode <span>youtuber · Fri</span></div>
               <div class="row">Weekly research <span>scholar</span></div>
               <h6>› MISSIONS</h6>
               <h6>⌄ TOOLBOX</h6>
@@ -67,18 +67,18 @@ import { appVer, vtag } from '../../data/site.js';
                   <div class="newbtn"><span>+ New session</span><span>⇅</span></div>
                   <div class="wait" id="c-waitEl"><span><b>●</b> 2 waiting for you</span><span class="lg" id="c-longest">longest 6m</span></div>
                   <div class="list" id="c-list"><div class="lst" id="c-lst">
-                  <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">chn_7f3a · relay leg 92 · X-52 clean up the old writer</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
-                  <div class="card work"><div class="h"><span class="dotp"></span><b>youtuber</b><span>(#a61c09e4)</span><span class="eng o">OpenCode</span></div><div class="t">Research ten history videos for the channel, each with sources and a hook…</div><div class="s"><em>working</em> · 3 turns · ctx 48.2k / 256k</div></div>
+                  <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">VIDEO PIPELINE BUILD</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>youtuber</b><span>(#ses_a61c)</span><span class="rt" title="A free model, run by OpenCode">North-Mini-Code</span></div><div class="m"><span class="eng o">OpenCode</span><span class="fr">free model</span></div><div class="t">Run episode 12 through the video pipeline: script, voice-over, footage, cut, thumbnail…</div><div class="s"><em>working</em> · 3 turns · ctx 48.2k / 256k</div></div>
                   <div class="card turn"><div class="h"><span class="dotp"></span><b>scholar</b><span>(#7d2e51b0)</span><span class="eng g">Gemini</span></div><div class="m"><span class="leg">⛓ step 2 of 3</span><span style="margin-left:auto">640k tk</span></div><div class="t">Chain: clean the survey data, run the chapter 3 regressions, then write Table 3…</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
                   <div class="card turn"><div class="h"><span class="dotp"></span><b>analyst</b><span>(#c90f3a72)</span><span class="eng x">Codex</span></div><div class="t">Morning market brief: screen my watchlist for earnings, gaps and unusual volume…</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">5m</span> · 2 turns</div></div>
-                  <div class="card work"><div class="h"><span class="dotp"></span><b>writer</b><span>(#1b84e6d3)</span><span class="eng">Claude</span></div><div class="t">Draft chapter 7 from the outline, in my voice, about 3,000 words…</div><div class="s"><em>working</em> · 1 turn · ctx 82.4k / 1.0M</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>writer</b><span>(#1b84e6d3)</span><span class="rt" title="Kimi K2 through a route, in Claude Code">Kimi K2</span></div><div class="m"><span class="eng">Claude</span><span class="fr">another brain, same engine</span></div><div class="t">Draft chapter 7 from the outline, in my voice, about 3,000 words…</div><div class="s"><em>working</em> · 1 turn · ctx 82.4k / 1.0M</div></div>
                   <div class="card idle"><div class="h"><span class="dotp"></span><b>editor</b><span>(#e52a7f18)</span><span class="eng agy">Antigravity</span></div><div class="t">Cut interview-take-4 into four shorts with burned-in captions…</div><div class="s">done · 12m ago · 9 turns</div></div>
                   </div><i class="sb" id="c-sb"></i></div>
                   <div class="resume">› Resume an existing session</div>
                 </div>
                 <div class="tx" id="c-tx"></div>
               </div>
-              <div class="tool" id="c-tool"><b>⚡ Bash</b> npm run test -- test/test_export.js</div>
+              <div class="tool" id="c-tool"><b>✎ Edit</b> test/pipeline/editCompose.test.ts</div>
               <div class="foot">
                 <div class="inp">Message developer…  (Ctrl+Enter sends)</div>
                 <div class="ctrls"><span>developer</span><span class="eng" style="margin-left:0">Claude</span><span class="sel">opus ▾</span><span class="sel">xhigh ▾</span><span class="sel" id="c-selAcct">acct-c ▾</span><span class="sel">bypassPermissions ▾</span><span class="btn2"><span>Send after turn</span><span>⏸ Interrupt</span><span>Send into turn</span></span></div>

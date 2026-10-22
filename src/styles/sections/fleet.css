@@ -32,6 +32,8 @@
 #s-fleet .eng.x{border-color:#9ad;color:#9ad}
 #s-fleet .eng.o{border-color:var(--teal);color:var(--teal)}
 #s-fleet .eng.g{border-color:#7fa0f8;color:#7fa0f8}
+#s-fleet .rt{margin-left:auto;border:1px dashed #6d8fdc;color:#d3e26b;border-radius:2cqw;padding:0 1cqw;font-size:1.5cqw;white-space:nowrap}
+#s-fleet .rt+.eng{margin-left:0}
 #s-fleet .cc .q{margin:.3cqw 0 .2cqw;color:#dcdcd0;font-size:1.75cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #s-fleet .cc .s{color:#9a9a8f;font-size:1.75cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #s-fleet .cc .s i{font-style:normal;color:var(--cyan)}

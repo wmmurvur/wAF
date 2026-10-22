@@ -3,7 +3,7 @@
 // defaults are the extension's own (data/deep/privacy.js cites them); the licence figures come from data/facts.js.
 // Names, ids and texts are demo data from the site's one farm: chain chn_7f3a and its leg 93 (session 8b2d07c1), the
 // session 7c41e2a0 of "The last keeper", the route or-free and its key OPENROUTER_FREE, accounts acct-a to acct-d.
-// Hosts end in .example, which no one can own. The "Try one" rows answer the way the guard would; they never move a step.
+// Hosts end in .example, which no one can own, except ffmpeg.org, the public docs the pipeline agent reads. The "Try one" rows answer the way the guard would; they never move a step.
 import { licence } from '../../data/facts.js';
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -108,16 +108,16 @@ export default {
     const R = ['a character outside ASCII', 'a backtick', 'a heredoc with <code>\\</code> or <code>${</code>, or past 20 lines', 'quoted text over 600 characters'];
     const TOLD = ' Told: write the text to a file and give the command its name.';
     const T = [
-      { b: 'em dash', c: 'git commit -m "X-40 part 9 — CSV writer"', r: 0, v: '<b>Refused.</b> The em dash (—) is outside ASCII.' + TOLD },
+      { b: 'em dash', c: 'git commit -m "M-101 part 3 — editCompose"', r: 0, v: '<b>Refused.</b> The em dash (—) is outside ASCII.' + TOLD },
       { b: 'backtick', c: 'echo "built at `date`"', r: 1, v: '<b>Refused.</b> A backtick runs a second command inside this one.' + TOLD },
       { b: 'long heredoc', c: "cat <<'EOF' > notes.md\n  … 24 lines …\nEOF", r: 2, v: '<b>Refused.</b> A heredoc past 20 lines.' + TOLD },
       { b: 'long quote', c: 'node -e "… 812 characters …"', r: 3, v: '<b>Refused.</b> Quoted text over 600 characters.' + TOLD },
       { b: 'from a file', c: 'git commit -F msg.txt', r: -1, v: '<b>Runs.</b> Plain ASCII, and the text is in a file.' },
-      { b: 'af:allow-shell', c: 'git commit -m "X-40 part 9 — CSV writer"  # af:allow-shell', r: -1, v: '<b>Runs.</b> af:allow-shell lets this one command through, and the transcript shows it.' },
+      { b: 'af:allow-shell', c: 'git commit -m "M-101 part 3 — editCompose"  # af:allow-shell', r: -1, v: '<b>Runs.</b> af:allow-shell lets this one command through, and the transcript shows it.' },
     ];
     fv.innerHTML = `
       <div class="hd"><b>ShellGuard</b><span>leg 93 · session 8b2d07c1 · the shell tool</span></div>
-      <div class="call"><p class="lb">The agent's shell call</p><pre class="cmd">$ git commit -m "X-40 part 9 <mark>—</mark> CSV writer"</pre><p class="hk">PreToolUse <i>→</i> ShellGuard <i>→</i> <span class="shl">the shell</span></p></div>
+      <div class="call"><p class="lb">The agent's shell call</p><pre class="cmd">$ git commit -m "M-101 part 3 <mark>—</mark> editCompose"</pre><p class="hk">PreToolUse <i>→</i> ShellGuard <i>→</i> <span class="shl">the shell</span></p></div>
       <p class="vd" data-from="1"><b>Refused</b> before the shell saw it: <code>—</code> is a character outside ASCII.</p>
       <ol class="rules" data-from="1">${R.map((t, k) => `<li${k === 0 ? ' class="hit"' : ''}>${t}</li>`).join('')}</ol>
       <div class="safe" data-from="2"><p class="lb">Told to the agent</p><p>Write the text to a file, and give the command only the file's name.</p><pre class="cmd">$ git commit -F msg.txt <span class="okk">✓ runs</span></pre></div>
@@ -206,13 +206,13 @@ never the input, never a key</pre>`;
     const T = [
       { b: 'logbooks.example/keepers/1891', ok: 1, v: opens('on this step\'s list.') },
       { b: 'scans.logbooks.example/p/412', ok: 1, v: opens('a subdomain of logbooks.example.') },
-      { b: 'docs.orbit-app.example/export', ok: 1, v: opens('covered by agentFarm.browserAllowHosts.') },
+      { b: 'ffmpeg.org/ffmpeg-filters.html', ok: 1, v: opens('covered by agentFarm.browserAllowHosts.') },
       { b: 'paste.example/raw/7f3a', ok: 0, v: '<b>Fails without running.</b> No list covers paste.example, and the workflow\'s on-fail rule takes over.' },
     ];
     fv.innerHTML = `
       <div class="hd"><b>Browser step</b><span>workflow keeper-logs · step 2 · researcher</span></div>
       <div class="bs"><p><span class="k">URL</span><code>https://logbooks.example/keepers/1891</code></p><p><span class="k">Objective</span><span>List the keepers named in the 1891 log.</span></p><p><span class="k">Hosts</span><code>logbooks.example</code></p></div>
-      <div class="al" data-from="1"><span class="h"><code>logbooks.example</code><small>this step</small></span><span class="h"><code>orbit-app.example</code><small>browserAllowHosts</small></span><span class="sub">subdomains included</span></div>
+      <div class="al" data-from="1"><span class="h"><code>logbooks.example</code><small>this step</small></span><span class="h"><code>ffmpeg.org</code><small>browserAllowHosts</small></span><span class="sub">subdomains included</span></div>
       <p class="msg p" data-from="2"><b>✗ paste.example/raw/7f3a</b> failed without running; the on-fail rule takes over.</p>
       <div class="dlg" data-from="3"><p class="dt">Approval · before each run</p><p><code>https://logbooks.example/keepers/1891</code></p><p>List the keepers named in the 1891 log.</p><div class="btns"><button type="button" tabindex="-1">Run</button><button type="button" tabindex="-1">Cancel</button></div></div>
       <div class="blk" data-from="4"><p class="lb">Recipe step · a link off the list, mid-run</p><code>about:blank#BLOCKED BY AGENT FARM … tracker.example</code></div>
@@ -232,7 +232,7 @@ never the input, never a key</pre>`;
       <div class="hd"><b>Superpowers</b><span>developer · leg 93 · ⚡ on</span></div>
       <div class="disk"><p class="lb">On disk · 0 tokens</p><ul class="sk">${SK.map((n, k) => `<li${k === 1 ? ' class="sd"' : ''}>${n}</li>`).join('')}${Array.from({ length: 14 - SK.length }, () => '<li class="un" aria-hidden="true">SKILL.md</li>').join('')}</ul><small>14 in all; the folder is agentFarm.superpowersPath</small></div>
       <div class="pr" data-from="1"><p class="lb">In the session's system prompt</p><p class="hk"><code>using-superpowers/SKILL.md</code><span>the root hook · about 2.5 KB</span></p><p class="mf">+ where each of the 14 is on disk</p></div>
-      <p class="msg c" data-from="2">Leg 93 debugs the CSV writer's date column across a DST change: it reads <b>systematic debugging</b>'s SKILL.md, and no other.</p>
+      <p class="msg c" data-from="2">Leg 93 debugs why the de-hum stops at 16.9 dB: it reads <b>systematic debugging</b>'s SKILL.md, and no other.</p>
       <ul class="rl" data-from="3"><li>No fix before the root cause: four steps of systematic debugging.</li><li>No "done" without evidence.</li></ul>
       <div class="job"><p class="lb">⚡ Superpowers for one job · try it</p>
         <div class="jr"><span>Agent</span>${seg('Agent', 'ag', ['developer', 'showrunner'])}</div>

@@ -3,8 +3,8 @@
 // extension's own (data/deep/projects.js cites them): roles found by frontmatter, the backlog's line format and its one
 // queue, the track's doubt codes and two files, the brief and its write side, the letter's kept block, the membership
 // order, the turn-level model split and the Analysis tab's minimums. Projects, codes and notes are the site's demo data
-// (data/backlog.js): orbit-app, The last keeper, Thesis, Spring launch.
-import { projects, tracks, parts, queue, project } from '../../data/backlog.js';
+// (data/backlog.js): Agent Farm itself (its real backlog), The last keeper, Thesis, Spring launch.
+import { projects, tracks, family, parts, queue, project } from '../../data/backlog.js';
 
 const $$ = (fv, s) => [...fv.querySelectorAll(s)];
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -21,7 +21,7 @@ function onSeg(el, fn) {
 
 /* each demo project's ⚙ Settings tab: kind, folder, code roots, people with their roles, budgets, the tags its backlog uses */
 const P = {
-  orbit: { kind: 'software', folder: '10_PROJECTS/orbit-app', roots: 'D:/code/orbit', people: 'you, decides and pays · Mira, does the work · Sam, ask about exports', budget: '$40 a day · $2,500 in all', tags: ['bug', 'feat', 'ux', 'test', 'perf', 'docs', 'refactor'] },
+  farm: { kind: 'software', folder: '10_PROJECTS/Agent Farm', roots: 'D:/code/agent-farm', people: 'you, decides and pays · Mira, does the work · Sam, ask about the pipeline', budget: '$40 a day · $2,500 in all', tags: ['feat', 'bug', 'ux', 'test', 'perf', 'docs', 'debt', 'chore'] },
   keeper: { kind: 'documentary', folder: '10_PROJECTS/The last keeper', roots: '', people: 'you, decide · Ana, camera · the archive, ask about 1953', budget: '$15 a day · $400 in all', tags: ['shoot', 'script', 'edit', 'research'] },
   thesis: { kind: 'research', folder: '10_PROJECTS/Thesis', roots: '', people: 'you, do the work · Prof. Lind, decides', budget: '$5 a day', tags: ['research', 'write', 'figure', 'review', 'chore'] },
   spring: { kind: 'campaign', folder: '10_PROJECTS/Spring launch', roots: '', people: 'you, decide · the client, pays · legal, ask about the offer', budget: '$10 a day · $300 in all', tags: ['video', 'copy', 'design', 'research', 'review', 'chore'] },
@@ -52,7 +52,7 @@ af-id: afprj-07
         ['Code roots', s.roots ? `<code>${s.roots}</code>` : '<i>none: there is no code in it</i>'], ['People', esc(s.people)], ['Budget', s.budget]]
         .map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('');
       tree.innerHTML = ['00 Charter.md', '01 Plan.md', 'Backlog.md', 'Backloglog.md', 'People.md', 'Worklog.md', 'notes/', 'decisions/', 'deliverables/', 'resources/', '90_Archive/']
-        .map(f => `<li${f.endsWith('/') ? ' class="d"' : ''}>${f}</li>`).join('') + (s.roots ? '<li class="x">its code stays in D:/code/orbit, outside the vault</li>' : '');
+        .map(f => `<li${f.endsWith('/') ? ' class="d"' : ''}>${f}</li>`).join('') + (s.roots ? '<li class="x">its code stays in D:/code/agent-farm, outside the vault</li>' : '');
       tg.innerHTML = s.tags.map(t => `<code>#${t}</code>`).join(' ');
     })(0);
   },
@@ -62,24 +62,24 @@ af-id: afprj-07
     const Q = queue.slice(0, 6).map(q => ({ ...q }));
     fv.innerHTML = `
       <div class="hd"><b>Backlog · ${project.name}</b><span>Backlog.md · demo</span></div>
-      <div class="cap"><span class="box">the export should say which account each leg ran on</span><button type="button" class="add">Add</button><small>Ctrl+Alt+B, from anywhere in VS Code</small></div>
+      <div class="cap"><span class="box">every episode also as a 9:16 short, by default</span><button type="button" class="add">Add</button><small>Ctrl+Alt+B, from anywhere in VS Code</small></div>
       <ul class="inbox" aria-live="polite"></ul>
       <pre class="file" data-from="1"><span class="h">## 🎯 Queue</span>
 <span class="ql"></span>
-<span class="h">## X · Export</span>
-- [/] X-52 clean up the old writer #refactor 🔼 [effort:: M] [parent:: X-40]
-- [ ] X-53 Excel opens the UTF-8 CSV as Latin-1 #bug #byAI [effort:: S]
-- [ ] X-54 Parquet as a third export format #feat ⏬ [effort:: L] ⛔ X-52
+<span class="h">## M · Media and the video pipeline</span>
+- [/] M-101 C-1 sound and compose #feat 🔼 [effort:: L] [parent:: M-64]
+- [ ] M-133 no arnndn in this ffmpeg build; use afftdn #bug #byAI [effort:: S]
+- [ ] M-108 C-8 script actor, runs on your yes #feat [effort:: L] ⛔ M-107
 <span class="h">## K · Quota</span>
 - [ ] K-7 settings search finds nothing for "quota" #bug #byREQ ⏫ [effort:: S]</pre>
       <ol class="q" data-from="2"></ol>
-      <p class="t5" data-from="3">"Do the top five" takes the first five that can start. <b>X-54</b> waits on X-52, so it is held back and named.</p>
-      <div class="fam" data-from="4"><p><code>X-40</code> Timeline export, end to end <em>XL · the whole</em></p><p class="pp">${parts.slice(-4).map(p => `<span><code>${p.c}</code> [parent:: X-40]</span>`).join('')}</p>
+      <p class="t5" data-from="3">"Do the top five" takes the first five that can start. <b>M-108</b> waits on M-107, so it is held back and named.</p>
+      <div class="fam" data-from="4"><p><code>${family.c}</code> ${esc(family.t)} <em>${family.s} · the whole</em></p><p class="pp">${parts.slice(-4).map(p => `<span><code>${p.c}</code> [parent:: ${family.c}]</span>`).join('')}</p>
         <p class="who"><code>#byAI</code> an agent noticed it and filed it itself: a proposal. <code>#byREQ</code> you asked an agent for it. Neither: you wrote it.</p></div>`;
     const add = fv.querySelector('.add'), inbox = fv.querySelector('.inbox'), qEl = fv.querySelector('.q'), ql = fv.querySelector('.ql');
     add.addEventListener('click', () => {
       if (add.disabled) return; add.disabled = true;
-      inbox.innerHTML = '<li><span>📥</span><span class="t">the export should say which account each leg ran on</span><em>inbox · filed later</em></li>';
+      inbox.innerHTML = '<li><span>📥</span><span class="t">every episode also as a 9:16 short, by default</span><em>inbox · filed later</em></li>';
       fv.querySelector('.box').textContent = '';
     });
     let shown = 0;
@@ -101,30 +101,29 @@ af-id: afprj-07
 
   /* II·3 the track: touches with notes, inferred sessions and their doubt codes, the two files, the four views */
   track(fv) {
-    const T = tracks.orbit, U = T.items[0], K8 = T.items[2];
+    const T = tracks.farm, U = T.items[0], K8 = T.items[2];
     const ev = e => `<li><span class="w">${e[0]}</span><code>${e[1]}</code><span class="tn">#${e[2]}</span><span class="a">${e[3]}</span><em class="${e[4]}">${e[4]}</em><q>${esc(e[5])}</q></li>`;
     const V = [
-      ['⬢ Items', '<b>U-12</b> · 2 sessions · 3 turns · estimated M · the median for M in this project is 4 turns'],
-      ['≡ Timeline', 'Oct 10 21:16 X-51 done · Oct 8 14:02 K-8 opened · Oct 5 03:40 X-44 done · …'],
-      ['⌸ Sessions', '<code>e0b4c9d1</code> touched X-51 and closed it · 9 of its 14 turns went on the backlog'],
-      ['⚕ Gaps', '37 of 231 codes have no history · 3 attributions are a best effort, 2 multi and 1 stale · no closure without a session'],
+      ['⬢ Items', '<b>X-499</b> · 2 sessions · 22 turns · estimated M · the median for M in this project is 4 turns'],
+      ['≡ Timeline', 'Oct 21 14:02 K-8 opened · Oct 21 11:48 M-100 done · Oct 20 06:30 M-93 done · …'],
+      ['⌸ Sessions', '<code>85340699</code> touched M-100 and closed it · 3 of its turns went on the backlog'],
+      ['⚕ Gaps', '112 of 1,305 codes have no history · 3 attributions are a best effort, 2 multi and 1 stale · no closure without a session'],
     ];
     fv.innerHTML = `
       <div class="hd"><b>Track · ${project.name}</b><span>Projects → Track · demo</span></div>
       <p class="st">${T.stats.map(([n, l]) => `<span><b>${n}</b> ${l}</span>`).join('')}</p>
-      <div class="it first"><p class="ih"><code>U-12</code><span>${esc(U.t)}</span><em>open · #${U.k} · ${U.s}</em></p><ol class="ev">${U.ev.map(ev).join('')}</ol>
+      <div class="it first"><p class="ih"><code>${U.c}</code><span>${esc(U.t)}</span><em>open · #${U.k} · ${U.s}</em></p><ol class="ev">${U.ev.map(ev).join('')}</ol>
         <p class="nxt" data-from="1">${esc(U.next)}</p></div>
-      <div class="it" data-from="2"><p class="ih"><code>K-8</code><span>${esc(K8.t)}</span><em>open · #byAI</em></p><ol class="ev">${K8.ev.map(ev).join('')}</ol>
+      <div class="it" data-from="2"><p class="ih"><code>${K8.c}</code><span>${esc(K8.t)}</span><em>open · #byAI</em></p><ol class="ev">${K8.ev.map(ev).join('')}</ol>
         <p class="dbt"><b>multi</b> two of developer's sessions were live, so the row says which it named and that it may be the other.</p>
-        <p class="dbt"><b>outside</b> X-47 was ticked in Obsidian. Recorded when it was noticed; no turn is made up for it.</p></div>
+        <p class="dbt"><b>outside</b> M-83 was ticked in Obsidian. Recorded when it was noticed; no turn is made up for it.</p></div>
       <div class="lg" data-from="3"><pre class="md"><span class="h">Backloglog.md</span>
-- <b>X-51</b> [status:: done] [sessions:: 4] [turns:: 4] [closed:: e0b4c9d1#9]
-    - \`2b7e9a14\` #3 · 2026-10-09 19:02 · developer · touched
-    - \`6f0c3d58\` #5 · 2026-10-09 22:47 · developer · touched
-    - \`d93a1c07\` #2 · 2026-10-10 11:30 · reviewer · touched
-    - \`e0b4c9d1\` #9 · 2026-10-10 21:16 · developer · <b>done</b>
-    <span class="mine">&gt; The screenshots use the dark theme on purpose: the
-    &gt; light one hides the progress bar. Keep it.</span></pre>
+- <b>M-100</b> [status:: done] [sessions:: 3] [turns:: 3] [closed:: 85340699#3]
+    - \`8d4d0799\` #1 · 2026-10-21 03:03 · developer · opened
+    - \`6edefcb6\` #1 · 2026-10-21 06:14 · developer · touched
+    - \`85340699\` #3 · 2026-10-21 11:48 · developer · <b>done</b>
+    <span class="mine">&gt; The nine parts stay in this order: the cut list
+    &gt; needs the fragment contract first. Keep it.</span></pre>
         <p class="cpt"><span class="mc">machine</span> the data line and the session rows, rebuilt from the ledger <span class="yc">you</span> every other line, kept as written</p></div>
       <div class="vw" data-from="4">${seg('Track view', 'views', V.map(v => v[0]))}<p class="vo"></p></div>`;
     const vo = fv.querySelector('.vo');
@@ -140,24 +139,24 @@ af-id: afprj-07
       <p class="chip" data-from="3">◧ ${project.name} — project context active</p>
       <pre class="br"><span class="h"># ${project.name}</span>
 Status: active · ${esc(projects[0].desc)}
-Folder: 10_PROJECTS/orbit-app · Code: D:/code/orbit
-People: you (decides, pays) · Mira (does the work) · Sam (ask about exports)
+Folder: 10_PROJECTS/Agent Farm · Code: D:/code/agent-farm
+People: you (decides, pays) · Mira (does the work) · Sam (ask about the pipeline)
 Roles: charter 00 Charter.md · plan 01 Plan.md · worklog Worklog.md
-Worklog: Oct 10 · X-51 export docs written, screenshots redone<span class="o" data-from="1">
+Worklog: Oct 21 · M-100 closed: nine editing actors, the cut-list core<span class="o" data-from="1">
 <span class="h">## Open in the plan</span>
-- [ ] Phase 3: streaming export   - [ ] Phase 4: Parquet
+- [ ] Phase C: the editing actors   - [ ] Phase D: packages, experiments
 <span class="h">## Latest decisions</span>
-- Oct 2 · CSV stays the default; Parquet waits for X-52
+- Oct 20 · Publishing always waits for a person's yes
 <span class="h">## Next in backlog</span>
-U-12 · X-53 · K-7 · S-9 · U-31
+${queue.slice(0, 5).map(q => q.c).join(' · ')}
 <span class="h">## Writing back</span>
 worklog: Worklog.md · plan: 01 Plan.md · do not reformat either</span></pre>
       <div class="how" data-from="2">${seg('Engine', 'chan', ['Claude Code', 'Codex'])}<pre class="cmd"></pre><p class="tk"><b>538</b> tokens for a full brief, measured. The same bytes on every start, so the provider's cache keeps them.</p></div>
       <p class="msg c" data-from="3"><b>A resume</b> of 3f2a1b2c is told about its own project, whatever the window says. A schedule firing at 03:00 gets no project unless the schedule names one.</p>
-      <ul class="wb" data-from="4"><li><code>projects.log</code><span>X-52: the old writer is gone</span></li><li><code>projects.plan.check</code><span>Phase 3: streaming export</span></li><li><code>projects.decision.add</code><span>Keep the old CSV header for one release</span></li><li><code>projects.deliver</code><span>v2.0, the export</span></li></ul>`;
+      <ul class="wb" data-from="4"><li><code>projects.log</code><span>M-100: nine editing actors are in</span></li><li><code>projects.plan.check</code><span>Phase B: the map and the route finder</span></li><li><code>projects.decision.add</code><span>Publishing always waits for a person's yes</span></li><li><code>projects.deliver</code><span>the video pipeline, Phase B</span></li></ul>`;
     const cmd = fv.querySelector('.cmd');
     onSeg(fv.querySelector('.chan'), k => {
-      cmd.textContent = k ? 'codex exec "<project-context>\n# orbit-app … the brief …\n</project-context>\n\nDo the top three."\n# Codex has no system prompt flag, so the brief rides in the first prompt'
+      cmd.textContent = k ? 'codex exec "<project-context>\n# Agent Farm … the brief …\n</project-context>\n\nDo the top three."\n# Codex has no system prompt flag, so the brief rides in the first prompt'
         : 'claude --append-system-prompt-file "<the brief>"\n# a file, and quoted: a folder named "John Doe" arrives whole\n# passed again on every start: it does not survive --resume';
     })(0);
   },
@@ -168,13 +167,13 @@ worklog: Worklog.md · plan: 01 Plan.md · do not reformat either</span></pre>
       <div class="hd"><b>HANDOVER.md</b><span>${project.name} · demo</span></div>
       <div class="doc">
         <section><h4>What it is</h4><p>${esc(projects[0].desc)}</p>
-          <h4>Where things are</h4><p>Documents <code>10_PROJECTS/orbit-app</code> · code <code>D:/code/orbit</code> · site <code>D:/code/orbit-site</code> <mark>not on this machine</mark></p>
-          <h4>Who to ask</h4><p>you, who decides · Mira, who does the work · Sam, about exports</p></section>
-        <section data-from="1"><h4>Where it stands</h4><p>${project.open} open, ${project.done} done. <b>Blocked:</b> X-54, Parquet, waits on X-52.</p></section>
-        <section data-from="2"><h4>Already fought, still open</h4><p><code>U-12</code> export drops rows past 10k: “the cap lives in the writer, not the query” (reviewer, Jul 9).</p>
-          <h4>Why it is this way</h4><p>Oct 2 · CSV stays the default; Parquet waits for X-52.</p><h4>Shipped</h4><p>v1.4, CSV and JSON lines export.</p></section>
-        <section data-from="3"><h4>First five minutes</h4><ol><li>Read the charter: two pages.</li><li>Open <code>U-12</code> and read both notes.</li><li>Run the 1M-row test from <code>X-50</code>.</li><li>Check where <code>X-52</code> got to.</li><li>Take the top of the queue.</li></ol></section>
-        <section class="mine" data-from="4"><h4>Yours</h4><p>Sam reviews anything that touches rows.ts. Never ship on a Friday.</p></section>
+          <h4>Where things are</h4><p>Documents <code>10_PROJECTS/Agent Farm</code> · code <code>D:/code/agent-farm</code> · site <code>D:/code/agentfarm-site</code> <mark>not on this machine</mark></p>
+          <h4>Who to ask</h4><p>you, who decides · Mira, who does the work · Sam, about the pipeline</p></section>
+        <section data-from="1"><h4>Where it stands</h4><p>${project.open} open, ${project.done} done. <b>Blocked:</b> M-108, the script actor, waits on M-107.</p></section>
+        <section data-from="2"><h4>Already fought, still open</h4><p><code>X-499</code> splitting the biggest files: “split by feature, not by size” (reviewer, Sep 12).</p>
+          <h4>Why it is this way</h4><p>Oct 20 · Publishing always waits for a person's yes.</p><h4>Shipped</h4><p>Phase B of the video pipeline: the map and the route finder.</p></section>
+        <section data-from="3"><h4>First five minutes</h4><ol><li>Read the charter: two pages.</li><li>Open <code>X-499</code> and read both notes.</li><li>Run the full suite: 885 files.</li><li>Check where <code>M-101</code> got to.</li><li>Take the top of the queue.</li></ol></section>
+        <section class="mine" data-from="4"><h4>Yours</h4><p>Sam reviews anything that touches the render. Never ship on a Friday.</p></section>
       </div>
       <p class="rw" data-from="4"><button type="button" class="ghost2">Write it again</button><span aria-live="polite"></span></p>`;
     const b = fv.querySelector('.rw button'), say = fv.querySelector('.rw span'), mine = fv.querySelector('.mine');
@@ -187,7 +186,7 @@ worklog: Worklog.md · plan: 01 Plan.md · do not reformat either</span></pre>
   /* II·6 every project on one screen; parts beside, not inside; health; the weekly digest; the work by how much it needs you */
   portfolio(fv) {
     const R = [
-      { n: 'orbit-app', ph: 62, open: 38, last: '2 min ago', usd: '$1,284.60' },
+      { n: 'Agent Farm', ph: 62, open: 73, last: '2 min ago', usd: '$1,284.60' },
       { n: 'The last keeper', ph: 40, open: 17, last: '1 h ago', usd: '$11.60', parts: [['Episode 1: the keepers', 'done', '$52.30', 0], ['Episode 3: the 1953 storm', 'active', '$31.85', 6]] },
       { n: 'Thesis', ph: 55, open: 12, last: '16 days ago', usd: '$63.20', stale: 1 },
       { n: 'Spring launch', ph: 80, open: 9, last: '3 h ago', usd: '$212.70', over: '$10.40 today' },
@@ -199,8 +198,8 @@ worklog: Worklog.md · plan: 01 Plan.md · do not reformat either</span></pre>
           + (r.parts || []).map(p => `<tr class="part" data-from="1"><td colspan="4">↳ ${p[0]} · ${p[1]} · ${p[2]}${p[3] ? ` · ${p[3]} open` : ''}</td></tr>`).join('')).join('')}
       </tbody></table>
       <ul class="hl" data-from="2"><li class="w"><b>⚠ Thesis</b> is active, and nothing has touched it for 16 days</li><li class="x"><b>⛔ Spring launch</b> is over its $10 daily budget</li><li class="d"><b>Living · Projects</b> Thesis quiet for 16 days · Spring launch over budget</li></ul>
-      <p class="msg c" data-from="3"><b>Notices · Monday · orbit-app's week</b> 14 items closed, 3 opened, 41 sessions, $212.40. The full report is attached.</p>
-      <div class="wk" data-from="4"><p class="lb">orbit-app · Work</p>${[['Running now', 'leg 92 of the chain, on X-52'], ['Needs you', 'a question: keep the old CSV header?'], ['Queued', 'U-12 · "waits for the chain to finish"'], ['Fires by itself', 'nightly-digest, 03:00, with a brake']].map(([g, t]) => `<p><b>${g}</b><span>${t}</span></p>`).join('')}</div>`;
+      <p class="msg c" data-from="3"><b>Notices · Monday · Agent Farm's week</b> 14 items closed, 3 opened, 41 sessions, $212.40. The full report is attached.</p>
+      <div class="wk" data-from="4"><p class="lb">Agent Farm · Work</p>${[['Running now', 'leg 92 of the chain, on M-101'], ['Needs you', 'a question: which de-hum filter ships?'], ['Queued', 'X-499 · "waits for Phase C"'], ['Fires by itself', 'nightly-digest, 03:00, with a brake']].map(([g, t]) => `<p><b>${g}</b><span>${t}</span></p>`).join('')}</div>`;
   },
 
   /* II·7 cost: one project per session, the bill, by model with mixed turns, how it is worked, code two ways */
@@ -215,15 +214,15 @@ worklog: Worklog.md · plan: 01 Plan.md · do not reformat either</span></pre>
     fv.innerHTML = `
       <div class="hd"><b>${project.name} · Cost</b><span>the project page · demo</span></div>
       <ol class="mb"><li>you filed it</li><li>you said "no project"</li><li class="hit">the deepest folder that holds it</li><li>its agent's rule</li><li>Unassigned</li></ol>
-      <p class="sg"><code>a3f9c2e1</code> → <b>orbit-app</b>: it ran in <code>D:/code/orbit/export</code>. For a loose old one, a proposal: <code>e09b44d7</code> wrote 11 of its 11 files under <code>D:/code/orbit</code>. <button type="button" class="ghost2 ap">Approve</button></p>
+      <p class="sg"><code>a3f9c2e1</code> → <b>Agent Farm</b>: it ran in <code>D:/code/agent-farm/src/core/pipeline</code>. For a loose old one, a proposal: <code>e09b44d7</code> wrote 11 of its 11 files under <code>D:/code/agent-farm</code>. <button type="button" class="ghost2 ap">Approve</button></p>
       <div class="kp" data-from="1"><p><b>$1,284.60</b><span>total</span></p><p><b>$36.80</b><span>today</span></p><p><b>$32 a day</b><span>last 7 days</span></p><p><b>~$2,885</b><span>by Dec 1</span></p><p><b>38 days</b><span>of budget left</span></p></div>
       <div class="days" data-from="1" aria-hidden="true">${days.map(v => `<i style="height:${(v / top * 100).toFixed(1)}%"></i>`).join('')}</div>
       <div class="bm" data-from="2"><div class="stk">${M.map(m => `<i style="width:${(m[1] / tot * 100).toFixed(2)}%;background:${m[2]}"></i>`).join('')}</div>
         <p class="lg2">${M.map(m => `<span><i style="background:${m[2]}"></i>${m[0]} $${m[1].toFixed(2)}</span>`).join('')}</p><small>A turn two models served is mixed, not split by a guess. Sessions with no turn detail are unattributed. The five add up to the total.</small></div>
       <div class="an" data-from="3">${seg('Which project', 'which', [project.name, 'a new project'])}<div class="rh"></div><p class="ao"></p></div>
-      <div class="cd" data-from="4"><p><b>120</b> commits in D:/code/orbit<span>what git recorded, whoever typed it</span></p><p><b>341</b> files written by its sessions<span>from the transcripts, files outside the repo included</span></p><small>Two sources, side by side, never added together.</small></div>`;
+      <div class="cd" data-from="4"><p><b>120</b> commits in D:/code/agent-farm<span>what git recorded, whoever typed it</span></p><p><b>341</b> files written by its sessions<span>from the transcripts, files outside the repo included</span></p><small>Two sources, side by side, never added together.</small></div>`;
     const ap = fv.querySelector('.ap');
-    ap.addEventListener('click', () => { ap.disabled = true; ap.textContent = 'Filed under orbit-app'; });
+    ap.addEventListener('click', () => { ap.disabled = true; ap.textContent = 'Filed under Agent Farm'; });
     const rh = fv.querySelector('.rh'), ao = fv.querySelector('.ao');
     onSeg(fv.querySelector('.which'), k => {
       rh.classList.toggle('none', !!k);
