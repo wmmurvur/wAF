@@ -14,7 +14,7 @@
     <meta property="og:description" content="A project of any kind, an app, a documentary, a thesis, a campaign, with its own folder of plain documents, a backlog the fleet works off in your order, a track of how every item was worked, a brief every session starts with, a letter for whoever takes it over, and what it cost.">
     <meta property="og:url" content="https://agentfarm.space/features/any-project/">
     <meta name="twitter:card" content="summary">
-    <script defer src="../../assets/any-project.js?v=0.13.8"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="../../assets/any-project.js?v=0.13.9"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.8"></head>
+    </script><link rel="stylesheet" href="../../assets/site.css?v=0.13.9"></head>
   <body>
     
   <div class="wrap">
@@ -71,12 +71,12 @@
       <div class="bpanel" id="b-panel" data-shows="backlog kinds track" aria-label="The Projects page, Backlog and Track tabs, rebuilt with demo data">
         <div class="mtabs"><span>Console</span><span class="on">Agent Farm — Projects</span><span>Live Timeline</span></div>
         <div class="pbody">
-          <div class="plist" id="b-plist" role="group" aria-label="Projects"><span class="pl">Active 4</span><button type="button" data-p="orbit" aria-pressed="true" class="on"><i></i>orbit-app</button><button type="button" data-p="keeper" aria-pressed="false" class><i></i>The last keeper</button><button type="button" data-p="thesis" aria-pressed="false" class><i></i>Thesis</button><button type="button" data-p="spring" aria-pressed="false" class><i></i>Spring launch</button></div>
-          <div class="phead"><h3 id="b-name">orbit-app</h3><span id="b-meta">412 sessions · the relay chain is on it</span></div>
-          <p class="pdesc" id="b-desc">A desktop app that turns session transcripts into timelines.</p>
+          <div class="plist" id="b-plist" role="group" aria-label="Projects"><span class="pl">Active 4</span><button type="button" data-p="farm" aria-pressed="true" class="on"><i></i>Agent Farm</button><button type="button" data-p="keeper" aria-pressed="false" class><i></i>The last keeper</button><button type="button" data-p="thesis" aria-pressed="false" class><i></i>Thesis</button><button type="button" data-p="spring" aria-pressed="false" class><i></i>Spring launch</button></div>
+          <div class="phead"><h3 id="b-name">Agent Farm</h3><span id="b-meta">1463 sessions · the relay chain is on it</span></div>
+          <p class="pdesc" id="b-desc">This extension, built by its own agents.</p>
           <div class="ptabs" id="b-tabs"><span aria-hidden="true" style="--tc:var(--t0)">Home</span><span aria-hidden="true" style="--tc:var(--t1)">Work</span><span aria-hidden="true" style="--tc:var(--t2)">Timeline</span><span aria-hidden="true" style="--tc:var(--t3)">Sessions</span><span aria-hidden="true" style="--tc:var(--t4)">Plan</span><button type="button" data-tab="backlog" aria-pressed="true" class="on" style="--tc:var(--t5)">Backlog</button><button type="button" data-tab="track" aria-pressed="false" class style="--tc:var(--t6)">Track</button><span aria-hidden="true" style="--tc:var(--t7)">Docs</span><span aria-hidden="true" style="--tc:var(--t8)">People</span><span aria-hidden="true" style="--tc:var(--t9)">Cost</span><span aria-hidden="true" style="--tc:var(--t10)">Analysis</span><span aria-hidden="true" style="--tc:var(--t11)">Code</span></div>
           <div id="b-blv">
-          <div class="bline"><span><b id="b-open">38</b> open · <b id="b-done">214</b> done</span><span class="file">Backlog.md</span><span class="btn">🧹 Tidy file order</span><span class="btn">⚭ Gather families</span></div>
+          <div class="bline"><span><b id="b-open">73</b> open · <b id="b-done">561</b> done</span><span class="file">Backlog.md</span><span class="btn">🧹 Tidy file order</span><span class="btn">⚭ Gather families</span></div>
           <div class="capt">
             <p class="ch">Capture</p>
             <div class="crow">
@@ -84,7 +84,7 @@
               <div class="sel" aria-hidden="true"><span>— area —</span><span>— type —</span><span>· normal</span><span>— size —</span><span class="w">— part of —</span><b class="add" id="b-add">Add</b></div>
             </div>
           </div>
-          <div class="areas" id="b-areas" aria-hidden="true"><span class="on">all areas</span><span>P 1</span><span>K 4</span><span>S 2</span><span>M 0</span><span>N 0</span><span>B 0</span><span>A 0</span><span>U 9</span><span>X 22</span></div>
+          <div class="areas" id="b-areas" aria-hidden="true"><span class="on">all areas</span><span>P 1</span><span>K 5</span><span>S 2</span><span>M 40</span><span>N 1</span><span>B 0</span><span>A 0</span><span>U 5</span><span>X 19</span></div>
           <div class="next">
             <div class="nh"><b>Next up</b><span><span id="b-q">14</span> queued · agents take 5</span></div>
             <div class="chips" id="b-chips"></div>
@@ -270,7 +270,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.8-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.9-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="../../features/">Features</a>
       <a href="../../pricing/">Pricing</a>

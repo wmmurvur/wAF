@@ -14,7 +14,7 @@
     <meta property="og:description" content="Agent Farm, in VS Code: direct one AI agent with precision or a whole fleet. Claude Code, Codex, Gemini, Antigravity and OpenCode work your backlog day and night, and grow into agents that know how you work.">
     <meta property="og:url" content="https://agentfarm.space/">
     <meta name="twitter:card" content="summary">
-    <script defer src="assets/site.js?v=0.13.8"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
+    <script defer src="assets/site.js?v=0.13.9"></script><!-- Links to a page are written as its folder (features/). A host serves the folder's index.html; opened from disk or in a preview,
          nothing does, so there a click on such a link goes to the index.html itself. -->
     <script>
       if (!/(^|\.)agentfarm\.space$/.test(location.hostname)) addEventListener('click', e => {
@@ -22,7 +22,7 @@
         const m = h && !/^([a-z]+:|#)/i.test(h) && h.match(/^([^#]*\/)(#.*)?$/);
         if (m && !e.defaultPrevented) { e.preventDefault(); location.href = m[1] + 'index.html' + (m[2] || ''); }
       });
-    </script><link rel="stylesheet" href="assets/site.css?v=0.13.8"></head>
+    </script><link rel="stylesheet" href="assets/site.css?v=0.13.9"></head>
   <body>
     
   <div class="wrap">
@@ -99,8 +99,8 @@
         <div class="mon" data-i="0"><div class="scr"><div class="hd"><b>Live Timeline</b><span>● listening on 127.0.0.1:8377</span><span class="r" id="f-tlClock">12:10</span></div><canvas id="f-tl"></canvas></div><div class="lab"><span>CH-01 · Live Timeline</span><span>swim lanes</span></div></div>
         <div class="mon" data-i="1"><div class="scr"><div class="hd"><b>Console</b><span>developer · working</span></div>
           <div class="cgrid"><div><div class="wt"><span><b>●</b> 2 waiting for you</span><span id="f-cLong">longest 6m</span></div>
-            <div class="cc"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="q">X-52 clean up the old writer…</div><div class="s"><i>working</i> · <span class="leg" id="f-cLeg">⑂ 92</span> · <span id="f-cTok">1.8M</span> tk · ctx <span id="f-cCtx">110k</span></div></div>
-            <div class="cc t"><div class="h"><b>youtuber</b><span class="eng o">OpenCode</span></div><div class="q">Research ten history videos for the channel…</div><div class="s"><i>your turn</i> · 6m · 4 turns</div></div>
+            <div class="cc"><div class="h"><b>developer</b><span class="eng">Claude</span></div><div class="q">Video pipeline build…</div><div class="s"><i>working</i> · <span class="leg" id="f-cLeg">⑂ 92</span> · <span id="f-cTok">1.8M</span> tk · ctx <span id="f-cCtx">110k</span></div></div>
+            <div class="cc t"><div class="h"><b>youtuber</b><span class="rt">North-Mini-Code</span></div><div class="m"><span class="eng o">OpenCode</span><span class="fr">free model</span></div><div class="q">Run episode 12 through the video pipeline…</div><div class="s"><i>your turn</i> · 6m · 4 turns</div></div>
             <div class="cc t"><div class="h"><b>scholar</b><span class="eng g">Gemini</span></div><div class="q">Run the chapter 3 regressions on the new survey…</div><div class="s"><i>your turn</i> · 5m · 2 turns</div></div>
             <div class="cc" style="border-left-color:#66675d"><div class="h"><b>analyst</b><span class="eng x">Codex</span></div><div class="q">Morning market brief: screen my watchlist…</div><div class="s">idle · 12m · 9 turns</div></div></div>
             <div class="lns" id="f-cLines"><div class="ln tl"><span>TOOL</span><span>▸ Bash npm run package <b>✓</b></span></div><div class="ln tl"><span>TOOL</span><span>▸ af farm.restartExtensionHost resume=true</span></div><div class="ln"><span>AGENT</span><span>Window reloaded. Checking that the new build is the one actually running.</span></div><div class="ln y"><span>YOU</span><span>Agent Farm restarted the extension host and took this session up again in the same seat — same conversation, same id.</span></div><div class="ln"><span>AGENT</span><span>3.931.0-beta is running. Same seat. Continuing the live test.</span></div></div></div>
@@ -163,7 +163,7 @@
               <h6>⌄ TASKS</h6>
               <div class="row">Plan <span>3/15 on · 8 manual</span></div>
               <div class="row">Market brief <span>analyst · daily</span></div>
-              <div class="row">Channel ideas <span>youtuber · Mon</span></div>
+              <div class="row">Weekly episode <span>youtuber · Fri</span></div>
               <div class="row">Weekly research <span>scholar</span></div>
               <h6>› MISSIONS</h6>
               <h6>⌄ TOOLBOX</h6>
@@ -182,18 +182,18 @@
                   <div class="newbtn"><span>+ New session</span><span>⇅</span></div>
                   <div class="wait" id="c-waitEl"><span><b>●</b> 2 waiting for you</span><span class="lg" id="c-longest">longest 6m</span></div>
                   <div class="list" id="c-list"><div class="lst" id="c-lst">
-                  <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">chn_7f3a · relay leg 92 · X-52 clean up the old writer</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
-                  <div class="card work"><div class="h"><span class="dotp"></span><b>youtuber</b><span>(#a61c09e4)</span><span class="eng o">OpenCode</span></div><div class="t">Research ten history videos for the channel, each with sources and a hook…</div><div class="s"><em>working</em> · 3 turns · ctx 48.2k / 256k</div></div>
+                  <div class="card work" id="c-card1"><div class="h"><span class="dotp"></span><b>developer</b><span id="c-cSid">(#3efb20bf)</span><span class="eng">Claude</span></div><div class="m"><span class="acct" id="c-cAcct">acct-c</span><span class="leg" id="c-cLeg">⑂ 92</span><span style="margin-left:auto" id="c-cTok">1.8M tk</span></div><div class="t" id="c-cTitle">VIDEO PIPELINE BUILD</div><div class="s"><em>working</em> · 1 turns · ctx <span id="c-cCtx">110.2k</span> / 1.0M</div><div class="s">PRS.AgentFarm</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>youtuber</b><span>(#ses_a61c)</span><span class="rt" title="A free model, run by OpenCode">North-Mini-Code</span></div><div class="m"><span class="eng o">OpenCode</span><span class="fr">free model</span></div><div class="t">Run episode 12 through the video pipeline: script, voice-over, footage, cut, thumbnail…</div><div class="s"><em>working</em> · 3 turns · ctx 48.2k / 256k</div></div>
                   <div class="card turn"><div class="h"><span class="dotp"></span><b>scholar</b><span>(#7d2e51b0)</span><span class="eng g">Gemini</span></div><div class="m"><span class="leg">⛓ step 2 of 3</span><span style="margin-left:auto">640k tk</span></div><div class="t">Chain: clean the survey data, run the chapter 3 regressions, then write Table 3…</div><div class="s"><em class="y">your turn</em> · <span id="c-t2">6m</span> · 4 turns</div></div>
                   <div class="card turn"><div class="h"><span class="dotp"></span><b>analyst</b><span>(#c90f3a72)</span><span class="eng x">Codex</span></div><div class="t">Morning market brief: screen my watchlist for earnings, gaps and unusual volume…</div><div class="s"><em class="y">your turn</em> · <span id="c-t3">5m</span> · 2 turns</div></div>
-                  <div class="card work"><div class="h"><span class="dotp"></span><b>writer</b><span>(#1b84e6d3)</span><span class="eng">Claude</span></div><div class="t">Draft chapter 7 from the outline, in my voice, about 3,000 words…</div><div class="s"><em>working</em> · 1 turn · ctx 82.4k / 1.0M</div></div>
+                  <div class="card work"><div class="h"><span class="dotp"></span><b>writer</b><span>(#1b84e6d3)</span><span class="rt" title="Kimi K2 through a route, in Claude Code">Kimi K2</span></div><div class="m"><span class="eng">Claude</span><span class="fr">another brain, same engine</span></div><div class="t">Draft chapter 7 from the outline, in my voice, about 3,000 words…</div><div class="s"><em>working</em> · 1 turn · ctx 82.4k / 1.0M</div></div>
                   <div class="card idle"><div class="h"><span class="dotp"></span><b>editor</b><span>(#e52a7f18)</span><span class="eng agy">Antigravity</span></div><div class="t">Cut interview-take-4 into four shorts with burned-in captions…</div><div class="s">done · 12m ago · 9 turns</div></div>
                   </div><i class="sb" id="c-sb"></i></div>
                   <div class="resume">› Resume an existing session</div>
                 </div>
                 <div class="tx" id="c-tx"></div>
               </div>
-              <div class="tool" id="c-tool"><b>⚡ Bash</b> npm run test -- test/test_export.js</div>
+              <div class="tool" id="c-tool"><b>✎ Edit</b> test/pipeline/editCompose.test.ts</div>
               <div class="foot">
                 <div class="inp">Message developer…  (Ctrl+Enter sends)</div>
                 <div class="ctrls"><span>developer</span><span class="eng" style="margin-left:0">Claude</span><span class="sel">opus ▾</span><span class="sel">xhigh ▾</span><span class="sel" id="c-selAcct">acct-c ▾</span><span class="sel">bypassPermissions ▾</span><span class="btn2"><span>Send after turn</span><span>⏸ Interrupt</span><span>Send into turn</span></span></div>
@@ -444,12 +444,12 @@
       <div class="bpanel" id="b-panel" data-shows="backlog kinds track" aria-label="The Projects page, Backlog and Track tabs, rebuilt with demo data">
         <div class="mtabs"><span>Console</span><span class="on">Agent Farm — Projects</span><span>Live Timeline</span></div>
         <div class="pbody">
-          <div class="plist" id="b-plist" role="group" aria-label="Projects"><span class="pl">Active 4</span><button type="button" data-p="orbit" aria-pressed="true" class="on"><i></i>orbit-app</button><button type="button" data-p="keeper" aria-pressed="false" class><i></i>The last keeper</button><button type="button" data-p="thesis" aria-pressed="false" class><i></i>Thesis</button><button type="button" data-p="spring" aria-pressed="false" class><i></i>Spring launch</button></div>
-          <div class="phead"><h3 id="b-name">orbit-app</h3><span id="b-meta">412 sessions · the relay chain is on it</span></div>
-          <p class="pdesc" id="b-desc">A desktop app that turns session transcripts into timelines.</p>
+          <div class="plist" id="b-plist" role="group" aria-label="Projects"><span class="pl">Active 4</span><button type="button" data-p="farm" aria-pressed="true" class="on"><i></i>Agent Farm</button><button type="button" data-p="keeper" aria-pressed="false" class><i></i>The last keeper</button><button type="button" data-p="thesis" aria-pressed="false" class><i></i>Thesis</button><button type="button" data-p="spring" aria-pressed="false" class><i></i>Spring launch</button></div>
+          <div class="phead"><h3 id="b-name">Agent Farm</h3><span id="b-meta">1463 sessions · the relay chain is on it</span></div>
+          <p class="pdesc" id="b-desc">This extension, built by its own agents.</p>
           <div class="ptabs" id="b-tabs"><span aria-hidden="true" style="--tc:var(--t0)">Home</span><span aria-hidden="true" style="--tc:var(--t1)">Work</span><span aria-hidden="true" style="--tc:var(--t2)">Timeline</span><span aria-hidden="true" style="--tc:var(--t3)">Sessions</span><span aria-hidden="true" style="--tc:var(--t4)">Plan</span><button type="button" data-tab="backlog" aria-pressed="true" class="on" style="--tc:var(--t5)">Backlog</button><button type="button" data-tab="track" aria-pressed="false" class style="--tc:var(--t6)">Track</button><span aria-hidden="true" style="--tc:var(--t7)">Docs</span><span aria-hidden="true" style="--tc:var(--t8)">People</span><span aria-hidden="true" style="--tc:var(--t9)">Cost</span><span aria-hidden="true" style="--tc:var(--t10)">Analysis</span><span aria-hidden="true" style="--tc:var(--t11)">Code</span></div>
           <div id="b-blv">
-          <div class="bline"><span><b id="b-open">38</b> open · <b id="b-done">214</b> done</span><span class="file">Backlog.md</span><span class="btn">🧹 Tidy file order</span><span class="btn">⚭ Gather families</span></div>
+          <div class="bline"><span><b id="b-open">73</b> open · <b id="b-done">561</b> done</span><span class="file">Backlog.md</span><span class="btn">🧹 Tidy file order</span><span class="btn">⚭ Gather families</span></div>
           <div class="capt">
             <p class="ch">Capture</p>
             <div class="crow">
@@ -457,7 +457,7 @@
               <div class="sel" aria-hidden="true"><span>— area —</span><span>— type —</span><span>· normal</span><span>— size —</span><span class="w">— part of —</span><b class="add" id="b-add">Add</b></div>
             </div>
           </div>
-          <div class="areas" id="b-areas" aria-hidden="true"><span class="on">all areas</span><span>P 1</span><span>K 4</span><span>S 2</span><span>M 0</span><span>N 0</span><span>B 0</span><span>A 0</span><span>U 9</span><span>X 22</span></div>
+          <div class="areas" id="b-areas" aria-hidden="true"><span class="on">all areas</span><span>P 1</span><span>K 5</span><span>S 2</span><span>M 40</span><span>N 1</span><span>B 0</span><span>A 0</span><span>U 5</span><span>X 19</span></div>
           <div class="next">
             <div class="nh"><b>Next up</b><span><span id="b-q">14</span> queued · agents take 5</span></div>
             <div class="chips" id="b-chips"></div>
@@ -1220,7 +1220,7 @@
   </main>
   <div class="wrap">
   <footer>
-    <span class="ver">AF-WEB v0.13.8-beta · screens rebuilt from the real app, with demo data</span>
+    <span class="ver">AF-WEB v0.13.9-beta · screens rebuilt from the real app, with demo data</span>
     <nav aria-label="Footer">
       <a href="features/">Features</a>
       <a href="pricing/">Pricing</a>
